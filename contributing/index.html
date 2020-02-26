@@ -418,7 +418,7 @@
                   <a href="https://github.com/frostming/pdm/edit/master/docs/contributing.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="contributing-to-pdm">Contributing to PDM</h1>
+                <h1 id="contributing-to-pdm">Contributing to PDM<a class="headerlink" href="#contributing-to-pdm" title="Permanent link">#</a></h1>
 <p>First off, thanks for taking the time to contribute! Contributions include but are not restricted to:</p>
 <ul>
 <li>Reporting bugs</li>
@@ -427,7 +427,7 @@
 <li>Writing documents</li>
 </ul>
 <p>The following is a set of guidelines for contributing.</p>
-<h2 id="a-recommended-flow-of-contributing-to-an-open-source-project">A recommended flow of contributing to an Open Source project.</h2>
+<h2 id="a-recommended-flow-of-contributing-to-an-open-source-project">A recommended flow of contributing to an Open Source project.<a class="headerlink" href="#a-recommended-flow-of-contributing-to-an-open-source-project" title="Permanent link">#</a></h2>
 <p>This guideline is for new beginners of OSS. If you are an experienced OSS developer, you can skip
 this section.</p>
 <ol>
@@ -452,7 +452,7 @@ this section.</p>
    $ git fetch origin &amp;&amp; git reset --hard master</code>
 2. Create a new branch based on the up-to-date master for new patches.
 3. Create a Pull Request from that patch branch.</p>
-<h2 id="local-development">Local development</h2>
+<h2 id="local-development">Local development<a class="headerlink" href="#local-development" title="Permanent link">#</a></h2>
 <p>To make sure the tests suites can run rightly, you need to install <a href="https://git-lfs.github.com/">Git LFS</a>, then</p>
 <div class="codehilite"><pre><span></span><code>$ git lfs install
 </code></pre></div>
@@ -467,13 +467,13 @@ dependencies, venv is still needed to start up PDM at the first time:</p>
 <p>Now, all dependencies are installed into local <code>__pypackages__</code> directory, which will be used for development
 after this point. The <code>pdm</code> executable located at <code>__pypackages__/&lt;VERSION&gt;/bin</code> can be run directly from outside,
 which is installed in editable mode, or you can use <code>python -m pdm</code> from inside the venv.</p>
-<h3 id="run-tests">Run tests</h3>
+<h3 id="run-tests">Run tests<a class="headerlink" href="#run-tests" title="Permanent link">#</a></h3>
 <div class="codehilite"><pre><span></span><code>$ pdm run pytest tests
 </code></pre></div>
 
 
 <p>The test suite is still simple and requires to be supplied, please help write more test cases.</p>
-<h3 id="code-style">Code style</h3>
+<h3 id="code-style">Code style<a class="headerlink" href="#code-style" title="Permanent link">#</a></h3>
 <p>PDM uses <code>pre-commit</code> for linting, you need to install <code>pre-commit</code> first, then:</p>
 <div class="codehilite"><pre><span></span><code>$ pre-commit install
 $ pre-commit run --all-files

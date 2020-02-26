@@ -486,10 +486,10 @@
                   <a href="https://github.com/frostming/pdm/edit/master/docs/dependency.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="manage-dependencies">Manage dependencies</h1>
+                <h1 id="manage-dependencies">Manage dependencies<a class="headerlink" href="#manage-dependencies" title="Permanent link">#</a></h1>
 <p>PDM provides a bunch of handful commands to help manage your project and dependencies.
 The following examples are run on Ubuntu 18.04, a few changes must be done if you are using Windows.</p>
-<h2 id="initialize-a-project">Initialize a project</h2>
+<h2 id="initialize-a-project">Initialize a project<a class="headerlink" href="#initialize-a-project" title="Permanent link">#</a></h2>
 <div class="codehilite"><pre><span></span><code>$ mkdir pdm-test <span class="o">&amp;&amp;</span> <span class="nb">cd</span> pdm-test
 $ pdm init
 </code></pre></div>
@@ -511,8 +511,8 @@ $ pdm init
 
 
 <p>If <code>pyproject.toml</code> is already present, it will be updated with <code>tool.pdm</code> contents.</p>
-<p>For details of the meaning of each field in <code>pyproject.toml</code>, please refer to <a href="/pyproject">Project File</a>.</p>
-<h2 id="add-dependencies">Add dependencies</h2>
+<p>For details of the meaning of each field in <code>pyproject.toml</code>, please refer to <a href="../pyproject/">Project File</a>.</p>
+<h2 id="add-dependencies">Add dependencies<a class="headerlink" href="#add-dependencies" title="Permanent link">#</a></h2>
 <div class="codehilite"><pre><span></span><code>$ pdm add requests
 $ pdm add -d pytest
 </code></pre></div>
@@ -526,7 +526,7 @@ if <code>-d/--dev</code> option is passed to the <code>pdm add</code> command.</
 <code>[tool.pdm.&lt;name&gt;-dependencies]</code> in the project file, respectively.</p>
 <p>After that, dependencies and sub-dependencies will be resolved properly and installed for you, you can view <code>pdm.lock</code> to see
 the resolved result of all dependencies.</p>
-<h3 id="save-version-specifiers">Save version specifiers</h3>
+<h3 id="save-version-specifiers">Save version specifiers<a class="headerlink" href="#save-version-specifiers" title="Permanent link">#</a></h3>
 <p>If the package is given without a version specifier like <code>pdm add requests</code>. PDM provides three different behaviors of what version
 specifier is saved for the dependency, which is given by <code>--save-&lt;strategy&gt;</code>(Assume <code>2.21.0</code> is the latest version that can be found
 for the dependency):</p>
@@ -535,7 +535,7 @@ for the dependency):</p>
 <li><code>exact</code>: Save the exact version specifier: <code>==2.21.0</code>.</li>
 <li><code>wildcard</code>: Don't constrain version and leave the specifier to be wildcard: <code>*</code>.</li>
 </ul>
-<h2 id="update-existing-dependencies">Update existing dependencies</h2>
+<h2 id="update-existing-dependencies">Update existing dependencies<a class="headerlink" href="#update-existing-dependencies" title="Permanent link">#</a></h2>
 <p>To update all dependencies in the lock file:</p>
 <div class="codehilite"><pre><span></span><code>$ pdm update
 </code></pre></div>
@@ -546,7 +546,7 @@ for the dependency):</p>
 </code></pre></div>
 
 
-<h3 id="about-update-strategy">About update strategy</h3>
+<h3 id="about-update-strategy">About update strategy<a class="headerlink" href="#about-update-strategy" title="Permanent link">#</a></h3>
 <p>Similary, PDM also provides 2 different behaviors of updating dependencies and sub-dependencies，
 which is given by <code>--update-&lt;strategy&gt;</code> option:</p>
 <ul>
@@ -554,20 +554,20 @@ which is given by <code>--update-&lt;strategy&gt;</code> option:</p>
 <li><code>eager</code>: Try to lock a newer version of the packages in command line and their recursive sub-dependencies
 and keep other dependencies as they are.</li>
 </ul>
-<h2 id="remove-existing-dependencies">Remove existing dependencies</h2>
+<h2 id="remove-existing-dependencies">Remove existing dependencies<a class="headerlink" href="#remove-existing-dependencies" title="Permanent link">#</a></h2>
 <p>To remove existing dependencies from project file and the library directory:</p>
 <div class="codehilite"><pre><span></span><code>$ pdm remove requests
 </code></pre></div>
 
 
-<h2 id="synchronize-the-project-packages-with-lock-file">Synchronize the project packages with lock file</h2>
+<h2 id="synchronize-the-project-packages-with-lock-file">Synchronize the project packages with lock file<a class="headerlink" href="#synchronize-the-project-packages-with-lock-file" title="Permanent link">#</a></h2>
 <p>There are two similar commands to do this job with a slight difference:</p>
 <ul>
 <li><code>pdm install</code> will check the lock file and relock if it mismatch with project file, then install.</li>
 <li><code>pdm sync</code> install dependencies in the lock file and will error out if it doesn't exist.
 Besides, <code>pdm sync</code> can also remove unneeded packages if <code>--clean</code> option is given.</li>
 </ul>
-<h2 id="show-what-packages-are-installed">Show what packages are installed</h2>
+<h2 id="show-what-packages-are-installed">Show what packages are installed<a class="headerlink" href="#show-what-packages-are-installed" title="Permanent link">#</a></h2>
 <p>Similar to <code>pip list</code>, you can list all packages installed in the packages directory:</p>
 <div class="codehilite"><pre><span></span><code>$ pdm list
 </code></pre></div>

@@ -404,7 +404,7 @@
                   <a href="https://github.com/frostming/pdm/edit/master/docs/project.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="manage-project">Manage project</h1>
+                <h1 id="manage-project">Manage project<a class="headerlink" href="#manage-project" title="Permanent link">#</a></h1>
 <p>PDM can act as a PEP 517 build backend, to enable that, write the following lines in your
 <code>pyproject.toml</code>. If you used <code>pdm init</code> to create it for you, it should be done already.</p>
 <div class="codehilite"><pre><span></span><code><span class="k">[build-system]</span>
@@ -421,18 +421,18 @@ way to specify how to install a package in editable mode. So you can't install a
 package by <code>pip install -e &lt;path_or_url&gt;</code>. But PDM can install a "PDM package" in editable
 mode.</p>
 </div>
-<h2 id="choose-a-python-interpreter">Choose a Python interpreter</h2>
+<h2 id="choose-a-python-interpreter">Choose a Python interpreter<a class="headerlink" href="#choose-a-python-interpreter" title="Permanent link">#</a></h2>
 <p>If you have used <code>pdm init</code>, you must have already seen how PDM detects and selects the Python
 interpreter. After initialized, you can also change the settings by <code>pdm use &lt;python_version_or_path&gt;</code>.
 The argument can be either a version specifier of any length, or a relative or absolute path to the
 python interpreter, but remember the Python interpreter must be compatible with <code>python_requires</code>
 constraint in the project file.</p>
-<h3 id="how-python_requires-controls-the-project">How <code>python_requires</code> controls the project</h3>
+<h3 id="how-python_requires-controls-the-project">How <code>python_requires</code> controls the project<a class="headerlink" href="#how-python_requires-controls-the-project" title="Permanent link">#</a></h3>
 <p>PDM respects the value of <code>python_requires</code> in the way that it tries to pick package candidates that can work
 on all python versions that <code>python_requires</code> contains. For example if <code>python_requires</code> is <code>&gt;=2.7</code>, PDM will try
 to find the latest version of <code>foo</code>, whose <code>python_requires</code> version range is a <strong>superset</strong> of <code>&gt;=2.7</code>.</p>
 <p>So, make sure you write <code>python_requires</code> properly if you don't want any outdated packages to be locked.</p>
-<h2 id="build-distribution-artifacts">Build distribution artifacts</h2>
+<h2 id="build-distribution-artifacts">Build distribution artifacts<a class="headerlink" href="#build-distribution-artifacts" title="Permanent link">#</a></h2>
 <div class="codehilite"><pre><span></span><code>$ pdm build
 - Building sdist...
 - Built pdm-test-0.0.0.tar.gz

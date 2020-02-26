@@ -472,40 +472,40 @@
                   <a href="https://github.com/frostming/pdm/edit/master/docs/index.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="introduction">Introduction</h1>
+                <h1 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">#</a></h1>
 <p>PDM is a modern Python package manager with <a href="https://www.python.org/dev/peps/pep-0582/">PEP 582</a> support. It installs and manages packages
  in a similar way to <code>npm</code> that doesn't need to create a virtualenv at all!</p>
-<h2 id="feature-highlights">Feature highlights</h2>
+<h2 id="feature-highlights">Feature highlights<a class="headerlink" href="#feature-highlights" title="Permanent link">#</a></h2>
 <ul>
 <li>PEP 582 local package installer and runner, no virtualenv involved at all.</li>
 <li>Simple and relatively fast dependency resolver, mainly for large binary distributions.</li>
 <li>A PEP 517 build backend.</li>
 </ul>
-<h2 id="installation">Installation</h2>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">#</a></h2>
 <p>PDM requires Python 3.7+ to be installed. It works on multiple platforms including Windows, Linux and MacOS.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>There is no restriction about what Python version that your project is using but installing
 PDM itself needs Python 3.7+.</p>
 </div>
-<h3 id="recommended-installation-method">Recommended installation method</h3>
+<h3 id="recommended-installation-method">Recommended installation method<a class="headerlink" href="#recommended-installation-method" title="Permanent link">#</a></h3>
 <p>To avoid messing up with the system Python environemnt, the most recommended way to install PDM
 is via <a href="https://pypi.org/project/pipx">pipx</a>:</p>
 <div class="codehilite"><pre><span></span><code>$ pipx install pdm
 </code></pre></div>
 
 
-<h3 id="other-installation-methods">Other installation methods</h3>
+<h3 id="other-installation-methods">Other installation methods<a class="headerlink" href="#other-installation-methods" title="Permanent link">#</a></h3>
 <p>Install PDM into user site with <code>pip</code>:</p>
 <div class="codehilite"><pre><span></span><code>$ pip install --user pdm
 </code></pre></div>
 
 
-<h2 id="use-with-ide">Use with IDE</h2>
+<h2 id="use-with-ide">Use with IDE<a class="headerlink" href="#use-with-ide" title="Permanent link">#</a></h2>
 <p>Now there are not built-in support or plugins for PEP 582 in most IDEs, you have to configure your tools manually.</p>
-<h3 id="pycharm">PyCharm</h3>
+<h3 id="pycharm">PyCharm<a class="headerlink" href="#pycharm" title="Permanent link">#</a></h3>
 <p>Mark <code>__pypackages__/&lt;major.minor&gt;/lib</code> as Sources Root.</p>
-<h3 id="vscode">VSCode</h3>
+<h3 id="vscode">VSCode<a class="headerlink" href="#vscode" title="Permanent link">#</a></h3>
 <p>Add following in the <code>settings.json</code>:</p>
 <div class="codehilite"><pre><span></span><code><span class="p">{</span>
   <span class="err">...</span>

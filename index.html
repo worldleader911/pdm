@@ -503,6 +503,13 @@ is via <a href="https://pypi.org/project/pipx">pipx</a>:</p>
 
 <h2 id="use-with-ide">Use with IDE<a class="headerlink" href="#use-with-ide" title="Permanent link">#</a></h2>
 <p>Now there are not built-in support or plugins for PEP 582 in most IDEs, you have to configure your tools manually.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>PDM will write and store project-wide configurations in <code>.pdm.toml</code> and you are recommended to add following lines
+in the <code>.gitignore</code>:</p>
+<p><code>.pdm.toml
+__pypackages__/</code></p>
+</div>
 <h3 id="pycharm">PyCharm<a class="headerlink" href="#pycharm" title="Permanent link">#</a></h3>
 <p>Mark <code>__pypackages__/&lt;major.minor&gt;/lib</code> as Sources Root.</p>
 <h3 id="vscode">VSCode<a class="headerlink" href="#vscode" title="Permanent link">#</a></h3>

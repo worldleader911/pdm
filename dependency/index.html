@@ -320,6 +320,40 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#set-pypi-index-url" class="md-nav__link">
+    Set PyPI index URL
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#set-in-configuration" class="md-nav__link">
+    Set in configuration
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-extra-sources-of-packages" class="md-nav__link">
+    Add extra sources of packages
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#specify-the-index-for-one-single-dependency" class="md-nav__link">
+    Specify the index for one single dependency
+  </a>
+  
+</li>
+      
       
       
       
@@ -467,6 +501,40 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#set-pypi-index-url" class="md-nav__link">
+    Set PyPI index URL
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#set-in-configuration" class="md-nav__link">
+    Set in configuration
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-extra-sources-of-packages" class="md-nav__link">
+    Add extra sources of packages
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#specify-the-index-for-one-single-dependency" class="md-nav__link">
+    Specify the index for one single dependency
+  </a>
+  
+</li>
+      
       
       
       
@@ -586,6 +654,32 @@ black <span class="m">19</span>.10b0
 ├── toml <span class="m">0</span>.10.0 <span class="o">[</span> required: &gt;<span class="o">=</span><span class="m">0</span>.9.4 <span class="o">]</span>
 └── typed-ast <span class="m">1</span>.4.1 <span class="o">[</span> required: &gt;<span class="o">=</span><span class="m">1</span>.4.0 <span class="o">]</span>
 bump2version <span class="m">1</span>.0.0
+</code></pre></div>
+
+
+<h2 id="set-pypi-index-url">Set PyPI index URL<a class="headerlink" href="#set-pypi-index-url" title="Permanent link">#</a></h2>
+<h3 id="set-in-configuration">Set in configuration<a class="headerlink" href="#set-in-configuration" title="Permanent link">#</a></h3>
+<p>You can specify a PyPI mirror URL by following commands:</p>
+<div class="codehilite"><pre><span></span><code>$ pdm config <span class="nb">set</span> -g pypi.url https://testpypi.org/simple
+</code></pre></div>
+
+
+<p>By default, PDM will read the pip's configuration files to decide the PyPI URL, and fallback
+to <code>https://pypi.org/simple</code> if none is found.</p>
+<h2 id="add-extra-sources-of-packages">Add extra sources of packages<a class="headerlink" href="#add-extra-sources-of-packages" title="Permanent link">#</a></h2>
+<p>Sometimes your packages may exist on a private repository other than PyPI(and its mirrors).
+These sources should be preserved in <code>pyproject.toml</code> and shipped with the project in deployment.</p>
+<div class="codehilite"><pre><span></span><code><span class="k">[[tool.pdm.source]]</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">&quot;http://example.com/private/index&quot;</span>
+<span class="n">verify_ssl</span> <span class="o">=</span> <span class="n">false</span>  <span class="c1"># Don&#39;t verify SSL, it is required when you are using `HTTP` or the certificate is trusted.</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s">&quot;private&quot;</span>
+</code></pre></div>
+
+
+<p>Use the name <code>name = "pypi"</code> if you want to override the configurated PyPI index.</p>
+<h2 id="specify-the-index-for-one-single-dependency">Specify the index for one single dependency<a class="headerlink" href="#specify-the-index-for-one-single-dependency" title="Permanent link">#</a></h2>
+<p>You can specify which index should be consulted only for one single dependency:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">requests</span> <span class="o">=</span> <span class="p">{</span><span class="n">version</span> <span class="o">=</span> <span class="s">&quot;*&quot;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="s">&quot;private&quot;</span><span class="p">}</span>
 </code></pre></div>
                 
                   

@@ -291,6 +291,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#show-the-current-python-environment" class="md-nav__link">
+    Show the current Python environment
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configrate-the-project" class="md-nav__link">
+    Configrate the project
+  </a>
+  
+</li>
+      
       
       
       
@@ -385,6 +399,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#show-the-current-python-environment" class="md-nav__link">
+    Show the current Python environment
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configrate-the-project" class="md-nav__link">
+    Configrate the project
+  </a>
+  
+</li>
+      
       
       
       
@@ -442,6 +470,47 @@ to find the latest version of <code>foo</code>, whose <code>python_requires</cod
 
 
 <p>The artifacts can then be uploaded to PyPI by <a href="https://pypi.org/project/twine">twine</a>.</p>
+<h2 id="show-the-current-python-environment">Show the current Python environment<a class="headerlink" href="#show-the-current-python-environment" title="Permanent link">#</a></h2>
+<div class="codehilite"><pre><span></span><code>$ pdm info
+Python Interpreter: D:/Programs/Python/Python38/python.exe <span class="o">(</span><span class="m">3</span>.8.0<span class="o">)</span>
+Project Root:       D:/Workspace/pdm
+                                                                                                                                   <span class="o">[</span><span class="m">10</span>:42<span class="o">]</span>
+$ pdm info --env
+<span class="o">{</span>
+  <span class="s2">&quot;implementation_name&quot;</span>: <span class="s2">&quot;cpython&quot;</span>,
+  <span class="s2">&quot;implementation_version&quot;</span>: <span class="s2">&quot;3.8.0&quot;</span>,
+  <span class="s2">&quot;os_name&quot;</span>: <span class="s2">&quot;nt&quot;</span>,
+  <span class="s2">&quot;platform_machine&quot;</span>: <span class="s2">&quot;AMD64&quot;</span>,
+  <span class="s2">&quot;platform_release&quot;</span>: <span class="s2">&quot;10&quot;</span>,
+  <span class="s2">&quot;platform_system&quot;</span>: <span class="s2">&quot;Windows&quot;</span>,
+  <span class="s2">&quot;platform_version&quot;</span>: <span class="s2">&quot;10.0.18362&quot;</span>,
+  <span class="s2">&quot;python_full_version&quot;</span>: <span class="s2">&quot;3.8.0&quot;</span>,
+  <span class="s2">&quot;platform_python_implementaiton&quot;</span>: <span class="s2">&quot;CPython&quot;</span>,
+  <span class="s2">&quot;python_version&quot;</span>: <span class="s2">&quot;3.8&quot;</span>,
+  <span class="s2">&quot;sys_platform&quot;</span>: <span class="s2">&quot;win32&quot;</span>
+<span class="o">}</span>
+</code></pre></div>
+
+
+<h2 id="configrate-the-project">Configrate the project<a class="headerlink" href="#configrate-the-project" title="Permanent link">#</a></h2>
+<p>Show the configurations:</p>
+<div class="codehilite"><pre><span></span><code>$ pdm config
+</code></pre></div>
+
+
+<p>Get one single configuration:</p>
+<div class="codehilite"><pre><span></span><code>$ pdm config get pypi.url
+</code></pre></div>
+
+
+<p>Change a configuration value and store in home configuration:</p>
+<div class="codehilite"><pre><span></span><code>$ pdm config <span class="nb">set</span> pypi.url <span class="s2">&quot;https://testpypi.org/simple&quot;</span>
+</code></pre></div>
+
+
+<p>Change a configuration value and store in <code>.pdm.toml</code>:</p>
+<div class="codehilite"><pre><span></span><code>$ pdm config <span class="nb">set</span> --local pypi.url <span class="s2">&quot;https://testpypi.org/simple&quot;</span>
+</code></pre></div>
                 
                   
                 

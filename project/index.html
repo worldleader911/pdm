@@ -554,7 +554,8 @@ It is easy to do it with PDM, via <code>-g/--global</code> option which is suppo
 almost the same as normal project except that <code>pyproject.toml</code> will be created automatically for you
 and it doesn't support build features. The idea is taken from Haskell's <a href="https://docs.haskellstack.org">stack</a>.</p>
 <p>However, unlike <code>stack</code>, PDM won't use global project automatically if a local project is not found.
-Users should pass <code>-g/--global</code> explicity to activate it, since it is not very pleasing if packages go to a wrong place.</p>
+By default, users should pass <code>-g/--global</code> explicity to activate it, since it is not very pleasing if packages go to a wrong place.
+To change this behavior, simply change the config <code>auto_global</code> to <code>true</code>.</p>
 <div class="admonition danger">
 <p class="admonition-title">NOTE</p>
 <p>Be careful with <code>remove</code> and <code>sync --clean</code> commands when global project is used. Because it may

@@ -312,13 +312,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#choose-another-directory-as-project-root" class="md-nav__link">
-    Choose another directory as project root
-  </a>
-  
-</li>
-      
       
       
       
@@ -430,13 +423,6 @@
         <li class="md-nav__item">
   <a href="#manage-global-project" class="md-nav__link">
     Manage global project
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#choose-another-directory-as-project-root" class="md-nav__link">
-    Choose another directory as project root
   </a>
   
 </li>
@@ -553,24 +539,15 @@ It is easy to do it with PDM, via <code>-g/--global</code> option which is suppo
 <p>If the option is passed, <code>~/.pdm/global-project</code> will be used as the project directory, which is
 almost the same as normal project except that <code>pyproject.toml</code> will be created automatically for you
 and it doesn't support build features. The idea is taken from Haskell's <a href="https://docs.haskellstack.org">stack</a>.</p>
-<p>However, unlike <code>stack</code>, PDM won't use global project automatically if a local project is not found.
-By default, users should pass <code>-g/--global</code> explicity to activate it, since it is not very pleasing if packages go to a wrong place.
+<p>However, unlike <code>stack</code>, by default, PDM won't use global project automatically if a local project is not found.
+Users should pass <code>-g/--global</code> explicitly to activate it, since it is not very pleasing if packages go to a wrong place.
 To change this behavior, simply change the config <code>auto_global</code> to <code>true</code>.</p>
+<p>If you want global project to track another project file other than <code>~/.pdm/global-project</code>, you can provide the
+project path following <code>-g/--global</code>.</p>
 <div class="admonition danger">
 <p class="admonition-title">NOTE</p>
 <p>Be careful with <code>remove</code> and <code>sync --clean</code> commands when global project is used. Because it may
 remove packages installed in your system Python.</p>
-</div>
-<h2 id="choose-another-directory-as-project-root">Choose another directory as project root<a class="headerlink" href="#choose-another-directory-as-project-root" title="Permanent link">#</a></h2>
-<p>The default project root is <code>cwd</code> or the nearest parent(at a max depth of 3) with a valid <code>pyproject.toml</code>,
-or <code>~/.pdm/global-project</code> if <code>-g/--global</code> flag is on. If you would like a different directory, pass it
-with <code>-p/--project</code> option. The project-level configuration will be changed, too.</p>
-<div class="admonition note">
-<p class="admonition-title">TIPS</p>
-<p>With the help of <code>-g/--global</code> and <code>-p/--project</code> options, you can gain a familiar experience of the
-old "venv" manners: inside an activated venv: <code>pdm install -gp .</code> will install all dependencies into the
-venv's library path. To make this happen, check the content of <code>.pdm.toml</code> and make sure <code>python.path</code>
-is correct.</p>
 </div>
                 
                   

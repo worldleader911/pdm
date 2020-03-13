@@ -312,6 +312,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#working-inside-a-virtualenv" class="md-nav__link">
+    Working inside a virtualenv
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configurations" class="md-nav__link">
+    Configurations
+  </a>
+  
+</li>
+      
       
       
       
@@ -423,6 +437,20 @@
         <li class="md-nav__item">
   <a href="#manage-global-project" class="md-nav__link">
     Manage global project
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working-inside-a-virtualenv" class="md-nav__link">
+    Working inside a virtualenv
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configurations" class="md-nav__link">
+    Configurations
   </a>
   
 </li>
@@ -549,6 +577,73 @@ project path following <code>-g/--global</code>.</p>
 <p>Be careful with <code>remove</code> and <code>sync --clean</code> commands when global project is used. Because it may
 remove packages installed in your system Python.</p>
 </div>
+<h2 id="working-inside-a-virtualenv">Working inside a virtualenv<a class="headerlink" href="#working-inside-a-virtualenv" title="Permanent link">#</a></h2>
+<p>Although PDM enforces PEP 582 by default, it also allows users to install packages into the virtualenv. It is controlled
+by the configuration item <code>use_venv</code>, when it is set to <code>True</code>, PDM will use the virtualenv <strong>when it is activated</strong>.</p>
+<h2 id="configurations">Configurations<a class="headerlink" href="#configurations" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Config Item</th>
+<th>Description</th>
+<th>Default Value</th>
+<th>Available in Project</th>
+<th>Env var</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cache_dir</code></td>
+<td>The root directory of cached files</td>
+<td>The default cache location on OS</td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>auto_global</code></td>
+<td>Use global package implicity if no local project is found</td>
+<td><code>False</code></td>
+<td>No</td>
+<td><code>PDM_AUTO_GLOBAL</code></td>
+</tr>
+<tr>
+<td><code>use_venv</code></td>
+<td>Install packages into the activated venv site packages instead of PEP 582</td>
+<td><code>False</code></td>
+<td>Yes</td>
+<td><code>PDM_USE_VENV</code></td>
+</tr>
+<tr>
+<td><code>python.path</code></td>
+<td>The Python interpreter path</td>
+<td></td>
+<td>Yes</td>
+<td><code>PDM_PYTHON_PATH</code></td>
+</tr>
+<tr>
+<td><code>python.use_pyenv</code></td>
+<td>Use the pyenv interpreter</td>
+<td><code>True</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pypi.url</code></td>
+<td>The URL of PyPI mirror</td>
+<td>Read <code>index-url</code> in <code>pip.conf</code>, or <code>https://pypi.org/simple</code> if not found</td>
+<td>Yes</td>
+<td><code>PDM_PYPI_URL</code></td>
+</tr>
+<tr>
+<td><code>pypi.verify_ssl</code></td>
+<td>Verify SSL certificate when query PyPI</td>
+<td>Read <code>trusted-hosts</code> in <code>pip.conf</code>, defaults to <code>True</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><em>If the env var is set, the value will take precendence over what is saved in the config file.</em></p>
                 
                   
                 

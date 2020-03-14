@@ -528,8 +528,8 @@ Assign it to an empty list to have no default options:</p>
 
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The default options are loaded first, then <code>add_arguments()</code> is called.</p>
 </div>
+<p>The default options are loaded first, then <code>add_arguments()</code> is called.</p>
 <h3 id="register-the-command-to-the-core-object">Register the command to the core object<a class="headerlink" href="#register-the-command-to-the-core-object" title="Permanent link">#</a></h3>
 <p>Write a function somewhere in your plugin project. There is no limit on what the name of the function is. The function
 should accept only one argument -- the PDM core object:</p>
@@ -589,6 +589,15 @@ which are not covered in the above example:</p>
 <h2 id="publish-your-plugin">Publish your plugin<a class="headerlink" href="#publish-your-plugin" title="Permanent link">#</a></h2>
 <p>Now you have defined your plugin already, let's distribute it to PyPI. PDM's plugins are discovered by entry point types.
 Create an <code>pdm.plugin</code> entry point and point to your plugin callable(yeah, it don't need to be a function, any callable object can work):</p>
+<p><strong>PDM</strong>:</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># pyproject.toml</span>
+
+<span class="k">[tool.pdm.entry_points.&quot;pdm.plugin&quot;]</span>
+<span class="n">hello</span> <span class="o">=</span> <span class="s">&quot;my_plugin:hello_plugin&quot;</span>
+</code></pre></div>
+
+
+<p>Note that <code>pdm.plugin</code> is wrapped with double quotes to be regarded as a single key.</p>
 <p><strong>setuptools</strong>:</p>
 <div class="codehilite"><pre><span></span><code><span class="c1"># setup.py</span>
 
@@ -597,14 +606,6 @@ Create an <code>pdm.plugin</code> entry point and point to your plugin callable(
     <span class="n">entry_points</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;pdm.plugin&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;hello = my_plugin:hello_plugin&quot;</span><span class="p">]}</span>
     <span class="o">...</span>
 <span class="p">)</span>
-</code></pre></div>
-
-
-<p><strong>PDM</strong>:</p>
-<div class="codehilite"><pre><span></span><code><span class="c1"># pyproject.toml</span>
-
-<span class="k">[tool.pdm.entry_points.&quot;pdm.plugin&quot;]</span>
-<span class="n">hello</span> <span class="o">=</span> <span class="s">&quot;my_plugin:hello_plugin&quot;</span>
 </code></pre></div>
                 
                   

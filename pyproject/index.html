@@ -366,6 +366,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#build-c-extensions" class="md-nav__link">
+    Build C extensions
+  </a>
+  
+</li>
+      
       
       
       
@@ -523,6 +530,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#build-c-extensions" class="md-nav__link">
+    Build C extensions
+  </a>
+  
+</li>
+      
       
       
       
@@ -620,6 +634,28 @@ use <code>url = "file:///path/to/file</code> instead.</p>
 format of <code>[tool.pdm.cli]</code> format:</p>
 <div class="codehilite"><pre><span></span><code><span class="k">[tool.pdm.entry_points.pytest11]</span>
 <span class="n">myplugin</span> <span class="o">=</span> <span class="s">&quot;mypackage.plugin:pytest_plugin&quot;</span>
+</code></pre></div>
+
+
+<h2 id="build-c-extensions">Build C extensions<a class="headerlink" href="#build-c-extensions" title="Permanent link">#</a></h2>
+<p>Currently building C extensions still rely on <code>setuptools</code>. You should write a python script which contains
+a function named <code>build</code> and accepts the arguments dictionary of <code>setup()</code> as the only parameter.
+In the function, update the dictionary with your <code>ext_modules</code> settings.</p>
+<p>Here is an example taken from <code>MarkupSafe</code>:</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># build.py</span>
+<span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">Extension</span>
+
+<span class="n">ext_modules</span> <span class="o">=</span> <span class="p">[</span><span class="n">Extension</span><span class="p">(</span><span class="s2">&quot;markupsafe._speedups&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;src/markupsafe/_speedups.c&quot;</span><span class="p">])]</span>
+
+<span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="n">setup_kwargs</span><span class="p">):</span>
+    <span class="n">setup_kwargs</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">ext_modules</span><span class="o">=</span><span class="n">ext_modules</span><span class="p">)</span>
+</code></pre></div>
+
+
+<p>Now, specify the build script path via <code>build</code> in the <code>pyproject.toml</code>:</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># pyproject.toml</span>
+<span class="k">[tool.pdm]</span>
+<span class="n">build</span> <span class="o">=</span> <span class="s">&quot;build.py&quot;</span>
 </code></pre></div>
                 
                   

@@ -638,9 +638,9 @@ format of <code>[tool.pdm.cli]</code> format:</p>
 
 
 <h2 id="build-c-extensions">Build C extensions<a class="headerlink" href="#build-c-extensions" title="Permanent link">#</a></h2>
-<p>Currently building C extensions still rely on <code>setuptools</code>. You should write a python script which contains
-a function named <code>build</code> and accepts the arguments dictionary of <code>setup()</code> as the only parameter.
-In the function, update the dictionary with your <code>ext_modules</code> settings.</p>
+<p>Currently building C extensions still relies on <code>setuptools</code>. You should write a python script which contains
+a function named <code>build</code> and accepts the parameter dictionary of <code>setup()</code> as the only argument.
+Update the dictionary with your <code>ext_modules</code> settings in the function.</p>
 <p>Here is an example taken from <code>MarkupSafe</code>:</p>
 <div class="codehilite"><pre><span></span><code><span class="c1"># build.py</span>
 <span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">Extension</span>

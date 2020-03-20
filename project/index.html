@@ -320,6 +320,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#import-project-metadata-from-existing-project-files" class="md-nav__link">
+    Import project metadata from existing project files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#configurations" class="md-nav__link">
     Configurations
   </a>
@@ -461,6 +468,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#import-project-metadata-from-existing-project-files" class="md-nav__link">
+    Import project metadata from existing project files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#configurations" class="md-nav__link">
     Configurations
   </a>
@@ -592,6 +606,17 @@ remove packages installed in your system Python.</p>
 <h2 id="working-inside-a-virtualenv">Working inside a virtualenv<a class="headerlink" href="#working-inside-a-virtualenv" title="Permanent link">#</a></h2>
 <p>Although PDM enforces PEP 582 by default, it also allows users to install packages into the virtualenv. It is controlled
 by the configuration item <code>use_venv</code>, when it is set to <code>True</code>, PDM will use the virtualenv <strong>when it is activated</strong>.</p>
+<h2 id="import-project-metadata-from-existing-project-files">Import project metadata from existing project files<a class="headerlink" href="#import-project-metadata-from-existing-project-files" title="Permanent link">#</a></h2>
+<p>If you are already other package manager tools like Pipenv or Poetry, it is easy to migrate to PDM.
+PDM provides <code>import</code> command so that you don't have to initialize the project manually, it now supports:</p>
+<ol>
+<li>Pipenv's <code>Pipfile</code></li>
+<li>Poetry's section in <code>pyproject.toml</code></li>
+<li>Flit's section in <code>pyproject.toml</code></li>
+<li><code>requirements.txt</code> format used by Pip</li>
+</ol>
+<p>Also, when you are executing <code>pdm init</code> or <code>pdm install</code>, PDM can auto-detect possible files to import
+if your PDM project has not been initialized yet.</p>
 <h2 id="configurations">Configurations<a class="headerlink" href="#configurations" title="Permanent link">#</a></h2>
 <table>
 <thead>

@@ -11,7 +11,7 @@
       
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.1.7">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.2.0">
     
     
       
@@ -19,7 +19,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.4c7052ca.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.18ac144a.min.css">
       
       
     
@@ -516,8 +516,8 @@
 <p>PDM provides a bunch of handful commands to help manage your project and dependencies.
 The following examples are run on Ubuntu 18.04, a few changes must be done if you are using Windows.</p>
 <h2 id="initialize-a-project">Initialize a project<a class="headerlink" href="#initialize-a-project" title="Permanent link">#</a></h2>
-<div class="codehilite"><pre><span></span><code>$ mkdir pdm-test <span class="o">&amp;&amp;</span> <span class="nb">cd</span> pdm-test
-$ pdm init
+<div class="codehilite"><pre><span></span><code><span class="gp">$</span> mkdir pdm-test <span class="o">&amp;&amp;</span> <span class="nb">cd</span> pdm-test
+<span class="gp">$</span> pdm init
 </code></pre></div>
 
 
@@ -539,8 +539,8 @@ $ pdm init
 <p>If <code>pyproject.toml</code> is already present, it will be updated with <code>tool.pdm</code> contents.</p>
 <p>For details of the meaning of each field in <code>pyproject.toml</code>, please refer to <a href="../pyproject/">Project File</a>.</p>
 <h2 id="add-dependencies">Add dependencies<a class="headerlink" href="#add-dependencies" title="Permanent link">#</a></h2>
-<div class="codehilite"><pre><span></span><code>$ pdm add requests
-$ pdm add -d pytest
+<div class="codehilite"><pre><span></span><code><span class="gp">$</span> pdm add requests
+<span class="gp">$</span> pdm add -d pytest
 </code></pre></div>
 
 
@@ -563,12 +563,12 @@ for the dependency):</p>
 </ul>
 <h2 id="update-existing-dependencies">Update existing dependencies<a class="headerlink" href="#update-existing-dependencies" title="Permanent link">#</a></h2>
 <p>To update all dependencies in the lock file:</p>
-<div class="codehilite"><pre><span></span><code>$ pdm update
+<div class="codehilite"><pre><span></span><code><span class="gp">$</span> pdm update
 </code></pre></div>
 
 
 <p>To update the specified package(s):</p>
-<div class="codehilite"><pre><span></span><code>$ pdm update requests
+<div class="codehilite"><pre><span></span><code><span class="gp">$</span> pdm update requests
 </code></pre></div>
 
 
@@ -582,7 +582,7 @@ and keep other dependencies as they are.</li>
 </ul>
 <h2 id="remove-existing-dependencies">Remove existing dependencies<a class="headerlink" href="#remove-existing-dependencies" title="Permanent link">#</a></h2>
 <p>To remove existing dependencies from project file and the library directory:</p>
-<div class="codehilite"><pre><span></span><code>$ pdm remove requests
+<div class="codehilite"><pre><span></span><code><span class="gp">$</span> pdm remove requests
 </code></pre></div>
 
 
@@ -595,7 +595,7 @@ Besides, <code>pdm sync</code> can also remove unneeded packages if <code>--clea
 </ul>
 <h2 id="show-what-packages-are-installed">Show what packages are installed<a class="headerlink" href="#show-what-packages-are-installed" title="Permanent link">#</a></h2>
 <p>Similar to <code>pip list</code>, you can list all packages installed in the packages directory:</p>
-<div class="codehilite"><pre><span></span><code>$ pdm list
+<div class="codehilite"><pre><span></span><code><span class="gp">$</span> pdm list
 </code></pre></div>
 
 
@@ -617,7 +617,7 @@ bump2version <span class="m">1</span>.0.0
 
 <h2 id="set-pypi-index-url">Set PyPI index URL<a class="headerlink" href="#set-pypi-index-url" title="Permanent link">#</a></h2>
 <p>You can specify a PyPI mirror URL by following commands:</p>
-<div class="codehilite"><pre><span></span><code>$ pdm config <span class="nb">set</span> pypi.url https://testpypi.org/simple
+<div class="codehilite"><pre><span></span><code><span class="gp">$</span> pdm config <span class="nb">set</span> pypi.url https://testpypi.org/simple
 </code></pre></div>
 
 
@@ -708,7 +708,7 @@ These sources should be preserved in <code>pyproject.toml</code> and shipped wit
       
     </div>
     
-      <script src="../assets/javascripts/vendor.22b62ea4.min.js"></script>
+      <script src="../assets/javascripts/vendor.d710d30a.min.js"></script>
       <script src="../assets/javascripts/bundle.5f27aba8.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
@@ -716,7 +716,7 @@ These sources should be preserved in <code>pyproject.toml</code> and shipped wit
           base: "..",
           features: [],
           search: Object.assign({
-            worker: "../assets/javascripts/worker/search.f6ebf1dc.min.js"
+            worker: "../assets/javascripts/worker/search.27c6a5e6.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>

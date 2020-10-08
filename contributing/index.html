@@ -9,7 +9,7 @@
       
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.0.1">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.0.2">
     
     
       
@@ -182,7 +182,7 @@
 
 
   <li class="md-nav__item">
-    <a href=".." title="Introduction" class="md-nav__link">
+    <a href=".." class="md-nav__link">
       Introduction
     </a>
   </li>
@@ -194,7 +194,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../dependency/" title="Manage dependencies" class="md-nav__link">
+    <a href="../dependency/" class="md-nav__link">
       Manage dependencies
     </a>
   </li>
@@ -206,7 +206,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../project/" title="Manage project" class="md-nav__link">
+    <a href="../project/" class="md-nav__link">
       Manage project
     </a>
   </li>
@@ -218,7 +218,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../pyproject/" title="Project file syntax" class="md-nav__link">
+    <a href="../pyproject/" class="md-nav__link">
       Project file syntax
     </a>
   </li>
@@ -230,7 +230,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../plugin/" title="Write a plugin" class="md-nav__link">
+    <a href="../plugin/" class="md-nav__link">
       Write a plugin
     </a>
   </li>
@@ -255,7 +255,7 @@
         <span class="md-nav__icon md-icon"></span>
       </label>
     
-    <a href="./" title="Contributing" class="md-nav__link md-nav__link--active">
+    <a href="./" class="md-nav__link md-nav__link--active">
       Contributing
     </a>
     
@@ -319,7 +319,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../changelog/" title="Change Log" class="md-nav__link">
+    <a href="../changelog/" class="md-nav__link">
       Change Log
     </a>
   </li>
@@ -435,31 +435,27 @@ this section.</p>
 3. Create a Pull Request from that patch branch.</p>
 <h2 id="local-development">Local development<a class="headerlink" href="#local-development" title="Permanent link">#</a></h2>
 <p>To make sure the tests suites can run rightly, you need to install <a href="https://git-lfs.github.com/">Git LFS</a>, then</p>
-<div class="codehilite"><pre><span></span><code>$ git lfs install
+<div class="bash codehilite"><pre><span></span><code>$ git lfs install
 </code></pre></div>
-
 
 <p>Then, you need to install base dependencies in a venv. Although PDM uses local package directory to install
 dependencies, venv is still needed to start up PDM at the first time:</p>
-<div class="codehilite"><pre><span></span><code>$ python setup_dev.py
+<div class="bash codehilite"><pre><span></span><code>$ python setup_dev.py
 </code></pre></div>
-
 
 <p>Now, all dependencies are installed into local <code>__pypackages__</code> directory, which will be used for development
 after this point. The <code>pdm</code> executable located at <code>__pypackages__/&lt;VERSION&gt;/bin</code> can be run directly from outside,
 which is installed in editable mode, or you can use <code>python -m pdm</code> from inside the venv.</p>
 <h3 id="run-tests">Run tests<a class="headerlink" href="#run-tests" title="Permanent link">#</a></h3>
-<div class="codehilite"><pre><span></span><code>$ pdm run pytest tests
+<div class="bash codehilite"><pre><span></span><code>$ pdm run pytest tests
 </code></pre></div>
-
 
 <p>The test suite is still simple and requires to be supplied, please help write more test cases.</p>
 <h3 id="code-style">Code style<a class="headerlink" href="#code-style" title="Permanent link">#</a></h3>
 <p>PDM uses <code>pre-commit</code> for linting, you need to install <code>pre-commit</code> first, then:</p>
-<div class="codehilite"><pre><span></span><code>$ pre-commit install
+<div class="bash codehilite"><pre><span></span><code>$ pre-commit install
 $ pre-commit run --all-files
 </code></pre></div>
-
 
 <p>PDM uses <code>black</code> coding style and <code>isort</code> for sorting import statements, if you are not following them,
 the CI will fail and your Pull Request will not be merged.</p>
@@ -481,7 +477,7 @@ the CI will fail and your Pull Request will not be merged.</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../plugin/" title="Write a plugin" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../plugin/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -496,7 +492,7 @@ the CI will fail and your Pull Request will not be merged.</p>
           </a>
         
         
-          <a href="../changelog/" title="Change Log" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../changelog/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
@@ -534,7 +530,7 @@ the CI will fail and your Pull Request will not be merged.</p>
     </div>
     
       <script src="../assets/javascripts/vendor.77e55a48.min.js"></script>
-      <script src="../assets/javascripts/bundle.aa3f9871.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      <script src="../assets/javascripts/bundle.9554a270.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({

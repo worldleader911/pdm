@@ -9,7 +9,7 @@
       
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.0.1">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.0.2">
     
     
       
@@ -182,7 +182,7 @@
 
 
   <li class="md-nav__item">
-    <a href=".." title="Introduction" class="md-nav__link">
+    <a href=".." class="md-nav__link">
       Introduction
     </a>
   </li>
@@ -194,7 +194,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../dependency/" title="Manage dependencies" class="md-nav__link">
+    <a href="../dependency/" class="md-nav__link">
       Manage dependencies
     </a>
   </li>
@@ -206,7 +206,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../project/" title="Manage project" class="md-nav__link">
+    <a href="../project/" class="md-nav__link">
       Manage project
     </a>
   </li>
@@ -218,7 +218,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../pyproject/" title="Project file syntax" class="md-nav__link">
+    <a href="../pyproject/" class="md-nav__link">
       Project file syntax
     </a>
   </li>
@@ -243,7 +243,7 @@
         <span class="md-nav__icon md-icon"></span>
       </label>
     
-    <a href="./" title="Write a plugin" class="md-nav__link md-nav__link--active">
+    <a href="./" class="md-nav__link md-nav__link--active">
       Write a plugin
     </a>
     
@@ -328,7 +328,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../contributing/" title="Contributing" class="md-nav__link">
+    <a href="../contributing/" class="md-nav__link">
       Contributing
     </a>
   </li>
@@ -340,7 +340,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../changelog/" title="Change Log" class="md-nav__link">
+    <a href="../changelog/" class="md-nav__link">
       Change Log
     </a>
   </li>
@@ -459,7 +459,7 @@ of the core project it may have a chance to be absorbed into PDM.</p>
 <p>In the following sections, I will show an example of adding a new command <code>hello</code> which reads <code>hello.name</code> config.</p>
 <h3 id="write-the-command">Write the command<a class="headerlink" href="#write-the-command" title="Permanent link">#</a></h3>
 <p>The PDM's CLI module is designed in a way that user can easily "inherit and modify". To write a new command:</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">pdm.cli.commands.base</span> <span class="kn">import</span> <span class="n">BaseCommand</span>
+<div class="python codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">pdm.cli.commands.base</span> <span class="kn">import</span> <span class="n">BaseCommand</span>
 
 <span class="k">class</span> <span class="nc">HelloCommand</span><span class="p">(</span><span class="n">BaseCommand</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Say hello to the specified person.</span>
@@ -477,7 +477,6 @@ of the core project it may have a chance to be absorbed into PDM.</p>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hello, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </code></pre></div>
 
-
 <p>First create a new <code>HelloCommand</code> class inherting from <code>pdm.cli.commands.base.BaseCommand</code>, it has two major functions:</p>
 <ul>
 <li><code>add_arguments()</code> to manipulate the argument parser passed as the only argument,
@@ -489,11 +488,10 @@ of the core project it may have a chance to be absorbed into PDM.</p>
 <p>Besides, PDM's subcommand has two default options: <code>-v/--verbose</code> to change the verbosity level and <code>-g/--global</code> to enable global project.
 If you don't want these default options, override the <code>arguments</code> class attribute to a list of <code>pdm.cli.options.Option</code> objects.
 Assign it to an empty list to have no default options:</p>
-<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">HelloCommand</span><span class="p">(</span><span class="n">BaseCommand</span><span class="p">):</span>
+<div class="python codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">HelloCommand</span><span class="p">(</span><span class="n">BaseCommand</span><span class="p">):</span>
 
 <span class="hll">    <span class="n">arguments</span> <span class="o">=</span> <span class="p">[]</span>
 </span></code></pre></div>
-
 
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -502,16 +500,15 @@ Assign it to an empty list to have no default options:</p>
 <h3 id="register-the-command-to-the-core-object">Register the command to the core object<a class="headerlink" href="#register-the-command-to-the-core-object" title="Permanent link">#</a></h3>
 <p>Write a function somewhere in your plugin project. There is no limit on what the name of the function is. The function
 should accept only one argument -- the PDM core object:</p>
-<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">hello_plugin</span><span class="p">(</span><span class="n">core</span><span class="p">):</span>
+<div class="python codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">hello_plugin</span><span class="p">(</span><span class="n">core</span><span class="p">):</span>
 <span class="hll">    <span class="n">core</span><span class="o">.</span><span class="n">register_command</span><span class="p">(</span><span class="n">HelloCommand</span><span class="p">,</span> <span class="s2">&quot;hello&quot;</span><span class="p">)</span>
 </span></code></pre></div>
-
 
 <p>Call <code>core.register_command()</code> to register the command, the second argument as the name of the subcommand is optional.
 PDM will look for the <code>HelloCommand</code>'s <code>name</code> attribute if the name is not passed.</p>
 <h3 id="add-a-new-config-item">Add a new config item<a class="headerlink" href="#add-a-new-config-item" title="Permanent link">#</a></h3>
 <p>Remember in the first code snippet, <code>hello.name</code> config key is consulted for the name if not passed via the command line.</p>
-<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">HelloCommand</span><span class="p">(</span><span class="n">BaseCommand</span><span class="p">):</span>
+<div class="python codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">HelloCommand</span><span class="p">(</span><span class="n">BaseCommand</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Say hello to the specified person.</span>
 <span class="sd">    If none is given, will read from &quot;hello.name&quot; config.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -527,16 +524,14 @@ PDM will look for the <code>HelloCommand</code>'s <code>name</code> attribute if
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hello, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </code></pre></div>
 
-
 <p>Till now, if you query the config value by <code>pdm config get hello.name</code>, an error will pop up saying it is not a valid config key.
 You need to register the config item, too:</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">pdm.project.config</span> <span class="kn">import</span> <span class="n">ConfigItem</span>
+<div class="python codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">pdm.project.config</span> <span class="kn">import</span> <span class="n">ConfigItem</span>
 
 <span class="k">def</span> <span class="nf">hello_plugin</span><span class="p">(</span><span class="n">core</span><span class="p">):</span>
     <span class="n">core</span><span class="o">.</span><span class="n">register_command</span><span class="p">(</span><span class="n">HelloCommand</span><span class="p">,</span> <span class="s2">&quot;hello&quot;</span><span class="p">)</span>
 <span class="hll">    <span class="n">core</span><span class="o">.</span><span class="n">add_config</span><span class="p">(</span><span class="s2">&quot;hello.name&quot;</span><span class="p">,</span> <span class="n">ConfigItem</span><span class="p">(</span><span class="s2">&quot;The person&#39;s name&quot;</span><span class="p">,</span> <span class="s2">&quot;John&quot;</span><span class="p">))</span>
 </span></code></pre></div>
-
 
 <p>where <code>ConfigItem</code> class takes 4 parameters, in the following order:</p>
 <ul>
@@ -559,16 +554,15 @@ which are not covered in the above example:</p>
 <p>Now you have defined your plugin already, let's distribute it to PyPI. PDM's plugins are discovered by entry point types.
 Create an <code>pdm.plugin</code> entry point and point to your plugin callable(yeah, it don't need to be a function, any callable object can work):</p>
 <p><strong>PDM</strong>:</p>
-<div class="codehilite"><pre><span></span><code><span class="c1"># pyproject.toml</span>
+<div class="toml codehilite"><pre><span></span><code><span class="c1"># pyproject.toml</span>
 
 <span class="k">[tool.pdm.entry_points.&quot;pdm.plugin&quot;]</span>
 <span class="n">hello</span> <span class="o">=</span> <span class="s">&quot;my_plugin:hello_plugin&quot;</span>
 </code></pre></div>
 
-
 <p>Note that <code>pdm.plugin</code> is wrapped with double quotes to be regarded as a single key.</p>
 <p><strong>setuptools</strong>:</p>
-<div class="codehilite"><pre><span></span><code><span class="c1"># setup.py</span>
+<div class="python codehilite"><pre><span></span><code><span class="c1"># setup.py</span>
 
 <span class="n">setup</span><span class="p">(</span>
     <span class="o">...</span>
@@ -594,7 +588,7 @@ Create an <code>pdm.plugin</code> entry point and point to your plugin callable(
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../pyproject/" title="Project file syntax" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../pyproject/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -609,7 +603,7 @@ Create an <code>pdm.plugin</code> entry point and point to your plugin callable(
           </a>
         
         
-          <a href="../contributing/" title="Contributing" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../contributing/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
@@ -647,7 +641,7 @@ Create an <code>pdm.plugin</code> entry point and point to your plugin callable(
     </div>
     
       <script src="../assets/javascripts/vendor.77e55a48.min.js"></script>
-      <script src="../assets/javascripts/bundle.aa3f9871.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      <script src="../assets/javascripts/bundle.9554a270.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({

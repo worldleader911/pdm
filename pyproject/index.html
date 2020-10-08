@@ -549,6 +549,11 @@
 <h2 id="package-version">Package version<a class="headerlink" href="#package-version" title="Permanent link">#</a></h2>
 <p>You can specify a file source for <code>version</code> field like: <code>version = {from = "pdm/__init__.py"}</code>, in this form,
 the version will be read from the <code>__version__</code> variable in that file.</p>
+<p>PDM can also read version from SCM tags. If you are using git or hg as the version control system, define the
+<code>version</code> as follows:</p>
+<div class="toml codehilite"><pre><span></span><code><span class="n">version</span> <span class="o">=</span> <span class="p">{</span><span class="n">use_scm</span> <span class="o">=</span> <span class="n">true</span><span class="p">}</span>
+</code></pre></div>
+
 <h2 id="include-and-exclude-pacakge-files">Include and exclude pacakge files<a class="headerlink" href="#include-and-exclude-pacakge-files" title="Permanent link">#</a></h2>
 <p>The way of specifying include and exclude files are simple, they are given as a list of glob patterns:</p>
 <div class="toml codehilite"><pre><span></span><code><span class="n">includes</span> <span class="o">=</span> <span class="p">[</span>

@@ -488,17 +488,17 @@ PDM itself needs Python 3.7+.</p>
 <h3 id="recommended-installation-method">Recommended installation method<a class="headerlink" href="#recommended-installation-method" title="Permanent link">#</a></h3>
 <p>To avoid messing up with the system Python environemnt, the most recommended way to install PDM
 is via <a href="https://pypi.org/project/pipx">pipx</a>:</p>
-<div class="console codehilite"><pre><span></span><code><span class="gp">$</span> pipx install pdm
+<div class="codehilite"><pre><span></span><code><span class="gp">$</span> pipx install pdm
 </code></pre></div>
 
 <h3 id="other-installation-methods">Other installation methods<a class="headerlink" href="#other-installation-methods" title="Permanent link">#</a></h3>
 <p>Install PDM into user site with <code>pip</code>:</p>
-<div class="console codehilite"><pre><span></span><code><span class="gp">$</span> pip install --user pdm
+<div class="codehilite"><pre><span></span><code><span class="gp">$</span> pip install --user pdm
 </code></pre></div>
 
 <h3 id="use-the-docker-image">Use the docker image<a class="headerlink" href="#use-the-docker-image" title="Permanent link">#</a></h3>
 <p>PDM also provides a docker image to ease your deployment flow, to use it, write a Dockerfile with following content:</p>
-<div class="Dockerfile codehilite"><pre><span></span><code><span class="k">FROM</span> <span class="s">frostming/pdm</span>
+<div class="codehilite"><pre><span></span><code><span class="k">FROM</span> <span class="s">frostming/pdm</span>
 
 <span class="k">COPY</span> . /app
 
@@ -518,7 +518,7 @@ in the <code>.gitignore</code>:</p>
 <p>Mark <code>__pypackages__/&lt;major.minor&gt;/lib</code> as Sources Root.</p>
 <h3 id="vscode">VSCode<a class="headerlink" href="#vscode" title="Permanent link">#</a></h3>
 <p>Add following in the <code>settings.json</code>:</p>
-<div class="json codehilite"><pre><span></span><code><span class="p">{</span>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
   <span class="err">...</span>
   <span class="nt">&quot;python.autoComplete.extraPaths&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;__pypackages__/&lt;major.minor&gt;/lib&quot;</span><span class="p">]</span>
 <span class="p">}</span>

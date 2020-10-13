@@ -486,7 +486,7 @@
                 <h1 id="manage-project">Manage project<a class="headerlink" href="#manage-project" title="Permanent link">#</a></h1>
 <p>PDM can act as a PEP 517 build backend, to enable that, write the following lines in your
 <code>pyproject.toml</code>. If you used <code>pdm init</code> to create it for you, it should be done already.</p>
-<div class="toml codehilite"><pre><span></span><code><span class="k">[build-system]</span>
+<div class="codehilite"><pre><span></span><code><span class="k">[build-system]</span>
 <span class="n">requires</span> <span class="o">=</span> <span class="k">[&quot;pdm&quot;]</span>
 <span class="n">build-backend</span> <span class="o">=</span> <span class="s">&quot;pdm.pep517.api&quot;</span>
 </code></pre></div>
@@ -511,7 +511,7 @@ on all python versions that <code>python_requires</code> contains. For example i
 to find the latest version of <code>foo</code>, whose <code>python_requires</code> version range is a <strong>superset</strong> of <code>&gt;=2.7</code>.</p>
 <p>So, make sure you write <code>python_requires</code> properly if you don't want any outdated packages to be locked.</p>
 <h2 id="build-distribution-artifacts">Build distribution artifacts<a class="headerlink" href="#build-distribution-artifacts" title="Permanent link">#</a></h2>
-<div class="console codehilite"><pre><span></span><code><span class="gp">$</span> pdm build
+<div class="codehilite"><pre><span></span><code><span class="gp">$</span> pdm build
 <span class="go">- Building sdist...</span>
 <span class="go">- Built pdm-test-0.0.0.tar.gz</span>
 <span class="go">- Building wheel...</span>
@@ -520,7 +520,7 @@ to find the latest version of <code>foo</code>, whose <code>python_requires</cod
 
 <p>The artifacts can then be uploaded to PyPI by <a href="https://pypi.org/project/twine">twine</a>.</p>
 <h2 id="show-the-current-python-environment">Show the current Python environment<a class="headerlink" href="#show-the-current-python-environment" title="Permanent link">#</a></h2>
-<div class="console codehilite"><pre><span></span><code><span class="gp">$</span> pdm info
+<div class="codehilite"><pre><span></span><code><span class="gp">$</span> pdm info
 <span class="go">Python Interpreter: D:/Programs/Python/Python38/python.exe (3.8.0)</span>
 <span class="go">Project Root:       D:/Workspace/pdm</span>
 <span class="go">                                                                                                                                   [10:42]</span>
@@ -542,19 +542,19 @@ to find the latest version of <code>foo</code>, whose <code>python_requires</cod
 
 <h2 id="configrate-the-project">Configrate the project<a class="headerlink" href="#configrate-the-project" title="Permanent link">#</a></h2>
 <p>Show the configurations:</p>
-<div class="console codehilite"><pre><span></span><code><span class="gp">$</span> pdm config
+<div class="codehilite"><pre><span></span><code><span class="gp">$</span> pdm config
 </code></pre></div>
 
 <p>Get one single configuration:</p>
-<div class="console codehilite"><pre><span></span><code><span class="gp">$</span> pdm config get pypi.url
+<div class="codehilite"><pre><span></span><code><span class="gp">$</span> pdm config get pypi.url
 </code></pre></div>
 
 <p>Change a configuration value and store in home configuration:</p>
-<div class="console codehilite"><pre><span></span><code><span class="gp">$</span> pdm config <span class="nb">set</span> pypi.url <span class="s2">&quot;https://testpypi.org/simple&quot;</span>
+<div class="codehilite"><pre><span></span><code><span class="gp">$</span> pdm config <span class="nb">set</span> pypi.url <span class="s2">&quot;https://testpypi.org/simple&quot;</span>
 </code></pre></div>
 
 <p>Change a configuration value and store in <code>.pdm.toml</code>:</p>
-<div class="console codehilite"><pre><span></span><code><span class="gp">$</span> pdm config <span class="nb">set</span> --local pypi.url <span class="s2">&quot;https://testpypi.org/simple&quot;</span>
+<div class="codehilite"><pre><span></span><code><span class="gp">$</span> pdm config <span class="nb">set</span> --local pypi.url <span class="s2">&quot;https://testpypi.org/simple&quot;</span>
 </code></pre></div>
 
 <p>The configuration files are searched in the following order:</p>
@@ -600,7 +600,7 @@ if your PDM project has not been initialized yet.</p>
 <h2 id="export-locked-packeges-to-alternative-formats">Export locked packeges to alternative formats<a class="headerlink" href="#export-locked-packeges-to-alternative-formats" title="Permanent link">#</a></h2>
 <p>You can also export <code>pdm.lock</code> to other formats, to ease the CI flow or image building process. Currently,
 only <code>requirements.txt</code> format is supported:</p>
-<div class="console codehilite"><pre><span></span><code><span class="gp">$</span> pdm <span class="nb">export</span> -o requirements.txt
+<div class="codehilite"><pre><span></span><code><span class="gp">$</span> pdm <span class="nb">export</span> -o requirements.txt
 </code></pre></div>
 
 <h2 id="configurations">Configurations<a class="headerlink" href="#configurations" title="Permanent link">#</a></h2>

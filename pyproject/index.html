@@ -551,12 +551,12 @@
 the version will be read from the <code>__version__</code> variable in that file.</p>
 <p>PDM can also read version from SCM tags. If you are using git or hg as the version control system, define the
 <code>version</code> as follows:</p>
-<div class="toml codehilite"><pre><span></span><code><span class="n">version</span> <span class="o">=</span> <span class="p">{</span><span class="n">use_scm</span> <span class="o">=</span> <span class="n">true</span><span class="p">}</span>
+<div class="codehilite"><pre><span></span><code><span class="n">version</span> <span class="o">=</span> <span class="p">{</span><span class="n">use_scm</span> <span class="o">=</span> <span class="n">true</span><span class="p">}</span>
 </code></pre></div>
 
 <h2 id="include-and-exclude-pacakge-files">Include and exclude pacakge files<a class="headerlink" href="#include-and-exclude-pacakge-files" title="Permanent link">#</a></h2>
 <p>The way of specifying include and exclude files are simple, they are given as a list of glob patterns:</p>
-<div class="toml codehilite"><pre><span></span><code><span class="n">includes</span> <span class="o">=</span> <span class="p">[</span>
+<div class="codehilite"><pre><span></span><code><span class="n">includes</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s">&quot;**/*.json&quot;</span><span class="p">,</span>
     <span class="s">&quot;mypackage/&quot;</span><span class="p">,</span>
 <span class="p">]</span>
@@ -569,35 +569,35 @@ the version will be read from the <code>__version__</code> variable in that file
 Packages can also lie in <code>src</code> directory that PDM can find it.</p>
 <h2 id="dependency-specification">Dependency specification<a class="headerlink" href="#dependency-specification" title="Permanent link">#</a></h2>
 <h3 id="named-requirement">Named requirement<a class="headerlink" href="#named-requirement" title="Permanent link">#</a></h3>
-<div class="toml codehilite"><pre><span></span><code><span class="n">requests</span> <span class="o">=</span> <span class="s">&quot;&gt;=2.20.0&quot;</span>
+<div class="codehilite"><pre><span></span><code><span class="n">requests</span> <span class="o">=</span> <span class="s">&quot;&gt;=2.20.0&quot;</span>
 <span class="n">pytz</span> <span class="o">=</span> <span class="s">&quot;*&quot;</span>
 </code></pre></div>
 
 <p><code>"*"</code> means there is no constraint of what version should be used.</p>
 <h3 id="requirement-given-by-file-url">Requirement given by file URL<a class="headerlink" href="#requirement-given-by-file-url" title="Permanent link">#</a></h3>
-<div class="toml codehilite"><pre><span></span><code><span class="n">pdm</span> <span class="o">=</span> <span class="p">{</span><span class="n">url</span><span class="o">=</span><span class="s">&quot;https://github.com/frostming/marko/archive/0.2.6.zip&quot;</span><span class="p">}</span>
+<div class="codehilite"><pre><span></span><code><span class="n">pdm</span> <span class="o">=</span> <span class="p">{</span><span class="n">url</span><span class="o">=</span><span class="s">&quot;https://github.com/frostming/marko/archive/0.2.6.zip&quot;</span><span class="p">}</span>
 </code></pre></div>
 
 <h3 id="requirement-given-by-local-path">Requirement given by local path<a class="headerlink" href="#requirement-given-by-local-path" title="Permanent link">#</a></h3>
-<div class="toml codehilite"><pre><span></span><code><span class="n">requests</span> <span class="o">=</span> <span class="p">{</span><span class="n">path</span><span class="o">=</span><span class="s">&quot;/path/to/requests&quot;</span><span class="p">}</span>
+<div class="codehilite"><pre><span></span><code><span class="n">requests</span> <span class="o">=</span> <span class="p">{</span><span class="n">path</span><span class="o">=</span><span class="s">&quot;/path/to/requests&quot;</span><span class="p">}</span>
 </code></pre></div>
 
 <p>In this case, the path should be a <strong>directory</strong> on local machine. If you want to install a local <strong>file</strong>,
 use <code>url = "file:///path/to/file</code> instead.</p>
 <h3 id="vcs-requirement">VCS requirement<a class="headerlink" href="#vcs-requirement" title="Permanent link">#</a></h3>
-<div class="toml codehilite"><pre><span></span><code><span class="n">requests</span> <span class="o">=</span> <span class="p">{</span><span class="n">git</span><span class="o">=</span><span class="s">&quot;https://github.com/frostming/marko.git&quot;</span><span class="p">,</span> <span class="n">ref</span><span class="o">=</span><span class="s">&quot;master&quot;</span><span class="p">}</span>
+<div class="codehilite"><pre><span></span><code><span class="n">requests</span> <span class="o">=</span> <span class="p">{</span><span class="n">git</span><span class="o">=</span><span class="s">&quot;https://github.com/frostming/marko.git&quot;</span><span class="p">,</span> <span class="n">ref</span><span class="o">=</span><span class="s">&quot;master&quot;</span><span class="p">}</span>
 </code></pre></div>
 
 <p>PDM supports all VCS schemes that are supported by <code>pip</code>.</p>
 <h3 id="editable-requirement">Editable requirement<a class="headerlink" href="#editable-requirement" title="Permanent link">#</a></h3>
 <p>Both VCS requirement and local directory requirement can have an <code>editable = true</code> flag, meaning it should be installed in editable mode.</p>
 <h3 id="requirement-with-markers">Requirement with markers<a class="headerlink" href="#requirement-with-markers" title="Permanent link">#</a></h3>
-<div class="toml codehilite"><pre><span></span><code><span class="n">requests</span> <span class="o">=</span> <span class="p">{</span><span class="n">version</span><span class="o">=</span><span class="s">&quot;&gt;=2.20.0&quot;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s">&quot;os_name!=&#39;nt&#39;&quot;</span><span class="p">}</span>
+<div class="codehilite"><pre><span></span><code><span class="n">requests</span> <span class="o">=</span> <span class="p">{</span><span class="n">version</span><span class="o">=</span><span class="s">&quot;&gt;=2.20.0&quot;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s">&quot;os_name!=&#39;nt&#39;&quot;</span><span class="p">}</span>
 </code></pre></div>
 
 <h3 id="extras-require">Extras require<a class="headerlink" href="#extras-require" title="Permanent link">#</a></h3>
 <p>You can have some requirements optional, by putting them under non-default dependency section, as follows:</p>
-<div class="toml codehilite"><pre><span></span><code><span class="k">[tool.pdm]</span>
+<div class="codehilite"><pre><span></span><code><span class="k">[tool.pdm]</span>
 <span class="n">extras</span> <span class="o">=</span> <span class="k">[&quot;mysql&quot;]</span>
 
 <span class="k">[tool.pdm.mysql-dependencies]</span>
@@ -606,7 +606,7 @@ use <code>url = "file:///path/to/file</code> instead.</p>
 
 <p>Note that the <code>extras</code> definition is required, otherwise the requirments is not regarded as the package's requirements. The value is a list of dependency sections that you want to include as extras.</p>
 <p>You can also combine the requirements from several sections to an extra require:</p>
-<div class="toml codehilite"><pre><span></span><code><span class="k">[tool.pdm]</span>
+<div class="codehilite"><pre><span></span><code><span class="k">[tool.pdm]</span>
 <span class="n">extras</span> <span class="o">=</span> <span class="k">[&quot;mysql&quot;, &quot;postgres&quot;, &quot;sql=mysql|postgres&quot;]</span>
 
 <span class="k">[tool.pdm.mysql-dependencies]</span>
@@ -617,7 +617,7 @@ use <code>url = "file:///path/to/file</code> instead.</p>
 </code></pre></div>
 
 <p>This <code>pyproject.toml</code> produces the equivalent <code>extras_requires</code> as in <code>setup.py</code>:</p>
-<div class="py codehilite"><pre><span></span><code><span class="n">extras_require</span> <span class="o">=</span> <span class="p">{</span>
+<div class="codehilite"><pre><span></span><code><span class="n">extras_require</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;mysql&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;mysqlclient&quot;</span><span class="p">],</span>
     <span class="s2">&quot;postgres&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;psycopg2&quot;</span><span class="p">],</span>
     <span class="s2">&quot;sql&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;mysqlclient&quot;</span><span class="p">,</span> <span class="s2">&quot;psycopg2&quot;</span><span class="p">]</span>
@@ -626,12 +626,12 @@ use <code>url = "file:///path/to/file</code> instead.</p>
 
 <h2 id="console-scripts">Console scripts<a class="headerlink" href="#console-scripts" title="Permanent link">#</a></h2>
 <p>The following content:</p>
-<div class="toml codehilite"><pre><span></span><code><span class="k">[tool.pdm.cli]</span>
+<div class="codehilite"><pre><span></span><code><span class="k">[tool.pdm.cli]</span>
 <span class="n">mycli</span> <span class="o">=</span> <span class="s">&quot;mycli.__main__:main&quot;</span>
 </code></pre></div>
 
 <p>will be translated to setuptools style:</p>
-<div class="python codehilite"><pre><span></span><code><span class="n">entry_points</span> <span class="o">=</span> <span class="p">{</span>
+<div class="codehilite"><pre><span></span><code><span class="n">entry_points</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;console_scripts&#39;</span><span class="p">:</span> <span class="p">[</span>
         <span class="s1">&#39;mycli=mycli.__main__:main&#39;</span>
     <span class="p">]</span>
@@ -641,7 +641,7 @@ use <code>url = "file:///path/to/file</code> instead.</p>
 <h2 id="entry-points">Entry points<a class="headerlink" href="#entry-points" title="Permanent link">#</a></h2>
 <p>Other types of entry points are given by <code>[tool.pdm.entry_points.&lt;type&gt;]</code> section, with the same
 format of <code>[tool.pdm.cli]</code> format:</p>
-<div class="toml codehilite"><pre><span></span><code><span class="k">[tool.pdm.entry_points.pytest11]</span>
+<div class="codehilite"><pre><span></span><code><span class="k">[tool.pdm.entry_points.pytest11]</span>
 <span class="n">myplugin</span> <span class="o">=</span> <span class="s">&quot;mypackage.plugin:pytest_plugin&quot;</span>
 </code></pre></div>
 
@@ -650,7 +650,7 @@ format of <code>[tool.pdm.cli]</code> format:</p>
 a function named <code>build</code> and accepts the parameter dictionary of <code>setup()</code> as the only argument.
 Update the dictionary with your <code>ext_modules</code> settings in the function.</p>
 <p>Here is an example taken from <code>MarkupSafe</code>:</p>
-<div class="python codehilite"><pre><span></span><code><span class="c1"># build.py</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># build.py</span>
 <span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">Extension</span>
 
 <span class="n">ext_modules</span> <span class="o">=</span> <span class="p">[</span><span class="n">Extension</span><span class="p">(</span><span class="s2">&quot;markupsafe._speedups&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;src/markupsafe/_speedups.c&quot;</span><span class="p">])]</span>
@@ -660,7 +660,7 @@ Update the dictionary with your <code>ext_modules</code> settings in the functio
 </code></pre></div>
 
 <p>Now, specify the build script path via <code>build</code> in the <code>pyproject.toml</code>:</p>
-<div class="toml codehilite"><pre><span></span><code><span class="c1"># pyproject.toml</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># pyproject.toml</span>
 <span class="k">[tool.pdm]</span>
 <span class="n">build</span> <span class="o">=</span> <span class="s">&quot;build.py&quot;</span>
 </code></pre></div>

@@ -459,7 +459,7 @@ of the core project it may have a chance to be absorbed into PDM.</p>
 <p>In the following sections, I will show an example of adding a new command <code>hello</code> which reads <code>hello.name</code> config.</p>
 <h3 id="write-the-command">Write the command<a class="headerlink" href="#write-the-command" title="Permanent link">#</a></h3>
 <p>The PDM's CLI module is designed in a way that user can easily "inherit and modify". To write a new command:</p>
-<div class="python codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">pdm.cli.commands.base</span> <span class="kn">import</span> <span class="n">BaseCommand</span>
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">pdm.cli.commands.base</span> <span class="kn">import</span> <span class="n">BaseCommand</span>
 
 <span class="k">class</span> <span class="nc">HelloCommand</span><span class="p">(</span><span class="n">BaseCommand</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Say hello to the specified person.</span>
@@ -488,7 +488,7 @@ of the core project it may have a chance to be absorbed into PDM.</p>
 <p>Besides, PDM's subcommand has two default options: <code>-v/--verbose</code> to change the verbosity level and <code>-g/--global</code> to enable global project.
 If you don't want these default options, override the <code>arguments</code> class attribute to a list of <code>pdm.cli.options.Option</code> objects.
 Assign it to an empty list to have no default options:</p>
-<div class="python codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">HelloCommand</span><span class="p">(</span><span class="n">BaseCommand</span><span class="p">):</span>
+<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">HelloCommand</span><span class="p">(</span><span class="n">BaseCommand</span><span class="p">):</span>
 
 <span class="hll">    <span class="n">arguments</span> <span class="o">=</span> <span class="p">[]</span>
 </span></code></pre></div>
@@ -500,7 +500,7 @@ Assign it to an empty list to have no default options:</p>
 <h3 id="register-the-command-to-the-core-object">Register the command to the core object<a class="headerlink" href="#register-the-command-to-the-core-object" title="Permanent link">#</a></h3>
 <p>Write a function somewhere in your plugin project. There is no limit on what the name of the function is. The function
 should accept only one argument -- the PDM core object:</p>
-<div class="python codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">hello_plugin</span><span class="p">(</span><span class="n">core</span><span class="p">):</span>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">hello_plugin</span><span class="p">(</span><span class="n">core</span><span class="p">):</span>
 <span class="hll">    <span class="n">core</span><span class="o">.</span><span class="n">register_command</span><span class="p">(</span><span class="n">HelloCommand</span><span class="p">,</span> <span class="s2">&quot;hello&quot;</span><span class="p">)</span>
 </span></code></pre></div>
 
@@ -508,7 +508,7 @@ should accept only one argument -- the PDM core object:</p>
 PDM will look for the <code>HelloCommand</code>'s <code>name</code> attribute if the name is not passed.</p>
 <h3 id="add-a-new-config-item">Add a new config item<a class="headerlink" href="#add-a-new-config-item" title="Permanent link">#</a></h3>
 <p>Remember in the first code snippet, <code>hello.name</code> config key is consulted for the name if not passed via the command line.</p>
-<div class="python codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">HelloCommand</span><span class="p">(</span><span class="n">BaseCommand</span><span class="p">):</span>
+<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">HelloCommand</span><span class="p">(</span><span class="n">BaseCommand</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Say hello to the specified person.</span>
 <span class="sd">    If none is given, will read from &quot;hello.name&quot; config.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -526,7 +526,7 @@ PDM will look for the <code>HelloCommand</code>'s <code>name</code> attribute if
 
 <p>Till now, if you query the config value by <code>pdm config get hello.name</code>, an error will pop up saying it is not a valid config key.
 You need to register the config item, too:</p>
-<div class="python codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">pdm.project.config</span> <span class="kn">import</span> <span class="n">ConfigItem</span>
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">pdm.project.config</span> <span class="kn">import</span> <span class="n">ConfigItem</span>
 
 <span class="k">def</span> <span class="nf">hello_plugin</span><span class="p">(</span><span class="n">core</span><span class="p">):</span>
     <span class="n">core</span><span class="o">.</span><span class="n">register_command</span><span class="p">(</span><span class="n">HelloCommand</span><span class="p">,</span> <span class="s2">&quot;hello&quot;</span><span class="p">)</span>
@@ -554,7 +554,7 @@ which are not covered in the above example:</p>
 <p>Now you have defined your plugin already, let's distribute it to PyPI. PDM's plugins are discovered by entry point types.
 Create an <code>pdm.plugin</code> entry point and point to your plugin callable(yeah, it don't need to be a function, any callable object can work):</p>
 <p><strong>PDM</strong>:</p>
-<div class="toml codehilite"><pre><span></span><code><span class="c1"># pyproject.toml</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># pyproject.toml</span>
 
 <span class="k">[tool.pdm.entry_points.&quot;pdm.plugin&quot;]</span>
 <span class="n">hello</span> <span class="o">=</span> <span class="s">&quot;my_plugin:hello_plugin&quot;</span>
@@ -562,7 +562,7 @@ Create an <code>pdm.plugin</code> entry point and point to your plugin callable(
 
 <p>Note that <code>pdm.plugin</code> is wrapped with double quotes to be regarded as a single key.</p>
 <p><strong>setuptools</strong>:</p>
-<div class="python codehilite"><pre><span></span><code><span class="c1"># setup.py</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># setup.py</span>
 
 <span class="n">setup</span><span class="p">(</span>
     <span class="o">...</span>

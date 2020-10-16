@@ -306,8 +306,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#configurations" class="md-nav__link">
-    Configurations
+  <a href="#available-configurations" class="md-nav__link">
+    Available Configurations
   </a>
   
 </li>
@@ -460,8 +460,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#configurations" class="md-nav__link">
-    Configurations
+  <a href="#available-configurations" class="md-nav__link">
+    Available Configurations
   </a>
   
 </li>
@@ -541,20 +541,22 @@ to find the latest version of <code>foo</code>, whose <code>python_requires</cod
 </code></pre></div>
 
 <h2 id="configrate-the-project">Configrate the project<a class="headerlink" href="#configrate-the-project" title="Permanent link">#</a></h2>
-<p>Show the configurations:</p>
+<p>PDM's <code>config</code> command works just like <code>git config</code>, except that <code>--list</code> isn't needed to
+show configurations.</p>
+<p>Show the current configurations:</p>
 <div class="codehilite"><pre><span></span><code><span class="gp">$</span> pdm config
 </code></pre></div>
 
 <p>Get one single configuration:</p>
-<div class="codehilite"><pre><span></span><code><span class="gp">$</span> pdm config get pypi.url
+<div class="codehilite"><pre><span></span><code><span class="gp">$</span> pdm config pypi.url
 </code></pre></div>
 
 <p>Change a configuration value and store in home configuration:</p>
-<div class="codehilite"><pre><span></span><code><span class="gp">$</span> pdm config <span class="nb">set</span> pypi.url <span class="s2">&quot;https://testpypi.org/simple&quot;</span>
+<div class="codehilite"><pre><span></span><code><span class="gp">$</span> pdm config pypi.url <span class="s2">&quot;https://testpypi.org/simple&quot;</span>
 </code></pre></div>
 
 <p>Change a configuration value and store in <code>.pdm.toml</code>:</p>
-<div class="codehilite"><pre><span></span><code><span class="gp">$</span> pdm config <span class="nb">set</span> --local pypi.url <span class="s2">&quot;https://testpypi.org/simple&quot;</span>
+<div class="codehilite"><pre><span></span><code><span class="gp">$</span> pdm config --local pypi.url <span class="s2">&quot;https://testpypi.org/simple&quot;</span>
 </code></pre></div>
 
 <p>The configuration files are searched in the following order:</p>
@@ -603,7 +605,7 @@ only <code>requirements.txt</code> format is supported:</p>
 <div class="codehilite"><pre><span></span><code><span class="gp">$</span> pdm <span class="nb">export</span> -o requirements.txt
 </code></pre></div>
 
-<h2 id="configurations">Configurations<a class="headerlink" href="#configurations" title="Permanent link">#</a></h2>
+<h2 id="available-configurations">Available Configurations<a class="headerlink" href="#available-configurations" title="Permanent link">#</a></h2>
 <table>
 <thead>
 <tr>

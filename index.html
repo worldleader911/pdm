@@ -258,6 +258,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#shell-completion" class="md-nav__link">
+    Shell Completion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#use-with-ide" class="md-nav__link">
     Use with IDE
   </a>
@@ -428,6 +435,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#shell-completion" class="md-nav__link">
+    Shell Completion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#use-with-ide" class="md-nav__link">
     Use with IDE
   </a>
@@ -508,6 +522,24 @@ is via <a href="https://pypi.org/project/pipx">pipx</a>:</p>
 
 <span class="c"># -- Replace with the correct path to your app&#39;s main executable</span>
 <span class="k">CMD</span> <span class="p">[</span><span class="s2">&quot;pdm&quot;</span><span class="p">,</span> <span class="s2">&quot;run&quot;</span><span class="p">,</span> <span class="s2">&quot;python&quot;</span><span class="p">,</span> <span class="s2">&quot;main.py&quot;</span><span class="p">]</span>
+</code></pre></div>
+
+<h2 id="shell-completion">Shell Completion<a class="headerlink" href="#shell-completion" title="Permanent link">#</a></h2>
+<p>PDM supports generating completion scripts for Bash, Zsh or Fish. Here are some common locations for each shell:</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Bash</span>
+$ pdm completion bash &gt; /etc/bash_completion.d/pdm.bash-completion
+
+<span class="c1"># Zsh</span>
+<span class="c1"># Make sure ~/.zfunc is added to fpath, before compinit.</span>
+$ pdm completions zsh &gt; ~/.zfunc/_pdm
+
+<span class="c1"># Oh-My-Zsh</span>
+$ mkdir <span class="nv">$ZSH_CUSTOM</span>/plugins/pdm
+$ pdm completions zsh &gt; <span class="nv">$ZSH_CUSTOM</span>/plugins/pdm/_pdm
+<span class="c1"># Then make sure pdm plugin is enabled in ~/.zshrc</span>
+
+<span class="c1"># Fish</span>
+$ pdm completions fish &gt; ~/.config/fish/completions/pdm.fish
 </code></pre></div>
 
 <h2 id="use-with-ide">Use with IDE<a class="headerlink" href="#use-with-ide" title="Permanent link">#</a></h2>

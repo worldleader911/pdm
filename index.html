@@ -500,9 +500,9 @@ in a similar way to <code>npm</code> that doesn't need to create a virtualenv at
 <p>PDM requires Python 3.7+ to be installed. It works on multiple platforms including Windows, Linux and MacOS.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
+</div>
 <p>There is no restriction about what Python version that your project is using but installing
 PDM itself needs Python 3.7+.</p>
-</div>
 <h3 id="recommended-installation-method">Recommended installation method<a class="headerlink" href="#recommended-installation-method" title="Permanent link">#</a></h3>
 <p>To avoid messing up with the system Python environemnt, the most recommended way to install PDM
 is via <a href="https://pypi.org/project/pipx">pipx</a>:</p>
@@ -525,21 +525,33 @@ is via <a href="https://pypi.org/project/pipx">pipx</a>:</p>
 </code></pre></div>
 
 <h2 id="shell-completion">Shell Completion<a class="headerlink" href="#shell-completion" title="Permanent link">#</a></h2>
-<p>PDM supports generating completion scripts for Bash, Zsh or Fish. Here are some common locations for each shell:</p>
+<p>PDM supports generating completion scripts for Bash, Zsh, Fish or Powershell. Here are some common locations for each shell:</p>
 <div class="codehilite"><pre><span></span><code><span class="c1"># Bash</span>
 $ pdm completion bash &gt; /etc/bash_completion.d/pdm.bash-completion
 
 <span class="c1"># Zsh</span>
 <span class="c1"># Make sure ~/.zfunc is added to fpath, before compinit.</span>
-$ pdm completions zsh &gt; ~/.zfunc/_pdm
+$ pdm completion zsh &gt; ~/.zfunc/_pdm
 
 <span class="c1"># Oh-My-Zsh</span>
 $ mkdir <span class="nv">$ZSH_CUSTOM</span>/plugins/pdm
-$ pdm completions zsh &gt; <span class="nv">$ZSH_CUSTOM</span>/plugins/pdm/_pdm
+$ pdm completion zsh &gt; <span class="nv">$ZSH_CUSTOM</span>/plugins/pdm/_pdm
 <span class="c1"># Then make sure pdm plugin is enabled in ~/.zshrc</span>
 
 <span class="c1"># Fish</span>
-$ pdm completions fish &gt; ~/.config/fish/completions/pdm.fish
+$ pdm completion fish &gt; ~/.config/fish/completions/pdm.fish
+
+<span class="c1"># Powershell</span>
+<span class="c1"># Create a directory to store completion scripts</span>
+PS &gt; mkdir <span class="nv">$PROFILE</span><span class="se">\.</span>.<span class="se">\C</span>ompletions
+PS &gt; <span class="nb">echo</span> @<span class="s1">&#39;</span>
+<span class="s1">Get-ChildItem &quot;$PROFILE\..\Completions\&quot; | ForEach-Object {</span>
+<span class="s1">    . $_.FullName</span>
+<span class="s1">}</span>
+<span class="s1">&#39;</span>@ <span class="p">|</span> Out-File -Append -Encoding utf8 <span class="nv">$PROFILE</span>
+<span class="c1"># Generate script</span>
+PS &gt; Set-ExecutionPolicy Unrestricted -Scope CurrentUser
+PS &gt; pdm completion powershell <span class="p">|</span> Out-File -Encoding utf8 <span class="nv">$PROFILE</span><span class="se">\.</span>.<span class="se">\C</span>ompletions<span class="se">\p</span>dm_completion.ps1
 </code></pre></div>
 
 <h2 id="use-with-ide">Use with IDE<a class="headerlink" href="#use-with-ide" title="Permanent link">#</a></h2>

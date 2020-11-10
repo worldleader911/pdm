@@ -8,8 +8,9 @@
       
       
       
+      
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.2">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.4">
     
     
       
@@ -17,10 +18,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.19190aaf.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.358818c7.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.24b84193.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.f0267088.min.css">
         
       
     
@@ -316,6 +317,54 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#run-scripts-in-isolated-environment" class="md-nav__link">
+    Run Scripts in Isolated Environment
+  </a>
+  
+    <nav class="md-nav" aria-label="Run Scripts in Isolated Environment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#normal-command" class="md-nav__link">
+    Normal command
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shell-script" class="md-nav__link">
+    Shell script
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#call-a-python-function" class="md-nav__link">
+    Call a Python function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environment-variables-expansion" class="md-nav__link">
+    Environment variables expansion
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show-the-list-of-scripts-shortcuts" class="md-nav__link">
+    Show the list of scripts shortcuts
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -467,6 +516,54 @@
   <a href="#available-configurations" class="md-nav__link">
     Available Configurations
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-scripts-in-isolated-environment" class="md-nav__link">
+    Run Scripts in Isolated Environment
+  </a>
+  
+    <nav class="md-nav" aria-label="Run Scripts in Isolated Environment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#normal-command" class="md-nav__link">
+    Normal command
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shell-script" class="md-nav__link">
+    Shell script
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#call-a-python-function" class="md-nav__link">
+    Call a Python function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environment-variables-expansion" class="md-nav__link">
+    Environment variables expansion
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show-the-list-of-scripts-shortcuts" class="md-nav__link">
+    Show the list of scripts shortcuts
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -687,6 +784,72 @@ only <code>requirements.txt</code> format is supported:</p>
 </tbody>
 </table>
 <p><em>If the env var is set, the value will take precendence over what is saved in the config file.</em></p>
+<h2 id="run-scripts-in-isolated-environment">Run Scripts in Isolated Environment<a class="headerlink" href="#run-scripts-in-isolated-environment" title="Permanent link">#</a></h2>
+<p>With PDM, you can run arbitrary scripts or commands with local packages loaded:</p>
+<div class="codehilite"><pre><span></span><code>$ pdm run flask run -p <span class="m">54321</span>
+</code></pre></div>
+
+<p>PDM also supports custom script shortcuts in the optional <code>[tool.pdm.scripts]</code> section of <code>pyproject.toml</code>.</p>
+<p>You can then run <code>pdm run &lt;shortcut_name&gt;</code> to invoke the script in the context of your PDM project. For example:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">[tool.pdm.scripts]</span>
+<span class="n">start_server</span> <span class="o">=</span> <span class="s">&quot;flask run -p 54321&quot;</span>
+</code></pre></div>
+
+<p>And then in your terminal:</p>
+<div class="codehilite"><pre><span></span><code>$ pdm run start_server
+Flask server started at http://127.0.0.1:54321
+</code></pre></div>
+
+<p>Any extra arguments will be appended to the command:</p>
+<div class="codehilite"><pre><span></span><code>$ pdm run start_server -h <span class="m">0</span>.0.0.0
+Flask server started at http://0.0.0.0:54321
+</code></pre></div>
+
+<p>PDM supports 3 types of scripts:</p>
+<h3 id="normal-command">Normal command<a class="headerlink" href="#normal-command" title="Permanent link">#</a></h3>
+<p>Plain text scripts are regarded as normal command, or you can explictly specify it:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">[tool.pdm.scripts]</span>
+<span class="n">start_server</span> <span class="o">=</span> <span class="p">{</span><span class="n">cmd</span> <span class="o">=</span> <span class="s">&quot;flask run -p 54321&quot;</span><span class="p">}</span>
+</code></pre></div>
+
+<h3 id="shell-script">Shell script<a class="headerlink" href="#shell-script" title="Permanent link">#</a></h3>
+<p>Shell scripts can be used to run more shell-specific tasks, such as pipeline and output redirecting.
+This is basically run via <code>subprocess.Popen()</code> with <code>shell=True</code>:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">[tool.pdm.scripts]</span>
+<span class="n">filter_error</span> <span class="o">=</span> <span class="p">{</span><span class="n">shell</span> <span class="o">=</span> <span class="s">&quot;cat error.log|grep CRITICAL &gt; critical.log&quot;</span><span class="p">}</span>
+</code></pre></div>
+
+<h3 id="call-a-python-function">Call a Python function<a class="headerlink" href="#call-a-python-function" title="Permanent link">#</a></h3>
+<p>The script can be also defined as calling a python function in the form <code>&lt;module_name&gt;:&lt;func_name&gt;</code>:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">[tool.pdm.scripts]</span>
+<span class="n">foobar</span> <span class="o">=</span> <span class="p">{</span><span class="n">call</span> <span class="o">=</span> <span class="s">&quot;foo_package.bar_module:main&quot;</span><span class="p">}</span>
+</code></pre></div>
+
+<p>The function can be supplied with literal arguments:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">[tool.pdm.scripts]</span>
+<span class="n">foobar</span> <span class="o">=</span> <span class="p">{</span><span class="n">call</span> <span class="o">=</span> <span class="s">&quot;foo_package.bar_module:main(&#39;dev&#39;)&quot;</span><span class="p">}</span>
+</code></pre></div>
+
+<h3 id="environment-variables-expansion">Environment variables expansion<a class="headerlink" href="#environment-variables-expansion" title="Permanent link">#</a></h3>
+<p>All environment variables set in the current shell can be seen by <code>pdm run</code> and will be expanded when executed.
+Besides, you can also define some fixed environment variables in your <code>pyproject.toml</code>:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">[tool.pdm.scripts]</span>
+<span class="n">start_server</span><span class="p">.</span><span class="n">cmd</span> <span class="o">=</span> <span class="s">&quot;flask run -p 54321&quot;</span>
+<span class="n">start_server</span><span class="p">.</span><span class="n">env</span> <span class="o">=</span> <span class="p">{</span><span class="n">FOO</span> <span class="o">=</span> <span class="s">&quot;bar&quot;</span><span class="p">,</span> <span class="n">FLASK_ENV</span> <span class="o">=</span> <span class="s">&quot;development&quot;</span><span class="p">}</span>
+</code></pre></div>
+
+<p>Note how we use <a href="https://github.com/toml-lang/toml">TOML's syntax</a> to define a compound dictionary.</p>
+<h3 id="show-the-list-of-scripts-shortcuts">Show the list of scripts shortcuts<a class="headerlink" href="#show-the-list-of-scripts-shortcuts" title="Permanent link">#</a></h3>
+<p>Use <code>pdm run --list/-l</code> to show the list of available script shortcuts:</p>
+<div class="codehilite"><pre><span></span><code>$ pdm run --list
+Name        Type  Script           Description
+----------- ----- ---------------- ----------------------
+test_cmd    cmd   flask db upgrade
+test_script call  test_script:main call a python <span class="k">function</span>
+test_shell  shell <span class="nb">echo</span> <span class="nv">$FOO</span>        shell <span class="nb">command</span>
+</code></pre></div>
+
+<p>You can add an <code>help</code> option with the description of the script, and it will be displayed in the <code>Description</code> column in the above output.</p>
                 
               
               
@@ -758,7 +921,7 @@ only <code>requirements.txt</code> format is supported:</p>
     </div>
     
       <script src="../assets/javascripts/vendor.7e0ee788.min.js"></script>
-      <script src="../assets/javascripts/bundle.c1ccee15.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      <script src="../assets/javascripts/bundle.b3a72adc.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({

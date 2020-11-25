@@ -247,6 +247,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#enable-pep-582-globally" class="md-nav__link">
+    Enable PEP 582 globally
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#use-the-docker-image" class="md-nav__link">
     Use the docker image
   </a>
@@ -431,6 +438,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#enable-pep-582-globally" class="md-nav__link">
+    Enable PEP 582 globally
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#use-the-docker-image" class="md-nav__link">
     Use the docker image
   </a>
@@ -533,6 +547,13 @@ is via <a href="https://pypi.org/project/pipx">pipx</a>:</p>
 <div class="codehilite"><pre><span></span><code><span class="gp">$</span> pip install --user pdm
 </code></pre></div>
 
+<h3 id="enable-pep-582-globally">Enable PEP 582 globally<a class="headerlink" href="#enable-pep-582-globally" title="Permanent link">#</a></h3>
+<p>To make the Python interpreters aware of PEP 582 packages, set the environment variable <code>PYTHONPEP582</code> to <code>1</code>.
+You may want to write a line in your <code>.bash_profile</code>(or similar profiles) to make it effective when login:</p>
+<div class="codehilite"><pre><span></span><code><span class="nb">export</span> <span class="nv">PYTHONPEP582</span><span class="o">=</span><span class="m">1</span>
+</code></pre></div>
+
+<p><strong>This setup may become the default in the future.</strong></p>
 <h3 id="use-the-docker-image">Use the docker image<a class="headerlink" href="#use-the-docker-image" title="Permanent link">#</a></h3>
 <p>PDM also provides a docker image to ease your deployment flow, to use it, write a Dockerfile with following content:</p>
 <div class="codehilite"><pre><span></span><code><span class="k">FROM</span> <span class="s">frostming/pdm</span>

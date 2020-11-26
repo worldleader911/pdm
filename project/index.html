@@ -360,15 +360,15 @@
   
 </li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#how-we-make-pep-582-packages-available-to-the-python-interpreter" class="md-nav__link">
     How we make PEP 582 packages available to the Python interpreter
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -569,15 +569,15 @@
   
 </li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#how-we-make-pep-582-packages-available-to-the-python-interpreter" class="md-nav__link">
     How we make PEP 582 packages available to the Python interpreter
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -872,7 +872,7 @@ test_shell  shell <span class="nb">echo</span> <span class="nv">$FOO</span>     
 </code></pre></div>
 
 <p>You can add an <code>help</code> option with the description of the script, and it will be displayed in the <code>Description</code> column in the above output.</p>
-<h3 id="how-we-make-pep-582-packages-available-to-the-python-interpreter">How we make PEP 582 packages available to the Python interpreter<a class="headerlink" href="#how-we-make-pep-582-packages-available-to-the-python-interpreter" title="Permanent link">#</a></h3>
+<h2 id="how-we-make-pep-582-packages-available-to-the-python-interpreter">How we make PEP 582 packages available to the Python interpreter<a class="headerlink" href="#how-we-make-pep-582-packages-available-to-the-python-interpreter" title="Permanent link">#</a></h2>
 <p>Thanks to the <a href="https://docs.python.org/3/library/site.html">site packages loading</a> on Python startup. It is possible to patch the <code>sys.path</code>
 by placing a <code>_pdm_pep582.pth</code> together with a small script under the <code>site-packages</code> directory. The interpreter can search the directories
 for the neareset <code>__pypackage__</code> folder and append it to the <code>sys.path</code> variable. This is totally done by PDM and users shouldn't be aware.</p>

@@ -529,9 +529,9 @@ in a similar way to <code>npm</code> that doesn't need to create a virtualenv at
 <p>PDM requires Python 3.7+ to be installed. It works on multiple platforms including Windows, Linux and MacOS.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
+</div>
 <p>There is no restriction about what Python version that your project is using but installing
 PDM itself needs Python 3.7+.</p>
-</div>
 <h3 id="recommended-installation-method">Recommended installation method<a class="headerlink" href="#recommended-installation-method" title="Permanent link">#</a></h3>
 <p>If your are on MacOS and using <code>homebrew</code>, install it by:</p>
 <div class="codehilite"><pre><span></span><code>$ brew install pdm
@@ -548,9 +548,9 @@ is via <a href="https://pypi.org/project/pipx">pipx</a>:</p>
 </code></pre></div>
 
 <h3 id="enable-pep-582-globally">Enable PEP 582 globally<a class="headerlink" href="#enable-pep-582-globally" title="Permanent link">#</a></h3>
-<p>To make the Python interpreters aware of PEP 582 packages, set the environment variable <code>PYTHONPEP582</code> to <code>1</code>.
+<p>To make the Python interpreters aware of PEP 582 packages, set the environment variable <code>PDM_PYTHON_PEP582</code> to <code>1</code>.
 You may want to write a line in your <code>.bash_profile</code>(or similar profiles) to make it effective when login:</p>
-<div class="codehilite"><pre><span></span><code><span class="nb">export</span> <span class="nv">PYTHONPEP582</span><span class="o">=</span><span class="m">1</span>
+<div class="codehilite"><pre><span></span><code><span class="nb">export</span> <span class="nv">PDM_PYTHON_PEP582</span><span class="o">=</span><span class="m">1</span>
 </code></pre></div>
 
 <p><strong>This setup may become the default in the future.</strong></p>

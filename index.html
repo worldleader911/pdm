@@ -548,9 +548,12 @@ is via <a href="https://pypi.org/project/pipx">pipx</a>:</p>
 </code></pre></div>
 
 <h3 id="enable-pep-582-globally">Enable PEP 582 globally<a class="headerlink" href="#enable-pep-582-globally" title="Permanent link">#</a></h3>
-<p>To make the Python interpreters aware of PEP 582 packages, set the environment variable <code>PDM_PYTHON_PEP582</code> to <code>1</code>.
-You may want to write a line in your <code>.bash_profile</code>(or similar profiles) to make it effective when login:</p>
-<div class="codehilite"><pre><span></span><code><span class="nb">export</span> <span class="nv">PDM_PYTHON_PEP582</span><span class="o">=</span><span class="m">1</span>
+<p>To make the Python interpreters aware of PEP 582 packages, one need to add the <code>pdm/pep582/sitecustomize.py</code>
+to the Python library search path. The command can be produced by <code>pdm --pep582 [&lt;SHELL&gt;]</code> and if <code>&lt;SHELL&gt;</code>
+isn't given, PDM will pick one based on some guesses.</p>
+<p>You may want to write a line in your <code>.bash_profile</code>(or similar profiles) to make it effective when login.
+For example, in bash you can do this:</p>
+<div class="codehilite"><pre><span></span><code>$ pdm --pep582 &gt;&gt; ~/.bash_profile
 </code></pre></div>
 
 <p><strong>This setup may become the default in the future.</strong></p>

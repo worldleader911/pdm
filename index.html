@@ -251,6 +251,26 @@
     Enable PEP 582 globally
   </a>
   
+    <nav class="md-nav" aria-label="Enable PEP 582 globally">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#for-windows-users" class="md-nav__link">
+    For Windows users
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-mac-and-linux-users" class="md-nav__link">
+    For Mac and Linux users
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -442,6 +462,26 @@
     Enable PEP 582 globally
   </a>
   
+    <nav class="md-nav" aria-label="Enable PEP 582 globally">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#for-windows-users" class="md-nav__link">
+    For Windows users
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-mac-and-linux-users" class="md-nav__link">
+    For Mac and Linux users
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -549,13 +589,19 @@ is via <a href="https://pypi.org/project/pipx">pipx</a>:</p>
 
 <h3 id="enable-pep-582-globally">Enable PEP 582 globally<a class="headerlink" href="#enable-pep-582-globally" title="Permanent link">#</a></h3>
 <p>To make the Python interpreters aware of PEP 582 packages, one need to add the <code>pdm/pep582/sitecustomize.py</code>
-to the Python library search path. The command can be produced by <code>pdm --pep582 [&lt;SHELL&gt;]</code> and if <code>&lt;SHELL&gt;</code>
+to the Python library search path.</p>
+<h4 id="for-windows-users">For Windows users<a class="headerlink" href="#for-windows-users" title="Permanent link">#</a></h4>
+<p>One just needs to execute <code>pdm --pep582</code>, then environment variable will be changed automatically. Don't forget
+to restart the terminal session to take effect.</p>
+<h4 id="for-mac-and-linux-users">For Mac and Linux users<a class="headerlink" href="#for-mac-and-linux-users" title="Permanent link">#</a></h4>
+<p>The command to change the environment variables can be produced by <code>pdm --pep582 [&lt;SHELL&gt;]</code>. If <code>&lt;SHELL&gt;</code>
 isn't given, PDM will pick one based on some guesses.</p>
 <p>You may want to write a line in your <code>.bash_profile</code>(or similar profiles) to make it effective when login.
 For example, in bash you can do this:</p>
 <div class="codehilite"><pre><span></span><code>$ pdm --pep582 &gt;&gt; ~/.bash_profile
 </code></pre></div>
 
+<p>Once again, Don't forget to restart the terminal session to take effect.</p>
 <p><strong>This setup may become the default in the future.</strong></p>
 <h3 id="use-the-docker-image">Use the docker image<a class="headerlink" href="#use-the-docker-image" title="Permanent link">#</a></h3>
 <p>PDM also provides a docker image to ease your deployment flow, to use it, write a Dockerfile with following content:</p>

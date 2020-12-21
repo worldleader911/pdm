@@ -261,8 +261,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#package-version" class="md-nav__link">
-    Package version
+  <a href="#determine-the-package-version-dynamically" class="md-nav__link">
+    Determine the package version dynamically
   </a>
   
 </li>
@@ -283,34 +283,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#named-requirement" class="md-nav__link">
-    Named requirement
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#requirement-given-by-file-url" class="md-nav__link">
-    Requirement given by file URL
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#requirement-given-by-local-path" class="md-nav__link">
-    Requirement given by local path
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#vcs-requirement" class="md-nav__link">
-    VCS requirement
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#editable-requirement" class="md-nav__link">
     Editable requirement
   </a>
@@ -318,15 +290,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#requirement-with-markers" class="md-nav__link">
-    Requirement with markers
+  <a href="#optional-dependencies" class="md-nav__link">
+    Optional dependencies
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#extras-require" class="md-nav__link">
-    Extras require
+  <a href="#development-dependencies" class="md-nav__link">
+    Development dependencies
   </a>
   
 </li>
@@ -431,8 +403,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#package-version" class="md-nav__link">
-    Package version
+  <a href="#determine-the-package-version-dynamically" class="md-nav__link">
+    Determine the package version dynamically
   </a>
   
 </li>
@@ -453,34 +425,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#named-requirement" class="md-nav__link">
-    Named requirement
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#requirement-given-by-file-url" class="md-nav__link">
-    Requirement given by file URL
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#requirement-given-by-local-path" class="md-nav__link">
-    Requirement given by local path
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#vcs-requirement" class="md-nav__link">
-    VCS requirement
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#editable-requirement" class="md-nav__link">
     Editable requirement
   </a>
@@ -488,15 +432,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#requirement-with-markers" class="md-nav__link">
-    Requirement with markers
+  <a href="#optional-dependencies" class="md-nav__link">
+    Optional dependencies
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#extras-require" class="md-nav__link">
-    Extras require
+  <a href="#development-dependencies" class="md-nav__link">
+    Development dependencies
   </a>
   
 </li>
@@ -546,17 +490,19 @@
                 
                 <h1 id="project-file-syntax">Project file syntax<a class="headerlink" href="#project-file-syntax" title="Permanent link">#</a></h1>
 <h2 id="project-metadata">Project metadata<a class="headerlink" href="#project-metadata" title="Permanent link">#</a></h2>
-<p>There are several differences from the metadata of <code>setuptools</code>:</p>
-<ul>
-<li><code>readme</code> is the file name of README file and PDM can derive the content type automatically.</li>
-<li><code>author</code> and <code>maintainer</code> is a combination of name and email address in the form of <code>Name &lt;email&gt;</code>.</li>
-</ul>
-<h2 id="package-version">Package version<a class="headerlink" href="#package-version" title="Permanent link">#</a></h2>
+<p>PDM reads the project's metadata following the standardized format of <a href="https://www.python.org/dev/peps/pep-0621/">PEP 621</a>.
+View the PEP for the detailed specification.</p>
+<p><em>In the following part of this document, metadata should be written under <code>[project]</code> table if not given explicitly.</em></p>
+<h2 id="determine-the-package-version-dynamically">Determine the package version dynamically<a class="headerlink" href="#determine-the-package-version-dynamically" title="Permanent link">#</a></h2>
 <p>You can specify a file source for <code>version</code> field like: <code>version = {from = "pdm/__init__.py"}</code>, in this form,
 the version will be read from the <code>__version__</code> variable in that file.</p>
 <p>PDM can also read version from SCM tags. If you are using git or hg as the version control system, define the
 <code>version</code> as follows:</p>
 <div class="codehilite"><pre><span></span><code><span class="n">version</span> <span class="o">=</span> <span class="p">{</span><span class="n">use_scm</span> <span class="o">=</span> <span class="n">true</span><span class="p">}</span>
+</code></pre></div>
+
+<p>In either case, you MUST also include <code>version</code> in <code>dynamic</code> field, or the backend will raise an error:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">dynamic</span> <span class="o">=</span> <span class="k">[&quot;version&quot;]</span>
 </code></pre></div>
 
 <h2 id="include-and-exclude-pacakge-files">Include and exclude pacakge files<a class="headerlink" href="#include-and-exclude-pacakge-files" title="Permanent link">#</a></h2>
@@ -573,69 +519,76 @@ the version will be read from the <code>__version__</code> variable in that file
 <p>If neither <code>includes</code> or <code>excludes</code> is given, PDM is also smart enough to include top level packages and all data files in them.
 Packages can also lie in <code>src</code> directory that PDM can find it.</p>
 <h2 id="dependency-specification">Dependency specification<a class="headerlink" href="#dependency-specification" title="Permanent link">#</a></h2>
-<h3 id="named-requirement">Named requirement<a class="headerlink" href="#named-requirement" title="Permanent link">#</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="n">requests</span> <span class="o">=</span> <span class="s">&quot;&gt;=2.20.0&quot;</span>
-<span class="n">pytz</span> <span class="o">=</span> <span class="s">&quot;*&quot;</span>
+<p>The <code>project.dependencies</code> is an array of dependency specification strings following the <a href="https://www.python.org/dev/peps/pep-0440/">PEP 440</a>
+and <a href="https://www.python.org/dev/peps/pep-0508/">PEP 508</a>.</p>
+<p>Examples:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">dependencies</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="c1"># Named requirement</span>
+    <span class="s">&quot;requests&quot;</span><span class="p">,</span>
+    <span class="c1"># Named requirement with version specifier</span>
+    <span class="s">&quot;flask &gt;= 1.1.0&quot;</span><span class="p">,</span>
+    <span class="c1"># Requirement with environment marker</span>
+    <span class="s">&quot;pywin32; sys_platform == &#39;win32&#39;&quot;</span><span class="p">,</span>
+    <span class="c1"># URL requirement</span>
+    <span class="s">&quot;pip @ https://github.com/pypa/pip.git@20.3.1&quot;</span>
+<span class="p">]</span>
 </code></pre></div>
 
-<p><code>"*"</code> means there is no constraint of what version should be used.</p>
-<h3 id="requirement-given-by-file-url">Requirement given by file URL<a class="headerlink" href="#requirement-given-by-file-url" title="Permanent link">#</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="n">pdm</span> <span class="o">=</span> <span class="p">{</span><span class="n">url</span><span class="o">=</span><span class="s">&quot;https://github.com/frostming/marko/archive/0.2.6.zip&quot;</span><span class="p">}</span>
-</code></pre></div>
-
-<h3 id="requirement-given-by-local-path">Requirement given by local path<a class="headerlink" href="#requirement-given-by-local-path" title="Permanent link">#</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="n">requests</span> <span class="o">=</span> <span class="p">{</span><span class="n">path</span><span class="o">=</span><span class="s">&quot;/path/to/requests&quot;</span><span class="p">}</span>
-</code></pre></div>
-
-<p>In this case, the path should be a <strong>directory</strong> on local machine. If you want to install a local <strong>file</strong>,
-use <code>url = "file:///path/to/file</code> instead.</p>
-<h3 id="vcs-requirement">VCS requirement<a class="headerlink" href="#vcs-requirement" title="Permanent link">#</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="n">requests</span> <span class="o">=</span> <span class="p">{</span><span class="n">git</span><span class="o">=</span><span class="s">&quot;https://github.com/frostming/marko.git&quot;</span><span class="p">,</span> <span class="n">ref</span><span class="o">=</span><span class="s">&quot;master&quot;</span><span class="p">}</span>
-</code></pre></div>
-
-<p>PDM supports all VCS schemes that are supported by <code>pip</code>.</p>
 <h3 id="editable-requirement">Editable requirement<a class="headerlink" href="#editable-requirement" title="Permanent link">#</a></h3>
-<p>Both VCS requirement and local directory requirement can have an <code>editable = true</code> flag, meaning it should be installed in editable mode.</p>
-<h3 id="requirement-with-markers">Requirement with markers<a class="headerlink" href="#requirement-with-markers" title="Permanent link">#</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="n">requests</span> <span class="o">=</span> <span class="p">{</span><span class="n">version</span><span class="o">=</span><span class="s">&quot;&gt;=2.20.0&quot;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s">&quot;os_name!=&#39;nt&#39;&quot;</span><span class="p">}</span>
+<p>Beside of the normal dependency specifications, one can also have some packages installed in editable mode. The editable specification string format
+is the same as <a href="https://pip.pypa.io/en/stable/reference/pip_install/#editable-installs">Pip's editable install mode</a>.</p>
+<p>Examples:</p>
+<div class="codehilite"><pre><span></span><code><span class="err">dependencies = [</span>
+<span class="err">    ...,</span>
+<span class="err">    &quot;-e path/to/SomeProject&quot;,</span>
+<span class="err">    &quot;-e git+http://repo/my_project.git#egg=SomeProject&quot;</span>
+<span class="err">]</span>
 </code></pre></div>
 
-<h3 id="extras-require">Extras require<a class="headerlink" href="#extras-require" title="Permanent link">#</a></h3>
-<p>You can have some requirements optional, by putting them under non-default dependency section, as follows:</p>
-<div class="codehilite"><pre><span></span><code><span class="k">[tool.pdm]</span>
-<span class="n">extras</span> <span class="o">=</span> <span class="k">[&quot;mysql&quot;]</span>
-
-<span class="k">[tool.pdm.mysql-dependencies]</span>
-<span class="n">mysqlclient</span> <span class="o">=</span> <span class="s">&quot;*&quot;</span>
+<div class="admonition note">
+<p class="admonition-title">About editable installation</p>
+<p>One can have editable installation and normal installation for the same package. The one that comes at last wins.
+However, editable dependencies WON'T be included in the metadata of the built artifacts since they are not valid
+PEP 508 strings. They only exist for development purpose.</p>
+</div>
+<h3 id="optional-dependencies">Optional dependencies<a class="headerlink" href="#optional-dependencies" title="Permanent link">#</a></h3>
+<p>You can have some requirements optional, which is similar to <code>setuptools</code>' <code>extras_require</code> parameter.</p>
+<div class="codehilite"><pre><span></span><code><span class="k">[project.optional-dependencies]</span>
+<span class="n">socks</span> <span class="o">=</span> <span class="k">[ &#39;PySocks &gt;= 1.5.6, != 1.5.7, &lt; 2&#39; ]</span>
+<span class="n">tests</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="s">&#39;ddt &gt;= 1.2.2, &lt; 2&#39;</span><span class="p">,</span>
+  <span class="s">&#39;pytest &lt; 6&#39;</span><span class="p">,</span>
+  <span class="s">&#39;mock &gt;= 1.0.1, &lt; 4; python_version &lt; &quot;3.4&quot;&#39;</span><span class="p">,</span>
+<span class="p">]</span>
 </code></pre></div>
 
-<p>Note that the <code>extras</code> definition is required, otherwise the requirments is not regarded as the package's requirements. The value is a list of dependency sections that you want to include as extras.</p>
-<p>You can also combine the requirements from several sections to an extra require:</p>
-<div class="codehilite"><pre><span></span><code><span class="k">[tool.pdm]</span>
-<span class="n">extras</span> <span class="o">=</span> <span class="k">[&quot;mysql&quot;, &quot;postgres&quot;, &quot;sql=mysql|postgres&quot;]</span>
-
-<span class="k">[tool.pdm.mysql-dependencies]</span>
-<span class="n">mysqlclient</span> <span class="o">=</span> <span class="s">&quot;*&quot;</span>
-
-<span class="k">[tool.pdm.postgres-dependencies]</span>
-<span class="n">psycopg2</span> <span class="o">=</span> <span class="s">&quot;*&quot;</span>
+<p>To install a group of optional dependencies:</p>
+<div class="codehilite"><pre><span></span><code>$ pdm install -s socks
 </code></pre></div>
 
-<p>This <code>pyproject.toml</code> produces the equivalent <code>extras_requires</code> as in <code>setup.py</code>:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">extras_require</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;mysql&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;mysqlclient&quot;</span><span class="p">],</span>
-    <span class="s2">&quot;postgres&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;psycopg2&quot;</span><span class="p">],</span>
-    <span class="s2">&quot;sql&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;mysqlclient&quot;</span><span class="p">,</span> <span class="s2">&quot;psycopg2&quot;</span><span class="p">]</span>
-<span class="p">}</span>
+<p><code>-s</code> option can be given multiple times to include more than one groups.</p>
+<h3 id="development-dependencies">Development dependencies<a class="headerlink" href="#development-dependencies" title="Permanent link">#</a></h3>
+<p>You can have some development only dependencies, which is the same as <code>package.json</code>'s <code>dev-dependencies</code> field:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">[project]</span>
+
+<span class="n">dev-dependencies</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s">&quot;pytest&quot;</span><span class="p">,</span>
+    <span class="s">&quot;flake8&quot;</span><span class="p">,</span>
+    <span class="s">&quot;black&quot;</span>
+<span class="p">]</span>
+</code></pre></div>
+
+<p>To install all of them:</p>
+<div class="codehilite"><pre><span></span><code>$ pdm install -d
 </code></pre></div>
 
 <h2 id="console-scripts">Console scripts<a class="headerlink" href="#console-scripts" title="Permanent link">#</a></h2>
 <p>The following content:</p>
-<div class="codehilite"><pre><span></span><code><span class="k">[tool.pdm.cli]</span>
+<div class="codehilite"><pre><span></span><code><span class="k">[project.scripts]</span>
 <span class="n">mycli</span> <span class="o">=</span> <span class="s">&quot;mycli.__main__:main&quot;</span>
 </code></pre></div>
 
-<p>will be translated to setuptools style:</p>
+<p>will be translated to <code>setuptools</code> style:</p>
 <div class="codehilite"><pre><span></span><code><span class="n">entry_points</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;console_scripts&#39;</span><span class="p">:</span> <span class="p">[</span>
         <span class="s1">&#39;mycli=mycli.__main__:main&#39;</span>
@@ -643,10 +596,11 @@ use <code>url = "file:///path/to/file</code> instead.</p>
 <span class="p">}</span>
 </code></pre></div>
 
+<p>Also, <code>[project.gui-scripts]</code> will be translated to <code>gui_scripts</code> entry points group in <code>setuptools</code> style.</p>
 <h2 id="entry-points">Entry points<a class="headerlink" href="#entry-points" title="Permanent link">#</a></h2>
-<p>Other types of entry points are given by <code>[tool.pdm.entry_points.&lt;type&gt;]</code> section, with the same
-format of <code>[tool.pdm.cli]</code> format:</p>
-<div class="codehilite"><pre><span></span><code><span class="k">[tool.pdm.entry_points.pytest11]</span>
+<p>Other types of entry points are given by <code>[project.entry-points.&lt;type&gt;]</code> section, with the same
+format of <code>[project.scripts]</code>:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">[project.entry-points.pytest11]</span>
 <span class="n">myplugin</span> <span class="o">=</span> <span class="s">&quot;mypackage.plugin:pytest_plugin&quot;</span>
 </code></pre></div>
 
@@ -666,7 +620,7 @@ Update the dictionary with your <code>ext_modules</code> settings in the functio
 
 <p>Now, specify the build script path via <code>build</code> in the <code>pyproject.toml</code>:</p>
 <div class="codehilite"><pre><span></span><code><span class="c1"># pyproject.toml</span>
-<span class="k">[tool.pdm]</span>
+<span class="k">[project]</span>
 <span class="n">build</span> <span class="o">=</span> <span class="s">&quot;build.py&quot;</span>
 </code></pre></div>
                 

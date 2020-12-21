@@ -360,13 +360,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#include-system-site-packages-in-the-isolated-environment" class="md-nav__link">
-    Include system site-packages in the isolated environment
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -576,13 +569,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#include-system-site-packages-in-the-isolated-environment" class="md-nav__link">
-    Include system site-packages in the isolated environment
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -621,13 +607,6 @@
 </code></pre></div>
 
 <p><code>pip</code> will read the backend settings to install or build a package.</p>
-<div class="admonition note">
-<p class="admonition-title">About editable installation</p>
-<p>As described, <a href="https://www.python.org/dev/peps/pep-0517/">PEP 517</a> doesn't provide a
-way to specify how to install a package in editable mode. So you can't install a PEP 517
-package by <code>pip install -e &lt;path_or_url&gt;</code>. But PDM can install a "PDM package" in editable
-mode.</p>
-</div>
 <h2 id="choose-a-python-interpreter">Choose a Python interpreter<a class="headerlink" href="#choose-a-python-interpreter" title="Permanent link">#</a></h2>
 <p>If you have used <code>pdm init</code>, you must have already seen how PDM detects and selects the Python
 interpreter. After initialized, you can also change the settings by <code>pdm use &lt;python_version_or_path&gt;</code>.
@@ -707,8 +686,8 @@ To change this behavior, simply change the config <code>auto_global</code> to <c
 project path following <code>-g/--global</code>.</p>
 <div class="admonition danger">
 <p class="admonition-title">NOTE</p>
-<p>Be careful with <code>remove</code> and <code>sync --clean</code> commands when global project is used. Because it may remove packages installed in your system Python.</p>
 </div>
+<p>Be careful with <code>remove</code> and <code>sync --clean</code> commands when global project is used. Because it may remove packages installed in your system Python.</p>
 <h2 id="working-with-a-virtualenv">Working with a virtualenv<a class="headerlink" href="#working-with-a-virtualenv" title="Permanent link">#</a></h2>
 <p>Although PDM enforces PEP 582 by default, it also allows users to install packages into the virtualenv. It is controlled
 by the configuration item <code>use_venv</code>. When it is set to <code>True</code> PDM will use the virtualenv if:</p>
@@ -886,12 +865,6 @@ test_shell  shell <span class="nb">echo</span> <span class="nv">$FOO</span>     
 </code></pre></div>
 
 <p>You can add an <code>help</code> option with the description of the script, and it will be displayed in the <code>Description</code> column in the above output.</p>
-<h3 id="include-system-site-packages-in-the-isolated-environment">Include system site-packages in the isolated environment<a class="headerlink" href="#include-system-site-packages-in-the-isolated-environment" title="Permanent link">#</a></h3>
-<p>By default, system-level site-packages will be excluded from the <code>sys.path</code> when PEP 582 is enabled, unless:</p>
-<ul>
-<li>Run <code>pdm run</code> with <code>-s/--site-packages</code> flag.</li>
-<li>With environment variable <code>PDM_WITH_SITE_PACKAGES=1</code>.</li>
-</ul>
 <h2 id="how-we-make-pep-582-packages-available-to-the-python-interpreter">How we make PEP 582 packages available to the Python interpreter<a class="headerlink" href="#how-we-make-pep-582-packages-available-to-the-python-interpreter" title="Permanent link">#</a></h2>
 <p>Thanks to the <a href="https://docs.python.org/3/library/site.html">site packages loading</a> on Python startup. It is possible to patch the <code>sys.path</code>
 by executing the <code>sitecustomize.py</code> shipped with PDM. The interpreter can search the directories

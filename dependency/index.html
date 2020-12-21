@@ -312,8 +312,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#specify-the-index-for-one-single-dependency" class="md-nav__link">
-    Specify the index for one single dependency
+  <a href="#allow-prerelease-versions-to-be-installed" class="md-nav__link">
+    Allow prerelease versions to be installed
   </a>
   
 </li>
@@ -491,8 +491,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#specify-the-index-for-one-single-dependency" class="md-nav__link">
-    Specify the index for one single dependency
+  <a href="#allow-prerelease-versions-to-be-installed" class="md-nav__link">
+    Allow prerelease versions to be installed
   </a>
   
 </li>
@@ -523,20 +523,22 @@ The following examples are run on Ubuntu 18.04, a few changes must be done if yo
 </code></pre></div>
 
 <p>Answer several questions asked by PDM and a <code>pyproject.toml</code> will be created for you in the project root:</p>
-<div class="codehilite"><pre><span></span><code><span class="k">[tool.pdm]</span>
+<div class="codehilite"><pre><span></span><code><span class="k">[project]</span>
 <span class="n">name</span> <span class="o">=</span> <span class="s">&quot;pdm-test&quot;</span>
 <span class="n">version</span> <span class="o">=</span> <span class="s">&quot;0.0.0&quot;</span>
 <span class="n">description</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
-<span class="n">author</span> <span class="o">=</span> <span class="s">&quot;Frost Ming &lt;mianghong@gmail.com&gt;&quot;</span>
-<span class="n">license</span> <span class="o">=</span> <span class="s">&quot;MIT&quot;</span>
-<span class="n">python_requires</span> <span class="o">=</span> <span class="s">&quot;&gt;=3.7&quot;</span>
+<span class="n">authors</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;Frost Ming&quot;</span><span class="p">,</span> <span class="n">email</span> <span class="o">=</span> <span class="s">&quot;mianghong@gmail.com&quot;</span><span class="p">}</span>
+<span class="p">]</span>
+<span class="n">license</span> <span class="o">=</span> <span class="p">{</span><span class="n">text</span> <span class="o">=</span> <span class="s">&quot;MIT&quot;</span><span class="p">}</span>
+<span class="n">requires-python</span> <span class="o">=</span> <span class="s">&quot;&gt;=3.7&quot;</span>
 
-<span class="k">[tool.pdm.dependencies]</span>
-
-<span class="k">[tool.pdm.dev-dependencies]</span>
+<span class="n">dependencies</span> <span class="o">=</span> <span class="k">[]</span>
+<span class="n">dev-dependencies</span> <span class="o">=</span> <span class="k">[]</span>
 </code></pre></div>
 
-<p>If <code>pyproject.toml</code> is already present, it will be updated with <code>tool.pdm</code> contents.</p>
+<p>If <code>pyproject.toml</code> is already present, it will be updated with the metadata. The metadata format follows the
+<a href="https://www.python.org/dev/peps/pep-0621/">PEP 621 specification</a></p>
 <p>For details of the meaning of each field in <code>pyproject.toml</code>, please refer to <a href="../pyproject/">Project File</a>.</p>
 <h2 id="add-dependencies">Add dependencies<a class="headerlink" href="#add-dependencies" title="Permanent link">#</a></h2>
 <div class="codehilite"><pre><span></span><code><span class="gp">$</span> pdm add requests
@@ -545,10 +547,10 @@ The following examples are run on Ubuntu 18.04, a few changes must be done if yo
 
 <p><code>pdm add</code> can be followed by one or several dependencies, and the dependency specification is described in
 <a href="https://www.python.org/dev/peps/pep-0508/">PEP 508</a>.
-There are two groups of dependencies: packages will be added to <code>[tool.pdm.dependencies]</code> by default or <code>[tool.pdm.dev-dependencies]</code>
+There are two groups of dependencies: packages will be added to <code>project.dependencies</code> by default or <code>project.dev-dependencies</code>
 if <code>-d/--dev</code> option is passed to the <code>pdm add</code> command.</p>
-<p>PDM also allows custom dependency groups by providing <code>-s/--section &lt;name&gt;</code> option, and the dependencies will apear in
-<code>[tool.pdm.&lt;name&gt;-dependencies]</code> in the project file, respectively.</p>
+<p>PDM also allows extra dependency groups by providing <code>-s/--section &lt;name&gt;</code> option, and the dependencies will apear in
+<code>project.optional-dependencies.&lt;name&gt;</code> in the project file, respectively.</p>
 <p>After that, dependencies and sub-dependencies will be resolved properly and installed for you, you can view <code>pdm.lock</code> to see
 the resolved result of all dependencies.</p>
 <h3 id="save-version-specifiers">Save version specifiers<a class="headerlink" href="#save-version-specifiers" title="Permanent link">#</a></h3>
@@ -575,7 +577,7 @@ which is given by <code>--update-&lt;strategy&gt;</code> option:</p>
 <ul>
 <li><code>reuse</code>: Keep all locked dependencies except for those given in the command line.</li>
 <li><code>eager</code>: Try to lock a newer version of the packages in command line and their recursive sub-dependencies
-and keep other dependencies as they are.</li>
+  and keep other dependencies as they are.</li>
 </ul>
 <h2 id="remove-existing-dependencies">Remove existing dependencies<a class="headerlink" href="#remove-existing-dependencies" title="Permanent link">#</a></h2>
 <p>To remove existing dependencies from project file and the library directory:</p>
@@ -587,7 +589,7 @@ and keep other dependencies as they are.</li>
 <ul>
 <li><code>pdm install</code> will check the lock file and relock if it mismatch with project file, then install.</li>
 <li><code>pdm sync</code> install dependencies in the lock file and will error out if it doesn't exist.
-Besides, <code>pdm sync</code> can also remove unneeded packages if <code>--clean</code> option is given.</li>
+  Besides, <code>pdm sync</code> can also remove unneeded packages if <code>--clean</code> option is given.</li>
 </ul>
 <h2 id="show-what-packages-are-installed">Show what packages are installed<a class="headerlink" href="#show-what-packages-are-installed" title="Permanent link">#</a></h2>
 <p>Similar to <code>pip list</code>, you can list all packages installed in the packages directory:</p>
@@ -625,10 +627,12 @@ These sources should be preserved in <code>pyproject.toml</code> and shipped wit
 <span class="n">name</span> <span class="o">=</span> <span class="s">&quot;private&quot;</span>
 </code></pre></div>
 
-<p>Use the name <code>name = "pypi"</code> if you want to override the configurated PyPI index.</p>
-<h2 id="specify-the-index-for-one-single-dependency">Specify the index for one single dependency<a class="headerlink" href="#specify-the-index-for-one-single-dependency" title="Permanent link">#</a></h2>
-<p>You can specify which index should be consulted only for one single dependency:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">requests</span> <span class="o">=</span> <span class="p">{</span><span class="n">version</span> <span class="o">=</span> <span class="s">&quot;*&quot;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="s">&quot;private&quot;</span><span class="p">}</span>
+<p>Use the name <code>name = "pypi"</code> if you want to override the configurated PyPI index. Note that PDM specific settings
+are stored under <code>tool.pdm</code> namespace in the <code>pyproject.toml</code>.</p>
+<h2 id="allow-prerelease-versions-to-be-installed">Allow prerelease versions to be installed<a class="headerlink" href="#allow-prerelease-versions-to-be-installed" title="Permanent link">#</a></h2>
+<p>Include the following setting in <code>pyproject.toml</code> to enable:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">[[tool.pdm]]</span>
+<span class="n">allow_prereleases</span> <span class="o">=</span> <span class="kc">true</span>
 </code></pre></div>
                 
               

@@ -10,7 +10,7 @@
       
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.4">
     
     
       
@@ -18,10 +18,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.3b61ea93.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.15aa0b43.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.39b8e14a.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.75751829.min.css">
         
       
     
@@ -286,6 +286,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#select-another-package-directory-to-look-for-packages" class="md-nav__link">
+    Select another package directory to look for packages
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implicit-namespace-packages" class="md-nav__link">
+    Implicit namespace packages
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#dependency-specification" class="md-nav__link">
     Dependency specification
   </a>
@@ -432,6 +446,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#select-another-package-directory-to-look-for-packages" class="md-nav__link">
+    Select another package directory to look for packages
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implicit-namespace-packages" class="md-nav__link">
+    Implicit namespace packages
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#dependency-specification" class="md-nav__link">
     Dependency specification
   </a>
@@ -533,6 +561,23 @@ the version will be read from the <code>__version__</code> variable in that file
 
 <p>If neither <code>includes</code> or <code>excludes</code> is given, PDM is also smart enough to include top level packages and all data files in them.
 Packages can also lie in <code>src</code> directory that PDM can find it.</p>
+<h2 id="select-another-package-directory-to-look-for-packages">Select another package directory to look for packages<a class="headerlink" href="#select-another-package-directory-to-look-for-packages" title="Permanent link">#</a></h2>
+<p>Similar to <code>setuptools</code>' <code>package_dir</code> setting, one can specify another package directory, such as <code>src</code>, in <code>pyproject.toml</code> easily:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">package-dir</span> <span class="o">=</span> <span class="s">&quot;src&quot;</span>
+</code></pre></div>
+
+<p>If no package directory is given, PDM can also recognize <code>src</code> as the <code>package-dir</code> implicitly if:</p>
+<ol>
+<li><code>src/__init__.py</code> doesn't exist, meaning it is not a valid Python package, and</li>
+<li>There exist some packages under <code>src/*</code>.</li>
+</ol>
+<h2 id="implicit-namespace-packages">Implicit namespace packages<a class="headerlink" href="#implicit-namespace-packages" title="Permanent link">#</a></h2>
+<p>As specified in <a href="https://www.python.org/dev/peps/pep-0420">PEP 420</a>, a directory will be recognized as a namespace package if:</p>
+<ol>
+<li><code>&lt;package&gt;/__init__.py</code> doesn't exist, and</li>
+<li>There exist normal packages and/or other namespace packages under <code>&lt;package&gt;/*</code>, and</li>
+<li><code>&lt;package&gt;</code> is not specified as <code>package-dir</code></li>
+</ol>
 <h2 id="dependency-specification">Dependency specification<a class="headerlink" href="#dependency-specification" title="Permanent link">#</a></h2>
 <p>The <code>project.dependencies</code> is an array of dependency specification strings following the <a href="https://www.python.org/dev/peps/pep-0440/">PEP 440</a>
 and <a href="https://www.python.org/dev/peps/pep-0508/">PEP 508</a>.</p>
@@ -708,8 +753,8 @@ Update the dictionary with your <code>ext_modules</code> settings in the functio
       
     </div>
     
-      <script src="../assets/javascripts/vendor.08c56446.min.js"></script>
-      <script src="../assets/javascripts/bundle.6ced434e.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      <script src="../assets/javascripts/vendor.93c04032.min.js"></script>
+      <script src="../assets/javascripts/bundle.83e5331e.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({

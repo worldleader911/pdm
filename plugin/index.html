@@ -476,10 +476,25 @@ functionalities you wish to integrate with PDM are preferred to lie in their own
 and released as standalone PyPI projects. In case the plugin is considered a good suplement
 of the core project it may have a chance to be absorbed into PDM.</p>
 <h2 id="write-your-own-plugin">Write your own plugin<a class="headerlink" href="#write-your-own-plugin" title="Permanent link">#</a></h2>
-<p>In the following sections, I will show an example of adding a new command <code>hello</code> which reads <code>hello.name</code> config.</p>
+<p>In the following sections, I will show an example of adding a new command <code>hello</code> which reads the <code>hello.name</code> config.</p>
 <h3 id="write-the-command">Write the command<a class="headerlink" href="#write-the-command" title="Permanent link">#</a></h3>
 <p>The PDM's CLI module is designed in a way that user can easily "inherit and modify". To write a new command:</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">pdm.cli.commands.base</span> <span class="kn">import</span> <span class="n">BaseCommand</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">pdm.cli.commands.base</span> <span class="kn">import</span> <span class="n">BaseCommand</span>
 
 <span class="k">class</span> <span class="nc">HelloCommand</span><span class="p">(</span><span class="n">BaseCommand</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Say hello to the specified person.</span>
@@ -496,39 +511,55 @@ of the core project it may have a chance to be absorbed into PDM.</p>
             <span class="n">name</span> <span class="o">=</span> <span class="n">options</span><span class="o">.</span><span class="n">name</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hello, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </code></pre></div>
-
-<p>First create a new <code>HelloCommand</code> class inherting from <code>pdm.cli.commands.base.BaseCommand</code>, it has two major functions:</p>
+</td></tr></table>
+<p>First, let's create a new <code>HelloCommand</code> class inherting from <code>pdm.cli.commands.base.BaseCommand</code>. It has two major functions:</p>
 <ul>
 <li><code>add_arguments()</code> to manipulate the argument parser passed as the only argument,
   where you can add additional command line arguments to it</li>
 <li><code>handle()</code> to do something when the subcommand is matched, you can do nothing by writing a single <code>pass</code> statement.
   It accepts two arguments: an <code>pdm.project.Project</code> object as the first one and the parsed <code>argparse.Namespace</code> object as the second.</li>
 </ul>
-<p>The document string will serve as the command help text, which will be show in <code>pdm --help</code>.</p>
+<p>The document string will serve as the command help text, which will be shown in <code>pdm --help</code>.</p>
 <p>Besides, PDM's subcommand has two default options: <code>-v/--verbose</code> to change the verbosity level and <code>-g/--global</code> to enable global project.
-If you don't want these default options, override the <code>arguments</code> class attribute to a list of <code>pdm.cli.options.Option</code> objects.
-Assign it to an empty list to have no default options:</p>
-<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">HelloCommand</span><span class="p">(</span><span class="n">BaseCommand</span><span class="p">):</span>
+If you don't want these default options, override the <code>arguments</code> class attribute to a list of <code>pdm.cli.options.Option</code> objects, or
+assign it to an empty list to have no default options:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">HelloCommand</span><span class="p">(</span><span class="n">BaseCommand</span><span class="p">):</span>
 
 <span class="hll">    <span class="n">arguments</span> <span class="o">=</span> <span class="p">[]</span>
 </span></code></pre></div>
-
+</td></tr></table>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The default options are loaded first, then <code>add_arguments()</code> is called.</p>
 </div>
 <h3 id="register-the-command-to-the-core-object">Register the command to the core object<a class="headerlink" href="#register-the-command-to-the-core-object" title="Permanent link">#</a></h3>
-<p>Write a function somewhere in your plugin project. There is no limit on what the name of the function is. The function
-should accept only one argument -- the PDM core object:</p>
-<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">hello_plugin</span><span class="p">(</span><span class="n">core</span><span class="p">):</span>
+<p>Write a function somewhere in your plugin project. There is no limit on what the name of the function is but the function
+should take only one argument -- the PDM core object:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">hello_plugin</span><span class="p">(</span><span class="n">core</span><span class="p">):</span>
 <span class="hll">    <span class="n">core</span><span class="o">.</span><span class="n">register_command</span><span class="p">(</span><span class="n">HelloCommand</span><span class="p">,</span> <span class="s2">&quot;hello&quot;</span><span class="p">)</span>
 </span></code></pre></div>
-
-<p>Call <code>core.register_command()</code> to register the command, the second argument as the name of the subcommand is optional.
+</td></tr></table>
+<p>Call <code>core.register_command()</code> to register the command. The second argument as the name of the subcommand is optional.
 PDM will look for the <code>HelloCommand</code>'s <code>name</code> attribute if the name is not passed.</p>
 <h3 id="add-a-new-config-item">Add a new config item<a class="headerlink" href="#add-a-new-config-item" title="Permanent link">#</a></h3>
-<p>Remember in the first code snippet, <code>hello.name</code> config key is consulted for the name if not passed via the command line.</p>
-<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">HelloCommand</span><span class="p">(</span><span class="n">BaseCommand</span><span class="p">):</span>
+<p>Let's recall the first code snippet, <code>hello.name</code> config key is consulted for the name if not passed via the command line.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">HelloCommand</span><span class="p">(</span><span class="n">BaseCommand</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Say hello to the specified person.</span>
 <span class="sd">    If none is given, will read from &quot;hello.name&quot; config.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -543,16 +574,20 @@ PDM will look for the <code>HelloCommand</code>'s <code>name</code> attribute if
             <span class="n">name</span> <span class="o">=</span> <span class="n">options</span><span class="o">.</span><span class="n">name</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hello, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </code></pre></div>
-
+</td></tr></table>
 <p>Till now, if you query the config value by <code>pdm config get hello.name</code>, an error will pop up saying it is not a valid config key.
 You need to register the config item, too:</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">pdm.project.config</span> <span class="kn">import</span> <span class="n">ConfigItem</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">pdm.project.config</span> <span class="kn">import</span> <span class="n">ConfigItem</span>
 
 <span class="k">def</span> <span class="nf">hello_plugin</span><span class="p">(</span><span class="n">core</span><span class="p">):</span>
     <span class="n">core</span><span class="o">.</span><span class="n">register_command</span><span class="p">(</span><span class="n">HelloCommand</span><span class="p">,</span> <span class="s2">&quot;hello&quot;</span><span class="p">)</span>
 <span class="hll">    <span class="n">core</span><span class="o">.</span><span class="n">add_config</span><span class="p">(</span><span class="s2">&quot;hello.name&quot;</span><span class="p">,</span> <span class="n">ConfigItem</span><span class="p">(</span><span class="s2">&quot;The person&#39;s name&quot;</span><span class="p">,</span> <span class="s2">&quot;John&quot;</span><span class="p">))</span>
 </span></code></pre></div>
-
+</td></tr></table>
 <p>where <code>ConfigItem</code> class takes 4 parameters, in the following order:</p>
 <ul>
 <li><code>description</code>: a description of the config item</li>
@@ -561,7 +596,7 @@ You need to register the config item, too:</p>
 <li><code>env_var</code>: the name of environment variable which will be read as the config value</li>
 </ul>
 <h3 id="other-plugin-points">Other plugin points<a class="headerlink" href="#other-plugin-points" title="Permanent link">#</a></h3>
-<p>Besides commands and configurations, PDM provides some other plugin abilities
+<p>Besides of commands and configurations, PDM provides some other plugin abilities
 which are not covered in the above example:</p>
 <ul>
 <li><code>core.project_class</code>: change the class of project object</li>
@@ -574,15 +609,24 @@ which are not covered in the above example:</p>
 <p>Now you have defined your plugin already, let's distribute it to PyPI. PDM's plugins are discovered by entry point types.
 Create an <code>pdm.plugin</code> entry point and point to your plugin callable(yeah, it don't need to be a function, any callable object can work):</p>
 <p><strong>PEP 621</strong>:</p>
-<div class="codehilite"><pre><span></span><code><span class="c1"># pyproject.toml</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># pyproject.toml</span>
 
 <span class="k">[project.entry-points.&quot;pdm.plugin&quot;]</span>
 <span class="n">hello</span> <span class="o">=</span> <span class="s">&quot;my_plugin:hello_plugin&quot;</span>
 </code></pre></div>
-
+</td></tr></table>
 <p>Note that <code>pdm.plugin</code> is wrapped with double quotes to be regarded as a single key.</p>
 <p><strong>setuptools</strong>:</p>
-<div class="codehilite"><pre><span></span><code><span class="c1"># setup.py</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># setup.py</span>
 
 <span class="n">setup</span><span class="p">(</span>
     <span class="o">...</span>
@@ -590,6 +634,7 @@ Create an <code>pdm.plugin</code> entry point and point to your plugin callable(
     <span class="o">...</span>
 <span class="p">)</span>
 </code></pre></div>
+</td></tr></table>
                 
               
               

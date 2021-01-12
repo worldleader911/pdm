@@ -534,8 +534,8 @@
 The following examples are run on Ubuntu 18.04, a few changes must be done if you are using Windows.</p>
 <h2 id="initialize-a-project">Initialize a project<a class="headerlink" href="#initialize-a-project" title="Permanent link">#</a></h2>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="gp">$</span> mkdir pdm-test <span class="o">&amp;&amp;</span> <span class="nb">cd</span> pdm-test
-<span class="gp">$</span> pdm init
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="gp">$ </span>mkdir pdm-test <span class="o">&amp;&amp;</span> <span class="nb">cd</span> pdm-test
+<span class="gp">$ </span>pdm init
 </code></pre></div>
 </td></tr></table>
 <p>Answer several questions asked by PDM and a <code>pyproject.toml</code> will be created for you in the project root:</p>
@@ -569,8 +569,8 @@ The following examples are run on Ubuntu 18.04, a few changes must be done if yo
 <p>For details of the meaning of each field in <code>pyproject.toml</code>, please refer to <a href="../pyproject/">Project File</a>.</p>
 <h2 id="add-dependencies">Add dependencies<a class="headerlink" href="#add-dependencies" title="Permanent link">#</a></h2>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="gp">$</span> pdm add requests
-<span class="gp">$</span> pdm add -d pytest
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="gp">$ </span>pdm add requests
+<span class="gp">$ </span>pdm add -d pytest
 </code></pre></div>
 </td></tr></table>
 <p><code>pdm add</code> can be followed by one or several dependencies, and the dependency specification is described in
@@ -592,11 +592,11 @@ for the dependency):</p>
 </ul>
 <h2 id="update-existing-dependencies">Update existing dependencies<a class="headerlink" href="#update-existing-dependencies" title="Permanent link">#</a></h2>
 <p>To update all dependencies in the lock file:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="gp">$</span> pdm update
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="gp">$ </span>pdm update
 </code></pre></div>
 </td></tr></table>
 <p>To update the specified package(s):</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="gp">$</span> pdm update requests
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="gp">$ </span>pdm update requests
 </code></pre></div>
 </td></tr></table>
 <h3 id="about-update-strategy">About update strategy<a class="headerlink" href="#about-update-strategy" title="Permanent link">#</a></h3>
@@ -609,7 +609,7 @@ which is given by <code>--update-&lt;strategy&gt;</code> option:</p>
 </ul>
 <h2 id="remove-existing-dependencies">Remove existing dependencies<a class="headerlink" href="#remove-existing-dependencies" title="Permanent link">#</a></h2>
 <p>To remove existing dependencies from project file and the library directory:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="gp">$</span> pdm remove requests
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="gp">$ </span>pdm remove requests
 </code></pre></div>
 </td></tr></table>
 <h2 id="synchronize-the-project-packages-with-lock-file">Synchronize the project packages with lock file<a class="headerlink" href="#synchronize-the-project-packages-with-lock-file" title="Permanent link">#</a></h2>
@@ -621,7 +621,7 @@ which is given by <code>--update-&lt;strategy&gt;</code> option:</p>
 </ul>
 <h2 id="show-what-packages-are-installed">Show what packages are installed<a class="headerlink" href="#show-what-packages-are-installed" title="Permanent link">#</a></h2>
 <p>Similar to <code>pip list</code>, you can list all packages installed in the packages directory:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="gp">$</span> pdm list
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="gp">$ </span>pdm list
 </code></pre></div>
 </td></tr></table>
 <p>Or show a dependency graph by:</p>
@@ -652,7 +652,7 @@ bump2version 1.0.0
 </td></tr></table>
 <h2 id="set-pypi-index-url">Set PyPI index URL<a class="headerlink" href="#set-pypi-index-url" title="Permanent link">#</a></h2>
 <p>You can specify a PyPI mirror URL by following commands:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="gp">$</span> pdm config <span class="nb">set</span> pypi.url https://testpypi.org/simple
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="gp">$ </span>pdm config <span class="nb">set</span> pypi.url https://testpypi.org/simple
 </code></pre></div>
 </td></tr></table>
 <p>By default, PDM will read the pip's configuration files to decide the PyPI URL, and fallback

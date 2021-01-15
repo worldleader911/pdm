@@ -747,6 +747,7 @@ by the configuration item <code>use_venv</code>. When it is set to <code>True</c
 <li>an virtualenv is already activated.</li>
 <li>any of <code>venv</code>, <code>.venv</code>, <code>env</code> is an valid virtualenv folder.</li>
 </ul>
+<p>Besides, when <code>use-venv</code> is on and the interpreter path given is a venv-like path, PDM will reuse that venv directory as well.</p>
 <h2 id="import-project-metadata-from-existing-project-files">Import project metadata from existing project files<a class="headerlink" href="#import-project-metadata-from-existing-project-files" title="Permanent link">#</a></h2>
 <p>If you are already other package manager tools like Pipenv or Poetry, it is easy to migrate to PDM.
 PDM provides <code>import</code> command so that you don't have to initialize the project manually, it now supports:</p>

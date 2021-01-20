@@ -346,6 +346,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#activate-the-plugin" class="md-nav__link">
+    Activate the plugin
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -461,6 +468,13 @@
         <li class="md-nav__item">
   <a href="#publish-your-plugin" class="md-nav__link">
     Publish your plugin
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#activate-the-plugin" class="md-nav__link">
+    Activate the plugin
   </a>
   
 </li>
@@ -654,6 +668,27 @@ Create an <code>pdm.plugin</code> entry point and point to your plugin callable(
     <span class="n">entry_points</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;pdm.plugin&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;hello = my_plugin:hello_plugin&quot;</span><span class="p">]}</span>
     <span class="o">...</span>
 <span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<h2 id="activate-the-plugin">Activate the plugin<a class="headerlink" href="#activate-the-plugin" title="Permanent link">#</a></h2>
+<p>As plugins are loaded via entry points, they can be activated with no more steps than just installing the plugin.</p>
+<p>Assume your plugin is published as <code>pdm-hello</code>, and if you installed <code>pdm</code> via <code>pipx</code>:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ pipx inject pdm pdm-hello
+</code></pre></div>
+</td></tr></table>
+<p>Or if you installed <code>pdm</code> via <code>homebrew</code>:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ <span class="k">$(</span>brew --prefix pdm<span class="k">)</span>/libexec/bin/python -m pip install pdm-hello
+</code></pre></div>
+</td></tr></table>
+<p>Otherwise if you installed <code>pdm</code> with normal <code>pip install</code>:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ pip install --user pdm-hello
+</code></pre></div>
+</td></tr></table>
+<p>The core idea is you must install the plugin in the same site-package directory as <code>pdm</code>.</p>
+<p>Now type in <code>pdm --help</code> in the terminal, you will see the new added <code>hello</code> command and use it:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ pdm hello Jack
+Hello, Jack
 </code></pre></div>
 </td></tr></table>
                 

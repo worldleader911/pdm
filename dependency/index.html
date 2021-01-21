@@ -332,6 +332,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#environment-variables-expansion" class="md-nav__link">
+    Environment variables expansion
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -533,6 +540,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#environment-variables-expansion" class="md-nav__link">
+    Environment variables expansion
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -699,6 +713,16 @@ are stored under <code>tool.pdm</code> namespace in the <code>pyproject.toml</co
 <span class="n">allow_prereleases</span> <span class="o">=</span> <span class="kc">true</span>
 </code></pre></div>
 </td></tr></table>
+<h2 id="environment-variables-expansion">Environment variables expansion<a class="headerlink" href="#environment-variables-expansion" title="Permanent link">#</a></h2>
+<p>For convenience, PDM supports environment variables expansion in the dependency specification under some circumstances:</p>
+<ul>
+<li>Environment variables in the URL auth part will be expanded: <code>https://${USERNAME}:${PASSWORD}/artifacts.io/Flask-1.1.2.tar.gz</code>.
+  It is also okay to not give the auth part in the URL directly, PDM will ask for them when <code>-v/--verbose</code> is on.</li>
+<li><code>${PROJECT_ROOT}</code> will be expanded with the absolute path of the project root, in POSIX style(i.e. forward slash <code>/</code>, even on Windows).
+  For consistency, URLs that refer to a local path under <code>${PROJECT_ROOT}</code> must start with <code>file:///</code>(three slashes), e.g.
+  <code>file:///${PROJECT_ROOT}/artifacts/Flask-1.1.2.tar.gz</code>.</li>
+</ul>
+<p>Don't worry about credential leakage, the environment variables will be expanded when needed and kept untouched in the lock file.</p>
                 
               
               

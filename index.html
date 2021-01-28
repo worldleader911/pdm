@@ -599,7 +599,7 @@ in a similar way to <code>npm</code> that doesn't need to create a virtualenv at
 <p>PDM requires Python 3.7+ to be installed. It works on multiple platforms including Windows, Linux and MacOS.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>There is no restriction about what Python version that your project is using but installing
+<p>There is no restriction about what Python version your project is using, but installing
 PDM itself needs Python 3.7+.</p>
 </div>
 <h3 id="recommended-installation-method">Recommended installation method<a class="headerlink" href="#recommended-installation-method" title="Permanent link">#</a></h3>
@@ -607,7 +607,7 @@ PDM itself needs Python 3.7+.</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ brew install pdm
 </code></pre></div>
 </td></tr></table>
-<p>Otherwise, to avoid messing up with the system Python environemnt, the most recommended way to install PDM
+<p>Otherwise, to avoid messing up with the system Python environment, the most recommended way to install PDM
 is via <a href="https://pypi.org/project/pipx">pipx</a>:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="gp">$ </span>pipx install pdm
 </code></pre></div>
@@ -705,8 +705,8 @@ PS &gt; pdm completion powershell <span class="p">|</span> Out-File -Encoding ut
 </td></tr></table>
 <h2 id="unicode-and-ansi-supports">Unicode and ANSI supports<a class="headerlink" href="#unicode-and-ansi-supports" title="Permanent link">#</a></h2>
 <p>PDM provides a fancy terminal UI with the help of ANSI characters and unicode emojis.
-It can turn on/off automitically depending on whether it is supported on your terminal.
-Otherwise if you see any garbled characters, set env var <code>DISABLE_UNICODE_OUTPUT=1</code> to turn off it.</p>
+It can turn on/off automatically depending on whether it is supported on your terminal.
+However, if you see any garbled characters, set env var <code>DISABLE_UNICODE_OUTPUT=1</code> to turn off it.</p>
 <h2 id="use-with-ide">Use with IDE<a class="headerlink" href="#use-with-ide" title="Permanent link">#</a></h2>
 <p>Now there are not built-in support or plugins for PEP 582 in most IDEs, you have to configure your tools manually.</p>
 <p>PDM will write and store project-wide configurations in <code>.pdm.toml</code> and you are recommended to add following lines

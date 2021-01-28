@@ -605,7 +605,7 @@ The following examples are run on Ubuntu 18.04, a few changes must be done if yo
 <a href="https://www.python.org/dev/peps/pep-0508/">PEP 508</a>.
 There are two groups of dependencies: packages will be added to <code>project.dependencies</code> by default or <code>project.dev-dependencies</code>
 if <code>-d/--dev</code> option is passed to the <code>pdm add</code> command.</p>
-<p>PDM also allows extra dependency groups by providing <code>-s/--section &lt;name&gt;</code> option, and the dependencies will apear in
+<p>PDM also allows extra dependency groups by providing <code>-s/--section &lt;name&gt;</code> option, and the dependencies will appear in
 <code>project.optional-dependencies.&lt;name&gt;</code> in the project file, respectively.</p>
 <p>After that, dependencies and sub-dependencies will be resolved properly and installed for you, you can view <code>pdm.lock</code> to see
 the resolved result of all dependencies.</p>
@@ -630,7 +630,7 @@ for the dependency):</p>
 </code></pre></div>
 </td></tr></table>
 <h3 id="about-update-strategy">About update strategy<a class="headerlink" href="#about-update-strategy" title="Permanent link">#</a></h3>
-<p>Similary, PDM also provides 2 different behaviors of updating dependencies and sub-dependencies，
+<p>Similarly, PDM also provides 2 different behaviors of updating dependencies and sub-dependencies，
 which is given by <code>--update-&lt;strategy&gt;</code> option:</p>
 <ul>
 <li><code>reuse</code>: Keep all locked dependencies except for those given in the command line.</li>
@@ -645,7 +645,7 @@ which is given by <code>--update-&lt;strategy&gt;</code> option:</p>
 <h2 id="synchronize-the-project-packages-with-lock-file">Synchronize the project packages with lock file<a class="headerlink" href="#synchronize-the-project-packages-with-lock-file" title="Permanent link">#</a></h2>
 <p>There are two similar commands to do this job with a slight difference:</p>
 <ul>
-<li><code>pdm install</code> will check the lock file and relock if it mismatch with project file, then install.</li>
+<li><code>pdm install</code> will check the lock file and relock if it mismatches with project file, then install.</li>
 <li><code>pdm sync</code> install dependencies in the lock file and will error out if it doesn't exist.
   Besides, <code>pdm sync</code> can also remove unneeded packages if <code>--clean</code> option is given.</li>
 </ul>
@@ -699,7 +699,7 @@ These sources should be preserved in <code>pyproject.toml</code> and shipped wit
 <span class="n">name</span> <span class="o">=</span> <span class="s">&quot;private&quot;</span>
 </code></pre></div>
 </td></tr></table>
-<p>Use the name <code>name = "pypi"</code> if you want to override the configurated PyPI index. Note that PDM specific settings
+<p>Use the name <code>name = "pypi"</code> if you want to override the configured PyPI index. Note that PDM specific settings
 are stored under <code>tool.pdm</code> namespace in the <code>pyproject.toml</code>.</p>
 <h2 id="allow-prerelease-versions-to-be-installed">Allow prerelease versions to be installed<a class="headerlink" href="#allow-prerelease-versions-to-be-installed" title="Permanent link">#</a></h2>
 <p>Include the following setting in <code>pyproject.toml</code> to enable:</p>

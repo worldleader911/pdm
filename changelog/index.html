@@ -3146,7 +3146,7 @@
 <h3 id="features-improvements">Features &amp; Improvements<a class="headerlink" href="#features-improvements" title="Permanent link">#</a></h3>
 <ul>
 <li>Change the behavior of <code>--save-compatible</code> slightly. Now the version specifier saved is using the REAL compatible operator <code>~=</code> as described in PEP 440. Before: <code>requests&lt;3.0.0,&gt;=2.19.1</code>, After: <code>requests~=2.19</code>. The new specifier accepts <code>requests==2.19.0</code> as compatible version. <a href="https://github.com/frostming/pdm/issues/225">#225</a></li>
-<li>Environment variable <code>${PROJECT_ROOT}</code> in the dependency specificaton can be expanded to refer to the project root in pyproject.toml.
+<li>Environment variable <code>${PROJECT_ROOT}</code> in the dependency specification can be expanded to refer to the project root in pyproject.toml.
   The environment variables will be kept as they are in the lock file. <a href="https://github.com/frostming/pdm/issues/226">#226</a></li>
 <li>Change the dependencies of a package in the lock file to a list of PEP 508 strings <a href="https://github.com/frostming/pdm/issues/236">#236</a></li>
 </ul>
@@ -3249,7 +3249,7 @@
 <li>Add a special key in tool.pdm.scripts that holds configurations shared by all scripts.</li>
 <li>Support loading env var from a dot-env file.</li>
 <li>Add a flag <code>-s/--site-packages</code> to include system site-packages when running. <a href="https://github.com/frostming/pdm/issues/178">#178</a></li>
-<li>Now PEP 582 can be enabled in the Python interperter directly! <a href="https://github.com/frostming/pdm/issues/181">#181</a></li>
+<li>Now PEP 582 can be enabled in the Python interpreter directly! <a href="https://github.com/frostming/pdm/issues/181">#181</a></li>
 </ul>
 <h3 id="bug-fixes_6">Bug Fixes<a class="headerlink" href="#bug-fixes_6" title="Permanent link">#</a></h3>
 <ul>
@@ -3277,7 +3277,7 @@
 <h2 id="release-v0102-2020-11-05">Release v0.10.2 (2020-11-05)<a class="headerlink" href="#release-v0102-2020-11-05" title="Permanent link">#</a></h2>
 <h3 id="bug-fixes_8">Bug Fixes<a class="headerlink" href="#bug-fixes_8" title="Permanent link">#</a></h3>
 <ul>
-<li>Building editable distribution does not install <code>build-system.requires</code> any more. <a href="https://github.com/frostming/pdm/issues/167">#167</a></li>
+<li>Building editable distribution does not install <code>build-system.requires</code> anymore. <a href="https://github.com/frostming/pdm/issues/167">#167</a></li>
 </ul>
 <h2 id="release-v0101-2020-11-04">Release v0.10.1 (2020-11-04)<a class="headerlink" href="#release-v0101-2020-11-04" title="Permanent link">#</a></h2>
 <h3 id="bug-fixes_9">Bug Fixes<a class="headerlink" href="#bug-fixes_9" title="Permanent link">#</a></h3>
@@ -3294,7 +3294,7 @@
 </ul>
 <h3 id="bug-fixes_10">Bug Fixes<a class="headerlink" href="#bug-fixes_10" title="Permanent link">#</a></h3>
 <ul>
-<li>Fix a bug that <code>sitecustomize.py</code> incorrectly gets injected into the editabl console scripts. <a href="https://github.com/frostming/pdm/issues/158">#158</a></li>
+<li>Fix a bug that <code>sitecustomize.py</code> incorrectly gets injected into the editable console scripts. <a href="https://github.com/frostming/pdm/issues/158">#158</a></li>
 </ul>
 <h2 id="release-v092-2020-10-13">Release v0.9.2 (2020-10-13)<a class="headerlink" href="#release-v092-2020-10-13" title="Permanent link">#</a></h2>
 <h3 id="features-improvements_9">Features &amp; Improvements<a class="headerlink" href="#features-improvements_9" title="Permanent link">#</a></h3>
@@ -3313,7 +3313,7 @@
 </ul>
 <h3 id="bug-fixes_12">Bug Fixes<a class="headerlink" href="#bug-fixes_12" title="Permanent link">#</a></h3>
 <ul>
-<li>Fix a bug that the result of <code>find_matched()</code> is exhaused when accessed twice. <a href="https://github.com/frostming/pdm/issues/149">#149</a></li>
+<li>Fix a bug that the result of <code>find_matched()</code> is exhausted when accessed twice. <a href="https://github.com/frostming/pdm/issues/149">#149</a></li>
 </ul>
 <h2 id="release-v090-2020-10-08">Release v0.9.0 (2020-10-08)<a class="headerlink" href="#release-v090-2020-10-08" title="Permanent link">#</a></h2>
 <h3 id="features-improvements_11">Features &amp; Improvements<a class="headerlink" href="#features-improvements_11" title="Permanent link">#</a></h3>
@@ -3386,9 +3386,9 @@
 </ul>
 <h3 id="bug-fixes_19">Bug Fixes<a class="headerlink" href="#bug-fixes_19" title="Permanent link">#</a></h3>
 <ul>
-<li>Fix a bug that environment markers cannot be evaluated correctly if extra's are connected with "or". <a href="https://github.com/frostming/pdm/issues/107">#107</a></li>
+<li>Fix a bug that environment markers cannot be evaluated correctly if extras are connected with "or". <a href="https://github.com/frostming/pdm/issues/107">#107</a></li>
 <li>Don't consult PyPI JSON API by default for package metadata. <a href="https://github.com/frostming/pdm/issues/112">#112</a></li>
-<li>Elimate backslashes in markers for TOML documents. <a href="https://github.com/frostming/pdm/issues/115">#115</a></li>
+<li>Eliminate backslashes in markers for TOML documents. <a href="https://github.com/frostming/pdm/issues/115">#115</a></li>
 </ul>
 <h2 id="release-v071-2020-04-13">Release v0.7.1 (2020-04-13)<a class="headerlink" href="#release-v071-2020-04-13" title="Permanent link">#</a></h2>
 <h3 id="bug-fixes_20">Bug Fixes<a class="headerlink" href="#bug-fixes_20" title="Permanent link">#</a></h3>
@@ -3413,8 +3413,8 @@
 <h2 id="release-v064-2020-04-07">Release v0.6.4 (2020-04-07)<a class="headerlink" href="#release-v064-2020-04-07" title="Permanent link">#</a></h2>
 <h3 id="features-improvements_15">Features &amp; Improvements<a class="headerlink" href="#features-improvements_15" title="Permanent link">#</a></h3>
 <ul>
-<li>Update shebang lines in the exetuable scripts when doing <code>pdm use</code>. <a href="https://github.com/frostming/pdm/issues/96">#96</a></li>
-<li>Auto detect commonly used venv directories. <a href="https://github.com/frostming/pdm/issues/97">#97</a></li>
+<li>Update shebang lines in the executable scripts when doing <code>pdm use</code>. <a href="https://github.com/frostming/pdm/issues/96">#96</a></li>
+<li>Auto-detect commonly used venv directories. <a href="https://github.com/frostming/pdm/issues/97">#97</a></li>
 </ul>
 <h2 id="release-v063-2020-03-30">Release v0.6.3 (2020-03-30)<a class="headerlink" href="#release-v063-2020-03-30" title="Permanent link">#</a></h2>
 <h3 id="bug-fixes_23">Bug Fixes<a class="headerlink" href="#bug-fixes_23" title="Permanent link">#</a></h3>
@@ -3451,7 +3451,7 @@
 <li>Support parallel installation.</li>
 <li>Add new command <code>pmd import</code> to import project metadata from <code>Pipfile</code>, <code>poetry</code>, <code>flit</code>, <code>requirements.txt</code>.
   <a href="https://github.com/frostming/pdm/issues/79">#79</a></li>
-<li><code>pdm init</code> and <code>pdm install</code> will auto-detect possibile files that can be imported.</li>
+<li><code>pdm init</code> and <code>pdm install</code> will auto-detect possible files that can be imported.</li>
 </ul>
 <h3 id="bug-fixes_26">Bug Fixes<a class="headerlink" href="#bug-fixes_26" title="Permanent link">#</a></h3>
 <ul>
@@ -3584,9 +3584,9 @@ global project is not activated.</li>
 <ul>
 <li>New option: <code>pdm list --graph</code> to show a dependency graph of the working set. <a href="https://github.com/frostming/pdm/issues/10">#10</a></li>
 <li>New option: <code>pdm update --unconstrained</code> to ignore the version constraint of given packages. <a href="https://github.com/frostming/pdm/issues/13">#13</a></li>
-<li>Improve the error message when project is not initialized before running comands. <a href="https://github.com/frostming/pdm/issues/19">#19</a></li>
+<li>Improve the error message when project is not initialized before running commands. <a href="https://github.com/frostming/pdm/issues/19">#19</a></li>
 <li>Pinned candidates in lock file are reused when relocking during <code>pdm install</code>. <a href="https://github.com/frostming/pdm/issues/33">#33</a></li>
-<li>Use the pyenv interperter value if pyenv is installed. <a href="https://github.com/frostming/pdm/issues/36">#36</a></li>
+<li>Use the pyenv interpreter value if pyenv is installed. <a href="https://github.com/frostming/pdm/issues/36">#36</a></li>
 <li>Introduce a new command <code>pdm info</code> to show project environment information. <a href="https://github.com/frostming/pdm/issues/9">#9</a></li>
 </ul>
 <h3 id="bug-fixes_38">Bug Fixes<a class="headerlink" href="#bug-fixes_38" title="Permanent link">#</a></h3>
@@ -3657,7 +3657,7 @@ global project is not activated.</li>
 </ul>
 <h3 id="miscellany_5">Miscellany<a class="headerlink" href="#miscellany_5" title="Permanent link">#</a></h3>
 <ul>
-<li>Add a Chinese REAME</li>
+<li>Add a Chinese README</li>
 </ul>
 <h3 id="features_4">Features<a class="headerlink" href="#features_4" title="Permanent link">#</a></h3>
 <ul>
@@ -3672,7 +3672,7 @@ global project is not activated.</li>
 <li>PEP 508 environment markers.</li>
 <li>Running scripts with PEP 582 local packages.</li>
 <li>Console scripts are injected with local paths.</li>
-<li>A neet CLI.</li>
+<li>A neat CLI.</li>
 <li>add, lock, list, update, remove commands.</li>
 <li>PEP 517 build backends.</li>
 <li>Continuous Integration.</li>

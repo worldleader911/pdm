@@ -286,8 +286,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#include-and-exclude-pacakge-files" class="md-nav__link">
-    Include and exclude pacakge files
+  <a href="#include-and-exclude-package-files" class="md-nav__link">
+    Include and exclude package files
   </a>
   
 </li>
@@ -453,8 +453,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#include-and-exclude-pacakge-files" class="md-nav__link">
-    Include and exclude pacakge files
+  <a href="#include-and-exclude-package-files" class="md-nav__link">
+    Include and exclude package files
   </a>
   
 </li>
@@ -562,7 +562,7 @@ the version will be read from the <code>__version__</code> variable in that file
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">dynamic</span> <span class="o">=</span> <span class="k">[&quot;version&quot;]</span>
 </code></pre></div>
 </td></tr></table>
-<h2 id="include-and-exclude-pacakge-files">Include and exclude pacakge files<a class="headerlink" href="#include-and-exclude-pacakge-files" title="Permanent link">#</a></h2>
+<h2 id="include-and-exclude-package-files">Include and exclude package files<a class="headerlink" href="#include-and-exclude-package-files" title="Permanent link">#</a></h2>
 <p>The way of specifying include and exclude files are simple, they are given as a list of glob patterns:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
@@ -716,7 +716,7 @@ format of <code>[project.scripts]</code>:</p>
 </code></pre></div>
 </td></tr></table>
 <h2 id="build-c-extensions">Build C extensions<a class="headerlink" href="#build-c-extensions" title="Permanent link">#</a></h2>
-<p>Currently building C extensions still relies on <code>setuptools</code>. You should write a python script which contains
+<p>Currently, building C extensions still relies on <code>setuptools</code>. You should write a python script which contains
 a function named <code>build</code> and accepts the parameter dictionary of <code>setup()</code> as the only argument.
 Update the dictionary with your <code>ext_modules</code> settings in the function.</p>
 <p>Here is an example taken from <code>MarkupSafe</code>:</p>

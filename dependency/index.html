@@ -609,6 +609,8 @@ if <code>-d/--dev</code> option is passed to the <code>pdm add</code> command.</
 <code>project.optional-dependencies.&lt;name&gt;</code> in the project file, respectively.</p>
 <p>After that, dependencies and sub-dependencies will be resolved properly and installed for you, you can view <code>pdm.lock</code> to see
 the resolved result of all dependencies.</p>
+<p>Local packages can be installed in <a href="https://pip.pypa.io/en/stable/reference/pip_install/#editable-installs">editable mode</a>
+(just like <code>pip install -e &lt;local project path&gt;</code> would) using <code>pdm add -e/--editable &lt;local project path&gt;</code>.</p>
 <h3 id="save-version-specifiers">Save version specifiers<a class="headerlink" href="#save-version-specifiers" title="Permanent link">#</a></h3>
 <p>If the package is given without a version specifier like <code>pdm add requests</code>. PDM provides three different behaviors of what version
 specifier is saved for the dependency, which is given by <code>--save-&lt;strategy&gt;</code>(Assume <code>2.21.0</code> is the latest version that can be found

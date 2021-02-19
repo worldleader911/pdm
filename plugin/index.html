@@ -521,22 +521,22 @@ of the core project it may have a chance to be absorbed into PDM.</p>
 <p>In the following sections, I will show an example of adding a new command <code>hello</code> which reads the <code>hello.name</code> config.</p>
 <h3 id="write-the-command">Write the command<a class="headerlink" href="#write-the-command" title="Permanent link">#</a></h3>
 <p>The PDM's CLI module is designed in a way that user can easily "inherit and modify". To write a new command:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">pdm.cli.commands.base</span> <span class="kn">import</span> <span class="n">BaseCommand</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">pdm.cli.commands.base</span> <span class="kn">import</span> <span class="n">BaseCommand</span>
 
 <span class="k">class</span> <span class="nc">HelloCommand</span><span class="p">(</span><span class="n">BaseCommand</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Say hello to the specified person.</span>
@@ -565,9 +565,9 @@ of the core project it may have a chance to be absorbed into PDM.</p>
 <p>Besides, PDM's subcommand has two default options: <code>-v/--verbose</code> to change the verbosity level and <code>-g/--global</code> to enable global project.
 If you don't want these default options, override the <code>arguments</code> class attribute to a list of <code>pdm.cli.options.Option</code> objects, or
 assign it to an empty list to have no default options:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2
-3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">HelloCommand</span><span class="p">(</span><span class="n">BaseCommand</span><span class="p">):</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">HelloCommand</span><span class="p">(</span><span class="n">BaseCommand</span><span class="p">):</span>
 
 <span class="hll">    <span class="n">arguments</span> <span class="o">=</span> <span class="p">[]</span>
 </span></code></pre></div>
@@ -579,8 +579,8 @@ assign it to an empty list to have no default options:</p>
 <h3 id="register-the-command-to-the-core-object">Register the command to the core object<a class="headerlink" href="#register-the-command-to-the-core-object" title="Permanent link">#</a></h3>
 <p>Write a function somewhere in your plugin project. There is no limit on what the name of the function is,
 but the function  should take only one argument -- the PDM core object:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">hello_plugin</span><span class="p">(</span><span class="n">core</span><span class="p">):</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">hello_plugin</span><span class="p">(</span><span class="n">core</span><span class="p">):</span>
 <span class="hll">    <span class="n">core</span><span class="o">.</span><span class="n">register_command</span><span class="p">(</span><span class="n">HelloCommand</span><span class="p">,</span> <span class="s2">&quot;hello&quot;</span><span class="p">)</span>
 </span></code></pre></div>
 </td></tr></table>
@@ -588,20 +588,20 @@ but the function  should take only one argument -- the PDM core object:</p>
 PDM will look for the <code>HelloCommand</code>'s <code>name</code> attribute if the name is not passed.</p>
 <h3 id="add-a-new-config-item">Add a new config item<a class="headerlink" href="#add-a-new-config-item" title="Permanent link">#</a></h3>
 <p>Let's recall the first code snippet, <code>hello.name</code> config key is consulted for the name if not passed via the command line.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">HelloCommand</span><span class="p">(</span><span class="n">BaseCommand</span><span class="p">):</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">HelloCommand</span><span class="p">(</span><span class="n">BaseCommand</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Say hello to the specified person.</span>
 <span class="sd">    If none is given, will read from &quot;hello.name&quot; config.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -619,11 +619,11 @@ PDM will look for the <code>HelloCommand</code>'s <code>name</code> attribute if
 </td></tr></table>
 <p>Till now, if you query the config value by <code>pdm config get hello.name</code>, an error will pop up saying it is not a valid config key.
 You need to register the config item, too:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2
-3
-4
-5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">pdm.project.config</span> <span class="kn">import</span> <span class="n">ConfigItem</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">pdm.project.config</span> <span class="kn">import</span> <span class="n">ConfigItem</span>
 
 <span class="k">def</span> <span class="nf">hello_plugin</span><span class="p">(</span><span class="n">core</span><span class="p">):</span>
     <span class="n">core</span><span class="o">.</span><span class="n">register_command</span><span class="p">(</span><span class="n">HelloCommand</span><span class="p">,</span> <span class="s2">&quot;hello&quot;</span><span class="p">)</span>
@@ -653,7 +653,7 @@ by <code>pip install -e .</code> or <code>python setup.py develop</code> in the 
 as there is no such <code>setup.py</code> in a PDM project, how can we do that?</p>
 <p>Fortunately, it becomes even easier with PDM and PEP 582. First, you should enable PEP 582 globally following the
 <a href="..#enable-pep-582-globally">corresponding part of this doc</a>. Then you just need to install all dependencies into the <code>__pypackages__</code> directory by:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ pdm install -d
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ pdm install -d
 </code></pre></div>
 </td></tr></table>
 <p>After that, all the dependencies are available with a compatible Python interpreter, including the plugin itself, in editable mode. That means any change
@@ -664,10 +664,10 @@ That is how PEP 582 benefits our development workflow.</p>
 <p>Now you have defined your plugin already, let's distribute it to PyPI. PDM's plugins are discovered by entry point types.
 Create an <code>pdm.plugin</code> entry point and point to your plugin callable (yeah, it doesn't need to be a function, any callable object can work):</p>
 <p><strong>PEP 621</strong>:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2
-3
-4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># pyproject.toml</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># pyproject.toml</span>
 
 <span class="k">[project.entry-points.&quot;pdm.plugin&quot;]</span>
 <span class="n">hello</span> <span class="o">=</span> <span class="s">&quot;my_plugin:hello_plugin&quot;</span>
@@ -675,13 +675,13 @@ Create an <code>pdm.plugin</code> entry point and point to your plugin callable 
 </td></tr></table>
 <p>Note that <code>pdm.plugin</code> is wrapped with double quotes to be regarded as a single key.</p>
 <p><strong>setuptools</strong>:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2
-3
-4
-5
-6
-7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># setup.py</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># setup.py</span>
 
 <span class="n">setup</span><span class="p">(</span>
     <span class="o">...</span>
@@ -693,21 +693,21 @@ Create an <code>pdm.plugin</code> entry point and point to your plugin callable 
 <h2 id="activate-the-plugin">Activate the plugin<a class="headerlink" href="#activate-the-plugin" title="Permanent link">#</a></h2>
 <p>As plugins are loaded via entry points, they can be activated with no more steps than just installing the plugin.</p>
 <p>Assume your plugin is published as <code>pdm-hello</code>, and if you installed <code>pdm</code> via <code>pipx</code>:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ pipx inject pdm pdm-hello
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ pipx inject pdm pdm-hello
 </code></pre></div>
 </td></tr></table>
 <p>Or if you installed <code>pdm</code> via <code>homebrew</code>:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ <span class="k">$(</span>brew --prefix pdm<span class="k">)</span>/libexec/bin/python -m pip install pdm-hello
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ <span class="k">$(</span>brew --prefix pdm<span class="k">)</span>/libexec/bin/python -m pip install pdm-hello
 </code></pre></div>
 </td></tr></table>
 <p>Otherwise, if you installed <code>pdm</code> with normal <code>pip install</code>:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ pip install --user pdm-hello
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ pip install --user pdm-hello
 </code></pre></div>
 </td></tr></table>
 <p>The core idea is you must install the plugin in the same site-package directory as <code>pdm</code>.</p>
 <p>Now type in <code>pdm --help</code> in the terminal, you will see the new added <code>hello</code> command and use it:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ pdm hello Jack
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ pdm hello Jack
 Hello, Jack
 </code></pre></div>
 </td></tr></table>

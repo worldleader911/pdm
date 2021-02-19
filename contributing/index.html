@@ -448,16 +448,16 @@ this section.</p>
 <ol>
 <li>First, fork this project to your own namespace using the fork button at the top right of the repository page.</li>
 <li>Clone the <strong>upstream</strong> repository to local:
-   <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2
-3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ git clone https://github.com/frostming/pdm.git
+   <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ git clone https://github.com/frostming/pdm.git
 <span class="c1"># Or if you prefer SSH clone:</span>
 $ git clone git@github.com:frostming/pdm.git
 </code></pre></div>
 </td></tr></table></li>
 <li>Add the fork as a new remote:
-   <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ git remote add fork https://github.com/yourname/pdm.git
+   <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ git remote add fork https://github.com/yourname/pdm.git
 $ git fetch fork
 </code></pre></div>
 </td></tr></table>
@@ -466,9 +466,9 @@ $ git fetch fork
 <p><strong>ProTips:</strong>
 1. Don't modify code on the master branch, the master branch should always keep track of origin/master.</p>
 <p>To update master branch to date:
-   <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2
-3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ git pull origin master
+   <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ git pull origin master
 <span class="c1"># In rare cases that your local master branch diverges from the remote master:</span>
 $ git fetch origin <span class="o">&amp;&amp;</span> git reset --hard master
 </code></pre></div>
@@ -477,26 +477,26 @@ $ git fetch origin <span class="o">&amp;&amp;</span> git reset --hard master
 3. Create a Pull Request from that patch branch.</p>
 <h2 id="local-development">Local development<a class="headerlink" href="#local-development" title="Permanent link">#</a></h2>
 <p>To make sure the tests suites can run rightly, you need to install <a href="https://git-lfs.github.com/">Git LFS</a>, then
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ git lfs install
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ git lfs install
 </code></pre></div>
 </td></tr></table></p>
 <p>Then, you need to install base dependencies in a venv. Although PDM uses local package directory to install
 dependencies, venv is still needed to start up PDM at the first time:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ python setup_dev.py
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ python setup_dev.py
 </code></pre></div>
 </td></tr></table>
 <p>Now, all dependencies are installed into local <code>__pypackages__</code> directory, which will be used for development
 after this point. The <code>pdm</code> executable located at <code>__pypackages__/&lt;VERSION&gt;/bin</code> can be run directly from outside,
 which is installed in editable mode, or you can use <code>python -m pdm</code> from inside the venv.</p>
 <h3 id="run-tests">Run tests<a class="headerlink" href="#run-tests" title="Permanent link">#</a></h3>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ pdm run pytest tests
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ pdm run pytest tests
 </code></pre></div>
 </td></tr></table>
 <p>The test suite is still simple and requires to be supplied, please help write more test cases.</p>
 <h3 id="code-style">Code style<a class="headerlink" href="#code-style" title="Permanent link">#</a></h3>
 <p>PDM uses <code>pre-commit</code> for linting, you need to install <code>pre-commit</code> first, then:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ pre-commit install
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ pre-commit install
 $ pre-commit run --all-files
 </code></pre></div>
 </td></tr></table>

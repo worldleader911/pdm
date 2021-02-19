@@ -555,22 +555,22 @@ View the PEP for the detailed specification.</p>
 the version will be read from the <code>__version__</code> variable in that file.</p>
 <p>PDM can also read version from SCM tags. If you are using git or hg as the version control system, define the
 <code>version</code> as follows:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">version</span> <span class="o">=</span> <span class="p">{</span><span class="n">use_scm</span> <span class="o">=</span> <span class="n">true</span><span class="p">}</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">version</span> <span class="o">=</span> <span class="p">{</span><span class="n">use_scm</span> <span class="o">=</span> <span class="n">true</span><span class="p">}</span>
 </code></pre></div>
 </td></tr></table>
 <p>In either case, you MUST also include <code>version</code> in <code>dynamic</code> field, or the backend will raise an error:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">dynamic</span> <span class="o">=</span> <span class="k">[&quot;version&quot;]</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">dynamic</span> <span class="o">=</span> <span class="k">[&quot;version&quot;]</span>
 </code></pre></div>
 </td></tr></table>
 <h2 id="include-and-exclude-package-files">Include and exclude package files<a class="headerlink" href="#include-and-exclude-package-files" title="Permanent link">#</a></h2>
 <p>The way of specifying include and exclude files are simple, they are given as a list of glob patterns:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2
-3
-4
-5
-6
-7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">includes</span> <span class="o">=</span> <span class="p">[</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">includes</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s">&quot;**/*.json&quot;</span><span class="p">,</span>
     <span class="s">&quot;mypackage/&quot;</span><span class="p">,</span>
 <span class="p">]</span>
@@ -583,7 +583,7 @@ the version will be read from the <code>__version__</code> variable in that file
 Packages can also lie in <code>src</code> directory that PDM can find it.</p>
 <h2 id="select-another-package-directory-to-look-for-packages">Select another package directory to look for packages<a class="headerlink" href="#select-another-package-directory-to-look-for-packages" title="Permanent link">#</a></h2>
 <p>Similar to <code>setuptools</code>' <code>package_dir</code> setting, one can specify another package directory, such as <code>src</code>, in <code>pyproject.toml</code> easily:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">package-dir</span> <span class="o">=</span> <span class="s">&quot;src&quot;</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">package-dir</span> <span class="o">=</span> <span class="s">&quot;src&quot;</span>
 </code></pre></div>
 </td></tr></table>
 <p>If no package directory is given, PDM can also recognize <code>src</code> as the <code>package-dir</code> implicitly if:</p>
@@ -602,16 +602,16 @@ Packages can also lie in <code>src</code> directory that PDM can find it.</p>
 <p>The <code>project.dependencies</code> is an array of dependency specification strings following the <a href="https://www.python.org/dev/peps/pep-0440/">PEP 440</a>
 and <a href="https://www.python.org/dev/peps/pep-0508/">PEP 508</a>.</p>
 <p>Examples:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">dependencies</span> <span class="o">=</span> <span class="p">[</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">dependencies</span> <span class="o">=</span> <span class="p">[</span>
     <span class="c1"># Named requirement</span>
     <span class="s">&quot;requests&quot;</span><span class="p">,</span>
     <span class="c1"># Named requirement with version specifier</span>
@@ -627,11 +627,11 @@ and <a href="https://www.python.org/dev/peps/pep-0508/">PEP 508</a>.</p>
 <p>Beside of the normal dependency specifications, one can also have some packages installed in editable mode. The editable specification string format
 is the same as <a href="https://pip.pypa.io/en/stable/reference/pip_install/#editable-installs">Pip's editable install mode</a>.</p>
 <p>Examples:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2
-3
-4
-5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>dependencies = [
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>dependencies = [
     ...,
     &quot;-e path/to/SomeProject&quot;,
     &quot;-e git+http://repo/my_project.git#egg=SomeProject&quot;
@@ -646,13 +646,13 @@ PEP 508 strings. They only exist for development purpose.</p>
 </div>
 <h3 id="optional-dependencies">Optional dependencies<a class="headerlink" href="#optional-dependencies" title="Permanent link">#</a></h3>
 <p>You can have some requirements optional, which is similar to <code>setuptools</code>' <code>extras_require</code> parameter.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2
-3
-4
-5
-6
-7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">[project.optional-dependencies]</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">[project.optional-dependencies]</span>
 <span class="n">socks</span> <span class="o">=</span> <span class="k">[ &#39;PySocks &gt;= 1.5.6, != 1.5.7, &lt; 2&#39; ]</span>
 <span class="n">tests</span> <span class="o">=</span> <span class="p">[</span>
   <span class="s">&#39;ddt &gt;= 1.2.2, &lt; 2&#39;</span><span class="p">,</span>
@@ -662,19 +662,19 @@ PEP 508 strings. They only exist for development purpose.</p>
 </code></pre></div>
 </td></tr></table>
 <p>To install a group of optional dependencies:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ pdm install -s socks
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ pdm install -s socks
 </code></pre></div>
 </td></tr></table>
 <p><code>-s</code> option can be given multiple times to include more than one groups.</p>
 <h3 id="development-dependencies">Development dependencies<a class="headerlink" href="#development-dependencies" title="Permanent link">#</a></h3>
 <p>You can have some development only dependencies, which is the same as <code>package.json</code>'s <code>dev-dependencies</code> field:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2
-3
-4
-5
-6
-7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">[project]</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">[project]</span>
 
 <span class="n">dev-dependencies</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s">&quot;pytest&quot;</span><span class="p">,</span>
@@ -684,22 +684,22 @@ PEP 508 strings. They only exist for development purpose.</p>
 </code></pre></div>
 </td></tr></table>
 <p>To install all of them:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ pdm install -d
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ pdm install -d
 </code></pre></div>
 </td></tr></table>
 <h2 id="console-scripts">Console scripts<a class="headerlink" href="#console-scripts" title="Permanent link">#</a></h2>
 <p>The following content:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">[project.scripts]</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">[project.scripts]</span>
 <span class="n">mycli</span> <span class="o">=</span> <span class="s">&quot;mycli.__main__:main&quot;</span>
 </code></pre></div>
 </td></tr></table>
 <p>will be translated to <code>setuptools</code> style:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2
-3
-4
-5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">entry_points</span> <span class="o">=</span> <span class="p">{</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">entry_points</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;console_scripts&#39;</span><span class="p">:</span> <span class="p">[</span>
         <span class="s1">&#39;mycli=mycli.__main__:main&#39;</span>
     <span class="p">]</span>
@@ -710,8 +710,8 @@ PEP 508 strings. They only exist for development purpose.</p>
 <h2 id="entry-points">Entry points<a class="headerlink" href="#entry-points" title="Permanent link">#</a></h2>
 <p>Other types of entry points are given by <code>[project.entry-points.&lt;type&gt;]</code> section, with the same
 format of <code>[project.scripts]</code>:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">[project.entry-points.pytest11]</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">[project.entry-points.pytest11]</span>
 <span class="n">myplugin</span> <span class="o">=</span> <span class="s">&quot;mypackage.plugin:pytest_plugin&quot;</span>
 </code></pre></div>
 </td></tr></table>
@@ -720,13 +720,13 @@ format of <code>[project.scripts]</code>:</p>
 a function named <code>build</code> and accepts the parameter dictionary of <code>setup()</code> as the only argument.
 Update the dictionary with your <code>ext_modules</code> settings in the function.</p>
 <p>Here is an example taken from <code>MarkupSafe</code>:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2
-3
-4
-5
-6
-7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># build.py</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># build.py</span>
 <span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">Extension</span>
 
 <span class="n">ext_modules</span> <span class="o">=</span> <span class="p">[</span><span class="n">Extension</span><span class="p">(</span><span class="s2">&quot;markupsafe._speedups&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;src/markupsafe/_speedups.c&quot;</span><span class="p">])]</span>
@@ -736,9 +736,9 @@ Update the dictionary with your <code>ext_modules</code> settings in the functio
 </code></pre></div>
 </td></tr></table>
 <p>Now, specify the build script path via <code>build</code> in the <code>pyproject.toml</code>:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2
-3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># pyproject.toml</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># pyproject.toml</span>
 <span class="k">[project]</span>
 <span class="n">build</span> <span class="o">=</span> <span class="s">&quot;build.py&quot;</span>
 </code></pre></div>

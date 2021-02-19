@@ -561,24 +561,24 @@
 <p>PDM provides a bunch of handful commands to help manage your project and dependencies.
 The following examples are run on Ubuntu 18.04, a few changes must be done if you are using Windows.</p>
 <h2 id="initialize-a-project">Initialize a project<a class="headerlink" href="#initialize-a-project" title="Permanent link">#</a></h2>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="gp">$ </span>mkdir pdm-test <span class="o">&amp;&amp;</span> <span class="nb">cd</span> pdm-test
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="gp">$ </span>mkdir pdm-test <span class="o">&amp;&amp;</span> <span class="nb">cd</span> pdm-test
 <span class="gp">$ </span>pdm init
 </code></pre></div>
 </td></tr></table>
 <p>Answer several questions asked by PDM and a <code>pyproject.toml</code> will be created for you in the project root:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">[project]</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">[project]</span>
 <span class="n">name</span> <span class="o">=</span> <span class="s">&quot;pdm-test&quot;</span>
 <span class="n">version</span> <span class="o">=</span> <span class="s">&quot;0.0.0&quot;</span>
 <span class="n">description</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
@@ -596,8 +596,8 @@ The following examples are run on Ubuntu 18.04, a few changes must be done if yo
 <a href="https://www.python.org/dev/peps/pep-0621/">PEP 621 specification</a></p>
 <p>For details of the meaning of each field in <code>pyproject.toml</code>, please refer to <a href="../pyproject/">Project File</a>.</p>
 <h2 id="add-dependencies">Add dependencies<a class="headerlink" href="#add-dependencies" title="Permanent link">#</a></h2>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="gp">$ </span>pdm add requests
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="gp">$ </span>pdm add requests
 <span class="gp">$ </span>pdm add -d pytest
 </code></pre></div>
 </td></tr></table>
@@ -622,11 +622,11 @@ for the dependency):</p>
 </ul>
 <h2 id="update-existing-dependencies">Update existing dependencies<a class="headerlink" href="#update-existing-dependencies" title="Permanent link">#</a></h2>
 <p>To update all dependencies in the lock file:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="gp">$ </span>pdm update
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="gp">$ </span>pdm update
 </code></pre></div>
 </td></tr></table>
 <p>To update the specified package(s):</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="gp">$ </span>pdm update requests
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="gp">$ </span>pdm update requests
 </code></pre></div>
 </td></tr></table>
 <h3 id="about-update-strategy">About update strategy<a class="headerlink" href="#about-update-strategy" title="Permanent link">#</a></h3>
@@ -639,7 +639,7 @@ which is given by <code>--update-&lt;strategy&gt;</code> option:</p>
 </ul>
 <h2 id="remove-existing-dependencies">Remove existing dependencies<a class="headerlink" href="#remove-existing-dependencies" title="Permanent link">#</a></h2>
 <p>To remove existing dependencies from project file and the library directory:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="gp">$ </span>pdm remove requests
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="gp">$ </span>pdm remove requests
 </code></pre></div>
 </td></tr></table>
 <h2 id="synchronize-the-project-packages-with-lock-file">Synchronize the project packages with lock file<a class="headerlink" href="#synchronize-the-project-packages-with-lock-file" title="Permanent link">#</a></h2>
@@ -651,22 +651,22 @@ which is given by <code>--update-&lt;strategy&gt;</code> option:</p>
 </ul>
 <h2 id="show-what-packages-are-installed">Show what packages are installed<a class="headerlink" href="#show-what-packages-are-installed" title="Permanent link">#</a></h2>
 <p>Similar to <code>pip list</code>, you can list all packages installed in the packages directory:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="gp">$ </span>pdm list
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="gp">$ </span>pdm list
 </code></pre></div>
 </td></tr></table>
 <p>Or show a dependency graph by:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ pdm list --graph
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ pdm list --graph
 tempenv 0.0.0
 └── click 7.0 [ required: &lt;7.0.0,&gt;=6.7 ]
 black 19.10b0
@@ -682,7 +682,7 @@ bump2version 1.0.0
 </td></tr></table>
 <h2 id="set-pypi-index-url">Set PyPI index URL<a class="headerlink" href="#set-pypi-index-url" title="Permanent link">#</a></h2>
 <p>You can specify a PyPI mirror URL by following commands:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="gp">$ </span>pdm config <span class="nb">set</span> pypi.url https://testpypi.org/simple
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="gp">$ </span>pdm config <span class="nb">set</span> pypi.url https://testpypi.org/simple
 </code></pre></div>
 </td></tr></table>
 <p>By default, PDM will read the pip's configuration files to decide the PyPI URL, and fallback
@@ -690,10 +690,10 @@ to <code>https://pypi.org/simple</code> if none is found.</p>
 <h2 id="add-extra-sources-of-packages">Add extra sources of packages<a class="headerlink" href="#add-extra-sources-of-packages" title="Permanent link">#</a></h2>
 <p>Sometimes your packages may exist on a private repository other than PyPI(and its mirrors).
 These sources should be preserved in <code>pyproject.toml</code> and shipped with the project in deployment.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2
-3
-4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">[[tool.pdm.source]]</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">[[tool.pdm.source]]</span>
 <span class="n">url</span> <span class="o">=</span> <span class="s">&quot;http://example.com/private/index&quot;</span>
 <span class="n">verify_ssl</span> <span class="o">=</span> <span class="n">false</span>  <span class="c1"># Don&#39;t verify SSL, it is required when you are using `HTTP` or the certificate is trusted.</span>
 <span class="n">name</span> <span class="o">=</span> <span class="s">&quot;private&quot;</span>
@@ -703,8 +703,8 @@ These sources should be preserved in <code>pyproject.toml</code> and shipped wit
 are stored under <code>tool.pdm</code> namespace in the <code>pyproject.toml</code>.</p>
 <h2 id="allow-prerelease-versions-to-be-installed">Allow prerelease versions to be installed<a class="headerlink" href="#allow-prerelease-versions-to-be-installed" title="Permanent link">#</a></h2>
 <p>Include the following setting in <code>pyproject.toml</code> to enable:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">[[tool.pdm]]</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">[[tool.pdm]]</span>
 <span class="n">allow_prereleases</span> <span class="o">=</span> <span class="kc">true</span>
 </code></pre></div>
 </td></tr></table>

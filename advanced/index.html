@@ -14,7 +14,7 @@
     
     
       
-        <title>Contributing - PDM - Python Development Master</title>
+        <title>Advanced usage of PDM - PDM - Python Development Master</title>
       
     
     
@@ -58,7 +58,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#contributing-to-pdm" class="md-skip">
+        <a href="#advanced-usage-of-pdm" class="md-skip">
           Skip to content
         </a>
       
@@ -90,7 +90,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Contributing
+              Advanced usage of PDM
             
           </span>
         </div>
@@ -257,11 +257,56 @@
 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../advanced/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Advanced usage of PDM
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Advanced usage of PDM
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#automatic-testing-with-tox" class="md-nav__link">
+    Automatic Testing with Tox
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-pdm-in-continuous-integration" class="md-nav__link">
+    Use PDM in Continuous Integration
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -287,76 +332,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Contributing
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../contributing/" class="md-nav__link">
         Contributing
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#a-recommended-flow-of-contributing-to-an-open-source-project" class="md-nav__link">
-    A recommended flow of contributing to an Open Source project.
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#local-development" class="md-nav__link">
-    Local development
-  </a>
-  
-    <nav class="md-nav" aria-label="Local development">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#run-tests" class="md-nav__link">
-    Run tests
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#code-style" class="md-nav__link">
-    Code style
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -401,36 +381,16 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#a-recommended-flow-of-contributing-to-an-open-source-project" class="md-nav__link">
-    A recommended flow of contributing to an Open Source project.
+  <a href="#automatic-testing-with-tox" class="md-nav__link">
+    Automatic Testing with Tox
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#local-development" class="md-nav__link">
-    Local development
+  <a href="#use-pdm-in-continuous-integration" class="md-nav__link">
+    Use PDM in Continuous Integration
   </a>
-  
-    <nav class="md-nav" aria-label="Local development">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#run-tests" class="md-nav__link">
-    Run tests
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#code-style" class="md-nav__link">
-    Code style
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -446,80 +406,148 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/frostming/pdm/edit/master/docs/contributing.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/frostming/pdm/edit/master/docs/advanced.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="contributing-to-pdm">Contributing to PDM<a class="headerlink" href="#contributing-to-pdm" title="Permanent link">#</a></h1>
-<p>First off, thanks for taking the time to contribute! Contributions include but are not restricted to:</p>
-<ul>
-<li>Reporting bugs</li>
-<li>Contributing to code</li>
-<li>Writing tests</li>
-<li>Writing documents</li>
-</ul>
-<p>The following is a set of guidelines for contributing.</p>
-<h2 id="a-recommended-flow-of-contributing-to-an-open-source-project">A recommended flow of contributing to an Open Source project.<a class="headerlink" href="#a-recommended-flow-of-contributing-to-an-open-source-project" title="Permanent link">#</a></h2>
-<p>This guideline is for new beginners of OSS. If you are an experienced OSS developer, you can skip
-this section.</p>
-<ol>
-<li>First, fork this project to your own namespace using the fork button at the top right of the repository page.</li>
-<li>Clone the <strong>upstream</strong> repository to local:
-   <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ git clone https://github.com/frostming/pdm.git
-<span class="c1"># Or if you prefer SSH clone:</span>
-$ git clone git@github.com:frostming/pdm.git
-</code></pre></div>
-</td></tr></table></li>
-<li>Add the fork as a new remote:
-   <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ git remote add fork https://github.com/yourname/pdm.git
-$ git fetch fork
-</code></pre></div>
-</td></tr></table>
-   where <code>fork</code> is the remote name of the fork repository.</li>
-</ol>
-<p><strong>ProTips:</strong>
-1. Don't modify code on the master branch, the master branch should always keep track of origin/master.</p>
-<p>To update master branch to date:
-   <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ git pull origin master
-<span class="c1"># In rare cases that your local master branch diverges from the remote master:</span>
-$ git fetch origin <span class="o">&amp;&amp;</span> git reset --hard master
+                <h1 id="advanced-usage-of-pdm">Advanced usage of PDM<a class="headerlink" href="#advanced-usage-of-pdm" title="Permanent link">#</a></h1>
+<h2 id="automatic-testing-with-tox">Automatic Testing with Tox<a class="headerlink" href="#automatic-testing-with-tox" title="Permanent link">#</a></h2>
+<p><a href="https://tox.readthedocs.io/en/latest/">Tox</a> is a great tool for testing against multiple Python versions or dependency sets.
+You can configure a <code>tox.ini</code> like the following to integrate your testing with PDM:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">[tox]</span>
+<span class="na">env_list</span> <span class="o">=</span> <span class="s">py{36,37,38},lint</span>
+<span class="na">isolated_build</span> <span class="o">=</span> <span class="s">true</span>
+<span class="na">passenv</span> <span class="o">=</span> <span class="s">PDM_IGNORE_SAVED_PYTHON=1</span>
+
+<span class="k">[testenv]</span>
+<span class="na">deps</span> <span class="o">=</span> <span class="s">pdm</span>
+<span class="na">commands</span> <span class="o">=</span>
+    <span class="na">pdm install --dev</span>
+    <span class="na">pytest tests</span>
+
+<span class="k">[testenv:lint]</span>
+<span class="na">deps</span> <span class="o">=</span> <span class="s">pdm</span>
+<span class="na">commands</span> <span class="o">=</span>
+    <span class="na">pdm install -s lint</span>
+    <span class="na">flake8 src/</span>
 </code></pre></div>
 </td></tr></table>
-2. Create a new branch based on the up-to-date master for new patches.
-3. Create a Pull Request from that patch branch.</p>
-<h2 id="local-development">Local development<a class="headerlink" href="#local-development" title="Permanent link">#</a></h2>
-<p>To make sure the tests suites can run rightly, you need to install <a href="https://git-lfs.github.com/">Git LFS</a>, then
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ git lfs install
-</code></pre></div>
-</td></tr></table></p>
-<p>Then, you need to install base dependencies in a venv. Although PDM uses local package directory to install
-dependencies, venv is still needed to start up PDM at the first time:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ python setup_dev.py
+<p>To use the virtualenv created by Tox, you should make sure you have set <code>pdm config use_venv true</code>. PDM then will install
+dependencies from <code>pdm.lock</code> into the virtualenv. In the dedicated venv you can directly run tools by <code>pytest tests/</code> instead
+of <code>pdm run pytest tests/</code>.</p>
+<p>You should also make sure you don't run <code>pdm add/pdm remove/pdm update/pdm lock</code> in the test commands, otherwise the <code>pdm.lock</code>
+file will be modified unexpectedly. Additional dependencies can be supplied with the <code>deps</code> config. Besides, <code>isolated_buid</code> and <code>passenv</code>
+config should be set as the above example to make PDM work properly.</p>
+<p>To get rid of these constraints, there is a Tox plugin <a href="https://github.com/pdm-project/tox-pdm">tox-pdm</a> which can ease the usage. You can install it by</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="gp">$ </span>pip install tox-pdm
 </code></pre></div>
 </td></tr></table>
-<p>Now, all dependencies are installed into local <code>__pypackages__</code> directory, which will be used for development
-after this point. The <code>pdm</code> executable located at <code>__pypackages__/&lt;VERSION&gt;/bin</code> can be run directly from outside,
-which is installed in editable mode, or you can use <code>python -m pdm</code> from inside the venv.</p>
-<h3 id="run-tests">Run tests<a class="headerlink" href="#run-tests" title="Permanent link">#</a></h3>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ pdm run pytest tests
+<p>Or,</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="gp">$ </span>pdm add --dev tox-pdm
 </code></pre></div>
 </td></tr></table>
-<p>The test suite is still simple and requires to be supplied, please help write more test cases.</p>
-<h3 id="code-style">Code style<a class="headerlink" href="#code-style" title="Permanent link">#</a></h3>
-<p>PDM uses <code>pre-commit</code> for linting, you need to install <code>pre-commit</code> first, then:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ pre-commit install
-$ pre-commit run --all-files
+<p>And the <code>tox.ini</code> can be updated to the following:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">[tox]</span>
+<span class="na">env_list</span> <span class="o">=</span> <span class="s">py{36,37,38},lint</span>
+<span class="na">isolated_build</span> <span class="o">=</span> <span class="s">true</span>
+
+<span class="k">[testenv]</span>
+<span class="na">sections</span> <span class="o">=</span> <span class="s">dev</span>
+<span class="na">commands</span> <span class="o">=</span>
+    <span class="na">pytest tests</span>
+
+<span class="k">[testenv:lint]</span>
+<span class="na">sections</span> <span class="o">=</span> <span class="s">lint</span>
+<span class="na">commands</span> <span class="o">=</span>
+    <span class="na">flake8 src/</span>
 </code></pre></div>
 </td></tr></table>
-<p>PDM uses <code>black</code> coding style and <code>isort</code> for sorting import statements, if you are not following them,
-the CI will fail, and your Pull Request will not be merged.</p>
+<p>See the <a href="https://github.com/pdm-project/tox-pdm">project's README</a> for a detailed guidance.</p>
+<h2 id="use-pdm-in-continuous-integration">Use PDM in Continuous Integration<a class="headerlink" href="#use-pdm-in-continuous-integration" title="Permanent link">#</a></h2>
+<p>Only one thing to keep in mind -- PDM can't be installed on Python &lt; 3.7, so if your project is to be tested on those Python versions,
+you have to make sure PDM is installed on the correct Python version, which can be different from the target Python version the particular job/task is run on.</p>
+<p>Here is an example worflow of GitHub Actions, while you can adapt it for other CI platforms.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nt">Testing</span><span class="p">:</span>
+  <span class="nt">runs-on</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">${{ matrix.os }}</span>
+  <span class="nt">strategy</span><span class="p">:</span>
+    <span class="nt">matrix</span><span class="p">:</span>
+    <span class="nt">python-version</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">3.6</span><span class="p p-Indicator">,</span> <span class="nv">3.7</span><span class="p p-Indicator">,</span> <span class="nv">3.8</span><span class="p p-Indicator">,</span> <span class="nv">3.9</span><span class="p p-Indicator">]</span>
+    <span class="nt">os</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">ubuntu-latest</span><span class="p p-Indicator">,</span> <span class="nv">macOS-latest</span><span class="p p-Indicator">,</span> <span class="nv">windows-latest</span><span class="p p-Indicator">]</span>
+
+  <span class="nt">steps</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">uses</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">actions/checkout@v1</span>
+    <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Set up Python 3.8</span>
+      <span class="nt">uses</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">actions/setup-python@v1</span>
+      <span class="nt">with</span><span class="p">:</span>
+        <span class="nt">python-version</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">3.8</span> <span class="c1"># &lt;-- We explicitly request Python 3.8 for installing PDM.</span>
+    <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Install PDM</span>
+      <span class="nt">run</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">python -m pip install --upgrade --pre pdm</span>
+    <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Set up Python</span>
+      <span class="nt">uses</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">actions/setup-python@v2</span>
+      <span class="nt">with</span><span class="p">:</span>
+        <span class="nt">python-version</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">${{ matrix.python-version }}</span> <span class="c1"># &lt;-- Then change to whatever is required by this task.</span>
+    <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Install dependencies</span>
+      <span class="nt">run</span><span class="p">:</span> <span class="p p-Indicator">|</span>
+        <span class="no">pdm use -f ${{ matrix.python-version }}</span>
+        <span class="no">pdm sync -d -s testing</span>
+    <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Run Tests</span>
+      <span class="nt">run</span><span class="p">:</span> <span class="p p-Indicator">|</span>
+        <span class="no">pdm run -v pytest tests</span>
+</code></pre></div>
+</td></tr></table>
                 
               
               
@@ -537,7 +565,7 @@ the CI will fail, and your Pull Request will not be merged.</p>
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../plugin/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../pyproject/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -546,19 +574,19 @@ the CI will fail, and your Pull Request will not be merged.</p>
               <span class="md-footer__direction">
                 Previous
               </span>
-              Write a plugin
+              Project file syntax
             </div>
           </div>
         </a>
       
       
-        <a href="../changelog/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../plugin/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Change Log
+              Write a plugin
             </div>
           </div>
           <div class="md-footer__button md-icon">

@@ -548,6 +548,10 @@ you have to make sure PDM is installed on the correct Python version, which can 
         <span class="no">pdm run -v pytest tests</span>
 </code></pre></div>
 </td></tr></table>
+<div class="admonition danger">
+<p class="admonition-title">NOTE</p>
+<p>For GitHub Action users, there is a <a href="https://github.com/actions/virtual-environments/issues/2803">known compatibility issue</a> on Ubuntu virtual environment. If PDM parallel install is failed on that machine you should either set <code>parallel_install</code> to <code>false</code> or set env <code>LD_PRELOAD=/lib/x86_64-linux-gnu/libgcc_s.so.1</code>.</p>
+</div>
                 
               
               

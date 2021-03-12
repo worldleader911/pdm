@@ -10,11 +10,11 @@
       
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.4">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.5">
     
     
       
-        <title>Advanced usage of PDM - PDM - Python Development Master</title>
+        <title>Advanced Usage - PDM - Python Development Master</title>
       
     
     
@@ -58,7 +58,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#advanced-usage-of-pdm" class="md-skip">
+        <a href="#advanced-usage" class="md-skip">
           Skip to content
         </a>
       
@@ -90,7 +90,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Advanced usage of PDM
+              Advanced Usage
             
           </span>
         </div>
@@ -268,12 +268,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Advanced usage of PDM
+          Advanced Usage
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Advanced usage of PDM
+        Advanced Usage
       </a>
       
         
@@ -292,6 +292,13 @@
         <li class="md-nav__item">
   <a href="#automatic-testing-with-tox" class="md-nav__link">
     Automatic Testing with Tox
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automatic-testing-with-nox" class="md-nav__link">
+    Automatic Testing with Nox
   </a>
   
 </li>
@@ -388,6 +395,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#automatic-testing-with-nox" class="md-nav__link">
+    Automatic Testing with Nox
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#use-pdm-in-continuous-integration" class="md-nav__link">
     Use PDM in Continuous Integration
   </a>
@@ -411,7 +425,7 @@
                   </a>
                 
                 
-                <h1 id="advanced-usage-of-pdm">Advanced usage of PDM<a class="headerlink" href="#advanced-usage-of-pdm" title="Permanent link">#</a></h1>
+                <h1 id="advanced-usage">Advanced Usage<a class="headerlink" href="#advanced-usage" title="Permanent link">#</a></h1>
 <h2 id="automatic-testing-with-tox">Automatic Testing with Tox<a class="headerlink" href="#automatic-testing-with-tox" title="Permanent link">#</a></h2>
 <p><a href="https://tox.readthedocs.io/en/latest/">Tox</a> is a great tool for testing against multiple Python versions or dependency sets.
 You can configure a <code>tox.ini</code> like the following to integrate your testing with PDM:</p>
@@ -491,6 +505,37 @@ config should be set as the above example to make PDM work properly.</p>
 </code></pre></div>
 </td></tr></table>
 <p>See the <a href="https://github.com/pdm-project/tox-pdm">project's README</a> for a detailed guidance.</p>
+<h2 id="automatic-testing-with-nox">Automatic Testing with Nox<a class="headerlink" href="#automatic-testing-with-nox" title="Permanent link">#</a></h2>
+<p><a href="https://nox.thea.codes/">Nox</a> is another great tool for automated testing. Unlike tox, Nox uses a standard Python file for configuration.</p>
+<p>It is much easier to use PDM in Nox, here is an example of <code>noxfile.py</code>:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="hll"><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;PDM_IGNORE_SAVED_PYTHON&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">})</span>
+</span>
+<span class="nd">@nox</span><span class="o">.</span><span class="n">session</span>
+<span class="k">def</span> <span class="nf">tests</span><span class="p">(</span><span class="n">session</span><span class="p">):</span>
+    <span class="n">session</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s1">&#39;pdm&#39;</span><span class="p">,</span> <span class="s1">&#39;install&#39;</span><span class="p">,</span> <span class="s1">&#39;-s&#39;</span><span class="p">,</span> <span class="s1">&#39;test&#39;</span><span class="p">,</span> <span class="n">external</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">session</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s1">&#39;pytest&#39;</span><span class="p">)</span>
+
+<span class="nd">@nox</span><span class="o">.</span><span class="n">session</span>
+<span class="k">def</span> <span class="nf">lint</span><span class="p">(</span><span class="n">session</span><span class="p">):</span>
+    <span class="n">session</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s1">&#39;pdm&#39;</span><span class="p">,</span> <span class="s1">&#39;install&#39;</span><span class="p">,</span> <span class="s1">&#39;-s&#39;</span><span class="p">,</span> <span class="s1">&#39;lint&#39;</span><span class="p">,</span> <span class="n">external</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">session</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s1">&#39;flake8&#39;</span><span class="p">,</span> <span class="s1">&#39;--import-order-style&#39;</span><span class="p">,</span> <span class="s1">&#39;google&#39;</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<p>Note that <code>PDM_IGNORE_SAVED_PYTHON</code> should be set so that PDM can pick up the Python in the virtualenv correctly. Also make sure <code>pdm</code> is available in the <code>PATH</code>.</p>
 <h2 id="use-pdm-in-continuous-integration">Use PDM in Continuous Integration<a class="headerlink" href="#use-pdm-in-continuous-integration" title="Permanent link">#</a></h2>
 <p>Only one thing to keep in mind -- PDM can't be installed on Python &lt; 3.7, so if your project is to be tested on those Python versions,
 you have to make sure PDM is installed on the correct Python version, which can be different from the target Python version the particular job/task is run on.</p>
@@ -612,6 +657,7 @@ you have to make sure PDM is installed on the correct Python version, which can 
         <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs
         </a>
+        
       </div>
       
     </div>
@@ -625,7 +671,7 @@ you have to make sure PDM is installed on the correct Python version, which can 
     <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.fb4a9340.min.js", "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.9b151c6a.min.js"></script>
+      <script src="../assets/javascripts/bundle.5cf3e710.min.js"></script>
       
     
   </body>

@@ -520,10 +520,12 @@ config should be set as the above example to make PDM work properly.</p>
 <span class="normal">10</span>
 <span class="normal">11</span>
 <span class="normal">12</span>
-<span class="normal">13</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">nox</span>
+<span class="hll">
+</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;PDM_IGNORE_SAVED_PYTHON&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">})</span>
 
-<span class="hll"><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;PDM_IGNORE_SAVED_PYTHON&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">})</span>
-</span>
 <span class="nd">@nox</span><span class="o">.</span><span class="n">session</span>
 <span class="k">def</span> <span class="nf">tests</span><span class="p">(</span><span class="n">session</span><span class="p">):</span>
     <span class="n">session</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s1">&#39;pdm&#39;</span><span class="p">,</span> <span class="s1">&#39;install&#39;</span><span class="p">,</span> <span class="s1">&#39;-s&#39;</span><span class="p">,</span> <span class="s1">&#39;test&#39;</span><span class="p">,</span> <span class="n">external</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -570,7 +572,7 @@ Here is an example worflow of GitHub Actions, while you can adapt it for other C
   <span class="nt">steps</span><span class="p">:</span>
     <span class="p p-Indicator">-</span> <span class="nt">uses</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">actions/checkout@v1</span>
     <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Set up PDM</span>
-      <span class="nt">uses</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">pdm-project/setup-pdm</span>
+      <span class="nt">uses</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">pdm-project/setup-pdm@v1.1</span>
       <span class="nt">with</span><span class="p">:</span>
         <span class="nt">python-version</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">${{ matrix.python-version }}</span>
 
@@ -584,9 +586,10 @@ Here is an example worflow of GitHub Actions, while you can adapt it for other C
 </td></tr></table>
 <div class="admonition danger">
 <p class="admonition-title">NOTE</p>
-<p>For GitHub Action users, there is a <a href="https://github.com/actions/virtual-environments/issues/2803">known compatibility issue</a> on Ubuntu virtual environment.
-If PDM parallel install is failed on that machine  you should either set <code>parallel_install</code> to <code>false</code> or set env <code>LD_PRELOAD=/lib/x86_64-linux-gnu/libgcc_s.so.1</code>.</p>
 </div>
+<p>For GitHub Action users, there is a <a href="https://github.com/actions/virtual-environments/issues/2803">known compatibility issue</a> on Ubuntu virtual environment.
+  If PDM parallel install is failed on that machine you should either set <code>parallel_install</code> to <code>false</code> or set env <code>LD_PRELOAD=/lib/x86_64-linux-gnu/libgcc_s.so.1</code>.
+  It is already handled by the <code>pdm-project/setup-pdm</code> action.</p>
                 
               
               

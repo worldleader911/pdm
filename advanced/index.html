@@ -476,7 +476,7 @@ config should be set as the above example to make PDM work properly.</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="gp">$ </span>pdm add --dev tox-pdm
 </code></pre></div>
 </td></tr></table>
-<p>And the <code>tox.ini</code> can be updated to the following:</p>
+<p>And you can make the <code>tox.ini</code> much tidier as following, :</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -488,10 +488,8 @@ config should be set as the above example to make PDM work properly.</p>
 <span class="normal"> 9</span>
 <span class="normal">10</span>
 <span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">[tox]</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">[tox]</span>
 <span class="na">env_list</span> <span class="o">=</span> <span class="s">py{36,37,38},lint</span>
-<span class="na">isolated_build</span> <span class="o">=</span> <span class="s">true</span>
 
 <span class="k">[testenv]</span>
 <span class="na">sections</span> <span class="o">=</span> <span class="s">dev</span>
@@ -523,9 +521,9 @@ config should be set as the above example to make PDM work properly.</p>
 <span class="normal">13</span>
 <span class="normal">14</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">nox</span>
-<span class="hll">
-</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;PDM_IGNORE_SAVED_PYTHON&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">})</span>
 
+<span class="hll"><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;PDM_IGNORE_SAVED_PYTHON&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">})</span>
+</span>
 <span class="nd">@nox</span><span class="o">.</span><span class="n">session</span>
 <span class="k">def</span> <span class="nf">tests</span><span class="p">(</span><span class="n">session</span><span class="p">):</span>
     <span class="n">session</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s1">&#39;pdm&#39;</span><span class="p">,</span> <span class="s1">&#39;install&#39;</span><span class="p">,</span> <span class="s1">&#39;-s&#39;</span><span class="p">,</span> <span class="s1">&#39;test&#39;</span><span class="p">,</span> <span class="n">external</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -587,7 +585,7 @@ Here is an example worflow of GitHub Actions, while you can adapt it for other C
 <div class="admonition danger">
 <p class="admonition-title">NOTE</p>
 <p>For GitHub Action users, there is a <a href="https://github.com/actions/ virtual-environments/issues/2803">known compatibility issue</a> on Ubuntu virtual environment.
-If PDM parallel install is failed on that machine you should either set <code>parallel_install</code> to <code>false</code>   or set env <code>LD_PRELOAD=/lib/x86_64-linux-gnu/libgcc_s.so.1</code>.
+If PDM parallel install is failed on that machine you should either set <code>parallel_install</code> to <code>false</code> or set env <code>LD_PRELOAD=/lib/x86_64-linux-gnu/libgcc_s.so.1</code>.
 It is already handled by the <code>pdm-project/setup-pdm</code> action.</p>
 </div>
                 

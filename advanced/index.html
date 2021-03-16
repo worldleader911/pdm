@@ -533,7 +533,8 @@ config should be set as the above example to make PDM work properly.</p>
     <span class="n">session</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s1">&#39;flake8&#39;</span><span class="p">,</span> <span class="s1">&#39;--import-order-style&#39;</span><span class="p">,</span> <span class="s1">&#39;google&#39;</span><span class="p">)</span>
 </code></pre></div>
 </td></tr></table>
-<p>Note that <code>PDM_IGNORE_SAVED_PYTHON</code> should be set so that PDM can pick up the Python in the virtualenv correctly. Also make sure <code>pdm</code> is available in the <code>PATH</code>.</p>
+<p>Note that <code>PDM_IGNORE_SAVED_PYTHON</code> should be set so that PDM can pick up the Python in the virtualenv correctly. Also make sure <code>pdm</code> is available in the <code>PATH</code>.
+Before running nox, you should also <code>pdm config use_venv true</code> to enable venv reusing.</p>
 <h2 id="use-pdm-in-continuous-integration">Use PDM in Continuous Integration<a class="headerlink" href="#use-pdm-in-continuous-integration" title="Permanent link">#</a></h2>
 <p>Only one thing to keep in mind -- PDM can't be installed on Python &lt; 3.7, so if your project is to be tested on those Python versions,
 you have to make sure PDM is installed on the correct Python version, which can be different from the target Python version the particular job/task is run on.</p>

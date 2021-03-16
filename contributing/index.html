@@ -346,6 +346,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#preview-the-documentation" class="md-nav__link">
+    Preview the documentation
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -423,6 +430,13 @@
           <li class="md-nav__item">
   <a href="#code-style" class="md-nav__link">
     Code style
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preview-the-documentation" class="md-nav__link">
+    Preview the documentation
   </a>
   
 </li>
@@ -505,7 +519,7 @@ dependencies, venv is still needed to start up PDM at the first time:</p>
 after this point. The <code>pdm</code> executable located at <code>__pypackages__/&lt;VERSION&gt;/bin</code> can be run directly from outside,
 which is installed in editable mode, or you can use <code>python -m pdm</code> from inside the venv.</p>
 <h3 id="run-tests">Run tests<a class="headerlink" href="#run-tests" title="Permanent link">#</a></h3>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ pdm run pytest tests
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ pdm run <span class="nb">test</span>
 </code></pre></div>
 </td></tr></table>
 <p>The test suite is still simple and requires to be supplied, please help write more test cases.</p>
@@ -513,11 +527,16 @@ which is installed in editable mode, or you can use <code>python -m pdm</code> f
 <p>PDM uses <code>pre-commit</code> for linting, you need to install <code>pre-commit</code> first, then:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ pre-commit install
-$ pre-commit run --all-files
+$ pdm run lint
 </code></pre></div>
 </td></tr></table>
 <p>PDM uses <code>black</code> coding style and <code>isort</code> for sorting import statements, if you are not following them,
 the CI will fail, and your Pull Request will not be merged.</p>
+<h3 id="preview-the-documentation">Preview the documentation<a class="headerlink" href="#preview-the-documentation" title="Permanent link">#</a></h3>
+<p>If you do some changes to the <code>docs/</code> and you may want to preview the build result, simply do:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ pdm run doc
+</code></pre></div>
+</td></tr></table>
                 
               
               

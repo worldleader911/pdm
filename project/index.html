@@ -963,6 +963,23 @@ Flask server started at http://0.0.0.0:54321
 <span class="n">start_server</span> <span class="o">=</span> <span class="p">{</span><span class="n">cmd</span> <span class="o">=</span> <span class="s">&quot;flask run -p 54321&quot;</span><span class="p">}</span>
 </code></pre></div>
 </td></tr></table>
+<p>In some cases, such as when wanting to add comments between parameters, it might be more convinient
+to specify the command as an array instead of a string:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">[tool.pdm.scripts]</span>
+<span class="n">start_server</span> <span class="o">=</span> <span class="p">{</span><span class="n">cmd</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s">&quot;flask&quot;</span><span class="p">,</span>
+    <span class="s">&quot;run&quot;</span><span class="p">,</span>
+    <span class="c1"># Important comment here about always using port 54321</span>
+    <span class="s">&quot;-p&quot;</span><span class="p">,</span> <span class="s">&quot;54321&quot;</span>
+<span class="p">]}</span>
+</code></pre></div>
+</td></tr></table>
 <h3 id="shell-script">Shell script<a class="headerlink" href="#shell-script" title="Permanent link">#</a></h3>
 <p>Shell scripts can be used to run more shell-specific tasks, such as pipeline and output redirecting.
 This is basically run via <code>subprocess.Popen()</code> with <code>shell=True</code>:</p>

@@ -685,11 +685,10 @@ Create an <code>pdm.plugin</code> entry point and point to your plugin callable 
 <span class="normal">3</span>
 <span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># pyproject.toml</span>
 
-<span class="k">[project.entry-points.&quot;pdm.plugin&quot;]</span>
+<span class="k">[project.entry-points.pdm]</span>
 <span class="n">hello</span> <span class="o">=</span> <span class="s">&quot;my_plugin:hello_plugin&quot;</span>
 </code></pre></div>
 </td></tr></table>
-<p>Note that <code>pdm.plugin</code> is wrapped with double quotes to be regarded as a single key.</p>
 <p><strong>setuptools</strong>:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
@@ -701,7 +700,7 @@ Create an <code>pdm.plugin</code> entry point and point to your plugin callable 
 
 <span class="n">setup</span><span class="p">(</span>
     <span class="o">...</span>
-    <span class="n">entry_points</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;pdm.plugin&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;hello = my_plugin:hello_plugin&quot;</span><span class="p">]}</span>
+    <span class="n">entry_points</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;pdm&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;hello = my_plugin:hello_plugin&quot;</span><span class="p">]}</span>
     <span class="o">...</span>
 <span class="p">)</span>
 </code></pre></div>

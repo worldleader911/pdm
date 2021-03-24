@@ -672,13 +672,13 @@
 <p>If you have used <code>pdm init</code>, you must have already seen how PDM detects and selects the Python
 interpreter. After initialized, you can also change the settings by <code>pdm use &lt;python_version_or_path&gt;</code>.
 The argument can be either a version specifier of any length, or a relative or absolute path to the
-python interpreter, but remember the Python interpreter must be compatible with <code>python_requires</code>
+python interpreter, but remember the Python interpreter must conform with the <code>python_requires</code>
 constraint in the project file.</p>
 <h3 id="how-python_requires-controls-the-project">How <code>python_requires</code> controls the project<a class="headerlink" href="#how-python_requires-controls-the-project" title="Permanent link">#</a></h3>
-<p>PDM respects the value of <code>python_requires</code> in the way that it tries to pick package candidates that can work
-on all python versions that <code>python_requires</code> contains. For example if <code>python_requires</code> is <code>&gt;=2.7</code>, PDM will try
-to find the latest version of <code>foo</code>, whose <code>python_requires</code> version range is a <strong>superset</strong> of <code>&gt;=2.7</code>.</p>
-<p>So, make sure you write <code>python_requires</code> properly if you don't want any outdated packages to be locked.</p>
+<p>PDM respects the value of <code>requires-python</code> in the way that it tries to pick package candidates that can work
+on all python versions that <code>requires-python</code> contains. For example, if <code>requires-python</code> is <code>&gt;=2.7</code>, PDM will try
+to find the latest version of <code>foo</code>, whose <code>requires-python</code> version range is a <strong>superset</strong> of <code>&gt;=2.7</code>.</p>
+<p>So, make sure you write <code>requires-python</code> properly if you don't want any outdated packages to be locked.</p>
 <h2 id="build-distribution-artifacts">Build distribution artifacts<a class="headerlink" href="#build-distribution-artifacts" title="Permanent link">#</a></h2>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
@@ -691,7 +691,8 @@ to find the latest version of <code>foo</code>, whose <code>python_requires</cod
 <span class="go">- Built pdm_test-0.0.0-py3-none-any.whl</span>
 </code></pre></div>
 </td></tr></table>
-<p>The artifacts can then be uploaded to PyPI by <a href="https://pypi.org/project/twine">twine</a>.</p>
+<p>The artifacts can then be uploaded to PyPI by <a href="https://pypi.org/project/twine">twine</a>. Available options can be found by
+typing <code>pdm build --help</code>.</p>
 <h2 id="show-the-current-python-environment">Show the current Python environment<a class="headerlink" href="#show-the-current-python-environment" title="Permanent link">#</a></h2>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -745,16 +746,17 @@ show configurations.</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="gp">$ </span>pdm config pypi.url <span class="s2">&quot;https://testpypi.org/simple&quot;</span>
 </code></pre></div>
 </td></tr></table>
-<p>Change a configuration value and store in <code>.pdm.toml</code>:</p>
+<p>By default, the configuration are changed globally, if you want to make the config seen by this project only, add a <code>--local</code> flag:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="gp">$ </span>pdm config --local pypi.url <span class="s2">&quot;https://testpypi.org/simple&quot;</span>
 </code></pre></div>
 </td></tr></table>
+<p>Any local configurations will be stored in <code>.pdm.toml</code> under the project root directory.</p>
 <p>The configuration files are searched in the following order:</p>
 <ol>
 <li><code>&lt;PROJECT_ROOT&gt;/.pdm.toml</code> - The project configuration</li>
 <li><code>~/.pdm/config.toml</code> - The home configuration</li>
 </ol>
-<p>If <code>-g/--global</code> option is used, <code>~/.pdm/global-project/.pdm.toml</code> will replace the first item.</p>
+<p>If <code>-g/--global</code> option is used, the first item will be replaced by <code>~/.pdm/global-project/.pdm.toml</code>.</p>
 <h2 id="manage-global-project">Manage global project<a class="headerlink" href="#manage-global-project" title="Permanent link">#</a></h2>
 <p>Sometimes users may want to keep track of the dependencies of global Python interpreter.
 It is easy to do it with PDM, via <code>-g/--global</code> option which is supported by most subcommands.</p>
@@ -791,8 +793,10 @@ PDM provides <code>import</code> command so that you don't have to initialize th
 if your PDM project has not been initialized yet.</p>
 <h2 id="export-locked-packages-to-alternative-formats">Export locked packages to alternative formats<a class="headerlink" href="#export-locked-packages-to-alternative-formats" title="Permanent link">#</a></h2>
 <p>You can also export <code>pdm.lock</code> to other formats, to ease the CI flow or image building process. Currently,
-only <code>requirements.txt</code> format is supported:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="gp">$ </span>pdm <span class="nb">export</span> -o requirements.txt
+only <code>requirements.txt</code> and <code>setup.py</code> format is supported:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="gp">$ </span>pdm <span class="nb">export</span> -o requirements.txt
+<span class="gp">$ </span>pdm <span class="nb">export</span> -f setuppy -o setup.py
 </code></pre></div>
 </td></tr></table>
 <h2 id="hide-the-credentials-from-pyprojecttoml">Hide the credentials from pyproject.toml<a class="headerlink" href="#hide-the-credentials-from-pyprojecttoml" title="Permanent link">#</a></h2>

@@ -747,6 +747,11 @@ is via <a href="https://pypi.org/project/pipx">pipx</a>:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="gp">$ </span>pip install --user pdm
 </code></pre></div>
 </td></tr></table>
+<p>Install the head version of GitHub repository:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="gp">$ </span>pipx install git+https://github.com/pdm-project/pdm.git@master#egg<span class="o">=</span>pdm
+</code></pre></div>
+</td></tr></table>
+<p>Make sure you have installed <a href="https://git-lfs.github.com/">Git LFS</a> on your system.</p>
 <h3 id="enable-pep-582-globally">Enable PEP 582 globally<a class="headerlink" href="#enable-pep-582-globally" title="Permanent link">#</a></h3>
 <p>To make the Python interpreters aware of PEP 582 packages, one need to add the <code>pdm/pep582/sitecustomize.py</code>
 to the Python library search path.</p>

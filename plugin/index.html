@@ -10,7 +10,7 @@
       
       
       <link rel="icon" href="../assets/logo.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.7">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.0">
     
     
       
@@ -18,10 +18,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.c772ddf0.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.33e2939f.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.7fa14f5b.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ef6f36e2.min.css">
         
           
           
@@ -53,8 +53,9 @@
     
     
     <body dir="ltr" data-md-color-scheme="" data-md-color-primary="deep-purple" data-md-color-accent="teal">
-      
   
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -97,9 +98,8 @@
         </div>
       </div>
     </div>
-    <div class="md-header__options">
-      
-    </div>
+    
+    
     
       <label class="md-header__button md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
@@ -680,7 +680,7 @@ assign it to an empty list to have no default options:</p>
 </div>
 <h3 id="register-the-command-to-the-core-object">Register the command to the core object<a class="headerlink" href="#register-the-command-to-the-core-object" title="Permanent link">#</a></h3>
 <p>Write a function somewhere in your plugin project. There is no limit on what the name of the function is,
-but the function  should take only one argument -- the PDM core object:</p>
+but the function should take only one argument -- the PDM core object:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">hello_plugin</span><span class="p">(</span><span class="n">core</span><span class="p">):</span>
 <span class="hll">    <span class="n">core</span><span class="o">.</span><span class="n">register_command</span><span class="p">(</span><span class="n">HelloCommand</span><span class="p">,</span> <span class="s2">&quot;hello&quot;</span><span class="p">)</span>
@@ -759,12 +759,12 @@ as there is no such <code>setup.py</code> in a PDM project, how can we do that?<
 </code></pre></div>
 </td></tr></table>
 <p>After that, all the dependencies are available with a compatible Python interpreter, including the plugin itself, in editable mode. That means any change
-to the codebase will take effect immediately without re-installation. The <code>pdm</code> executable also uses a Python interpreter under the hood, 
+to the codebase will take effect immediately without re-installation. The <code>pdm</code> executable also uses a Python interpreter under the hood,
 so if you run <code>pdm</code> from inside the plugin project, the plugin in development will be activated automatically, and you can do some testing to see how it works.
 That is how PEP 582 benefits our development workflow.</p>
 <h2 id="publish-your-plugin">Publish your plugin<a class="headerlink" href="#publish-your-plugin" title="Permanent link">#</a></h2>
 <p>Now you have defined your plugin already, let's distribute it to PyPI. PDM's plugins are discovered by entry point types.
-Create an <code>pdm.plugin</code> entry point and point to your plugin callable (yeah, it doesn't need to be a function, any callable object can work):</p>
+Create an <code>pdm</code> entry point and point to your plugin callable (yeah, it doesn't need to be a function, any callable object can work):</p>
 <p><strong>PEP 621</strong>:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
@@ -805,7 +805,7 @@ Create an <code>pdm.plugin</code> entry point and point to your plugin callable 
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ pip install --user pdm-hello
 </code></pre></div>
 </td></tr></table>
-<p>The core idea is you must install the plugin in the same site-package directory as <code>pdm</code>.</p>
+<p>The main principle is you must install the plugin in the same site-package directory as <code>pdm</code>.</p>
 <p>Now type in <code>pdm --help</code> in the terminal, you will see the new added <code>hello</code> command and use it:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ pdm hello Jack
@@ -822,6 +822,7 @@ Hello, Jack
             </article>
           </div>
         </div>
+        
       </main>
       
         
@@ -886,7 +887,7 @@ Hello, Jack
     <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.65ce87ac.min.js"></script>
+      <script src="../assets/javascripts/bundle.d892486b.min.js"></script>
       
     
   </body>

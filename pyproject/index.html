@@ -210,14 +210,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
       
       <label class="md-nav__link" for="__nav_2">
         Usage
@@ -235,7 +233,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../dependency/" class="md-nav__link">
+      <a href="../usage/dependency/" class="md-nav__link">
         Manage Dependencies
       </a>
     </li>
@@ -247,7 +245,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../project/" class="md-nav__link">
+      <a href="../usage/project/" class="md-nav__link">
         Manage Project
       </a>
     </li>
@@ -255,6 +253,27 @@
 
           
             
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usage/advanced/" class="md-nav__link">
+        Advanced Usage
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
   
   
     
@@ -294,43 +313,22 @@
     Project metadata
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="Project metadata">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#determine-the-package-version-dynamically" class="md-nav__link">
     Determine the package version dynamically
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#include-and-exclude-package-files" class="md-nav__link">
-    Include and exclude package files
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#select-another-package-directory-to-look-for-packages" class="md-nav__link">
-    Select another package directory to look for packages
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#implicit-namespace-packages" class="md-nav__link">
-    Implicit namespace packages
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#dependency-specification" class="md-nav__link">
     Dependency specification
   </a>
   
-    <nav class="md-nav" aria-label="Dependency specification">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#editable-requirement" class="md-nav__link">
@@ -347,8 +345,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#development-dependencies" class="md-nav__link">
-    Development dependencies
+  <a href="#console-scripts" class="md-nav__link">
+    Console scripts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entry-points" class="md-nav__link">
+    Entry points
   </a>
   
 </li>
@@ -359,23 +364,50 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#console-scripts" class="md-nav__link">
-    Console scripts
+  <a href="#pdm-specific-settings" class="md-nav__link">
+    PDM specific settings
+  </a>
+  
+    <nav class="md-nav" aria-label="PDM specific settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#development-dependencies" class="md-nav__link">
+    Development dependencies
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#entry-points" class="md-nav__link">
-    Entry points
+        
+          <li class="md-nav__item">
+  <a href="#include-and-exclude-package-files" class="md-nav__link">
+    Include and exclude package files
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
+  <a href="#select-another-package-directory-to-look-for-packages" class="md-nav__link">
+    Select another package directory to look for packages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implicit-namespace-packages" class="md-nav__link">
+    Implicit namespace packages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#build-c-extensions" class="md-nav__link">
     Build C extensions
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -383,24 +415,6 @@
   
 </nav>
       
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../advanced/" class="md-nav__link">
-        Advanced Usage
-      </a>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
     </li>
   
 
@@ -431,14 +445,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
       
-      <label class="md-nav__link" for="__nav_4">
+      <label class="md-nav__link" for="__nav_5">
         Plugins
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Plugins" data-md-level="1">
-        <label class="md-nav__title" for="__nav_4">
+        <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
           Plugins
         </label>
@@ -473,14 +487,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
       
-      <label class="md-nav__link" for="__nav_5">
+      <label class="md-nav__link" for="__nav_6">
         Development
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Development" data-md-level="1">
-        <label class="md-nav__title" for="__nav_5">
+        <label class="md-nav__title" for="__nav_6">
           <span class="md-nav__icon md-icon"></span>
           Development
         </label>
@@ -545,43 +559,22 @@
     Project metadata
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="Project metadata">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#determine-the-package-version-dynamically" class="md-nav__link">
     Determine the package version dynamically
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#include-and-exclude-package-files" class="md-nav__link">
-    Include and exclude package files
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#select-another-package-directory-to-look-for-packages" class="md-nav__link">
-    Select another package directory to look for packages
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#implicit-namespace-packages" class="md-nav__link">
-    Implicit namespace packages
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#dependency-specification" class="md-nav__link">
     Dependency specification
   </a>
   
-    <nav class="md-nav" aria-label="Dependency specification">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#editable-requirement" class="md-nav__link">
@@ -598,8 +591,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#development-dependencies" class="md-nav__link">
-    Development dependencies
+  <a href="#console-scripts" class="md-nav__link">
+    Console scripts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entry-points" class="md-nav__link">
+    Entry points
   </a>
   
 </li>
@@ -610,23 +610,50 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#console-scripts" class="md-nav__link">
-    Console scripts
+  <a href="#pdm-specific-settings" class="md-nav__link">
+    PDM specific settings
+  </a>
+  
+    <nav class="md-nav" aria-label="PDM specific settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#development-dependencies" class="md-nav__link">
+    Development dependencies
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#entry-points" class="md-nav__link">
-    Entry points
+        
+          <li class="md-nav__item">
+  <a href="#include-and-exclude-package-files" class="md-nav__link">
+    Include and exclude package files
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
+  <a href="#select-another-package-directory-to-look-for-packages" class="md-nav__link">
+    Select another package directory to look for packages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implicit-namespace-packages" class="md-nav__link">
+    Implicit namespace packages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#build-c-extensions" class="md-nav__link">
     Build C extensions
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -650,9 +677,9 @@
                 <h1 id="project-file-syntax">Project file syntax<a class="headerlink" href="#project-file-syntax" title="Permanent link">#</a></h1>
 <h2 id="project-metadata">Project metadata<a class="headerlink" href="#project-metadata" title="Permanent link">#</a></h2>
 <p>PDM reads the project's metadata following the standardized format of <a href="https://www.python.org/dev/peps/pep-0621/">PEP 621</a>.
-View the PEP for the detailed specification.</p>
+View the PEP for the detailed specification. These metadata are stored in <code>[project]</code> table of <code>pyproject.toml</code>.</p>
 <p><em>In the following part of this document, metadata should be written under <code>[project]</code> table if not given explicitly.</em></p>
-<h2 id="determine-the-package-version-dynamically">Determine the package version dynamically<a class="headerlink" href="#determine-the-package-version-dynamically" title="Permanent link">#</a></h2>
+<h3 id="determine-the-package-version-dynamically">Determine the package version dynamically<a class="headerlink" href="#determine-the-package-version-dynamically" title="Permanent link">#</a></h3>
 <p>You can specify a file source for <code>version</code> field like: <code>version = {from = "pdm/__init__.py"}</code>, in this form,
 the version will be read from the <code>__version__</code> variable in that file.</p>
 <p>PDM can also read version from SCM tags. If you are using git or hg as the version control system, define the
@@ -664,43 +691,7 @@ the version will be read from the <code>__version__</code> variable in that file
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">dynamic</span> <span class="o">=</span> <span class="k">[&quot;version&quot;]</span>
 </code></pre></div>
 </td></tr></table>
-<h2 id="include-and-exclude-package-files">Include and exclude package files<a class="headerlink" href="#include-and-exclude-package-files" title="Permanent link">#</a></h2>
-<p>The way of specifying include and exclude files are simple, they are given as a list of glob patterns:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">includes</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s">&quot;**/*.json&quot;</span><span class="p">,</span>
-    <span class="s">&quot;mypackage/&quot;</span><span class="p">,</span>
-<span class="p">]</span>
-<span class="n">excludes</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s">&quot;mypackage/_temp/*&quot;</span>
-<span class="p">]</span>
-</code></pre></div>
-</td></tr></table>
-<p>If neither <code>includes</code> or <code>excludes</code> is given, PDM is also smart enough to include top level packages and all data files in them.
-Packages can also lie in <code>src</code> directory that PDM can find it.</p>
-<h2 id="select-another-package-directory-to-look-for-packages">Select another package directory to look for packages<a class="headerlink" href="#select-another-package-directory-to-look-for-packages" title="Permanent link">#</a></h2>
-<p>Similar to <code>setuptools</code>' <code>package_dir</code> setting, one can specify another package directory, such as <code>src</code>, in <code>pyproject.toml</code> easily:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">package-dir</span> <span class="o">=</span> <span class="s">&quot;src&quot;</span>
-</code></pre></div>
-</td></tr></table>
-<p>If no package directory is given, PDM can also recognize <code>src</code> as the <code>package-dir</code> implicitly if:</p>
-<ol>
-<li><code>src/__init__.py</code> doesn't exist, meaning it is not a valid Python package, and</li>
-<li>There exist some packages under <code>src/*</code>.</li>
-</ol>
-<h2 id="implicit-namespace-packages">Implicit namespace packages<a class="headerlink" href="#implicit-namespace-packages" title="Permanent link">#</a></h2>
-<p>As specified in <a href="https://www.python.org/dev/peps/pep-0420">PEP 420</a>, a directory will be recognized as a namespace package if:</p>
-<ol>
-<li><code>&lt;package&gt;/__init__.py</code> doesn't exist, and</li>
-<li>There exist normal packages and/or other namespace packages under <code>&lt;package&gt;/*</code>, and</li>
-<li><code>&lt;package&gt;</code> is not specified as <code>package-dir</code></li>
-</ol>
-<h2 id="dependency-specification">Dependency specification<a class="headerlink" href="#dependency-specification" title="Permanent link">#</a></h2>
+<h3 id="dependency-specification">Dependency specification<a class="headerlink" href="#dependency-specification" title="Permanent link">#</a></h3>
 <p>The <code>project.dependencies</code> is an array of dependency specification strings following the <a href="https://www.python.org/dev/peps/pep-0440/">PEP 440</a>
 and <a href="https://www.python.org/dev/peps/pep-0508/">PEP 508</a>.</p>
 <p>Examples:</p>
@@ -767,29 +758,8 @@ PEP 508 strings. They only exist for development purpose.</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ pdm install -s socks
 </code></pre></div>
 </td></tr></table>
-<p><code>-s</code> option can be given multiple times to include more than one groups.</p>
-<h3 id="development-dependencies">Development dependencies<a class="headerlink" href="#development-dependencies" title="Permanent link">#</a></h3>
-<p>You can have some development only dependencies, which is the same as <code>package.json</code>'s <code>dev-dependencies</code> field:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">[project]</span>
-
-<span class="n">dev-dependencies</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s">&quot;pytest&quot;</span><span class="p">,</span>
-    <span class="s">&quot;flake8&quot;</span><span class="p">,</span>
-    <span class="s">&quot;black&quot;</span>
-<span class="p">]</span>
-</code></pre></div>
-</td></tr></table>
-<p>To install all of them:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ pdm install -d
-</code></pre></div>
-</td></tr></table>
-<h2 id="console-scripts">Console scripts<a class="headerlink" href="#console-scripts" title="Permanent link">#</a></h2>
+<p><code>-s</code> option can be given multiple times to include more than one group.</p>
+<h3 id="console-scripts">Console scripts<a class="headerlink" href="#console-scripts" title="Permanent link">#</a></h3>
 <p>The following content:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">[project.scripts]</span>
@@ -809,7 +779,7 @@ PEP 508 strings. They only exist for development purpose.</p>
 </code></pre></div>
 </td></tr></table>
 <p>Also, <code>[project.gui-scripts]</code> will be translated to <code>gui_scripts</code> entry points group in <code>setuptools</code> style.</p>
-<h2 id="entry-points">Entry points<a class="headerlink" href="#entry-points" title="Permanent link">#</a></h2>
+<h3 id="entry-points">Entry points<a class="headerlink" href="#entry-points" title="Permanent link">#</a></h3>
 <p>Other types of entry points are given by <code>[project.entry-points.&lt;type&gt;]</code> section, with the same
 format of <code>[project.scripts]</code>:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -817,7 +787,68 @@ format of <code>[project.scripts]</code>:</p>
 <span class="n">myplugin</span> <span class="o">=</span> <span class="s">&quot;mypackage.plugin:pytest_plugin&quot;</span>
 </code></pre></div>
 </td></tr></table>
-<h2 id="build-c-extensions">Build C extensions<a class="headerlink" href="#build-c-extensions" title="Permanent link">#</a></h2>
+<h2 id="pdm-specific-settings">PDM specific settings<a class="headerlink" href="#pdm-specific-settings" title="Permanent link">#</a></h2>
+<p>There are also some useful settings that should be shipped with <code>pyproject.toml</code>. These settings are defined in <code>[tool.pdm]</code> table.</p>
+<h3 id="development-dependencies">Development dependencies<a class="headerlink" href="#development-dependencies" title="Permanent link">#</a></h3>
+<p>You can have several groups of development only dependencies. Unlike <code>optional-dependencies</code>, they won't appear in the package distribution metadata such as <code>PKG-INFO</code> or <code>METADATA</code>.
+And the package index won't be aware of these dependencies. The schema is similar to that of <code>optional-dependencies</code>, except that it is in <code>tool.pdm</code> table.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">[tool.pdm.dev-dependencies]</span>
+<span class="n">lint</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s">&quot;flake8&quot;</span><span class="p">,</span>
+    <span class="s">&quot;black&quot;</span>
+<span class="p">]</span>
+<span class="n">test</span> <span class="o">=</span> <span class="k">[&quot;pytest&quot;, &quot;pytest-cov]</span>
+<span class="n">doc</span> <span class="o">=</span> <span class="k">[&quot;mkdocs&quot;]</span>
+</code></pre></div>
+</td></tr></table>
+<p>To install all of them:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ pdm install -d
+</code></pre></div>
+</td></tr></table>
+<p>For more CLI usage, please refer to <a href="../usage/dependency/">Manage Dependencies</a></p>
+<h3 id="include-and-exclude-package-files">Include and exclude package files<a class="headerlink" href="#include-and-exclude-package-files" title="Permanent link">#</a></h3>
+<p>The way of specifying include and exclude files are simple, they are given as a list of glob patterns:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">includes</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s">&quot;**/*.json&quot;</span><span class="p">,</span>
+    <span class="s">&quot;mypackage/&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+<span class="n">excludes</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s">&quot;mypackage/_temp/*&quot;</span>
+<span class="p">]</span>
+</code></pre></div>
+</td></tr></table>
+<p>If neither <code>includes</code> or <code>excludes</code> is given, PDM is also smart enough to include top level packages and all data files in them.
+Packages can also lie in <code>src</code> directory that PDM can find it.</p>
+<h3 id="select-another-package-directory-to-look-for-packages">Select another package directory to look for packages<a class="headerlink" href="#select-another-package-directory-to-look-for-packages" title="Permanent link">#</a></h3>
+<p>Similar to <code>setuptools</code>' <code>package_dir</code> setting, one can specify another package directory, such as <code>src</code>, in <code>pyproject.toml</code> easily:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">package-dir</span> <span class="o">=</span> <span class="s">&quot;src&quot;</span>
+</code></pre></div>
+</td></tr></table>
+<p>If no package directory is given, PDM can also recognize <code>src</code> as the <code>package-dir</code> implicitly if:</p>
+<ol>
+<li><code>src/__init__.py</code> doesn't exist, meaning it is not a valid Python package, and</li>
+<li>There exist some packages under <code>src/*</code>.</li>
+</ol>
+<h3 id="implicit-namespace-packages">Implicit namespace packages<a class="headerlink" href="#implicit-namespace-packages" title="Permanent link">#</a></h3>
+<p>As specified in <a href="https://www.python.org/dev/peps/pep-0420">PEP 420</a>, a directory will be recognized as a namespace package if:</p>
+<ol>
+<li><code>&lt;package&gt;/__init__.py</code> doesn't exist, and</li>
+<li>There exist normal packages and/or other namespace packages under <code>&lt;package&gt;/*</code>, and</li>
+<li><code>&lt;package&gt;</code> is not specified as <code>package-dir</code></li>
+</ol>
+<h3 id="build-c-extensions">Build C extensions<a class="headerlink" href="#build-c-extensions" title="Permanent link">#</a></h3>
 <p>Currently, building C extensions still relies on <code>setuptools</code>. You should write a python script which contains
 a function named <code>build</code> and accepts the parameter dictionary of <code>setup()</code> as the only argument.
 Update the dictionary with your <code>ext_modules</code> settings in the function.</p>
@@ -841,7 +872,7 @@ Update the dictionary with your <code>ext_modules</code> settings in the functio
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># pyproject.toml</span>
-<span class="k">[project]</span>
+<span class="k">[tool.pdm]</span>
 <span class="n">build</span> <span class="o">=</span> <span class="s">&quot;build.py&quot;</span>
 </code></pre></div>
 </td></tr></table>
@@ -863,7 +894,7 @@ Update the dictionary with your <code>ext_modules</code> settings in the functio
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../project/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../usage/advanced/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -872,19 +903,19 @@ Update the dictionary with your <code>ext_modules</code> settings in the functio
               <span class="md-footer__direction">
                 Previous
               </span>
-              Manage Project
+              Advanced Usage
             </div>
           </div>
         </a>
       
       
-        <a href="../advanced/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../configuration/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Advanced Usage
+              Configuration
             </div>
           </div>
           <div class="md-footer__button md-icon">

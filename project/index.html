@@ -845,16 +845,16 @@ show configurations.</p>
 <p>If <code>-g/--global</code> option is used, the first item will be replaced by <code>~/.pdm/global-project/.pdm.toml</code>.</p>
 <p>You can find all available configuration items in <a href="../configuration/">Configuration Page</a>.</p>
 <h2 id="manage-global-project">Manage global project<a class="headerlink" href="#manage-global-project" title="Permanent link">#</a></h2>
-<p>Sometimes users may want to keep track of the dependencies of global Python interpreter.
-It is easy to do it with PDM, via <code>-g/--global</code> option which is supported by most subcommands.</p>
+<p>Sometimes users may want to keep track of the dependencies of global Python interpreter as well.
+It is easy to do so with PDM, via <code>-g/--global</code> option which is supported by most subcommands.</p>
 <p>If the option is passed, <code>~/.pdm/global-project</code> will be used as the project directory, which is
 almost the same as normal project except that <code>pyproject.toml</code> will be created automatically for you
 and it doesn't support build features. The idea is taken from Haskell's <a href="https://docs.haskellstack.org">stack</a>.</p>
 <p>However, unlike <code>stack</code>, by default, PDM won't use global project automatically if a local project is not found.
 Users should pass <code>-g/--global</code> explicitly to activate it, since it is not very pleasing if packages go to a wrong place.
-To change this behavior, simply change the config <code>auto_global</code> to <code>true</code>.</p>
+But PDM also leave the decision to users, just set the config <code>auto_global</code> to <code>true</code>.</p>
 <p>If you want global project to track another project file other than <code>~/.pdm/global-project</code>, you can provide the
-project path following <code>-g/--global</code>.</p>
+project path via <code>-p/--project &lt;path&gt;</code> option.</p>
 <div class="admonition attention">
 <p class="admonition-title">CAUTION</p>
 <p>Be careful with <code>remove</code> and <code>sync --clean</code> commands when global project is used, because it may remove packages installed in your system Python.</p>

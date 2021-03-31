@@ -304,6 +304,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#about-pep-582-__pypackages__-directory" class="md-nav__link">
+    About PEP 582 __pypackages__ directory
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#use-pdm-in-continuous-integration" class="md-nav__link">
     Use PDM in Continuous Integration
   </a>
@@ -489,6 +496,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#about-pep-582-__pypackages__-directory" class="md-nav__link">
+    About PEP 582 __pypackages__ directory
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#use-pdm-in-continuous-integration" class="md-nav__link">
     Use PDM in Continuous Integration
   </a>
@@ -624,6 +638,13 @@ config should be set as the above example to make PDM work properly.</p>
 </td></tr></table>
 <p>Note that <code>PDM_IGNORE_SAVED_PYTHON</code> should be set so that PDM can pick up the Python in the virtualenv correctly. Also make sure <code>pdm</code> is available in the <code>PATH</code>.
 Before running nox, you should also <code>pdm config use_venv true</code> to enable venv reusing.</p>
+<h2 id="about-pep-582-__pypackages__-directory">About PEP 582 <code>__pypackages__</code> directory<a class="headerlink" href="#about-pep-582-__pypackages__-directory" title="Permanent link">#</a></h2>
+<p>By default, if you run tools by <code>pdm run</code>, <code>__pypackages__</code> will be seen by the program and all subprocesses created by it. This means virtual environments created by those tools are also aware of the packages inside <code>__pypackages__</code>, which result in unexpected behavior in some cases.
+For <code>nox</code>, you can avoid this by adding a line in <code>noxfile.py</code>:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;PYTHONPATH&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<p>For <code>tox</code>, <code>PYTHONPATH</code> will not be passed to the test sessions so this isn't going to be a problem. Moreover, it is recommended to make <code>nox</code> and <code>tox</code> live in their own pipx environments so you don't need to install for every project. In this case, PEP 582 packages will not be a problem either.</p>
 <h2 id="use-pdm-in-continuous-integration">Use PDM in Continuous Integration<a class="headerlink" href="#use-pdm-in-continuous-integration" title="Permanent link">#</a></h2>
 <p>Only one thing to keep in mind -- PDM can't be installed on Python &lt; 3.7, so if your project is to be tested on those Python versions,
 you have to make sure PDM is installed on the correct Python version, which can be different from the target Python version the particular job/task is run on.</p>

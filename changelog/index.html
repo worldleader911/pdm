@@ -4084,6 +4084,8 @@
 <ul>
 <li>Remove the incompatible code from the files that will be run in-process. <a href="https://github.com/pdm-project/pdm/issues/375">#375</a></li>
 <li>Get the correct Python ABI tag of selected interpreter <a href="https://github.com/pdm-project/pdm/issues/378">#378</a></li>
+<li>Error out when doing <code>pdm run</code> on a directory not initialized yet.</li>
+<li>Give warning message when the project automatically fallbacks to the global project.</li>
 </ul>
 <h3 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">#</a></h3>
 <ul>
@@ -4095,6 +4097,7 @@
 <li>Add a basic integration test for cross-python check. <a href="https://github.com/pdm-project/pdm/issues/377">#377</a></li>
 <li>Refactor the <code>project.python_executable</code> to <code>project.python</code> that contains all info of the interpreter. <a href="https://github.com/pdm-project/pdm/issues/382">#382</a></li>
 <li>Continue refactoring Python info to extract to its own module. <a href="https://github.com/pdm-project/pdm/issues/383">#383</a></li>
+<li>Refactor the creation of project.</li>
 </ul>
 <h2 id="release-v150b0-2021-04-03">Release v1.5.0b0 (2021-04-03)<a class="headerlink" href="#release-v150b0-2021-04-03" title="Permanent link">#</a></h2>
 <h3 id="features-improvements_1">Features &amp; Improvements<a class="headerlink" href="#features-improvements_1" title="Permanent link">#</a></h3>

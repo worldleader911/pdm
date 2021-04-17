@@ -277,15 +277,15 @@
     Add dependencies
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="Add dependencies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#add-development-only-dependencies" class="md-nav__link">
     Add development only dependencies
   </a>
   
-    <nav class="md-nav" aria-label="Add development only dependencies">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#save-version-specifiers" class="md-nav__link">
@@ -331,6 +331,19 @@
     Install the packages pinned in lock file
   </a>
   
+    <nav class="md-nav" aria-label="Install the packages pinned in lock file">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#select-a-subset-of-dependencies-with-cli-options" class="md-nav__link">
+    Select a subset of dependencies with CLI options
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -343,13 +356,6 @@
         <li class="md-nav__item">
   <a href="#set-pypi-index-url" class="md-nav__link">
     Set PyPI index URL
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#add-extra-sources-of-packages" class="md-nav__link">
-    Add extra sources of packages
   </a>
   
 </li>
@@ -607,15 +613,15 @@
     Add dependencies
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="Add dependencies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#add-development-only-dependencies" class="md-nav__link">
     Add development only dependencies
   </a>
   
-    <nav class="md-nav" aria-label="Add development only dependencies">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#save-version-specifiers" class="md-nav__link">
@@ -661,6 +667,19 @@
     Install the packages pinned in lock file
   </a>
   
+    <nav class="md-nav" aria-label="Install the packages pinned in lock file">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#select-a-subset-of-dependencies-with-cli-options" class="md-nav__link">
+    Select a subset of dependencies with CLI options
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -673,13 +692,6 @@
         <li class="md-nav__item">
   <a href="#set-pypi-index-url" class="md-nav__link">
     Set PyPI index URL
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#add-extra-sources-of-packages" class="md-nav__link">
-    Add extra sources of packages
   </a>
   
 </li>
@@ -750,7 +762,7 @@ The following examples are run on Ubuntu 18.04, a few changes must be done if yo
 </td></tr></table>
 <p>If <code>pyproject.toml</code> is already present, it will be updated with the metadata. The metadata format follows the
 <a href="https://www.python.org/dev/peps/pep-0621/">PEP 621 specification</a></p>
-<p>For details of the meaning of each field in <code>pyproject.toml</code>, please refer to <a href="pyproject.md">Project File</a>.</p>
+<p>For details of the meaning of each field in <code>pyproject.toml</code>, please refer to <a href="/pyproject/pep62.md">Project File</a>.</p>
 <h2 id="add-dependencies">Add dependencies<a class="headerlink" href="#add-dependencies" title="Permanent link">#</a></h2>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="gp">$ </span>pdm add requests
 </code></pre></div>
@@ -763,9 +775,9 @@ The following examples are run on Ubuntu 18.04, a few changes must be done if yo
 the resolved result of all dependencies.</p>
 <p>Local packages can be installed in <a href="https://pip.pypa.io/en/stable/reference/pip_install/#editable-installs">editable mode</a>
 (just like <code>pip install -e &lt;local project path&gt;</code> would) using <code>pdm add -e/--editable &lt;local project path&gt;</code>.</p>
-<h2 id="add-development-only-dependencies">Add development only dependencies<a class="headerlink" href="#add-development-only-dependencies" title="Permanent link">#</a></h2>
+<h3 id="add-development-only-dependencies">Add development only dependencies<a class="headerlink" href="#add-development-only-dependencies" title="Permanent link">#</a></h3>
 <p><em>New in 1.5.0</em></p>
-<p>PDM also supports defining groups of dependencies that are useful for development. They can be classified as different groups,
+<p>PDM also supports defining groups of dependencies that are useful for development. They can be classified as different sections,
 e.g. some for testing and others for linting. We usually don't want these dependencies appear in the distribution's metadata
 so using <code>optional-dependencies</code> is probably not a good idea. We can define them as development dependencies:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="gp">$ </span>pdm add -ds <span class="nb">test</span> pytest
@@ -780,8 +792,8 @@ so using <code>optional-dependencies</code> is probably not a good idea. We can 
 <p>For backward-compatibility, if <code>-s/--section</code> is not given, dependencies will go to <code>dev</code> group under <code>[tool.pdm.dev-dependencies]</code> by default.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-</div>
 <p>The same group name MUST NOT appear in both <code>[tool.pdm.dev-dependencies]</code> and <code>[project.optional-dependencies]</code> .</p>
+</div>
 <h3 id="save-version-specifiers">Save version specifiers<a class="headerlink" href="#save-version-specifiers" title="Permanent link">#</a></h3>
 <p>If the package is given without a version specifier like <code>pdm add requests</code>. PDM provides three different behaviors of what version
 specifier is saved for the dependency, which is given by <code>--save-&lt;strategy&gt;</code>(Assume <code>2.21.0</code> is the latest version that can be found
@@ -813,9 +825,9 @@ for the dependency):</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="gp"># </span>Update all dev-dependencies
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="gp"># </span>Update all default + dev-dependencies
 <span class="gp">$ </span>pdm update -d
-<span class="gp"># </span>Update a package <span class="k">in</span> the specified group of dev-dependencies
+<span class="gp"># </span>Update a package <span class="k">in</span> the specified section of dev-dependencies
 <span class="gp">$ </span>pdm update -ds <span class="nb">test</span> pytest
 </code></pre></div>
 </td></tr></table>
@@ -836,14 +848,21 @@ which is given by <code>--update-&lt;strategy&gt;</code> option:</p>
 <span class="normal">5</span>
 <span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="gp"># </span>Remove requests from the default dependencies
 <span class="gp">$ </span>pdm remove requests
-<span class="gp"># </span>Remove h11 from the <span class="s1">&#39;web&#39;</span> optional group
+<span class="gp"># </span>Remove h11 from the <span class="s1">&#39;web&#39;</span> section of optional-dependencies
 <span class="gp">$ </span>pdm remove -s web h11
-<span class="gp"># </span>Remove pytest-cov from the <span class="sb">`</span><span class="nb">test</span><span class="sb">`</span> dev-dependencies group
+<span class="gp"># </span>Remove pytest-cov from the <span class="sb">`</span><span class="nb">test</span><span class="sb">`</span> section of dev-dependencies
 <span class="gp">$ </span>pdm remove -ds <span class="nb">test</span> pytest-cov
 </code></pre></div>
 </td></tr></table>
 <h2 id="install-the-packages-pinned-in-lock-file">Install the packages pinned in lock file<a class="headerlink" href="#install-the-packages-pinned-in-lock-file" title="Permanent link">#</a></h2>
 <p>There are two similar commands to do this job with a slight difference:</p>
+<ul>
+<li><code>pdm install</code> will check the lock file and relock if it mismatches with project file, then install.</li>
+<li><code>pdm sync</code> installs dependencies in the lock file and will error out if it doesn't exist.
+  Besides, <code>pdm sync</code> can also remove unneeded packages if <code>--clean</code> option is given.</li>
+</ul>
+<h3 id="select-a-subset-of-dependencies-with-cli-options">Select a subset of dependencies with CLI options<a class="headerlink" href="#select-a-subset-of-dependencies-with-cli-options" title="Permanent link">#</a></h3>
+<p>Say we have a project with following dependencies:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -853,25 +872,70 @@ which is given by <code>--update-&lt;strategy&gt;</code> option:</p>
 <span class="normal"> 7</span>
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="gp"># </span>Install all default dependencies
-<span class="gp">$ </span>pdm install
-<span class="gp"># </span>Install default + web optional dependencies
-<span class="gp">$ </span>pdm install -s web
-<span class="gp"># </span>Install default + all optional dependencies
-<span class="gp">$ </span>pdm install -s:all
-<span class="gp"># </span>Install default + all dev-dependencies
-<span class="gp">$ </span>pdm install -d
-<span class="gp">$ </span>pdm install -ds:all
-<span class="gp"># </span>Install web dependencies ONLY <span class="o">(</span>without default dependencies<span class="o">)</span>
-<span class="gp">$ </span>pdm install --no-default -s web
+<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">[</span><span class="n">project</span><span class="p">]</span>  <span class="c1"># This is production dependencies</span>
+<span class="n">dependencies</span> <span class="o">=</span> <span class="k">[&quot;requests&quot;]</span>
+
+<span class="p">[</span><span class="n">project</span><span class="p">.</span><span class="n">optional-dependencies</span><span class="p">]</span>  <span class="c1"># This is optional dependencies</span>
+<span class="n">extra1</span> <span class="o">=</span> <span class="k">[&quot;flask&quot;]</span>
+<span class="n">extra2</span> <span class="o">=</span> <span class="k">[&quot;django&quot;]</span>
+
+<span class="p">[</span><span class="n">tool</span><span class="p">.</span><span class="n">pdm</span><span class="p">.</span><span class="n">dev-dependencies</span><span class="p">]</span>  <span class="c1"># This is dev dependencies</span>
+<span class="n">dev1</span> <span class="o">=</span> <span class="k">[&quot;pytest&quot;]</span>
+<span class="n">dev2</span> <span class="o">=</span> <span class="k">[&quot;mkdocs&quot;]</span>
 </code></pre></div>
 </td></tr></table>
-<ul>
-<li><code>pdm install</code> will check the lock file and relock if it mismatches with project file, then install.</li>
-<li><code>pdm sync</code> installs dependencies in the lock file and will error out if it doesn't exist.
-  Besides, <code>pdm sync</code> can also remove unneeded packages if <code>--clean</code> option is given.</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>What it does</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pdm install</code></td>
+<td>install prod and dev deps (no optional)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pdm install -s extra1</code></td>
+<td>install prod deps, dev deps, and "extra1" optional section</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pdm install -s dev1</code></td>
+<td>install prod deps and only "dev1" dev section</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pdm install -s:all</code></td>
+<td>install prod deps, dev deps and "extra1", "extra2" optional sections</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pdm install -s extra1 -s dev1</code></td>
+<td>install prod deps, "extra1" optional section and only "dev1" dev section</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pdm install --prod</code></td>
+<td>install prod only</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pdm install --prod -s extra1</code></td>
+<td>install prod deps and "extra1" optional</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pdm install --prod -s dev1</code></td>
+<td>Fail, <code>--prod</code> can't be given with dev dependencies</td>
+<td>Leave the <code>--prod</code> option</td>
+</tr>
+</tbody>
+</table>
+<p><strong>All</strong> development dependencies are included as long as <code>--prod</code> is not passed and <code>-s</code> doesn't specify any dev sections.</p>
 <h2 id="show-what-packages-are-installed">Show what packages are installed<a class="headerlink" href="#show-what-packages-are-installed" title="Permanent link">#</a></h2>
 <p>Similar to <code>pip list</code>, you can list all packages installed in the packages directory:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="gp">$ </span>pdm list
@@ -910,20 +974,6 @@ bump2version 1.0.0
 </td></tr></table>
 <p>By default, PDM will read the pip's configuration files to decide the PyPI URL, and fallback
 to <code>https://pypi.org/simple</code> if none is found.</p>
-<h2 id="add-extra-sources-of-packages">Add extra sources of packages<a class="headerlink" href="#add-extra-sources-of-packages" title="Permanent link">#</a></h2>
-<p>Sometimes your packages may exist on a private repository other than PyPI(and its mirrors).
-These sources should be preserved in <code>pyproject.toml</code> and shipped with the project in deployment.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">[[tool.pdm.source]]</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s">&quot;http://example.com/private/index&quot;</span>
-<span class="n">verify_ssl</span> <span class="o">=</span> <span class="n">false</span>  <span class="c1"># Don&#39;t verify SSL, it is required when you are using `HTTP` or the certificate is trusted.</span>
-<span class="n">name</span> <span class="o">=</span> <span class="s">&quot;private&quot;</span>
-</code></pre></div>
-</td></tr></table>
-<p>Use the name <code>name = "pypi"</code> if you want to override the configured PyPI index. Note that PDM specific settings
-are stored under <code>tool.pdm</code> namespace in the <code>pyproject.toml</code>.</p>
 <h2 id="allow-prerelease-versions-to-be-installed">Allow prerelease versions to be installed<a class="headerlink" href="#allow-prerelease-versions-to-be-installed" title="Permanent link">#</a></h2>
 <p>Include the following setting in <code>pyproject.toml</code> to enable:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>

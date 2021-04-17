@@ -797,7 +797,7 @@ by <code>pip install -e .</code> or <code>python setup.py develop</code> in the 
 as there is no such <code>setup.py</code> in a PDM project, how can we do that?</p>
 <p>Fortunately, it becomes even easier with PDM and PEP 582. First, you should enable PEP 582 globally following the
 <a href="..#enable-pep-582-globally">corresponding part of this doc</a>. Then you just need to install all dependencies into the <code>__pypackages__</code> directory by:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ pdm install -d
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ pdm install
 </code></pre></div>
 </td></tr></table>
 <p>After that, all the dependencies are available with a compatible Python interpreter, including the plugin itself, in editable mode. That means any change

@@ -739,7 +739,7 @@ Be awared PDM won't add <a href="https://www.python.org/dev/peps/pep-0420/">PEP 
 <ol>
 <li><code>&lt;package&gt;/__init__.py</code> doesn't exist, and</li>
 <li>There exist normal packages and/or other namespace packages under <code>&lt;package&gt;/*</code>, and</li>
-<li><code>&lt;package&gt;</code> is not specified as <code>package-dir</code></li>
+<li><code>&lt;package&gt;</code> is explicitly listed in <code>includes</code></li>
 </ol>
 <h2 id="build-c-extensions">Build C extensions<a class="headerlink" href="#build-c-extensions" title="Permanent link">#</a></h2>
 <p>Currently, building C extensions still relies on <code>setuptools</code>. You should write a python script which contains

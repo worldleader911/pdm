@@ -821,6 +821,14 @@ Here is an example worflow of GitHub Actions, while you can adapt it for other C
 If PDM parallel install is failed on that machine you should either set <code>parallel_install</code> to <code>false</code> or set env <code>LD_PRELOAD=/lib/x86_64-linux-gnu/libgcc_s.so.1</code>.
 It is already handled by the <code>pdm-project/setup-pdm</code> action.</p>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If your CI scripts run without a proper user set, you might get permission errors when PDM tries to create its cache directory.
+To work around this, you can set the HOME environment variable yourself, to a writable directory, for example:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">HOME</span><span class="o">=</span>/tmp/home
+</code></pre></div>
+</td></tr></table>
+</div>
 <h2 id="use-other-pep-517-backends">Use other PEP 517 backends<a class="headerlink" href="#use-other-pep-517-backends" title="Permanent link">#</a></h2>
 <p>PDM supports ALL PEP 517 build backends that comply with PEP 621 specification. At the time of writing, <code>flit</code> is going to switch to PEP 621 metadata in the near future, then you can keep <code>flit</code> as the build-backend while still managing dependencies using PDM:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>

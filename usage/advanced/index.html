@@ -341,6 +341,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#use-pdm-in-a-multi-stage-dockerfile" class="md-nav__link">
+    Use PDM in a multi-stage Dockerfile
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#integrate-with-other-ide-or-editors" class="md-nav__link">
     Integrate with other IDE or editors
   </a>
@@ -600,6 +607,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#use-pdm-in-a-multi-stage-dockerfile" class="md-nav__link">
+    Use PDM in a multi-stage Dockerfile
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#integrate-with-other-ide-or-editors" class="md-nav__link">
     Integrate with other IDE or editors
   </a>
@@ -817,6 +831,66 @@ It is already handled by the <code>pdm-project/setup-pdm</code> action.</p>
 </code></pre></div>
 </td></tr></table>
 <p>PDM will call the correct backend when <code>pdm build</code>.</p>
+<h2 id="use-pdm-in-a-multi-stage-dockerfile">Use PDM in a multi-stage Dockerfile<a class="headerlink" href="#use-pdm-in-a-multi-stage-dockerfile" title="Permanent link">#</a></h2>
+<p>It is possible to use PDM in a multi-stage Dockerfile to first install the project and dependencies into <code>__pypackages__</code>
+and then copy this folder into the final stage, adding it to <code>PYTHONPATH</code>.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c"># build stage</span>
+<span class="k">FROM</span> <span class="s">python:3.8</span> <span class="k">AS</span> <span class="s">builder</span>
+
+<span class="c"># install PDM</span>
+<span class="k">RUN</span> pip install -U pip setuptools wheel
+<span class="k">RUN</span> pip install pdm
+
+<span class="c"># copy files</span>
+<span class="k">COPY</span> pyproject.toml pdm.lock README.md /project/
+<span class="k">COPY</span> src/ /project/src
+
+<span class="c"># install dependencies and project</span>
+<span class="k">WORKDIR</span><span class="s"> /project</span>
+<span class="k">RUN</span> pdm install --prod --no-lock
+<span class="c"># workaround for https://github.com/pdm-project/pdm/issues/443</span>
+<span class="k">RUN</span> rm __pypackages__/3.8/lib/*.egg-link
+<span class="k">RUN</span> pip install . --no-deps -t __pypackages__/3.8/lib
+
+
+<span class="c"># run stage</span>
+<span class="k">FROM</span> <span class="s">python:3.8</span>
+
+<span class="c"># retrieve packages from build stage</span>
+<span class="k">ENV</span> <span class="nv">PYTHONPATH</span><span class="o">=</span>/project/pkgs
+<span class="k">COPY</span> --from<span class="o">=</span>builder /project/__pypackages__/3.8/lib /project/pkgs
+
+<span class="c"># set command/entrypoint, adapt to fit your needs</span>
+<span class="k">CMD</span> <span class="p">[</span><span class="s2">&quot;python&quot;</span><span class="p">,</span> <span class="s2">&quot;-m&quot;</span><span class="p">,</span> <span class="s2">&quot;project&quot;</span><span class="p">]</span>
+</code></pre></div>
+</td></tr></table>
 <h2 id="integrate-with-other-ide-or-editors">Integrate with other IDE or editors<a class="headerlink" href="#integrate-with-other-ide-or-editors" title="Permanent link">#</a></h2>
 <h3 id="work-with-lsp-python-ms-in-emacs">Work with lsp-python-ms in Emacs<a class="headerlink" href="#work-with-lsp-python-ms-in-emacs" title="Permanent link">#</a></h3>
 <p>Below is a sample code snippet showing how to make PDM work with <a href="https://github.com/emacs-lsp/lsp-python-ms">lsp-python-ms</a> in Emacs. Contributed by <a href="https://github.com/pdm-project/pdm/discussions/372#discussion-3303501">@linw1995</a>.</p>

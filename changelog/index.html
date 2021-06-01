@@ -4562,6 +4562,8 @@
 <h2 id="release-v160-2021-05-31">Release v1.6.0 (2021-05-31)<a class="headerlink" href="#release-v160-2021-05-31" title="Permanent link">#</a></h2>
 <h3 id="features-improvements">Features &amp; Improvements<a class="headerlink" href="#features-improvements" title="Permanent link">#</a></h3>
 <ul>
+<li>Use a new approach to determine the packages to be installed. This requires a quick resolution step before installation. <a href="https://github.com/pdm-project/pdm/issues/456">#456</a></li>
+<li><code>pdm export</code> no longer produces requirements file applicable for all platforms due to the new approach. <a href="https://github.com/pdm-project/pdm/issues/456">#456</a></li>
 <li>Add structural typing for requirements module. Refactor the requirments module for that purpose. <a href="https://github.com/pdm-project/pdm/issues/433">#433</a></li>
 <li>Introduce <code>--no-editable</code> option to install non-editable versions of all packages. <a href="https://github.com/pdm-project/pdm/issues/443">#443</a></li>
 <li>Introduce <code>--no-self</code> option to prevent the project itself from being installed. <a href="https://github.com/pdm-project/pdm/issues/444">#444</a></li>

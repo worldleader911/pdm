@@ -9,8 +9,8 @@
       
       
       
-      <link rel="icon" href="../assets/logo.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.6">
+      <link rel="icon" href="assets/logo.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
     
     
       
@@ -18,10 +18,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.875de78c.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.ca7ac06f.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.f1a3b89f.min.css">
+        <link rel="stylesheet" href="assets/stylesheets/palette.f1a3b89f.min.css">
         
           
           
@@ -42,6 +42,8 @@
     
     
       
+
+
     
     
   </head>
@@ -55,7 +57,7 @@
     <body dir="ltr" data-md-color-scheme="" data-md-color-primary="deep-purple" data-md-color-accent="teal">
   
     
-    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    <script>function __prefix(e){return new URL(".",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -88,9 +90,9 @@
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="PDM - Python Development Master" class="md-header__button md-logo" aria-label="PDM - Python Development Master" data-md-component="logo">
+    <a href="index.html" title="PDM - Python Development Master" class="md-header__button md-logo" aria-label="PDM - Python Development Master" data-md-component="logo">
       
-  <img src="../assets/logo.png" alt="logo">
+  <img src="assets/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -180,9 +182,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="PDM - Python Development Master" class="md-nav__button md-logo" aria-label="PDM - Python Development Master" data-md-component="logo">
+    <a href="index.html" title="PDM - Python Development Master" class="md-nav__button md-logo" aria-label="PDM - Python Development Master" data-md-component="logo">
       
-  <img src="../assets/logo.png" alt="logo">
+  <img src="assets/logo.png" alt="logo">
 
     </a>
     PDM - Python Development Master
@@ -211,7 +213,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="index.html" class="md-nav__link">
         Home
       </a>
     </li>
@@ -247,7 +249,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../usage/dependency/" class="md-nav__link">
+      <a href="usage/dependency.html" class="md-nav__link">
         Manage Dependencies
       </a>
     </li>
@@ -259,7 +261,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../usage/project/" class="md-nav__link">
+      <a href="usage/project.html" class="md-nav__link">
         Manage Project
       </a>
     </li>
@@ -271,7 +273,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../usage/advanced/" class="md-nav__link">
+      <a href="usage/advanced.html" class="md-nav__link">
         Advanced Usage
       </a>
     </li>
@@ -313,7 +315,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyproject/pep621/" class="md-nav__link">
+      <a href="pyproject/pep621.html" class="md-nav__link">
         PEP 621 Project metadata
       </a>
     </li>
@@ -325,7 +327,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyproject/tool-pdm/" class="md-nav__link">
+      <a href="pyproject/tool-pdm.html" class="md-nav__link">
         PDM tool settings
       </a>
     </li>
@@ -346,7 +348,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../configuration/" class="md-nav__link">
+      <a href="configuration.html" class="md-nav__link">
         Configuration
       </a>
     </li>
@@ -398,7 +400,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="./" class="md-nav__link md-nav__link--active">
+      <a href="plugin.html" class="md-nav__link md-nav__link--active">
         Write a plugin
       </a>
       
@@ -528,7 +530,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../contributing/" class="md-nav__link">
+      <a href="contributing.html" class="md-nav__link">
         Contributing
       </a>
     </li>
@@ -540,7 +542,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../changelog/" class="md-nav__link">
+      <a href="changelog.html" class="md-nav__link">
         Change Log
       </a>
     </li>
@@ -813,7 +815,7 @@ which are not covered in the above example:</p>
 by <code>pip install -e .</code> or <code>python setup.py develop</code> in the <strong>traditional</strong> Python packaging world which leverages <code>setup.py</code> to do so. However,
 as there is no such <code>setup.py</code> in a PDM project, how can we do that?</p>
 <p>Fortunately, it becomes even easier with PDM and PEP 582. First, you should enable PEP 582 globally following the
-<a href="..#enable-pep-582-globally">corresponding part of this doc</a>. Then you just need to install all dependencies into the <code>__pypackages__</code> directory by:</p>
+<a href="index.html#enable-pep-582-globally">corresponding part of this doc</a>. Then you just need to install all dependencies into the <code>__pypackages__</code> directory by:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ pdm install
 </code></pre></div>
 </td></tr></table>
@@ -889,7 +891,8 @@ Hello, Jack
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../configuration/" class="md-footer__link md-footer__link--prev" rel="prev">
+        
+        <a href="configuration.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Configuration" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -904,7 +907,8 @@ Hello, Jack
         </a>
       
       
-        <a href="../contributing/" class="md-footer__link md-footer__link--next" rel="next">
+        
+        <a href="contributing.html" class="md-footer__link md-footer__link--next" aria-label="Next: Contributing" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
@@ -974,10 +978,10 @@ Hello, Jack
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.d351de03.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": ".", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.34eae1b6.min.js"></script>
+      <script src="assets/javascripts/bundle.76f349be.min.js"></script>
       
     
   </body>

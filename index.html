@@ -822,6 +822,45 @@ in a similar way to <code>npm</code> that doesn't need to create a virtualenv at
 PDM itself needs Python 3.7+.</p>
 </div>
 <h3 id="recommended-installation-method">Recommended installation method<a class="headerlink" href="#recommended-installation-method" title="Permanent link">#</a></h3>
+<p>PDM requires python version 3.7 or higher.</p>
+<p>Like Pip, PDM provides an installation script that will install PDM into an isolated environment.</p>
+<p><strong>For Linux/Mac</strong></p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>curl -sSL https://raw.githubusercontent.com/pdm-project/pdm/install-pdm.py <span class="p">|</span> python -
+</code></pre></div>
+</td></tr></table>
+<p><strong>For Windows</strong></p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nb">Invoke-WebRequest</span> <span class="n">-Uri</span> <span class="n">https</span><span class="p">://</span><span class="n">raw</span><span class="p">.</span><span class="n">githubusercontent</span><span class="p">.</span><span class="n">com</span><span class="p">/</span><span class="n">pdm-project</span><span class="p">/</span><span class="n">pdm</span><span class="p">/</span><span class="nb">install-pdm</span><span class="p">.</span><span class="n">py</span> <span class="n">-UseBasicParsing</span><span class="p">).</span><span class="n">Content</span> <span class="p">|</span> <span class="n">python</span> <span class="p">-</span>
+</code></pre></div>
+</td></tr></table>
+<p>The installer will install PDM into the user site and the location depends on the system:</p>
+<ul>
+<li><code>$HOME/.local/bin</code> for Unix</li>
+<li><code>%APPDATA%\Python\Scripts</code> on Windows</li>
+</ul>
+<p>You can pass additional options to the script to control how PDM is installed:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>usage: install-pdm.py [-h] [-v VERSION] [--prerelease] [--remove] [-p PATH] [-d DEP]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -v VERSION, --version VERSION | envvar: PDM_VERSION
+                        Specify the version to be installed, or HEAD to install from the main branch
+  --prerelease | envvar: PDM_PRERELEASE    Allow prereleases to be installed
+  --remove | envvar: PDM_REMOVE            Remove the PDM installation
+  -p PATH, --path PATH | envvar: PDM_HOME  Specify the location to install PDM
+  -d DEP, --dep DEP | envvar: PDM_DEPS     Specify additional dependencies, can be given multiple times
+</code></pre></div>
+</td></tr></table>
+<p>You can either pass the options after the script or set the env var value.</p>
+<h3 id="other-installation-methods">Other installation methods<a class="headerlink" href="#other-installation-methods" title="Permanent link">#</a></h3>
 <p>If your are on MacOS and using <code>homebrew</code>, install it by:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ brew install pdm
 </code></pre></div>
@@ -831,8 +870,7 @@ is via <a href="https://pypi.org/project/pipx">pipx</a>:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="gp">$ </span>pipx install pdm
 </code></pre></div>
 </td></tr></table>
-<h3 id="other-installation-methods">Other installation methods<a class="headerlink" href="#other-installation-methods" title="Permanent link">#</a></h3>
-<p>Install PDM into user site with <code>pip</code>:</p>
+<p>Or you can install PDM into the user site with <code>pip</code>:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="gp">$ </span>pip install --user pdm
 </code></pre></div>
 </td></tr></table>

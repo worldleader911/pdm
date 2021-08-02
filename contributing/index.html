@@ -466,7 +466,7 @@
       
         <li class="md-nav__item">
   <a href="#a-recommended-flow-of-contributing-to-an-open-source-project" class="md-nav__link">
-    A recommended flow of contributing to an Open Source project.
+    A recommended flow of contributing to an Open Source project
   </a>
   
 </li>
@@ -490,6 +490,26 @@
   <a href="#code-style" class="md-nav__link">
     Code style
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#news-fragments" class="md-nav__link">
+    News fragments
+  </a>
+  
+    <nav class="md-nav" aria-label="News fragments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-types" class="md-nav__link">
+    Issue Types
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -558,7 +578,7 @@
       
         <li class="md-nav__item">
   <a href="#a-recommended-flow-of-contributing-to-an-open-source-project" class="md-nav__link">
-    A recommended flow of contributing to an Open Source project.
+    A recommended flow of contributing to an Open Source project
   </a>
   
 </li>
@@ -582,6 +602,26 @@
   <a href="#code-style" class="md-nav__link">
     Code style
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#news-fragments" class="md-nav__link">
+    News fragments
+  </a>
+  
+    <nav class="md-nav" aria-label="News fragments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-types" class="md-nav__link">
+    Issue Types
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -620,11 +660,11 @@
 <li>Reporting bugs</li>
 <li>Contributing to code</li>
 <li>Writing tests</li>
-<li>Writing documents</li>
+<li>Writing documentation</li>
 </ul>
 <p>The following is a set of guidelines for contributing.</p>
-<h2 id="a-recommended-flow-of-contributing-to-an-open-source-project">A recommended flow of contributing to an Open Source project.<a class="headerlink" href="#a-recommended-flow-of-contributing-to-an-open-source-project" title="Permanent link">#</a></h2>
-<p>This guideline is for new beginners of OSS. If you are an experienced OSS developer, you can skip
+<h2 id="a-recommended-flow-of-contributing-to-an-open-source-project">A recommended flow of contributing to an Open Source project<a class="headerlink" href="#a-recommended-flow-of-contributing-to-an-open-source-project" title="Permanent link">#</a></h2>
+<p>This section is for beginners to OSS. If you are an experienced OSS developer, you can skip
 this section.</p>
 <ol>
 <li>First, fork this project to your own namespace using the fork button at the top right of the repository page.</li>
@@ -644,51 +684,70 @@ $ git fetch fork
 </td></tr></table>
    where <code>fork</code> is the remote name of the fork repository.</li>
 </ol>
-<p><strong>ProTips:</strong>
-1. Don't modify code on the main branch, the main branch should always keep track of origin/main.</p>
-<p>To update main branch to date:
-   <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<p><strong>ProTips:</strong></p>
+<ol>
+<li>Don't modify code on the main branch, the main branch should always keep track of origin/main.</li>
+</ol>
+<p>To update main branch to date:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ git pull origin main
 <span class="c1"># In rare cases that your local main branch diverges from the remote main:</span>
 $ git fetch origin <span class="o">&amp;&amp;</span> git reset --hard main
 </code></pre></div>
 </td></tr></table>
-2. Create a new branch based on the up-to-date main branch for new patches.
-3. Create a Pull Request from that patch branch.</p>
+<ol>
+<li>Create a new branch based on the up-to-date main branch for new patches.</li>
+<li>Create a Pull Request from that patch branch.</li>
+</ol>
 <h2 id="local-development">Local development<a class="headerlink" href="#local-development" title="Permanent link">#</a></h2>
-<p>To make sure the tests suites can run rightly, you need to install <a href="https://git-lfs.github.com/">Git LFS</a>, then
+<p>To make sure the tests suites can run correctly, you need to install <a href="https://git-lfs.github.com/">Git LFS</a>, then</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ git lfs install
 <span class="c1"># If you have already cloned the repository, execute the below command as well.</span>
 $ git lfs pull
 </code></pre></div>
-</td></tr></table></p>
-<p>Then, you need to install base dependencies in a venv. Although PDM uses local package directory to install
-dependencies, venv is still needed to start up PDM at the first time:</p>
+</td></tr></table>
+<p>Then, you need to install base dependencies in a venv. Although PDM uses a local package directory to install
+dependencies, venv is still needed to start up PDM for the first time:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ python setup_dev.py
 </code></pre></div>
 </td></tr></table>
-<p>Now, all dependencies are installed into local <code>__pypackages__</code> directory, which will be used for development
+<p>Now, all dependencies are installed into the local <code>__pypackages__</code> directory, which will be used for development
 after this point. The <code>pdm</code> executable located at <code>__pypackages__/&lt;VERSION&gt;/bin</code> can be run directly from outside,
 which is installed in editable mode, or you can use <code>python -m pdm</code> from inside the venv.</p>
 <h3 id="run-tests">Run tests<a class="headerlink" href="#run-tests" title="Permanent link">#</a></h3>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ pdm run <span class="nb">test</span>
 </code></pre></div>
 </td></tr></table>
-<p>The test suite is still simple and requires to be supplied, please help write more test cases.</p>
+<p>The test suite is still simple and needs expansion! Please help write more test cases.</p>
 <h3 id="code-style">Code style<a class="headerlink" href="#code-style" title="Permanent link">#</a></h3>
-<p>PDM uses <code>pre-commit</code> for linting, you need to install <code>pre-commit</code> first, then:</p>
+<p>PDM uses <code>pre-commit</code> for linting. Install <code>pre-commit</code> first, then:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ pre-commit install
 $ pdm run lint
 </code></pre></div>
 </td></tr></table>
-<p>PDM uses <code>black</code> coding style and <code>isort</code> for sorting import statements, if you are not following them,
-the CI will fail, and your Pull Request will not be merged.</p>
+<p>PDM uses <code>black</code> for code style and <code>isort</code> for sorting import statements. If you are not following them,
+the CI will fail and your Pull Request will not be merged.</p>
+<h3 id="news-fragments">News fragments<a class="headerlink" href="#news-fragments" title="Permanent link">#</a></h3>
+<p>When you make changes such as fixing a bug or adding a feature, you must add a news fragment describing
+your change. News fragments are placed in the <code>news/</code> directory, and should be named according to this pattern: <code>&lt;issue_num&gt;.&lt;issue_type&gt;.md</code> (e.g., <code>566.bugfix.md</code>).</p>
+<h4 id="issue-types">Issue Types<a class="headerlink" href="#issue-types" title="Permanent link">#</a></h4>
+<ul>
+<li><code>feature</code>: Features and improvements</li>
+<li><code>bugfix</code>: Bug fixes</li>
+<li><code>refactor</code>: Code restructures</li>
+<li><code>doc</code>: Added or improved documentation</li>
+<li><code>dep</code>: Changes to dependencies</li>
+<li><code>removal</code>: Removals or deprecations in the API</li>
+<li><code>misc</code>: Miscellaneous changes that don't fit any of the other categories</li>
+</ul>
+<p>The contents of the file should be a single sentence in the imperative
+mood that describes your changes. (e.g., <code>Deduplicate the plugins list.</code> ) See entries in the <a href="/changelog">Change Log</a> for more examples.</p>
 <h3 id="preview-the-documentation">Preview the documentation<a class="headerlink" href="#preview-the-documentation" title="Permanent link">#</a></h3>
-<p>If you do some changes to the <code>docs/</code> and you may want to preview the build result, simply do:</p>
+<p>If you make some changes to the <code>docs/</code> and you want to preview the build result, simply do:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ pdm run doc
 </code></pre></div>
 </td></tr></table>

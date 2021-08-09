@@ -792,7 +792,7 @@ The following examples are run on Ubuntu 18.04, a few changes must be done if yo
 </td></tr></table>
 <p><code>pdm add</code> can be followed by one or several dependencies, and the dependency specification is described in
 <a href="https://www.python.org/dev/peps/pep-0508/">PEP 508</a>.</p>
-<p>PDM also allows extra dependency groups by providing <code>-s/--section &lt;name&gt;</code> option, and those dependencies will go to
+<p>PDM also allows extra dependency groups by providing <code>-G/--group &lt;name&gt;</code> option, and those dependencies will go to
 <code>[project.optional-dependencies.&lt;name&gt;]</code> table in the project file, respectively.</p>
 <p>After that, dependencies and sub-dependencies will be resolved properly and installed for you, you can view <code>pdm.lock</code> to see
 the resolved result of all dependencies.</p>
@@ -800,7 +800,7 @@ the resolved result of all dependencies.</p>
 (just like <code>pip install -e &lt;local project path&gt;</code> would) using <code>pdm add -e/--editable &lt;local project path&gt;</code>.</p>
 <h3 id="add-development-only-dependencies">Add development only dependencies<a class="headerlink" href="#add-development-only-dependencies" title="Permanent link">#</a></h3>
 <p><em>New in 1.5.0</em></p>
-<p>PDM also supports defining groups of dependencies that are useful for development. They can be classified as different sections,
+<p>PDM also supports defining groups of dependencies that are useful for development,
 e.g. some for testing and others for linting. We usually don't want these dependencies appear in the distribution's metadata
 so using <code>optional-dependencies</code> is probably not a good idea. We can define them as development dependencies:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="gp">$ </span>pdm add -ds <span class="nb">test</span> pytest
@@ -812,7 +812,7 @@ so using <code>optional-dependencies</code> is probably not a good idea. We can 
 <span class="n">test</span> <span class="o">=</span> <span class="k">[&quot;pytest&quot;]</span>
 </code></pre></div>
 </td></tr></table>
-<p>For backward-compatibility, if <code>-s/--section</code> is not given, dependencies will go to <code>dev</code> group under <code>[tool.pdm.dev-dependencies]</code> by default.</p>
+<p>For backward-compatibility, if <code>-G/--group</code> is not given, dependencies will go to <code>dev</code> group under <code>[tool.pdm.dev-dependencies]</code> by default.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The same group name MUST NOT appear in both <code>[tool.pdm.dev-dependencies]</code> and <code>[project.optional-dependencies]</code> .</p>
@@ -835,22 +835,22 @@ for the dependency):</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="gp">$ </span>pdm update requests
 </code></pre></div>
 </td></tr></table>
-<p>To update multiple sections of dependencies:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="gp">$ </span>pdm update -s security -s http
+<p>To update multiple groups of dependencies:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="gp">$ </span>pdm update -G security -G http
 </code></pre></div>
 </td></tr></table>
-<p>To update a given package in the specified section:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="gp">$ </span>pdm update -s security cryptography
+<p>To update a given package in the specified group:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="gp">$ </span>pdm update -G security cryptography
 </code></pre></div>
 </td></tr></table>
-<p>If the section is not given, PDM will search for the requirement in the default dependencies set and raises an error if none is found.</p>
+<p>If the group is not given, PDM will search for the requirement in the default dependencies set and raises an error if none is found.</p>
 <p>To update packages in development dependencies:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="gp"># </span>Update all default + dev-dependencies
 <span class="gp">$ </span>pdm update -d
-<span class="gp"># </span>Update a package <span class="k">in</span> the specified section of dev-dependencies
+<span class="gp"># </span>Update a package <span class="k">in</span> the specified group of dev-dependencies
 <span class="gp">$ </span>pdm update -ds <span class="nb">test</span> pytest
 </code></pre></div>
 </td></tr></table>
@@ -871,10 +871,10 @@ which is given by <code>--update-&lt;strategy&gt;</code> option:</p>
 <span class="normal">5</span>
 <span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="gp"># </span>Remove requests from the default dependencies
 <span class="gp">$ </span>pdm remove requests
-<span class="gp"># </span>Remove h11 from the <span class="s1">&#39;web&#39;</span> section of optional-dependencies
-<span class="gp">$ </span>pdm remove -s web h11
-<span class="gp"># </span>Remove pytest-cov from the <span class="sb">`</span><span class="nb">test</span><span class="sb">`</span> section of dev-dependencies
-<span class="gp">$ </span>pdm remove -ds <span class="nb">test</span> pytest-cov
+<span class="gp"># </span>Remove h11 from the <span class="s1">&#39;web&#39;</span> group of optional-dependencies
+<span class="gp">$ </span>pdm remove -G web h11
+<span class="gp"># </span>Remove pytest-cov from the <span class="sb">`</span><span class="nb">test</span><span class="sb">`</span> group of dev-dependencies
+<span class="gp">$ </span>pdm remove -dG <span class="nb">test</span> pytest-cov
 </code></pre></div>
 </td></tr></table>
 <h2 id="install-the-packages-pinned-in-lock-file">Install the packages pinned in lock file<a class="headerlink" href="#install-the-packages-pinned-in-lock-file" title="Permanent link">#</a></h2>
@@ -922,23 +922,23 @@ which is given by <code>--update-&lt;strategy&gt;</code> option:</p>
 <td></td>
 </tr>
 <tr>
-<td><code>pdm install -s extra1</code></td>
-<td>install prod deps, dev deps, and "extra1" optional section</td>
+<td><code>pdm install -G extra1</code></td>
+<td>install prod deps, dev deps, and "extra1" optional group</td>
 <td></td>
 </tr>
 <tr>
-<td><code>pdm install -s dev1</code></td>
-<td>install prod deps and only "dev1" dev section</td>
+<td><code>pdm install -G dev1</code></td>
+<td>install prod deps and only "dev1" dev group</td>
 <td></td>
 </tr>
 <tr>
-<td><code>pdm install -s:all</code></td>
-<td>install prod deps, dev deps and "extra1", "extra2" optional sections</td>
+<td><code>pdm install -G:all</code></td>
+<td>install prod deps, dev deps and "extra1", "extra2" optional groups</td>
 <td></td>
 </tr>
 <tr>
-<td><code>pdm install -s extra1 -s dev1</code></td>
-<td>install prod deps, "extra1" optional section and only "dev1" dev section</td>
+<td><code>pdm install -G extra1 -G dev1</code></td>
+<td>install prod deps, "extra1" optional group and only "dev1" dev group</td>
 <td></td>
 </tr>
 <tr>
@@ -947,18 +947,18 @@ which is given by <code>--update-&lt;strategy&gt;</code> option:</p>
 <td></td>
 </tr>
 <tr>
-<td><code>pdm install --prod -s extra1</code></td>
+<td><code>pdm install --prod -G extra1</code></td>
 <td>install prod deps and "extra1" optional</td>
 <td></td>
 </tr>
 <tr>
-<td><code>pdm install --prod -s dev1</code></td>
+<td><code>pdm install --prod -G dev1</code></td>
 <td>Fail, <code>--prod</code> can't be given with dev dependencies</td>
 <td>Leave the <code>--prod</code> option</td>
 </tr>
 </tbody>
 </table>
-<p><strong>All</strong> development dependencies are included as long as <code>--prod</code> is not passed and <code>-s</code> doesn't specify any dev sections.</p>
+<p><strong>All</strong> development dependencies are included as long as <code>--prod</code> is not passed and <code>-G</code> doesn't specify any dev groups.</p>
 <p>Besides, if you don't want the root project to be installed, add <code>--no-self</code> option, and <code>--no-editable</code> can be used when you want all packages to be installed in non-editable versions. With <code>--no-editable</code> turn on, you can safely archive the whole <code>__pypackages__</code> and copy it to the target environment for deployment.</p>
 <h2 id="show-what-packages-are-installed">Show what packages are installed<a class="headerlink" href="#show-what-packages-are-installed" title="Permanent link">#</a></h2>
 <p>Similar to <code>pip list</code>, you can list all packages installed in the packages directory:</p>

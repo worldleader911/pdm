@@ -341,6 +341,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#cache-the-installation-of-wheels" class="md-nav__link">
+    Cache the installation of wheels
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#manage-global-project" class="md-nav__link">
     Manage global project
   </a>
@@ -695,6 +702,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#cache-the-installation-of-wheels" class="md-nav__link">
+    Cache the installation of wheels
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#manage-global-project" class="md-nav__link">
     Manage global project
   </a>
@@ -909,6 +923,18 @@ show configurations.</p>
 </ol>
 <p>If <code>-g/--global</code> option is used, the first item will be replaced by <code>~/.pdm/global-project/.pdm.toml</code>.</p>
 <p>You can find all available configuration items in <a href="/configuration/">Configuration Page</a>.</p>
+<h2 id="cache-the-installation-of-wheels">Cache the installation of wheels<a class="headerlink" href="#cache-the-installation-of-wheels" title="Permanent link">#</a></h2>
+<p>If a package is required by many projects on the system, each project has to keep its own copy. This may become a waste of disk space especially for data science and machine learning libraries.</p>
+<p>PDM supports <em>caching</em> the installations of the same wheel by installing it into a centralized package repository and linking to that installation in different projects. To enabled it, run:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ pdm config feature.install_cache on
+</code></pre></div>
+</td></tr></table>
+<p>It can be enabled on a project basis, by adding <code>--local</code> option to the command.</p>
+<p>The caches are located under <code>$(pdm config cache_dir)/packages</code>. One can view the cache usage by <code>pdm cache info</code>. But be noted the cached installations are managed automatically -- They get deleted when not linked from any projects. Manually deleting the caches from the disk may break some projects on the system.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Only the installation of <em>named requirements</em> resolved from PyPI can be cached.</p>
+</div>
 <h2 id="manage-global-project">Manage global project<a class="headerlink" href="#manage-global-project" title="Permanent link">#</a></h2>
 <p>Sometimes users may want to keep track of the dependencies of global Python interpreter as well.
 It is easy to do so with PDM, via <code>-g/--global</code> option which is supported by most subcommands.</p>

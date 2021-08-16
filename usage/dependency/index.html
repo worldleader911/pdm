@@ -10,7 +10,7 @@
       
       
       <link rel="icon" href="../../assets/logo.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.3">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
     
     
       
@@ -72,8 +72,8 @@
     </div>
     <div data-md-component="announce">
       
-        <aside class="md-announce">
-          <div class="md-announce__inner md-grid md-typeset">
+        <aside class="md-banner md-announce">
+          <div class="md-banner__inner md-announce__inner md-grid md-typeset">
             
   <a href="https://twitter.com/pdm_project" style="color: currentColor">
     For updates follow <strong>@PDM</strong> on
@@ -780,7 +780,7 @@ The following examples are run on Ubuntu 18.04, a few changes must be done if yo
 <span class="n">license</span> <span class="o">=</span> <span class="p">{</span><span class="n">text</span> <span class="o">=</span> <span class="s">&quot;MIT&quot;</span><span class="p">}</span>
 <span class="n">requires-python</span> <span class="o">=</span> <span class="s">&quot;&gt;=3.7&quot;</span>
 
-<span class="n">dependencies</span> <span class="o">=</span> <span class="k">[]</span>
+<span class="n">dependencies</span> <span class="o">=</span> <span class="p">[]</span>
 </code></pre></div>
 </td></tr></table>
 <p>If <code>pyproject.toml</code> is already present, it will be updated with the metadata. The metadata format follows the
@@ -809,7 +809,7 @@ so using <code>optional-dependencies</code> is probably not a good idea. We can 
 <p>This will result in a pyproject.toml as following:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">[tool.pdm.dev-dependencies]</span>
-<span class="n">test</span> <span class="o">=</span> <span class="k">[&quot;pytest&quot;]</span>
+<span class="n">test</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;pytest&quot;</span><span class="p">]</span>
 </code></pre></div>
 </td></tr></table>
 <p>For backward-compatibility, if <code>-G/--group</code> is not given, dependencies will go to <code>dev</code> group under <code>[tool.pdm.dev-dependencies]</code> by default.</p>
@@ -896,15 +896,15 @@ which is given by <code>--update-&lt;strategy&gt;</code> option:</p>
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
 <span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">[</span><span class="n">project</span><span class="p">]</span>  <span class="c1"># This is production dependencies</span>
-<span class="n">dependencies</span> <span class="o">=</span> <span class="k">[&quot;requests&quot;]</span>
+<span class="n">dependencies</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;requests&quot;</span><span class="p">]</span>
 
 <span class="p">[</span><span class="n">project</span><span class="p">.</span><span class="n">optional-dependencies</span><span class="p">]</span>  <span class="c1"># This is optional dependencies</span>
-<span class="n">extra1</span> <span class="o">=</span> <span class="k">[&quot;flask&quot;]</span>
-<span class="n">extra2</span> <span class="o">=</span> <span class="k">[&quot;django&quot;]</span>
+<span class="n">extra1</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;flask&quot;</span><span class="p">]</span>
+<span class="n">extra2</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;django&quot;</span><span class="p">]</span>
 
 <span class="p">[</span><span class="n">tool</span><span class="p">.</span><span class="n">pdm</span><span class="p">.</span><span class="n">dev-dependencies</span><span class="p">]</span>  <span class="c1"># This is dev dependencies</span>
-<span class="n">dev1</span> <span class="o">=</span> <span class="k">[&quot;pytest&quot;]</span>
-<span class="n">dev2</span> <span class="o">=</span> <span class="k">[&quot;mkdocs&quot;]</span>
+<span class="n">dev1</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;pytest&quot;</span><span class="p">]</span>
+<span class="n">dev2</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;mkdocs&quot;</span><span class="p">]</span>
 </code></pre></div>
 </td></tr></table>
 <table>
@@ -1123,7 +1123,7 @@ to <code>https://pypi.org/simple</code> if none is found.</p>
     <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.29db7785.min.js"></script>
+      <script src="../../assets/javascripts/bundle.febc23d1.min.js"></script>
       
     
   </body>

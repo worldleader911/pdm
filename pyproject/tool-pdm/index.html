@@ -10,7 +10,7 @@
       
       
       <link rel="icon" href="../../assets/logo.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.3">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
     
     
       
@@ -72,8 +72,8 @@
     </div>
     <div data-md-component="announce">
       
-        <aside class="md-announce">
-          <div class="md-announce__inner md-grid md-typeset">
+        <aside class="md-banner md-announce">
+          <div class="md-banner__inner md-announce__inner md-grid md-typeset">
             
   <a href="https://twitter.com/pdm_project" style="color: currentColor">
     For updates follow <strong>@PDM</strong> on
@@ -658,8 +658,8 @@ And the package index won't be aware of these dependencies. The schema is simila
     <span class="s">&quot;flake8&quot;</span><span class="p">,</span>
     <span class="s">&quot;black&quot;</span>
 <span class="p">]</span>
-<span class="n">test</span> <span class="o">=</span> <span class="k">[&quot;pytest&quot;, &quot;pytest-cov&quot;]</span>
-<span class="n">doc</span> <span class="o">=</span> <span class="k">[&quot;mkdocs&quot;]</span>
+<span class="n">test</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;pytest&quot;</span><span class="p">,</span> <span class="s">&quot;pytest-cov&quot;</span><span class="p">]</span>
+<span class="n">doc</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;mkdocs&quot;</span><span class="p">]</span>
 </code></pre></div>
 </td></tr></table>
 <p>To install all of them:</p>
@@ -715,9 +715,9 @@ write it in the <code>[[tool.pdm.source]]</code>. Otherwise if you would like to
 <p>In case you want some files to be included in sdist only, you use the <code>source-includes</code> field:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">includes</span> <span class="o">=</span> <span class="k">[...]</span>
-<span class="n">excludes</span> <span class="o">=</span> <span class="k">[...]</span>
-<span class="n">source-includes</span> <span class="o">=</span> <span class="k">[&quot;tests/&quot;]</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">includes</span> <span class="o">=</span> <span class="p">[...]</span>
+<span class="n">excludes</span> <span class="o">=</span> <span class="p">[...]</span>
+<span class="n">source-includes</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;tests/&quot;</span><span class="p">]</span>
 </code></pre></div>
 </td></tr></table>
 <p>Note that the files defined in <code>source-includes</code> will be <strong>excluded</strong> automatically from non-sdist builds.</p>
@@ -883,7 +883,7 @@ Update the dictionary with your <code>ext_modules</code> settings in the functio
     <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.29db7785.min.js"></script>
+      <script src="../../assets/javascripts/bundle.febc23d1.min.js"></script>
       
     
   </body>

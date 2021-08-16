@@ -10,7 +10,7 @@
       
       
       <link rel="icon" href="../../assets/logo.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.3">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
     
     
       
@@ -72,8 +72,8 @@
     </div>
     <div data-md-component="announce">
       
-        <aside class="md-announce">
-          <div class="md-announce__inner md-grid md-typeset">
+        <aside class="md-banner md-announce">
+          <div class="md-banner__inner md-announce__inner md-grid md-typeset">
             
   <a href="https://twitter.com/pdm_project" style="color: currentColor">
     For updates follow <strong>@PDM</strong> on
@@ -629,7 +629,7 @@ the version will be read from the <code>__version__</code> variable in that file
 </code></pre></div>
 </td></tr></table>
 <p>In either case, you MUST also include <code>version</code> in <code>dynamic</code> field, or the backend will raise an error:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">dynamic</span> <span class="o">=</span> <span class="k">[&quot;version&quot;]</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">dynamic</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;version&quot;</span><span class="p">]</span>
 </code></pre></div>
 </td></tr></table>
 <h2 id="dependency-specification">Dependency specification<a class="headerlink" href="#dependency-specification" title="Permanent link">#</a></h2>
@@ -687,7 +687,7 @@ PEP 508 strings. They only exist for development purpose.</p>
 <span class="normal">5</span>
 <span class="normal">6</span>
 <span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">[project.optional-dependencies]</span>
-<span class="n">socks</span> <span class="o">=</span> <span class="k">[ &#39;PySocks &gt;= 1.5.6, != 1.5.7, &lt; 2&#39; ]</span>
+<span class="n">socks</span> <span class="o">=</span> <span class="p">[</span> <span class="s">&#39;PySocks &gt;= 1.5.6, != 1.5.7, &lt; 2&#39;</span> <span class="p">]</span>
 <span class="n">tests</span> <span class="o">=</span> <span class="p">[</span>
   <span class="s">&#39;ddt &gt;= 1.2.2, &lt; 2&#39;</span><span class="p">,</span>
   <span class="s">&#39;pytest &lt; 6&#39;</span><span class="p">,</span>
@@ -836,7 +836,7 @@ format of <code>[project.scripts]</code>:</p>
     <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.29db7785.min.js"></script>
+      <script src="../../assets/javascripts/bundle.febc23d1.min.js"></script>
       
     
   </body>

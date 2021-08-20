@@ -908,11 +908,11 @@ show configurations.</p>
 </code></pre></div>
 </td></tr></table>
 <p>Change a configuration value and store in home configuration:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="gp">$ </span>pdm config pypi.url <span class="s2">&quot;https://testpypi.org/simple&quot;</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="gp">$ </span>pdm config pypi.url <span class="s2">&quot;https://test.pypi.org/simple&quot;</span>
 </code></pre></div>
 </td></tr></table>
 <p>By default, the configuration are changed globally, if you want to make the config seen by this project only, add a <code>--local</code> flag:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="gp">$ </span>pdm config --local pypi.url <span class="s2">&quot;https://testpypi.org/simple&quot;</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="gp">$ </span>pdm config --local pypi.url <span class="s2">&quot;https://test.pypi.org/simple&quot;</span>
 </code></pre></div>
 </td></tr></table>
 <p>Any local configurations will be stored in <code>.pdm.toml</code> under the project root directory.</p>

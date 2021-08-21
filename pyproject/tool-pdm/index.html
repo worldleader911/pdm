@@ -420,6 +420,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#editable-build-backend" class="md-nav__link">
+    Editable build backend
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -625,6 +632,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#editable-build-backend" class="md-nav__link">
+    Editable build backend
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -775,6 +789,27 @@ Update the dictionary with your <code>ext_modules</code> settings in the functio
 <span class="n">build</span> <span class="o">=</span> <span class="s">&quot;build.py&quot;</span>
 </code></pre></div>
 </td></tr></table>
+<h2 id="editable-build-backend">Editable build backend<a class="headerlink" href="#editable-build-backend" title="Permanent link">#</a></h2>
+<p>PDM leverages <a href="https://www.python.org/dev/peps/pep-0660/">PEP 660</a> to build wheels for editable installation.
+One can choose how to generate the wheel out of the two methods:</p>
+<ul>
+<li><code>editables</code>: (Default)Create proxy modules under the packages path.</li>
+<li><code>path</code>: The legacy method used by setuptools that create .pth files under the packages path.</li>
+</ul>
+<p>Read the PEP for the difference of the two methods and how they work.</p>
+<p>Specify the method in pyproject.toml like below:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">[tool.pdm]</span>
+<span class="n">editable-backend</span> <span class="o">=</span> <span class="s">&quot;path&quot;</span>
+</code></pre></div>
+</td></tr></table>
+<p><code>editables</code> backend is more recommended but there is a known limitation that it can't work with PEP 420 namespace packages.
+So you would need to change to <code>path</code> in that case.</p>
+<div class="admonition note">
+<p class="admonition-title">About Python 2 compatibility</p>
+<p>Due to the fact that the build backend for PDM managed projects requires Python&gt;=3.6, you would not be able to
+install the current project if Python 2 is being used as the host interpreter. You can still install other dependencies not PDM-backed.</p>
+</div>
                 
               
               

@@ -743,7 +743,7 @@ write it in the <code>[[tool.pdm.source]]</code>. Otherwise if you would like to
 <li><code>src</code> directory will be detected as the <code>package-dir</code> if it exists.</li>
 </ul>
 <p>If your project follows the above conventions you don't need to config any of these fields and it just works.
-Be awared PDM won't add <a href="https://www.python.org/dev/peps/pep-0420/">PEP 420 implicit namespace packages</a> automatically and they should always be specified in <code>includes</code> explicitly.</p>
+Be aware PDM won't add <a href="https://www.python.org/dev/peps/pep-0420/">PEP 420 implicit namespace packages</a> automatically and they should always be specified in <code>includes</code> explicitly.</p>
 <h2 id="select-another-package-directory-to-look-for-packages">Select another package directory to look for packages<a class="headerlink" href="#select-another-package-directory-to-look-for-packages" title="Permanent link">#</a></h2>
 <p>Similar to <code>setuptools</code>' <code>package_dir</code> setting, one can specify another package directory, such as <code>src</code>, in <code>pyproject.toml</code> easily:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">package-dir</span> <span class="o">=</span> <span class="s">&quot;src&quot;</span>

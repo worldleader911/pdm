@@ -5006,7 +5006,7 @@
 <h3 id="bug-fixes_2">Bug Fixes<a class="headerlink" href="#bug-fixes_2" title="Permanent link">#</a></h3>
 <ul>
 <li>Accept non-canonical distribution name in the wheel's dist-info directory name. <a href="https://github.com/pdm-project/pdm/issues/529">#529</a></li>
-<li>Prefer requirments with narrower version constraints or allowing prereleases to find matches. <a href="https://github.com/pdm-project/pdm/issues/551">#551</a></li>
+<li>Prefer requirements with narrower version constraints or allowing prereleases to find matches. <a href="https://github.com/pdm-project/pdm/issues/551">#551</a></li>
 <li>Use the underlying real executable path for writing shebangs. <a href="https://github.com/pdm-project/pdm/issues/553">#553</a></li>
 <li>Fix a bug that extra markers cannot be extracted when combined with other markers with "and". <a href="https://github.com/pdm-project/pdm/issues/559">#559</a></li>
 <li>Fix a bug that redacted credentials in source urls get overwritten with the plain text after locking. <a href="https://github.com/pdm-project/pdm/issues/561">#561</a></li>
@@ -5041,7 +5041,7 @@
 </ul>
 <h3 id="refactor_2">Refactor<a class="headerlink" href="#refactor_2" title="Permanent link">#</a></h3>
 <ul>
-<li>Seperate the build env into two different levels for better caching. <a href="https://github.com/pdm-project/pdm/issues/541">#541</a></li>
+<li>Separate the build env into two different levels for better caching. <a href="https://github.com/pdm-project/pdm/issues/541">#541</a></li>
 <li>Refactor the build part into smaller functions. <a href="https://github.com/pdm-project/pdm/issues/543">#543</a></li>
 </ul>
 <h2 id="release-v164-2021-06-23">Release v1.6.4 (2021-06-23)<a class="headerlink" href="#release-v164-2021-06-23" title="Permanent link">#</a></h2>
@@ -5082,7 +5082,7 @@
 <ul>
 <li>Use a new approach to determine the packages to be installed. This requires a quick resolution step before installation. <a href="https://github.com/pdm-project/pdm/issues/456">#456</a></li>
 <li><code>pdm export</code> no longer produces requirements file applicable for all platforms due to the new approach. <a href="https://github.com/pdm-project/pdm/issues/456">#456</a></li>
-<li>Add structural typing for requirements module. Refactor the requirments module for that purpose. <a href="https://github.com/pdm-project/pdm/issues/433">#433</a></li>
+<li>Add structural typing for requirements module. Refactor the requirements module for that purpose. <a href="https://github.com/pdm-project/pdm/issues/433">#433</a></li>
 <li>Introduce <code>--no-editable</code> option to install non-editable versions of all packages. <a href="https://github.com/pdm-project/pdm/issues/443">#443</a></li>
 <li>Introduce <code>--no-self</code> option to prevent the project itself from being installed. <a href="https://github.com/pdm-project/pdm/issues/444">#444</a></li>
 <li>Add a default <code>.gitignore</code> file in the <code>__pypackages__</code> directory. <a href="https://github.com/pdm-project/pdm/issues/446">#446</a></li>
@@ -5214,7 +5214,7 @@
 <li>Add a special value <code>:all</code> given to <code>-s/--section</code> to refer to all sections under the same species.
   Adjust <code>add</code>, <code>sync</code>, <code>install</code>, <code>remove</code> and <code>update</code> to support the new <code>dev-dependencies</code> groups. Old behavior will be kept the same. <a href="https://github.com/pdm-project/pdm/issues/351">#351</a></li>
 <li><code>dev-dependencies</code> is now a table of dependencies groups, where key is the group name and value is an array of dependencies. These dependencies won't appear in the distribution's metadata. <code>dev-depedencies</code> of the old format will turn into <code>dev</code> group under <code>dev-dependencies</code>. <a href="https://github.com/pdm-project/pdm/issues/351">#351</a></li>
-<li>Move <code>dev-dependencies</code>, <code>includes</code>, <code>excludes</code> and <code>package-dir</code> out from <code>[project]</code> table to <code>[tool.pdm]</code> table. The migration will be done automaticaly if old format is detected. <a href="https://github.com/pdm-project/pdm/issues/351">#351</a></li>
+<li>Move <code>dev-dependencies</code>, <code>includes</code>, <code>excludes</code> and <code>package-dir</code> out from <code>[project]</code> table to <code>[tool.pdm]</code> table. The migration will be done automatically if old format is detected. <a href="https://github.com/pdm-project/pdm/issues/351">#351</a></li>
 <li>Throws an error with meaningful message when no candidate is found for one requirement. <a href="https://github.com/pdm-project/pdm/issues/357">#357</a></li>
 <li>Support <code>--dry-run</code> option for <code>update</code> command to display packages that need update, install or removal. Add <code>--top</code> option to limit to top level packages only. <a href="https://github.com/pdm-project/pdm/issues/358">#358</a></li>
 <li>Full-featured completion scripts for Zsh and Powershell - section selection, package name autocompletion and so on. Windows is a first-class citizen! <a href="https://github.com/pdm-project/pdm/issues/367">#367</a></li>
@@ -5379,7 +5379,7 @@
 <ul>
 <li>Increase the default value of the max rounds of resolution to 1000, make it configurable. <a href="https://github.com/pdm-project/pdm/issues/238">#238</a></li>
 <li>Rewrite the project's <code>egg-info</code> directory when dependencies change. So that <code>pdm list --graph</code> won't show invalid entries. <a href="https://github.com/pdm-project/pdm/issues/240">#240</a></li>
-<li>When importing requirments from a <code>requirments.txt</code> file, build the package to find the name if not given in the URL. <a href="https://github.com/pdm-project/pdm/issues/245">#245</a></li>
+<li>When importing requirements from a <code>requirements.txt</code> file, build the package to find the name if not given in the URL. <a href="https://github.com/pdm-project/pdm/issues/245">#245</a></li>
 <li>When initializing the project, prompt user for whether the project is a library, and give empty <code>name</code> and <code>version</code> if not. <a href="https://github.com/pdm-project/pdm/issues/253">#253</a></li>
 </ul>
 <h3 id="bug-fixes_23">Bug Fixes<a class="headerlink" href="#bug-fixes_23" title="Permanent link">#</a></h3>

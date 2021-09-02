@@ -10,7 +10,7 @@
       
       
       <link rel="icon" href="assets/logo.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.5">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.6">
     
     
       
@@ -18,7 +18,7 @@
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.be71726b.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.802231af.min.css">
       
         
         <link rel="stylesheet" href="assets/stylesheets/palette.3f5d1f46.min.css">
@@ -1010,11 +1010,10 @@ run/debug configuration.</p>
 </td></tr></table>
 <p><a href="https://pdm.fming.dev/#enable-pep-582-globally">Enable PEP582 globally</a>,
 and make sure VSCode runs using the same user and shell you enabled PEP582 for.</p>
-<div class="admonition note">
-<p class="admonition-title">Cannot enable PEP582 globally?</p>
-<p>If for some reason you cannot enable PEP582 globally, you can still configure each "launch" in each project:
-set the <code>PYTHONPATH</code> environment variable in your launch configuration, in <code>.vscode/launch.json</code>.
-For example, to debug your <code>pytest</code> run:</p>
+<p>??? note "Cannot enable PEP582 globally?"
+    If for some reason you cannot enable PEP582 globally, you can still configure each "launch" in each project:
+    set the <code>PYTHONPATH</code> environment variable in your launch configuration, in <code>.vscode/launch.json</code>.
+    For example, to debug your <code>pytest</code> run:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1028,27 +1027,38 @@ For example, to debug your <code>pytest</code> run:</p>
 <span class="normal">11</span>
 <span class="normal">12</span>
 <span class="normal">13</span>
-<span class="normal">14</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span>
-    <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;0.2.0&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;configurations&quot;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="p">{</span>
-            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;pytest&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;python&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;request&quot;</span><span class="p">:</span> <span class="s2">&quot;launch&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;module&quot;</span><span class="p">:</span> <span class="s2">&quot;pytest&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;args&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;tests&quot;</span><span class="p">],</span>
-            <span class="nt">&quot;justMyCode&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-            <span class="nt">&quot;env&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;PYTHONPATH&quot;</span><span class="p">:</span> <span class="s2">&quot;__pypackages__/&lt;major.minor&gt;/lib&quot;</span><span class="p">}</span>
-        <span class="p">}</span>
-    <span class="p">]</span>
-<span class="p">}</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>```json
+{
+    &quot;version&quot;: &quot;0.2.0&quot;,
+    &quot;configurations&quot;: [
+        {
+            &quot;name&quot;: &quot;pytest&quot;,
+            &quot;type&quot;: &quot;python&quot;,
+            &quot;request&quot;: &quot;launch&quot;,
+            &quot;module&quot;: &quot;pytest&quot;,
+            &quot;args&quot;: [&quot;tests&quot;],
+            &quot;justMyCode&quot;: false,
+            &quot;env&quot;: {&quot;PYTHONPATH&quot;: &quot;__pypackages__/&lt;major.minor&gt;/lib&quot;}
+        }
+    ]
+}
+```
+
+If your package resides in a `src` directory, add it to `PYTHONPATH` as well:
+
+```json
+&quot;env&quot;: {&quot;PYTHONPATH&quot;: &quot;src:__pypackages__/&lt;major.minor&gt;/lib&quot;}
+```
 </code></pre></div>
 </td></tr></table>
-<p>If your package resides in a <code>src</code> directory, add it to <code>PYTHONPATH</code> as well:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nt">&quot;env&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;PYTHONPATH&quot;</span><span class="p">:</span> <span class="s2">&quot;src:__pypackages__/&lt;major.minor&gt;/lib&quot;</span><span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
-</div>
 <h4 id="task-provider">Task Provider<a class="headerlink" href="#task-provider" title="Permanent link">#</a></h4>
 <p>In addition, there is a <a href="https://marketplace.visualstudio.com/items?itemName=knowsuchagency.pdm-task-provider">VSCode Task Provider extension</a> available for download.</p>
 <p>This makes it possible for VSCode to automatically detect <a href="https://pdm.fming.dev/project/#run-scripts-in-isolated-environment">pdm scripts</a> so they
@@ -1149,7 +1159,7 @@ can be run natively as <a href="https://code.visualstudio.com/docs/editor/tasks"
     <script id="__config" type="application/json">{"base": ".", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "assets/javascripts/workers/search.409db549.min.js", "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.56a63758.min.js"></script>
+      <script src="assets/javascripts/bundle.756773cc.min.js"></script>
       
     
   </body>

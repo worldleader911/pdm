@@ -746,14 +746,15 @@ $ git fetch origin <span class="o">&amp;&amp;</span> git reset --hard main
 $ git lfs pull
 </code></pre></div>
 </td></tr></table>
-<p>Then, you need to install base dependencies in a venv. Although PDM uses a local package directory to install
-dependencies, venv is still needed to start up PDM for the first time:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ python setup_dev.py
+<p>Then, you need to install base dependencies in a venv. Make sure your <code>pip</code> is no later than <code>21.3</code> to install PDM in
+develop/editable mode.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ pip install -e .
 </code></pre></div>
 </td></tr></table>
-<p>Now, all dependencies are installed into the local <code>__pypackages__</code> directory, which will be used for development
-after this point. The <code>pdm</code> executable located at <code>__pypackages__/&lt;VERSION&gt;/bin</code> can be run directly from outside,
-which is installed in editable mode, or you can use <code>python -m pdm</code> from inside the venv.</p>
+<p>You are free to create a virtualenv with either <code>venv</code> module or <code>virtualenv</code> tool for the development. If you are doing
+so, you may also need to set <code>pdm config use_venv true</code> after installation is done.</p>
+<p>Now, all dependencies are installed into the Python environment you choose, which will be used for development
+after this point.</p>
 <h3 id="run-tests">Run tests<a class="headerlink" href="#run-tests" title="Permanent link">#</a></h3>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ pdm run <span class="nb">test</span>
 </code></pre></div>

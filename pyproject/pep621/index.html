@@ -695,14 +695,23 @@ Indentation will be removed as well when escaping new lines:</p>
 </td></tr></table>
 <p>See <a href="https://toml.io/en/v1.0.0#string">TOML's specification on strings</a>.</p>
 <h2 id="determine-the-package-version-dynamically">Determine the package version dynamically<a class="headerlink" href="#determine-the-package-version-dynamically" title="Permanent link">#</a></h2>
-<p>You can specify a file source for <code>version</code> field like: <code>version = {from = "pdm/__init__.py"}</code>, in this form,
-the version will be read from the <code>__version__</code> variable in that file.</p>
-<p>PDM can also read version from SCM tags. If you are using git or hg as the version control system, define the
-<code>version</code> as follows:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">version</span> <span class="o">=</span> <span class="p">{</span><span class="n">use_scm</span> <span class="o">=</span> <span class="n">true</span><span class="p">}</span>
+<p>The package version can be retrieved from the <code>__version__</code> variable of a given file. To do this, put the following
+under the <code>[tool.pdm]</code> table:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">[tool.pdm]</span>
+<span class="n">version</span> <span class="o">=</span> <span class="p">{</span><span class="n">from</span> <span class="o">=</span> <span class="s">&quot;mypackage/__init__.py&quot;</span><span class="p">}</span>
 </code></pre></div>
 </td></tr></table>
-<p>In either case, you MUST also include <code>version</code> in <code>dynamic</code> field, or the backend will raise an error:</p>
+<p>Remember set <code>dynamic = ["version"]</code> in <code>[project]</code> metadata.</p>
+<p>PDM can also read version from SCM tags. If you are using git or hg as the version control system, define the
+<code>version</code> as follows:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">[tool.pdm]</span>
+<span class="n">version</span> <span class="o">=</span> <span class="p">{</span><span class="n">use_scm</span> <span class="o">=</span> <span class="n">true</span><span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>In either case, you MUST delete the <code>version</code> field from the <code>[project]</code> table, and include <code>version</code> 
+in the <code>dynamic</code> field, or the backend will raise an error:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">dynamic</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;version&quot;</span><span class="p">]</span>
 </code></pre></div>
 </td></tr></table>

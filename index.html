@@ -315,13 +315,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#use-the-docker-image" class="md-nav__link">
-    Use the docker image
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -762,13 +755,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#use-the-docker-image" class="md-nav__link">
-    Use the docker image
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -977,21 +963,6 @@ For example, in bash you can do this:</p>
 </code></pre></div>
 </td></tr></table>
 <p>Once again, Don't forget to restart the terminal session to take effect.</p>
-<h3 id="use-the-docker-image">Use the docker image<a class="headerlink" href="#use-the-docker-image" title="Permanent link">#</a></h3>
-<p>PDM also provides a docker image to ease your deployment flow, to use it, write a Dockerfile with following content:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">FROM</span> <span class="s">frostming/pdm</span>
-
-<span class="k">COPY</span> . /app
-
-<span class="c"># -- Replace with the correct path to your app&#39;s main executable</span>
-<span class="k">CMD</span> <span class="p">[</span><span class="s2">&quot;pdm&quot;</span><span class="p">,</span> <span class="s2">&quot;run&quot;</span><span class="p">,</span> <span class="s2">&quot;python&quot;</span><span class="p">,</span> <span class="s2">&quot;main.py&quot;</span><span class="p">]</span>
-</code></pre></div>
-</td></tr></table>
 <h2 id="shell-completion">Shell Completion<a class="headerlink" href="#shell-completion" title="Permanent link">#</a></h2>
 <p>PDM supports generating completion scripts for Bash, Zsh, Fish or Powershell. Here are some common locations for each shell:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="3:4"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><input id="__tabbed_3_4" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Bash</label><label for="__tabbed_3_2">Zsh</label><label for="__tabbed_3_3">Fish</label><label for="__tabbed_3_4">Powershell</label></div>

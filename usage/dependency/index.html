@@ -9,7 +9,7 @@
       
       
       <link rel="icon" href="../../assets/logo.svg">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.1">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.2">
     
     
       
@@ -17,7 +17,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.23b6d78a.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.f7951f6f.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
@@ -421,6 +421,13 @@
         <li class="md-nav__item">
   <a href="#allow-prerelease-versions-to-be-installed" class="md-nav__link">
     Allow prerelease versions to be installed
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solve-the-locking-failure" class="md-nav__link">
+    Solve the locking failure
   </a>
   
 </li>
@@ -833,6 +840,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#solve-the-locking-failure" class="md-nav__link">
+    Solve the locking failure
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#environment-variables-expansion" class="md-nav__link">
     Environment variables expansion
   </a>
@@ -1128,6 +1142,38 @@ to <code>https://pypi.org/simple</code> if none is found.</p>
 <span class="n">allow_prereleases</span> <span class="o">=</span> <span class="kc">true</span>
 </code></pre></div>
 </td></tr></table>
+<h2 id="solve-the-locking-failure">Solve the locking failure<a class="headerlink" href="#solve-the-locking-failure" title="Permanent link">#</a></h2>
+<p>If PDM is not able to find a resolution to satisfy the requirements, it will raise an error. For example,</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>pdm <span class="nv">django</span><span class="o">==</span><span class="m">3</span>.1.4 <span class="s2">&quot;asgiref&lt;3&quot;</span>
+...
+🔒 Lock failed
+Unable to find a resolution <span class="k">for</span> asgiref because of the following conflicts:
+  asgiref&lt;<span class="m">3</span> <span class="o">(</span>from project<span class="o">)</span>
+  asgiref&lt;<span class="m">4</span>,&gt;<span class="o">=</span><span class="m">3</span>.2.10 <span class="o">(</span>from &lt;Candidate django <span class="m">3</span>.1.4 from https://pypi.org/simple/django/&gt;<span class="o">)</span>
+To fix this, you could loosen the dependency version constraints <span class="k">in</span> pyproject.toml. If that is not possible, you could also override the resolved version <span class="k">in</span> <span class="o">[</span>tool.pdm.overrides<span class="o">]</span> table.
+</code></pre></div>
+</td></tr></table>
+<p>You can either change to a lower version of <code>django</code> or remove the upper bound of <code>asgiref</code>. But if it is not eligible for your project,
+you can tell PDM to forcely resolve <code>asgiref</code> to a specific version by adding the following lines to <code>pyproject.toml</code>:</p>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">[tool.pdm.overrides]</span>
+<span class="n">asgiref</span> <span class="o">=</span> <span class="s">&quot;3.2.10&quot;</span>
+</code></pre></div>
+</td></tr></table>
+Each entry of that table is a package name with the wanted version. The value can also be a URL to a file or a VCS repository like <code>git+https://...</code>.
+On reading this, PDM will pin <code>asgiref@3.2.10</code> in the lock file no matter whether there is any other resolution available.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>By using <code>[tool.pdm.overrides]</code> setting, you are at your own risk of any incompatibilities from that resolution. It can only be
+used if there is no valid resolution for your requirements and you know the specific version works.
+Most of the time, you can just add any transient constraints to the <code>dependencies</code> array.</p>
+</div>
 <h2 id="environment-variables-expansion">Environment variables expansion<a class="headerlink" href="#environment-variables-expansion" title="Permanent link">#</a></h2>
 <p>For convenience, PDM supports environment variables expansion in the dependency specification under some circumstances:</p>
 <ul>
@@ -1245,10 +1291,10 @@ to <code>https://pypi.org/simple</code> if none is found.</p>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.c7dec7e7.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.0bbba5b5.min.js"}</script>
     
     
-      <script src="../../assets/javascripts/bundle.da79ceb7.min.js"></script>
+      <script src="../../assets/javascripts/bundle.649a939e.min.js"></script>
       
     
   </body>

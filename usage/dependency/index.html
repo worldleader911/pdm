@@ -1184,6 +1184,7 @@ To fix this, you could loosen the dependency version constraints <span class="k"
 </td></tr></table>
 <p>You can either change to a lower version of <code>django</code> or remove the upper bound of <code>asgiref</code>. But if it is not eligible for your project,
 you can tell PDM to forcely resolve <code>asgiref</code> to a specific version by adding the following lines to <code>pyproject.toml</code>:</p>
+<p><em>New in version 1.12.0</em></p>
 <p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">[tool.pdm.overrides]</span>
 <span class="n">asgiref</span> <span class="o">=</span> <span class="s">&quot;3.2.10&quot;</span>

@@ -749,7 +749,7 @@ under the <code>[tool.pdm]</code> table:</p>
 <span class="n">version</span> <span class="o">=</span> <span class="p">{</span><span class="n">use_scm</span> <span class="o">=</span> <span class="n">true</span><span class="p">}</span>
 </code></pre></div>
 </td></tr></table>
-<p>In either case, you MUST delete the <code>version</code> field from the <code>[project]</code> table, and include <code>version</code> 
+<p>In either case, you MUST delete the <code>version</code> field from the <code>[project]</code> table, and include <code>version</code>
 in the <code>dynamic</code> field, or the backend will raise an error:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">dynamic</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;version&quot;</span><span class="p">]</span>
 </code></pre></div>

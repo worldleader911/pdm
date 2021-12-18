@@ -950,7 +950,8 @@ to find the latest version of <code>foo</code>, whose <code>requires-python</cod
 <span class="go">- Built pdm_test-0.0.0-py3-none-any.whl</span>
 </code></pre></div>
 </td></tr></table>
-<p>The artifacts can then be uploaded to PyPI by <a href="https://pypi.org/project/twine">twine</a>. Available options can be found by
+<p>The artifacts can then be uploaded to PyPI by <a href="https://pypi.org/project/twine">twine</a> or using the
+<a href="https://github.com/branchvincent/pdm-publish">pdm-publish</a> plugin. Available options can be found by
 typing <code>pdm build --help</code>.</p>
 <h2 id="show-the-current-python-environment">Show the current Python environment<a class="headerlink" href="#show-the-current-python-environment" title="Permanent link">#</a></h2>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -1046,7 +1047,7 @@ project path via <code>-p/--project &lt;path&gt;</code> option.</p>
 </div>
 <h2 id="working-with-a-virtualenv">Working with a virtualenv<a class="headerlink" href="#working-with-a-virtualenv" title="Permanent link">#</a></h2>
 <p>Although PDM enforces PEP 582 by default, it also allows users to install packages into the virtualenv. It is controlled
-by the configuration item <code>use_venv</code>. When it is set to <code>True</code> PDM will use the virtualenv if:</p>
+by the configuration item <code>use_venv</code>. When it is set to <code>True</code>, PDM will use the virtualenv if:</p>
 <ul>
 <li>a virtualenv is already activated.</li>
 <li>any of <code>venv</code>, <code>.venv</code>, <code>env</code> is a valid virtualenv folder.</li>
@@ -1205,7 +1206,7 @@ settings under a special key named <code>_</code> of <code>tool.pdm.scripts</cod
 </td></tr></table>
 <p>Besides, PDM also injects the root path of the project via <code>PDM_PROJECT_ROOT</code> environment variable.</p>
 <h3 id="load-site-packages-in-the-running-environment">Load site-packages in the running environment<a class="headerlink" href="#load-site-packages-in-the-running-environment" title="Permanent link">#</a></h3>
-<p>To make sure the running environment is properly isolated from the outer Python interperter,
+<p>To make sure the running environment is properly isolated from the outer Python interpreter,
 site-packages from the selected interpreter WON'T be loaded into <code>sys.path</code>, unless any of the following conditions holds:</p>
 <ol>
 <li>The executable is from <code>PATH</code> but not inside the <code>__pypackages__</code> folder.</li>

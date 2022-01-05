@@ -804,12 +804,14 @@ You can configure a <code>tox.ini</code> like the following to integrate your te
 <span class="normal">13</span>
 <span class="normal">14</span>
 <span class="normal">15</span>
-<span class="normal">16</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">[tox]</span>
+<span class="normal">16</span>
+<span class="normal">17</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">[tox]</span>
 <span class="na">env_list</span> <span class="o">=</span> <span class="s">py{36,37,38},lint</span>
 <span class="na">isolated_build</span> <span class="o">=</span> <span class="s">true</span>
-<span class="na">passenv</span> <span class="o">=</span> <span class="s">PDM_IGNORE_SAVED_PYTHON=1</span>
 
 <span class="k">[testenv]</span>
+<span class="na">setenv</span> <span class="o">=</span>
+    <span class="na">PDM_IGNORE_SAVED_PYTHON</span><span class="o">=</span><span class="s">&quot;1&quot;</span>
 <span class="na">deps</span> <span class="o">=</span> <span class="s">pdm</span>
 <span class="na">commands</span> <span class="o">=</span>
     <span class="na">pdm install --dev</span>

@@ -14,7 +14,7 @@
     
     
       
-        <title>Write a plugin - PDM - Python Development Master</title>
+        <title>PDM Scripts - PDM - Python Development Master</title>
       
     
     
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#write-a-plugin" class="md-skip">
+        <a href="#pdm-scripts" class="md-skip">
           Skip to content
         </a>
       
@@ -121,7 +121,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Write a plugin
+              PDM Scripts
             
           </span>
         </div>
@@ -268,12 +268,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       
       
@@ -296,7 +298,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../usage/dependency/" class="md-nav__link">
+      <a href="../dependency/" class="md-nav__link">
         Manage Dependencies
       </a>
     </li>
@@ -310,7 +312,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../usage/project/" class="md-nav__link">
+      <a href="../project/" class="md-nav__link">
         Manage Project
       </a>
     </li>
@@ -322,11 +324,136 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../usage/scripts/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          PDM Scripts
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         PDM Scripts
       </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#arbitrary-scripts" class="md-nav__link">
+    Arbitrary Scripts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#toolpdmscripts-table" class="md-nav__link">
+    [tool.pdm.scripts] Table
+  </a>
+  
+    <nav class="md-nav" aria-label="[tool.pdm.scripts] Table">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cmd" class="md-nav__link">
+    cmd
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shell" class="md-nav__link">
+    shell
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#call" class="md-nav__link">
+    call
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#env" class="md-nav__link">
+    env
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#env_file" class="md-nav__link">
+    env_file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#site_packages" class="md-nav__link">
+    site_packages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shared-settings" class="md-nav__link">
+    Shared Settings
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#show-the-list-of-scripts" class="md-nav__link">
+    Show the List of Scripts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pre-post-scripts" class="md-nav__link">
+    Pre &amp; Post Scripts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hook-scripts" class="md-nav__link">
+    Hook Scripts
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -338,7 +465,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../usage/advanced/" class="md-nav__link">
+      <a href="../advanced/" class="md-nav__link">
         Advanced Usage
       </a>
     </li>
@@ -435,14 +562,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
       
       
       
@@ -463,115 +588,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Write a plugin
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../plugin/write/" class="md-nav__link">
         Write a plugin
       </a>
-      
-        
-
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#what-should-a-plugin-do" class="md-nav__link">
-    What should a plugin do
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#write-your-own-plugin" class="md-nav__link">
-    Write your own plugin
-  </a>
-  
-    <nav class="md-nav" aria-label="Write your own plugin">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#write-the-command" class="md-nav__link">
-    Write the command
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#register-the-command-to-the-core-object" class="md-nav__link">
-    Register the command to the core object
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#add-a-new-config-item" class="md-nav__link">
-    Add a new config item
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#other-plugin-points" class="md-nav__link">
-    Other plugin points
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tips-about-developing-a-pdm-plugin" class="md-nav__link">
-    Tips about developing a PDM plugin.
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#publish-your-plugin" class="md-nav__link">
-    Publish your plugin
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#activate-the-plugin" class="md-nav__link">
-    Activate the plugin
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -583,7 +604,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reference/" class="md-nav__link">
+      <a href="../../plugin/reference/" class="md-nav__link">
         API Reference
       </a>
     </li>
@@ -701,51 +722,65 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-should-a-plugin-do" class="md-nav__link">
-    What should a plugin do
+  <a href="#arbitrary-scripts" class="md-nav__link">
+    Arbitrary Scripts
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#write-your-own-plugin" class="md-nav__link">
-    Write your own plugin
+  <a href="#toolpdmscripts-table" class="md-nav__link">
+    [tool.pdm.scripts] Table
   </a>
   
-    <nav class="md-nav" aria-label="Write your own plugin">
+    <nav class="md-nav" aria-label="[tool.pdm.scripts] Table">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#write-the-command" class="md-nav__link">
-    Write the command
+  <a href="#cmd" class="md-nav__link">
+    cmd
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#register-the-command-to-the-core-object" class="md-nav__link">
-    Register the command to the core object
+  <a href="#shell" class="md-nav__link">
+    shell
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#add-a-new-config-item" class="md-nav__link">
-    Add a new config item
+  <a href="#call" class="md-nav__link">
+    call
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#other-plugin-points" class="md-nav__link">
-    Other plugin points
+  <a href="#env" class="md-nav__link">
+    env
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#tips-about-developing-a-pdm-plugin" class="md-nav__link">
-    Tips about developing a PDM plugin.
+  <a href="#env_file" class="md-nav__link">
+    env_file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#site_packages" class="md-nav__link">
+    site_packages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shared-settings" class="md-nav__link">
+    Shared Settings
   </a>
   
 </li>
@@ -756,15 +791,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#publish-your-plugin" class="md-nav__link">
-    Publish your plugin
+  <a href="#show-the-list-of-scripts" class="md-nav__link">
+    Show the List of Scripts
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#activate-the-plugin" class="md-nav__link">
-    Activate the plugin
+  <a href="#pre-post-scripts" class="md-nav__link">
+    Pre &amp; Post Scripts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hook-scripts" class="md-nav__link">
+    Hook Scripts
   </a>
   
 </li>
@@ -781,205 +823,179 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/pdm-project/pdm/edit/main/docs/docs/plugin/write.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/pdm-project/pdm/edit/main/docs/docs/usage/scripts.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="write-a-plugin">Write a plugin<a class="headerlink" href="#write-a-plugin" title="Permanent link">#</a></h1>
-<p>PDM is aiming at being a community driven package manager.
-It is shipped with a full-featured plug-in system, with which you can:</p>
-<ul>
-<li>Develop a new command for PDM</li>
-<li>Add additional options to existing PDM commands</li>
-<li>Change PDM's behavior by reading additional config items</li>
-<li>Control the process of dependency resolution or installation</li>
-</ul>
-<h2 id="what-should-a-plugin-do">What should a plugin do<a class="headerlink" href="#what-should-a-plugin-do" title="Permanent link">#</a></h2>
-<p>The core PDM project focuses on dependency management and package publishing. Other
-functionalities you wish to integrate with PDM are preferred to lie in their own plugins
-and released as standalone PyPI projects. In case the plugin is considered a good supplement
-of the core project it may have a chance to be absorbed into PDM.</p>
-<h2 id="write-your-own-plugin">Write your own plugin<a class="headerlink" href="#write-your-own-plugin" title="Permanent link">#</a></h2>
-<p>In the following sections, I will show an example of adding a new command <code>hello</code> which reads the <code>hello.name</code> config.</p>
-<h3 id="write-the-command">Write the command<a class="headerlink" href="#write-the-command" title="Permanent link">#</a></h3>
-<p>The PDM's CLI module is designed in a way that user can easily "inherit and modify". To write a new command:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">pdm.cli.commands.base</span> <span class="kn">import</span> <span class="n">BaseCommand</span>
-
-<span class="k">class</span> <span class="nc">HelloCommand</span><span class="p">(</span><span class="n">BaseCommand</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Say hello to the specified person.</span>
-<span class="sd">    If none is given, will read from &quot;hello.name&quot; config.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="k">def</span> <span class="nf">add_arguments</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parser</span><span class="p">):</span>
-        <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;-n&quot;</span><span class="p">,</span> <span class="s2">&quot;--name&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;the person&#39;s name to whom you greet&quot;</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">handle</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">project</span><span class="p">,</span> <span class="n">options</span><span class="p">):</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">options</span><span class="o">.</span><span class="n">name</span><span class="p">:</span>
-            <span class="n">name</span> <span class="o">=</span> <span class="n">project</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;hello.name&quot;</span><span class="p">]</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">name</span> <span class="o">=</span> <span class="n">options</span><span class="o">.</span><span class="n">name</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hello, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <h1 id="pdm-scripts">PDM Scripts<a class="headerlink" href="#pdm-scripts" title="Permanent link">#</a></h1>
+<p>Like <code>npm run</code>, with PDM, you can run arbitrary scripts or commands with local packages loaded.</p>
+<h2 id="arbitrary-scripts">Arbitrary Scripts<a class="headerlink" href="#arbitrary-scripts" title="Permanent link">#</a></h2>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>pdm run flask run -p <span class="m">54321</span>
 </code></pre></div>
 </td></tr></table>
-<p>First, let's create a new <code>HelloCommand</code> class inheriting from <code>pdm.cli.commands.base.BaseCommand</code>. It has two major functions:</p>
-<ul>
-<li><code>add_arguments()</code> to manipulate the argument parser passed as the only argument,
-  where you can add additional command line arguments to it</li>
-<li><code>handle()</code> to do something when the subcommand is matched, you can do nothing by writing a single <code>pass</code> statement.
-  It accepts two arguments: an <code>pdm.project.Project</code> object as the first one and the parsed <code>argparse.Namespace</code> object as the second.</li>
-</ul>
-<p>The document string will serve as the command help text, which will be shown in <code>pdm --help</code>.</p>
-<p>Besides, PDM's subcommand has two default options: <code>-v/--verbose</code> to change the verbosity level and <code>-g/--global</code> to enable global project.
-If you don't want these default options, override the <code>arguments</code> class attribute to a list of <code>pdm.cli.options.Option</code> objects, or
-assign it to an empty list to have no default options:</p>
+<p>It will run <code>flask run -p 54321</code> in the environment that is aware of packages in <code>__pypackages__/</code> folder.</p>
+<h2 id="toolpdmscripts-table"><code>[tool.pdm.scripts]</code> Table<a class="headerlink" href="#toolpdmscripts-table" title="Permanent link">#</a></h2>
+<p>PDM also supports custom script shortcuts in the optional <code>[tool.pdm.scripts]</code> section of <code>pyproject.toml</code>.</p>
+<p>You can then run <code>pdm run &lt;script_name&gt;</code> to invoke the script in the context of your PDM project. For example:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">HelloCommand</span><span class="p">(</span><span class="n">BaseCommand</span><span class="p">):</span>
-
-<span class="hll">    <span class="n">arguments</span> <span class="o">=</span> <span class="p">[]</span>
-</span></code></pre></div>
-</td></tr></table>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The default options are loaded first, then <code>add_arguments()</code> is called.</p>
-</div>
-<h3 id="register-the-command-to-the-core-object">Register the command to the core object<a class="headerlink" href="#register-the-command-to-the-core-object" title="Permanent link">#</a></h3>
-<p>Write a function somewhere in your plugin project. There is no limit on what the name of the function is,
-but the function should take only one argument -- the PDM core object:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">hello_plugin</span><span class="p">(</span><span class="n">core</span><span class="p">):</span>
-<span class="hll">    <span class="n">core</span><span class="o">.</span><span class="n">register_command</span><span class="p">(</span><span class="n">HelloCommand</span><span class="p">,</span> <span class="s2">&quot;hello&quot;</span><span class="p">)</span>
-</span></code></pre></div>
-</td></tr></table>
-<p>Call <code>core.register_command()</code> to register the command. The second argument as the name of the subcommand is optional.
-PDM will look for the <code>HelloCommand</code>'s <code>name</code> attribute if the name is not passed.</p>
-<h3 id="add-a-new-config-item">Add a new config item<a class="headerlink" href="#add-a-new-config-item" title="Permanent link">#</a></h3>
-<p>Let's recall the first code snippet, <code>hello.name</code> config key is consulted for the name if not passed via the command line.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">HelloCommand</span><span class="p">(</span><span class="n">BaseCommand</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Say hello to the specified person.</span>
-<span class="sd">    If none is given, will read from &quot;hello.name&quot; config.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="k">def</span> <span class="nf">add_arguments</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parser</span><span class="p">):</span>
-        <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;-n&quot;</span><span class="p">,</span> <span class="s2">&quot;--name&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;the person&#39;s name to whom you greet&quot;</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">handle</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">project</span><span class="p">,</span> <span class="n">options</span><span class="p">):</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">options</span><span class="o">.</span><span class="n">name</span><span class="p">:</span>
-<span class="hll">            <span class="n">name</span> <span class="o">=</span> <span class="n">project</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;hello.name&quot;</span><span class="p">]</span>
-</span>        <span class="k">else</span><span class="p">:</span>
-            <span class="n">name</span> <span class="o">=</span> <span class="n">options</span><span class="o">.</span><span class="n">name</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hello, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">[tool.pdm.scripts]</span>
+<span class="n">start</span> <span class="o">=</span> <span class="s">&quot;flask run -p 54321&quot;</span>
 </code></pre></div>
 </td></tr></table>
-<p>Till now, if you query the config value by <code>pdm config get hello.name</code>, an error will pop up saying it is not a valid config key.
-You need to register the config item, too:</p>
+<p>And then in your terminal:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">pdm.project.config</span> <span class="kn">import</span> <span class="n">ConfigItem</span>
-
-<span class="k">def</span> <span class="nf">hello_plugin</span><span class="p">(</span><span class="n">core</span><span class="p">):</span>
-    <span class="n">core</span><span class="o">.</span><span class="n">register_command</span><span class="p">(</span><span class="n">HelloCommand</span><span class="p">,</span> <span class="s2">&quot;hello&quot;</span><span class="p">)</span>
-<span class="hll">    <span class="n">core</span><span class="o">.</span><span class="n">add_config</span><span class="p">(</span><span class="s2">&quot;hello.name&quot;</span><span class="p">,</span> <span class="n">ConfigItem</span><span class="p">(</span><span class="s2">&quot;The person&#39;s name&quot;</span><span class="p">,</span> <span class="s2">&quot;John&quot;</span><span class="p">))</span>
-</span></code></pre></div>
-</td></tr></table>
-<p>where <code>ConfigItem</code> class takes 4 parameters, in the following order:</p>
-<ul>
-<li><code>description</code>: a description of the config item</li>
-<li><code>default</code>: default value of the config item</li>
-<li><code>global_only</code>: whether the config is allowed to set in home config only</li>
-<li><code>env_var</code>: the name of environment variable which will be read as the config value</li>
-</ul>
-<h3 id="other-plugin-points">Other plugin points<a class="headerlink" href="#other-plugin-points" title="Permanent link">#</a></h3>
-<p>Besides of commands and configurations, the <code>core</code> object exposes some other methods and attributes to override.
-PDM also provides some signals you can listen to.
-Please read the <a href="../reference/">API reference</a> for more details.</p>
-<h3 id="tips-about-developing-a-pdm-plugin">Tips about developing a PDM plugin.<a class="headerlink" href="#tips-about-developing-a-pdm-plugin" title="Permanent link">#</a></h3>
-<p>When developing a plugin, one hopes to activate and plugin in development and get updated when the code changes. This is usually done
-by <code>pip install -e .</code> or <code>python setup.py develop</code> in the <strong>traditional</strong> Python packaging world which leverages <code>setup.py</code> to do so. However,
-as there is no such <code>setup.py</code> in a PDM project, how can we do that?</p>
-<p>Fortunately, it becomes even easier with PDM and PEP 582. First, you should enable PEP 582 globally following the
-<a href="../..#enable-pep-582-globally">corresponding part of this doc</a>. Then you just need to install all dependencies into the <code>__pypackages__</code> directory by:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>pdm install
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ pdm run start
+Flask server started at http://127.0.0.1:54321
 </code></pre></div>
 </td></tr></table>
-<p>After that, all the dependencies are available with a compatible Python interpreter, including the plugin itself, in editable mode. That means any change
-to the codebase will take effect immediately without re-installation. The <code>pdm</code> executable also uses a Python interpreter under the hood,
-so if you run <code>pdm</code> from inside the plugin project, the plugin in development will be activated automatically, and you can do some testing to see how it works.
-That is how PEP 582 benefits our development workflow.</p>
-<h2 id="publish-your-plugin">Publish your plugin<a class="headerlink" href="#publish-your-plugin" title="Permanent link">#</a></h2>
-<p>Now you have defined your plugin already, let's distribute it to PyPI. PDM's plugins are discovered by entry point types.
-Create an <code>pdm</code> entry point and point to your plugin callable (yeah, it doesn't need to be a function, any callable object can work):</p>
-<p><strong>PEP 621</strong>:</p>
+<p>Any extra arguments will be appended to the command:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># pyproject.toml</span>
-
-<span class="k">[project.entry-points.pdm]</span>
-<span class="n">hello</span> <span class="o">=</span> <span class="s">&quot;my_plugin:hello_plugin&quot;</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ pdm run start -h <span class="m">0</span>.0.0.0
+Flask server started at http://0.0.0.0:54321
 </code></pre></div>
 </td></tr></table>
-<p><strong>setuptools</strong>:</p>
+<p>PDM supports 3 types of scripts:</p>
+<h3 id="cmd"><code>cmd</code><a class="headerlink" href="#cmd" title="Permanent link">#</a></h3>
+<p>Plain text scripts are regarded as normal command, or you can explicitly specify it:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">[tool.pdm.scripts]</span>
+<span class="n">start</span> <span class="o">=</span> <span class="p">{</span><span class="n">cmd</span> <span class="o">=</span> <span class="s">&quot;flask run -p 54321&quot;</span><span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>In some cases, such as when wanting to add comments between parameters, it might be more convenient
+to specify the command as an array instead of a string:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
 <span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># setup.py</span>
-
-<span class="n">setup</span><span class="p">(</span>
-    <span class="o">...</span>
-    <span class="n">entry_points</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;pdm&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;hello = my_plugin:hello_plugin&quot;</span><span class="p">]}</span>
-    <span class="o">...</span>
-<span class="p">)</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">[tool.pdm.scripts]</span>
+<span class="n">start</span> <span class="o">=</span> <span class="p">{</span><span class="n">cmd</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s">&quot;flask&quot;</span><span class="p">,</span>
+    <span class="s">&quot;run&quot;</span><span class="p">,</span>
+    <span class="c1"># Important comment here about always using port 54321</span>
+    <span class="s">&quot;-p&quot;</span><span class="p">,</span> <span class="s">&quot;54321&quot;</span>
+<span class="p">]}</span>
 </code></pre></div>
 </td></tr></table>
-<h2 id="activate-the-plugin">Activate the plugin<a class="headerlink" href="#activate-the-plugin" title="Permanent link">#</a></h2>
-<p>As plugins are loaded via entry points, they can be activated with no more steps than just installing the plugin.
-For convenience, PDM provides a <code>plugin</code> command group to manage plugins.</p>
-<p>Assume your plugin is published as <code>pdm-hello</code>:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>pdm plugin add pdm-hello
-</code></pre></div>
-</td></tr></table>
-<p>Now type <code>pdm --help</code> in the terminal, you will see the new added <code>hello</code> command and use it:</p>
+<h3 id="shell"><code>shell</code><a class="headerlink" href="#shell" title="Permanent link">#</a></h3>
+<p>Shell scripts can be used to run more shell-specific tasks, such as pipeline and output redirecting.
+This is basically run via <code>subprocess.Popen()</code> with <code>shell=True</code>:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ pdm hello Jack
-Hello, Jack
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">[tool.pdm.scripts]</span>
+<span class="n">filter_error</span> <span class="o">=</span> <span class="p">{</span><span class="n">shell</span> <span class="o">=</span> <span class="s">&quot;cat error.log|grep CRITICAL &gt; critical.log&quot;</span><span class="p">}</span>
 </code></pre></div>
 </td></tr></table>
-<p>See more plugin management subcommands by typing <code>pdm plugin --help</code> in the terminal.</p>
+<h3 id="call"><code>call</code><a class="headerlink" href="#call" title="Permanent link">#</a></h3>
+<p>The script can be also defined as calling a python function in the form <code>&lt;module_name&gt;:&lt;func_name&gt;</code>:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">[tool.pdm.scripts]</span>
+<span class="n">foobar</span> <span class="o">=</span> <span class="p">{</span><span class="n">call</span> <span class="o">=</span> <span class="s">&quot;foo_package.bar_module:main&quot;</span><span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>The function can be supplied with literal arguments:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">[tool.pdm.scripts]</span>
+<span class="n">foobar</span> <span class="o">=</span> <span class="p">{</span><span class="n">call</span> <span class="o">=</span> <span class="s">&quot;foo_package.bar_module:main(&#39;dev&#39;)&quot;</span><span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="env"><code>env</code><a class="headerlink" href="#env" title="Permanent link">#</a></h3>
+<p>All environment variables set in the current shell can be seen by <code>pdm run</code> and will be expanded when executed.
+Besides, you can also define some fixed environment variables in your <code>pyproject.toml</code>:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">[tool.pdm.scripts]</span>
+<span class="n">start</span><span class="p">.</span><span class="n">cmd</span> <span class="o">=</span> <span class="s">&quot;flask run -p 54321&quot;</span>
+<span class="n">start</span><span class="p">.</span><span class="n">env</span> <span class="o">=</span> <span class="p">{</span><span class="n">FOO</span> <span class="o">=</span> <span class="s">&quot;bar&quot;</span><span class="p">,</span> <span class="n">FLASK_ENV</span> <span class="o">=</span> <span class="s">&quot;development&quot;</span><span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>Note how we use <a href="https://github.com/toml-lang/toml">TOML's syntax</a> to define a composite dictionary.</p>
+<h3 id="env_file"><code>env_file</code><a class="headerlink" href="#env_file" title="Permanent link">#</a></h3>
+<p>You can also store all environment variables in a dotenv file and let PDM read it:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">[tool.pdm.scripts]</span>
+<span class="n">start</span><span class="p">.</span><span class="n">cmd</span> <span class="o">=</span> <span class="s">&quot;flask run -p 54321&quot;</span>
+<span class="n">start</span><span class="p">.</span><span class="n">env_file</span> <span class="o">=</span> <span class="s">&quot;.env&quot;</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="site_packages"><code>site_packages</code><a class="headerlink" href="#site_packages" title="Permanent link">#</a></h3>
+<p>To make sure the running environment is properly isolated from the outer Python interpreter,
+site-packages from the selected interpreter WON'T be loaded into <code>sys.path</code>, unless any of the following conditions holds:</p>
+<ol>
+<li>The executable is from <code>PATH</code> but not inside the <code>__pypackages__</code> folder.</li>
+<li><code>-s/--site-packages</code> flag is following <code>pdm run</code>.</li>
+<li><code>site_packages = true</code> is in either the script table or the global setting key <code>_</code>.</li>
+</ol>
+<p>Note that site-packages will always be loaded if running with PEP 582 enabled(without the <code>pdm run</code> prefix).</p>
+<h3 id="shared-settings">Shared Settings<a class="headerlink" href="#shared-settings" title="Permanent link">#</a></h3>
+<p>If you want the settings to be shared by all tasks run by <code>pdm run</code>,
+you can write them under a special key <code>_</code> in <code>[tool.pdm.scripts]</code> table:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">[tool.pdm.scripts]</span>
+<span class="n">_</span><span class="p">.</span><span class="n">env_file</span> <span class="o">=</span> <span class="s">&quot;.env&quot;</span>
+<span class="n">start</span> <span class="o">=</span> <span class="s">&quot;flask run -p 54321&quot;</span>
+<span class="n">migrate_db</span> <span class="o">=</span> <span class="s">&quot;flask db upgrade&quot;</span>
+</code></pre></div>
+</td></tr></table>
+<p>Besides, inside the tasks, <code>PDM_PROJECT_ROOT</code> environment variable will be set to the project root.</p>
+<h2 id="show-the-list-of-scripts">Show the List of Scripts<a class="headerlink" href="#show-the-list-of-scripts" title="Permanent link">#</a></h2>
+<p>Use <code>pdm run --list/-l</code> to show the list of available script shortcuts:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ pdm run --list
+Name        Type  Script           Description
+----------- ----- ---------------- ----------------------
+test_cmd    cmd   flask db upgrade
+test_script call  test_script:main call a python <span class="k">function</span>
+test_shell  shell <span class="nb">echo</span> <span class="nv">$FOO</span>        shell <span class="nb">command</span>
+</code></pre></div>
+</td></tr></table>
+<p>You can add an <code>help</code> option with the description of the script, and it will be displayed in the <code>Description</code> column in the above output.</p>
+<h2 id="pre-post-scripts">Pre &amp; Post Scripts<a class="headerlink" href="#pre-post-scripts" title="Permanent link">#</a></h2>
+<p>Like <code>npm</code>, PDM also supports tasks composition by pre and post scripts, pre script will be run before the given task and post script will be run after.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">[tool.pdm.scripts]</span>
+<span class="n">pre_compress</span> <span class="o">=</span> <span class="s">&quot;{{ Run BEFORE the `compress` script }}&quot;</span>
+<span class="n">compress</span> <span class="o">=</span> <span class="s">&quot;tar czvf compressed.tar.gz data/&quot;</span>
+<span class="n">post_compress</span> <span class="o">=</span> <span class="s">&quot;{{ Run AFTER the `compress` script }}&quot;</span>
+</code></pre></div>
+</td></tr></table>
+<p>In this example, <code>pdm run compress</code> will run all these 3 scripts sequentially.</p>
+<div class="admonition note">
+<p class="admonition-title">The pipeline fails fast</p>
+<p>In a pipeline of pre - self - post scripts, a failure will cancel the subsequent execution.</p>
+</div>
+<h2 id="hook-scripts">Hook Scripts<a class="headerlink" href="#hook-scripts" title="Permanent link">#</a></h2>
+<p>Under certain situations PDM will look for some special hook scripts for execution:</p>
+<ul>
+<li><code>post_init</code>: Run after <code>pdm init</code></li>
+<li><code>pre_install</code>: Run before installing packages</li>
+<li><code>post_install</code>: Run after packages are installed</li>
+<li><code>pre_lock</code>: Run before dependency resolution</li>
+<li><code>post_lock</code>: Run after dependency resolution</li>
+<li><code>pre_build</code>: Run before building distributions</li>
+<li><code>post_build</code>: Run after distributions are built</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Pre &amp; post scripts can't receive any arguments.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Avoid name conflicts</p>
+<p>If there exists an <code>install</code> scripts under <code>[tool.pdm.scripts]</code> table, <code>pre_install</code>
+scripts can be triggered by both <code>pdm install</code> and <code>pdm run install</code>. So it is
+recommended to not use the preserved names.</p>
+</div>
                 
               
               
@@ -999,7 +1015,7 @@ Hello, Jack
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../../configuration/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Configuration" rel="prev">
+        <a href="../project/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Manage Project" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1008,20 +1024,20 @@ Hello, Jack
               <span class="md-footer__direction">
                 Previous
               </span>
-              Configuration
+              Manage Project
             </div>
           </div>
         </a>
       
       
         
-        <a href="../reference/" class="md-footer__link md-footer__link--next" aria-label="Next: API Reference" rel="next">
+        <a href="../advanced/" class="md-footer__link md-footer__link--next" aria-label="Next: Advanced Usage" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              API Reference
+              Advanced Usage
             </div>
           </div>
           <div class="md-footer__button md-icon">

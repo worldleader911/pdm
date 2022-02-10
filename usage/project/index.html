@@ -430,61 +430,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#run-scripts-in-isolated-environment" class="md-nav__link">
-    Run Scripts in Isolated Environment
-  </a>
-  
-    <nav class="md-nav" aria-label="Run Scripts in Isolated Environment">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#normal-command" class="md-nav__link">
-    Normal command
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#shell-script" class="md-nav__link">
-    Shell script
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#call-a-python-function" class="md-nav__link">
-    Call a Python function
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#environment-variables-support" class="md-nav__link">
-    Environment variables support
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#load-site-packages-in-the-running-environment" class="md-nav__link">
-    Load site-packages in the running environment
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#show-the-list-of-scripts-shortcuts" class="md-nav__link">
-    Show the list of scripts shortcuts
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#manage-caches" class="md-nav__link">
     Manage caches
   </a>
@@ -502,6 +447,20 @@
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scripts/" class="md-nav__link">
+        PDM Scripts
+      </a>
     </li>
   
 
@@ -562,7 +521,7 @@
   
     <li class="md-nav__item">
       <a href="../../pyproject/pep621/" class="md-nav__link">
-        PEP 621 Project metadata
+        PEP 621 Metadata
       </a>
     </li>
   
@@ -576,7 +535,7 @@
   
     <li class="md-nav__item">
       <a href="../../pyproject/tool-pdm/" class="md-nav__link">
-        PDM tool settings
+        PDM Tool Settings
       </a>
     </li>
   
@@ -853,61 +812,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#run-scripts-in-isolated-environment" class="md-nav__link">
-    Run Scripts in Isolated Environment
-  </a>
-  
-    <nav class="md-nav" aria-label="Run Scripts in Isolated Environment">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#normal-command" class="md-nav__link">
-    Normal command
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#shell-script" class="md-nav__link">
-    Shell script
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#call-a-python-function" class="md-nav__link">
-    Call a Python function
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#environment-variables-support" class="md-nav__link">
-    Environment variables support
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#load-site-packages-in-the-running-environment" class="md-nav__link">
-    Load site-packages in the running environment
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#show-the-list-of-scripts-shortcuts" class="md-nav__link">
-    Show the list of scripts shortcuts
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#manage-caches" class="md-nav__link">
     Manage caches
   </a>
@@ -938,7 +842,7 @@
                   </a>
                 
                 
-                <h1 id="manage-project">Manage project<a class="headerlink" href="#manage-project" title="Permanent link">#</a></h1>
+                <h1 id="manage-project">Manage Project<a class="headerlink" href="#manage-project" title="Permanent link">#</a></h1>
 <p>PDM can act as a PEP 517 build backend, to enable that, write the following lines in your
 <code>pyproject.toml</code>. If you used <code>pdm init</code> to create it for you, it should be done already.</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -1133,125 +1037,6 @@ and username passwords for VCS repositories. We do not want to expose this infor
 <p>A VCS repository applies the first method only, and an index server applies both methods.</p>
 </li>
 </ol>
-<h2 id="run-scripts-in-isolated-environment">Run Scripts in Isolated Environment<a class="headerlink" href="#run-scripts-in-isolated-environment" title="Permanent link">#</a></h2>
-<p>With PDM, you can run arbitrary scripts or commands with local packages loaded:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>pdm run flask run -p <span class="m">54321</span>
-</code></pre></div>
-</td></tr></table>
-<p>PDM also supports custom script shortcuts in the optional <code>[tool.pdm.scripts]</code> section of <code>pyproject.toml</code>.</p>
-<p>You can then run <code>pdm run &lt;shortcut_name&gt;</code> to invoke the script in the context of your PDM project. For example:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">[tool.pdm.scripts]</span>
-<span class="n">start_server</span> <span class="o">=</span> <span class="s">&quot;flask run -p 54321&quot;</span>
-</code></pre></div>
-</td></tr></table>
-<p>And then in your terminal:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ pdm run start_server
-Flask server started at http://127.0.0.1:54321
-</code></pre></div>
-</td></tr></table>
-<p>Any extra arguments will be appended to the command:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ pdm run start_server -h <span class="m">0</span>.0.0.0
-Flask server started at http://0.0.0.0:54321
-</code></pre></div>
-</td></tr></table>
-<p>PDM supports 3 types of scripts:</p>
-<h3 id="normal-command">Normal command<a class="headerlink" href="#normal-command" title="Permanent link">#</a></h3>
-<p>Plain text scripts are regarded as normal command, or you can explicitly specify it:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">[tool.pdm.scripts]</span>
-<span class="n">start_server</span> <span class="o">=</span> <span class="p">{</span><span class="n">cmd</span> <span class="o">=</span> <span class="s">&quot;flask run -p 54321&quot;</span><span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
-<p>In some cases, such as when wanting to add comments between parameters, it might be more convenient
-to specify the command as an array instead of a string:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">[tool.pdm.scripts]</span>
-<span class="n">start_server</span> <span class="o">=</span> <span class="p">{</span><span class="n">cmd</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s">&quot;flask&quot;</span><span class="p">,</span>
-    <span class="s">&quot;run&quot;</span><span class="p">,</span>
-    <span class="c1"># Important comment here about always using port 54321</span>
-    <span class="s">&quot;-p&quot;</span><span class="p">,</span> <span class="s">&quot;54321&quot;</span>
-<span class="p">]}</span>
-</code></pre></div>
-</td></tr></table>
-<h3 id="shell-script">Shell script<a class="headerlink" href="#shell-script" title="Permanent link">#</a></h3>
-<p>Shell scripts can be used to run more shell-specific tasks, such as pipeline and output redirecting.
-This is basically run via <code>subprocess.Popen()</code> with <code>shell=True</code>:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">[tool.pdm.scripts]</span>
-<span class="n">filter_error</span> <span class="o">=</span> <span class="p">{</span><span class="n">shell</span> <span class="o">=</span> <span class="s">&quot;cat error.log|grep CRITICAL &gt; critical.log&quot;</span><span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
-<h3 id="call-a-python-function">Call a Python function<a class="headerlink" href="#call-a-python-function" title="Permanent link">#</a></h3>
-<p>The script can be also defined as calling a python function in the form <code>&lt;module_name&gt;:&lt;func_name&gt;</code>:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">[tool.pdm.scripts]</span>
-<span class="n">foobar</span> <span class="o">=</span> <span class="p">{</span><span class="n">call</span> <span class="o">=</span> <span class="s">&quot;foo_package.bar_module:main&quot;</span><span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
-<p>The function can be supplied with literal arguments:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">[tool.pdm.scripts]</span>
-<span class="n">foobar</span> <span class="o">=</span> <span class="p">{</span><span class="n">call</span> <span class="o">=</span> <span class="s">&quot;foo_package.bar_module:main(&#39;dev&#39;)&quot;</span><span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
-<h3 id="environment-variables-support">Environment variables support<a class="headerlink" href="#environment-variables-support" title="Permanent link">#</a></h3>
-<p>All environment variables set in the current shell can be seen by <code>pdm run</code> and will be expanded when executed.
-Besides, you can also define some fixed environment variables in your <code>pyproject.toml</code>:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">[tool.pdm.scripts]</span>
-<span class="n">start_server</span><span class="p">.</span><span class="n">cmd</span> <span class="o">=</span> <span class="s">&quot;flask run -p 54321&quot;</span>
-<span class="n">start_server</span><span class="p">.</span><span class="n">env</span> <span class="o">=</span> <span class="p">{</span><span class="n">FOO</span> <span class="o">=</span> <span class="s">&quot;bar&quot;</span><span class="p">,</span> <span class="n">FLASK_ENV</span> <span class="o">=</span> <span class="s">&quot;development&quot;</span><span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
-<p>Note how we use <a href="https://github.com/toml-lang/toml">TOML's syntax</a> to define a compound dictionary.</p>
-<p>A dotenv file is also supported via <code>env_file = "&lt;file_path&gt;"</code> setting.</p>
-<p>For environment variables and/or dotenv file shared by all scripts, you can define <code>env</code> and <code>env_file</code>
-settings under a special key named <code>_</code> of <code>tool.pdm.scripts</code> table:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">[tool.pdm.scripts]</span>
-<span class="n">_</span><span class="p">.</span><span class="n">env_file</span> <span class="o">=</span> <span class="s">&quot;.env&quot;</span>
-<span class="n">start_server</span> <span class="o">=</span> <span class="s">&quot;flask run -p 54321&quot;</span>
-<span class="n">migrate_db</span> <span class="o">=</span> <span class="s">&quot;flask db upgrade&quot;</span>
-</code></pre></div>
-</td></tr></table>
-<p>Besides, PDM also injects the root path of the project via <code>PDM_PROJECT_ROOT</code> environment variable.</p>
-<h3 id="load-site-packages-in-the-running-environment">Load site-packages in the running environment<a class="headerlink" href="#load-site-packages-in-the-running-environment" title="Permanent link">#</a></h3>
-<p>To make sure the running environment is properly isolated from the outer Python interpreter,
-site-packages from the selected interpreter WON'T be loaded into <code>sys.path</code>, unless any of the following conditions holds:</p>
-<ol>
-<li>The executable is from <code>PATH</code> but not inside the <code>__pypackages__</code> folder.</li>
-<li><code>-s/--site-packages</code> flag is following <code>pdm run</code>.</li>
-<li><code>site_packages = true</code> is in either the script table or the global setting key <code>_</code>.</li>
-</ol>
-<p>Note that site-packages will always be loaded if running with PEP 582 enabled(without the <code>pdm run</code> prefix).</p>
-<h3 id="show-the-list-of-scripts-shortcuts">Show the list of scripts shortcuts<a class="headerlink" href="#show-the-list-of-scripts-shortcuts" title="Permanent link">#</a></h3>
-<p>Use <code>pdm run --list/-l</code> to show the list of available script shortcuts:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ pdm run --list
-Name        Type  Script           Description
------------ ----- ---------------- ----------------------
-test_cmd    cmd   flask db upgrade
-test_script call  test_script:main call a python <span class="k">function</span>
-test_shell  shell <span class="nb">echo</span> <span class="nv">$FOO</span>        shell <span class="nb">command</span>
-</code></pre></div>
-</td></tr></table>
-<p>You can add an <code>help</code> option with the description of the script, and it will be displayed in the <code>Description</code> column in the above output.</p>
 <h2 id="manage-caches">Manage caches<a class="headerlink" href="#manage-caches" title="Permanent link">#</a></h2>
 <p>PDM provides a convenient command group to manage the cache, there are four kinds of caches:</p>
 <ol>
@@ -1302,13 +1087,13 @@ for the nearest <code>__pypackage__</code> folder and append it to the <code>sys
       
       
         
-        <a href="../advanced/" class="md-footer__link md-footer__link--next" aria-label="Next: Advanced Usage" rel="next">
+        <a href="../scripts/" class="md-footer__link md-footer__link--next" aria-label="Next: PDM Scripts" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Advanced Usage
+              PDM Scripts
             </div>
           </div>
           <div class="md-footer__button md-icon">

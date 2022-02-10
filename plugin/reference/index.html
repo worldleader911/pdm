@@ -324,6 +324,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../usage/scripts/" class="md-nav__link">
+        PDM Scripts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../usage/advanced/" class="md-nav__link">
         Advanced Usage
       </a>
@@ -373,7 +387,7 @@
   
     <li class="md-nav__item">
       <a href="../../pyproject/pep621/" class="md-nav__link">
-        PEP 621 Project metadata
+        PEP 621 Metadata
       </a>
     </li>
   
@@ -387,7 +401,7 @@
   
     <li class="md-nav__item">
       <a href="../../pyproject/tool-pdm/" class="md-nav__link">
-        PDM tool settings
+        PDM Tool Settings
       </a>
     </li>
   
@@ -796,6 +810,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#pdm.signals.post_build" class="md-nav__link">
+    post_build
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#pdm.signals.post_init" class="md-nav__link">
     post_init
   </a>
@@ -812,6 +833,13 @@
           <li class="md-nav__item">
   <a href="#pdm.signals.post_lock" class="md-nav__link">
     post_lock
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pdm.signals.pre_build" class="md-nav__link">
+    pre_build
   </a>
   
 </li>
@@ -1250,6 +1278,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#pdm.signals.post_build" class="md-nav__link">
+    post_build
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#pdm.signals.post_init" class="md-nav__link">
     post_init
   </a>
@@ -1266,6 +1301,13 @@
           <li class="md-nav__item">
   <a href="#pdm.signals.post_lock" class="md-nav__link">
     post_lock
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pdm.signals.pre_build" class="md-nav__link">
+    pre_build
   </a>
   
 </li>
@@ -2362,6 +2404,56 @@ is used</p></td>
 
 
 
+<h3 id="pdm.signals.post_build" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">post_build</span><span class="p">:</span> <span class="n">NamedSignal</span></code>
+
+
+<a href="#pdm.signals.post_build" class="headerlink" title="Permanent link">#</a></h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Called after a project is built.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>project</code></td>
+        <td><code>Project</code></td>
+        <td><p>The project object</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>artifacts</code></td>
+        <td><code>Sequence[str]</code></td>
+        <td><p>The locations of built artifacts</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>config_settings</code></td>
+        <td><code>dict[str, str]|None</code></td>
+        <td><p>Additional config settings passed via args</p></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
+</table>    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-attribute">
+
+
+
 <h3 id="pdm.signals.post_init" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">post_init</span><span class="p">:</span> <span class="n">NamedSignal</span></code>
 
@@ -2487,6 +2579,56 @@ is used</p></td>
         <td><code>dry_run</code></td>
         <td><code>bool</code></td>
         <td><p>If true, won't perform any actions</p></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
+</table>    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="pdm.signals.pre_build" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">pre_build</span><span class="p">:</span> <span class="n">NamedSignal</span></code>
+
+
+<a href="#pdm.signals.pre_build" class="headerlink" title="Permanent link">#</a></h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Called before a project is built.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>project</code></td>
+        <td><code>Project</code></td>
+        <td><p>The project object</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>dest</code></td>
+        <td><code>str</code></td>
+        <td><p>The destination location</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>config_settings</code></td>
+        <td><code>dict[str, str]|None</code></td>
+        <td><p>Additional config settings passed via args</p></td>
         <td><em>required</em></td>
       </tr>
   </tbody>

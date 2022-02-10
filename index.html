@@ -384,7 +384,14 @@
     VSCode
   </a>
   
-    <nav class="md-nav" aria-label="VSCode">
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#neovim" class="md-nav__link">
+    Neovim
+  </a>
+  
+    <nav class="md-nav" aria-label="Neovim">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -839,7 +846,14 @@
     VSCode
   </a>
   
-    <nav class="md-nav" aria-label="VSCode">
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#neovim" class="md-nav__link">
+    Neovim
+  </a>
+  
+    <nav class="md-nav" aria-label="Neovim">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1133,6 +1147,16 @@ For example, to debug your <code>pytest</code> run:</p>
 </code></pre></div>
 </td></tr></table>
 </details>
+<h3 id="neovim">Neovim<a class="headerlink" href="#neovim" title="Permanent link">#</a></h3>
+<p>If using <a href="https://github.com/neovim/nvim-lspconfig">neovim-lsp</a> with
+<a href="https://github.com/Microsoft/pyright">pyright</a> and want your
+<strong><strong>pypackages</strong></strong> directory to be added to the path, you can add this to your
+project's <code>pyproject.toml</code>.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">[tool.pyright]</span>
+<span class="n">extraPaths</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;__pypackages__/&lt;major.minor&gt;/lib/&quot;</span><span class="p">]</span>
+</code></pre></div>
+</td></tr></table>
 <h4 id="task-provider">Task Provider<a class="headerlink" href="#task-provider" title="Permanent link">#</a></h4>
 <p>In addition, there is a <a href="https://marketplace.visualstudio.com/items?itemName=knowsuchagency.pdm-task-provider">VSCode Task Provider extension</a> available for download.</p>
 <p>This makes it possible for VSCode to automatically detect <a href="https://pdm.fming.dev/project/#run-scripts-in-isolated-environment">pdm scripts</a> so they

@@ -1209,8 +1209,10 @@ To fix this, you could loosen the dependency version constraints <span class="k"
 you can tell PDM to forcedly resolve <code>asgiref</code> to a specific version by adding the following lines to <code>pyproject.toml</code>:</p>
 <p><em>New in version 1.12.0</em></p>
 <p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">[tool.pdm.overrides]</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">[tool.pdm.overrides]</span>
 <span class="n">asgiref</span> <span class="o">=</span> <span class="s">&quot;3.2.10&quot;</span>
+<span class="n">pytz</span> <span class="o">=</span> <span class="s">&quot;file:///${PROJECT_ROOT}/pytz-2020.9-py3-none-any.whl&quot;</span>
 </code></pre></div>
 </td></tr></table>
 Each entry of that table is a package name with the wanted version. The value can also be a URL to a file or a VCS repository like <code>git+https://...</code>.

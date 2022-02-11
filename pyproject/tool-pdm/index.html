@@ -912,8 +912,8 @@ Update the dictionary with your <code>ext_modules</code> settings in the functio
 <p>PDM leverages <a href="https://www.python.org/dev/peps/pep-0660/">PEP 660</a> to build wheels for editable installation.
 One can choose how to generate the wheel out of the two methods:</p>
 <ul>
-<li><code>editables</code>: (Default)Create proxy modules under the packages path.</li>
-<li><code>path</code>: The legacy method used by setuptools that create .pth files under the packages path.</li>
+<li><code>path</code>: (Default)The legacy method used by setuptools that create .pth files under the packages path.</li>
+<li><code>editables</code>: Create proxy modules under the packages path. Since the proxy module is looked for at runtime, it may not work with some static analysis tools.</li>
 </ul>
 <p>Read the PEP for the difference of the two methods and how they work.</p>
 <p>Specify the method in pyproject.toml like below:</p>

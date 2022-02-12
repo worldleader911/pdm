@@ -485,11 +485,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#build-c-extensions" class="md-nav__link">
-    Build C extensions
+  <a href="#build-platform-specific-wheels" class="md-nav__link">
+    Build Platform-specific Wheels
   </a>
   
-    <nav class="md-nav" aria-label="Build C extensions">
+    <nav class="md-nav" aria-label="Build Platform-specific Wheels">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -755,11 +755,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#build-c-extensions" class="md-nav__link">
-    Build C extensions
+  <a href="#build-platform-specific-wheels" class="md-nav__link">
+    Build Platform-specific Wheels
   </a>
   
-    <nav class="md-nav" aria-label="Build C extensions">
+    <nav class="md-nav" aria-label="Build Platform-specific Wheels">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -905,10 +905,10 @@ Be aware PDM won't add <a href="https://www.python.org/dev/peps/pep-0420/">PEP 4
 <li>There exist normal packages and/or other namespace packages under <code>&lt;package&gt;/*</code>, and</li>
 <li><code>&lt;package&gt;</code> is explicitly listed in <code>includes</code></li>
 </ol>
-<h2 id="build-c-extensions">Build C extensions<a class="headerlink" href="#build-c-extensions" title="Permanent link">#</a></h2>
-<p>Currently, building C extensions still relies on <code>setuptools</code>. You should write a python script which contains
-a function named <code>build</code> and accepts the parameter dictionary of <code>setup()</code> as the only argument.
-Update the dictionary with your <code>ext_modules</code> settings in the function.</p>
+<h2 id="build-platform-specific-wheels">Build Platform-specific Wheels<a class="headerlink" href="#build-platform-specific-wheels" title="Permanent link">#</a></h2>
+<p>You may want to build platform-specific wheels if it contains binaries. Currently, building C extensions still relies on <code>setuptools</code>. 
+You should write a python script with a function named <code>build</code> which accepts the <code>kwargs</code> of <code>setup()</code> as the argument.
+Then, update the dictionary with your <code>ext_modules</code> settings in the function.</p>
 <p>Here is an example taken from <code>MarkupSafe</code>:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>

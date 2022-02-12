@@ -489,6 +489,19 @@
     Build C extensions
   </a>
   
+    <nav class="md-nav" aria-label="Build C extensions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#override-the-is-purelib-value" class="md-nav__link">
+    Override the "Is-Purelib" value
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -746,6 +759,19 @@
     Build C extensions
   </a>
   
+    <nav class="md-nav" aria-label="Build C extensions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#override-the-is-purelib-value" class="md-nav__link">
+    Override the "Is-Purelib" value
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -907,7 +933,16 @@ Update the dictionary with your <code>ext_modules</code> settings in the functio
 <span class="n">build</span> <span class="o">=</span> <span class="s">&quot;build.py&quot;</span>
 </code></pre></div>
 </td></tr></table>
+<p>If you run <code>pdm build</code>(or any other build frontends such as <a href="https://pypi.org/project/build">build</a>), PDM will build a platform-specific wheel file as well as a sdist.</p>
 <p>By default, every build is performed in a clean and isolated environment, only build requirements can be seen. If your build has optional requirements that depend on the project environment, you can turn off the environment isolation by <code>pdm build --no-isolation</code> or setting config <code>build_isolation</code> to falsey value.</p>
+<h3 id="override-the-is-purelib-value">Override the "Is-Purelib" value<a class="headerlink" href="#override-the-is-purelib-value" title="Permanent link">#</a></h3>
+<p>Sometimes you may want to build platform-specific wheels but don't have a build script(the binaries may be built or fetched by other tools). In this case
+you can set the <code>is-purelib</code> value in the <code>pyproject.toml</code> to <code>false</code>:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">[tool.pdm]</span>
+<span class="n">is-purelib</span> <span class="o">=</span> <span class="kc">false</span>
+</code></pre></div>
+</td></tr></table>
 <h2 id="editable-build-backend">Editable build backend<a class="headerlink" href="#editable-build-backend" title="Permanent link">#</a></h2>
 <p>PDM leverages <a href="https://www.python.org/dev/peps/pep-0660/">PEP 660</a> to build wheels for editable installation.
 One can choose how to generate the wheel out of the two methods:</p>

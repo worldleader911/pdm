@@ -578,13 +578,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#pdm.core.Core.project_class.global_config" class="md-nav__link">
-    global_config
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#pdm.core.Core.project_class.project_config" class="md-nav__link">
     project_config
   </a>
@@ -1041,13 +1034,6 @@
           <li class="md-nav__item">
   <a href="#pdm.core.Core.project_class.dev_dependencies" class="md-nav__link">
     dev_dependencies
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pdm.core.Core.project_class.global_config" class="md-nav__link">
-    global_config
   </a>
   
 </li>
@@ -1530,30 +1516,6 @@ project_class        </code>
 
   </div>
 
-
-
-
-  <div class="doc doc-object doc-attribute">
-
-
-
-<h4 id="pdm.core.Core.project_class.global_config" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">global_config</span><span class="p">:</span> <span class="n">Config</span></code>
-
-  <span class="doc doc-properties">
-      <small class="doc doc-property doc-property-cached"><code>cached</code></small>
-      <small class="doc doc-property doc-property-property"><code>property</code></small>
-      <small class="doc doc-property doc-property-writable"><code>writable</code></small>
-  </span>
-
-<a href="#pdm.core.Core.project_class.global_config" class="headerlink" title="Permanent link">#</a></h4>
-
-    <div class="doc doc-contents ">
-
-      <p>Read-and-writable configuration dict for global settings</p>
-    </div>
-
-  </div>
 
 
 
@@ -2196,7 +2158,7 @@ synchronizer_class        </code>
 
 
 <h3 id="pdm.core.Core.create_project" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">create_project</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">is_global</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">create_project</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">is_global</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">global_config</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 
 <a href="#pdm.core.Core.create_project" class="headerlink" title="Permanent link">#</a></h3>
@@ -2227,6 +2189,12 @@ synchronizer_class        </code>
         <td><code>bool</code></td>
         <td><p>Whether the project is a global project</p></td>
         <td><code>False</code></td>
+      </tr>
+      <tr>
+        <td><code>global_config</code></td>
+        <td><code>str</code></td>
+        <td><p>The path to the global config file</p></td>
+        <td><code>None</code></td>
       </tr>
   </tbody>
 </table>

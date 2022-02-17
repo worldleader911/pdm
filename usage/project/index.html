@@ -952,7 +952,7 @@ show configurations.</p>
 <h2 id="cache-the-installation-of-wheels">Cache the installation of wheels<a class="headerlink" href="#cache-the-installation-of-wheels" title="Permanent link">#</a></h2>
 <p>If a package is required by many projects on the system, each project has to keep its own copy. This may become a waste of disk space especially for data science and machine learning libraries.</p>
 <p>PDM supports <em>caching</em> the installations of the same wheel by installing it into a centralized package repository and linking to that installation in different projects. To enabled it, run:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>pdm config feature.install_cache on
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>pdm config install.cache on
 </code></pre></div>
 </td></tr></table>
 <p>It can be enabled on a project basis, by adding <code>--local</code> option to the command.</p>
@@ -978,12 +978,12 @@ project path via <code>-p/--project &lt;path&gt;</code> option.</p>
 </div>
 <h2 id="working-with-a-virtualenv">Working with a virtualenv<a class="headerlink" href="#working-with-a-virtualenv" title="Permanent link">#</a></h2>
 <p>Although PDM enforces PEP 582 by default, it also allows users to install packages into the virtualenv. It is controlled
-by the configuration item <code>use_venv</code>. When it is set to <code>True</code>, PDM will use the virtualenv if:</p>
+by the configuration item <code>python.use_venv</code>. When it is set to <code>True</code>, PDM will use the virtualenv if:</p>
 <ul>
 <li>a virtualenv is already activated.</li>
 <li>any of <code>venv</code>, <code>.venv</code>, <code>env</code> is a valid virtualenv folder.</li>
 </ul>
-<p>Besides, when <code>use-venv</code> is on and the interpreter path given is a venv-like path, PDM will reuse that venv directory as well.</p>
+<p>Besides, when <code>python.use_venv</code> is on and the interpreter path given is a venv-like path, PDM will reuse that venv directory as well.</p>
 <p>For enhanced virtualenv support such as virtualenv management and auto-creation, please go for <a href="https://github.com/pdm-project/pdm-venv">pdm-venv</a>,
 which can be installed as a plugin.</p>
 <h2 id="import-project-metadata-from-existing-project-files">Import project metadata from existing project files<a class="headerlink" href="#import-project-metadata-from-existing-project-files" title="Permanent link">#</a></h2>

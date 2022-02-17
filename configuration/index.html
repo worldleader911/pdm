@@ -670,6 +670,20 @@
 </thead>
 <tbody>
 <tr>
+<td><code>auto_global</code></td>
+<td>Use global package implicitly if no local project is found</td>
+<td><code>False</code></td>
+<td>No</td>
+<td><code>PDM_AUTO_GLOBAL</code></td>
+</tr>
+<tr>
+<td><code>build_isolation</code></td>
+<td>Isolate the build environment from the project environment</td>
+<td>Yes</td>
+<td>True</td>
+<td><code>PDM_BUILD_ISOLATION</code></td>
+</tr>
+<tr>
 <td><code>cache_dir</code></td>
 <td>The root directory of cached files</td>
 <td>The default cache location on OS</td>
@@ -684,32 +698,25 @@
 <td></td>
 </tr>
 <tr>
-<td><code>auto_global</code></td>
-<td>Use global package implicitly if no local project is found</td>
-<td><code>False</code></td>
-<td>No</td>
-<td><code>PDM_AUTO_GLOBAL</code></td>
-</tr>
-<tr>
-<td><code>use_venv</code></td>
-<td>Install packages into the activated venv site packages instead of PEP 582</td>
-<td><code>False</code></td>
+<td><code>install.cache</code></td>
+<td>Enable caching of wheel installations</td>
+<td>False</td>
 <td>Yes</td>
-<td><code>PDM_USE_VENV</code></td>
+<td></td>
 </tr>
 <tr>
-<td><code>parallel_install</code></td>
+<td><code>install.cache_method</code></td>
+<td>Specify how to create links to the caches(<code>symlink</code> or <code>pth</code>)</td>
+<td><code>symlink</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>install.parallel</code></td>
 <td>Whether to perform installation and uninstallation in parallel</td>
 <td><code>True</code></td>
 <td>Yes</td>
 <td><code>PDM_PARALLEL_INSTALL</code></td>
-</tr>
-<tr>
-<td><code>build_isolation</code></td>
-<td>Isolate the build environment from the project environment</td>
-<td>Yes</td>
-<td>True</td>
-<td><code>PDM_BUILD_ISOLATION</code></td>
 </tr>
 <tr>
 <td><code>project_max_depth</code></td>
@@ -717,13 +724,6 @@
 <td>5</td>
 <td>No</td>
 <td><code>PDM_PROJECT_MAX_DEPTH</code></td>
-</tr>
-<tr>
-<td><code>feature.install_cache</code></td>
-<td>Enable caching of wheel installations</td>
-<td>False</td>
-<td>Yes</td>
-<td></td>
 </tr>
 <tr>
 <td><code>python.path</code></td>
@@ -738,6 +738,13 @@
 <td><code>True</code></td>
 <td>Yes</td>
 <td></td>
+</tr>
+<tr>
+<td><code>python.use_venv</code></td>
+<td>Install packages into the activated venv site packages instead of PEP 582</td>
+<td><code>False</code></td>
+<td>Yes</td>
+<td><code>PDM_USE_VENV</code></td>
 </tr>
 <tr>
 <td><code>pypi.url</code></td>

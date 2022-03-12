@@ -1162,6 +1162,21 @@ For example, to debug your <code>pytest</code> run:</p>
 </code></pre></div>
 </td></tr></table>
 </details>
+<details class="note">
+<summary>Using Pylance/Pyright?</summary>
+<p>If you have configured <code>"python.analysis.diagnosticMode": "workspace"</code>,
+and you see a ton of errors/warnings as a result.
+you may need to create <code>pyrightconfig.json</code> in the workspace directory, and fill in the following fields:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;exclude&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;__pypackages__&quot;</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>Then restart the language server or VS Code and you're good to go.
+In the future (<a href="https://github.com/microsoft/pylance-release/issues/1150">microsoft/pylance-release#1150</a>), maybe the problem will be solved.</p>
+</details>
 <h4 id="task-provider">Task Provider<a class="headerlink" href="#task-provider" title="Permanent link">#</a></h4>
 <p>In addition, there is a <a href="https://marketplace.visualstudio.com/items?itemName=knowsuchagency.pdm-task-provider">VSCode Task Provider extension</a> available for download.</p>
 <p>This makes it possible for VSCode to automatically detect <a href="https://pdm.fming.dev/project/#run-scripts-in-isolated-environment">pdm scripts</a> so they

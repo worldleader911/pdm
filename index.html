@@ -1177,6 +1177,20 @@ you may need to create <code>pyrightconfig.json</code> in the workspace director
 <p>Then restart the language server or VS Code and you're good to go.
 In the future (<a href="https://github.com/microsoft/pylance-release/issues/1150">microsoft/pylance-release#1150</a>), maybe the problem will be solved.</p>
 </details>
+<details class="note">
+<summary>Using Jupyter Notebook?</summary>
+<p>If you wish to use pdm to install jupyter notebook and use it in vscode in conjunction with the python extension:</p>
+<ol>
+<li>Use <code>pdm add notebook</code> or so to install notebook</li>
+<li>Add a <code>.env</code> file inside of your project director with contents like the following:</li>
+</ol>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>PYTHONPATH=/your-workspace-path/__pypackages__/&lt;major&gt;.&lt;minor&gt;/lib
+</code></pre></div>
+</td></tr></table>
+<blockquote>
+<p><a href="https://github.com/pdm-project/pdm/issues/848">Reference Issue</a></p>
+</blockquote>
+</details>
 <h4 id="task-provider">Task Provider<a class="headerlink" href="#task-provider" title="Permanent link">#</a></h4>
 <p>In addition, there is a <a href="https://marketplace.visualstudio.com/items?itemName=knowsuchagency.pdm-task-provider">VSCode Task Provider extension</a> available for download.</p>
 <p>This makes it possible for VSCode to automatically detect <a href="https://pdm.fming.dev/project/#run-scripts-in-isolated-environment">pdm scripts</a> so they

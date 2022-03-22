@@ -670,13 +670,6 @@
 </thead>
 <tbody>
 <tr>
-<td><code>auto_global</code></td>
-<td>Use global package implicitly if no local project is found</td>
-<td><code>False</code></td>
-<td>No</td>
-<td><code>PDM_AUTO_GLOBAL</code></td>
-</tr>
-<tr>
 <td><code>build_isolation</code></td>
 <td>Isolate the build environment from the project environment</td>
 <td>Yes</td>
@@ -694,6 +687,20 @@
 <td><code>check_update</code></td>
 <td>Check if there is any newer version available</td>
 <td>True</td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>global_project.fallback</code></td>
+<td>Use the global project implicitly if no local project is found</td>
+<td><code>False</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>global_project.path</code></td>
+<td>The path to the global project</td>
+<td><code>~/.pdm/global-project</code></td>
 <td>No</td>
 <td></td>
 </tr>

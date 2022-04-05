@@ -991,7 +991,7 @@ optional arguments:
 </td></tr></table>
 <p>You can either pass the options after the script or set the env var value.</p>
 <h3 id="other-installation-methods">Other installation methods<a class="headerlink" href="#other-installation-methods" title="Permanent link">#</a></h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:4"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><input id="__tabbed_2_4" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Homebrew</label><label for="__tabbed_2_2">Scoop</label><label for="__tabbed_2_3">pipx</label><label for="__tabbed_2_4">pip</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:5"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><input id="__tabbed_2_4" name="__tabbed_2" type="radio" /><input id="__tabbed_2_5" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Homebrew</label><label for="__tabbed_2_2">Scoop</label><label for="__tabbed_2_3">pipx</label><label for="__tabbed_2_4">pip</label><label for="__tabbed_2_5">inside project</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>brew install pdm
@@ -1021,6 +1021,30 @@ Make sure you have installed <a href="https://git-lfs.github.com/">Git LFS</a> o
 </code></pre></div>
 </td></tr></table>
 </div>
+<div class="tabbed-block">
+<p>By copying the <a href="https://pyprojectx.github.io/">Pyprojectx</a> wrapper scripts to a project, you can install PDM as
+(npm-style) dev dependency inside that project. This allows different projects/branches to use different PDM versions.</p>
+<p>To <a href="https://pyprojectx.github.io/usage/#initialize-a-new-or-existing-project">initialize a new or existing project</a>,
+cd into the project folder and:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Linux/Mac</label><label for="__tabbed_3_2">Windows</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>curl -LO https://github.com/pyprojectx/pyprojectx/releases/latest/download/wrappers.zip &amp;&amp; unzip wrappers.zip &amp;&amp; rm -f wrappers.zip
+./pw --init pdm
+</code></pre></div>
+</td></tr></table>
+</div>
+<div class="tabbed-block">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">Invoke-WebRequest</span> <span class="n">https</span><span class="p">://</span><span class="n">github</span><span class="p">.</span><span class="n">com</span><span class="p">/</span><span class="n">pyprojectx</span><span class="p">/</span><span class="n">pyprojectx</span><span class="p">/</span><span class="n">releases</span><span class="p">/</span><span class="n">latest</span><span class="p">/</span><span class="n">download</span><span class="p">/</span><span class="n">wrappers</span><span class="p">.</span><span class="n">zip</span> <span class="n">-OutFile</span> <span class="n">wrappers</span><span class="p">.</span><span class="n">zip</span><span class="p">;</span> <span class="nb">Expand-Archive</span> <span class="n">-Path</span> <span class="n">wrappers</span><span class="p">.</span><span class="n">zip</span> <span class="n">-DestinationPath</span> <span class="p">.;</span> <span class="nb">Remove-Item</span> <span class="n">-Path</span> <span class="n">wrappers</span><span class="p">.</span><span class="n">zip</span>
+<span class="p">.\</span><span class="n">pw</span> <span class="p">-</span><span class="n">-init</span> <span class="n">pdm</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 <h3 id="enable-pep-582-globally">Enable PEP 582 globally<a class="headerlink" href="#enable-pep-582-globally" title="Permanent link">#</a></h3>
@@ -1040,7 +1064,7 @@ For example, in bash you can do this:</p>
 <p>Once again, Don't forget to restart the terminal session to take effect.</p>
 <h2 id="shell-completion">Shell Completion<a class="headerlink" href="#shell-completion" title="Permanent link">#</a></h2>
 <p>PDM supports generating completion scripts for Bash, Zsh, Fish or Powershell. Here are some common locations for each shell:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:4"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><input id="__tabbed_3_4" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Bash</label><label for="__tabbed_3_2">Zsh</label><label for="__tabbed_3_3">Fish</label><label for="__tabbed_3_4">Powershell</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:4"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><input id="__tabbed_4_3" name="__tabbed_4" type="radio" /><input id="__tabbed_4_4" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Bash</label><label for="__tabbed_4_2">Zsh</label><label for="__tabbed_4_3">Fish</label><label for="__tabbed_4_4">Powershell</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>pdm completion bash &gt; /etc/bash_completion.d/pdm.bash-completion

@@ -1211,6 +1211,16 @@ In the future (<a href="https://github.com/microsoft/pylance-release/issues/1150
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>PYTHONPATH=/your-workspace-path/__pypackages__/&lt;major&gt;.&lt;minor&gt;/lib
 </code></pre></div>
 </td></tr></table>
+<p>If the above still doesn't work, it's most likely because the environment variable is not properly loaded when the Notebook starts. There are two workarounds.</p>
+<ol>
+<li>Run <code>code .</code> in Terminal. It will open a new VSCode window in the current directory with the path set correctly. Use the Jupyter Notebook in the new window</li>
+<li>If you prefer not to open a new window, run the following at the beginning of your Jupyter Notebook to explicitly set the path:</li>
+</ol>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>import sys
+sys.path.append(&#39;/your-workspace-path/__pypackages__/&lt;major&gt;.&lt;minor&gt;/lib&#39;)
+</code></pre></div>
+</td></tr></table>
 <blockquote>
 <p><a href="https://github.com/pdm-project/pdm/issues/848">Reference Issue</a></p>
 </blockquote>

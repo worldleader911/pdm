@@ -1054,9 +1054,9 @@ to the Python library search path.</p>
 <p>One just needs to execute <code>pdm --pep582</code>, then environment variable will be changed automatically. Don't forget
 to restart the terminal session to take effect.</p>
 <h4 id="for-mac-and-linux-users">For Mac and Linux users<a class="headerlink" href="#for-mac-and-linux-users" title="Permanent link">#</a></h4>
-<p>The command to change the environment variables can be produced by <code>pdm --pep582 [&lt;SHELL&gt;]</code>. If <code>&lt;SHELL&gt;</code>
-isn't given, PDM will pick one based on some guesses.</p>
-<p>You may want to write a line in your <code>.bash_profile</code>(or similar profiles) to make it effective when login.
+<p>The command to change the environment variables can be printed by <code>pdm --pep582 [&lt;SHELL&gt;]</code>. If <code>&lt;SHELL&gt;</code>
+isn't given, PDM will pick one based on some guesses. You can run <code>eval "$(pdm --pep582)"</code> to execute the command.</p>
+<p>You may want to write a line in your <code>.bash_profile</code>(or similar profiles) to make it effective when logging in.
 For example, in bash you can do this:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>pdm --pep582 &gt;&gt; ~/.bash_profile
 </code></pre></div>

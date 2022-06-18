@@ -449,7 +449,14 @@
     Specify other sources for finding packages
   </a>
   
-    <nav class="md-nav" aria-label="Specify other sources for finding packages">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#include-and-exclude-package-files" class="md-nav__link">
+    Include and exclude package files
+  </a>
+  
+    <nav class="md-nav" aria-label="Include and exclude package files">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -711,7 +718,14 @@
     Specify other sources for finding packages
   </a>
   
-    <nav class="md-nav" aria-label="Specify other sources for finding packages">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#include-and-exclude-package-files" class="md-nav__link">
+    Include and exclude package files
+  </a>
+  
+    <nav class="md-nav" aria-label="Include and exclude package files">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -831,45 +845,29 @@ And the package index won't be aware of these dependencies. The schema is simila
 <p>By default, or sources are <a href="https://www.python.org/dev/peps/pep-0503/">PEP 503</a> style "index urls" like pip's <code>--index-url</code> and <code>--extra-url</code>, however, you can also specify "find links" with
 <code>type = "find_links"</code>. See <a href="https://stackoverflow.com/a/46651848">this answer</a> for the difference between the two types.</p>
 <p>For example, to install from a local directory containing package files:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[[tool.pdm.source]]</span><span class="w"></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[[tool.pdm.source]]</span><span class="w"></span>
 <span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;file:///path/to/packages&quot;</span><span class="w"></span>
 <span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;local&quot;</span><span class="w"></span>
 <span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;find_links&quot;</span><span class="w"></span>
-<span class="err">```</span><span class="n">s</span><span class="w"></span>
-
-<span class="err">!!!</span><span class="w"> </span><span class="n">note</span><span class="w"> </span><span class="s">&quot;Difference from changing config value&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="n">When</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="n">want</span><span class="w"> </span><span class="n">all</span><span class="w"> </span><span class="n">packages</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">fetched</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">given</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="n">instead</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">default</span><span class="w"> </span><span class="n">one</span><span class="p">,</span><span class="w"> </span><span class="n">despite</span><span class="w"> </span><span class="n">what</span><span class="w"> </span><span class="n">platform</span><span class="w"> </span><span class="n">your</span><span class="w"> </span><span class="n">are</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">or</span><span class="w"> </span><span class="n">who</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">deploy</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">app</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">write</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="err">`</span><span class="p">[[</span><span class="n">tool</span><span class="p">.</span><span class="n">pdm</span><span class="p">.</span><span class="n">source</span><span class="p">]]</span><span class="err">`</span><span class="p">.</span><span class="w"> </span><span class="n">Otherwise</span><span class="w"> </span><span class="n">if</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="n">would</span><span class="w"> </span><span class="n">like</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">change</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="n">temporarily</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">current</span><span class="w"> </span><span class="n">platform</span><span class="w"> </span><span class="p">(</span><span class="n">for</span><span class="w"> </span><span class="n">network</span><span class="w"> </span><span class="n">reasons</span><span class="p">),</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="n">should</span><span class="w"> </span><span class="n">use</span><span class="w"></span>
-<span class="w">    </span><span class="err">`</span><span class="n">pdm</span><span class="w"> </span><span class="n">config</span><span class="w"> </span><span class="n">pypi</span><span class="p">.</span><span class="n">url</span><span class="w"> </span><span class="n">https</span><span class="p">:</span><span class="err">//</span><span class="n">private</span><span class="p">.</span><span class="n">pypi</span><span class="p">.</span><span class="n">org</span><span class="err">/</span><span class="n">simple</span><span class="err">`</span><span class="p">.</span><span class="w"></span>
-
-<span class="c1">## Include and exclude package files</span><span class="w"></span>
-
-<span class="n">The</span><span class="w"> </span><span class="n">way</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">specifying</span><span class="w"> </span><span class="n">include</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">exclude</span><span class="w"> </span><span class="n">files</span><span class="w"> </span><span class="n">are</span><span class="w"> </span><span class="n">simple</span><span class="p">,</span><span class="w"> </span><span class="n">they</span><span class="w"> </span><span class="n">are</span><span class="w"> </span><span class="n">given</span><span class="w"> </span><span class="n">as</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">glob</span><span class="w"> </span><span class="n">patterns</span><span class="p">:</span><span class="w"></span>
-
-<span class="err">```</span><span class="n">toml</span><span class="w"></span>
-<span class="n">includes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">Difference from changing config value</p>
+<p>When you want all packages to be fetched from the given index instead of the default one, despite what platform your are on or who is to deploy the app,
+write it in the <code>[[tool.pdm.source]]</code>. Otherwise if you would like to change the index temporarily on the current platform (for network reasons), you should use
+<code>pdm config pypi.url https://private.pypi.org/simple</code>.</p>
+</div>
+<h2 id="include-and-exclude-package-files">Include and exclude package files<a class="headerlink" href="#include-and-exclude-package-files" title="Permanent link">#</a></h2>
+<p>The way of specifying include and exclude files are simple, they are given as a list of glob patterns:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">includes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
 <span class="w">    </span><span class="s">&quot;**/*.json&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="s">&quot;mypackage/&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="p">]</span><span class="w"></span>

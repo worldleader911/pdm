@@ -382,13 +382,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#show-the-current-python-environment" class="md-nav__link">
-    Show the current Python environment
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#configure-the-project" class="md-nav__link">
     Configure the project
   </a>
@@ -418,6 +411,13 @@
         <li class="md-nav__item">
   <a href="#cache-the-installation-of-wheels" class="md-nav__link">
     Cache the installation of wheels
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#show-the-current-python-environment" class="md-nav__link">
+    Show the current Python environment
   </a>
   
 </li>
@@ -832,13 +832,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#show-the-current-python-environment" class="md-nav__link">
-    Show the current Python environment
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#configure-the-project" class="md-nav__link">
     Configure the project
   </a>
@@ -868,6 +861,13 @@
         <li class="md-nav__item">
   <a href="#cache-the-installation-of-wheels" class="md-nav__link">
     Cache the installation of wheels
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#show-the-current-python-environment" class="md-nav__link">
+    Show the current Python environment
   </a>
   
 </li>
@@ -1001,51 +1001,7 @@ to find the latest version of <code>foo</code>, whose <code>requires-python</cod
 <span class="go">- Building wheel...</span>
 <span class="go">- Built pdm_test-0.0.0-py3-none-any.whl</span>
 </code></pre></div></td></tr></table></div>
-<p>The artifacts can then be uploaded to PyPI by <a href="https://pypi.org/project/twine">twine</a> or using the
-<a href="https://github.com/branchvincent/pdm-publish">pdm-publish</a> plugin. Available options can be found by
-typing <code>pdm build --help</code>.</p>
-<details class="note">
-<summary>Looking for publish support?</summary>
-<p>If you are looking for <code>publish</code> subcommand as poetry, you can refer to the <a href="https://github.com/branchvincent/pdm-publish">pdm-publish</a> plugin.
-Indeed, most of the time, publishing should be handled by CI/CD pipelines.</p>
-</details>
-<h2 id="show-the-current-python-environment">Show the current Python environment<a class="headerlink" href="#show-the-current-python-environment" title="Permanent link">#</a></h2>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="gp">$ </span>pdm info
-<span class="go">Python Interpreter: D:/Programs/Python/Python38/python.exe (3.8.0)</span>
-<span class="go">Project Root:       D:/Workspace/pdm</span>
-<span class="go">                                                                                                                                   [10:42]</span>
-<span class="gp">$ </span>pdm info --env
-<span class="go">{</span>
-<span class="go">  &quot;implementation_name&quot;: &quot;cpython&quot;,</span>
-<span class="go">  &quot;implementation_version&quot;: &quot;3.8.0&quot;,</span>
-<span class="go">  &quot;os_name&quot;: &quot;nt&quot;,</span>
-<span class="go">  &quot;platform_machine&quot;: &quot;AMD64&quot;,</span>
-<span class="go">  &quot;platform_release&quot;: &quot;10&quot;,</span>
-<span class="go">  &quot;platform_system&quot;: &quot;Windows&quot;,</span>
-<span class="go">  &quot;platform_version&quot;: &quot;10.0.18362&quot;,</span>
-<span class="go">  &quot;python_full_version&quot;: &quot;3.8.0&quot;,</span>
-<span class="go">  &quot;platform_python_implementaiton&quot;: &quot;CPython&quot;,</span>
-<span class="go">  &quot;python_version&quot;: &quot;3.8&quot;,</span>
-<span class="go">  &quot;sys_platform&quot;: &quot;win32&quot;</span>
-<span class="go">}</span>
-</code></pre></div></td></tr></table></div>
+<p>The artifacts will be available at <code>dist/</code> and able to upload to PyPI.</p>
 <h2 id="configure-the-project">Configure the project<a class="headerlink" href="#configure-the-project" title="Permanent link">#</a></h2>
 <p>PDM's <code>config</code> command works just like <code>git config</code>, except that <code>--list</code> isn't needed to
 show configurations.</p>
@@ -1129,6 +1085,43 @@ pdm config repository.company.url <span class="s2">&quot;https://pypi.company.or
 <p class="admonition-title">Note</p>
 <p>Only the installation of <em>named requirements</em> resolved from PyPI can be cached.</p>
 </div>
+<h2 id="show-the-current-python-environment">Show the current Python environment<a class="headerlink" href="#show-the-current-python-environment" title="Permanent link">#</a></h2>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="gp">$ </span>pdm info
+<span class="go">Python Interpreter: D:/Programs/Python/Python38/python.exe (3.8.0)</span>
+<span class="go">Project Root:       D:/Workspace/pdm</span>
+<span class="go">                                                                                                                                   [10:42]</span>
+<span class="gp">$ </span>pdm info --env
+<span class="go">{</span>
+<span class="go">  &quot;implementation_name&quot;: &quot;cpython&quot;,</span>
+<span class="go">  &quot;implementation_version&quot;: &quot;3.8.0&quot;,</span>
+<span class="go">  &quot;os_name&quot;: &quot;nt&quot;,</span>
+<span class="go">  &quot;platform_machine&quot;: &quot;AMD64&quot;,</span>
+<span class="go">  &quot;platform_release&quot;: &quot;10&quot;,</span>
+<span class="go">  &quot;platform_system&quot;: &quot;Windows&quot;,</span>
+<span class="go">  &quot;platform_version&quot;: &quot;10.0.18362&quot;,</span>
+<span class="go">  &quot;python_full_version&quot;: &quot;3.8.0&quot;,</span>
+<span class="go">  &quot;platform_python_implementaiton&quot;: &quot;CPython&quot;,</span>
+<span class="go">  &quot;python_version&quot;: &quot;3.8&quot;,</span>
+<span class="go">  &quot;sys_platform&quot;: &quot;win32&quot;</span>
+<span class="go">}</span>
+</code></pre></div></td></tr></table></div>
 <h2 id="manage-global-project">Manage global project<a class="headerlink" href="#manage-global-project" title="Permanent link">#</a></h2>
 <p>Sometimes users may want to keep track of the dependencies of global Python interpreter as well.
 It is easy to do so with PDM, via <code>-g/--global</code> option which is supported by most subcommands.</p>

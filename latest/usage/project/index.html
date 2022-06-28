@@ -362,6 +362,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#working-with-python-37" class="md-nav__link">
+    Working with Python &lt; 3.7
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -743,6 +750,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#working-with-python-37" class="md-nav__link">
+    Working with Python &lt; 3.7
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -864,6 +878,45 @@ constraint in the project file.</p>
 on all python versions that <code>requires-python</code> contains. For example, if <code>requires-python</code> is <code>&gt;=2.7</code>, PDM will try
 to find the latest version of <code>foo</code>, whose <code>requires-python</code> version range is a <strong>superset</strong> of <code>&gt;=2.7</code>.</p>
 <p>So, make sure you write <code>requires-python</code> properly if you don't want any outdated packages to be locked.</p>
+<h3 id="working-with-python-37">Working with Python &lt; 3.7<a class="headerlink" href="#working-with-python-37" title="Permanent link">#</a></h3>
+<p>Although PDM run on Python 3.7 and above, you can still have lower Python versions for your <strong>working project</strong>. But remember, if your project is a library, which needs to be built, published or installed, you make sure the PEP 517 build backend being used supports the lowest Python version you need. For instance, the default backend <code>pdm-pep517</code> only works on Python 3.7+, so if you run <code>pdm build</code> on a project with Python 3.6, you will get an error. Most modern build backends have dropped the support for Python 3.6 and lower, so it is highly recommended to upgrade the Python version to 3.7+. Here are the supported Python range for some commonly used build backends, we only list those that support PEP 621 since otherwise PDM can't work with them.</p>
+<table>
+<thead>
+<tr>
+<th>Backend</th>
+<th>Supported Python</th>
+<th>Support PEP 621</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pdm-pep517</code></td>
+<td><code>&gt;=3.7</code></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>setuptools&gt;=60</code></td>
+<td><code>&gt;=3.7</code></td>
+<td>Experimental</td>
+</tr>
+<tr>
+<td><code>hatchling</code></td>
+<td><code>&gt;=3.7</code></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>flit-core&gt;=3.4</code></td>
+<td><code>&gt;=3.6</code></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>flit-core&gt;=3.2,&lt;3.4</code></td>
+<td><code>&gt;=3.4</code></td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<p>Note that if your project is an application(without <code>name</code> metadata), the above limitation of backends don't apply, since you don't need a build backend afterall, and you can use a Python version up to <code>2.7</code>.</p>
 <h2 id="build-distribution-artifacts">Build distribution artifacts<a class="headerlink" href="#build-distribution-artifacts" title="Permanent link">#</a></h2>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
@@ -942,7 +995,7 @@ show configurations.</p>
 <li><code>~/.pdm/config.toml</code> - The home configuration</li>
 </ol>
 <p>If <code>-g/--global</code> option is used, the first item will be replaced by <code>~/.pdm/global-project/.pdm.toml</code>.</p>
-<p>You can find all available configuration items in <a href="/configuration/">Configuration Page</a>.</p>
+<p>You can find all available configuration items in <a href="../../configuration/">Configuration Page</a>.</p>
 <h2 id="cache-the-installation-of-wheels">Cache the installation of wheels<a class="headerlink" href="#cache-the-installation-of-wheels" title="Permanent link">#</a></h2>
 <p>If a package is required by many projects on the system, each project has to keep its own copy. This may become a waste of disk space especially for data science and machine learning libraries.</p>
 <p>PDM supports <em>caching</em> the installations of the same wheel by installing it into a centralized package repository and linking to that installation in different projects. To enabled it, run:</p>

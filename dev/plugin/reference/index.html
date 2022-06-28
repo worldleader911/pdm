@@ -9,7 +9,7 @@
       
       
       <link rel="icon" href="../../assets/logo.svg">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.9">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.13">
     
     
       
@@ -17,10 +17,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.120efc48.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e411adfe.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.9647289d.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cc9b2e1e.min.css">
         
       
     
@@ -340,8 +340,36 @@
   
   
     <li class="md-nav__item">
+      <a href="../../usage/hooks/" class="md-nav__link">
+        Lifecycle and hooks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../usage/advanced/" class="md-nav__link">
         Advanced Usage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../usage/cli_reference/" class="md-nav__link">
+        CLI Reference
       </a>
     </li>
   
@@ -404,6 +432,20 @@
     <li class="md-nav__item">
       <a href="../../pyproject/tool-pdm/" class="md-nav__link">
         PDM Tool Settings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pyproject/build/" class="md-nav__link">
+        Build Configuration
       </a>
     </li>
   
@@ -606,6 +648,34 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#pdm.signals.post_publish" class="md-nav__link">
+    post_publish
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pdm.signals.post_run" class="md-nav__link">
+    post_run
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pdm.signals.post_script" class="md-nav__link">
+    post_script
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pdm.signals.post_use" class="md-nav__link">
+    post_use
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#pdm.signals.pre_build" class="md-nav__link">
     pre_build
   </a>
@@ -622,6 +692,27 @@
           <li class="md-nav__item">
   <a href="#pdm.signals.pre_lock" class="md-nav__link">
     pre_lock
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pdm.signals.pre_publish" class="md-nav__link">
+    pre_publish
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pdm.signals.pre_run" class="md-nav__link">
+    pre_run
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pdm.signals.pre_script" class="md-nav__link">
+    pre_script
   </a>
   
 </li>
@@ -840,6 +931,34 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#pdm.signals.post_publish" class="md-nav__link">
+    post_publish
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pdm.signals.post_run" class="md-nav__link">
+    post_run
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pdm.signals.post_script" class="md-nav__link">
+    post_script
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pdm.signals.post_use" class="md-nav__link">
+    post_use
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#pdm.signals.pre_build" class="md-nav__link">
     pre_build
   </a>
@@ -856,6 +975,27 @@
           <li class="md-nav__item">
   <a href="#pdm.signals.pre_lock" class="md-nav__link">
     pre_lock
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pdm.signals.pre_publish" class="md-nav__link">
+    pre_publish
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pdm.signals.pre_run" class="md-nav__link">
+    pre_run
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pdm.signals.pre_script" class="md-nav__link">
+    pre_script
   </a>
   
 </li>
@@ -1245,6 +1385,51 @@ is used</p></td>
 
     <div class="doc doc-contents ">
 
+      <p>Called after a project is built.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>project</code></td>
+          <td>
+                <code><span title="pdm.project.Project">Project</span></code>
+          </td>
+          <td><p>The project object</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>artifacts</code></td>
+          <td>
+                <code>Sequence[str]</code>
+          </td>
+          <td><p>The locations of built artifacts</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>config_settings</code></td>
+          <td>
+                <code>dict[str, str] | None</code>
+          </td>
+          <td><p>Additional config settings passed via args</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
     </div>
 
   </div>
@@ -1267,6 +1452,31 @@ is used</p></td>
 
     <div class="doc doc-contents ">
 
+      <p>Called after a project is initialized.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>project</code></td>
+          <td>
+                <code><span title="pdm.project.Project">Project</span></code>
+          </td>
+          <td><p>The project object</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
     </div>
 
   </div>
@@ -1289,6 +1499,51 @@ is used</p></td>
 
     <div class="doc doc-contents ">
 
+      <p>Called after a project is installed.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>project</code></td>
+          <td>
+                <code><span title="pdm.project.Project">Project</span></code>
+          </td>
+          <td><p>The project object</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>candidates</code></td>
+          <td>
+                <code>dict[str, Candidate]</code>
+          </td>
+          <td><p>The candidates installed</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>dry_run</code></td>
+          <td>
+                <code>bool</code>
+          </td>
+          <td><p>If true, won't perform any actions</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
     </div>
 
   </div>
@@ -1311,6 +1566,289 @@ is used</p></td>
 
     <div class="doc doc-contents ">
 
+      <p>Called after a project is locked.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>project</code></td>
+          <td>
+                <code><span title="pdm.project.Project">Project</span></code>
+          </td>
+          <td><p>The project object</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>resolution</code></td>
+          <td>
+                <code>dict[str, Candidate]</code>
+          </td>
+          <td><p>The resolved candidates</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>dry_run</code></td>
+          <td>
+                <code>bool</code>
+          </td>
+          <td><p>If true, won't perform any actions</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="pdm.signals.post_publish" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">post_publish</span><span class="p">:</span> <span class="n">NamedSignal</span> <span class="o">=</span> <span class="n">pdm_signals</span><span class="o">.</span><span class="n">signal</span><span class="p">(</span><span class="s1">&#39;post_publish&#39;</span><span class="p">)</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
+  </span>
+
+<a href="#pdm.signals.post_publish" class="headerlink" title="Permanent link">#</a></h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Called after a project is published.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>project</code></td>
+          <td>
+                <code><span title="pdm.project.Project">Project</span></code>
+          </td>
+          <td><p>The project object</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="pdm.signals.post_run" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">post_run</span><span class="p">:</span> <span class="n">NamedSignal</span> <span class="o">=</span> <span class="n">pdm_signals</span><span class="o">.</span><span class="n">signal</span><span class="p">(</span><span class="s1">&#39;post_run&#39;</span><span class="p">)</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
+  </span>
+
+<a href="#pdm.signals.post_run" class="headerlink" title="Permanent link">#</a></h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Called after any run.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>project</code></td>
+          <td>
+                <code><span title="pdm.project.Project">Project</span></code>
+          </td>
+          <td><p>The project object</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>script</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>the script name</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>args</code></td>
+          <td>
+                <code>Sequence[str]</code>
+          </td>
+          <td><p>the command line provided arguments</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="pdm.signals.post_script" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">post_script</span><span class="p">:</span> <span class="n">NamedSignal</span> <span class="o">=</span> <span class="n">pdm_signals</span><span class="o">.</span><span class="n">signal</span><span class="p">(</span><span class="s1">&#39;post_script&#39;</span><span class="p">)</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
+  </span>
+
+<a href="#pdm.signals.post_script" class="headerlink" title="Permanent link">#</a></h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Called after any script.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>project</code></td>
+          <td>
+                <code><span title="pdm.project.Project">Project</span></code>
+          </td>
+          <td><p>The project object</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>script</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>the script name</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>args</code></td>
+          <td>
+                <code>Sequence[str]</code>
+          </td>
+          <td><p>the command line provided arguments</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="pdm.signals.post_use" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">post_use</span><span class="p">:</span> <span class="n">NamedSignal</span> <span class="o">=</span> <span class="n">pdm_signals</span><span class="o">.</span><span class="n">signal</span><span class="p">(</span><span class="s1">&#39;post_use&#39;</span><span class="p">)</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
+  </span>
+
+<a href="#pdm.signals.post_use" class="headerlink" title="Permanent link">#</a></h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Called after use switched to a new Python version.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>project</code></td>
+          <td>
+                <code><span title="pdm.project.Project">Project</span></code>
+          </td>
+          <td><p>The project object</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>python</code></td>
+          <td>
+                <code>PythonInfo</code>
+          </td>
+          <td><p>Informations about the new Python interpreter</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
     </div>
 
   </div>
@@ -1333,6 +1871,51 @@ is used</p></td>
 
     <div class="doc doc-contents ">
 
+      <p>Called before a project is built.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>project</code></td>
+          <td>
+                <code><span title="pdm.project.Project">Project</span></code>
+          </td>
+          <td><p>The project object</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>dest</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>The destination location</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>config_settings</code></td>
+          <td>
+                <code>dict[str, str] | None</code>
+          </td>
+          <td><p>Additional config settings passed via args</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
     </div>
 
   </div>
@@ -1355,6 +1938,51 @@ is used</p></td>
 
     <div class="doc doc-contents ">
 
+      <p>Called before a project is installed.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>project</code></td>
+          <td>
+                <code><span title="pdm.project.Project">Project</span></code>
+          </td>
+          <td><p>The project object</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>candidates</code></td>
+          <td>
+                <code>dict[str, Candidate]</code>
+          </td>
+          <td><p>The candidates to install</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>dry_run</code></td>
+          <td>
+                <code>bool</code>
+          </td>
+          <td><p>If true, won't perform any actions</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
     </div>
 
   </div>
@@ -1377,6 +2005,232 @@ is used</p></td>
 
     <div class="doc doc-contents ">
 
+      <p>Called before a project is locked.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>project</code></td>
+          <td>
+                <code><span title="pdm.project.Project">Project</span></code>
+          </td>
+          <td><p>The project object</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>requirements</code></td>
+          <td>
+                <code>list[Requirement]</code>
+          </td>
+          <td><p>The requirements to lock</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>dry_run</code></td>
+          <td>
+                <code>bool</code>
+          </td>
+          <td><p>If true, won't perform any actions</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="pdm.signals.pre_publish" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">pre_publish</span><span class="p">:</span> <span class="n">NamedSignal</span> <span class="o">=</span> <span class="n">pdm_signals</span><span class="o">.</span><span class="n">signal</span><span class="p">(</span><span class="s1">&#39;pre_publish&#39;</span><span class="p">)</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
+  </span>
+
+<a href="#pdm.signals.pre_publish" class="headerlink" title="Permanent link">#</a></h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Called before a project is published.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>project</code></td>
+          <td>
+                <code><span title="pdm.project.Project">Project</span></code>
+          </td>
+          <td><p>The project object</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="pdm.signals.pre_run" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">pre_run</span><span class="p">:</span> <span class="n">NamedSignal</span> <span class="o">=</span> <span class="n">pdm_signals</span><span class="o">.</span><span class="n">signal</span><span class="p">(</span><span class="s1">&#39;pre_run&#39;</span><span class="p">)</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
+  </span>
+
+<a href="#pdm.signals.pre_run" class="headerlink" title="Permanent link">#</a></h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Called before any run.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>project</code></td>
+          <td>
+                <code><span title="pdm.project.Project">Project</span></code>
+          </td>
+          <td><p>The project object</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>script</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>the script name</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>args</code></td>
+          <td>
+                <code>Sequence[str]</code>
+          </td>
+          <td><p>the command line provided arguments</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="pdm.signals.pre_script" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">pre_script</span><span class="p">:</span> <span class="n">NamedSignal</span> <span class="o">=</span> <span class="n">pdm_signals</span><span class="o">.</span><span class="n">signal</span><span class="p">(</span><span class="s1">&#39;pre_script&#39;</span><span class="p">)</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
+  </span>
+
+<a href="#pdm.signals.pre_script" class="headerlink" title="Permanent link">#</a></h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Called before any script.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>project</code></td>
+          <td>
+                <code><span title="pdm.project.Project">Project</span></code>
+          </td>
+          <td><p>The project object</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>script</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>the script name</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>args</code></td>
+          <td>
+                <code>Sequence[str]</code>
+          </td>
+          <td><p>the command line provided arguments</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
     </div>
 
   </div>
@@ -1495,7 +2349,7 @@ is used</p></td>
     <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.6e54b5cd.min.js"></script>
+      <script src="../../assets/javascripts/bundle.ed9748b7.min.js"></script>
       
     
   </body>

@@ -9,7 +9,7 @@
       
       
       <link rel="icon" href="../../assets/logo.svg">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.9">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.13">
     
     
       
@@ -17,10 +17,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.120efc48.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e411adfe.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.9647289d.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cc9b2e1e.min.css">
         
       
     
@@ -340,8 +340,36 @@
   
   
     <li class="md-nav__item">
+      <a href="../../usage/hooks/" class="md-nav__link">
+        Lifecycle and hooks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../usage/advanced/" class="md-nav__link">
         Advanced Usage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../usage/cli_reference/" class="md-nav__link">
+        CLI Reference
       </a>
     </li>
   
@@ -431,8 +459,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#determine-the-package-version-dynamically" class="md-nav__link">
-    Determine the package version dynamically
+  <a href="#package-version" class="md-nav__link">
+    Package version
   </a>
   
 </li>
@@ -440,13 +468,6 @@
         <li class="md-nav__item">
   <a href="#dependency-specification" class="md-nav__link">
     Dependency specification
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#editable-requirement" class="md-nav__link">
-    Editable requirement
   </a>
   
 </li>
@@ -489,6 +510,20 @@
     <li class="md-nav__item">
       <a href="../tool-pdm/" class="md-nav__link">
         PDM Tool Settings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../build/" class="md-nav__link">
+        Build Configuration
       </a>
     </li>
   
@@ -688,8 +723,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#determine-the-package-version-dynamically" class="md-nav__link">
-    Determine the package version dynamically
+  <a href="#package-version" class="md-nav__link">
+    Package version
   </a>
   
 </li>
@@ -697,13 +732,6 @@
         <li class="md-nav__item">
   <a href="#dependency-specification" class="md-nav__link">
     Dependency specification
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#editable-requirement" class="md-nav__link">
-    Editable requirement
   </a>
   
 </li>
@@ -748,9 +776,7 @@
 
 
 <h1 id="pep-621-metadata">PEP 621 Metadata<a class="headerlink" href="#pep-621-metadata" title="Permanent link">#</a></h1>
-<p>The standard format and all metadata fields are defined by <a href="https://www.python.org/dev/peps/pep-0621/">PEP 621</a> and
-<a href="https://www.python.org/dev/peps/pep-0639/">PEP 639</a>.
-View the PEPs for the detailed specification. These metadata are stored in <code>[project]</code> table of <code>pyproject.toml</code>.</p>
+<p>The project metadata are stored in the <code>pyproject.toml</code>. The specifications are defined by <a href="https://www.python.org/dev/peps/pep-0621/">PEP 621</a>, <a href="https://www.python.org/dev/peps/pep-0631/">PEP 631</a> and <a href="https://www.python.org/dev/peps/pep-0639/">PEP 639</a>. Read the detailed specifications in the PEPs.</p>
 <p><em>In the following part of this document, metadata should be written under <code>[project]</code> table if not given explicitly.</em></p>
 <h2 id="multiline-description">Multiline description<a class="headerlink" href="#multiline-description" title="Permanent link">#</a></h2>
 <p>You can split a long description onto multiple lines, thanks to TOML support for multiline strings.
@@ -770,24 +796,33 @@ Indentation will be removed as well when escaping new lines:</p>
 <span class="s">&quot;&quot;&quot;</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
 <p>See <a href="https://toml.io/en/v1.0.0#string">TOML's specification on strings</a>.</p>
-<h2 id="determine-the-package-version-dynamically">Determine the package version dynamically<a class="headerlink" href="#determine-the-package-version-dynamically" title="Permanent link">#</a></h2>
-<p>The package version can be retrieved from the <code>__version__</code> variable of a given file. To do this, put the following
-under the <code>[tool.pdm]</code> table:</p>
+<h2 id="package-version">Package version<a class="headerlink" href="#package-version" title="Permanent link">#</a></h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Static</label><label for="__tabbed_1_2">Dynamic</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm]</span><span class="w"></span>
-<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">from</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;mypackage/__init__.py&quot;</span><span class="p">}</span><span class="w"></span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[project]</span><span class="w"></span>
+<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;1.0.0&quot;</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
-<p>Remember set <code>dynamic = ["version"]</code> in <code>[project]</code> metadata.</p>
-<p>PDM can also read version from SCM tags. If you are using git or hg as the version control system, define the
-<code>version</code> as follows:</p>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm]</span><span class="w"></span>
-<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">use_scm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">true</span><span class="p">}</span><span class="w"></span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[project]</span><span class="w"></span>
+<span class="p">...</span><span class="w"></span>
+<span class="n">dynamic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;version&quot;</span><span class="p">]</span><span class="w"></span>
+
+<span class="k">[tool.pdm]</span><span class="w"></span>
+<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">source</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;file&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;mypackage/__version__.py&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
-<p>In either case, you MUST delete the <code>version</code> field from the <code>[project]</code> table, and include <code>version</code>
-in the <code>dynamic</code> field, or the backend will raise an error:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">dynamic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;version&quot;</span><span class="p">]</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
+<p>The version will be read from the <code>mypackage/__version__.py</code> file searching for the pattern: <code>__version__ = "{version}"</code>.</p>
+<p>Read more information about other configurations in <a href="../build/#dynamic-versioning">dynamic versioning</a>.</p>
+</div>
+</div>
+</div>
 <h2 id="dependency-specification">Dependency specification<a class="headerlink" href="#dependency-specification" title="Permanent link">#</a></h2>
 <p>The <code>project.dependencies</code> is an array of dependency specification strings following the <a href="https://www.python.org/dev/peps/pep-0440/">PEP 440</a>
 and <a href="https://www.python.org/dev/peps/pep-0508/">PEP 508</a>.</p>
@@ -801,7 +836,11 @@ and <a href="https://www.python.org/dev/peps/pep-0508/">PEP 508</a>.</p>
 <span class="normal"> 7</span>
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
-<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[project]</span><span class="w"></span>
+<span class="p">...</span><span class="w"></span>
+<span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
 <span class="w">    </span><span class="c1"># Named requirement</span><span class="w"></span>
 <span class="w">    </span><span class="s">&quot;requests&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="c1"># Named requirement with version specifier</span><span class="w"></span>
@@ -812,26 +851,6 @@ and <a href="https://www.python.org/dev/peps/pep-0508/">PEP 508</a>.</p>
 <span class="w">    </span><span class="s">&quot;pip @ git+https://github.com/pypa/pip.git@20.3.1&quot;</span><span class="w"></span>
 <span class="p">]</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
-<h2 id="editable-requirement">Editable requirement<a class="headerlink" href="#editable-requirement" title="Permanent link">#</a></h2>
-<p>Beside of the normal dependency specifications, one can also have some packages installed in editable mode. The editable specification string format
-is the same as <a href="https://pip.pypa.io/en/stable/cli/pip_install/#editable-installs">Pip's editable install mode</a>.</p>
-<p>Examples:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>dependencies = [
-    ...,
-    &quot;-e path/to/SomeProject&quot;,
-    &quot;-e git+http://repo/my_project.git#egg=SomeProject&quot;
-]
-</code></pre></div></td></tr></table></div>
-<div class="admonition note">
-<p class="admonition-title">About editable installation</p>
-<p>One can have editable installation and normal installation for the same package. The one that comes at last wins.
-However, editable dependencies WON'T be included in the metadata of the built artifacts since they are not valid
-PEP 508 strings. They only exist for development purpose.</p>
-</div>
 <h2 id="optional-dependencies">Optional dependencies<a class="headerlink" href="#optional-dependencies" title="Permanent link">#</a></h2>
 <p>You can have some requirements optional, which is similar to <code>setuptools</code>' <code>extras_require</code> parameter.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -890,7 +909,7 @@ format of <code>[project.scripts]</code>:</p>
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../../usage/advanced/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Advanced Usage" rel="prev">
+        <a href="../../usage/cli_reference/" class="md-footer__link md-footer__link--prev" aria-label="Previous: CLI Reference" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -899,7 +918,7 @@ format of <code>[project.scripts]</code>:</p>
               <span class="md-footer__direction">
                 Previous
               </span>
-              Advanced Usage
+              CLI Reference
             </div>
           </div>
         </a>
@@ -980,7 +999,7 @@ format of <code>[project.scripts]</code>:</p>
     <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.6e54b5cd.min.js"></script>
+      <script src="../../assets/javascripts/bundle.ed9748b7.min.js"></script>
       
     
   </body>

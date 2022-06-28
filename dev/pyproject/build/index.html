@@ -13,7 +13,7 @@
     
     
       
-        <title>PDM Tool Settings - PDM</title>
+        <title>Build Configuration - PDM</title>
       
     
     
@@ -65,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#pdm-tool-settings" class="md-skip">
+        <a href="#build-configuration" class="md-skip">
           Skip to content
         </a>
       
@@ -126,7 +126,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              PDM Tool Settings
+              Build Configuration
             
           </span>
         </div>
@@ -430,6 +430,20 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../tool-pdm/" class="md-nav__link">
+        PDM Tool Settings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -442,12 +456,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          PDM Tool Settings
+          Build Configuration
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        PDM Tool Settings
+        Build Configuration
       </a>
       
         
@@ -466,44 +480,63 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#development-dependencies" class="md-nav__link">
-    Development dependencies
+  <a href="#dynamic-versioning" class="md-nav__link">
+    Dynamic versioning
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#allow-prereleases-in-resolution-result" class="md-nav__link">
-    Allow prereleases in resolution result
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#specify-other-sources-for-finding-packages" class="md-nav__link">
-    Specify other sources for finding packages
-  </a>
-  
-    <nav class="md-nav" aria-label="Specify other sources for finding packages">
+    <nav class="md-nav" aria-label="Dynamic versioning">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#disable-the-pypi-repository" class="md-nav__link">
-    Disable the PyPI repository
+  <a href="#dynamic-version-from-file" class="md-nav__link">
+    Dynamic version from file
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#find-links-source" class="md-nav__link">
-    Find links source
+  <a href="#dynamic-version-from-scm" class="md-nav__link">
+    Dynamic version from SCM
+  </a>
+  
+    <nav class="md-nav" aria-label="Dynamic version from SCM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#specify-the-version-manually" class="md-nav__link">
+    Specify the version manually
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#respect-the-order-of-the-sources" class="md-nav__link">
-    Respect the order of the sources
+  <a href="#write-the-version-to-file" class="md-nav__link">
+    Write the version to file
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#include-and-exclude-files" class="md-nav__link">
+    Include and exclude files
+  </a>
+  
+    <nav class="md-nav" aria-label="Include and exclude files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-values-for-includes-and-excludes" class="md-nav__link">
+    Default values for includes and excludes
   </a>
   
 </li>
@@ -513,24 +546,65 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#select-another-package-directory-to-look-for-packages" class="md-nav__link">
+    Select another package directory to look for packages
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implicit-namespace-packages" class="md-nav__link">
+    Implicit namespace packages
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-file-generation" class="md-nav__link">
+    Custom file generation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-platform-specific-wheels" class="md-nav__link">
+    Build Platform-specific Wheels
+  </a>
+  
+    <nav class="md-nav" aria-label="Build Platform-specific Wheels">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#override-the-is-purelib-value" class="md-nav__link">
+    Override the "Is-Purelib" value
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#editable-build-backend" class="md-nav__link">
+    Editable build backend
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-other-pep-517-backends" class="md-nav__link">
+    Use other PEP 517 backends
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
       
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../build/" class="md-nav__link">
-        Build Configuration
-      </a>
     </li>
   
 
@@ -722,50 +796,124 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#development-dependencies" class="md-nav__link">
-    Development dependencies
+  <a href="#dynamic-versioning" class="md-nav__link">
+    Dynamic versioning
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#allow-prereleases-in-resolution-result" class="md-nav__link">
-    Allow prereleases in resolution result
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#specify-other-sources-for-finding-packages" class="md-nav__link">
-    Specify other sources for finding packages
-  </a>
-  
-    <nav class="md-nav" aria-label="Specify other sources for finding packages">
+    <nav class="md-nav" aria-label="Dynamic versioning">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#disable-the-pypi-repository" class="md-nav__link">
-    Disable the PyPI repository
+  <a href="#dynamic-version-from-file" class="md-nav__link">
+    Dynamic version from file
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#find-links-source" class="md-nav__link">
-    Find links source
+  <a href="#dynamic-version-from-scm" class="md-nav__link">
+    Dynamic version from SCM
+  </a>
+  
+    <nav class="md-nav" aria-label="Dynamic version from SCM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#specify-the-version-manually" class="md-nav__link">
+    Specify the version manually
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#respect-the-order-of-the-sources" class="md-nav__link">
-    Respect the order of the sources
+  <a href="#write-the-version-to-file" class="md-nav__link">
+    Write the version to file
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#include-and-exclude-files" class="md-nav__link">
+    Include and exclude files
+  </a>
+  
+    <nav class="md-nav" aria-label="Include and exclude files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-values-for-includes-and-excludes" class="md-nav__link">
+    Default values for includes and excludes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#select-another-package-directory-to-look-for-packages" class="md-nav__link">
+    Select another package directory to look for packages
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implicit-namespace-packages" class="md-nav__link">
+    Implicit namespace packages
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-file-generation" class="md-nav__link">
+    Custom file generation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-platform-specific-wheels" class="md-nav__link">
+    Build Platform-specific Wheels
+  </a>
+  
+    <nav class="md-nav" aria-label="Build Platform-specific Wheels">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#override-the-is-purelib-value" class="md-nav__link">
+    Override the "Is-Purelib" value
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#editable-build-backend" class="md-nav__link">
+    Editable build backend
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-other-pep-517-backends" class="md-nav__link">
+    Use other PEP 517 backends
+  </a>
   
 </li>
       
@@ -781,94 +929,225 @@
             <article class="md-content__inner md-typeset">
               
                 
-  <a href="https://github.com/pdm-project/pdm/edit/main/docs/docs/pyproject/tool-pdm.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/pdm-project/pdm/edit/main/docs/docs/pyproject/build.md" title="Edit this page" class="md-content__button md-icon">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
 
-<h1 id="pdm-tool-settings">PDM Tool Settings<a class="headerlink" href="#pdm-tool-settings" title="Permanent link">#</a></h1>
-<p>There are also some useful settings to control the behaviors of PDM in various aspects. They should be stored in <code>pyproject.toml</code>, defined in <code>[tool.pdm]</code> table.</p>
-<h2 id="development-dependencies">Development dependencies<a class="headerlink" href="#development-dependencies" title="Permanent link">#</a></h2>
-<p>You can have several groups of development only dependencies. Unlike <code>optional-dependencies</code>, they won't appear in the package distribution metadata such as <code>PKG-INFO</code> or <code>METADATA</code>.
-And the package index won't be aware of these dependencies. The schema is similar to that of <code>optional-dependencies</code>, except that it is in <code>tool.pdm</code> table.</p>
+<h1 id="build-configuration">Build Configuration<a class="headerlink" href="#build-configuration" title="Permanent link">#</a></h1>
+<p><code>pdm</code> uses the <a href="https://www.python.org/dev/peps/pep-0517/">PEP 517</a> to build the package.
+A build backend is what drives the build system to build source distributions and wheels from arbitrary source trees.</p>
+<p><code>pdm</code> also ships with its own build backend, <a href="https://pypi.org/project/pdm-pep517/"><code>pdm-pep517</code></a>. Besides the <a href="../pep621/">PEP 621 project meta</a>, it also reads some additional configurations to control the build behavior. To use it, include the following in your <code>pyproject.toml</code>(It will be done automatically if you use the <a href="../../usage/cli_reference/#exec-0--init"><code>pdm init</code></a> or <a href="../../usage/cli_reference/#exec-0--import"><code>pdm import</code></a> to create the file):</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[build-system]</span><span class="w"></span>
+<span class="n">requires</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;pdm-pep517&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="n">build-backend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;pdm.pep517.api&quot;</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<h2 id="dynamic-versioning">Dynamic versioning<a class="headerlink" href="#dynamic-versioning" title="Permanent link">#</a></h2>
+<p><code>pdm-pep517</code> supports dynamic versions from two sources. To enable dynamic versioning, remember to include <code>version</code> in the <code>dynamic</code> field of PEP 621 metadata:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[project]</span><span class="w"></span>
+<span class="p">...</span><span class="w"></span>
+<span class="n">dynamic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;version&quot;</span><span class="p">]</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<h3 id="dynamic-version-from-file">Dynamic version from file<a class="headerlink" href="#dynamic-version-from-file" title="Permanent link">#</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm]</span><span class="w"></span>
+<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">source</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;file&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;mypackage/__version__.py&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<p>The backend will search for the pattern <code>__version__ = "{version}"</code> in the given file and use the value as the version.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Thanks to the TOML syntax, the above example is equivalent to the following:</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm.version]</span><span class="w"></span>
+<span class="n">source</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;file&quot;</span><span class="w"></span>
+<span class="n">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;mypackage/__version__.py&quot;</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+Or:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm]</span><span class="w"></span>
+<span class="n">version</span><span class="p">.</span><span class="n">source</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;file&quot;</span><span class="w"></span>
+<span class="n">version</span><span class="p">.</span><span class="n">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;mypackage/__version__.py&quot;</span><span class="w"></span>
+</code></pre></div></td></tr></table></div></p>
+</div>
+<h3 id="dynamic-version-from-scm">Dynamic version from SCM<a class="headerlink" href="#dynamic-version-from-scm" title="Permanent link">#</a></h3>
+<p>If you've used <a href="https://pypi.org/project/setuptools-scm/"><code>setuptools-scm</code></a> you will be familiar with this approach. <code>pdm-pep517</code> can also read the version from the tag of your SCM repository:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm]</span><span class="w"></span>
+<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">source</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;scm&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<h4 id="specify-the-version-manually">Specify the version manually<a class="headerlink" href="#specify-the-version-manually" title="Permanent link">#</a></h4>
+<p>When building the package, <code>pdm-pep517</code> will require the SCM to be available to populate the version. If that is not the case, you can still specify the version with an environment variable <code>PDM_PEP517_SCM_VERSION</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">export</span> <span class="nv">PDM_PEP517_SCM_VERSION</span><span class="o">=</span><span class="s2">&quot;1.2.3&quot;</span>
+pdm build
+</code></pre></div></td></tr></table></div>
+<h4 id="write-the-version-to-file">Write the version to file<a class="headerlink" href="#write-the-version-to-file" title="Permanent link">#</a></h4>
+<p>For dynamic version read from SCM, it would be helpful to write the evaluated value to a file when building a wheel, so that you do not need <code>importlib.metadata</code> to get the version in code.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm.version]</span><span class="w"></span>
+<span class="n">source</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;scm&quot;</span><span class="w"></span>
+<span class="n">write-to</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;mypackage/__version__.py&quot;</span><span class="w"></span>
+<span class="n">write-template</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;__version__ = &#39;{}&#39;&quot;</span><span class="w">  </span><span class="c1"># optional, default to &quot;{}&quot;</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<p>For source distributions, the version will be <em>frozen</em> and converted to a static version in the <code>pyproject.toml</code> file, which will be included in the distribution.</p>
+<h2 id="include-and-exclude-files">Include and exclude files<a class="headerlink" href="#include-and-exclude-files" title="Permanent link">#</a></h2>
+<p>To include extra files and/or exclude files from the distribution, given the paths in <code>includes</code> and <code>excludes</code> configuration, as glob patterns:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
 <span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm.dev-dependencies]</span><span class="w"></span>
-<span class="n">lint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">    </span><span class="s">&quot;flake8&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s">&quot;black&quot;</span><span class="w"></span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm.build]</span><span class="w"></span>
+<span class="n">includes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">    </span><span class="s">&quot;**/*.json&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="s">&quot;mypackage/&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="p">]</span><span class="w"></span>
-<span class="n">test</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;pytest&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;pytest-cov&quot;</span><span class="p">]</span><span class="w"></span>
-<span class="n">doc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;mkdocs&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="n">excludes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">    </span><span class="s">&quot;mypackage/_temp/*&quot;</span><span class="w"></span>
+<span class="p">]</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
-<p>Editable dependencies are also allowed in <code>dev-dependencies</code>. to define an editable dependency, prefix it with <code>-e</code>:</p>
+<p>In case you may want some files to be included in sdist only, use the <code>source-includes</code> field:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm.build]</span><span class="w"></span>
+<span class="n">includes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[...]</span><span class="w"></span>
+<span class="n">excludes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[...]</span><span class="w"></span>
+<span class="n">source-includes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;tests/&quot;</span><span class="p">]</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<p>Note that the files defined in <code>source-includes</code> will be <strong>excluded</strong> automatically from binary distributions.</p>
+<h3 id="default-values-for-includes-and-excludes">Default values for includes and excludes<a class="headerlink" href="#default-values-for-includes-and-excludes" title="Permanent link">#</a></h3>
+<p>If you don't specify any of these fields, PDM can determine the values for you to fit the most common workflows, in the following manners:</p>
+<ul>
+<li>Top-level packages will be included.</li>
+<li><code>tests</code> package will be excluded from <strong>non-sdist</strong> builds.</li>
+<li><code>src</code> directory will be detected as the <code>package-dir</code> if it exists.</li>
+</ul>
+<p>If your project follows the above conventions you don't need to config any of these fields and it just works.
+Be aware PDM won't add <a href="https://www.python.org/dev/peps/pep-0420/">PEP 420 implicit namespace packages</a> automatically and they should always be specified in <code>includes</code> explicitly.</p>
+<h2 id="select-another-package-directory-to-look-for-packages">Select another package directory to look for packages<a class="headerlink" href="#select-another-package-directory-to-look-for-packages" title="Permanent link">#</a></h2>
+<p>Similar to <code>setuptools</code>' <code>package_dir</code> setting, one can specify another package directory, such as <code>src</code>, in <code>pyproject.toml</code> easily:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm.build]</span><span class="w"></span>
+<span class="n">package-dir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;src&quot;</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<p>If no package directory is given, PDM can also recognize <code>src</code> as the <code>package-dir</code> implicitly if:</p>
+<ol>
+<li><code>src/__init__.py</code> doesn't exist, meaning it is not a valid Python package, and</li>
+<li>There exist some packages under <code>src/*</code>.</li>
+</ol>
+<h2 id="implicit-namespace-packages">Implicit namespace packages<a class="headerlink" href="#implicit-namespace-packages" title="Permanent link">#</a></h2>
+<p>As specified in <a href="https://www.python.org/dev/peps/pep-0420">PEP 420</a>, a directory will be recognized as a namespace package if:</p>
+<ol>
+<li><code>&lt;package&gt;/__init__.py</code> doesn't exist, and</li>
+<li>There exist normal packages and/or other namespace packages under <code>&lt;package&gt;/*</code>, and</li>
+<li><code>&lt;package&gt;</code> is explicitly listed in <code>includes</code></li>
+</ol>
+<h2 id="custom-file-generation">Custom file generation<a class="headerlink" href="#custom-file-generation" title="Permanent link">#</a></h2>
+<p>During the build, you may want to generate other files or download resources from the internet. You can achieve this by the <code>setup-script</code> build configuration:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm.build]</span><span class="w"></span>
+<span class="n">setup-script</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">&quot;</span><span class="n">build</span><span class="p">.</span><span class="n">py</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<p>In the <code>build.py</code> script, <code>pdm-pep517</code> looks for a <code>build</code> function and calls it with two arguments:</p>
+<ul>
+<li><code>src</code>: (str) the path to the source directory</li>
+<li><code>dst</code>: (str) the path to the distribution directory</li>
+</ul>
+<p>Example:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm.dev-dependencies]</span><span class="w"></span>
-<span class="n">editable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">    </span><span class="s">&quot;-e git+https://github.com/pallets/click.git@main#egg=click&quot;</span><span class="p">,</span><span class="w">  </span><span class="c1"># VCS link</span><span class="w"></span>
-<span class="w">    </span><span class="s">&quot;-e ./mypackage/&quot;</span><span class="p">,</span><span class="w">  </span><span class="c1"># local package</span><span class="w"></span>
-<span class="p">]</span><span class="w"></span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># build.py</span>
+<span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">dst</span><span class="p">):</span>
+    <span class="n">target_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dst</span><span class="p">,</span> <span class="s2">&quot;mypackage/myfile.txt&quot;</span><span class="p">)</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">target_file</span><span class="p">),</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">download_file_to</span><span class="p">(</span><span class="n">dst</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-<h2 id="allow-prereleases-in-resolution-result">Allow prereleases in resolution result<a class="headerlink" href="#allow-prereleases-in-resolution-result" title="Permanent link">#</a></h2>
-<p>By default, <code>pdm</code>'s dependency resolver will ignore prereleases unless there are no stable versions for the given version range of a dependency. This behavior can be changed by setting <code>allow_prereleases</code> to <code>true</code> in <code>[tool.pdm]</code> table:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm]</span><span class="w"></span>
-<span class="n">allow_prereleases</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
-<h2 id="specify-other-sources-for-finding-packages">Specify other sources for finding packages<a class="headerlink" href="#specify-other-sources-for-finding-packages" title="Permanent link">#</a></h2>
-<p>Like Pipenv, you can specify extra sources for finding packages with the same format. They are stored in an array of table named <code>[[tool.pdm.source]]</code> in <code>pyproject.toml</code>:</p>
+<p>The generated file will be copied to the resulted wheel with the same hierarchy, you need to create the parent directories if necessary.</p>
+<h2 id="build-platform-specific-wheels">Build Platform-specific Wheels<a class="headerlink" href="#build-platform-specific-wheels" title="Permanent link">#</a></h2>
+<p><code>setup-script</code> can also be used to build platform-specific wheels, such as C extensions. Currently, building C extensions still relies on <code>setuptools</code>.</p>
+<p>Set the <code>run-setuptools</code> to <code>true</code> under <code>setup-script</code>, and <code>pdm-pep517</code> will generate a <code>setup.py</code> with the custom <code>build</code> function in the script and run <code>python setup.py build</code> to build extensions.</p>
+<p>In the <code>build.py</code> script, the expected <code>build</code> function receives the argument dictionary to be passed to the <code>setup()</code> call. In the function, you can update the dictionary with any additional or changed values as you want.</p>
+<p>Here is an example adapted to build <code>MarkupSafe</code>:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[[tool.pdm.source]]</span><span class="w"></span>
-<span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;https://private-site.org/pypi/simple&quot;</span><span class="w"></span>
-<span class="n">verify_ssl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
-<span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;internal&quot;</span><span class="w"></span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># build.py</span>
+<span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">Extension</span>
+
+<span class="n">ext_modules</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">Extension</span><span class="p">(</span><span class="s2">&quot;markupsafe._speedups&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;src/markupsafe/_speedups.c&quot;</span><span class="p">])</span>
+<span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="n">setup_kwargs</span><span class="p">):</span>
+    <span class="n">setup_kwargs</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">ext_modules</span><span class="o">=</span><span class="n">ext_modules</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-<p>With this, the PyPI index and the above internal source will be searched for packages. It basically does the same as passing <code>--extra-index-url https://private-site.org/pypi/simple</code> to <code>pip install</code> command.</p>
-<h3 id="disable-the-pypi-repository">Disable the PyPI repository<a class="headerlink" href="#disable-the-pypi-repository" title="Permanent link">#</a></h3>
-<p>If you want to omit the default PyPI index, just set the source name to <code>pypi</code> and that source will <strong>replace</strong> it.</p>
+<p>The build configuration should look like:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[[tool.pdm.source]]</span><span class="w"></span>
-<span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;https://private.pypi.org/simple&quot;</span><span class="w"></span>
-<span class="n">verify_ssl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
-<span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;pypi&quot;</span><span class="w"></span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># pyproject.toml</span><span class="w"></span>
+<span class="k">[tool.pdm.build]</span><span class="w"></span>
+<span class="n">setup-script</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;build.py&quot;</span><span class="w"></span>
+<span class="n">run-setuptools</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
-<h3 id="find-links-source">Find links source<a class="headerlink" href="#find-links-source" title="Permanent link">#</a></h3>
-<p>By default, all sources are <a href="https://www.python.org/dev/peps/pep-0503/">PEP 503</a> style "indexes" like pip's <code>--index-url</code> and <code>--extra-index-url</code>, however, you can also specify "find links" with
-<code>type = "find_links"</code>. See <a href="https://stackoverflow.com/a/46651848">this answer</a> for the difference between the two types.</p>
-<p>For example, to install from a local directory containing package files:</p>
+<p>If you run <a href="../../usage/cli_reference/#exec-0--build"><code>pdm build</code></a>(or any other build frontends such as <a href="https://pypi.org/project/build">build</a>), PDM will build a platform-specific wheel file as well as a sdist.</p>
+<p>By default, every build is performed in a clean and isolated environment, only build requirements can be seen. If your build has optional requirements that depend on the project environment, you can turn off the environment isolation by <code>pdm build --no-isolation</code> or setting config <code>build_isolation</code> to falsey value.</p>
+<h3 id="override-the-is-purelib-value">Override the "Is-Purelib" value<a class="headerlink" href="#override-the-is-purelib-value" title="Permanent link">#</a></h3>
+<p>Sometimes you may want to build platform-specific wheels but don't have a build script(the binaries may be built or fetched by other tools). In this case
+you can set the <code>is-purelib</code> value in the <code>pyproject.toml</code> to <code>false</code>:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[[tool.pdm.source]]</span><span class="w"></span>
-<span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;file:///path/to/packages&quot;</span><span class="w"></span>
-<span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;local&quot;</span><span class="w"></span>
-<span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;find_links&quot;</span><span class="w"></span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm.build]</span><span class="w"></span>
+<span class="n">is-purelib</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
+<p>If this value is not specified, <code>pdm-pep517</code> will build platform-specific wheels if <code>run-setuptools</code> is <code>true</code>, therefore <code>is-purelib</code> is <code>true</code> in this case.</p>
+<h2 id="editable-build-backend">Editable build backend<a class="headerlink" href="#editable-build-backend" title="Permanent link">#</a></h2>
+<p>PDM implements <a href="https://www.python.org/dev/peps/pep-0660/">PEP 660</a> to build wheels for editable installation.
+One can choose how to generate the wheel out of the two methods:</p>
+<ul>
+<li><code>path</code>: (Default)The legacy method used by setuptools that create .pth files under the packages path.</li>
+<li><code>editables</code>: Create proxy modules under the packages path. Since the proxy module is looked for at runtime, it may not work with some static analysis tools.</li>
+</ul>
+<p>Read the PEP for the difference of the two methods and how they work.</p>
+<p>Specify the method in pyproject.toml like below:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm.build]</span><span class="w"></span>
+<span class="n">editable-backend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;path&quot;</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<p><code>editables</code> backend is more recommended but there is a known limitation that it can't work with PEP 420 namespace packages.
+So you would need to change to <code>path</code> in that case.</p>
 <div class="admonition note">
-<p class="admonition-title">Difference from changing config value</p>
-<p>When you want all packages to be fetched from the given index instead of the default one, despite what platform your are on or who is to deploy the app,
-write it in the <code>[[tool.pdm.source]]</code>. Otherwise if you would like to change the index temporarily on the current platform (for network reasons), you should use
-<code>pdm config pypi.url https://private.pypi.org/simple</code>.</p>
+<p class="admonition-title">About Python 2 compatibility</p>
+<p>Due to the fact that the build backend for PDM managed projects requires Python&gt;=3.6, you would not be able to
+install the current project if Python 2 is being used as the host interpreter. You can still install other dependencies not PDM-backed.</p>
 </div>
-<h3 id="respect-the-order-of-the-sources">Respect the order of the sources<a class="headerlink" href="#respect-the-order-of-the-sources" title="Permanent link">#</a></h3>
-<p>By default, all sources are considered equal, packages from them are sorted by the version and wheel tags, the most matching one with the highest version is selected.</p>
-<p>In some cases you may want to return packages from the preferred source, and search for others if they are missing from the former source. PDM supports this by reading the configuration <code>respect-source-order</code>:</p>
+<h2 id="use-other-pep-517-backends">Use other PEP 517 backends<a class="headerlink" href="#use-other-pep-517-backends" title="Permanent link">#</a></h2>
+<p>Apart from <code>pdm-pep517</code>, <code>pdm</code> plays well with any PEP 517 build backends that comply with PEP 621 specification. At the time of writing, <a href="https://pypi.org/project/flit"><code>flit</code></a>(backend: <code>flit-core</code>) and <a href="https://pypi.org/project/hatch"><code>hatch</code></a>(backend: <code>hatchling</code>) are working well with PEP 621 and <a href="https://pypi.org/project/setuptools"><code>setuptools</code></a> has experimental support. To use one of them, you can specify the backend in the <code>pyproject.toml</code>:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm.resolution]</span><span class="w"></span>
-<span class="n">respect-source-order</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[build-system]</span><span class="w"></span>
+<span class="n">requires</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;flit_core &gt;=2,&lt;4&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="n">build-backend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;flit_core.buildapi&quot;</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
+<p>PDM will call the correct backend when doing <a href="../../usage/cli_reference/#exec-0--build"><code>pdm build</code></a>.</p>
 
               
             </article>
@@ -882,7 +1161,7 @@ write it in the <code>[[tool.pdm.source]]</code>. Otherwise if you would like to
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../pep621/" class="md-footer__link md-footer__link--prev" aria-label="Previous: PEP 621 Metadata" rel="prev">
+        <a href="../tool-pdm/" class="md-footer__link md-footer__link--prev" aria-label="Previous: PDM Tool Settings" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -891,20 +1170,20 @@ write it in the <code>[[tool.pdm.source]]</code>. Otherwise if you would like to
               <span class="md-footer__direction">
                 Previous
               </span>
-              PEP 621 Metadata
+              PDM Tool Settings
             </div>
           </div>
         </a>
       
       
         
-        <a href="../build/" class="md-footer__link md-footer__link--next" aria-label="Next: Build Configuration" rel="next">
+        <a href="../../configuration/" class="md-footer__link md-footer__link--next" aria-label="Next: Configuration" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Build Configuration
+              Configuration
             </div>
           </div>
           <div class="md-footer__button md-icon">

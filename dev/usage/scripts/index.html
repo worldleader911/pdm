@@ -9,7 +9,7 @@
       
       
       <link rel="icon" href="../../assets/logo.svg">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.9">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.13">
     
     
       
@@ -17,10 +17,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.120efc48.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e411adfe.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.9647289d.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cc9b2e1e.min.css">
         
       
     
@@ -369,11 +369,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#toolpdmscripts-table" class="md-nav__link">
-    [tool.pdm.scripts] Table
+  <a href="#user-scripts" class="md-nav__link">
+    User Scripts
   </a>
   
-    <nav class="md-nav" aria-label="[tool.pdm.scripts] Table">
+    <nav class="md-nav" aria-label="User Scripts">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -398,6 +398,26 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#composite" class="md-nav__link">
+    composite
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#script-options" class="md-nav__link">
+    Script Options
+  </a>
+  
+    <nav class="md-nav" aria-label="Script Options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#env" class="md-nav__link">
     env
   </a>
@@ -419,8 +439,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#shared-settings" class="md-nav__link">
-    Shared Settings
+  <a href="#shared-options" class="md-nav__link">
+    Shared Options
   </a>
   
 </li>
@@ -451,6 +471,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#skipping-scripts" class="md-nav__link">
+    Skipping scripts
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -466,8 +493,36 @@
   
   
     <li class="md-nav__item">
+      <a href="../hooks/" class="md-nav__link">
+        Lifecycle and hooks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../advanced/" class="md-nav__link">
         Advanced Usage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cli_reference/" class="md-nav__link">
+        CLI Reference
       </a>
     </li>
   
@@ -530,6 +585,20 @@
     <li class="md-nav__item">
       <a href="../../pyproject/tool-pdm/" class="md-nav__link">
         PDM Tool Settings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pyproject/build/" class="md-nav__link">
+        Build Configuration
       </a>
     </li>
   
@@ -729,11 +798,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#toolpdmscripts-table" class="md-nav__link">
-    [tool.pdm.scripts] Table
+  <a href="#user-scripts" class="md-nav__link">
+    User Scripts
   </a>
   
-    <nav class="md-nav" aria-label="[tool.pdm.scripts] Table">
+    <nav class="md-nav" aria-label="User Scripts">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -758,6 +827,26 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#composite" class="md-nav__link">
+    composite
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#script-options" class="md-nav__link">
+    Script Options
+  </a>
+  
+    <nav class="md-nav" aria-label="Script Options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#env" class="md-nav__link">
     env
   </a>
@@ -779,8 +868,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#shared-settings" class="md-nav__link">
-    Shared Settings
+  <a href="#shared-options" class="md-nav__link">
+    Shared Options
   </a>
   
 </li>
@@ -811,6 +900,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#skipping-scripts" class="md-nav__link">
+    Skipping scripts
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -835,7 +931,15 @@
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm run flask run -p <span class="m">54321</span>
 </code></pre></div></td></tr></table></div>
 <p>It will run <code>flask run -p 54321</code> in the environment that is aware of packages in <code>__pypackages__/</code> folder.</p>
-<h2 id="toolpdmscripts-table"><code>[tool.pdm.scripts]</code> Table<a class="headerlink" href="#toolpdmscripts-table" title="Permanent link">#</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There is a builtin shortcut making all scripts available as root commands
+as long as the script does not conflict with any builtin or plugin-contributed command.
+Said otherwise, if you have a <code>test</code> script, you can run both <code>pdm run test</code> and <code>pdm test</code>.
+But if you have an <code>install</code> script, only <code>pdm run install</code> will run it,
+<code>pdm install</code> will still run the builtin <code>install</code> command.</p>
+</div>
+<h2 id="user-scripts">User Scripts<a class="headerlink" href="#user-scripts" title="Permanent link">#</a></h2>
 <p>PDM also supports custom script shortcuts in the optional <code>[tool.pdm.scripts]</code> section of <code>pyproject.toml</code>.</p>
 <p>You can then run <code>pdm run &lt;script_name&gt;</code> to invoke the script in the context of your PDM project. For example:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -847,12 +951,13 @@
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>$ pdm run start
 Flask server started at http://127.0.0.1:54321
 </code></pre></div></td></tr></table></div>
-<p>Any extra arguments will be appended to the command:</p>
+<p>Any following arguments will be appended to the command:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>$ pdm run start -h <span class="m">0</span>.0.0.0
 Flask server started at http://0.0.0.0:54321
 </code></pre></div></td></tr></table></div>
-<p>PDM supports 3 types of scripts:</p>
+<hr />
+<p>PDM supports 4 types of scripts:</p>
 <h3 id="cmd"><code>cmd</code><a class="headerlink" href="#cmd" title="Permanent link">#</a></h3>
 <p>Plain text scripts are regarded as normal command, or you can explicitly specify it:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -893,6 +998,31 @@ This is basically run via <code>subprocess.Popen()</code> with <code>shell=True<
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm.scripts]</span><span class="w"></span>
 <span class="n">foobar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">call</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;foo_package.bar_module:main(&#39;dev&#39;)&quot;</span><span class="p">}</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
+<h3 id="composite"><code>composite</code><a class="headerlink" href="#composite" title="Permanent link">#</a></h3>
+<p>This script kind execute other defined scripts:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm.scripts]</span><span class="w"></span>
+<span class="n">lint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;flake8&quot;</span><span class="w"></span>
+<span class="n">test</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;pytest&quot;</span><span class="w"></span>
+<span class="n">all</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">composite</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;lint&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;test&quot;</span><span class="p">]}</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<p>Running <code>pdm run all</code> will run <code>lint</code> first and then <code>test</code> if <code>lint</code> succeeded.</p>
+<p>You can also provide arguments to the called scripts:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm.scripts]</span><span class="w"></span>
+<span class="n">lint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;flake8&quot;</span><span class="w"></span>
+<span class="n">test</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;pytest&quot;</span><span class="w"></span>
+<span class="n">all</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">composite</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;lint mypackage/&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;test -v tests/&quot;</span><span class="p">]}</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Argument passed on the command line are given to each called task.</p>
+</div>
+<h2 id="script-options">Script Options<a class="headerlink" href="#script-options" title="Permanent link">#</a></h2>
 <h3 id="env"><code>env</code><a class="headerlink" href="#env" title="Permanent link">#</a></h3>
 <p>All environment variables set in the current shell can be seen by <code>pdm run</code> and will be expanded when executed.
 Besides, you can also define some fixed environment variables in your <code>pyproject.toml</code>:</p>
@@ -903,6 +1033,10 @@ Besides, you can also define some fixed environment variables in your <code>pypr
 <span class="n">start</span><span class="p">.</span><span class="n">env</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">FOO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;bar&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">FLASK_ENV</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;development&quot;</span><span class="p">}</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
 <p>Note how we use <a href="https://github.com/toml-lang/toml">TOML's syntax</a> to define a composite dictionary.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Environment variables specified on a composite task level will override those defined by called tasks.</p>
+</div>
 <h3 id="env_file"><code>env_file</code><a class="headerlink" href="#env_file" title="Permanent link">#</a></h3>
 <p>You can also store all environment variables in a dotenv file and let PDM read it:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -911,6 +1045,10 @@ Besides, you can also define some fixed environment variables in your <code>pypr
 <span class="n">start</span><span class="p">.</span><span class="n">cmd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;flask run -p 54321&quot;</span><span class="w"></span>
 <span class="n">start</span><span class="p">.</span><span class="n">env_file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;.env&quot;</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A dotenv file specified on a composite task level will override those defined by called tasks.</p>
+</div>
 <h3 id="site_packages"><code>site_packages</code><a class="headerlink" href="#site_packages" title="Permanent link">#</a></h3>
 <p>To make sure the running environment is properly isolated from the outer Python interpreter,
 site-packages from the selected interpreter WON'T be loaded into <code>sys.path</code>, unless any of the following conditions holds:</p>
@@ -920,8 +1058,8 @@ site-packages from the selected interpreter WON'T be loaded into <code>sys.path<
 <li><code>site_packages = true</code> is in either the script table or the global setting key <code>_</code>.</li>
 </ol>
 <p>Note that site-packages will always be loaded if running with PEP 582 enabled(without the <code>pdm run</code> prefix).</p>
-<h3 id="shared-settings">Shared Settings<a class="headerlink" href="#shared-settings" title="Permanent link">#</a></h3>
-<p>If you want the settings to be shared by all tasks run by <code>pdm run</code>,
+<h3 id="shared-options">Shared Options<a class="headerlink" href="#shared-options" title="Permanent link">#</a></h3>
+<p>If you want the options to be shared by all tasks run by <code>pdm run</code>,
 you can write them under a special key <code>_</code> in <code>[tool.pdm.scripts]</code> table:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
@@ -939,12 +1077,16 @@ you can write them under a special key <code>_</code> in <code>[tool.pdm.scripts
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>$ pdm run --list
-Name        Type  Script           Description
------------ ----- ---------------- ----------------------
-test_cmd    cmd   flask db upgrade
-test_script call  test_script:main call a python <span class="k">function</span>
-test_shell  shell <span class="nb">echo</span> <span class="nv">$FOO</span>        shell <span class="nb">command</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>$ pdm run --list
+╭─────────────┬───────┬───────────────────────────╮
+│ Name        │ Type  │ Description               │
+├─────────────┼───────┼───────────────────────────┤
+│ test_cmd    │ cmd   │ flask db upgrade          │
+│ test_script │ call  │ call a python <span class="k">function</span>    │
+│ test_shell  │ shell │ shell <span class="nb">command</span>             │
+╰─────────────┴───────┴───────────────────────────╯
 </code></pre></div></td></tr></table></div>
 <p>You can add an <code>help</code> option with the description of the script, and it will be displayed in the <code>Description</code> column in the above output.</p>
 <h2 id="pre-post-scripts">Pre &amp; Post Scripts<a class="headerlink" href="#pre-post-scripts" title="Permanent link">#</a></h2>
@@ -972,6 +1114,12 @@ test_shell  shell <span class="nb">echo</span> <span class="nv">$FOO</span>     
 <li><code>post_lock</code>: Run after dependency resolution</li>
 <li><code>pre_build</code>: Run before building distributions</li>
 <li><code>post_build</code>: Run after distributions are built</li>
+<li><code>pre_publish</code>: Run before publishinbg distributions</li>
+<li><code>post_publish</code>: Run after distributions are published</li>
+<li><code>pre_script</code>: Run before any script</li>
+<li><code>post_script</code>: Run after any script</li>
+<li><code>pre_run</code>: Run once before run script invocation</li>
+<li><code>post_script</code>: Run once after run script invocation</li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -983,6 +1131,26 @@ test_shell  shell <span class="nb">echo</span> <span class="nv">$FOO</span>     
 scripts can be triggered by both <code>pdm install</code> and <code>pdm run install</code>. So it is
 recommended to not use the preserved names.</p>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Composite tasks can also have pre and post scripts.
+Called tasks will run their own pre and post scripts.</p>
+</div>
+<h2 id="skipping-scripts">Skipping scripts<a class="headerlink" href="#skipping-scripts" title="Permanent link">#</a></h2>
+<p>Because, sometimes it is desirable to run a script but without its hooks or pre and post scripts,
+there is a <code>--skip=:all</code> which will disable all hooks, pre and post.
+There is also <code>--skip=:pre</code> and <code>--skip=:post</code> allowing to respectively
+skip all <code>pre_*</code> hooks and all <code>post_*</code> hooks.</p>
+<p>It is also possible to need a pre script but not the post one,
+or to need all tasks from a composite tasks except one.
+For those use cases, there is a finer grained <code>--skip</code> parameter
+accepting a list of tasks or hooks name to exclude.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="go">pdm run --skip pre_task1,task2 my-composite</span>
+</code></pre></div></td></tr></table></div>
+<p>This command will run the <code>my-composite</code> task and skip the <code>pre_task1</code> hook as well as the <code>task2</code> and its hooks.</p>
+<p>You can also provide you skip list in <code>PDM_SKIP_HOOKS</code> environment variable
+but it will be overridden as soon as the <code>--skip</code> parameter is provided.</p>
+<p>There is more details on hooks and pre/post scripts behavior on <a href="../hooks/">the dedicated hooks page</a>.</p>
 
               
             </article>
@@ -1012,13 +1180,13 @@ recommended to not use the preserved names.</p>
       
       
         
-        <a href="../advanced/" class="md-footer__link md-footer__link--next" aria-label="Next: Advanced Usage" rel="next">
+        <a href="../hooks/" class="md-footer__link md-footer__link--next" aria-label="Next: Lifecycle and hooks" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Advanced Usage
+              Lifecycle and hooks
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -1086,7 +1254,7 @@ recommended to not use the preserved names.</p>
     <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.6e54b5cd.min.js"></script>
+      <script src="../../assets/javascripts/bundle.ed9748b7.min.js"></script>
       
     
   </body>

@@ -9,7 +9,7 @@
       
       
       <link rel="icon" href="../../assets/logo.svg">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.9">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.13">
     
     
       
@@ -17,10 +17,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.120efc48.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e411adfe.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.9647289d.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cc9b2e1e.min.css">
         
       
     
@@ -349,8 +349,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#add-local-dependencies" class="md-nav__link">
-    Add local dependencies
+  <a href="#local-dependencies" class="md-nav__link">
+    Local dependencies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vcs-dependencies" class="md-nav__link">
+    VCS dependencies
   </a>
   
 </li>
@@ -358,6 +365,13 @@
           <li class="md-nav__item">
   <a href="#add-development-only-dependencies" class="md-nav__link">
     Add development only dependencies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#editable-dependencies" class="md-nav__link">
+    Editable dependencies
   </a>
   
 </li>
@@ -464,6 +478,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#set-acceptable-format-for-locking-or-installing" class="md-nav__link">
+    Set acceptable format for locking or installing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#solve-the-locking-failure" class="md-nav__link">
     Solve the locking failure
   </a>
@@ -520,8 +541,36 @@
   
   
     <li class="md-nav__item">
+      <a href="../hooks/" class="md-nav__link">
+        Lifecycle and hooks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../advanced/" class="md-nav__link">
         Advanced Usage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cli_reference/" class="md-nav__link">
+        CLI Reference
       </a>
     </li>
   
@@ -584,6 +633,20 @@
     <li class="md-nav__item">
       <a href="../../pyproject/tool-pdm/" class="md-nav__link">
         PDM Tool Settings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pyproject/build/" class="md-nav__link">
+        Build Configuration
       </a>
     </li>
   
@@ -791,8 +854,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#add-local-dependencies" class="md-nav__link">
-    Add local dependencies
+  <a href="#local-dependencies" class="md-nav__link">
+    Local dependencies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vcs-dependencies" class="md-nav__link">
+    VCS dependencies
   </a>
   
 </li>
@@ -800,6 +870,13 @@
           <li class="md-nav__item">
   <a href="#add-development-only-dependencies" class="md-nav__link">
     Add development only dependencies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#editable-dependencies" class="md-nav__link">
+    Editable dependencies
   </a>
   
 </li>
@@ -906,6 +983,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#set-acceptable-format-for-locking-or-installing" class="md-nav__link">
+    Set acceptable format for locking or installing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#solve-the-locking-failure" class="md-nav__link">
     Solve the locking failure
   </a>
@@ -974,20 +1058,44 @@ The following examples are run on Ubuntu 18.04, a few changes must be done if yo
 <h2 id="add-dependencies">Add dependencies<a class="headerlink" href="#add-dependencies" title="Permanent link">#</a></h2>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="go">pdm add requests</span>
 </code></pre></div></td></tr></table></div>
-<p><code>pdm add</code> can be followed by one or several dependencies, and the dependency specification is described in
+<p><a href="../cli_reference/#exec-0--add"><code>pdm add</code></a> can be followed by one or several dependencies, and the dependency specification is described in
 <a href="https://www.python.org/dev/peps/pep-0508/">PEP 508</a>.</p>
 <p>PDM also allows extra dependency groups by providing <code>-G/--group &lt;name&gt;</code> option, and those dependencies will go to
 <code>[project.optional-dependencies.&lt;name&gt;]</code> table in the project file, respectively.</p>
 <p>After that, dependencies and sub-dependencies will be resolved properly and installed for you, you can view <code>pdm.lock</code> to see the resolved result of all dependencies.</p>
-<h3 id="add-local-dependencies">Add local dependencies<a class="headerlink" href="#add-local-dependencies" title="Permanent link">#</a></h3>
+<h3 id="local-dependencies">Local dependencies<a class="headerlink" href="#local-dependencies" title="Permanent link">#</a></h3>
 <p>Local packages can be added with their paths. The path can be a file or a directory:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="go">pdm add ./sub-package</span>
 <span class="go">pdm add ./first-1.0.0-py2.py3-none-any.whl</span>
 </code></pre></div></td></tr></table></div>
 <p>The paths MUST start with a <code>.</code>, otherwise it will be recognized as a normal named requirement.</p>
-<p>In addition, <strong>a local directory</strong> can also be installed in <a href="https://pip.pypa.io/en/stable/cli/pip_install/#editable-installs">editable mode</a>
-(just like <code>pip install -e &lt;local project path&gt;</code> would) using <code>pdm add -e/--editable &lt;local project path&gt;</code>.</p>
+<h3 id="vcs-dependencies">VCS dependencies<a class="headerlink" href="#vcs-dependencies" title="Permanent link">#</a></h3>
+<p>You can also install from a git repository url or other version control systems. The following are supported:</p>
+<ul>
+<li>Git: <code>git</code></li>
+<li>Mercurial: <code>hg</code></li>
+<li>Subversion: <code>svn</code></li>
+<li>Bazaar: <code>bzr</code></li>
+</ul>
+<p>The URL should be like: <code>{vcs}+{url}@{rev}</code></p>
+<p>Examples:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="gp"># </span>Install pip repo on tag <span class="sb">`</span><span class="m">22</span>.0<span class="sb">`</span>
+<span class="go">pdm add &quot;git+https://github.com/pypa/pip.git@22.0&quot;</span>
+<span class="gp"># </span>Provide credentials <span class="k">in</span> the URL
+<span class="go">pdm add &quot;git+https://username:password@github.com/username/private-repo.git@master&quot;</span>
+<span class="gp"># </span>Give a name to the dependency
+<span class="go">pdm add &quot;pip @ git+https://github.com/pypa/pip.git@22.0&quot;</span>
+<span class="gp"># </span>Or use the <span class="c1">#egg fragment</span>
+<span class="go">pdm add &quot;git+https://github.com/pypa/pip.git@22.0#egg=pip&quot;</span>
+</code></pre></div></td></tr></table></div>
 <h3 id="add-development-only-dependencies">Add development only dependencies<a class="headerlink" href="#add-development-only-dependencies" title="Permanent link">#</a></h3>
 <p><em>New in 1.5.0</em></p>
 <p>PDM also supports defining groups of dependencies that are useful for development,
@@ -1003,8 +1111,22 @@ so using <code>optional-dependencies</code> is probably not a good idea. We can 
 <p>For backward-compatibility, if only <code>-d</code> or <code>--dev</code> is specified, dependencies will go to <code>dev</code> group under <code>[tool.pdm.dev-dependencies]</code> by default.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The same group name MUST NOT appear in both <code>[tool.pdm.dev-dependencies]</code> and <code>[project.optional-dependencies]</code> .</p>
+<p>The same group name MUST NOT appear in both <code>[tool.pdm.dev-dependencies]</code> and <code>[project.optional-dependencies]</code>.</p>
 </div>
+<h3 id="editable-dependencies">Editable dependencies<a class="headerlink" href="#editable-dependencies" title="Permanent link">#</a></h3>
+<p><strong>Local directories</strong> and <strong>VCS dependencies</strong> can be installed in <a href="https://pip.pypa.io/en/stable/cli/pip_install/#editable-installs">editable mode</a>. If you are familiar with <code>pip</code>, it is just like <code>pip install -e &lt;package&gt;</code>. <strong>Editable packages are allowed only in development dependencies</strong>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="gp"># </span>A relative path to the directory
+<span class="go">pdm add -e ./sub-package</span>
+<span class="gp"># </span>A file URL to a <span class="nb">local</span> directory
+<span class="go">pdm add -e file:///path/to/sub-package</span>
+<span class="gp"># </span>A VCS URL
+<span class="go">pdm add -e git+https://github.com/pallets/click.git@main#egg=click</span>
+</code></pre></div></td></tr></table></div>
 <h3 id="save-version-specifiers">Save version specifiers<a class="headerlink" href="#save-version-specifiers" title="Permanent link">#</a></h3>
 <p>If the package is given without a version specifier like <code>pdm add requests</code>. PDM provides three different behaviors of what version
 specifier is saved for the dependency, which is given by <code>--save-&lt;strategy&gt;</code>(Assume <code>2.21.0</code> is the latest version that can be found
@@ -1016,7 +1138,7 @@ for the dependency):</p>
 <li><code>wildcard</code>: Don't constrain version and leave the specifier to be wildcard: <code>*</code>.</li>
 </ul>
 <h3 id="add-prereleases">Add prereleases<a class="headerlink" href="#add-prereleases" title="Permanent link">#</a></h3>
-<p>One can give <code>--pre/--prerelease</code> option to <code>pdm add</code> so that prereleases are allowed to be pinned for the given packages.</p>
+<p>One can give <code>--pre/--prerelease</code> option to <a href="../cli_reference/#exec-0--add"><code>pdm add</code></a> so that prereleases are allowed to be pinned for the given packages.</p>
 <h2 id="update-existing-dependencies">Update existing dependencies<a class="headerlink" href="#update-existing-dependencies" title="Permanent link">#</a></h2>
 <p>To update all dependencies in the lock file:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="go">pdm update</span>
@@ -1050,7 +1172,7 @@ which is given by <code>--update-&lt;strategy&gt;</code> option:</p>
 </ul>
 <h3 id="update-packages-to-the-versions-that-break-the-version-specifiers">Update packages to the versions that break the version specifiers<a class="headerlink" href="#update-packages-to-the-versions-that-break-the-version-specifiers" title="Permanent link">#</a></h3>
 <p>One can give <code>-u/--unconstrained</code> to tell PDM to ignore the version specifiers in the <code>pyproject.toml</code>.
-This works similarly to the <code>yarn upgrade -L/--latest</code> command. Besides, <code>pdm update</code> also supports the
+This works similarly to the <code>yarn upgrade -L/--latest</code> command. Besides, <a href="../cli_reference/#exec-0--update"><code>pdm update</code></a> also supports the
 <code>--pre/--prerelease</code> option.</p>
 <h2 id="remove-existing-dependencies">Remove existing dependencies<a class="headerlink" href="#remove-existing-dependencies" title="Permanent link">#</a></h2>
 <p>To remove existing dependencies from project file and the library directory:</p>
@@ -1069,12 +1191,11 @@ This works similarly to the <code>yarn upgrade -L/--latest</code> command. Besid
 <h2 id="install-the-packages-pinned-in-lock-file">Install the packages pinned in lock file<a class="headerlink" href="#install-the-packages-pinned-in-lock-file" title="Permanent link">#</a></h2>
 <p>There are two similar commands to do this job with a slight difference:</p>
 <ul>
-<li><code>pdm install</code> will check the lock file and relock if it mismatches with project file, then install.</li>
-<li><code>pdm sync</code> installs dependencies in the lock file and will error out if it doesn't exist.
-  Besides, <code>pdm sync</code> can also remove unneeded packages if <code>--clean</code> option is given.</li>
+<li><a href="../cli_reference/#exec-0--install"><code>pdm install</code></a> will check the lock file and relock if it mismatches with project file, then install.</li>
+<li><a href="../cli_reference/#exec-0--sync"><code>pdm update</code></a> installs dependencies in the lock file and will error out if it doesn't exist. Besides, <a href="../cli_reference/#exec-0--sync"><code>pdm sync</code></a> can also remove unneeded packages if <code>--clean</code> option is given.</li>
 </ul>
 <h2 id="specify-the-lockfile-to-use">Specify the lockfile to use<a class="headerlink" href="#specify-the-lockfile-to-use" title="Permanent link">#</a></h2>
-<p>You can specify another lockfile than the default <code>pdm.lock</code> by using the <code>-L/--lockfilie &lt;filepath&gt;</code> option or the <code>PDM_LOCKFILE</code> environment variable.</p>
+<p>You can specify another lockfile than the default <a href="../cli_reference/#exec-0--lock"><code>pdm lock</code></a> by using the <code>-L/--lockfilie &lt;filepath&gt;</code> option or the <code>PDM_LOCKFILE</code> environment variable.</p>
 <h3 id="select-a-subset-of-dependencies-with-cli-options">Select a subset of dependencies with CLI options<a class="headerlink" href="#select-a-subset-of-dependencies-with-cli-options" title="Permanent link">#</a></h3>
 <p>Say we have a project with following dependencies:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -1190,6 +1311,21 @@ to <code>https://pypi.org/simple</code> if none is found.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm]</span><span class="w"></span>
 <span class="n">allow_prereleases</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<h2 id="set-acceptable-format-for-locking-or-installing">Set acceptable format for locking or installing<a class="headerlink" href="#set-acceptable-format-for-locking-or-installing" title="Permanent link">#</a></h2>
+<p>If you want to control the format(binary/sdist) of the packages, you can set the env vars <code>PDM_NO_BINARY</code> and <code>PDM_ONLY_BINARY</code>.</p>
+<p>Each env var is a comma-separated list of package name. You can set it to <code>:all:</code> to apply to all packages. For example:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code># No binary for werkzeug will be locked nor used for installation
+PDM_NO_BINARY=werkzeug pdm add flask
+# Only binaries will be locked in the lock file
+PDM_ONLY_BINARY=:all: pdm lock
+# No binaries will be used for installation
+PDM_NO_BINARY=:all: pdm install
 </code></pre></div></td></tr></table></div>
 <h2 id="solve-the-locking-failure">Solve the locking failure<a class="headerlink" href="#solve-the-locking-failure" title="Permanent link">#</a></h2>
 <p>If PDM is not able to find a resolution to satisfy the requirements, it will raise an error. For example,</p>
@@ -1339,7 +1475,7 @@ Most of the time, you can just add any transient constraints to the <code>depend
     <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.6e54b5cd.min.js"></script>
+      <script src="../../assets/javascripts/bundle.ed9748b7.min.js"></script>
       
     
   </body>

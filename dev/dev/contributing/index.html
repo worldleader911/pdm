@@ -665,6 +665,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#release" class="md-nav__link">
+    Release
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -795,6 +802,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#release" class="md-nav__link">
+    Release
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -915,6 +929,16 @@ mood that describes your changes. (e.g., <code>Deduplicate the plugins list.</co
 <p>If you make some changes to the <code>docs/</code> and you want to preview the build result, simply do:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm run doc
 </code></pre></div></td></tr></table></div>
+<h2 id="release">Release<a class="headerlink" href="#release" title="Permanent link">#</a></h2>
+<p>Once all changes are done and ready to release, you can preview the changelog contents by running:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm run release --dry-run
+</code></pre></div></td></tr></table></div>
+<p>Make sure the next version and the changelog are as expected in the output.</p>
+<p>Then cut a release on the <strong>main</strong> branch:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm run release
+</code></pre></div></td></tr></table></div>
+<p>GitHub action will create the release and upload the distributions to PyPI.</p>
+<p>Read more options about version bumping by <code>pdm run release --help</code>.</p>
 
               
             </article>

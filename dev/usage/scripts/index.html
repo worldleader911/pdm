@@ -1145,7 +1145,7 @@ skip all <code>pre_*</code> hooks and all <code>post_*</code> hooks.</p>
 or to need all tasks from a composite tasks except one.
 For those use cases, there is a finer grained <code>--skip</code> parameter
 accepting a list of tasks or hooks name to exclude.</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="go">pdm run --skip pre_task1,task2 my-composite</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm run --skip pre_task1,task2 my-composite
 </code></pre></div></td></tr></table></div>
 <p>This command will run the <code>my-composite</code> task and skip the <code>pre_task1</code> hook as well as the <code>task2</code> and its hooks.</p>
 <p>You can also provide you skip list in <code>PDM_SKIP_HOOKS</code> environment variable

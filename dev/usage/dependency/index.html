@@ -1026,8 +1026,8 @@
 The following examples are run on Ubuntu 18.04, a few changes must be done if you are using Windows.</p>
 <h2 id="initialize-a-project">Initialize a project<a class="headerlink" href="#initialize-a-project" title="Permanent link">#</a></h2>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="go">mkdir pdm-test &amp;&amp; cd pdm-test</span>
-<span class="go">pdm init</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>mkdir pdm-test <span class="o">&amp;&amp;</span> <span class="nb">cd</span> pdm-test
+pdm init
 </code></pre></div></td></tr></table></div>
 <p>Answer several questions asked by PDM and a <code>pyproject.toml</code> will be created for you in the project root:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -1056,7 +1056,7 @@ The following examples are run on Ubuntu 18.04, a few changes must be done if yo
 <a href="https://www.python.org/dev/peps/pep-0621/">PEP 621 specification</a></p>
 <p>For details of the meaning of each field in <code>pyproject.toml</code>, please refer to <a href="../../pyproject/pep621/">Project File</a>.</p>
 <h2 id="add-dependencies">Add dependencies<a class="headerlink" href="#add-dependencies" title="Permanent link">#</a></h2>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="go">pdm add requests</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm add requests
 </code></pre></div></td></tr></table></div>
 <p><a href="../cli_reference/#exec-0--add"><code>pdm add</code></a> can be followed by one or several dependencies, and the dependency specification is described in
 <a href="https://www.python.org/dev/peps/pep-0508/">PEP 508</a>.</p>
@@ -1066,8 +1066,8 @@ The following examples are run on Ubuntu 18.04, a few changes must be done if yo
 <h3 id="local-dependencies">Local dependencies<a class="headerlink" href="#local-dependencies" title="Permanent link">#</a></h3>
 <p>Local packages can be added with their paths. The path can be a file or a directory:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="go">pdm add ./sub-package</span>
-<span class="go">pdm add ./first-1.0.0-py2.py3-none-any.whl</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm add ./sub-package
+pdm add ./first-1.0.0-py2.py3-none-any.whl
 </code></pre></div></td></tr></table></div>
 <p>The paths MUST start with a <code>.</code>, otherwise it will be recognized as a normal named requirement.</p>
 <h3 id="vcs-dependencies">VCS dependencies<a class="headerlink" href="#vcs-dependencies" title="Permanent link">#</a></h3>
@@ -1087,21 +1087,21 @@ The following examples are run on Ubuntu 18.04, a few changes must be done if yo
 <span class="normal">5</span>
 <span class="normal">6</span>
 <span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="gp"># </span>Install pip repo on tag <span class="sb">`</span><span class="m">22</span>.0<span class="sb">`</span>
-<span class="go">pdm add &quot;git+https://github.com/pypa/pip.git@22.0&quot;</span>
-<span class="gp"># </span>Provide credentials <span class="k">in</span> the URL
-<span class="go">pdm add &quot;git+https://username:password@github.com/username/private-repo.git@master&quot;</span>
-<span class="gp"># </span>Give a name to the dependency
-<span class="go">pdm add &quot;pip @ git+https://github.com/pypa/pip.git@22.0&quot;</span>
-<span class="gp"># </span>Or use the <span class="c1">#egg fragment</span>
-<span class="go">pdm add &quot;git+https://github.com/pypa/pip.git@22.0#egg=pip&quot;</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Install pip repo on tag `22.0`</span>
+pdm add <span class="s2">&quot;git+https://github.com/pypa/pip.git@22.0&quot;</span>
+<span class="c1"># Provide credentials in the URL</span>
+pdm add <span class="s2">&quot;git+https://username:password@github.com/username/private-repo.git@master&quot;</span>
+<span class="c1"># Give a name to the dependency</span>
+pdm add <span class="s2">&quot;pip @ git+https://github.com/pypa/pip.git@22.0&quot;</span>
+<span class="c1"># Or use the #egg fragment</span>
+pdm add <span class="s2">&quot;git+https://github.com/pypa/pip.git@22.0#egg=pip&quot;</span>
 </code></pre></div></td></tr></table></div>
 <h3 id="add-development-only-dependencies">Add development only dependencies<a class="headerlink" href="#add-development-only-dependencies" title="Permanent link">#</a></h3>
 <p><em>New in 1.5.0</em></p>
 <p>PDM also supports defining groups of dependencies that are useful for development,
 e.g. some for testing and others for linting. We usually don't want these dependencies appear in the distribution's metadata
 so using <code>optional-dependencies</code> is probably not a good idea. We can define them as development dependencies:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="go">pdm add -dG test pytest</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm add -dG <span class="nb">test</span> pytest
 </code></pre></div></td></tr></table></div>
 <p>This will result in a pyproject.toml as following:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -1120,12 +1120,12 @@ so using <code>optional-dependencies</code> is probably not a good idea. We can 
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="gp"># </span>A relative path to the directory
-<span class="go">pdm add -e ./sub-package</span>
-<span class="gp"># </span>A file URL to a <span class="nb">local</span> directory
-<span class="go">pdm add -e file:///path/to/sub-package</span>
-<span class="gp"># </span>A VCS URL
-<span class="go">pdm add -e git+https://github.com/pallets/click.git@main#egg=click</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># A relative path to the directory</span>
+pdm add -e ./sub-package
+<span class="c1"># A file URL to a local directory</span>
+pdm add -e file:///path/to/sub-package
+<span class="c1"># A VCS URL</span>
+pdm add -e git+https://github.com/pallets/click.git@main#egg<span class="o">=</span>click
 </code></pre></div></td></tr></table></div>
 <h3 id="save-version-specifiers">Save version specifiers<a class="headerlink" href="#save-version-specifiers" title="Permanent link">#</a></h3>
 <p>If the package is given without a version specifier like <code>pdm add requests</code>. PDM provides three different behaviors of what version
@@ -1141,34 +1141,34 @@ for the dependency):</p>
 <p>One can give <code>--pre/--prerelease</code> option to <a href="../cli_reference/#exec-0--add"><code>pdm add</code></a> so that prereleases are allowed to be pinned for the given packages.</p>
 <h2 id="update-existing-dependencies">Update existing dependencies<a class="headerlink" href="#update-existing-dependencies" title="Permanent link">#</a></h2>
 <p>To update all dependencies in the lock file:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="go">pdm update</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm update
 </code></pre></div></td></tr></table></div>
 <p>To update the specified package(s):</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="go">pdm update requests</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm update requests
 </code></pre></div></td></tr></table></div>
 <p>To update multiple groups of dependencies:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="go">pdm update -G security -G http</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm update -G security -G http
 </code></pre></div></td></tr></table></div>
 <p>To update a given package in the specified group:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="go">pdm update -G security cryptography</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm update -G security cryptography
 </code></pre></div></td></tr></table></div>
 <p>If the group is not given, PDM will search for the requirement in the default dependencies set and raises an error if none is found.</p>
 <p>To update packages in development dependencies:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="gp"># </span>Update all default + dev-dependencies
-<span class="go">pdm update -d</span>
-<span class="gp"># </span>Update a package <span class="k">in</span> the specified group of dev-dependencies
-<span class="go">pdm update -dG test pytest</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Update all default + dev-dependencies</span>
+pdm update -d
+<span class="c1"># Update a package in the specified group of dev-dependencies</span>
+pdm update -dG <span class="nb">test</span> pytest
 </code></pre></div></td></tr></table></div>
 <h3 id="about-update-strategy">About update strategy<a class="headerlink" href="#about-update-strategy" title="Permanent link">#</a></h3>
 <p>Similarly, PDM also provides 2 different behaviors of updating dependencies and sub-dependencies，
 which is given by <code>--update-&lt;strategy&gt;</code> option:</p>
 <ul>
 <li><code>reuse</code>: Keep all locked dependencies except for those given in the command line (default).</li>
-<li><code>eager</code>: Try to lock a newer version of the packages in command line and their recursive sub-dependencies
-  and keep other dependencies as they are.</li>
+<li><code>eager</code>: Try to lock a newer version of the packages in command line and their recursive sub-dependencies and keep other dependencies as they are.</li>
+<li><code>all</code>: Update all dependencies and sub-dependencies.</li>
 </ul>
 <h3 id="update-packages-to-the-versions-that-break-the-version-specifiers">Update packages to the versions that break the version specifiers<a class="headerlink" href="#update-packages-to-the-versions-that-break-the-version-specifiers" title="Permanent link">#</a></h3>
 <p>One can give <code>-u/--unconstrained</code> to tell PDM to ignore the version specifiers in the <code>pyproject.toml</code>.
@@ -1181,18 +1181,18 @@ This works similarly to the <code>yarn upgrade -L/--latest</code> command. Besid
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="gp"># </span>Remove requests from the default dependencies
-<span class="go">pdm remove requests</span>
-<span class="gp"># </span>Remove h11 from the <span class="s1">&#39;web&#39;</span> group of optional-dependencies
-<span class="go">pdm remove -G web h11</span>
-<span class="gp"># </span>Remove pytest-cov from the <span class="sb">`</span><span class="nb">test</span><span class="sb">`</span> group of dev-dependencies
-<span class="go">pdm remove -dG test pytest-cov</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Remove requests from the default dependencies</span>
+pdm remove requests
+<span class="c1"># Remove h11 from the &#39;web&#39; group of optional-dependencies</span>
+pdm remove -G web h11
+<span class="c1"># Remove pytest-cov from the `test` group of dev-dependencies</span>
+pdm remove -dG <span class="nb">test</span> pytest-cov
 </code></pre></div></td></tr></table></div>
 <h2 id="install-the-packages-pinned-in-lock-file">Install the packages pinned in lock file<a class="headerlink" href="#install-the-packages-pinned-in-lock-file" title="Permanent link">#</a></h2>
 <p>There are two similar commands to do this job with a slight difference:</p>
 <ul>
 <li><a href="../cli_reference/#exec-0--install"><code>pdm install</code></a> will check the lock file and relock if it mismatches with project file, then install.</li>
-<li><a href="../cli_reference/#exec-0--sync"><code>pdm update</code></a> installs dependencies in the lock file and will error out if it doesn't exist. Besides, <a href="../cli_reference/#exec-0--sync"><code>pdm sync</code></a> can also remove unneeded packages if <code>--clean</code> option is given.</li>
+<li><a href="../cli_reference/#exec-0--update"><code>pdm update</code></a> installs dependencies in the lock file and will error out if it doesn't exist. Besides, <a href="../cli_reference/#exec-0--sync"><code>pdm sync</code></a> can also remove unneeded packages if <code>--clean</code> option is given.</li>
 </ul>
 <h2 id="specify-the-lockfile-to-use">Specify the lockfile to use<a class="headerlink" href="#specify-the-lockfile-to-use" title="Permanent link">#</a></h2>
 <p>You can specify another lockfile than the default <a href="../cli_reference/#exec-0--lock"><code>pdm lock</code></a> by using the <code>-L/--lockfilie &lt;filepath&gt;</code> option or the <code>PDM_LOCKFILE</code> environment variable.</p>
@@ -1273,7 +1273,7 @@ This works similarly to the <code>yarn upgrade -L/--latest</code> command. Besid
 <p>Besides, if you don't want the root project to be installed, add <code>--no-self</code> option, and <code>--no-editable</code> can be used when you want all packages to be installed in non-editable versions. With <code>--no-editable</code> turn on, you can safely archive the whole <code>__pypackages__</code> and copy it to the target environment for deployment.</p>
 <h2 id="show-what-packages-are-installed">Show what packages are installed<a class="headerlink" href="#show-what-packages-are-installed" title="Permanent link">#</a></h2>
 <p>Similar to <code>pip list</code>, you can list all packages installed in the packages directory:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="go">pdm list</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm list
 </code></pre></div></td></tr></table></div>
 <p>Or show a dependency graph by:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -1302,7 +1302,7 @@ bump2version 1.0.0
 </code></pre></div></td></tr></table></div>
 <h2 id="set-pypi-index-url">Set PyPI index URL<a class="headerlink" href="#set-pypi-index-url" title="Permanent link">#</a></h2>
 <p>You can specify a PyPI mirror URL by following commands:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="go">pdm config pypi.url https://test.pypi.org/simple</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm config pypi.url https://test.pypi.org/simple
 </code></pre></div></td></tr></table></div>
 <p>By default, PDM will read the pip's configuration files to decide the PyPI URL, and fallback
 to <code>https://pypi.org/simple</code> if none is found.</p>

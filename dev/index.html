@@ -359,13 +359,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#unicode-and-ansi-supports" class="md-nav__link">
-    Unicode and ANSI supports
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#use-with-ide" class="md-nav__link">
     Use with IDE
   </a>
@@ -876,13 +869,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#unicode-and-ansi-supports" class="md-nav__link">
-    Unicode and ANSI supports
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#use-with-ide" class="md-nav__link">
     Use with IDE
   </a>
@@ -1052,7 +1038,7 @@ Make sure you have installed <a href="https://git-lfs.github.com/">Git LFS</a> o
 <p>See also: <a href="https://pypa.github.io/pipx/">https://pypa.github.io/pipx/</a></p>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="go">pip install --user pdm</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pip install --user pdm
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
@@ -1141,10 +1127,6 @@ pdm completion zsh &gt; <span class="nv">$ZSH_CUSTOM</span>/plugins/pdm/_pdm
 </div>
 </div>
 </div>
-<h2 id="unicode-and-ansi-supports">Unicode and ANSI supports<a class="headerlink" href="#unicode-and-ansi-supports" title="Permanent link">#</a></h2>
-<p>PDM provides a fancy terminal UI with the help of ANSI characters and unicode emojis.
-It can turn on/off automatically depending on whether it is supported on your terminal.
-However, if you see any garbled characters, set env var <code>DISABLE_UNICODE_OUTPUT=1</code> to turn off it.</p>
 <h2 id="use-with-ide">Use with IDE<a class="headerlink" href="#use-with-ide" title="Permanent link">#</a></h2>
 <p>Now there are not built-in support or plugins for PEP 582 in most IDEs, you have to configure your tools manually.</p>
 <p>PDM will write and store project-wide configurations in <code>.pdm.toml</code> and you are recommended to add following lines

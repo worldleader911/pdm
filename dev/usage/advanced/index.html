@@ -873,10 +873,10 @@ of <code>pdm run pytest tests/</code>.</p>
 file will be modified unexpectedly. Additional dependencies can be supplied with the <code>deps</code> config. Besides, <code>isolated_buid</code> and <code>passenv</code>
 config should be set as the above example to make PDM work properly.</p>
 <p>To get rid of these constraints, there is a Tox plugin <a href="https://github.com/pdm-project/tox-pdm">tox-pdm</a> which can ease the usage. You can install it by</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="go">pip install tox-pdm</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pip install tox-pdm
 </code></pre></div></td></tr></table></div>
 <p>Or,</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="go">pdm add --dev tox-pdm</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm add --dev tox-pdm
 </code></pre></div></td></tr></table></div>
 <p>And you can make the <code>tox.ini</code> much tidier as following, :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>

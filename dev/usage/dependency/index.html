@@ -1304,8 +1304,6 @@ bump2version 1.0.0
 <p>You can specify a PyPI mirror URL by following commands:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm config pypi.url https://test.pypi.org/simple
 </code></pre></div></td></tr></table></div>
-<p>By default, PDM will read the pip's configuration files to decide the PyPI URL, and fallback
-to <code>https://pypi.org/simple</code> if none is found.</p>
 <h2 id="allow-prerelease-versions-to-be-installed">Allow prerelease versions to be installed<a class="headerlink" href="#allow-prerelease-versions-to-be-installed" title="Permanent link">#</a></h2>
 <p>Include the following setting in <code>pyproject.toml</code> to enable:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -1346,7 +1344,7 @@ To fix this, you could loosen the dependency version constraints <span class="k"
 <p>You can either change to a lower version of <code>django</code> or remove the upper bound of <code>asgiref</code>. But if it is not eligible for your project,
 you can tell PDM to forcedly resolve <code>asgiref</code> to a specific version by adding the following lines to <code>pyproject.toml</code>:</p>
 <p><em>New in version 1.12.0</em></p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm.overrides]</span><span class="w"></span>
@@ -1354,7 +1352,7 @@ you can tell PDM to forcedly resolve <code>asgiref</code> to a specific version 
 <span class="n">urllib3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&gt;=1.26.2&quot;</span><span class="w">  </span><span class="c1"># version range</span><span class="w"></span>
 <span class="n">pytz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;file:///${PROJECT_ROOT}/pytz-2020.9-py3-none-any.whl&quot;</span><span class="w">  </span><span class="c1"># absolute URL</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
-Each entry of that table is a package name with the wanted version.
+<p>Each entry of that table is a package name with the wanted version.
 In this example, PDM will resolve the above packages into the given versions no matter whether there is any other resolution available.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>

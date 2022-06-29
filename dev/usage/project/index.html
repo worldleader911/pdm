@@ -1026,7 +1026,7 @@ show configurations.</p>
 <p>where <code>&lt;CONFIG_ROOT&gt;</code> is:</p>
 <ul>
 <li><code>$XDG_CONFIG_HOME/pdm</code> (<code>~/.config/pdm</code> in most cases) on Linux as defined by <a href="https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html">XDG Base Directory Specification</a></li>
-<li><code>~/Library/Preferences/pdm</code> on MacOS as defined by <a href="https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html">Appli File System Basics</a></li>
+<li><code>~/Library/Preferences/pdm</code> on MacOS as defined by <a href="https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html">Apple File System Basics</a></li>
 <li><code>%USERPROFILE%\AppData\Local\pdm</code> on Windows as defined in <a href="https://docs.microsoft.com/en-us/windows/win32/shell/known-folders">Known folders</a></li>
 </ul>
 <p>If <code>-g/--global</code> option is used, the first item will be replaced by <code>&lt;CONFIG_ROOT&gt;/global-project/.pdm.toml</code>.</p>
@@ -1212,7 +1212,7 @@ and username passwords for VCS repositories. We do not want to expose this infor
 <li><code>http/</code> stores the HTTP response content.</li>
 <li><code>metadata/</code> stores package metadata retrieved by the resolver.</li>
 <li><code>hashes/</code> stores the file hashes fetched from the package index or calculated locally.</li>
-<li><code>packages/</code> The centrialized repository for installed wheels.</li>
+<li><code>packages/</code> The centralized repository for installed wheels.</li>
 </ol>
 <p>See the current cache usage by typing <code>pdm cache info</code>. Besides, you can use <code>add</code>, <code>remove</code> and <code>list</code> subcommands to manage the cache content.
 Find the usage by the <code>--help</code> option of each command.</p>

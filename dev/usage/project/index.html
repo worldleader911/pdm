@@ -1131,6 +1131,7 @@ and it doesn't support build features. The idea is taken from Haskell's <a href=
 <p>However, unlike <code>stack</code>, by default, PDM won't use global project automatically if a local project is not found.
 Users should pass <code>-g/--global</code> explicitly to activate it, since it is not very pleasing if packages go to a wrong place.
 But PDM also leave the decision to users, just set the config <code>global_project.fallback</code> to <code>true</code>.</p>
+<p>By default, when <code>pdm</code> uses global project implicitly the following message is printed: <code>Project is not found, fallback to the global project</code>. To disable this message set the config <code>global_project.fallback_verbose</code> to <code>false</code>.</p>
 <p>If you want global project to track another project file other than <code>&lt;CONFIG_ROOT&gt;/global-project</code>, you can provide the
 project path via <code>-p/--project &lt;path&gt;</code> option.</p>
 <div class="admonition attention">

@@ -1189,10 +1189,16 @@ pdm remove -G web h11
 pdm remove -dG <span class="nb">test</span> pytest-cov
 </code></pre></div></td></tr></table></div>
 <h2 id="install-the-packages-pinned-in-lock-file">Install the packages pinned in lock file<a class="headerlink" href="#install-the-packages-pinned-in-lock-file" title="Permanent link">#</a></h2>
-<p>There are two similar commands to do this job with a slight difference:</p>
+<p>There are a few similar commands to do this job with slight differences:</p>
 <ul>
-<li><a href="../cli_reference/#exec-0--install"><code>pdm install</code></a> will check the lock file and relock if it mismatches with project file, then install.</li>
-<li><a href="../cli_reference/#exec-0--update"><code>pdm update</code></a> installs dependencies in the lock file and will error out if it doesn't exist. Besides, <a href="../cli_reference/#exec-0--sync"><code>pdm sync</code></a> can also remove unneeded packages if <code>--clean</code> option is given.</li>
+<li><a href="../cli_reference/#exec-0--sync"><code>pdm sync</code></a> installs packages from the lock file.</li>
+<li><a href="../cli_reference/#exec-0--update"><code>pdm update</code></a> will update the lock file, then <code>sync</code>.</li>
+<li><a href="../cli_reference/#exec-0--install"><code>pdm install</code></a> will check the project file for changes, update the lock file if needed, then <code>sync</code>.</li>
+</ul>
+<p><code>sync</code> also has a few options to manage installed packages:</p>
+<ul>
+<li><code>--clean</code>: will remove packages no longer in the lockfile</li>
+<li><code>--only-keep</code>: only selected packages (using options like <code>-G</code> or <code>--prod</code>) will be kept.</li>
 </ul>
 <h2 id="specify-the-lockfile-to-use">Specify the lockfile to use<a class="headerlink" href="#specify-the-lockfile-to-use" title="Permanent link">#</a></h2>
 <p>You can specify another lockfile than the default <a href="../cli_reference/#exec-0--lock"><code>pdm lock</code></a> by using the <code>-L/--lockfilie &lt;filepath&gt;</code> option or the <code>PDM_LOCKFILE</code> environment variable.</p>

@@ -1101,8 +1101,8 @@
 <li><code>-L</code>, <code>--lockfile</code>: Specify another lockfile path. Default: pdm.lock. [env var: PDM_LOCKFILE]</li>
 <li><code>-r</code>, <code>--reinstall</code>: Force reinstall existing dependencies</li>
 <li><code>-k</code>, <code>--skip</code>: Skip some tasks and/or hooks by their comma-separated names. Can be supplied multiple times. Use ":all" to skip all hooks. Use ":pre" and ":post" to skip all pre or post hooks.</li>
-<li><code>--clean</code>: clean unused packages</li>
-<li><code>--no-clean</code>: don't clean unused packages(default: <code>True</code>)</li>
+<li><code>--clean</code>: clean packages not in the lockfile</li>
+<li><code>--only-keep</code>: only keep the selected packages</li>
 </ul>
 <p>Install Options:</p>
 <ul>

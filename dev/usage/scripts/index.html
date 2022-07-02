@@ -1036,14 +1036,6 @@
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm run flask run -p <span class="m">54321</span>
 </code></pre></div></td></tr></table></div>
 <p>It will run <code>flask run -p 54321</code> in the environment that is aware of packages in <code>__pypackages__/</code> folder.</p>
-<div class="admonition note">
-<p class="admonition-title">Yarn-like script shortcuts</p>
-<p>There is a builtin shortcut making all scripts available as root commands
-as long as the script does not conflict with any builtin or plugin-contributed command.
-Said otherwise, if you have a <code>test</code> script, you can run both <code>pdm run test</code> and <code>pdm test</code>.
-But if you have an <code>install</code> script, only <code>pdm run install</code> will run it,
-<code>pdm install</code> will still run the builtin <code>install</code> command.</p>
-</div>
 <h2 id="user-scripts">User Scripts<a class="headerlink" href="#user-scripts" title="Permanent link">#</a></h2>
 <p>PDM also supports custom script shortcuts in the optional <code>[tool.pdm.scripts]</code> section of <code>pyproject.toml</code>.</p>
 <p>You can then run <code>pdm run &lt;script_name&gt;</code> to invoke the script in the context of your PDM project. For example:</p>
@@ -1061,7 +1053,14 @@ Flask server started at http://127.0.0.1:54321
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>$ pdm run start -h <span class="m">0</span>.0.0.0
 Flask server started at http://0.0.0.0:54321
 </code></pre></div></td></tr></table></div>
-<hr />
+<div class="admonition note">
+<p class="admonition-title">Yarn-like script shortcuts</p>
+<p>There is a builtin shortcut making all scripts available as root commands
+as long as the script does not conflict with any builtin or plugin-contributed command.
+Said otherwise, if you have a <code>start</code> script, you can run both <code>pdm run start</code> and <code>pdm start</code>.
+But if you have an <code>install</code> script, only <code>pdm run install</code> will run it,
+<code>pdm install</code> will still run the builtin <code>install</code> command.</p>
+</div>
 <p>PDM supports 4 types of scripts:</p>
 <h3 id="cmd"><code>cmd</code><a class="headerlink" href="#cmd" title="Permanent link">#</a></h3>
 <p>Plain text scripts are regarded as normal command, or you can explicitly specify it:</p>
@@ -1306,7 +1305,7 @@ but it will be overridden as soon as the <code>--skip</code> parameter is provid
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2019-2021 <a href="https://frostming.com">Frost Ming</a>
+      Copyright &copy; 2019 <a href="https://frostming.com">Frost Ming</a>
     </div>
   
   

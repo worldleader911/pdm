@@ -106,7 +106,9 @@
     
       
 
-<header class="md-header" data-md-component="header">
+  
+
+<header class="md-header md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../.." title="PDM" class="md-header__button md-logo" aria-label="PDM" data-md-component="logo">
       
@@ -205,13 +207,88 @@
     
   </nav>
   
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link md-tabs__link--active">
+        Usage
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../pyproject/pep621/" class="md-tabs__link">
+        Writing pyproject.toml
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../plugin/write/" class="md-tabs__link">
+        Plugins
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../dev/contributing/" class="md-tabs__link">
+        Development
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
 </header>
     
     <div class="md-container" data-md-component="container">
       
       
-        
-          
         
       
       <main class="md-main" data-md-component="main">
@@ -224,8 +301,10 @@
                   <div class="md-sidebar__inner">
                     
 
+  
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="PDM" class="md-nav__button md-logo" aria-label="PDM" data-md-component="logo">
       
@@ -255,6 +334,34 @@
 
   
   
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1">
+          Usage
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Usage" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Usage
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
   
     <li class="md-nav__item">
       <a href="../.." class="md-nav__link">
@@ -263,36 +370,49 @@
     </li>
   
 
-    
-      
-      
-      
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project/" class="md-nav__link">
+        Manage Project
+      </a>
+    </li>
+  
 
+            
+          
+            
+              
   
   
-    
+  
+    <li class="md-nav__item">
+      <a href="../venv/" class="md-nav__link">
+        Working with virtualenv
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
   
   
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_2">
-          Usage
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Usage" data-md-level="1">
-        <label class="md-nav__title" for="__nav_2">
-          <span class="md-nav__icon md-icon"></span>
-          Usage
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+  
+    <li class="md-nav__item">
+      <a href="../pep582/" class="md-nav__link">
+        Working with PEP 582
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -513,20 +633,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../project/" class="md-nav__link">
-        Manage Project
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../scripts/" class="md-nav__link">
         PDM Scripts
       </a>
@@ -577,6 +683,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration/" class="md-nav__link">
+        Configuration
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -594,18 +714,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_3">
+        <label class="md-nav__link" for="__nav_2">
           Writing pyproject.toml
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Writing pyproject.toml" data-md-level="1">
-        <label class="md-nav__title" for="__nav_3">
+        <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
           Writing pyproject.toml
         </label>
@@ -666,37 +786,22 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../configuration/" class="md-nav__link">
-        Configuration
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_5">
+        <label class="md-nav__link" for="__nav_3">
           Plugins
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Plugins" data-md-level="1">
-        <label class="md-nav__title" for="__nav_5">
+        <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           Plugins
         </label>
@@ -747,18 +852,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_6">
+        <label class="md-nav__link" for="__nav_4">
           Development
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Development" data-md-level="1">
-        <label class="md-nav__title" for="__nav_6">
+        <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
           Development
         </label>
@@ -785,7 +890,7 @@
   
     <li class="md-nav__item">
       <a href="../../dev/changelog/" class="md-nav__link">
-        Change Log
+        Changelog
       </a>
     </li>
   
@@ -1189,10 +1294,16 @@ pdm remove -G web h11
 pdm remove -dG <span class="nb">test</span> pytest-cov
 </code></pre></div></td></tr></table></div>
 <h2 id="install-the-packages-pinned-in-lock-file">Install the packages pinned in lock file<a class="headerlink" href="#install-the-packages-pinned-in-lock-file" title="Permanent link">#</a></h2>
-<p>There are two similar commands to do this job with a slight difference:</p>
+<p>There are a few similar commands to do this job with slight differences:</p>
 <ul>
-<li><a href="../cli_reference/#exec-0--install"><code>pdm install</code></a> will check the lock file and relock if it mismatches with project file, then install.</li>
-<li><a href="../cli_reference/#exec-0--update"><code>pdm update</code></a> installs dependencies in the lock file and will error out if it doesn't exist. Besides, <a href="../cli_reference/#exec-0--sync"><code>pdm sync</code></a> can also remove unneeded packages if <code>--clean</code> option is given.</li>
+<li><a href="../cli_reference/#exec-0--sync"><code>pdm sync</code></a> installs packages from the lock file.</li>
+<li><a href="../cli_reference/#exec-0--update"><code>pdm update</code></a> will update the lock file, then <code>sync</code>.</li>
+<li><a href="../cli_reference/#exec-0--install"><code>pdm install</code></a> will check the project file for changes, update the lock file if needed, then <code>sync</code>.</li>
+</ul>
+<p><code>sync</code> also has a few options to manage installed packages:</p>
+<ul>
+<li><code>--clean</code>: will remove packages no longer in the lockfile</li>
+<li><code>--only-keep</code>: only selected packages (using options like <code>-G</code> or <code>--prod</code>) will be kept.</li>
 </ul>
 <h2 id="specify-the-lockfile-to-use">Specify the lockfile to use<a class="headerlink" href="#specify-the-lockfile-to-use" title="Permanent link">#</a></h2>
 <p>You can specify another lockfile than the default <a href="../cli_reference/#exec-0--lock"><code>pdm lock</code></a> by using the <code>-L/--lockfilie &lt;filepath&gt;</code> option or the <code>PDM_LOCKFILE</code> environment variable.</p>
@@ -1304,8 +1415,6 @@ bump2version 1.0.0
 <p>You can specify a PyPI mirror URL by following commands:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm config pypi.url https://test.pypi.org/simple
 </code></pre></div></td></tr></table></div>
-<p>By default, PDM will read the pip's configuration files to decide the PyPI URL, and fallback
-to <code>https://pypi.org/simple</code> if none is found.</p>
 <h2 id="allow-prerelease-versions-to-be-installed">Allow prerelease versions to be installed<a class="headerlink" href="#allow-prerelease-versions-to-be-installed" title="Permanent link">#</a></h2>
 <p>Include the following setting in <code>pyproject.toml</code> to enable:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -1346,7 +1455,7 @@ To fix this, you could loosen the dependency version constraints <span class="k"
 <p>You can either change to a lower version of <code>django</code> or remove the upper bound of <code>asgiref</code>. But if it is not eligible for your project,
 you can tell PDM to forcedly resolve <code>asgiref</code> to a specific version by adding the following lines to <code>pyproject.toml</code>:</p>
 <p><em>New in version 1.12.0</em></p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm.overrides]</span><span class="w"></span>
@@ -1354,7 +1463,7 @@ you can tell PDM to forcedly resolve <code>asgiref</code> to a specific version 
 <span class="n">urllib3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&gt;=1.26.2&quot;</span><span class="w">  </span><span class="c1"># version range</span><span class="w"></span>
 <span class="n">pytz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;file:///${PROJECT_ROOT}/pytz-2020.9-py3-none-any.whl&quot;</span><span class="w">  </span><span class="c1"># absolute URL</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
-Each entry of that table is a package name with the wanted version.
+<p>Each entry of that table is a package name with the wanted version.
 In this example, PDM will resolve the above packages into the given versions no matter whether there is any other resolution available.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1385,7 +1494,7 @@ Most of the time, you can just add any transient constraints to the <code>depend
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../.." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home" rel="prev">
+        <a href="../pep582/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Working with PEP 582" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1394,20 +1503,20 @@ Most of the time, you can just add any transient constraints to the <code>depend
               <span class="md-footer__direction">
                 Previous
               </span>
-              Home
+              Working with PEP 582
             </div>
           </div>
         </a>
       
       
         
-        <a href="../project/" class="md-footer__link md-footer__link--next" aria-label="Next: Manage Project" rel="next">
+        <a href="../scripts/" class="md-footer__link md-footer__link--next" aria-label="Next: PDM Scripts" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Manage Project
+              PDM Scripts
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -1472,7 +1581,7 @@ Most of the time, you can just add any transient constraints to the <code>depend
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky"], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.ed9748b7.min.js"></script>

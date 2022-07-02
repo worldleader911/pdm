@@ -106,7 +106,9 @@
     
       
 
-<header class="md-header" data-md-component="header">
+  
+
+<header class="md-header md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../.." title="PDM" class="md-header__button md-logo" aria-label="PDM" data-md-component="logo">
       
@@ -205,13 +207,88 @@
     
   </nav>
   
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link md-tabs__link--active">
+        Usage
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../pyproject/pep621/" class="md-tabs__link">
+        Writing pyproject.toml
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../plugin/write/" class="md-tabs__link">
+        Plugins
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../dev/contributing/" class="md-tabs__link">
+        Development
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
 </header>
     
     <div class="md-container" data-md-component="container">
       
       
-        
-          
         
       
       <main class="md-main" data-md-component="main">
@@ -224,8 +301,10 @@
                   <div class="md-sidebar__inner">
                     
 
+  
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="PDM" class="md-nav__button md-logo" aria-label="PDM" data-md-component="logo">
       
@@ -255,21 +334,6 @@
 
   
   
-  
-    <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
-        Home
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
     
   
   
@@ -277,18 +341,18 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
       
       
       
       
-        <label class="md-nav__link" for="__nav_2">
+        <label class="md-nav__link" for="__nav_1">
           Usage
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Usage" data-md-level="1">
-        <label class="md-nav__title" for="__nav_2">
+        <label class="md-nav__title" for="__nav_1">
           <span class="md-nav__icon md-icon"></span>
           Usage
         </label>
@@ -300,8 +364,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../dependency/" class="md-nav__link">
-        Manage Dependencies
+      <a href="../.." class="md-nav__link">
+        Home
       </a>
     </li>
   
@@ -430,13 +494,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#working-with-a-virtualenv" class="md-nav__link">
-    Working with a virtualenv
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#import-project-metadata-from-existing-project-files" class="md-nav__link">
     Import project metadata from existing project files
   </a>
@@ -464,17 +521,52 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#how-we-make-pep-582-packages-available-to-the-python-interpreter" class="md-nav__link">
-    How we make PEP 582 packages available to the Python interpreter
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../venv/" class="md-nav__link">
+        Working with virtualenv
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pep582/" class="md-nav__link">
+        Working with PEP 582
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dependency/" class="md-nav__link">
+        Manage Dependencies
+      </a>
     </li>
   
 
@@ -536,6 +628,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration/" class="md-nav__link">
+        Configuration
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -553,18 +659,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_3">
+        <label class="md-nav__link" for="__nav_2">
           Writing pyproject.toml
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Writing pyproject.toml" data-md-level="1">
-        <label class="md-nav__title" for="__nav_3">
+        <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
           Writing pyproject.toml
         </label>
@@ -625,37 +731,22 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../configuration/" class="md-nav__link">
-        Configuration
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_5">
+        <label class="md-nav__link" for="__nav_3">
           Plugins
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Plugins" data-md-level="1">
-        <label class="md-nav__title" for="__nav_5">
+        <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           Plugins
         </label>
@@ -706,18 +797,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_6">
+        <label class="md-nav__link" for="__nav_4">
           Development
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Development" data-md-level="1">
-        <label class="md-nav__title" for="__nav_6">
+        <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
           Development
         </label>
@@ -744,7 +835,7 @@
   
     <li class="md-nav__item">
       <a href="../../dev/changelog/" class="md-nav__link">
-        Change Log
+        Changelog
       </a>
     </li>
   
@@ -880,13 +971,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#working-with-a-virtualenv" class="md-nav__link">
-    Working with a virtualenv
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#import-project-metadata-from-existing-project-files" class="md-nav__link">
     Import project metadata from existing project files
   </a>
@@ -914,13 +998,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#how-we-make-pep-582-packages-available-to-the-python-interpreter" class="md-nav__link">
-    How we make PEP 582 packages available to the Python interpreter
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -944,7 +1021,7 @@
 <p>If you have used <a href="../cli_reference/#exec-0--init"><code>pdm init</code></a>, you must have already seen how PDM detects and selects the Python
 interpreter. After initialized, you can also change the settings by <code>pdm use &lt;python_version_or_path&gt;</code>.
 The argument can be either a version specifier of any length, or a relative or absolute path to the
-python interpreter, but remember the Python interpreter must conform with the <code>python_requires</code>
+python interpreter, but remember the Python interpreter must conform with the <code>requires-python</code>
 constraint in the project file.</p>
 <h3 id="how-requires-python-controls-the-project">How <code>requires-python</code> controls the project<a class="headerlink" href="#how-requires-python-controls-the-project" title="Permanent link">#</a></h3>
 <p>PDM respects the value of <code>requires-python</code> in the way that it tries to pick package candidates that can work
@@ -1030,7 +1107,7 @@ show configurations.</p>
 <li><code>%USERPROFILE%\AppData\Local\pdm</code> on Windows as defined in <a href="https://docs.microsoft.com/en-us/windows/win32/shell/known-folders">Known folders</a></li>
 </ul>
 <p>If <code>-g/--global</code> option is used, the first item will be replaced by <code>&lt;CONFIG_ROOT&gt;/global-project/.pdm.toml</code>.</p>
-<p>You can find all available configuration items in <a href="../../configuration/">Configuration Page</a>.</p>
+<p>You can find all available configuration items in <a href="../configuration/">Configuration Page</a>.</p>
 <h2 id="publish-the-project-to-pypi">Publish the project to PyPI<a class="headerlink" href="#publish-the-project-to-pypi" title="Permanent link">#</a></h2>
 <p>With PDM, you can build and then upload your project to PyPI in one step.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm publish
@@ -1103,10 +1180,24 @@ pdm config repository.company.url <span class="s2">&quot;https://pypi.company.or
 <span class="normal">15</span>
 <span class="normal">16</span>
 <span class="normal">17</span>
-<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code>$ pdm info
-Python Interpreter: D:/Programs/Python/Python38/python.exe <span class="o">(</span><span class="m">3</span>.8.0<span class="o">)</span>
-Project Root:       D:/Workspace/pdm
-                                                                                                                                   <span class="o">[</span><span class="m">10</span>:42<span class="o">]</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span></pre></div></td><td class="code"><div><pre><span></span><code>$ pdm info
+PDM version:
+  <span class="m">2</span>.0.0
+Python Interpreter:
+  /opt/homebrew/opt/python@3.9/bin/python3.9 <span class="o">(</span><span class="m">3</span>.9<span class="o">)</span>
+Project Root:
+  /Users/fming/wkspace/github/test-pdm
+Project Packages:
+  /Users/fming/wkspace/github/test-pdm/__pypackages__/3.9
+
+<span class="c1"># Show environment info</span>
 $ pdm info --env
 <span class="o">{</span>
   <span class="s2">&quot;implementation_name&quot;</span>: <span class="s2">&quot;cpython&quot;</span>,
@@ -1122,6 +1213,11 @@ $ pdm info --env
   <span class="s2">&quot;sys_platform&quot;</span>: <span class="s2">&quot;win32&quot;</span>
 <span class="o">}</span>
 </code></pre></div></td></tr></table></div>
+<p><a href="../cli_reference/#exec-0--info">This command</a> is useful for checking which mode is being used by the project:</p>
+<ul>
+<li>If <em>Project Packages</em> is <code>None</code>, <a href="../venv/">virtualenv mode</a> is enabled.</li>
+<li>Otherwise, <a href="../pep582/">PEP 582 mode</a> is enabled.</li>
+</ul>
 <h2 id="manage-global-project">Manage global project<a class="headerlink" href="#manage-global-project" title="Permanent link">#</a></h2>
 <p>Sometimes users may want to keep track of the dependencies of global Python interpreter as well.
 It is easy to do so with PDM, via <code>-g/--global</code> option which is supported by most subcommands.</p>
@@ -1131,22 +1227,13 @@ and it doesn't support build features. The idea is taken from Haskell's <a href=
 <p>However, unlike <code>stack</code>, by default, PDM won't use global project automatically if a local project is not found.
 Users should pass <code>-g/--global</code> explicitly to activate it, since it is not very pleasing if packages go to a wrong place.
 But PDM also leave the decision to users, just set the config <code>global_project.fallback</code> to <code>true</code>.</p>
+<p>By default, when <code>pdm</code> uses global project implicitly the following message is printed: <code>Project is not found, fallback to the global project</code>. To disable this message set the config <code>global_project.fallback_verbose</code> to <code>false</code>.</p>
 <p>If you want global project to track another project file other than <code>&lt;CONFIG_ROOT&gt;/global-project</code>, you can provide the
 project path via <code>-p/--project &lt;path&gt;</code> option.</p>
 <div class="admonition attention">
 <p class="admonition-title">CAUTION</p>
-<p>Be careful with <code>remove</code> and <code>sync --clean</code> commands when global project is used, because it may remove packages installed in your system Python.</p>
+<p>Be careful with <code>remove</code> and <code>sync --clean/--pure</code> commands when global project is used, because it may remove packages installed in your system Python.</p>
 </div>
-<h2 id="working-with-a-virtualenv">Working with a virtualenv<a class="headerlink" href="#working-with-a-virtualenv" title="Permanent link">#</a></h2>
-<p>Although PDM enforces PEP 582 by default, it also allows users to install packages into the virtualenv. It is controlled
-by the configuration item <code>python.use_venv</code>. When it is set to <code>True</code>, PDM will use the virtualenv if:</p>
-<ul>
-<li>a virtualenv is already activated.</li>
-<li>any of <code>venv</code>, <code>.venv</code>, <code>env</code> is a valid virtualenv folder.</li>
-</ul>
-<p>Besides, when <code>python.use_venv</code> is on and the interpreter path given is a venv-like path, PDM will reuse that venv directory as well.</p>
-<p>For enhanced virtualenv support such as virtualenv management and auto-creation, please go for <a href="https://github.com/pdm-project/pdm-venv">pdm-venv</a>,
-which can be installed as a plugin.</p>
 <h2 id="import-project-metadata-from-existing-project-files">Import project metadata from existing project files<a class="headerlink" href="#import-project-metadata-from-existing-project-files" title="Permanent link">#</a></h2>
 <p>If you are already other package manager tools like Pipenv or Poetry, it is easy to migrate to PDM.
 PDM provides <code>import</code> command so that you don't have to initialize the project manually, it now supports:</p>
@@ -1216,10 +1303,6 @@ and username passwords for VCS repositories. We do not want to expose this infor
 </ol>
 <p>See the current cache usage by typing <code>pdm cache info</code>. Besides, you can use <code>add</code>, <code>remove</code> and <code>list</code> subcommands to manage the cache content.
 Find the usage by the <code>--help</code> option of each command.</p>
-<h2 id="how-we-make-pep-582-packages-available-to-the-python-interpreter">How we make PEP 582 packages available to the Python interpreter<a class="headerlink" href="#how-we-make-pep-582-packages-available-to-the-python-interpreter" title="Permanent link">#</a></h2>
-<p>Thanks to the <a href="https://docs.python.org/3/library/site.html">site packages loading</a> on Python startup. It is possible to patch the <code>sys.path</code>
-by executing the <code>sitecustomize.py</code> shipped with PDM. The interpreter can search the directories
-for the nearest <code>__pypackage__</code> folder and append it to the <code>sys.path</code> variable.</p>
 
               
             </article>
@@ -1233,7 +1316,7 @@ for the nearest <code>__pypackage__</code> folder and append it to the <code>sys
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../dependency/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Manage Dependencies" rel="prev">
+        <a href="../.." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1242,20 +1325,20 @@ for the nearest <code>__pypackage__</code> folder and append it to the <code>sys
               <span class="md-footer__direction">
                 Previous
               </span>
-              Manage Dependencies
+              Home
             </div>
           </div>
         </a>
       
       
         
-        <a href="../scripts/" class="md-footer__link md-footer__link--next" aria-label="Next: PDM Scripts" rel="next">
+        <a href="../venv/" class="md-footer__link md-footer__link--next" aria-label="Next: Working with virtualenv" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              PDM Scripts
+              Working with virtualenv
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -1320,7 +1403,7 @@ for the nearest <code>__pypackage__</code> folder and append it to the <code>sys
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky"], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.ed9748b7.min.js"></script>

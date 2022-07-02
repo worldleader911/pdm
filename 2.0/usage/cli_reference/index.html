@@ -106,7 +106,9 @@
     
       
 
-<header class="md-header" data-md-component="header">
+  
+
+<header class="md-header md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../.." title="PDM" class="md-header__button md-logo" aria-label="PDM" data-md-component="logo">
       
@@ -205,13 +207,88 @@
     
   </nav>
   
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link md-tabs__link--active">
+        Usage
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../pyproject/pep621/" class="md-tabs__link">
+        Writing pyproject.toml
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../plugin/write/" class="md-tabs__link">
+        Plugins
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../dev/contributing/" class="md-tabs__link">
+        Development
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
 </header>
     
     <div class="md-container" data-md-component="container">
       
       
-        
-          
         
       
       <main class="md-main" data-md-component="main">
@@ -224,8 +301,10 @@
                   <div class="md-sidebar__inner">
                     
 
+  
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="PDM" class="md-nav__button md-logo" aria-label="PDM" data-md-component="logo">
       
@@ -255,21 +334,6 @@
 
   
   
-  
-    <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
-        Home
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
     
   
   
@@ -277,18 +341,18 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
       
       
       
       
-        <label class="md-nav__link" for="__nav_2">
+        <label class="md-nav__link" for="__nav_1">
           Usage
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Usage" data-md-level="1">
-        <label class="md-nav__title" for="__nav_2">
+        <label class="md-nav__title" for="__nav_1">
           <span class="md-nav__icon md-icon"></span>
           Usage
         </label>
@@ -300,8 +364,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../dependency/" class="md-nav__link">
-        Manage Dependencies
+      <a href="../.." class="md-nav__link">
+        Home
       </a>
     </li>
   
@@ -316,6 +380,48 @@
     <li class="md-nav__item">
       <a href="../project/" class="md-nav__link">
         Manage Project
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../venv/" class="md-nav__link">
+        Working with virtualenv
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pep582/" class="md-nav__link">
+        Working with PEP 582
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dependency/" class="md-nav__link">
+        Manage Dependencies
       </a>
     </li>
   
@@ -388,6 +494,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration/" class="md-nav__link">
+        Configuration
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -405,18 +525,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_3">
+        <label class="md-nav__link" for="__nav_2">
           Writing pyproject.toml
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Writing pyproject.toml" data-md-level="1">
-        <label class="md-nav__title" for="__nav_3">
+        <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
           Writing pyproject.toml
         </label>
@@ -477,37 +597,22 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../configuration/" class="md-nav__link">
-        Configuration
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_5">
+        <label class="md-nav__link" for="__nav_3">
           Plugins
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Plugins" data-md-level="1">
-        <label class="md-nav__title" for="__nav_5">
+        <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           Plugins
         </label>
@@ -558,18 +663,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_6">
+        <label class="md-nav__link" for="__nav_4">
           Development
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Development" data-md-level="1">
-        <label class="md-nav__title" for="__nav_6">
+        <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
           Development
         </label>
@@ -596,7 +701,7 @@
   
     <li class="md-nav__item">
       <a href="../../dev/changelog/" class="md-nav__link">
-        Change Log
+        Changelog
       </a>
     </li>
   
@@ -1101,8 +1206,8 @@
 <li><code>-L</code>, <code>--lockfile</code>: Specify another lockfile path. Default: pdm.lock. [env var: PDM_LOCKFILE]</li>
 <li><code>-r</code>, <code>--reinstall</code>: Force reinstall existing dependencies</li>
 <li><code>-k</code>, <code>--skip</code>: Skip some tasks and/or hooks by their comma-separated names. Can be supplied multiple times. Use ":all" to skip all hooks. Use ":pre" and ":post" to skip all pre or post hooks.</li>
-<li><code>--clean</code>: clean unused packages</li>
-<li><code>--no-clean</code>: don't clean unused packages(default: <code>True</code>)</li>
+<li><code>--clean</code>: clean packages not in the lockfile</li>
+<li><code>--only-keep</code>: only keep the selected packages</li>
 </ul>
 <p>Install Options:</p>
 <ul>
@@ -1177,6 +1282,79 @@
 <li><code>-f</code>, <code>--first</code>: Select the first matched interpreter</li>
 <li><code>-i</code>, <code>--ignore-remembered</code>: Ignore the remembered selection</li>
 </ul>
+<h3 id="exec-0--venv">venv<a class="headerlink" href="#exec-0--venv" title="Permanent link">#</a></h3>
+<blockquote>
+<p>Virtualenv management</p>
+</blockquote>
+<p>Positional Arguments:</p>
+<h4 id="exec-0--create">create<a class="headerlink" href="#exec-0--create" title="Permanent link">#</a></h4>
+<blockquote>
+<p>Create a virtualenv</p>
+</blockquote>
+<p>Positional Arguments:</p>
+<ul>
+<li><code>python</code>: Specify which python should be used to create the virtualenv</li>
+<li><code>venv_args</code>: Additional arguments that will be passed to the backend</li>
+</ul>
+<p>Optional Arguments:</p>
+<ul>
+<li><code>-h</code>, <code>--help</code>: show this help message and exit</li>
+<li><code>-v</code>, <code>--verbose</code>: -v for detailed output and -vv for more detailed</li>
+<li><code>-w</code>, <code>--with</code>: Specify the backend to create the virtualenv</li>
+<li><code>-f</code>, <code>--force</code>: Recreate if the virtualenv already exists</li>
+<li><code>-n</code>, <code>--name</code>: Specify the name of the virtualenv</li>
+</ul>
+<h4 id="exec-0--list_3">list<a class="headerlink" href="#exec-0--list_3" title="Permanent link">#</a></h4>
+<blockquote>
+<p>List all virtualenvs associated with this project</p>
+</blockquote>
+<p>Optional Arguments:</p>
+<ul>
+<li><code>-h</code>, <code>--help</code>: show this help message and exit</li>
+<li><code>-v</code>, <code>--verbose</code>: -v for detailed output and -vv for more detailed</li>
+</ul>
+<h4 id="exec-0--remove_3">remove<a class="headerlink" href="#exec-0--remove_3" title="Permanent link">#</a></h4>
+<blockquote>
+<p>Remove the virtualenv with the given name</p>
+</blockquote>
+<p>Positional Arguments:</p>
+<ul>
+<li><code>env</code>: The key of the virtualenv</li>
+</ul>
+<p>Optional Arguments:</p>
+<ul>
+<li><code>-h</code>, <code>--help</code>: show this help message and exit</li>
+<li><code>-v</code>, <code>--verbose</code>: -v for detailed output and -vv for more detailed</li>
+<li><code>-y</code>, <code>--yes</code>: Answer yes on the following question</li>
+</ul>
+<h4 id="exec-0--activate">activate<a class="headerlink" href="#exec-0--activate" title="Permanent link">#</a></h4>
+<blockquote>
+<p>Activate the virtualenv with the given name</p>
+</blockquote>
+<p>Positional Arguments:</p>
+<ul>
+<li><code>env</code>: The key of the virtualenv</li>
+</ul>
+<p>Optional Arguments:</p>
+<ul>
+<li><code>-h</code>, <code>--help</code>: show this help message and exit</li>
+<li><code>-v</code>, <code>--verbose</code>: -v for detailed output and -vv for more detailed</li>
+</ul>
+<h4 id="exec-0--purge">purge<a class="headerlink" href="#exec-0--purge" title="Permanent link">#</a></h4>
+<blockquote>
+<p>Purge selected/all created Virtualenvs</p>
+</blockquote>
+<p>Optional Arguments:</p>
+<ul>
+<li><code>-h</code>, <code>--help</code>: show this help message and exit</li>
+<li><code>-v</code>, <code>--verbose</code>: -v for detailed output and -vv for more detailed</li>
+<li><code>-f</code>, <code>--force</code>: Force purging without prompting for confirmation</li>
+<li><code>-i</code>, <code>--interactive</code>: Interatively purge selected Virtualenvs</li>
+</ul>
+<p>Optional Arguments:</p>
+<ul>
+<li><code>-h</code>, <code>--help</code>: show this help message and exit</li>
+</ul>
 
               
             </article>
@@ -1206,13 +1384,13 @@
       
       
         
-        <a href="../../pyproject/pep621/" class="md-footer__link md-footer__link--next" aria-label="Next: PEP 621 Metadata" rel="next">
+        <a href="../configuration/" class="md-footer__link md-footer__link--next" aria-label="Next: Configuration" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              PEP 621 Metadata
+              Configuration
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -1277,7 +1455,7 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky"], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.ed9748b7.min.js"></script>

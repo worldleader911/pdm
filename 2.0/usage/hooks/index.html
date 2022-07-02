@@ -106,7 +106,9 @@
     
       
 
-<header class="md-header" data-md-component="header">
+  
+
+<header class="md-header md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../.." title="PDM" class="md-header__button md-logo" aria-label="PDM" data-md-component="logo">
       
@@ -205,13 +207,88 @@
     
   </nav>
   
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link md-tabs__link--active">
+        Usage
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../pyproject/pep621/" class="md-tabs__link">
+        Writing pyproject.toml
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../plugin/write/" class="md-tabs__link">
+        Plugins
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../dev/contributing/" class="md-tabs__link">
+        Development
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
 </header>
     
     <div class="md-container" data-md-component="container">
       
       
-        
-          
         
       
       <main class="md-main" data-md-component="main">
@@ -224,8 +301,10 @@
                   <div class="md-sidebar__inner">
                     
 
+  
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="PDM" class="md-nav__button md-logo" aria-label="PDM" data-md-component="logo">
       
@@ -255,21 +334,6 @@
 
   
   
-  
-    <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
-        Home
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
     
   
   
@@ -277,18 +341,18 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
       
       
       
       
-        <label class="md-nav__link" for="__nav_2">
+        <label class="md-nav__link" for="__nav_1">
           Usage
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Usage" data-md-level="1">
-        <label class="md-nav__title" for="__nav_2">
+        <label class="md-nav__title" for="__nav_1">
           <span class="md-nav__icon md-icon"></span>
           Usage
         </label>
@@ -300,8 +364,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../dependency/" class="md-nav__link">
-        Manage Dependencies
+      <a href="../.." class="md-nav__link">
+        Home
       </a>
     </li>
   
@@ -316,6 +380,48 @@
     <li class="md-nav__item">
       <a href="../project/" class="md-nav__link">
         Manage Project
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../venv/" class="md-nav__link">
+        Working with virtualenv
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pep582/" class="md-nav__link">
+        Working with PEP 582
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dependency/" class="md-nav__link">
+        Manage Dependencies
       </a>
     </li>
   
@@ -460,6 +566,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration/" class="md-nav__link">
+        Configuration
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -477,18 +597,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_3">
+        <label class="md-nav__link" for="__nav_2">
           Writing pyproject.toml
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Writing pyproject.toml" data-md-level="1">
-        <label class="md-nav__title" for="__nav_3">
+        <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
           Writing pyproject.toml
         </label>
@@ -549,37 +669,22 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../configuration/" class="md-nav__link">
-        Configuration
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_5">
+        <label class="md-nav__link" for="__nav_3">
           Plugins
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Plugins" data-md-level="1">
-        <label class="md-nav__title" for="__nav_5">
+        <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           Plugins
         </label>
@@ -630,18 +735,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_6">
+        <label class="md-nav__link" for="__nav_4">
           Development
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Development" data-md-level="1">
-        <label class="md-nav__title" for="__nav_6">
+        <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
           Development
         </label>
@@ -668,7 +773,7 @@
   
     <li class="md-nav__item">
       <a href="../../dev/changelog/" class="md-nav__link">
-        Change Log
+        Changelog
       </a>
     </li>
   
@@ -811,12 +916,13 @@ command to initialize an existing project (prompt to fill the <code>pyproject.to
 <ul>
 <li><a class="autorefs autorefs-internal" href="../../plugin/reference/#pdm.signals.post_init"><code>post_init</code></a></li>
 </ul>
-<pre class="mermaid"><code>flowchart LR
+<p><code>mermaid
+flowchart LR
   subgraph pdm-init [pdm init]
     direction LR
     post-init{{Emit post_init}}
     init --&gt; post-init
-  end </code></pre>
+  end</code></p>
 <h2 id="dependencies-management">Dependencies management<a class="headerlink" href="#dependencies-management" title="Permanent link">#</a></h2>
 <p>The dependencies management is required for the developer to be able to work and perform the following:</p>
 <ul>
@@ -841,36 +947,53 @@ command to initialize an existing project (prompt to fill the <code>pyproject.to
 <li><a class="autorefs autorefs-internal" href="../../plugin/reference/#pdm.signals.pre_lock"><code>pre_lock</code></a></li>
 <li><a class="autorefs autorefs-internal" href="../../plugin/reference/#pdm.signals.post_lock"><code>post_lock</code></a></li>
 </ul>
-<pre class="mermaid"><code>flowchart LR
+<p>```mermaid
+flowchart LR
   subgraph pdm-install [pdm install]
-    direction LR
+    direction LR</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code>subgraph pdm-lock [pdm lock]
+  direction TB
+  pre-lock{{Emit pre_lock}}
+  post-lock{{Emit post_lock}}
+  pre-lock --&gt; lock --&gt; post-lock
+end
 
-    subgraph pdm-lock [pdm lock]
-      direction TB
-      pre-lock{{Emit pre_lock}}
-      post-lock{{Emit post_lock}}
-      pre-lock --&gt; lock --&gt; post-lock
-    end
+subgraph pdm-sync [pdm sync]
+  direction TB
+  pre-install{{Emit pre_install}}
+  post-install{{Emit post_install}}
+  pre-install --&gt; sync --&gt; post-install
+end
 
-    subgraph pdm-sync [pdm sync]
-      direction TB
-      pre-install{{Emit pre_install}}
-      post-install{{Emit post_install}}
-      pre-install --&gt; sync --&gt; post-install
-    end
-
-    pdm-lock --&gt; pdm-sync
-  end</code></pre>
+pdm-lock --&gt; pdm-sync
+</code></pre></div></td></tr></table></div>
+<p>end
+```</p>
 <h3 id="switching-python-version">Switching Python version<a class="headerlink" href="#switching-python-version" title="Permanent link">#</a></h3>
 <p>This is a special case in dependency management:
 you can switch the current Python version using <a href="../cli_reference/#exec-0--use"><code>pdm use</code></a> 
 and it will emit the <a class="autorefs autorefs-internal" href="../../plugin/reference/#pdm.signals.post_use"><code>post_use</code></a> signal with the new Python interpreter.</p>
-<pre class="mermaid"><code>flowchart LR
+<p><code>mermaid
+flowchart LR
   subgraph pdm-use [pdm use]
     direction LR
     post-use{{Emit post_use}}
     use --&gt; post-use
-  end </code></pre>
+  end</code></p>
 <h2 id="publication">Publication<a class="headerlink" href="#publication" title="Permanent link">#</a></h2>
 <p>As soon as you are ready to publish you package/app/libray, you will require the publication tasks:</p>
 <ul>
@@ -889,26 +1012,40 @@ and it will emit the <a class="autorefs autorefs-internal" href="../../plugin/re
 <li><a class="autorefs autorefs-internal" href="../../plugin/reference/#pdm.signals.pre_build"><code>pre_build</code></a></li>
 <li><a class="autorefs autorefs-internal" href="../../plugin/reference/#pdm.signals.post_build"><code>post_build</code></a></li>
 </ul>
-<pre class="mermaid"><code>flowchart LR
+<p>```mermaid
+flowchart LR
   subgraph pdm-publish [pdm publish]
     direction LR
     pre-publish{{Emit pre_publish}}
-    post-publish{{Emit post_publish}}
+    post-publish{{Emit post_publish}}</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code>subgraph pdm-build [pdm build]
+  pre-build{{Emit pre_build}}
+  post-build{{Emit post_build}}
+  pre-build --&gt; build --&gt; post-build
+end
 
-    subgraph pdm-build [pdm build]
-      pre-build{{Emit pre_build}}
-      post-build{{Emit post_build}}
-      pre-build --&gt; build --&gt; post-build
-    end
+%% subgraph pdm-upload [pdm upload]
+%%   pre-upload{{Emit pre_upload}}
+%%   post-upload{{Emit post_upload}}
+%%   pre-upload --&gt; upload --&gt; post-upload
+%% end
 
-    %% subgraph pdm-upload [pdm upload]
-    %%   pre-upload{{Emit pre_upload}}
-    %%   post-upload{{Emit post_upload}}
-    %%   pre-upload --&gt; upload --&gt; post-upload
-    %% end
-
-    pre-publish --&gt; pdm-build --&gt; upload --&gt; post-publish
-  end</code></pre>
+pre-publish --&gt; pdm-build --&gt; upload --&gt; post-publish
+</code></pre></div></td></tr></table></div>
+<p>end
+```</p>
 <p>Execution will stop at first failure, hooks included.</p>
 <h2 id="user-scripts">User scripts<a class="headerlink" href="#user-scripts" title="Permanent link">#</a></h2>
 <p><a href="../scripts/">User scripts are detailed in their own section</a> but you should know that:</p>
@@ -937,7 +1074,8 @@ and it will emit the <a class="autorefs autorefs-internal" href="../../plugin/re
 <span class="n">composite</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">composite</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;test&quot;</span><span class="p">]}</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
 <p>a <code>pdm run test</code> will have the following lifecycle:</p>
-<pre class="mermaid"><code>flowchart LR
+<p>```mermaid
+flowchart LR
   subgraph pdm-run-test [pdm run test]
     direction LR
     pre-run{{Emit pre_run}}
@@ -948,42 +1086,68 @@ and it will emit the <a class="autorefs autorefs-internal" href="../../plugin/re
       post-script{{Emit post_script}}
       pre-test[Execute pre_test]
       post-test[Execute post_test]
-      test[Execute test]
+      test[Execute test]</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>  pre-script --&gt; pre-test --&gt; test --&gt; post-test --&gt; post-script
+end
 
-      pre-script --&gt; pre-test --&gt; test --&gt; post-test --&gt; post-script
-    end
-
-    pre-run --&gt; run-test --&gt; post-run
-  end</code></pre>
+pre-run --&gt; run-test --&gt; post-run
+</code></pre></div></td></tr></table></div>
+<p>end
+```</p>
 <p>while <code>pdm run composite</code> will have the following:</p>
-<pre class="mermaid"><code>flowchart LR
+<p>```mermaid
+flowchart LR
   subgraph pdm-run-composite [pdm run composite]
     direction LR
     pre-run{{Emit pre_run}}
-    post-run{{Emit post_run}}
+    post-run{{Emit post_run}}</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span></pre></div></td><td class="code"><div><pre><span></span><code>subgraph run-composite [composite task]
+  direction TB
+  pre-script-composite{{Emit pre_script}}
+  post-script-composite{{Emit post_script}}
+  pre-composite[Execute pre_composite]
+  post-composite[Execute post_composite]
 
-    subgraph run-composite [composite task]
-      direction TB
-      pre-script-composite{{Emit pre_script}}
-      post-script-composite{{Emit post_script}}
-      pre-composite[Execute pre_composite]
-      post-composite[Execute post_composite]
+  subgraph run-test [test task]
+    direction TB
+    pre-script-test{{Emit pre_script}}
+    post-script-test{{Emit post_script}}
+    pre-test[Execute pre_test]
+    post-test[Execute post_test]
 
-      subgraph run-test [test task]
-        direction TB
-        pre-script-test{{Emit pre_script}}
-        post-script-test{{Emit post_script}}
-        pre-test[Execute pre_test]
-        post-test[Execute post_test]
+    pre-script-test --&gt; pre-test --&gt; test --&gt; post-test --&gt; post-script-test
+  end
 
-        pre-script-test --&gt; pre-test --&gt; test --&gt; post-test --&gt; post-script-test
-      end
+  pre-script-composite --&gt; pre-composite --&gt; run-test --&gt; post-composite --&gt; post-script-composite
+end
 
-      pre-script-composite --&gt; pre-composite --&gt; run-test --&gt; post-composite --&gt; post-script-composite
-    end
-
-     pre-run --&gt; run-composite --&gt; post-run
-  end</code></pre>
+ pre-run --&gt; run-composite --&gt; post-run
+</code></pre></div></td></tr></table></div>
+<p>end
+```</p>
 <h2 id="skipping">Skipping<a class="headerlink" href="#skipping" title="Permanent link">#</a></h2>
 <p>It is possible to control which task and hook runs for any built-in command as well as custom user scripts
 using the <code>--skip</code> option.</p>
@@ -993,28 +1157,45 @@ respectively skipping all hooks, all <code>pre_*</code> hooks and all <code>post
 You can also provide the skip list in <code>PDM_SKIP_HOOKS</code> environment variable
 but it will be overridden as soon as the <code>--skip</code> parameter is provided.</p>
 <p>Given the previous script block, running <code>pdm run --skip=:pre,post_test composite</code> will result in the following reduced lifecycle:</p>
-<pre class="mermaid"><code>flowchart LR
+<p>```mermaid
+flowchart LR
   subgraph pdm-run-composite [pdm run composite]
     direction LR
-    post-run{{Emit post_run}}
+    post-run{{Emit post_run}}</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code>subgraph run-composite [composite task]
+  direction TB
+  post-script-composite{{Emit post_script}}
+  post-composite[Execute post_composite]
 
-    subgraph run-composite [composite task]
-      direction TB
-      post-script-composite{{Emit post_script}}
-      post-composite[Execute post_composite]
+  subgraph run-test [test task]
+    direction TB
+    post-script-test{{Emit post_script}}
 
-      subgraph run-test [test task]
-        direction TB
-        post-script-test{{Emit post_script}}
+    test --&gt; post-script-test
+  end
 
-        test --&gt; post-script-test
-      end
+  run-test --&gt; post-composite --&gt; post-script-composite
+end
 
-      run-test --&gt; post-composite --&gt; post-script-composite
-    end
-
-     run-composite --&gt; post-run
-  end</code></pre>
+ run-composite --&gt; post-run
+</code></pre></div></td></tr></table></div>
+<p>end
+```</p>
 
               
             </article>
@@ -1115,7 +1296,7 @@ but it will be overridden as soon as the <code>--skip</code> parameter is provid
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky"], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.ed9748b7.min.js"></script>

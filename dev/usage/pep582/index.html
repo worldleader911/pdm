@@ -13,7 +13,7 @@
     
     
       
-        <title>Contributing - PDM</title>
+        <title>Working with PEP 582 - PDM</title>
       
     
     
@@ -65,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#contributing-to-pdm" class="md-skip">
+        <a href="#working-with-pep-582" class="md-skip">
           Skip to content
         </a>
       
@@ -128,7 +128,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Contributing
+              Working with PEP 582
             
           </span>
         </div>
@@ -216,13 +216,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link md-tabs__link--active">
         Usage
       </a>
     </li>
@@ -264,15 +266,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="./" class="md-tabs__link md-tabs__link--active">
+      <a href="../../dev/contributing/" class="md-tabs__link">
         Development
       </a>
     </li>
@@ -334,12 +334,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
       
       
       
@@ -376,7 +378,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../usage/project/" class="md-nav__link">
+      <a href="../project/" class="md-nav__link">
         Manage Project
       </a>
     </li>
@@ -390,7 +392,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../usage/venv/" class="md-nav__link">
+      <a href="../venv/" class="md-nav__link">
         Working with virtualenv
       </a>
     </li>
@@ -402,11 +404,93 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../usage/pep582/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Working with PEP 582
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Working with PEP 582
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#enable-pep-582-globally" class="md-nav__link">
+    Enable PEP 582 globally
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-ide-to-support-pep-582" class="md-nav__link">
+    Configure IDE to support PEP 582
+  </a>
+  
+    <nav class="md-nav" aria-label="Configure IDE to support PEP 582">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pycharm" class="md-nav__link">
+    PyCharm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vscode" class="md-nav__link">
+    VSCode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#neovim" class="md-nav__link">
+    Neovim
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seek-for-other-ides-or-editors" class="md-nav__link">
+    Seek for other IDEs or editors
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -418,7 +502,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../usage/dependency/" class="md-nav__link">
+      <a href="../dependency/" class="md-nav__link">
         Manage Dependencies
       </a>
     </li>
@@ -432,7 +516,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../usage/scripts/" class="md-nav__link">
+      <a href="../scripts/" class="md-nav__link">
         PDM Scripts
       </a>
     </li>
@@ -446,7 +530,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../usage/hooks/" class="md-nav__link">
+      <a href="../hooks/" class="md-nav__link">
         Lifecycle and hooks
       </a>
     </li>
@@ -460,7 +544,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../usage/advanced/" class="md-nav__link">
+      <a href="../advanced/" class="md-nav__link">
         Advanced Usage
       </a>
     </li>
@@ -474,7 +558,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../usage/cli_reference/" class="md-nav__link">
+      <a href="../cli_reference/" class="md-nav__link">
         CLI Reference
       </a>
     </li>
@@ -488,7 +572,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../usage/configuration/" class="md-nav__link">
+      <a href="../configuration/" class="md-nav__link">
         Configuration
       </a>
     </li>
@@ -646,14 +730,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
       
       
       
@@ -674,113 +756,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Contributing
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../dev/contributing/" class="md-nav__link">
         Contributing
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#a-recommended-flow-of-contributing-to-an-open-source-project" class="md-nav__link">
-    A recommended flow of contributing to an Open Source project
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#local-development" class="md-nav__link">
-    Local development
-  </a>
-  
-    <nav class="md-nav" aria-label="Local development">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#run-tests" class="md-nav__link">
-    Run tests
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#code-style" class="md-nav__link">
-    Code style
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#news-fragments" class="md-nav__link">
-    News fragments
-  </a>
-  
-    <nav class="md-nav" aria-label="News fragments">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#issue-types" class="md-nav__link">
-    Issue Types
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#preview-the-documentation" class="md-nav__link">
-    Preview the documentation
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#release" class="md-nav__link">
-    Release
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -792,7 +772,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../changelog/" class="md-nav__link">
+      <a href="../../dev/changelog/" class="md-nav__link">
         Changelog
       </a>
     </li>
@@ -806,7 +786,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../benchmark/" class="md-nav__link">
+      <a href="../../dev/benchmark/" class="md-nav__link">
         Benchmark
       </a>
     </li>
@@ -847,70 +827,50 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#a-recommended-flow-of-contributing-to-an-open-source-project" class="md-nav__link">
-    A recommended flow of contributing to an Open Source project
+  <a href="#enable-pep-582-globally" class="md-nav__link">
+    Enable PEP 582 globally
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#local-development" class="md-nav__link">
-    Local development
+  <a href="#configure-ide-to-support-pep-582" class="md-nav__link">
+    Configure IDE to support PEP 582
   </a>
   
-    <nav class="md-nav" aria-label="Local development">
+    <nav class="md-nav" aria-label="Configure IDE to support PEP 582">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#run-tests" class="md-nav__link">
-    Run tests
+  <a href="#pycharm" class="md-nav__link">
+    PyCharm
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#code-style" class="md-nav__link">
-    Code style
+  <a href="#vscode" class="md-nav__link">
+    VSCode
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#news-fragments" class="md-nav__link">
-    News fragments
+  <a href="#neovim" class="md-nav__link">
+    Neovim
   </a>
   
-    <nav class="md-nav" aria-label="News fragments">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
-  <a href="#issue-types" class="md-nav__link">
-    Issue Types
+  <a href="#seek-for-other-ides-or-editors" class="md-nav__link">
+    Seek for other IDEs or editors
   </a>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#preview-the-documentation" class="md-nav__link">
-    Preview the documentation
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#release" class="md-nav__link">
-    Release
-  </a>
   
 </li>
       
@@ -926,124 +886,157 @@
             <article class="md-content__inner md-typeset">
               
                 
-  <a href="https://github.com/pdm-project/pdm/edit/main/docs/docs/dev/contributing.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/pdm-project/pdm/edit/main/docs/docs/usage/pep582.md" title="Edit this page" class="md-content__button md-icon">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
 
-<h1 id="contributing-to-pdm">Contributing to PDM<a class="headerlink" href="#contributing-to-pdm" title="Permanent link">#</a></h1>
-<p>First off, thanks for taking the time to contribute! Contributions include but are not restricted to:</p>
-<ul>
-<li>Reporting bugs</li>
-<li>Contributing to code</li>
-<li>Writing tests</li>
-<li>Writing documentation</li>
-</ul>
-<p>The following is a set of guidelines for contributing.</p>
-<h2 id="a-recommended-flow-of-contributing-to-an-open-source-project">A recommended flow of contributing to an Open Source project<a class="headerlink" href="#a-recommended-flow-of-contributing-to-an-open-source-project" title="Permanent link">#</a></h2>
-<p>This section is for beginners to OSS. If you are an experienced OSS developer, you can skip
-this section.</p>
-<ol>
-<li>First, fork this project to your own namespace using the fork button at the top right of the repository page.</li>
-<li>Clone the <strong>upstream</strong> repository to local:
-   <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>git clone https://github.com/pdm-project/pdm.git
-<span class="c1"># Or if you prefer SSH clone:</span>
-git clone git@github.com:pdm-project/pdm.git
-</code></pre></div></td></tr></table></div></li>
-<li>Add the fork as a new remote:
-   <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>git remote add fork https://github.com/yourname/pdm.git
-git fetch fork
-</code></pre></div></td></tr></table></div>
-   where <code>fork</code> is the remote name of the fork repository.</li>
-</ol>
-<p><strong>ProTips:</strong></p>
-<ol>
-<li>Don't modify code on the main branch, the main branch should always keep track of origin/main.</li>
-</ol>
-<p>To update main branch to date:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>git pull origin main
-<span class="c1"># In rare cases that your local main branch diverges from the remote main:</span>
-git fetch origin <span class="o">&amp;&amp;</span> git reset --hard main
-</code></pre></div></td></tr></table></div>
-<ol>
-<li>Create a new branch based on the up-to-date main branch for new patches.</li>
-<li>Create a Pull Request from that patch branch.</li>
-</ol>
-<h2 id="local-development">Local development<a class="headerlink" href="#local-development" title="Permanent link">#</a></h2>
-<p>To make sure the test suites can run correctly, you need to install <a href="https://git-lfs.github.com/">Git LFS</a>, then</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>git lfs install
-<span class="c1"># If you have already cloned the repository, execute the below command as well.</span>
-git lfs pull
-</code></pre></div></td></tr></table></div>
-<p>Then, you need to install base dependencies in a venv. Make sure your <code>pip</code> is newer than <code>21.3</code> to install PDM in
-develop/editable mode.</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>python -m pip install -U <span class="s2">&quot;pip&gt;=21.3&quot;</span>
-python -m pip install -e .
-</code></pre></div></td></tr></table></div>
-<p>You are free to create a virtualenv with either <code>venv</code> module or <code>virtualenv</code> tool for the development. If you are doing
-so, you may also need to set <code>pdm config use_venv true</code> after installation is done.</p>
-<p>Now, all dependencies are installed into the Python environment you choose, which will be used for development
-after this point.</p>
-<h3 id="run-tests">Run tests<a class="headerlink" href="#run-tests" title="Permanent link">#</a></h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm run <span class="nb">test</span>
-</code></pre></div></td></tr></table></div>
-<p>The test suite is still simple and needs expansion! Please help write more test cases.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>You can also run your test suite against all supported Python version using <code>tox</code> with the <code>tox-pdm</code> plugin.
-You can either run it by yourself with:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>tox
-</code></pre></div></td></tr></table></div>
-<p>or from <code>pdm</code> with:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm run tox
-</code></pre></div></td></tr></table></div>
+<h1 id="working-with-pep-582">Working with PEP 582<a class="headerlink" href="#working-with-pep-582" title="Permanent link">#</a></h1>
+<p>With <a href="https://www.python.org/dev/peps/pep-0582/">PEP 582</a>, dependencies will be installed into <code>__pypackages__</code> directory under the project root. With <a href="#enable-pep-582-globally">PEP 582 enabled globally</a>, you can also use the project interpreter to run scripts directly.</p>
+<p><strong>When the project interpreter is a normal Python, this mode is enabled.</strong></p>
+<p>Besides, on a project you work with for the first time on your machine, if it contains an empty <code>__pypackages__</code> directory, PEP 582 is enabled automatically, and virtualenv won't be created.</p>
+<h2 id="enable-pep-582-globally">Enable PEP 582 globally<a class="headerlink" href="#enable-pep-582-globally" title="Permanent link">#</a></h2>
+<p>To make the Python interpreters aware of PEP 582 packages, one need to add the <code>pdm/pep582/sitecustomize.py</code>
+to the Python library search path.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Windows</label><label for="__tabbed_1_2">Mac and Linux</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>One just needs to execute <code>pdm --pep582</code>, then environment variable will be changed automatically. Don't forget
+to restart the terminal session to take effect.</p>
 </div>
-<h3 id="code-style">Code style<a class="headerlink" href="#code-style" title="Permanent link">#</a></h3>
-<p>PDM uses <code>pre-commit</code> for linting. Install <code>pre-commit</code> first, then:</p>
+<div class="tabbed-block">
+<p>The command to change the environment variables can be printed by <code>pdm --pep582 [&lt;SHELL&gt;]</code>. If <code>&lt;SHELL&gt;</code>
+isn't given, PDM will pick one based on some guesses. You can run <code>eval "$(pdm --pep582)"</code> to execute the command.</p>
+<p>You may want to write a line in your <code>.bash_profile</code>(or similar profiles) to make it effective when logging in.
+For example, in bash you can do this:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm --pep582 &gt;&gt; ~/.bash_profile
+</code></pre></div></td></tr></table></div>
+<p>Once again, Don't forget to restart the terminal session to take effect.</p>
+</div>
+</div>
+</div>
+<details class="note">
+<summary>How is it done?</summary>
+<p>Thanks to the <a href="https://docs.python.org/3/library/site.html">site packages loading</a> on Python startup. It is possible to patch the <code>sys.path</code>
+by executing the <code>sitecustomize.py</code> shipped with PDM. The interpreter can search the directories
+for the nearest <code>__pypackage__</code> folder and append it to the <code>sys.path</code> variable.</p>
+</details>
+<h2 id="configure-ide-to-support-pep-582">Configure IDE to support PEP 582<a class="headerlink" href="#configure-ide-to-support-pep-582" title="Permanent link">#</a></h2>
+<p>Now there are no built-in support or plugins for PEP 582 in most IDEs, you have to configure your tools manually.</p>
+<p>PDM will write and store project-wide configurations in <code>.pdm.toml</code> and you are recommended to add following lines
+in the <code>.gitignore</code>:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>pre-commit install
-pdm run lint
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>.pdm.toml
+__pypackages__/
 </code></pre></div></td></tr></table></div>
-<p>PDM uses <code>black</code> for code style and <code>isort</code> for sorting import statements. If you are not following them,
-the CI will fail and your Pull Request will not be merged.</p>
-<h3 id="news-fragments">News fragments<a class="headerlink" href="#news-fragments" title="Permanent link">#</a></h3>
-<p>When you make changes such as fixing a bug or adding a feature, you must add a news fragment describing
-your change. News fragments are placed in the <code>news/</code> directory, and should be named according to this pattern: <code>&lt;issue_num&gt;.&lt;issue_type&gt;.md</code> (e.g., <code>566.bugfix.md</code>).</p>
-<h4 id="issue-types">Issue Types<a class="headerlink" href="#issue-types" title="Permanent link">#</a></h4>
-<ul>
-<li><code>feature</code>: Features and improvements</li>
-<li><code>bugfix</code>: Bug fixes</li>
-<li><code>refactor</code>: Code restructures</li>
-<li><code>doc</code>: Added or improved documentation</li>
-<li><code>dep</code>: Changes to dependencies</li>
-<li><code>removal</code>: Removals or deprecations in the API</li>
-<li><code>misc</code>: Miscellaneous changes that don't fit any of the other categories</li>
-</ul>
-<p>The contents of the file should be a single sentence in the imperative
-mood that describes your changes. (e.g., <code>Deduplicate the plugins list.</code> ) See entries in the <a href="/changelog">Change Log</a> for more examples.</p>
-<h3 id="preview-the-documentation">Preview the documentation<a class="headerlink" href="#preview-the-documentation" title="Permanent link">#</a></h3>
-<p>If you make some changes to the <code>docs/</code> and you want to preview the build result, simply do:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm run doc
+<h3 id="pycharm">PyCharm<a class="headerlink" href="#pycharm" title="Permanent link">#</a></h3>
+<p>Mark <code>__pypackages__/&lt;major.minor&gt;/lib</code> as <a href="https://www.jetbrains.com/help/pycharm/configuring-project-structure.html#mark-dir-project-view">Sources Root</a>.
+Then, select as <a href="https://www.jetbrains.com/help/pycharm/configuring-python-interpreter.html#interpreter">Python interpreter</a> a Python installation with the same <code>&lt;major.minor&gt;</code> version.</p>
+<p>Additionally, if you want to use tools from the environment (e.g. <code>pytest</code>), you have to add the
+<code>__pypackages__/&lt;major.minor&gt;/bin</code> directory to the <code>PATH</code> variable in the corresponding
+run/debug configuration.</p>
+<h3 id="vscode">VSCode<a class="headerlink" href="#vscode" title="Permanent link">#</a></h3>
+<p>Add the following two entries to the top-level dict in <code>.vscode/settings.json</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;python.autoComplete.extraPaths&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;__pypackages__/&lt;major.minor&gt;/lib&quot;</span><span class="p">],</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;python.analysis.extraPaths&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;__pypackages__/&lt;major.minor&gt;/lib&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
-<h2 id="release">Release<a class="headerlink" href="#release" title="Permanent link">#</a></h2>
-<p>Once all changes are done and ready to release, you can preview the changelog contents by running:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm run release --dry-run
+<p><a href="#enable-pep-582-globally">Enable PEP582 globally</a>,
+and make sure VSCode runs using the same user and shell you enabled PEP582 for.</p>
+<details class="note">
+<summary>Cannot enable PEP582 globally?</summary>
+<p>If for some reason you cannot enable PEP582 globally, you can still configure each "launch" in each project:
+set the <code>PYTHONPATH</code> environment variable in your launch configuration, in <code>.vscode/launch.json</code>.
+For example, to debug your <code>pytest</code> run:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.2.0&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;configurations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">        </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pytest&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;python&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;request&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;launch&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;module&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pytest&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;tests&quot;</span><span class="p">],</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;justMyCode&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;env&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;PYTHONPATH&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;__pypackages__/&lt;major.minor&gt;/lib&quot;</span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">]</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
-<p>Make sure the next version and the changelog are as expected in the output.</p>
-<p>Then cut a release on the <strong>main</strong> branch:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm run release
+<p>If your package resides in a <code>src</code> directory, add it to <code>PYTHONPATH</code> as well:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">&quot;env&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;PYTHONPATH&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;src:__pypackages__/&lt;major.minor&gt;/lib&quot;</span><span class="p">}</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
-<p>GitHub action will create the release and upload the distributions to PyPI.</p>
-<p>Read more options about version bumping by <code>pdm run release --help</code>.</p>
+</details>
+<details class="note">
+<summary>Using Pylance/Pyright?</summary>
+<p>If you have configured <code>"python.analysis.diagnosticMode": "workspace"</code>,
+and you see a ton of errors/warnings as a result.
+you may need to create <code>pyrightconfig.json</code> in the workspace directory, and fill in the following fields:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;exclude&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;__pypackages__&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<p>Then restart the language server or VS Code and you're good to go.
+In the future (<a href="https://github.com/microsoft/pylance-release/issues/1150">microsoft/pylance-release#1150</a>), maybe the problem will be solved.</p>
+</details>
+<details class="note">
+<summary>Using Jupyter Notebook?</summary>
+<p>If you wish to use pdm to install jupyter notebook and use it in vscode in conjunction with the python extension:</p>
+<ol>
+<li>Use <code>pdm add notebook</code> or so to install notebook</li>
+<li>Add a <code>.env</code> file inside of your project director with contents like the following:</li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>PYTHONPATH=/your-workspace-path/__pypackages__/&lt;major&gt;.&lt;minor&gt;/lib
+</code></pre></div></td></tr></table></div>
+<p>If the above still doesn't work, it's most likely because the environment variable is not properly loaded when the Notebook starts. There are two workarounds.</p>
+<ol>
+<li>Run <code>code .</code> in Terminal. It will open a new VSCode window in the current directory with the path set correctly. Use the Jupyter Notebook in the new window</li>
+<li>If you prefer not to open a new window, run the following at the beginning of your Jupyter Notebook to explicitly set the path:</li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>import sys
+sys.path.append(&#39;/your-workspace-path/__pypackages__/&lt;major&gt;.&lt;minor&gt;/lib&#39;)
+</code></pre></div></td></tr></table></div>
+<blockquote>
+<p><a href="https://github.com/pdm-project/pdm/issues/848">Reference Issue</a></p>
+</blockquote>
+</details>
+<details class="note">
+<summary>PDM Task Provider</summary>
+<p>In addition, there is a <a href="https://marketplace.visualstudio.com/items?itemName=knowsuchagency.pdm-task-provider">VSCode Task Provider extension</a> available for download.</p>
+<p>This makes it possible for VSCode to automatically detect <a href="../scripts/">pdm scripts</a> so they
+can be run natively as <a href="https://code.visualstudio.com/docs/editor/tasks">VSCode Tasks</a>.</p>
+</details>
+<h3 id="neovim">Neovim<a class="headerlink" href="#neovim" title="Permanent link">#</a></h3>
+<p>If using <a href="https://github.com/neovim/nvim-lspconfig">neovim-lsp</a> with
+<a href="https://github.com/Microsoft/pyright">pyright</a> and want your
+<code>__pypackages__</code> directory to be added to the path, you can add this to your
+project's <code>pyproject.toml</code>.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pyright]</span><span class="w"></span>
+<span class="n">extraPaths</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;__pypackages__/&lt;major.minor&gt;/lib/&quot;</span><span class="p">]</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<h3 id="seek-for-other-ides-or-editors"><a href="../advanced/#integrate-with-other-ide-or-editors">Seek for other IDEs or editors</a><a class="headerlink" href="#seek-for-other-ides-or-editors" title="Permanent link">#</a></h3>
 
               
             </article>
@@ -1057,7 +1050,7 @@ mood that describes your changes. (e.g., <code>Deduplicate the plugins list.</co
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../../plugin/reference/" class="md-footer__link md-footer__link--prev" aria-label="Previous: API Reference" rel="prev">
+        <a href="../venv/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Working with virtualenv" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1066,20 +1059,20 @@ mood that describes your changes. (e.g., <code>Deduplicate the plugins list.</co
               <span class="md-footer__direction">
                 Previous
               </span>
-              API Reference
+              Working with virtualenv
             </div>
           </div>
         </a>
       
       
         
-        <a href="../changelog/" class="md-footer__link md-footer__link--next" aria-label="Next: Changelog" rel="next">
+        <a href="../dependency/" class="md-footer__link md-footer__link--next" aria-label="Next: Manage Dependencies" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Changelog
+              Manage Dependencies
             </div>
           </div>
           <div class="md-footer__button md-icon">

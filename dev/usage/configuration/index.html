@@ -378,8 +378,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../dependency/" class="md-nav__link">
-        Manage Dependencies
+      <a href="../project/" class="md-nav__link">
+        Manage Project
       </a>
     </li>
   
@@ -392,8 +392,36 @@
   
   
     <li class="md-nav__item">
-      <a href="../project/" class="md-nav__link">
-        Manage Project
+      <a href="../venv/" class="md-nav__link">
+        Working with virtualenv
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pep582/" class="md-nav__link">
+        Working with PEP 582
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dependency/" class="md-nav__link">
+        Manage Dependencies
       </a>
     </li>
   
@@ -779,7 +807,7 @@
   <h1>Configuration</h1>
 
 <h2 id="available-configurations">Available Configurations<a class="headerlink" href="#available-configurations" title="Permanent link">#</a></h2>
-<p>The following configuration items can be retrieved and modified by <a href="usage/cli_reference.md#exec-0--config"><code>pdm config</code></a> command.</p>
+<p>The following configuration items can be retrieved and modified by <a href="../cli_reference/#exec-0--config"><code>pdm config</code></a> command.</p>
 <table>
 <thead>
 <tr>
@@ -930,6 +958,27 @@
 <td>1000</td>
 <td>Yes</td>
 <td><code>PDM_RESOLVE_MAX_ROUNDS</code></td>
+</tr>
+<tr>
+<td><code>venv.location</code></td>
+<td>Parent directory for virtualenvs</td>
+<td><code>&lt;default data location on OS&gt;/venvs</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>venv.backend</code></td>
+<td>Default backend to create virtualenv</td>
+<td><code>virtualenv</code></td>
+<td>Yes</td>
+<td><code>PDM_VENV_BACKEND</code></td>
+</tr>
+<tr>
+<td><code>venv.in-project</code></td>
+<td>Create virtualenv in <code>.venv</code> under project root</td>
+<td><code>False</code></td>
+<td>Yes</td>
+<td><code>PDM_VENV_IN_PROJECT</code></td>
 </tr>
 </tbody>
 </table>

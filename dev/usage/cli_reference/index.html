@@ -378,8 +378,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../dependency/" class="md-nav__link">
-        Manage Dependencies
+      <a href="../project/" class="md-nav__link">
+        Manage Project
       </a>
     </li>
   
@@ -392,8 +392,36 @@
   
   
     <li class="md-nav__item">
-      <a href="../project/" class="md-nav__link">
-        Manage Project
+      <a href="../venv/" class="md-nav__link">
+        Working with virtualenv
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pep582/" class="md-nav__link">
+        Working with PEP 582
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dependency/" class="md-nav__link">
+        Manage Dependencies
       </a>
     </li>
   
@@ -1253,6 +1281,79 @@
 <li><code>-k</code>, <code>--skip</code>: Skip some tasks and/or hooks by their comma-separated names. Can be supplied multiple times. Use ":all" to skip all hooks. Use ":pre" and ":post" to skip all pre or post hooks.</li>
 <li><code>-f</code>, <code>--first</code>: Select the first matched interpreter</li>
 <li><code>-i</code>, <code>--ignore-remembered</code>: Ignore the remembered selection</li>
+</ul>
+<h3 id="exec-0--venv">venv<a class="headerlink" href="#exec-0--venv" title="Permanent link">#</a></h3>
+<blockquote>
+<p>Virtualenv management</p>
+</blockquote>
+<p>Positional Arguments:</p>
+<h4 id="exec-0--create">create<a class="headerlink" href="#exec-0--create" title="Permanent link">#</a></h4>
+<blockquote>
+<p>Create a virtualenv</p>
+</blockquote>
+<p>Positional Arguments:</p>
+<ul>
+<li><code>python</code>: Specify which python should be used to create the virtualenv</li>
+<li><code>venv_args</code>: Additional arguments that will be passed to the backend</li>
+</ul>
+<p>Optional Arguments:</p>
+<ul>
+<li><code>-h</code>, <code>--help</code>: show this help message and exit</li>
+<li><code>-v</code>, <code>--verbose</code>: -v for detailed output and -vv for more detailed</li>
+<li><code>-w</code>, <code>--with</code>: Specify the backend to create the virtualenv</li>
+<li><code>-f</code>, <code>--force</code>: Recreate if the virtualenv already exists</li>
+<li><code>-n</code>, <code>--name</code>: Specify the name of the virtualenv</li>
+</ul>
+<h4 id="exec-0--list_3">list<a class="headerlink" href="#exec-0--list_3" title="Permanent link">#</a></h4>
+<blockquote>
+<p>List all virtualenvs associated with this project</p>
+</blockquote>
+<p>Optional Arguments:</p>
+<ul>
+<li><code>-h</code>, <code>--help</code>: show this help message and exit</li>
+<li><code>-v</code>, <code>--verbose</code>: -v for detailed output and -vv for more detailed</li>
+</ul>
+<h4 id="exec-0--remove_3">remove<a class="headerlink" href="#exec-0--remove_3" title="Permanent link">#</a></h4>
+<blockquote>
+<p>Remove the virtualenv with the given name</p>
+</blockquote>
+<p>Positional Arguments:</p>
+<ul>
+<li><code>env</code>: The key of the virtualenv</li>
+</ul>
+<p>Optional Arguments:</p>
+<ul>
+<li><code>-h</code>, <code>--help</code>: show this help message and exit</li>
+<li><code>-v</code>, <code>--verbose</code>: -v for detailed output and -vv for more detailed</li>
+<li><code>-y</code>, <code>--yes</code>: Answer yes on the following question</li>
+</ul>
+<h4 id="exec-0--activate">activate<a class="headerlink" href="#exec-0--activate" title="Permanent link">#</a></h4>
+<blockquote>
+<p>Activate the virtualenv with the given name</p>
+</blockquote>
+<p>Positional Arguments:</p>
+<ul>
+<li><code>env</code>: The key of the virtualenv</li>
+</ul>
+<p>Optional Arguments:</p>
+<ul>
+<li><code>-h</code>, <code>--help</code>: show this help message and exit</li>
+<li><code>-v</code>, <code>--verbose</code>: -v for detailed output and -vv for more detailed</li>
+</ul>
+<h4 id="exec-0--purge">purge<a class="headerlink" href="#exec-0--purge" title="Permanent link">#</a></h4>
+<blockquote>
+<p>Purge selected/all created Virtualenvs</p>
+</blockquote>
+<p>Optional Arguments:</p>
+<ul>
+<li><code>-h</code>, <code>--help</code>: show this help message and exit</li>
+<li><code>-v</code>, <code>--verbose</code>: -v for detailed output and -vv for more detailed</li>
+<li><code>-f</code>, <code>--force</code>: Force purging without prompting for confirmation</li>
+<li><code>-i</code>, <code>--interactive</code>: Interatively purge selected Virtualenvs</li>
+</ul>
+<p>Optional Arguments:</p>
+<ul>
+<li><code>-h</code>, <code>--help</code>: show this help message and exit</li>
 </ul>
 
               

@@ -376,8 +376,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../usage/dependency/" class="md-nav__link">
-        Manage Dependencies
+      <a href="../../usage/project/" class="md-nav__link">
+        Manage Project
       </a>
     </li>
   
@@ -390,8 +390,36 @@
   
   
     <li class="md-nav__item">
-      <a href="../../usage/project/" class="md-nav__link">
-        Manage Project
+      <a href="../../usage/venv/" class="md-nav__link">
+        Working with virtualenv
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../usage/pep582/" class="md-nav__link">
+        Working with PEP 582
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../usage/dependency/" class="md-nav__link">
+        Manage Dependencies
       </a>
     </li>
   
@@ -1044,7 +1072,7 @@ Please read the <a href="../reference/">API reference</a> for more details.</p>
 by <code>pip install -e .</code> or <code>python setup.py develop</code> in the <strong>traditional</strong> Python packaging world which leverages <code>setup.py</code> to do so. However,
 as there is no such <code>setup.py</code> in a PDM project, how can we do that?</p>
 <p>Fortunately, it becomes even easier with PDM and PEP 582. First, you should enable PEP 582 globally following the
-<a href="../..#enable-pep-582-globally">corresponding part of this doc</a>. Then you just need to install all dependencies into the <code>__pypackages__</code> directory by:</p>
+<a href="../../usage/pep582/#enable-pep-582-globally">corresponding part of this doc</a>. Then you just need to install all dependencies into the <code>__pypackages__</code> directory by:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm install
 </code></pre></div></td></tr></table></div>
 <p>After that, all the dependencies are available with a compatible Python interpreter, including the plugin itself, in editable mode. That means any change

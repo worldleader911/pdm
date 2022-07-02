@@ -426,33 +426,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#enable-pep-582-globally" class="md-nav__link">
-    Enable PEP 582 globally
-  </a>
-  
-    <nav class="md-nav" aria-label="Enable PEP 582 globally">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#for-windows-users" class="md-nav__link">
-    For Windows users
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#for-mac-and-linux-users" class="md-nav__link">
-    For Mac and Linux users
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -466,56 +439,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#use-with-ide" class="md-nav__link">
-    Use with IDE
+  <a href="#virtualenv-and-pep-582" class="md-nav__link">
+    Virtualenv and PEP 582
   </a>
-  
-    <nav class="md-nav" aria-label="Use with IDE">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#pycharm" class="md-nav__link">
-    PyCharm
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#vscode" class="md-nav__link">
-    VSCode
-  </a>
-  
-    <nav class="md-nav" aria-label="VSCode">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#task-provider" class="md-nav__link">
-    Task Provider
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#neovim" class="md-nav__link">
-    Neovim
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#seek-for-other-ides-or-editors" class="md-nav__link">
-    Seek for other IDEs or editors
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -548,8 +474,8 @@
   
   
     <li class="md-nav__item">
-      <a href="usage/dependency/" class="md-nav__link">
-        Manage Dependencies
+      <a href="usage/project/" class="md-nav__link">
+        Manage Project
       </a>
     </li>
   
@@ -562,8 +488,36 @@
   
   
     <li class="md-nav__item">
-      <a href="usage/project/" class="md-nav__link">
-        Manage Project
+      <a href="usage/venv/" class="md-nav__link">
+        Working with virtualenv
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="usage/pep582/" class="md-nav__link">
+        Working with PEP 582
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="usage/dependency/" class="md-nav__link">
+        Manage Dependencies
       </a>
     </li>
   
@@ -915,33 +869,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#enable-pep-582-globally" class="md-nav__link">
-    Enable PEP 582 globally
-  </a>
-  
-    <nav class="md-nav" aria-label="Enable PEP 582 globally">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#for-windows-users" class="md-nav__link">
-    For Windows users
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#for-mac-and-linux-users" class="md-nav__link">
-    For Mac and Linux users
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -955,56 +882,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#use-with-ide" class="md-nav__link">
-    Use with IDE
+  <a href="#virtualenv-and-pep-582" class="md-nav__link">
+    Virtualenv and PEP 582
   </a>
-  
-    <nav class="md-nav" aria-label="Use with IDE">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#pycharm" class="md-nav__link">
-    PyCharm
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#vscode" class="md-nav__link">
-    VSCode
-  </a>
-  
-    <nav class="md-nav" aria-label="VSCode">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#task-provider" class="md-nav__link">
-    Task Provider
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#neovim" class="md-nav__link">
-    Neovim
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#seek-for-other-ides-or-editors" class="md-nav__link">
-    Seek for other IDEs or editors
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1051,7 +931,7 @@ in a similar way to <code>npm</code> that doesn't need to create a virtualenv at
 
 <h2 id="feature-highlights">Feature highlights<a class="headerlink" href="#feature-highlights" title="Permanent link">#</a></h2>
 <ul>
-<li><a href="https://www.python.org/dev/peps/pep-0582">PEP 582</a> local package installer and runner, no virtualenv involved at all.</li>
+<li>Opt-in <a href="https://www.python.org/dev/peps/pep-0582">PEP 582</a> support, no virtualenv involved at all.</li>
 <li>Simple and fast dependency resolver, mainly for large binary distributions.</li>
 <li>A <a href="https://www.python.org/dev/peps/pep-0517">PEP 517</a> build backend.</li>
 <li><a href="https://www.python.org/dev/peps/pep-0621">PEP 621</a> project metadata.</li>
@@ -1159,20 +1039,6 @@ cd into the project folder and:</p>
 </div>
 </div>
 </div>
-<h3 id="enable-pep-582-globally">Enable PEP 582 globally<a class="headerlink" href="#enable-pep-582-globally" title="Permanent link">#</a></h3>
-<p>To make the Python interpreters aware of PEP 582 packages, one need to add the <code>pdm/pep582/sitecustomize.py</code>
-to the Python library search path.</p>
-<h4 id="for-windows-users">For Windows users<a class="headerlink" href="#for-windows-users" title="Permanent link">#</a></h4>
-<p>One just needs to execute <code>pdm --pep582</code>, then environment variable will be changed automatically. Don't forget
-to restart the terminal session to take effect.</p>
-<h4 id="for-mac-and-linux-users">For Mac and Linux users<a class="headerlink" href="#for-mac-and-linux-users" title="Permanent link">#</a></h4>
-<p>The command to change the environment variables can be printed by <code>pdm --pep582 [&lt;SHELL&gt;]</code>. If <code>&lt;SHELL&gt;</code>
-isn't given, PDM will pick one based on some guesses. You can run <code>eval "$(pdm --pep582)"</code> to execute the command.</p>
-<p>You may want to write a line in your <code>.bash_profile</code>(or similar profiles) to make it effective when logging in.
-For example, in bash you can do this:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm --pep582 &gt;&gt; ~/.bash_profile
-</code></pre></div></td></tr></table></div>
-<p>Once again, Don't forget to restart the terminal session to take effect.</p>
 <h2 id="shell-completion">Shell Completion<a class="headerlink" href="#shell-completion" title="Permanent link">#</a></h2>
 <p>PDM supports generating completion scripts for Bash, Zsh, Fish or Powershell. Here are some common locations for each shell:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="4:4"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><input id="__tabbed_4_3" name="__tabbed_4" type="radio" /><input id="__tabbed_4_4" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Bash</label><label for="__tabbed_4_2">Zsh</label><label for="__tabbed_4_3">Fish</label><label for="__tabbed_4_4">Powershell</label></div>
@@ -1221,119 +1087,9 @@ pdm completion zsh &gt; <span class="nv">$ZSH_CUSTOM</span>/plugins/pdm/_pdm
 </div>
 </div>
 </div>
-<h2 id="use-with-ide">Use with IDE<a class="headerlink" href="#use-with-ide" title="Permanent link">#</a></h2>
-<p>Now there are not built-in support or plugins for PEP 582 in most IDEs, you have to configure your tools manually.</p>
-<p>PDM will write and store project-wide configurations in <code>.pdm.toml</code> and you are recommended to add following lines
-in the <code>.gitignore</code>:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>.pdm.toml
-__pypackages__/
-</code></pre></div></td></tr></table></div>
-<h3 id="pycharm">PyCharm<a class="headerlink" href="#pycharm" title="Permanent link">#</a></h3>
-<p>Mark <code>__pypackages__/&lt;major.minor&gt;/lib</code> as <a href="https://www.jetbrains.com/help/pycharm/configuring-project-structure.html#mark-dir-project-view">Sources Root</a>.
-Then, select as <a href="https://www.jetbrains.com/help/pycharm/configuring-python-interpreter.html#interpreter">Python interpreter</a> a Python installation with the same <code>&lt;major.minor&gt;</code> version.</p>
-<p>Additionally, if you want to use tools from the environment (e.g. <code>pytest</code>), you have to add the
-<code>__pypackages__/&lt;major.minor&gt;/bin</code> directory to the <code>PATH</code> variable in the corresponding
-run/debug configuration.</p>
-<h3 id="vscode">VSCode<a class="headerlink" href="#vscode" title="Permanent link">#</a></h3>
-<p>Add the following two entries to the top-level dict in <code>.vscode/settings.json</code>:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="nt">&quot;python.autoComplete.extraPaths&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;__pypackages__/&lt;major.minor&gt;/lib&quot;</span><span class="p">],</span><span class="w"></span>
-<span class="w">  </span><span class="nt">&quot;python.analysis.extraPaths&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;__pypackages__/&lt;major.minor&gt;/lib&quot;</span><span class="p">]</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
-<p><a href="#enable-pep-582-globally">Enable PEP582 globally</a>,
-and make sure VSCode runs using the same user and shell you enabled PEP582 for.</p>
-<details class="note">
-<summary>Cannot enable PEP582 globally?</summary>
-<p>If for some reason you cannot enable PEP582 globally, you can still configure each "launch" in each project:
-set the <code>PYTHONPATH</code> environment variable in your launch configuration, in <code>.vscode/launch.json</code>.
-For example, to debug your <code>pytest</code> run:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.2.0&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;configurations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">        </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pytest&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;python&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;request&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;launch&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;module&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pytest&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;tests&quot;</span><span class="p">],</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;justMyCode&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;env&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;PYTHONPATH&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;__pypackages__/&lt;major.minor&gt;/lib&quot;</span><span class="p">}</span><span class="w"></span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">]</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
-<p>If your package resides in a <code>src</code> directory, add it to <code>PYTHONPATH</code> as well:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">&quot;env&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;PYTHONPATH&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;src:__pypackages__/&lt;major.minor&gt;/lib&quot;</span><span class="p">}</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
-</details>
-<details class="note">
-<summary>Using Pylance/Pyright?</summary>
-<p>If you have configured <code>"python.analysis.diagnosticMode": "workspace"</code>,
-and you see a ton of errors/warnings as a result.
-you may need to create <code>pyrightconfig.json</code> in the workspace directory, and fill in the following fields:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;exclude&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;__pypackages__&quot;</span><span class="p">]</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
-<p>Then restart the language server or VS Code and you're good to go.
-In the future (<a href="https://github.com/microsoft/pylance-release/issues/1150">microsoft/pylance-release#1150</a>), maybe the problem will be solved.</p>
-</details>
-<details class="note">
-<summary>Using Jupyter Notebook?</summary>
-<p>If you wish to use pdm to install jupyter notebook and use it in vscode in conjunction with the python extension:</p>
-<ol>
-<li>Use <code>pdm add notebook</code> or so to install notebook</li>
-<li>Add a <code>.env</code> file inside of your project director with contents like the following:</li>
-</ol>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>PYTHONPATH=/your-workspace-path/__pypackages__/&lt;major&gt;.&lt;minor&gt;/lib
-</code></pre></div></td></tr></table></div>
-<p>If the above still doesn't work, it's most likely because the environment variable is not properly loaded when the Notebook starts. There are two workarounds.</p>
-<ol>
-<li>Run <code>code .</code> in Terminal. It will open a new VSCode window in the current directory with the path set correctly. Use the Jupyter Notebook in the new window</li>
-<li>If you prefer not to open a new window, run the following at the beginning of your Jupyter Notebook to explicitly set the path:</li>
-</ol>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>import sys
-sys.path.append(&#39;/your-workspace-path/__pypackages__/&lt;major&gt;.&lt;minor&gt;/lib&#39;)
-</code></pre></div></td></tr></table></div>
-<blockquote>
-<p><a href="https://github.com/pdm-project/pdm/issues/848">Reference Issue</a></p>
-</blockquote>
-</details>
-<h4 id="task-provider">Task Provider<a class="headerlink" href="#task-provider" title="Permanent link">#</a></h4>
-<p>In addition, there is a <a href="https://marketplace.visualstudio.com/items?itemName=knowsuchagency.pdm-task-provider">VSCode Task Provider extension</a> available for download.</p>
-<p>This makes it possible for VSCode to automatically detect <a href="usage/scripts/">pdm scripts</a> so they
-can be run natively as <a href="https://code.visualstudio.com/docs/editor/tasks">VSCode Tasks</a>.</p>
-<h3 id="neovim">Neovim<a class="headerlink" href="#neovim" title="Permanent link">#</a></h3>
-<p>If using <a href="https://github.com/neovim/nvim-lspconfig">neovim-lsp</a> with
-<a href="https://github.com/Microsoft/pyright">pyright</a> and want your
-<code>__pypackages__</code> directory to be added to the path, you can add this to your
-project's <code>pyproject.toml</code>.</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pyright]</span><span class="w"></span>
-<span class="n">extraPaths</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;__pypackages__/&lt;major.minor&gt;/lib/&quot;</span><span class="p">]</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
-<h3 id="seek-for-other-ides-or-editors"><a href="usage/advanced/#integrate-with-other-ide-or-editors">Seek for other IDEs or editors</a><a class="headerlink" href="#seek-for-other-ides-or-editors" title="Permanent link">#</a></h3>
+<h2 id="virtualenv-and-pep-582">Virtualenv and PEP 582<a class="headerlink" href="#virtualenv-and-pep-582" title="Permanent link">#</a></h2>
+<p>In addition to the virtualenv management, PDM supports <a href="https://www.python.org/dev/peps/pep-0582/">PEP 582</a> as an opt-in feature.
+You can learn more about the two modes in the corresponding chapters in <a href="usage/venv/">Working with virtualenv</a> and <a href="usage/pep582/">Working with PEP 582</a></p>
 <h2 id="pdm-eco-system">PDM Eco-system<a class="headerlink" href="#pdm-eco-system" title="Permanent link">#</a></h2>
 <p><a href="https://github.com/pdm-project/awesome-pdm">Awesome PDM</a> is a curated list of awesome PDM plugins and resources.</p>
 <h2 id="sponsors">Sponsors<a class="headerlink" href="#sponsors" title="Permanent link">#</a></h2>
@@ -1354,13 +1110,13 @@ project's <code>pyproject.toml</code>.</p>
       
       
         
-        <a href="usage/dependency/" class="md-footer__link md-footer__link--next" aria-label="Next: Manage Dependencies" rel="next">
+        <a href="usage/project/" class="md-footer__link md-footer__link--next" aria-label="Next: Manage Project" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Manage Dependencies
+              Manage Project
             </div>
           </div>
           <div class="md-footer__button md-icon">

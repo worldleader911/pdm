@@ -13,7 +13,7 @@
     
     
       
-        <title>Contributing - PDM</title>
+        <title>Working with virtualenv - PDM</title>
       
     
     
@@ -65,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#contributing-to-pdm" class="md-skip">
+        <a href="#working-with-virtualenv" class="md-skip">
           Skip to content
         </a>
       
@@ -128,7 +128,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Contributing
+              Working with virtualenv
             
           </span>
         </div>
@@ -216,13 +216,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link md-tabs__link--active">
         Usage
       </a>
     </li>
@@ -264,15 +266,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="./" class="md-tabs__link md-tabs__link--active">
+      <a href="../../dev/contributing/" class="md-tabs__link">
         Development
       </a>
     </li>
@@ -334,12 +334,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
       
       
       
@@ -376,7 +378,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../usage/project/" class="md-nav__link">
+      <a href="../project/" class="md-nav__link">
         Manage Project
       </a>
     </li>
@@ -388,11 +390,101 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../usage/venv/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Working with virtualenv
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Working with virtualenv
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#virtualenv-auto-creation" class="md-nav__link">
+    Virtualenv auto-creation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-virtualenv-yourself" class="md-nav__link">
+    Create a virtualenv yourself
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-location-of-virtualenvs" class="md-nav__link">
+    The location of virtualenvs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#virtualenv-auto-detection" class="md-nav__link">
+    Virtualenv auto-detection
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list-all-virtualenvs-created-with-this-project" class="md-nav__link">
+    List all virtualenvs created with this project
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remove-a-virtualenv" class="md-nav__link">
+    Remove a virtualenv
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#activate-a-virtualenv" class="md-nav__link">
+    Activate a virtualenv
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disable-virtualenv-mode" class="md-nav__link">
+    Disable virtualenv mode
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -404,7 +496,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../usage/pep582/" class="md-nav__link">
+      <a href="../pep582/" class="md-nav__link">
         Working with PEP 582
       </a>
     </li>
@@ -418,7 +510,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../usage/dependency/" class="md-nav__link">
+      <a href="../dependency/" class="md-nav__link">
         Manage Dependencies
       </a>
     </li>
@@ -432,7 +524,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../usage/scripts/" class="md-nav__link">
+      <a href="../scripts/" class="md-nav__link">
         PDM Scripts
       </a>
     </li>
@@ -446,7 +538,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../usage/hooks/" class="md-nav__link">
+      <a href="../hooks/" class="md-nav__link">
         Lifecycle and hooks
       </a>
     </li>
@@ -460,7 +552,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../usage/advanced/" class="md-nav__link">
+      <a href="../advanced/" class="md-nav__link">
         Advanced Usage
       </a>
     </li>
@@ -474,7 +566,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../usage/cli_reference/" class="md-nav__link">
+      <a href="../cli_reference/" class="md-nav__link">
         CLI Reference
       </a>
     </li>
@@ -488,7 +580,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../usage/configuration/" class="md-nav__link">
+      <a href="../configuration/" class="md-nav__link">
         Configuration
       </a>
     </li>
@@ -646,14 +738,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
       
       
       
@@ -674,113 +764,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Contributing
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../dev/contributing/" class="md-nav__link">
         Contributing
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#a-recommended-flow-of-contributing-to-an-open-source-project" class="md-nav__link">
-    A recommended flow of contributing to an Open Source project
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#local-development" class="md-nav__link">
-    Local development
-  </a>
-  
-    <nav class="md-nav" aria-label="Local development">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#run-tests" class="md-nav__link">
-    Run tests
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#code-style" class="md-nav__link">
-    Code style
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#news-fragments" class="md-nav__link">
-    News fragments
-  </a>
-  
-    <nav class="md-nav" aria-label="News fragments">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#issue-types" class="md-nav__link">
-    Issue Types
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#preview-the-documentation" class="md-nav__link">
-    Preview the documentation
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#release" class="md-nav__link">
-    Release
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -792,7 +780,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../changelog/" class="md-nav__link">
+      <a href="../../dev/changelog/" class="md-nav__link">
         Changelog
       </a>
     </li>
@@ -806,7 +794,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../benchmark/" class="md-nav__link">
+      <a href="../../dev/benchmark/" class="md-nav__link">
         Benchmark
       </a>
     </li>
@@ -847,69 +835,57 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#a-recommended-flow-of-contributing-to-an-open-source-project" class="md-nav__link">
-    A recommended flow of contributing to an Open Source project
+  <a href="#virtualenv-auto-creation" class="md-nav__link">
+    Virtualenv auto-creation
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#local-development" class="md-nav__link">
-    Local development
+  <a href="#create-a-virtualenv-yourself" class="md-nav__link">
+    Create a virtualenv yourself
   </a>
-  
-    <nav class="md-nav" aria-label="Local development">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#run-tests" class="md-nav__link">
-    Run tests
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#code-style" class="md-nav__link">
-    Code style
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#news-fragments" class="md-nav__link">
-    News fragments
-  </a>
-  
-    <nav class="md-nav" aria-label="News fragments">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#issue-types" class="md-nav__link">
-    Issue Types
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#preview-the-documentation" class="md-nav__link">
-    Preview the documentation
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#release" class="md-nav__link">
-    Release
+  <a href="#the-location-of-virtualenvs" class="md-nav__link">
+    The location of virtualenvs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#virtualenv-auto-detection" class="md-nav__link">
+    Virtualenv auto-detection
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list-all-virtualenvs-created-with-this-project" class="md-nav__link">
+    List all virtualenvs created with this project
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remove-a-virtualenv" class="md-nav__link">
+    Remove a virtualenv
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#activate-a-virtualenv" class="md-nav__link">
+    Activate a virtualenv
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disable-virtualenv-mode" class="md-nav__link">
+    Disable virtualenv mode
   </a>
   
 </li>
@@ -926,124 +902,109 @@
             <article class="md-content__inner md-typeset">
               
                 
-  <a href="https://github.com/pdm-project/pdm/edit/main/docs/docs/dev/contributing.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/pdm-project/pdm/edit/main/docs/docs/usage/venv.md" title="Edit this page" class="md-content__button md-icon">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
 
-<h1 id="contributing-to-pdm">Contributing to PDM<a class="headerlink" href="#contributing-to-pdm" title="Permanent link">#</a></h1>
-<p>First off, thanks for taking the time to contribute! Contributions include but are not restricted to:</p>
+<h1 id="working-with-virtualenv">Working with virtualenv<a class="headerlink" href="#working-with-virtualenv" title="Permanent link">#</a></h1>
+<p>When you run <a href="../cli_reference/#exec-0--init"><code>pdm init</code></a> command, PDM will <a href="../project/#choose-a-python-interpreter">ask for the Python interpreter to use</a> in the project, which is the base interpreter to install dependencies and run tasks.</p>
+<p>Compared to <a href="https://www.python.org/dev/peps/pep-0582/">PEP 582</a>, virtual environments are considered more mature and have better support in the Python ecosystem as well as IDEs. Therefore, virtualenv is the default mode if not configured otherwise.</p>
+<p><strong>Virtual environments will be used if the project interpreter(the interpreter stored in <code>.pdm.toml</code>, which can be checked by <code>pdm info</code>) is from a virtualenv.</strong></p>
+<h2 id="virtualenv-auto-creation">Virtualenv auto-creation<a class="headerlink" href="#virtualenv-auto-creation" title="Permanent link">#</a></h2>
+<p>By default, PDM prefers to use the virtualenv layout as other package managers do. When you run <code>pdm install</code> the first time on a new PDM-managed project, whose Python interpreter is not decided yet, PDM will create a virtualenv in <code>&lt;project_root&gt;/.venv</code>, and install dependencies into it. In the interactive session of <code>pdm init</code>, PDM will also ask to create a virtualenv for you.</p>
+<p>You can choose the backend used by PDM to create a virtualenv. Currently it supports three backends:</p>
 <ul>
-<li>Reporting bugs</li>
-<li>Contributing to code</li>
-<li>Writing tests</li>
-<li>Writing documentation</li>
+<li><a href="https://virtualenv.pypa.io/"><code>virtualenv</code></a>(default)</li>
+<li><code>venv</code></li>
+<li><code>conda</code></li>
 </ul>
-<p>The following is a set of guidelines for contributing.</p>
-<h2 id="a-recommended-flow-of-contributing-to-an-open-source-project">A recommended flow of contributing to an Open Source project<a class="headerlink" href="#a-recommended-flow-of-contributing-to-an-open-source-project" title="Permanent link">#</a></h2>
-<p>This section is for beginners to OSS. If you are an experienced OSS developer, you can skip
-this section.</p>
-<ol>
-<li>First, fork this project to your own namespace using the fork button at the top right of the repository page.</li>
-<li>Clone the <strong>upstream</strong> repository to local:
-   <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>git clone https://github.com/pdm-project/pdm.git
-<span class="c1"># Or if you prefer SSH clone:</span>
-git clone git@github.com:pdm-project/pdm.git
-</code></pre></div></td></tr></table></div></li>
-<li>Add the fork as a new remote:
-   <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>git remote add fork https://github.com/yourname/pdm.git
-git fetch fork
-</code></pre></div></td></tr></table></div>
-   where <code>fork</code> is the remote name of the fork repository.</li>
-</ol>
-<p><strong>ProTips:</strong></p>
-<ol>
-<li>Don't modify code on the main branch, the main branch should always keep track of origin/main.</li>
-</ol>
-<p>To update main branch to date:</p>
+<p>You can change it by <code>pdm config venv.backend [virtualenv|venv|conda]</code>.</p>
+<h2 id="create-a-virtualenv-yourself">Create a virtualenv yourself<a class="headerlink" href="#create-a-virtualenv-yourself" title="Permanent link">#</a></h2>
+<p>You can create more than one virtualenvs with whatever Python version you want.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>git pull origin main
-<span class="c1"># In rare cases that your local main branch diverges from the remote main:</span>
-git fetch origin <span class="o">&amp;&amp;</span> git reset --hard main
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Create a virtualenv based on 3.8 interpreter</span>
+$ pdm venv create <span class="m">3</span>.8
+<span class="c1"># Assign a different name other than the version string</span>
+$ pdm venv create --name <span class="k">for</span>-test <span class="m">3</span>.8
+<span class="c1"># Use venv as the backend to create, support 3 backends: virtualenv(default), venv, conda</span>
+$ pdm venv create --with venv <span class="m">3</span>.9
 </code></pre></div></td></tr></table></div>
-<ol>
-<li>Create a new branch based on the up-to-date main branch for new patches.</li>
-<li>Create a Pull Request from that patch branch.</li>
-</ol>
-<h2 id="local-development">Local development<a class="headerlink" href="#local-development" title="Permanent link">#</a></h2>
-<p>To make sure the test suites can run correctly, you need to install <a href="https://git-lfs.github.com/">Git LFS</a>, then</p>
+<h2 id="the-location-of-virtualenvs">The location of virtualenvs<a class="headerlink" href="#the-location-of-virtualenvs" title="Permanent link">#</a></h2>
+<p>For the first time, PDM will try to create a virtualenv <strong>in project</strong>, unless <code>.venv</code> already exists.
+Other virtualenvs go to the location specified by the <code>venv.location</code> configuration. They are named as <code>&lt;project_name&gt;-&lt;path_hash&gt;-&lt;name_or_python_version&gt;</code> to avoid name collision. A virtualenv created with <code>--name</code> option will always go to this location. You can disable the in-project virtualenv creation by <code>pdm config venv.in_project false</code>.</p>
+<h2 id="virtualenv-auto-detection">Virtualenv auto-detection<a class="headerlink" href="#virtualenv-auto-detection" title="Permanent link">#</a></h2>
+<p>When no interpreter is stored in the project config or <code>PDM_IGNORE_SAVED_PYTHON</code> env var is set, PDM will try to detect possible virtualenvs to use:</p>
+<ul>
+<li><code>venv</code>, <code>env</code>, <code>.venv</code> directories in the project root</li>
+<li>The currently activated virtualenv</li>
+</ul>
+<h2 id="list-all-virtualenvs-created-with-this-project">List all virtualenvs created with this project<a class="headerlink" href="#list-all-virtualenvs-created-with-this-project" title="Permanent link">#</a></h2>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>git lfs install
-<span class="c1"># If you have already cloned the repository, execute the below command as well.</span>
-git lfs pull
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>$ pdm venv list
+Virtualenvs created with this project:
+
+-  <span class="m">3</span>.8.6: C:<span class="se">\U</span>sers<span class="se">\F</span>rost Ming<span class="se">\A</span>ppData<span class="se">\L</span>ocal<span class="se">\p</span>dm<span class="se">\p</span>dm<span class="se">\v</span>envs<span class="se">\t</span>est-project-8Sgn_62n-3.8.6
+-  <span class="k">for</span>-test: C:<span class="se">\U</span>sers<span class="se">\F</span>rost Ming<span class="se">\A</span>ppData<span class="se">\L</span>ocal<span class="se">\p</span>dm<span class="se">\p</span>dm<span class="se">\v</span>envs<span class="se">\t</span>est-project-8Sgn_62n-for-test
+-  <span class="m">3</span>.9.1: C:<span class="se">\U</span>sers<span class="se">\F</span>rost Ming<span class="se">\A</span>ppData<span class="se">\L</span>ocal<span class="se">\p</span>dm<span class="se">\p</span>dm<span class="se">\v</span>envs<span class="se">\t</span>est-project-8Sgn_62n-3.9.1
 </code></pre></div></td></tr></table></div>
-<p>Then, you need to install base dependencies in a venv. Make sure your <code>pip</code> is newer than <code>21.3</code> to install PDM in
-develop/editable mode.</p>
+<h2 id="remove-a-virtualenv">Remove a virtualenv<a class="headerlink" href="#remove-a-virtualenv" title="Permanent link">#</a></h2>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>python -m pip install -U <span class="s2">&quot;pip&gt;=21.3&quot;</span>
-python -m pip install -e .
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>$ pdm venv remove <span class="k">for</span>-test
+Virtualenvs created with this project:
+Will remove: C:<span class="se">\U</span>sers<span class="se">\F</span>rost Ming<span class="se">\A</span>ppData<span class="se">\L</span>ocal<span class="se">\p</span>dm<span class="se">\p</span>dm<span class="se">\v</span>envs<span class="se">\t</span>est-project-8Sgn_62n-for-test, <span class="k">continue</span>? <span class="o">[</span>y/N<span class="o">]</span>:y
+Removed C:<span class="se">\U</span>sers<span class="se">\F</span>rost Ming<span class="se">\A</span>ppData<span class="se">\L</span>ocal<span class="se">\p</span>dm<span class="se">\p</span>dm<span class="se">\v</span>envs<span class="se">\t</span>est-project-8Sgn_62n-for-test
 </code></pre></div></td></tr></table></div>
-<p>You are free to create a virtualenv with either <code>venv</code> module or <code>virtualenv</code> tool for the development. If you are doing
-so, you may also need to set <code>pdm config use_venv true</code> after installation is done.</p>
-<p>Now, all dependencies are installed into the Python environment you choose, which will be used for development
-after this point.</p>
-<h3 id="run-tests">Run tests<a class="headerlink" href="#run-tests" title="Permanent link">#</a></h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm run <span class="nb">test</span>
-</code></pre></div></td></tr></table></div>
-<p>The test suite is still simple and needs expansion! Please help write more test cases.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>You can also run your test suite against all supported Python version using <code>tox</code> with the <code>tox-pdm</code> plugin.
-You can either run it by yourself with:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>tox
-</code></pre></div></td></tr></table></div>
-<p>or from <code>pdm</code> with:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm run tox
+<h2 id="activate-a-virtualenv">Activate a virtualenv<a class="headerlink" href="#activate-a-virtualenv" title="Permanent link">#</a></h2>
+<p>Instead of spawning a subshell like what <code>pipenv</code> and <code>poetry</code> do, <code>pdm-venv</code> doesn't create the shell for you but print the activate command to the console. In this way you won't leave the current shell. You can then feed the output to <code>eval</code> to activate the virtualenv:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">bash/csh/zsh</label><label for="__tabbed_1_2">Powershell</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>$ <span class="nb">eval</span> <span class="k">$(</span>pdm venv activate <span class="k">for</span>-test<span class="k">)</span>
+<span class="o">(</span>test-project-8Sgn_62n-for-test<span class="o">)</span> $  <span class="c1"># Virtualenv entered</span>
+Fish
+
+$ <span class="nb">eval</span> <span class="o">(</span>pdm venv activate <span class="k">for</span>-test<span class="o">)</span>
 </code></pre></div></td></tr></table></div>
 </div>
-<h3 id="code-style">Code style<a class="headerlink" href="#code-style" title="Permanent link">#</a></h3>
-<p>PDM uses <code>pre-commit</code> for linting. Install <code>pre-commit</code> first, then:</p>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">PS1</span><span class="p">&gt;</span> <span class="nb">Invoke-Expression</span> <span class="p">(</span><span class="n">pdm</span> <span class="n">venv</span> <span class="n">activate</span> <span class="k">for</span><span class="n">-test</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>You can make your own shell shortcut function to avoid the input of long command. Here is an example of Bash:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>pre-commit install
-pdm run lint
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">pdm_venv_activate</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">eval</span> <span class="p">$(</span><span class="s1">&#39;pdm&#39;</span> <span class="s1">&#39;venv&#39;</span> <span class="s1">&#39;activate&#39;</span> <span class="s2">&quot;$1&quot;</span><span class="p">)</span>
+<span class="p">}</span>
 </code></pre></div></td></tr></table></div>
-<p>PDM uses <code>black</code> for code style and <code>isort</code> for sorting import statements. If you are not following them,
-the CI will fail and your Pull Request will not be merged.</p>
-<h3 id="news-fragments">News fragments<a class="headerlink" href="#news-fragments" title="Permanent link">#</a></h3>
-<p>When you make changes such as fixing a bug or adding a feature, you must add a news fragment describing
-your change. News fragments are placed in the <code>news/</code> directory, and should be named according to this pattern: <code>&lt;issue_num&gt;.&lt;issue_type&gt;.md</code> (e.g., <code>566.bugfix.md</code>).</p>
-<h4 id="issue-types">Issue Types<a class="headerlink" href="#issue-types" title="Permanent link">#</a></h4>
-<ul>
-<li><code>feature</code>: Features and improvements</li>
-<li><code>bugfix</code>: Bug fixes</li>
-<li><code>refactor</code>: Code restructures</li>
-<li><code>doc</code>: Added or improved documentation</li>
-<li><code>dep</code>: Changes to dependencies</li>
-<li><code>removal</code>: Removals or deprecations in the API</li>
-<li><code>misc</code>: Miscellaneous changes that don't fit any of the other categories</li>
-</ul>
-<p>The contents of the file should be a single sentence in the imperative
-mood that describes your changes. (e.g., <code>Deduplicate the plugins list.</code> ) See entries in the <a href="/changelog">Change Log</a> for more examples.</p>
-<h3 id="preview-the-documentation">Preview the documentation<a class="headerlink" href="#preview-the-documentation" title="Permanent link">#</a></h3>
-<p>If you make some changes to the <code>docs/</code> and you want to preview the build result, simply do:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm run doc
-</code></pre></div></td></tr></table></div>
-<h2 id="release">Release<a class="headerlink" href="#release" title="Permanent link">#</a></h2>
-<p>Once all changes are done and ready to release, you can preview the changelog contents by running:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm run release --dry-run
-</code></pre></div></td></tr></table></div>
-<p>Make sure the next version and the changelog are as expected in the output.</p>
-<p>Then cut a release on the <strong>main</strong> branch:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm run release
-</code></pre></div></td></tr></table></div>
-<p>GitHub action will create the release and upload the distributions to PyPI.</p>
-<p>Read more options about version bumping by <code>pdm run release --help</code>.</p>
+<p>Then you can activate it by <code>pdm_venv_activate $venv_name</code> and deactivate by deactivate directly.</p>
+<p>Additionally, if the project interpreter is a venv Python, you can omit the name argument following activate.</p>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code>venv activate</code> <strong>does not</strong> switch the Python interpreter used by the project. It only changes the shell by injecting the virtualenv paths to environment variables. For the forementioned purpose, use the <code>pdm use</code> command.</p>
+</div>
+<p>For more CLI usage, see the <a href="../cli_reference/#exec-0--venv"><code>pdm venv</code></a> documentation.</p>
+<h2 id="disable-virtualenv-mode">Disable virtualenv mode<a class="headerlink" href="#disable-virtualenv-mode" title="Permanent link">#</a></h2>
+<p>You can disable the auto-creation and auto-detection for virtualenv by <code>pdm config python.use_venv</code> false.
+<strong>If venv is disabled, PEP 582 mode will always be used even if the selected interpreter is from a virtualenv.</strong></p>
 
               
             </article>
@@ -1057,7 +1018,7 @@ mood that describes your changes. (e.g., <code>Deduplicate the plugins list.</co
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../../plugin/reference/" class="md-footer__link md-footer__link--prev" aria-label="Previous: API Reference" rel="prev">
+        <a href="../project/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Manage Project" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1066,20 +1027,20 @@ mood that describes your changes. (e.g., <code>Deduplicate the plugins list.</co
               <span class="md-footer__direction">
                 Previous
               </span>
-              API Reference
+              Manage Project
             </div>
           </div>
         </a>
       
       
         
-        <a href="../changelog/" class="md-footer__link md-footer__link--next" aria-label="Next: Changelog" rel="next">
+        <a href="../pep582/" class="md-footer__link md-footer__link--next" aria-label="Next: Working with PEP 582" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Changelog
+              Working with PEP 582
             </div>
           </div>
           <div class="md-footer__button md-icon">

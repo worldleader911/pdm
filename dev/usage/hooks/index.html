@@ -916,13 +916,12 @@ command to initialize an existing project (prompt to fill the <code>pyproject.to
 <ul>
 <li><a class="autorefs autorefs-internal" href="../../plugin/reference/#pdm.signals.post_init"><code>post_init</code></a></li>
 </ul>
-<p><code>mermaid
-flowchart LR
+<pre class="mermaid"><code>flowchart LR
   subgraph pdm-init [pdm init]
     direction LR
     post-init{{Emit post_init}}
     init --&gt; post-init
-  end</code></p>
+  end </code></pre>
 <h2 id="dependencies-management">Dependencies management<a class="headerlink" href="#dependencies-management" title="Permanent link">#</a></h2>
 <p>The dependencies management is required for the developer to be able to work and perform the following:</p>
 <ul>
@@ -947,53 +946,36 @@ flowchart LR
 <li><a class="autorefs autorefs-internal" href="../../plugin/reference/#pdm.signals.pre_lock"><code>pre_lock</code></a></li>
 <li><a class="autorefs autorefs-internal" href="../../plugin/reference/#pdm.signals.post_lock"><code>post_lock</code></a></li>
 </ul>
-<p>```mermaid
-flowchart LR
+<pre class="mermaid"><code>flowchart LR
   subgraph pdm-install [pdm install]
-    direction LR</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code>subgraph pdm-lock [pdm lock]
-  direction TB
-  pre-lock{{Emit pre_lock}}
-  post-lock{{Emit post_lock}}
-  pre-lock --&gt; lock --&gt; post-lock
-end
+    direction LR
 
-subgraph pdm-sync [pdm sync]
-  direction TB
-  pre-install{{Emit pre_install}}
-  post-install{{Emit post_install}}
-  pre-install --&gt; sync --&gt; post-install
-end
+    subgraph pdm-lock [pdm lock]
+      direction TB
+      pre-lock{{Emit pre_lock}}
+      post-lock{{Emit post_lock}}
+      pre-lock --&gt; lock --&gt; post-lock
+    end
 
-pdm-lock --&gt; pdm-sync
-</code></pre></div></td></tr></table></div>
-<p>end
-```</p>
+    subgraph pdm-sync [pdm sync]
+      direction TB
+      pre-install{{Emit pre_install}}
+      post-install{{Emit post_install}}
+      pre-install --&gt; sync --&gt; post-install
+    end
+
+    pdm-lock --&gt; pdm-sync
+  end</code></pre>
 <h3 id="switching-python-version">Switching Python version<a class="headerlink" href="#switching-python-version" title="Permanent link">#</a></h3>
 <p>This is a special case in dependency management:
 you can switch the current Python version using <a href="../cli_reference/#exec-0--use"><code>pdm use</code></a> 
 and it will emit the <a class="autorefs autorefs-internal" href="../../plugin/reference/#pdm.signals.post_use"><code>post_use</code></a> signal with the new Python interpreter.</p>
-<p><code>mermaid
-flowchart LR
+<pre class="mermaid"><code>flowchart LR
   subgraph pdm-use [pdm use]
     direction LR
     post-use{{Emit post_use}}
     use --&gt; post-use
-  end</code></p>
+  end </code></pre>
 <h2 id="publication">Publication<a class="headerlink" href="#publication" title="Permanent link">#</a></h2>
 <p>As soon as you are ready to publish you package/app/libray, you will require the publication tasks:</p>
 <ul>
@@ -1012,40 +994,26 @@ flowchart LR
 <li><a class="autorefs autorefs-internal" href="../../plugin/reference/#pdm.signals.pre_build"><code>pre_build</code></a></li>
 <li><a class="autorefs autorefs-internal" href="../../plugin/reference/#pdm.signals.post_build"><code>post_build</code></a></li>
 </ul>
-<p>```mermaid
-flowchart LR
+<pre class="mermaid"><code>flowchart LR
   subgraph pdm-publish [pdm publish]
     direction LR
     pre-publish{{Emit pre_publish}}
-    post-publish{{Emit post_publish}}</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code>subgraph pdm-build [pdm build]
-  pre-build{{Emit pre_build}}
-  post-build{{Emit post_build}}
-  pre-build --&gt; build --&gt; post-build
-end
+    post-publish{{Emit post_publish}}
 
-%% subgraph pdm-upload [pdm upload]
-%%   pre-upload{{Emit pre_upload}}
-%%   post-upload{{Emit post_upload}}
-%%   pre-upload --&gt; upload --&gt; post-upload
-%% end
+    subgraph pdm-build [pdm build]
+      pre-build{{Emit pre_build}}
+      post-build{{Emit post_build}}
+      pre-build --&gt; build --&gt; post-build
+    end
 
-pre-publish --&gt; pdm-build --&gt; upload --&gt; post-publish
-</code></pre></div></td></tr></table></div>
-<p>end
-```</p>
+    %% subgraph pdm-upload [pdm upload]
+    %%   pre-upload{{Emit pre_upload}}
+    %%   post-upload{{Emit post_upload}}
+    %%   pre-upload --&gt; upload --&gt; post-upload
+    %% end
+
+    pre-publish --&gt; pdm-build --&gt; upload --&gt; post-publish
+  end</code></pre>
 <p>Execution will stop at first failure, hooks included.</p>
 <h2 id="user-scripts">User scripts<a class="headerlink" href="#user-scripts" title="Permanent link">#</a></h2>
 <p><a href="../scripts/">User scripts are detailed in their own section</a> but you should know that:</p>
@@ -1074,8 +1042,7 @@ pre-publish --&gt; pdm-build --&gt; upload --&gt; post-publish
 <span class="n">composite</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">composite</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;test&quot;</span><span class="p">]}</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
 <p>a <code>pdm run test</code> will have the following lifecycle:</p>
-<p>```mermaid
-flowchart LR
+<pre class="mermaid"><code>flowchart LR
   subgraph pdm-run-test [pdm run test]
     direction LR
     pre-run{{Emit pre_run}}
@@ -1086,68 +1053,42 @@ flowchart LR
       post-script{{Emit post_script}}
       pre-test[Execute pre_test]
       post-test[Execute post_test]
-      test[Execute test]</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>  pre-script --&gt; pre-test --&gt; test --&gt; post-test --&gt; post-script
-end
+      test[Execute test]
 
-pre-run --&gt; run-test --&gt; post-run
-</code></pre></div></td></tr></table></div>
-<p>end
-```</p>
+      pre-script --&gt; pre-test --&gt; test --&gt; post-test --&gt; post-script
+    end
+
+    pre-run --&gt; run-test --&gt; post-run
+  end</code></pre>
 <p>while <code>pdm run composite</code> will have the following:</p>
-<p>```mermaid
-flowchart LR
+<pre class="mermaid"><code>flowchart LR
   subgraph pdm-run-composite [pdm run composite]
     direction LR
     pre-run{{Emit pre_run}}
-    post-run{{Emit post_run}}</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span></pre></div></td><td class="code"><div><pre><span></span><code>subgraph run-composite [composite task]
-  direction TB
-  pre-script-composite{{Emit pre_script}}
-  post-script-composite{{Emit post_script}}
-  pre-composite[Execute pre_composite]
-  post-composite[Execute post_composite]
+    post-run{{Emit post_run}}
 
-  subgraph run-test [test task]
-    direction TB
-    pre-script-test{{Emit pre_script}}
-    post-script-test{{Emit post_script}}
-    pre-test[Execute pre_test]
-    post-test[Execute post_test]
+    subgraph run-composite [composite task]
+      direction TB
+      pre-script-composite{{Emit pre_script}}
+      post-script-composite{{Emit post_script}}
+      pre-composite[Execute pre_composite]
+      post-composite[Execute post_composite]
 
-    pre-script-test --&gt; pre-test --&gt; test --&gt; post-test --&gt; post-script-test
-  end
+      subgraph run-test [test task]
+        direction TB
+        pre-script-test{{Emit pre_script}}
+        post-script-test{{Emit post_script}}
+        pre-test[Execute pre_test]
+        post-test[Execute post_test]
 
-  pre-script-composite --&gt; pre-composite --&gt; run-test --&gt; post-composite --&gt; post-script-composite
-end
+        pre-script-test --&gt; pre-test --&gt; test --&gt; post-test --&gt; post-script-test
+      end
 
- pre-run --&gt; run-composite --&gt; post-run
-</code></pre></div></td></tr></table></div>
-<p>end
-```</p>
+      pre-script-composite --&gt; pre-composite --&gt; run-test --&gt; post-composite --&gt; post-script-composite
+    end
+
+     pre-run --&gt; run-composite --&gt; post-run
+  end</code></pre>
 <h2 id="skipping">Skipping<a class="headerlink" href="#skipping" title="Permanent link">#</a></h2>
 <p>It is possible to control which task and hook runs for any built-in command as well as custom user scripts
 using the <code>--skip</code> option.</p>
@@ -1157,45 +1098,28 @@ respectively skipping all hooks, all <code>pre_*</code> hooks and all <code>post
 You can also provide the skip list in <code>PDM_SKIP_HOOKS</code> environment variable
 but it will be overridden as soon as the <code>--skip</code> parameter is provided.</p>
 <p>Given the previous script block, running <code>pdm run --skip=:pre,post_test composite</code> will result in the following reduced lifecycle:</p>
-<p>```mermaid
-flowchart LR
+<pre class="mermaid"><code>flowchart LR
   subgraph pdm-run-composite [pdm run composite]
     direction LR
-    post-run{{Emit post_run}}</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code>subgraph run-composite [composite task]
-  direction TB
-  post-script-composite{{Emit post_script}}
-  post-composite[Execute post_composite]
+    post-run{{Emit post_run}}
 
-  subgraph run-test [test task]
-    direction TB
-    post-script-test{{Emit post_script}}
+    subgraph run-composite [composite task]
+      direction TB
+      post-script-composite{{Emit post_script}}
+      post-composite[Execute post_composite]
 
-    test --&gt; post-script-test
-  end
+      subgraph run-test [test task]
+        direction TB
+        post-script-test{{Emit post_script}}
 
-  run-test --&gt; post-composite --&gt; post-script-composite
-end
+        test --&gt; post-script-test
+      end
 
- run-composite --&gt; post-run
-</code></pre></div></td></tr></table></div>
-<p>end
-```</p>
+      run-test --&gt; post-composite --&gt; post-script-composite
+    end
+
+     run-composite --&gt; post-run
+  end</code></pre>
 
               
             </article>

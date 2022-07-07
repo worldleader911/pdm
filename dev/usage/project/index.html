@@ -1100,12 +1100,19 @@ show configurations.</p>
 <ol>
 <li><code>&lt;PROJECT_ROOT&gt;/.pdm.toml</code> - The project configuration</li>
 <li><code>&lt;CONFIG_ROOT&gt;/config.toml</code> - The home configuration</li>
+<li><code>&lt;SITE_CONFIG_ROOT&gt;/config.toml</code> - The site configuration</li>
 </ol>
 <p>where <code>&lt;CONFIG_ROOT&gt;</code> is:</p>
 <ul>
 <li><code>$XDG_CONFIG_HOME/pdm</code> (<code>~/.config/pdm</code> in most cases) on Linux as defined by <a href="https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html">XDG Base Directory Specification</a></li>
 <li><code>~/Library/Preferences/pdm</code> on MacOS as defined by <a href="https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html">Apple File System Basics</a></li>
 <li><code>%USERPROFILE%\AppData\Local\pdm</code> on Windows as defined in <a href="https://docs.microsoft.com/en-us/windows/win32/shell/known-folders">Known folders</a></li>
+</ul>
+<p>and <code>&lt;SITE_CONFIG_ROOT&gt;</code> is:</p>
+<ul>
+<li><code>$XDG_CONFIG_DIRS/pdm</code> (<code>/etc/xdg/pdm</code> in most cases) on Linux as defined by <a href="https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html">XDG Base Directory Specification</a></li>
+<li><code>/Library/Preferences/pdm</code> on MacOS as defined by <a href="https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html">Apple File System Basics</a></li>
+<li><code>C:\ProgramData\pdm\pdm</code> on Windows as defined in <a href="https://docs.microsoft.com/en-us/windows/win32/shell/known-folders">Known folders</a></li>
 </ul>
 <p>If <code>-g/--global</code> option is used, the first item will be replaced by <code>&lt;CONFIG_ROOT&gt;/global-project/.pdm.toml</code>.</p>
 <p>You can find all available configuration items in <a href="../configuration/">Configuration Page</a>.</p>

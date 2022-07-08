@@ -899,9 +899,9 @@ of a Python project lifecycle and PDM provides commands to perform the expected 
 <p>It also provides hooks attached to these steps allowing for:</p>
 <ul>
 <li>plugins to listen to the <a class="autorefs autorefs-internal" href="../../plugin/reference/#pdm.signals">signals</a> of the same name.</li>
-<li>developpers to define custom scripts with the same name.</li>
+<li>developers to define custom scripts with the same name.</li>
 </ul>
-<p>The built-in commands are currently splitted in 3 groups:</p>
+<p>The built-in commands are currently split into 3 groups:</p>
 <ul>
 <li>the <a href="#initialization">initialization phase</a></li>
 <li>the <a href="#dependencies-managment">dependencies management</a>.</li>
@@ -911,7 +911,7 @@ of a Python project lifecycle and PDM provides commands to perform the expected 
 this is why PDM lets you define your own tasks/phases using <a href="#user-scripts">user scripts</a>.</p>
 <p>To provides full flexibility, PDM allows to <a href="#skipping">skip some hooks and tasks</a> on demand.</p>
 <h2 id="initialization">Initialization<a class="headerlink" href="#initialization" title="Permanent link">#</a></h2>
-<p>The intialization phase should occur only once in a project lifetime by running the <a href="../cli_reference/#exec-0--init"><code>pdm init</code></a> 
+<p>The initialization phase should occur only once in a project lifetime by running the <a href="../cli_reference/#exec-0--init"><code>pdm init</code></a> 
 command to initialize an existing project (prompt to fill the <code>pyproject.toml</code> file).</p>
 <p>They trigger the following hooks:</p>
 <ul>
@@ -931,7 +931,7 @@ command to initialize an existing project (prompt to fill the <code>pyproject.to
 <li><code>add</code>: add a dependency</li>
 <li><code>remove</code>: remove a dependency</li>
 </ul>
-<p>All thoses steps are directly available with the following commands:</p>
+<p>All those steps are directly available with the following commands:</p>
 <ul>
 <li><a href="../cli_reference/#exec-0--lock"><code>pdm lock</code></a>: execute the <code>lock</code> task</li>
 <li><a href="../cli_reference/#exec-0--sync"><code>pdm sync</code></a>: execute the <code>sync</code> task</li>
@@ -978,12 +978,12 @@ and it will emit the <a class="autorefs autorefs-internal" href="../../plugin/re
     use --&gt; post-use
   end </code></pre>
 <h2 id="publication">Publication<a class="headerlink" href="#publication" title="Permanent link">#</a></h2>
-<p>As soon as you are ready to publish you package/app/libray, you will require the publication tasks:</p>
+<p>As soon as you are ready to publish your package/app/library, you will require the publication tasks:</p>
 <ul>
 <li><code>build</code>: build/compile assets requiring it and package everything into a Python package (sdist, wheel)</li>
 <li><code>upload</code>: upload/publish the package to a remote PyPI index</li>
 </ul>
-<p>All thoses steps are available with the following commands:</p>
+<p>All those steps are available with the following commands:</p>
 <ul>
 <li><a href="../cli_reference/#exec-0--build"><code>pdm build</code></a></li>
 <li><a href="../cli_reference/#exec-0--publish"><code>pdm publish</code></a></li>

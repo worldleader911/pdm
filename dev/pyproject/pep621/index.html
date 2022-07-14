@@ -1002,6 +1002,11 @@ format of <code>[project.scripts]</code>:</p>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[project.entry-points.pytest11]</span><span class="w"></span>
 <span class="n">myplugin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;mypackage.plugin:pytest_plugin&quot;</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
+<p>If the entry point name contains dots or other special characters, wrap it in quotes:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[project.entry-points.&quot;flake8.extension&quot;]</span><span class="w"></span>
+<span class="n">myplugin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;mypackage.plugin:flake8_plugin&quot;</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 
               
             </article>

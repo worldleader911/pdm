@@ -1168,6 +1168,23 @@ pdm init
 <a href="https://www.python.org/dev/peps/pep-0508/">PEP 508</a>.</p>
 <p>PDM also allows extra dependency groups by providing <code>-G/--group &lt;name&gt;</code> option, and those dependencies will go to
 <code>[project.optional-dependencies.&lt;name&gt;]</code> table in the project file, respectively.</p>
+<p>You can reference other optional groups in <code>optional-dependencies</code>, even before the package is uploaded:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[project]</span><span class="w"></span>
+<span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;foo&quot;</span><span class="w"></span>
+<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;0.1.0&quot;</span><span class="w"></span>
+
+<span class="k">[project.optional-dependencies]</span><span class="w"></span>
+<span class="n">socks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;pysocks&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="n">jwt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;pyjwt&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="n">all</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;foo[socks,jwt]&quot;</span><span class="p">]</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 <p>After that, dependencies and sub-dependencies will be resolved properly and installed for you, you can view <code>pdm.lock</code> to see the resolved result of all dependencies.</p>
 <h3 id="local-dependencies">Local dependencies<a class="headerlink" href="#local-dependencies" title="Permanent link">#</a></h3>
 <p>Local packages can be added with their paths. The path can be a file or a directory:</p>

@@ -13,7 +13,7 @@
     
     
       
-        <title>PEP 621 Metadata - PDM</title>
+        <title>Working with PEP 582 - PDM</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#pep-621-metadata" class="md-skip">
+        <a href="#working-with-pep-582" class="md-skip">
           Skip to content
         </a>
       
@@ -129,7 +129,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              PEP 621 Metadata
+              Working with PEP 582
             
           </span>
         </div>
@@ -217,13 +217,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link md-tabs__link--active">
         Usage
       </a>
     </li>
@@ -233,15 +235,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="./" class="md-tabs__link md-tabs__link--active">
+      <a href="../../pyproject/pep621/" class="md-tabs__link">
         Writing pyproject.toml
       </a>
     </li>
@@ -335,12 +335,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
       
       
       
@@ -377,7 +379,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../usage/project/" class="md-nav__link">
+      <a href="../project/" class="md-nav__link">
         Manage Project
       </a>
     </li>
@@ -391,7 +393,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../usage/venv/" class="md-nav__link">
+      <a href="../venv/" class="md-nav__link">
         Working with virtualenv
       </a>
     </li>
@@ -403,11 +405,93 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../usage/pep582/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Working with PEP 582
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Working with PEP 582
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#enable-pep-582-globally" class="md-nav__link">
+    Enable PEP 582 globally
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-ide-to-support-pep-582" class="md-nav__link">
+    Configure IDE to support PEP 582
+  </a>
+  
+    <nav class="md-nav" aria-label="Configure IDE to support PEP 582">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pycharm" class="md-nav__link">
+    PyCharm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vscode" class="md-nav__link">
+    VSCode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#neovim" class="md-nav__link">
+    Neovim
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seek-for-other-ides-or-editors" class="md-nav__link">
+    Seek for other IDEs or editors
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -419,7 +503,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../usage/dependency/" class="md-nav__link">
+      <a href="../dependency/" class="md-nav__link">
         Manage Dependencies
       </a>
     </li>
@@ -433,7 +517,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../usage/scripts/" class="md-nav__link">
+      <a href="../scripts/" class="md-nav__link">
         PDM Scripts
       </a>
     </li>
@@ -447,7 +531,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../usage/hooks/" class="md-nav__link">
+      <a href="../hooks/" class="md-nav__link">
         Lifecycle and hooks
       </a>
     </li>
@@ -461,7 +545,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../usage/advanced/" class="md-nav__link">
+      <a href="../advanced/" class="md-nav__link">
         Advanced Usage
       </a>
     </li>
@@ -475,7 +559,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../usage/cli_reference/" class="md-nav__link">
+      <a href="../cli_reference/" class="md-nav__link">
         CLI Reference
       </a>
     </li>
@@ -489,7 +573,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../usage/configuration/" class="md-nav__link">
+      <a href="../configuration/" class="md-nav__link">
         Configuration
       </a>
     </li>
@@ -509,14 +593,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
       
       
       
@@ -537,87 +619,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          PEP 621 Metadata
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../pyproject/pep621/" class="md-nav__link">
         PEP 621 Metadata
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#multiline-description" class="md-nav__link">
-    Multiline description
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#package-version" class="md-nav__link">
-    Package version
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dependency-specification" class="md-nav__link">
-    Dependency specification
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#optional-dependencies" class="md-nav__link">
-    Optional dependencies
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#console-scripts" class="md-nav__link">
-    Console scripts
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#entry-points" class="md-nav__link">
-    Entry points
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -629,7 +635,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tool-pdm/" class="md-nav__link">
+      <a href="../../pyproject/tool-pdm/" class="md-nav__link">
         PDM Tool Settings
       </a>
     </li>
@@ -643,7 +649,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../build/" class="md-nav__link">
+      <a href="../../pyproject/build/" class="md-nav__link">
         Build Configuration
       </a>
     </li>
@@ -822,44 +828,50 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#multiline-description" class="md-nav__link">
-    Multiline description
+  <a href="#enable-pep-582-globally" class="md-nav__link">
+    Enable PEP 582 globally
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#package-version" class="md-nav__link">
-    Package version
+  <a href="#configure-ide-to-support-pep-582" class="md-nav__link">
+    Configure IDE to support PEP 582
+  </a>
+  
+    <nav class="md-nav" aria-label="Configure IDE to support PEP 582">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pycharm" class="md-nav__link">
+    PyCharm
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#dependency-specification" class="md-nav__link">
-    Dependency specification
+        
+          <li class="md-nav__item">
+  <a href="#vscode" class="md-nav__link">
+    VSCode
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#optional-dependencies" class="md-nav__link">
-    Optional dependencies
+        
+          <li class="md-nav__item">
+  <a href="#neovim" class="md-nav__link">
+    Neovim
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#console-scripts" class="md-nav__link">
-    Console scripts
+        
+          <li class="md-nav__item">
+  <a href="#seek-for-other-ides-or-editors" class="md-nav__link">
+    Seek for other IDEs or editors
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#entry-points" class="md-nav__link">
-    Entry points
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -875,64 +887,73 @@
             <article class="md-content__inner md-typeset">
               
                 
-  <a href="https://github.com/pdm-project/pdm/edit/main/docs/docs/pyproject/pep621.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/pdm-project/pdm/edit/main/docs/docs/usage/pep582.md" title="Edit this page" class="md-content__button md-icon">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
 
-<h1 id="pep-621-metadata">PEP 621 Metadata<a class="headerlink" href="#pep-621-metadata" title="Permanent link">#</a></h1>
-<p>The project metadata are stored in the <code>pyproject.toml</code>. The specifications are defined by <a href="https://www.python.org/dev/peps/pep-0621/">PEP 621</a>, <a href="https://www.python.org/dev/peps/pep-0631/">PEP 631</a> and <a href="https://www.python.org/dev/peps/pep-0639/">PEP 639</a>. Read the detailed specifications in the PEPs.</p>
-<p><em>In the following part of this document, metadata should be written under <code>[project]</code> table if not given explicitly.</em></p>
-<h2 id="multiline-description">Multiline description<a class="headerlink" href="#multiline-description" title="Permanent link">#</a></h2>
-<p>You can split a long description onto multiple lines, thanks to TOML support for multiline strings.
-Just remember to escape new lines, so the final description appears
-<a href="https://packaging.python.org/specifications/core-metadata/#summary">on one line only in your package metadata</a>.
-Indentation will be removed as well when escaping new lines:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;&quot;\</span>
-<span class="s">    Lorem ipsum dolor sit amet, consectetur adipiscing elit, \</span>
-<span class="s">    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. \</span>
-<span class="s">    Ut enim ad minim veniam, quis nostrud exercitation ullamco \</span>
-<span class="s">    laboris nisi ut aliquip ex ea commodo consequat.\</span>
-<span class="s">&quot;&quot;&quot;</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
-<p>See <a href="https://toml.io/en/v1.0.0#string">TOML's specification on strings</a>.</p>
-<h2 id="package-version">Package version<a class="headerlink" href="#package-version" title="Permanent link">#</a></h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Static</label><label for="__tabbed_1_2">Dynamic</label></div>
+<h1 id="working-with-pep-582">Working with PEP 582<a class="headerlink" href="#working-with-pep-582" title="Permanent link">#</a></h1>
+<p>With <a href="https://www.python.org/dev/peps/pep-0582/">PEP 582</a>, dependencies will be installed into <code>__pypackages__</code> directory under the project root. With <a href="#enable-pep-582-globally">PEP 582 enabled globally</a>, you can also use the project interpreter to run scripts directly.</p>
+<p><strong>When the project interpreter is a normal Python, this mode is enabled.</strong></p>
+<p>Besides, on a project you work with for the first time on your machine, if it contains an empty <code>__pypackages__</code> directory, PEP 582 is enabled automatically, and virtualenv won't be created.</p>
+<h2 id="enable-pep-582-globally">Enable PEP 582 globally<a class="headerlink" href="#enable-pep-582-globally" title="Permanent link">#</a></h2>
+<p>To make the Python interpreters aware of PEP 582 packages, one need to add the <code>pdm/pep582/sitecustomize.py</code>
+to the Python library search path.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Windows</label><label for="__tabbed_1_2">Mac and Linux</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[project]</span><span class="w"></span>
-<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;1.0.0&quot;</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
+<p>One just needs to execute <code>pdm --pep582</code>, then environment variable will be changed automatically. Don't forget
+to restart the terminal session to take effect.</p>
 </div>
 <div class="tabbed-block">
+<p>The command to change the environment variables can be printed by <code>pdm --pep582 [&lt;SHELL&gt;]</code>. If <code>&lt;SHELL&gt;</code>
+isn't given, PDM will pick one based on some guesses. You can run <code>eval "$(pdm --pep582)"</code> to execute the command.</p>
+<p>You may want to write a line in your <code>.bash_profile</code>(or similar profiles) to make it effective when logging in.
+For example, in bash you can do this:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm --pep582 &gt;&gt; ~/.bash_profile
+</code></pre></div></td></tr></table></div>
+<p>Once again, Don't forget to restart the terminal session to take effect.</p>
+</div>
+</div>
+</div>
+<details class="note">
+<summary>How is it done?</summary>
+<p>Thanks to the <a href="https://docs.python.org/3/library/site.html">site packages loading</a> on Python startup. It is possible to patch the <code>sys.path</code>
+by executing the <code>sitecustomize.py</code> shipped with PDM. The interpreter can search the directories
+for the nearest <code>__pypackage__</code> folder and append it to the <code>sys.path</code> variable.</p>
+</details>
+<h2 id="configure-ide-to-support-pep-582">Configure IDE to support PEP 582<a class="headerlink" href="#configure-ide-to-support-pep-582" title="Permanent link">#</a></h2>
+<p>Now there are no built-in support or plugins for PEP 582 in most IDEs, you have to configure your tools manually.</p>
+<p>PDM will write and store project-wide configurations in <code>.pdm.toml</code> and you are recommended to add following lines
+in the <code>.gitignore</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>.pdm.toml
+__pypackages__/
+</code></pre></div></td></tr></table></div>
+<h3 id="pycharm">PyCharm<a class="headerlink" href="#pycharm" title="Permanent link">#</a></h3>
+<p>Mark <code>__pypackages__/&lt;major.minor&gt;/lib</code> as <a href="https://www.jetbrains.com/help/pycharm/configuring-project-structure.html#mark-dir-project-view">Sources Root</a>.
+Then, select as <a href="https://www.jetbrains.com/help/pycharm/configuring-python-interpreter.html#interpreter">Python interpreter</a> a Python installation with the same <code>&lt;major.minor&gt;</code> version.</p>
+<p>Additionally, if you want to use tools from the environment (e.g. <code>pytest</code>), you have to add the
+<code>__pypackages__/&lt;major.minor&gt;/bin</code> directory to the <code>PATH</code> variable in the corresponding
+run/debug configuration.</p>
+<h3 id="vscode">VSCode<a class="headerlink" href="#vscode" title="Permanent link">#</a></h3>
+<p>Add the following two entries to the top-level dict in <code>.vscode/settings.json</code>:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[project]</span><span class="w"></span>
-<span class="p">...</span><span class="w"></span>
-<span class="n">dynamic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;version&quot;</span><span class="p">]</span><span class="w"></span>
-
-<span class="k">[tool.pdm]</span><span class="w"></span>
-<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">source</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;file&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;mypackage/__version__.py&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;python.autoComplete.extraPaths&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;__pypackages__/&lt;major.minor&gt;/lib&quot;</span><span class="p">],</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;python.analysis.extraPaths&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;__pypackages__/&lt;major.minor&gt;/lib&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
-<p>The version will be read from the <code>mypackage/__version__.py</code> file searching for the pattern: <code>__version__ = "{version}"</code>.</p>
-<p>Read more information about other configurations in <a href="../build/#dynamic-versioning">dynamic versioning</a>.</p>
-</div>
-</div>
-</div>
-<h2 id="dependency-specification">Dependency specification<a class="headerlink" href="#dependency-specification" title="Permanent link">#</a></h2>
-<p>The <code>project.dependencies</code> is an array of dependency specification strings following the <a href="https://www.python.org/dev/peps/pep-0440/">PEP 440</a>
-and <a href="https://www.python.org/dev/peps/pep-0508/">PEP 508</a>.</p>
-<p>Examples:</p>
+<p><a href="#enable-pep-582-globally">Enable PEP582 globally</a>,
+and make sure VSCode runs using the same user and shell you enabled PEP582 for.</p>
+<details class="note">
+<summary>Cannot enable PEP582 globally?</summary>
+<p>If for some reason you cannot enable PEP582 globally, you can still configure each "launch" in each project:
+set the <code>PYTHONPATH</code> environment variable in your launch configuration, in <code>.vscode/launch.json</code>.
+For example, to debug your <code>pytest</code> run:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -944,69 +965,79 @@ and <a href="https://www.python.org/dev/peps/pep-0508/">PEP 508</a>.</p>
 <span class="normal"> 9</span>
 <span class="normal">10</span>
 <span class="normal">11</span>
-<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[project]</span><span class="w"></span>
-<span class="p">...</span><span class="w"></span>
-<span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># Named requirement</span><span class="w"></span>
-<span class="w">    </span><span class="s">&quot;requests&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># Named requirement with version specifier</span><span class="w"></span>
-<span class="w">    </span><span class="s">&quot;flask &gt;= 1.1.0&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># Requirement with environment marker</span><span class="w"></span>
-<span class="w">    </span><span class="s">&quot;pywin32; sys_platform == &#39;win32&#39;&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># URL requirement</span><span class="w"></span>
-<span class="w">    </span><span class="s">&quot;pip @ git+https://github.com/pypa/pip.git@20.3.1&quot;</span><span class="w"></span>
-<span class="p">]</span><span class="w"></span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.2.0&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;configurations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">        </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pytest&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;python&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;request&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;launch&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;module&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pytest&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;tests&quot;</span><span class="p">],</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;justMyCode&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;env&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;PYTHONPATH&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;__pypackages__/&lt;major.minor&gt;/lib&quot;</span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">]</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
-<h2 id="optional-dependencies">Optional dependencies<a class="headerlink" href="#optional-dependencies" title="Permanent link">#</a></h2>
-<p>You can have some requirements optional, which is similar to <code>setuptools</code>' <code>extras_require</code> parameter.</p>
+<p>If your package resides in a <code>src</code> directory, add it to <code>PYTHONPATH</code> as well:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">&quot;env&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;PYTHONPATH&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;src:__pypackages__/&lt;major.minor&gt;/lib&quot;</span><span class="p">}</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+</details>
+<details class="note">
+<summary>Using Pylance/Pyright?</summary>
+<p>If you have configured <code>"python.analysis.diagnosticMode": "workspace"</code>,
+and you see a ton of errors/warnings as a result.
+you may need to create <code>pyrightconfig.json</code> in the workspace directory, and fill in the following fields:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[project.optional-dependencies]</span><span class="w"></span>
-<span class="n">socks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s">&#39;PySocks &gt;= 1.5.6, != 1.5.7, &lt; 2&#39;</span><span class="w"> </span><span class="p">]</span><span class="w"></span>
-<span class="n">tests</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">  </span><span class="s">&#39;ddt &gt;= 1.2.2, &lt; 2&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="s">&#39;pytest &lt; 6&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="s">&#39;mock &gt;= 1.0.1, &lt; 4; python_version &lt; &quot;3.4&quot;&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="p">]</span><span class="w"></span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;exclude&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;__pypackages__&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
-<p>To install a group of optional dependencies:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm install -G socks
+<p>Then restart the language server or VS Code and you're good to go.
+In the future (<a href="https://github.com/microsoft/pylance-release/issues/1150">microsoft/pylance-release#1150</a>), maybe the problem will be solved.</p>
+</details>
+<details class="note">
+<summary>Using Jupyter Notebook?</summary>
+<p>If you wish to use pdm to install jupyter notebook and use it in vscode in conjunction with the python extension:</p>
+<ol>
+<li>Use <code>pdm add notebook</code> or so to install notebook</li>
+<li>Add a <code>.env</code> file inside of your project director with contents like the following:</li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>PYTHONPATH=/your-workspace-path/__pypackages__/&lt;major&gt;.&lt;minor&gt;/lib
 </code></pre></div></td></tr></table></div>
-<p><code>-G</code> option can be given multiple times to include more than one group.</p>
-<h2 id="console-scripts">Console scripts<a class="headerlink" href="#console-scripts" title="Permanent link">#</a></h2>
-<p>The following content:</p>
+<p>If the above still doesn't work, it's most likely because the environment variable is not properly loaded when the Notebook starts. There are two workarounds.</p>
+<ol>
+<li>Run <code>code .</code> in Terminal. It will open a new VSCode window in the current directory with the path set correctly. Use the Jupyter Notebook in the new window</li>
+<li>If you prefer not to open a new window, run the following at the beginning of your Jupyter Notebook to explicitly set the path:</li>
+</ol>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[project.scripts]</span><span class="w"></span>
-<span class="n">mycli</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;mycli.__main__:main&quot;</span><span class="w"></span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>import sys
+sys.path.append(&#39;/your-workspace-path/__pypackages__/&lt;major&gt;.&lt;minor&gt;/lib&#39;)
 </code></pre></div></td></tr></table></div>
-<p>will be translated to <code>setuptools</code> style:</p>
+<blockquote>
+<p><a href="https://github.com/pdm-project/pdm/issues/848">Reference Issue</a></p>
+</blockquote>
+</details>
+<details class="note">
+<summary>PDM Task Provider</summary>
+<p>In addition, there is a <a href="https://marketplace.visualstudio.com/items?itemName=knowsuchagency.pdm-task-provider">VSCode Task Provider extension</a> available for download.</p>
+<p>This makes it possible for VSCode to automatically detect <a href="../scripts/">pdm scripts</a> so they
+can be run natively as <a href="https://code.visualstudio.com/docs/editor/tasks">VSCode Tasks</a>.</p>
+</details>
+<h3 id="neovim">Neovim<a class="headerlink" href="#neovim" title="Permanent link">#</a></h3>
+<p>If using <a href="https://github.com/neovim/nvim-lspconfig">neovim-lsp</a> with
+<a href="https://github.com/Microsoft/pyright">pyright</a> and want your
+<code>__pypackages__</code> directory to be added to the path, you can add this to your
+project's <code>pyproject.toml</code>.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">entry_points</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;console_scripts&#39;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="s1">&#39;mycli=mycli.__main__:main&#39;</span>
-    <span class="p">]</span>
-<span class="p">}</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pyright]</span><span class="w"></span>
+<span class="n">extraPaths</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;__pypackages__/&lt;major.minor&gt;/lib/&quot;</span><span class="p">]</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
-<p>Also, <code>[project.gui-scripts]</code> will be translated to <code>gui_scripts</code> entry points group in <code>setuptools</code> style.</p>
-<h2 id="entry-points">Entry points<a class="headerlink" href="#entry-points" title="Permanent link">#</a></h2>
-<p>Other types of entry points are given by <code>[project.entry-points.&lt;type&gt;]</code> section, with the same
-format of <code>[project.scripts]</code>:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[project.entry-points.pytest11]</span><span class="w"></span>
-<span class="n">myplugin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;mypackage.plugin:pytest_plugin&quot;</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
-<p>If the entry point name contains dots or other special characters, wrap it in quotes:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[project.entry-points.&quot;flake8.extension&quot;]</span><span class="w"></span>
-<span class="n">myplugin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;mypackage.plugin:flake8_plugin&quot;</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
+<h3 id="seek-for-other-ides-or-editors"><a href="../advanced/#integrate-with-other-ide-or-editors">Seek for other IDEs or editors</a><a class="headerlink" href="#seek-for-other-ides-or-editors" title="Permanent link">#</a></h3>
 
               
             </article>
@@ -1022,7 +1053,7 @@ format of <code>[project.scripts]</code>:</p>
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../../usage/configuration/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Configuration" rel="prev">
+        <a href="../venv/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Working with virtualenv" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1031,20 +1062,20 @@ format of <code>[project.scripts]</code>:</p>
               <span class="md-footer__direction">
                 Previous
               </span>
-              Configuration
+              Working with virtualenv
             </div>
           </div>
         </a>
       
       
         
-        <a href="../tool-pdm/" class="md-footer__link md-footer__link--next" aria-label="Next: PDM Tool Settings" rel="next">
+        <a href="../dependency/" class="md-footer__link md-footer__link--next" aria-label="Next: Manage Dependencies" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              PDM Tool Settings
+              Manage Dependencies
             </div>
           </div>
           <div class="md-footer__button md-icon">

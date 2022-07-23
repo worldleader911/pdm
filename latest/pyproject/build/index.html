@@ -13,7 +13,7 @@
     
     
       
-        <title>PEP 621 Metadata - PDM</title>
+        <title>Build Configuration - PDM</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#pep-621-metadata" class="md-skip">
+        <a href="#build-configuration" class="md-skip">
           Skip to content
         </a>
       
@@ -129,7 +129,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              PEP 621 Metadata
+              Build Configuration
             
           </span>
         </div>
@@ -241,7 +241,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="./" class="md-tabs__link md-tabs__link--active">
+      <a href="../pep621/" class="md-tabs__link md-tabs__link--active">
         Writing pyproject.toml
       </a>
     </li>
@@ -537,87 +537,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          PEP 621 Metadata
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../pep621/" class="md-nav__link">
         PEP 621 Metadata
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#multiline-description" class="md-nav__link">
-    Multiline description
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#package-version" class="md-nav__link">
-    Package version
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dependency-specification" class="md-nav__link">
-    Dependency specification
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#optional-dependencies" class="md-nav__link">
-    Optional dependencies
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#console-scripts" class="md-nav__link">
-    Console scripts
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#entry-points" class="md-nav__link">
-    Entry points
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -641,11 +565,167 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../build/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Build Configuration
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Build Configuration
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dynamic-versioning" class="md-nav__link">
+    Dynamic versioning
+  </a>
+  
+    <nav class="md-nav" aria-label="Dynamic versioning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dynamic-version-from-file" class="md-nav__link">
+    Dynamic version from file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dynamic-version-from-scm" class="md-nav__link">
+    Dynamic version from SCM
+  </a>
+  
+    <nav class="md-nav" aria-label="Dynamic version from SCM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#specify-the-version-manually" class="md-nav__link">
+    Specify the version manually
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#write-the-version-to-file" class="md-nav__link">
+    Write the version to file
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#include-and-exclude-files" class="md-nav__link">
+    Include and exclude files
+  </a>
+  
+    <nav class="md-nav" aria-label="Include and exclude files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-values-for-includes-and-excludes" class="md-nav__link">
+    Default values for includes and excludes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#select-another-package-directory-to-look-for-packages" class="md-nav__link">
+    Select another package directory to look for packages
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implicit-namespace-packages" class="md-nav__link">
+    Implicit namespace packages
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-file-generation" class="md-nav__link">
+    Custom file generation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-platform-specific-wheels" class="md-nav__link">
+    Build Platform-specific Wheels
+  </a>
+  
+    <nav class="md-nav" aria-label="Build Platform-specific Wheels">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#override-the-is-purelib-value" class="md-nav__link">
+    Override the "Is-Purelib" value
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#editable-build-backend" class="md-nav__link">
+    Editable build backend
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-other-pep-517-backends" class="md-nav__link">
+    Use other PEP 517 backends
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -822,43 +902,123 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#multiline-description" class="md-nav__link">
-    Multiline description
+  <a href="#dynamic-versioning" class="md-nav__link">
+    Dynamic versioning
+  </a>
+  
+    <nav class="md-nav" aria-label="Dynamic versioning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dynamic-version-from-file" class="md-nav__link">
+    Dynamic version from file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dynamic-version-from-scm" class="md-nav__link">
+    Dynamic version from SCM
+  </a>
+  
+    <nav class="md-nav" aria-label="Dynamic version from SCM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#specify-the-version-manually" class="md-nav__link">
+    Specify the version manually
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#write-the-version-to-file" class="md-nav__link">
+    Write the version to file
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#include-and-exclude-files" class="md-nav__link">
+    Include and exclude files
+  </a>
+  
+    <nav class="md-nav" aria-label="Include and exclude files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-values-for-includes-and-excludes" class="md-nav__link">
+    Default values for includes and excludes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#select-another-package-directory-to-look-for-packages" class="md-nav__link">
+    Select another package directory to look for packages
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#package-version" class="md-nav__link">
-    Package version
+  <a href="#implicit-namespace-packages" class="md-nav__link">
+    Implicit namespace packages
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#dependency-specification" class="md-nav__link">
-    Dependency specification
+  <a href="#custom-file-generation" class="md-nav__link">
+    Custom file generation
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#optional-dependencies" class="md-nav__link">
-    Optional dependencies
+  <a href="#build-platform-specific-wheels" class="md-nav__link">
+    Build Platform-specific Wheels
+  </a>
+  
+    <nav class="md-nav" aria-label="Build Platform-specific Wheels">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#override-the-is-purelib-value" class="md-nav__link">
+    Override the "Is-Purelib" value
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#editable-build-backend" class="md-nav__link">
+    Editable build backend
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#console-scripts" class="md-nav__link">
-    Console scripts
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#entry-points" class="md-nav__link">
-    Entry points
+  <a href="#use-other-pep-517-backends" class="md-nav__link">
+    Use other PEP 517 backends
   </a>
   
 </li>
@@ -875,138 +1035,229 @@
             <article class="md-content__inner md-typeset">
               
                 
-  <a href="https://github.com/pdm-project/pdm/edit/main/docs/docs/pyproject/pep621.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/pdm-project/pdm/edit/main/docs/docs/pyproject/build.md" title="Edit this page" class="md-content__button md-icon">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
 
-<h1 id="pep-621-metadata">PEP 621 Metadata<a class="headerlink" href="#pep-621-metadata" title="Permanent link">#</a></h1>
-<p>The project metadata are stored in the <code>pyproject.toml</code>. The specifications are defined by <a href="https://www.python.org/dev/peps/pep-0621/">PEP 621</a>, <a href="https://www.python.org/dev/peps/pep-0631/">PEP 631</a> and <a href="https://www.python.org/dev/peps/pep-0639/">PEP 639</a>. Read the detailed specifications in the PEPs.</p>
-<p><em>In the following part of this document, metadata should be written under <code>[project]</code> table if not given explicitly.</em></p>
-<h2 id="multiline-description">Multiline description<a class="headerlink" href="#multiline-description" title="Permanent link">#</a></h2>
-<p>You can split a long description onto multiple lines, thanks to TOML support for multiline strings.
-Just remember to escape new lines, so the final description appears
-<a href="https://packaging.python.org/specifications/core-metadata/#summary">on one line only in your package metadata</a>.
-Indentation will be removed as well when escaping new lines:</p>
+<h1 id="build-configuration">Build Configuration<a class="headerlink" href="#build-configuration" title="Permanent link">#</a></h1>
+<p><code>pdm</code> uses the <a href="https://www.python.org/dev/peps/pep-0517/">PEP 517</a> to build the package.
+A build backend is what drives the build system to build source distributions and wheels from arbitrary source trees.</p>
+<p><code>pdm</code> also ships with its own build backend, <a href="https://pypi.org/project/pdm-pep517/"><code>pdm-pep517</code></a>. Besides the <a href="../pep621/">PEP 621 project meta</a>, it reads additional configurations stored in <code>[tool.pdm.build]</code> table to control the build behavior. To use it, include the following in your <code>pyproject.toml</code>(It will be done automatically if you use the <a href="../../usage/cli_reference/#exec-0--init"><code>pdm init</code></a> or <a href="../../usage/cli_reference/#exec-0--import"><code>pdm import</code></a> to create the file):</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;&quot;\</span>
-<span class="s">    Lorem ipsum dolor sit amet, consectetur adipiscing elit, \</span>
-<span class="s">    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. \</span>
-<span class="s">    Ut enim ad minim veniam, quis nostrud exercitation ullamco \</span>
-<span class="s">    laboris nisi ut aliquip ex ea commodo consequat.\</span>
-<span class="s">&quot;&quot;&quot;</span><span class="w"></span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[build-system]</span><span class="w"></span>
+<span class="n">requires</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;pdm-pep517&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="n">build-backend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;pdm.pep517.api&quot;</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
-<p>See <a href="https://toml.io/en/v1.0.0#string">TOML's specification on strings</a>.</p>
-<h2 id="package-version">Package version<a class="headerlink" href="#package-version" title="Permanent link">#</a></h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Static</label><label for="__tabbed_1_2">Dynamic</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[project]</span><span class="w"></span>
-<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;1.0.0&quot;</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The following part of this documentation assumes you are using the <code>pdm-pep517</code> backend as mentioned above. Different backends will have different configurations.</p>
 </div>
-<div class="tabbed-block">
+<h2 id="dynamic-versioning">Dynamic versioning<a class="headerlink" href="#dynamic-versioning" title="Permanent link">#</a></h2>
+<p><code>pdm-pep517</code> supports dynamic versions from two sources. To enable dynamic versioning, remember to include <code>version</code> in the <code>dynamic</code> field of PEP 621 metadata:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[project]</span><span class="w"></span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[project]</span><span class="w"></span>
 <span class="p">...</span><span class="w"></span>
 <span class="n">dynamic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;version&quot;</span><span class="p">]</span><span class="w"></span>
-
-<span class="k">[tool.pdm]</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<h3 id="dynamic-version-from-file">Dynamic version from file<a class="headerlink" href="#dynamic-version-from-file" title="Permanent link">#</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm]</span><span class="w"></span>
 <span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">source</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;file&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;mypackage/__version__.py&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
-<p>The version will be read from the <code>mypackage/__version__.py</code> file searching for the pattern: <code>__version__ = "{version}"</code>.</p>
-<p>Read more information about other configurations in <a href="../build/#dynamic-versioning">dynamic versioning</a>.</p>
-</div>
-</div>
-</div>
-<h2 id="dependency-specification">Dependency specification<a class="headerlink" href="#dependency-specification" title="Permanent link">#</a></h2>
-<p>The <code>project.dependencies</code> is an array of dependency specification strings following the <a href="https://www.python.org/dev/peps/pep-0440/">PEP 440</a>
-and <a href="https://www.python.org/dev/peps/pep-0508/">PEP 508</a>.</p>
-<p>Examples:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[project]</span><span class="w"></span>
-<span class="p">...</span><span class="w"></span>
-<span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># Named requirement</span><span class="w"></span>
-<span class="w">    </span><span class="s">&quot;requests&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># Named requirement with version specifier</span><span class="w"></span>
-<span class="w">    </span><span class="s">&quot;flask &gt;= 1.1.0&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># Requirement with environment marker</span><span class="w"></span>
-<span class="w">    </span><span class="s">&quot;pywin32; sys_platform == &#39;win32&#39;&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># URL requirement</span><span class="w"></span>
-<span class="w">    </span><span class="s">&quot;pip @ git+https://github.com/pypa/pip.git@20.3.1&quot;</span><span class="w"></span>
-<span class="p">]</span><span class="w"></span>
+<p>The backend will search for the pattern <code>__version__ = "{version}"</code> in the given file and use the value as the version.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Thanks to the TOML syntax, the above example is equivalent to the following:</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm.version]</span><span class="w"></span>
+<span class="n">source</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;file&quot;</span><span class="w"></span>
+<span class="n">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;mypackage/__version__.py&quot;</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
-<h2 id="optional-dependencies">Optional dependencies<a class="headerlink" href="#optional-dependencies" title="Permanent link">#</a></h2>
-<p>You can have some requirements optional, which is similar to <code>setuptools</code>' <code>extras_require</code> parameter.</p>
+Or:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm]</span><span class="w"></span>
+<span class="n">version</span><span class="p">.</span><span class="n">source</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;file&quot;</span><span class="w"></span>
+<span class="n">version</span><span class="p">.</span><span class="n">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;mypackage/__version__.py&quot;</span><span class="w"></span>
+</code></pre></div></td></tr></table></div></p>
+</div>
+<h3 id="dynamic-version-from-scm">Dynamic version from SCM<a class="headerlink" href="#dynamic-version-from-scm" title="Permanent link">#</a></h3>
+<p>If you've used <a href="https://pypi.org/project/setuptools-scm/"><code>setuptools-scm</code></a> you will be familiar with this approach. <code>pdm-pep517</code> can also read the version from the tag of your SCM repository:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm]</span><span class="w"></span>
+<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">source</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;scm&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<h4 id="specify-the-version-manually">Specify the version manually<a class="headerlink" href="#specify-the-version-manually" title="Permanent link">#</a></h4>
+<p>When building the package, <code>pdm-pep517</code> will require the SCM to be available to populate the version. If that is not the case, you can still specify the version with an environment variable <code>PDM_PEP517_SCM_VERSION</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">export</span> <span class="nv">PDM_PEP517_SCM_VERSION</span><span class="o">=</span><span class="s2">&quot;1.2.3&quot;</span>
+pdm build
+</code></pre></div></td></tr></table></div>
+<h4 id="write-the-version-to-file">Write the version to file<a class="headerlink" href="#write-the-version-to-file" title="Permanent link">#</a></h4>
+<p>For dynamic version read from SCM, it would be helpful to write the evaluated value to a file when building a wheel, so that you do not need <code>importlib.metadata</code> to get the version in code.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm.version]</span><span class="w"></span>
+<span class="n">source</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;scm&quot;</span><span class="w"></span>
+<span class="n">write-to</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;mypackage/__version__.py&quot;</span><span class="w"></span>
+<span class="n">write-template</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;__version__ = &#39;{}&#39;&quot;</span><span class="w">  </span><span class="c1"># optional, default to &quot;{}&quot;</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<p>For source distributions, the version will be <em>frozen</em> and converted to a static version in the <code>pyproject.toml</code> file, which will be included in the distribution.</p>
+<h2 id="include-and-exclude-files">Include and exclude files<a class="headerlink" href="#include-and-exclude-files" title="Permanent link">#</a></h2>
+<p>To include extra files and/or exclude files from the distribution, give the paths in <code>includes</code> and <code>excludes</code> configuration, as glob patterns:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
 <span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[project.optional-dependencies]</span><span class="w"></span>
-<span class="n">socks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s">&#39;PySocks &gt;= 1.5.6, != 1.5.7, &lt; 2&#39;</span><span class="w"> </span><span class="p">]</span><span class="w"></span>
-<span class="n">tests</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">  </span><span class="s">&#39;ddt &gt;= 1.2.2, &lt; 2&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="s">&#39;pytest &lt; 6&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="s">&#39;mock &gt;= 1.0.1, &lt; 4; python_version &lt; &quot;3.4&quot;&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm.build]</span><span class="w"></span>
+<span class="n">includes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">    </span><span class="s">&quot;**/*.json&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="s">&quot;mypackage/&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="p">]</span><span class="w"></span>
+<span class="n">excludes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">    </span><span class="s">&quot;mypackage/_temp/*&quot;</span><span class="w"></span>
 <span class="p">]</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
-<p>To install a group of optional dependencies:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm install -G socks
-</code></pre></div></td></tr></table></div>
-<p><code>-G</code> option can be given multiple times to include more than one group.</p>
-<h2 id="console-scripts">Console scripts<a class="headerlink" href="#console-scripts" title="Permanent link">#</a></h2>
-<p>The following content:</p>
+<p>In case you may want some files to be included in source distributions only, use the <code>source-includes</code> field:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[project.scripts]</span><span class="w"></span>
-<span class="n">mycli</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;mycli.__main__:main&quot;</span><span class="w"></span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm.build]</span><span class="w"></span>
+<span class="n">includes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[...]</span><span class="w"></span>
+<span class="n">excludes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[...]</span><span class="w"></span>
+<span class="n">source-includes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;tests/&quot;</span><span class="p">]</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
-<p>will be translated to <code>setuptools</code> style:</p>
+<p>Note that the files defined in <code>source-includes</code> will be <strong>excluded</strong> automatically from binary distributions.</p>
+<h3 id="default-values-for-includes-and-excludes">Default values for includes and excludes<a class="headerlink" href="#default-values-for-includes-and-excludes" title="Permanent link">#</a></h3>
+<p>If you don't specify any of these fields, PDM can determine the values for you to fit the most common workflows, in the following manners:</p>
+<ul>
+<li>Top-level packages will be included.</li>
+<li><code>tests</code> package will be excluded from <strong>non-sdist</strong> builds.</li>
+<li><code>src</code> directory will be detected as the <code>package-dir</code> if it exists.</li>
+</ul>
+<p>If your project follows the above conventions you don't need to config any of these fields and it just works.
+Be aware PDM won't add <a href="https://www.python.org/dev/peps/pep-0420/">PEP 420 implicit namespace packages</a> automatically and they should always be specified in <code>includes</code> explicitly.</p>
+<h2 id="select-another-package-directory-to-look-for-packages">Select another package directory to look for packages<a class="headerlink" href="#select-another-package-directory-to-look-for-packages" title="Permanent link">#</a></h2>
+<p>Similar to <code>setuptools</code>' <code>package_dir</code> setting, one can specify another package directory, such as <code>src</code>, in <code>pyproject.toml</code> easily:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm.build]</span><span class="w"></span>
+<span class="n">package-dir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;src&quot;</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<p>If no package directory is given, PDM can also recognize <code>src</code> as the <code>package-dir</code> implicitly if:</p>
+<ol>
+<li><code>src/__init__.py</code> doesn't exist, meaning it is not a valid Python package, and</li>
+<li>There exist some packages under <code>src/*</code>.</li>
+</ol>
+<h2 id="implicit-namespace-packages">Implicit namespace packages<a class="headerlink" href="#implicit-namespace-packages" title="Permanent link">#</a></h2>
+<p>As specified in <a href="https://www.python.org/dev/peps/pep-0420">PEP 420</a>, a directory will be recognized as a namespace package if:</p>
+<ol>
+<li><code>&lt;package&gt;/__init__.py</code> doesn't exist, and</li>
+<li>There exist normal packages and/or other namespace packages under <code>&lt;package&gt;/*</code>, and</li>
+<li><code>&lt;package&gt;</code> is explicitly listed in <code>includes</code></li>
+</ol>
+<h2 id="custom-file-generation">Custom file generation<a class="headerlink" href="#custom-file-generation" title="Permanent link">#</a></h2>
+<p>During the build, you may want to generate other files or download resources from the internet. You can achieve this by the <code>setup-script</code> build configuration:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm.build]</span><span class="w"></span>
+<span class="n">setup-script</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">&quot;</span><span class="n">build</span><span class="p">.</span><span class="n">py</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<p>In the <code>build.py</code> script, <code>pdm-pep517</code> looks for a <code>build</code> function and calls it with two arguments:</p>
+<ul>
+<li><code>src</code>: (str) the path to the source directory</li>
+<li><code>dst</code>: (str) the path to the distribution directory</li>
+</ul>
+<p>Example:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">entry_points</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;console_scripts&#39;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="s1">&#39;mycli=mycli.__main__:main&#39;</span>
-    <span class="p">]</span>
-<span class="p">}</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># build.py</span>
+<span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">dst</span><span class="p">):</span>
+    <span class="n">target_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dst</span><span class="p">,</span> <span class="s2">&quot;mypackage/myfile.txt&quot;</span><span class="p">)</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">target_file</span><span class="p">),</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">download_file_to</span><span class="p">(</span><span class="n">dst</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-<p>Also, <code>[project.gui-scripts]</code> will be translated to <code>gui_scripts</code> entry points group in <code>setuptools</code> style.</p>
-<h2 id="entry-points">Entry points<a class="headerlink" href="#entry-points" title="Permanent link">#</a></h2>
-<p>Other types of entry points are given by <code>[project.entry-points.&lt;type&gt;]</code> section, with the same
-format of <code>[project.scripts]</code>:</p>
+<p>The generated file will be copied to the resulted wheel with the same hierarchy, you need to create the parent directories if necessary.</p>
+<h2 id="build-platform-specific-wheels">Build Platform-specific Wheels<a class="headerlink" href="#build-platform-specific-wheels" title="Permanent link">#</a></h2>
+<p><code>setup-script</code> can also be used to build platform-specific wheels, such as C extensions. Currently, building C extensions still relies on <code>setuptools</code>.</p>
+<p>Set the <code>run-setuptools</code> to <code>true</code> under <code>setup-script</code>, and <code>pdm-pep517</code> will generate a <code>setup.py</code> with the custom <code>build</code> function in the script and run <code>python setup.py build</code> to build extensions.</p>
+<p>In the <code>build.py</code> script, the expected <code>build</code> function receives the argument dictionary to be passed to the <code>setup()</code> call. In the function, you can update the dictionary with any additional or changed values as you want.</p>
+<p>Here is an example adapted to build <code>MarkupSafe</code>:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[project.entry-points.pytest11]</span><span class="w"></span>
-<span class="n">myplugin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;mypackage.plugin:pytest_plugin&quot;</span><span class="w"></span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># build.py</span>
+<span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">Extension</span>
+
+<span class="n">ext_modules</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">Extension</span><span class="p">(</span><span class="s2">&quot;markupsafe._speedups&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;src/markupsafe/_speedups.c&quot;</span><span class="p">])</span>
+<span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="n">setup_kwargs</span><span class="p">):</span>
+    <span class="n">setup_kwargs</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">ext_modules</span><span class="o">=</span><span class="n">ext_modules</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-<p>If the entry point name contains dots or other special characters, wrap it in quotes:</p>
+<p>The build configuration should look like:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[project.entry-points.&quot;flake8.extension&quot;]</span><span class="w"></span>
-<span class="n">myplugin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;mypackage.plugin:flake8_plugin&quot;</span><span class="w"></span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># pyproject.toml</span><span class="w"></span>
+<span class="k">[tool.pdm.build]</span><span class="w"></span>
+<span class="n">setup-script</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;build.py&quot;</span><span class="w"></span>
+<span class="n">run-setuptools</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
+<p>If you run <a href="../../usage/cli_reference/#exec-0--build"><code>pdm build</code></a>(or any other build frontends such as <a href="https://pypi.org/project/build">build</a>), PDM will build a platform-specific wheel file as well as a sdist.</p>
+<p>By default, every build is performed in a clean and isolated environment, only build requirements can be seen. If your build has optional requirements that depend on the project environment, you can turn off the environment isolation by <code>pdm build --no-isolation</code> or setting config <code>build_isolation</code> to falsey value.</p>
+<h3 id="override-the-is-purelib-value">Override the "Is-Purelib" value<a class="headerlink" href="#override-the-is-purelib-value" title="Permanent link">#</a></h3>
+<p>Sometimes you may want to build platform-specific wheels but don't have a build script(the binaries may be built or fetched by other tools). In this case
+you can set the <code>is-purelib</code> value in the <code>pyproject.toml</code> to <code>false</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm.build]</span><span class="w"></span>
+<span class="n">is-purelib</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<p>If this value is not specified, <code>pdm-pep517</code> will build platform-specific wheels if <code>run-setuptools</code> is <code>true</code>, therefore <code>is-purelib</code> is <code>true</code> in this case.</p>
+<h2 id="editable-build-backend">Editable build backend<a class="headerlink" href="#editable-build-backend" title="Permanent link">#</a></h2>
+<p>PDM implements <a href="https://www.python.org/dev/peps/pep-0660/">PEP 660</a> to build wheels for editable installation.
+One can choose how to generate the wheel out of the two methods:</p>
+<ul>
+<li><code>path</code>: (Default)The legacy method used by setuptools that create .pth files under the packages path.</li>
+<li><code>editables</code>: Create proxy modules under the packages path. Since the proxy module is looked for at runtime, it may not work with some static analysis tools.</li>
+</ul>
+<p>Read the PEP for the difference of the two methods and how they work.</p>
+<p>Specify the method in pyproject.toml like below:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm.build]</span><span class="w"></span>
+<span class="n">editable-backend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;path&quot;</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<p><code>editables</code> backend is more recommended but there is a known limitation that it can't work with PEP 420 namespace packages.
+So you would need to change to <code>path</code> in that case.</p>
+<div class="admonition note">
+<p class="admonition-title">About Python 2 compatibility</p>
+<p>Due to the fact that the build backend for PDM managed projects requires Python&gt;=3.6, you would not be able to
+install the current project if Python 2 is being used as the host interpreter. You can still install other dependencies not PDM-backed.</p>
+</div>
+<h2 id="use-other-pep-517-backends">Use other PEP 517 backends<a class="headerlink" href="#use-other-pep-517-backends" title="Permanent link">#</a></h2>
+<p>Apart from <code>pdm-pep517</code>, <code>pdm</code> plays well with any PEP 517 build backends that read PEP 621 metadata. At the time of writing, <a href="https://pypi.org/project/flit"><code>flit</code></a>(backend: <code>flit-core</code>) and <a href="https://pypi.org/project/hatch"><code>hatch</code></a>(backend: <code>hatchling</code>) are working well with PEP 621 and <a href="https://pypi.org/project/setuptools"><code>setuptools</code></a> has experimental support. To use one of them, you can specify the backend in the <code>pyproject.toml</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[build-system]</span><span class="w"></span>
+<span class="n">requires</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;flit_core &gt;=3.2,&lt;4&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="n">build-backend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;flit_core.buildapi&quot;</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<p>PDM will call the correct backend when doing <a href="../../usage/cli_reference/#exec-0--build"><code>pdm build</code></a>.</p>
 
               
             </article>
@@ -1022,7 +1273,7 @@ format of <code>[project.scripts]</code>:</p>
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../../usage/configuration/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Configuration" rel="prev">
+        <a href="../tool-pdm/" class="md-footer__link md-footer__link--prev" aria-label="Previous: PDM Tool Settings" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1031,20 +1282,20 @@ format of <code>[project.scripts]</code>:</p>
               <span class="md-footer__direction">
                 Previous
               </span>
-              Configuration
+              PDM Tool Settings
             </div>
           </div>
         </a>
       
       
         
-        <a href="../tool-pdm/" class="md-footer__link md-footer__link--next" aria-label="Next: PDM Tool Settings" rel="next">
+        <a href="../../plugin/write/" class="md-footer__link md-footer__link--next" aria-label="Next: Write a plugin" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              PDM Tool Settings
+              Write a plugin
             </div>
           </div>
           <div class="md-footer__button md-icon">

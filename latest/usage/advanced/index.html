@@ -9,7 +9,7 @@
       
       
       <link rel="icon" href="../../assets/logo.svg">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.9">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.9">
     
     
       
@@ -17,11 +17,12 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.120efc48.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.1d29e8d0.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.9647289d.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
         
+      
       
     
     
@@ -106,7 +107,9 @@
     
       
 
-<header class="md-header" data-md-component="header">
+  
+
+<header class="md-header md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../.." title="PDM" class="md-header__button md-logo" aria-label="PDM" data-md-component="logo">
       
@@ -205,13 +208,88 @@
     
   </nav>
   
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link md-tabs__link--active">
+        Usage
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../pyproject/pep621/" class="md-tabs__link">
+        Writing pyproject.toml
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../plugin/write/" class="md-tabs__link">
+        Plugins
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../dev/contributing/" class="md-tabs__link">
+        Development
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
 </header>
     
     <div class="md-container" data-md-component="container">
       
       
-        
-          
         
       
       <main class="md-main" data-md-component="main">
@@ -224,8 +302,10 @@
                   <div class="md-sidebar__inner">
                     
 
+  
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="PDM" class="md-nav__button md-logo" aria-label="PDM" data-md-component="logo">
       
@@ -255,21 +335,6 @@
 
   
   
-  
-    <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
-        Home
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
     
   
   
@@ -277,18 +342,18 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
       
       
       
       
-        <label class="md-nav__link" for="__nav_2">
+        <label class="md-nav__link" for="__nav_1">
           Usage
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Usage" data-md-level="1">
-        <label class="md-nav__title" for="__nav_2">
+        <label class="md-nav__title" for="__nav_1">
           <span class="md-nav__icon md-icon"></span>
           Usage
         </label>
@@ -300,8 +365,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../dependency/" class="md-nav__link">
-        Manage Dependencies
+      <a href="../.." class="md-nav__link">
+        Home
       </a>
     </li>
   
@@ -328,8 +393,64 @@
   
   
     <li class="md-nav__item">
+      <a href="../venv/" class="md-nav__link">
+        Working with virtualenv
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pep582/" class="md-nav__link">
+        Working with PEP 582
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dependency/" class="md-nav__link">
+        Manage Dependencies
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../scripts/" class="md-nav__link">
         PDM Scripts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hooks/" class="md-nav__link">
+        Lifecycle and hooks
       </a>
     </li>
   
@@ -417,13 +538,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#use-other-pep-517-backends" class="md-nav__link">
-    Use other PEP 517 backends
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#use-pdm-in-a-multi-stage-dockerfile" class="md-nav__link">
     Use PDM in a multi-stage Dockerfile
   </a>
@@ -459,6 +573,34 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cli_reference/" class="md-nav__link">
+        CLI Reference
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration/" class="md-nav__link">
+        Configuration
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -476,18 +618,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_3">
+        <label class="md-nav__link" for="__nav_2">
           Writing pyproject.toml
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Writing pyproject.toml" data-md-level="1">
-        <label class="md-nav__title" for="__nav_3">
+        <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
           Writing pyproject.toml
         </label>
@@ -521,23 +663,22 @@
 
             
           
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
+            
+              
   
   
   
     <li class="md-nav__item">
-      <a href="../../configuration/" class="md-nav__link">
-        Configuration
+      <a href="../../pyproject/build/" class="md-nav__link">
+        Build Configuration
       </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -553,18 +694,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_5">
+        <label class="md-nav__link" for="__nav_3">
           Plugins
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Plugins" data-md-level="1">
-        <label class="md-nav__title" for="__nav_5">
+        <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           Plugins
         </label>
@@ -615,18 +756,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_6">
+        <label class="md-nav__link" for="__nav_4">
           Development
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Development" data-md-level="1">
-        <label class="md-nav__title" for="__nav_6">
+        <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
           Development
         </label>
@@ -653,7 +794,7 @@
   
     <li class="md-nav__item">
       <a href="../../dev/changelog/" class="md-nav__link">
-        Change Log
+        Changelog
       </a>
     </li>
   
@@ -748,13 +889,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#use-other-pep-517-backends" class="md-nav__link">
-    Use other PEP 517 backends
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#use-pdm-in-a-multi-stage-dockerfile" class="md-nav__link">
     Use PDM in a multi-stage Dockerfile
   </a>
@@ -839,16 +973,16 @@ You can configure a <code>tox.ini</code> like the following to integrate your te
 <span class="w">    </span><span class="na">flake8 src/</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
 <p>To use the virtualenv created by Tox, you should make sure you have set <code>pdm config use_venv true</code>. PDM then will install
-dependencies from <code>pdm.lock</code> into the virtualenv. In the dedicated venv you can directly run tools by <code>pytest tests/</code> instead
+dependencies from <a href="../cli_reference/#exec-0--lock"><code>pdm lock</code></a> into the virtualenv. In the dedicated venv you can directly run tools by <code>pytest tests/</code> instead
 of <code>pdm run pytest tests/</code>.</p>
-<p>You should also make sure you don't run <code>pdm add/pdm remove/pdm update/pdm lock</code> in the test commands, otherwise the <code>pdm.lock</code>
+<p>You should also make sure you don't run <code>pdm add/pdm remove/pdm update/pdm lock</code> in the test commands, otherwise the <a href="../cli_reference/#exec-0--lock"><code>pdm lock</code></a>
 file will be modified unexpectedly. Additional dependencies can be supplied with the <code>deps</code> config. Besides, <code>isolated_buid</code> and <code>passenv</code>
 config should be set as the above example to make PDM work properly.</p>
 <p>To get rid of these constraints, there is a Tox plugin <a href="https://github.com/pdm-project/tox-pdm">tox-pdm</a> which can ease the usage. You can install it by</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="go">pip install tox-pdm</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pip install tox-pdm
 </code></pre></div></td></tr></table></div>
 <p>Or,</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="go">pdm add --dev tox-pdm</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm add --dev tox-pdm
 </code></pre></div></td></tr></table></div>
 <p>And you can make the <code>tox.ini</code> much tidier as following, :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -910,7 +1044,7 @@ config should be set as the above example to make PDM work properly.</p>
 <p>Note that <code>PDM_IGNORE_SAVED_PYTHON</code> should be set so that PDM can pick up the Python in the virtualenv correctly. Also make sure <code>pdm</code> is available in the <code>PATH</code>.
 Before running nox, you should also <code>pdm config use_venv true</code> to enable venv reusing.</p>
 <h3 id="about-pep-582-__pypackages__-directory">About PEP 582 <code>__pypackages__</code> directory<a class="headerlink" href="#about-pep-582-__pypackages__-directory" title="Permanent link">#</a></h3>
-<p>By default, if you run tools by <code>pdm run</code>, <code>__pypackages__</code> will be seen by the program and all subprocesses created by it. This means virtual environments created by those tools are also aware of the packages inside <code>__pypackages__</code>, which result in unexpected behavior in some cases.
+<p>By default, if you run tools by <a href="../cli_reference/#exec-0--run"><code>pdm run</code></a>, <code>__pypackages__</code> will be seen by the program and all subprocesses created by it. This means virtual environments created by those tools are also aware of the packages inside <code>__pypackages__</code>, which result in unexpected behavior in some cases.
 For <code>nox</code>, you can avoid this by adding a line in <code>noxfile.py</code>:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;PYTHONPATH&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
@@ -947,7 +1081,7 @@ Here is an example workflow of GitHub Actions, while you can adapt it for other 
 <span class="w">      </span><span class="nt">os</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">ubuntu-latest</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">macOS-latest</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">windows-latest</span><span class="p p-Indicator">]</span><span class="w"></span>
 
 <span class="w">  </span><span class="nt">steps</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v1</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v3</span><span class="w"></span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Set up PDM</span><span class="w"></span>
 <span class="w">      </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pdm-project/setup-pdm@main</span><span class="w"></span>
 <span class="w">      </span><span class="nt">with</span><span class="p">:</span><span class="w"></span>
@@ -973,15 +1107,6 @@ To work around this, you can set the HOME environment variable yourself, to a wr
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">export</span> <span class="nv">HOME</span><span class="o">=</span>/tmp/home
 </code></pre></div></td></tr></table></div>
 </div>
-<h2 id="use-other-pep-517-backends">Use other PEP 517 backends<a class="headerlink" href="#use-other-pep-517-backends" title="Permanent link">#</a></h2>
-<p>PDM supports ALL PEP 517 build backends that comply with PEP 621 specification. At the time of writing, <code>flit</code> is going to switch to PEP 621 metadata in the near future, then you can keep <code>flit</code> as the build-backend while still managing dependencies using PDM:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[build-system]</span><span class="w"></span>
-<span class="n">requires</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;flit_core &gt;=2,&lt;4&quot;</span><span class="p">]</span><span class="w"></span>
-<span class="n">build-backend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;flit_core.buildapi&quot;</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
-<p>PDM will call the correct backend when <code>pdm build</code>.</p>
 <h2 id="use-pdm-in-a-multi-stage-dockerfile">Use PDM in a multi-stage Dockerfile<a class="headerlink" href="#use-pdm-in-a-multi-stage-dockerfile" title="Permanent link">#</a></h2>
 <p>It is possible to use PDM in a multi-stage Dockerfile to first install the project and dependencies into <code>__pypackages__</code>
 and then copy this folder into the final stage, adding it to <code>PYTHONPATH</code>.</p>
@@ -1107,6 +1232,7 @@ and then copy this folder into the final stage, adding it to <code>PYTHONPATH</c
 
               
             </article>
+            
           </div>
         </div>
         
@@ -1114,10 +1240,11 @@ and then copy this folder into the final stage, adding it to <code>PYTHONPATH</c
       
         <footer class="md-footer">
   
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../scripts/" class="md-footer__link md-footer__link--prev" aria-label="Previous: PDM Scripts" rel="prev">
+        <a href="../hooks/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Lifecycle and hooks" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1126,20 +1253,20 @@ and then copy this folder into the final stage, adding it to <code>PYTHONPATH</c
               <span class="md-footer__direction">
                 Previous
               </span>
-              PDM Scripts
+              Lifecycle and hooks
             </div>
           </div>
         </a>
       
       
         
-        <a href="../../pyproject/pep621/" class="md-footer__link md-footer__link--next" aria-label="Next: PEP 621 Metadata" rel="next">
+        <a href="../cli_reference/" class="md-footer__link md-footer__link--next" aria-label="Next: CLI Reference" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              PEP 621 Metadata
+              CLI Reference
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -1154,7 +1281,7 @@ and then copy this folder into the final stage, adding it to <code>PYTHONPATH</c
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2019-2021 <a href="https://frostming.com">Frost Ming</a>
+      Copyright &copy; 2019 <a href="https://frostming.com">Frost Ming</a>
     </div>
   
   
@@ -1204,10 +1331,10 @@ and then copy this folder into the final stage, adding it to <code>PYTHONPATH</c
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky"], "search": "../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.6e54b5cd.min.js"></script>
+      <script src="../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
       
     
   </body>

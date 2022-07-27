@@ -564,6 +564,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#hooks-for-pre-commit" class="md-nav__link">
+    Hooks for pre-commit
+  </a>
+  
+    <nav class="md-nav" aria-label="Hooks for pre-commit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#export-requirementstxt-or-setuppy" class="md-nav__link">
+    Export requirements.txt or setup.py
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -915,6 +935,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#hooks-for-pre-commit" class="md-nav__link">
+    Hooks for pre-commit
+  </a>
+  
+    <nav class="md-nav" aria-label="Hooks for pre-commit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#export-requirementstxt-or-setuppy" class="md-nav__link">
+    Export requirements.txt or setup.py
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1228,6 +1268,26 @@ and then copy this folder into the final stage, adding it to <code>PYTHONPATH</c
 <span class="w">               </span><span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">lsp-python-ms-extra-paths</span><span class="w"> </span><span class="p">(</span><span class="nf">vector</span><span class="w"> </span><span class="p">(</span><span class="nv">linw1995/pdm-get-packages-path</span><span class="p">)))</span><span class="w"></span>
 <span class="w">               </span><span class="p">(</span><span class="nb">require</span><span class="w"> </span><span class="ss">&#39;lsp-python-ms</span><span class="p">)</span><span class="w"></span>
 <span class="w">               </span><span class="p">(</span><span class="nv">lsp</span><span class="p">))))</span><span class="w">  </span><span class="c1">; or lsp-deferred</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<h2 id="hooks-for-pre-commit">Hooks for <code>pre-commit</code><a class="headerlink" href="#hooks-for-pre-commit" title="Permanent link">#</a></h2>
+<p><a href="https://pre-commit.com/"><code>pre-commit</code></a> is a powerful framework for managing git hooks in a centralized fashion. PDM already uses <code>pre-commit</code> <a href="https://github.com/pdm-project/pdm/blob/main/.pre-commit-config.yaml">hooks</a> for its internal QA checks. PDM exposes also several hooks that can be run locally or in CI pipelines.</p>
+<h3 id="export-requirementstxt-or-setuppy">Export <code>requirements.txt</code> or <code>setup.py</code><a class="headerlink" href="#export-requirementstxt-or-setuppy" title="Permanent link">#</a></h3>
+<p>This hook wraps the command <code>pdm export</code> along with any valid argument. It can be used as a hook (e.g., for CI) to ensure that you are going to check in the codebase a <code>requirements.txt</code> or a <code>setup.py</code> file, which reflects the actual content of <a href="../cli_reference/#exec-0--lock"><code>pdm lock</code></a>.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># export python requirements</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/pdm-project/pdm</span><span class="w"></span>
+<span class="w">  </span><span class="nt">rev</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.x.y</span><span class="w"> </span><span class="c1"># a PDM release exposing the hook</span><span class="w"></span>
+<span class="w">  </span><span class="nt">hooks</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pdm-export</span><span class="w"></span>
+<span class="w">      </span><span class="c1"># command arguments, e.g.:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">args</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;-o&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;requirements.txt&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;--without-hashes&quot;</span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="w">      </span><span class="nt">files</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^pdm.lock$</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
 
               

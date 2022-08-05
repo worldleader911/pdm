@@ -1150,6 +1150,14 @@ Besides, you can also define some fixed environment variables in your <code>pypr
 <span class="n">start</span><span class="p">.</span><span class="n">cmd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;flask run -p 54321&quot;</span><span class="w"></span>
 <span class="n">start</span><span class="p">.</span><span class="n">env_file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;.env&quot;</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
+<p>The variables within the dotenv file will <em>not</em> override any existing environment variables.
+If you want the dotenv file to override existing environment variables use the following:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm.scripts]</span><span class="w"></span>
+<span class="n">start</span><span class="p">.</span><span class="n">cmd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;flask run -p 54321&quot;</span><span class="w"></span>
+<span class="n">start</span><span class="p">.</span><span class="n">env_file</span><span class="p">.</span><span class="n">override</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;.env&quot;</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>A dotenv file specified on a composite task level will override those defined by called tasks.</p>

@@ -1105,8 +1105,8 @@ pdm build
 <span class="normal">3</span>
 <span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm.version]</span><span class="w"></span>
 <span class="n">source</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;scm&quot;</span><span class="w"></span>
-<span class="n">write-to</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;mypackage/__version__.py&quot;</span><span class="w"></span>
-<span class="n">write-template</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;__version__ = &#39;{}&#39;&quot;</span><span class="w">  </span><span class="c1"># optional, default to &quot;{}&quot;</span><span class="w"></span>
+<span class="n">write_to</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;mypackage/__version__.py&quot;</span><span class="w"></span>
+<span class="n">write_template</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;__version__ = &#39;{}&#39;&quot;</span><span class="w">  </span><span class="c1"># optional, default to &quot;{}&quot;</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
 <p>For source distributions, the version will be <em>frozen</em> and converted to a static version in the <code>pyproject.toml</code> file, which will be included in the distribution.</p>
 <h2 id="include-and-exclude-files">Include and exclude files<a class="headerlink" href="#include-and-exclude-files" title="Permanent link">#</a></h2>

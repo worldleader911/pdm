@@ -1012,7 +1012,7 @@ You can configure a <code>tox.ini</code> like the following to integrate your te
 <span class="w">    </span><span class="na">pdm install -G lint</span><span class="w"></span>
 <span class="w">    </span><span class="na">flake8 src/</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
-<p>To use the virtualenv created by Tox, you should make sure you have set <code>pdm config use_venv true</code>. PDM then will install
+<p>To use the virtualenv created by Tox, you should make sure you have set <code>pdm config python.use_venv true</code>. PDM then will install
 dependencies from <a href="../cli_reference/#exec-0--lock"><code>pdm lock</code></a> into the virtualenv. In the dedicated venv you can directly run tools by <code>pytest tests/</code> instead
 of <code>pdm run pytest tests/</code>.</p>
 <p>You should also make sure you don't run <code>pdm add/pdm remove/pdm update/pdm lock</code> in the test commands, otherwise the <a href="../cli_reference/#exec-0--lock"><code>pdm lock</code></a>
@@ -1082,7 +1082,7 @@ config should be set as the above example to make PDM work properly.</p>
     <span class="n">session</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s1">&#39;flake8&#39;</span><span class="p">,</span> <span class="s1">&#39;--import-order-style&#39;</span><span class="p">,</span> <span class="s1">&#39;google&#39;</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 <p>Note that <code>PDM_IGNORE_SAVED_PYTHON</code> should be set so that PDM can pick up the Python in the virtualenv correctly. Also make sure <code>pdm</code> is available in the <code>PATH</code>.
-Before running nox, you should also <code>pdm config use_venv true</code> to enable venv reusing.</p>
+Before running nox, you should also ensure configuration item <code>python.use_venv</code> is true to enable venv reusing.</p>
 <h3 id="about-pep-582-__pypackages__-directory">About PEP 582 <code>__pypackages__</code> directory<a class="headerlink" href="#about-pep-582-__pypackages__-directory" title="Permanent link">#</a></h3>
 <p>By default, if you run tools by <a href="../cli_reference/#exec-0--run"><code>pdm run</code></a>, <code>__pypackages__</code> will be seen by the program and all subprocesses created by it. This means virtual environments created by those tools are also aware of the packages inside <code>__pypackages__</code>, which result in unexpected behavior in some cases.
 For <code>nox</code>, you can avoid this by adding a line in <code>noxfile.py</code>:</p>
@@ -1117,7 +1117,7 @@ Here is an example workflow of GitHub Actions, while you can adapt it for other 
 <span class="w">  </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ matrix.os }}</span><span class="w"></span>
 <span class="w">  </span><span class="nt">strategy</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">matrix</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">python-version</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">3.7</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">3.8</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">3.9</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;3.10&quot;</span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="w">      </span><span class="nt">python-version</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">3.7</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">3.8</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">3.9</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;3.10&#39;</span><span class="p p-Indicator">]</span><span class="w"></span>
 <span class="w">      </span><span class="nt">os</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">ubuntu-latest</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">macOS-latest</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">windows-latest</span><span class="p p-Indicator">]</span><span class="w"></span>
 
 <span class="w">  </span><span class="nt">steps</span><span class="p">:</span><span class="w"></span>
@@ -1286,7 +1286,7 @@ and then copy this folder into the final stage, adding it to <code>PYTHONPATH</c
 <span class="w">  </span><span class="nt">hooks</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pdm-export</span><span class="w"></span>
 <span class="w">      </span><span class="c1"># command arguments, e.g.:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">args</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;-o&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;requirements.txt&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;--without-hashes&quot;</span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="w">      </span><span class="nt">args</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;-o&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;requirements.txt&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;--without-hashes&#39;</span><span class="p p-Indicator">]</span><span class="w"></span>
 <span class="w">      </span><span class="nt">files</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^pdm.lock$</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
 

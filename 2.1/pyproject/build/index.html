@@ -693,18 +693,12 @@
     Build Platform-specific Wheels
   </a>
   
-    <nav class="md-nav" aria-label="Build Platform-specific Wheels">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#override-the-is-purelib-value" class="md-nav__link">
     Override the "Is-Purelib" value
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -994,18 +988,12 @@
     Build Platform-specific Wheels
   </a>
   
-    <nav class="md-nav" aria-label="Build Platform-specific Wheels">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#override-the-is-purelib-value" class="md-nav__link">
     Override the "Is-Purelib" value
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1168,7 +1156,7 @@ Be aware PDM won't add <a href="https://www.python.org/dev/peps/pep-0420/">PEP 4
 <p>During the build, you may want to generate other files or download resources from the internet. You can achieve this by the <code>setup-script</code> build configuration:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm.build]</span><span class="w"></span>
-<span class="n">setup-script</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">&quot;</span><span class="n">build</span><span class="p">.</span><span class="n">py</span><span class="w"></span>
+<span class="n">setup-script</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;build.py&quot;</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
 <p>In the <code>build.py</code> script, <code>pdm-pep517</code> looks for a <code>build</code> function and calls it with two arguments:</p>
 <ul>
@@ -1189,8 +1177,16 @@ Be aware PDM won't add <a href="https://www.python.org/dev/peps/pep-0420/">PEP 4
 <p>The generated file will be copied to the resulted wheel with the same hierarchy, you need to create the parent directories if necessary.</p>
 <h2 id="build-platform-specific-wheels">Build Platform-specific Wheels<a class="headerlink" href="#build-platform-specific-wheels" title="Permanent link">#</a></h2>
 <p><code>setup-script</code> can also be used to build platform-specific wheels, such as C extensions. Currently, building C extensions still relies on <code>setuptools</code>.</p>
-<p>Set the <code>run-setuptools</code> to <code>true</code> under <code>setup-script</code>, and <code>pdm-pep517</code> will generate a <code>setup.py</code> with the custom <code>build</code> function in the script and run <code>python setup.py build</code> to build extensions.</p>
-<p>In the <code>build.py</code> script, the expected <code>build</code> function receives the argument dictionary to be passed to the <code>setup()</code> call. In the function, you can update the dictionary with any additional or changed values as you want.</p>
+<p>Set <code>run-setuptools = true</code> under <code>setup-script</code>, and <code>pdm-pep517</code> will generate a <code>setup.py</code> with the custom <code>build</code> function in the script then run <code>python setup.py build</code> to build the wheel and any extensions:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># pyproject.toml</span><span class="w"></span>
+<span class="k">[tool.pdm.build]</span><span class="w"></span>
+<span class="n">setup-script</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;build_setuptools.py&quot;</span><span class="w"></span>
+<span class="n">run-setuptools</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<p>In the <code>setup-script</code>, the expected <code>build</code> function receives the argument dictionary to be passed to the <code>setuptools.setup()</code> call. In the function, you can update the <a href="https://setuptools.pypa.io/en/latest/references/keywords.html">keyword dictionary</a> with any additional or changed values as you want.</p>
 <p>Here is an example adapted to build <code>MarkupSafe</code>:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
@@ -1200,7 +1196,7 @@ Be aware PDM won't add <a href="https://www.python.org/dev/peps/pep-0420/">PEP 4
 <span class="normal">6</span>
 <span class="normal">7</span>
 <span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># build.py</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># build_setuptools.py</span>
 <span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">Extension</span>
 
 <span class="n">ext_modules</span> <span class="o">=</span> <span class="p">[</span>
@@ -1210,25 +1206,16 @@ Be aware PDM won't add <a href="https://www.python.org/dev/peps/pep-0420/">PEP 4
 <span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="n">setup_kwargs</span><span class="p">):</span>
     <span class="n">setup_kwargs</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">ext_modules</span><span class="o">=</span><span class="n">ext_modules</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-<p>The build configuration should look like:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># pyproject.toml</span><span class="w"></span>
-<span class="k">[tool.pdm.build]</span><span class="w"></span>
-<span class="n">setup-script</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;build.py&quot;</span><span class="w"></span>
-<span class="n">run-setuptools</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
 <p>If you run <a href="../../usage/cli_reference/#exec-0--build"><code>pdm build</code></a>(or any other build frontends such as <a href="https://pypi.org/project/build">build</a>), PDM will build a platform-specific wheel file as well as a sdist.</p>
 <p>By default, every build is performed in a clean and isolated environment, only build requirements can be seen. If your build has optional requirements that depend on the project environment, you can turn off the environment isolation by <code>pdm build --no-isolation</code> or setting config <code>build_isolation</code> to falsey value.</p>
-<h3 id="override-the-is-purelib-value">Override the "Is-Purelib" value<a class="headerlink" href="#override-the-is-purelib-value" title="Permanent link">#</a></h3>
-<p>Sometimes you may want to build platform-specific wheels but don't have a build script(the binaries may be built or fetched by other tools). In this case
+<h2 id="override-the-is-purelib-value">Override the "Is-Purelib" value<a class="headerlink" href="#override-the-is-purelib-value" title="Permanent link">#</a></h2>
+<p>If this value is not specified, <code>pdm-pep517</code> will build platform-specific wheels if <code>run-setuptools</code> is <code>true</code>.</p>
+<p>Sometimes you may want to build platform-specific wheels but don't have a build script (the binaries may be built or fetched by other tools). In this case
 you can set the <code>is-purelib</code> value in the <code>pyproject.toml</code> to <code>false</code>:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm.build]</span><span class="w"></span>
 <span class="n">is-purelib</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
-<p>If this value is not specified, <code>pdm-pep517</code> will build platform-specific wheels if <code>run-setuptools</code> is <code>true</code>, therefore <code>is-purelib</code> is <code>true</code> in this case.</p>
 <h2 id="editable-build-backend">Editable build backend<a class="headerlink" href="#editable-build-backend" title="Permanent link">#</a></h2>
 <p>PDM implements <a href="https://www.python.org/dev/peps/pep-0660/">PEP 660</a> to build wheels for editable installation.
 One can choose how to generate the wheel out of the two methods:</p>

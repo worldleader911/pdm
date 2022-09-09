@@ -509,6 +509,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#working-with-version-control" class="md-nav__link">
+    Working with version control
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#hide-the-credentials-from-pyprojecttoml" class="md-nav__link">
     Hide the credentials from pyproject.toml
   </a>
@@ -986,6 +993,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#working-with-version-control" class="md-nav__link">
+    Working with version control
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#hide-the-credentials-from-pyprojecttoml" class="md-nav__link">
     Hide the credentials from pyproject.toml
   </a>
@@ -1268,6 +1282,15 @@ pdm <span class="nb">export</span> -f setuppy -o setup.py
 <p class="admonition-title">Note</p>
 <p>You can also run <code>pdm export</code> with a <a href="../advanced/#hooks-for-pre-commit"><code>.pre-commit</code> hook</a>.</p>
 </div>
+<h2 id="working-with-version-control">Working with version control<a class="headerlink" href="#working-with-version-control" title="Permanent link">#</a></h2>
+<p>You <strong>must</strong> commit the <code>pyproject.toml</code> file. You <strong>should</strong> commit the <code>pdm.lock</code> file. <strong>Do not</strong> commit the <code>.pdm.toml</code> file.</p>
+<p>The <code>pyproject.toml</code> file must be committed as it contains the project's build metadata and dependencies needed for PDM.
+It is also commonly used by other python tools for configuration. Read more about the <code>pyproject.toml</code> file at
+<a href="https://pip.pypa.io/en/stable/reference/build-system/pyproject-toml/">pip.pypa.io/en/stable/reference/build-system/pyproject-toml/</a>.</p>
+<p>You should be committing the <code>pdm.lock</code> file, by doing so you ensure that all installers are using the same versions of dependencies.
+To learn how to update dependencies see <a href="../dependency/#update-existing-dependencies">update existing dependencies</a>.</p>
+<p>It is not necessary to commit your <code>.pdm.toml</code> file as it contains configuration specific to your system.
+If you are using git you can safely add <code>.pdm.toml</code> to your <code>.gitignore</code> file.</p>
 <h2 id="hide-the-credentials-from-pyprojecttoml">Hide the credentials from pyproject.toml<a class="headerlink" href="#hide-the-credentials-from-pyprojecttoml" title="Permanent link">#</a></h2>
 <p>There are many times when we need to use sensitive information, such as login credentials for the PyPI server
 and username passwords for VCS repositories. We do not want to expose this information in <code>pyproject.toml</code> and upload it to git.</p>

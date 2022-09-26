@@ -1151,7 +1151,8 @@ You can also give the URL directly with <code>-r/--repository</code> option:</p>
 <span class="normal">5</span>
 <span class="normal">6</span>
 <span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[repository.pypi]</span><span class="w"></span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[repository.pypi]</span><span class="w"></span>
 <span class="n">username</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;frostming&quot;</span><span class="w"></span>
 <span class="n">password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&lt;secret&gt;&quot;</span><span class="w"></span>
 
@@ -1159,19 +1160,27 @@ You can also give the URL directly with <code>-r/--repository</code> option:</p>
 <span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;https://pypi.company.org/legacy/&quot;</span><span class="w"></span>
 <span class="n">username</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;frostming&quot;</span><span class="w"></span>
 <span class="n">password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&lt;secret&gt;&quot;</span><span class="w"></span>
+<span class="n">ca_certs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;/path/to/custom-cacerts.pem&quot;</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
+<p>A PEM-encoded Certificate Authority bundle (<code>ca_certs</code>) can be used for local / custom PyPI repositories where the server certificate is not signed by the standard <a href="https://github.com/certifi/python-certifi/blob/master/certifi/cacert.pem">certifi</a> CA bundle.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>You don't need to configure the <code>url</code> for <code>pypi</code> and <code>testpypi</code> repositories, they are filled by default values.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The username, password, and certificate authority bundle can be passed in from the command line for <code>pdm publish</code> via <code>--username</code>, <code>--password</code>, and <code>--ca-certs</code>, respectively.</p>
 </div>
 <p>To change the repository config from the command line, use the <a href="../cli_reference/#exec-0--config"><code>pdm config</code></a> command:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm config repository.pypi.username <span class="s2">&quot;__token__&quot;</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm config repository.pypi.username <span class="s2">&quot;__token__&quot;</span>
 pdm config repository.pypi.password <span class="s2">&quot;my-pypi-token&quot;</span>
 
 pdm config repository.company.url <span class="s2">&quot;https://pypi.company.org/legacy/&quot;</span>
+pdm config repository.company.ca_certs <span class="s2">&quot;/path/to/custom-cacerts.pem&quot;</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="cache-the-installation-of-wheels">Cache the installation of wheels<a class="headerlink" href="#cache-the-installation-of-wheels" title="Permanent link">#</a></h2>
 <p>If a package is required by many projects on the system, each project has to keep its own copy. This may become a waste of disk space especially for data science and machine learning libraries.</p>

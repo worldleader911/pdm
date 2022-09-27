@@ -476,6 +476,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#prompt-customization" class="md-nav__link">
+    Prompt customization
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#disable-virtualenv-mode" class="md-nav__link">
     Disable virtualenv mode
   </a>
@@ -885,6 +892,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#prompt-customization" class="md-nav__link">
+    Prompt customization
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#disable-virtualenv-mode" class="md-nav__link">
     Disable virtualenv mode
   </a>
@@ -977,7 +991,7 @@ Removed C:<span class="se">\U</span>sers<span class="se">\F</span>rost Ming<span
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>$ <span class="nb">eval</span> <span class="k">$(</span>pdm venv activate <span class="k">for</span>-test<span class="k">)</span>
-<span class="o">(</span>test-project-8Sgn_62n-for-test<span class="o">)</span> $  <span class="c1"># Virtualenv entered</span>
+<span class="o">(</span>test-project-for-test<span class="o">)</span> $  <span class="c1"># Virtualenv entered</span>
 Fish
 
 $ <span class="nb">eval</span> <span class="o">(</span>pdm venv activate <span class="k">for</span>-test<span class="o">)</span>
@@ -1003,6 +1017,25 @@ $ <span class="nb">eval</span> <span class="o">(</span>pdm venv activate <span c
 <p><code>venv activate</code> <strong>does not</strong> switch the Python interpreter used by the project. It only changes the shell by injecting the virtualenv paths to environment variables. For the forementioned purpose, use the <code>pdm use</code> command.</p>
 </div>
 <p>For more CLI usage, see the <a href="../cli_reference/#exec-0--venv"><code>pdm venv</code></a> documentation.</p>
+<h2 id="prompt-customization">Prompt customization<a class="headerlink" href="#prompt-customization" title="Permanent link">#</a></h2>
+<p>By default when you activate a virtualenv, the prompt will show: <code>{project_name}-{python_version}</code>.</p>
+<p>For example if your project is named <code>test-project</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>$ <span class="nb">eval</span> <span class="k">$(</span>pdm venv activate <span class="k">for</span>-test<span class="k">)</span>
+<span class="o">(</span>test-project-3.10<span class="o">)</span> $  <span class="c1"># {project_name} == test-project and {python_version} == 3.10</span>
+</code></pre></div></td></tr></table></div>
+<p>The format can be customized before virtualenv creation with the <a href="../configuration/"><code>venv.prompt</code></a> configuration or <code>PDM_VENV_PROMPT</code> environment variable (before a <code>pdm init</code> or <code>pdm venv create</code>).
+Available variables are:</p>
+<ul>
+<li><code>project_name</code>: name of your project</li>
+<li><code>python_version</code>: version of Python (used by the virtualenv)</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>$ <span class="nv">PDM_VENV_PROMPT</span><span class="o">=</span><span class="s1">&#39;{project_name}-py{python_version}&#39;</span> pdm venv create --name test-prompt
+$ <span class="nb">eval</span> <span class="k">$(</span>pdm venv activate test-prompt<span class="k">)</span>
+<span class="o">(</span>test-project-py3.10<span class="o">)</span> $
+</code></pre></div></td></tr></table></div>
 <h2 id="disable-virtualenv-mode">Disable virtualenv mode<a class="headerlink" href="#disable-virtualenv-mode" title="Permanent link">#</a></h2>
 <p>You can disable the auto-creation and auto-detection for virtualenv by <code>pdm config python.use_venv</code> false.
 <strong>If venv is disabled, PEP 582 mode will always be used even if the selected interpreter is from a virtualenv.</strong></p>

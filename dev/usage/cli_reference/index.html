@@ -1047,54 +1047,6 @@
 <li><code>-k</code>, <code>--skip</code>: Skip some tasks and/or hooks by their comma-separated names. Can be supplied multiple times. Use ":all" to skip all hooks. Use ":pre" and ":post" to skip all pre or post hooks.</li>
 <li><code>--refresh</code>: Don't update pinned versions, only refresh the lock file</li>
 </ul>
-<h3 id="exec-0--plugin">plugin<a class="headerlink" href="#exec-0--plugin" title="Permanent link">#</a></h3>
-<blockquote>
-<p>Manage the PDM plugins</p>
-</blockquote>
-<p>Sub Commands:</p>
-<h4 id="exec-0--list_2">list<a class="headerlink" href="#exec-0--list_2" title="Permanent link">#</a></h4>
-<blockquote>
-<p>List all plugins installed with PDM</p>
-</blockquote>
-<p>Optional Arguments:</p>
-<ul>
-<li><code>-h</code>, <code>--help</code>: show this help message and exit</li>
-<li><code>-v</code>, <code>--verbose</code>: -v for detailed output and -vv for more detailed</li>
-</ul>
-<h4 id="exec-0--add_1">add<a class="headerlink" href="#exec-0--add_1" title="Permanent link">#</a></h4>
-<blockquote>
-<p>Install new plugins with PDM</p>
-</blockquote>
-<p>Positional Arguments:</p>
-<ul>
-<li><code>packages</code>: Specify one or many plugin names, each package can have a version specifier</li>
-</ul>
-<p>Optional Arguments:</p>
-<ul>
-<li><code>-h</code>, <code>--help</code>: show this help message and exit</li>
-<li><code>-v</code>, <code>--verbose</code>: -v for detailed output and -vv for more detailed</li>
-<li><code>--pip-args</code>: Arguments that will be passed to pip install</li>
-</ul>
-<h4 id="exec-0--remove_1">remove<a class="headerlink" href="#exec-0--remove_1" title="Permanent link">#</a></h4>
-<blockquote>
-<p>Remove plugins from PDM's environment</p>
-</blockquote>
-<p>Positional Arguments:</p>
-<ul>
-<li><code>packages</code>: Specify one or many plugin names</li>
-</ul>
-<p>Optional Arguments:</p>
-<ul>
-<li><code>-h</code>, <code>--help</code>: show this help message and exit</li>
-<li><code>-v</code>, <code>--verbose</code>: -v for detailed output and -vv for more detailed</li>
-<li><code>--pip-args</code>: Arguments that will be passed to pip uninstall</li>
-<li><code>-y</code>, <code>--yes</code>: Answer yes on the question</li>
-</ul>
-<p>Optional Arguments:</p>
-<ul>
-<li><code>-h</code>, <code>--help</code>: show this help message and exit</li>
-<li><code>-v</code>, <code>--verbose</code>: -v for detailed output and -vv for more detailed</li>
-</ul>
 <h3 id="exec-0--publish">publish<a class="headerlink" href="#exec-0--publish" title="Permanent link">#</a></h3>
 <blockquote>
 <p>Build and publish the project to PyPI</p>
@@ -1114,7 +1066,7 @@
 <li><code>--no-build</code>: Don't build the package before publishing(default: <code>True</code>)</li>
 <li><code>--ca-certs</code>: The path to a PEM-encoded Certificate Authority bundle to use for publish server validation [env var: PDM_PUBLISH_CA_CERTS]</li>
 </ul>
-<h3 id="exec-0--remove_2">remove<a class="headerlink" href="#exec-0--remove_2" title="Permanent link">#</a></h3>
+<h3 id="exec-0--remove_1">remove<a class="headerlink" href="#exec-0--remove_1" title="Permanent link">#</a></h3>
 <blockquote>
 <p>Remove packages from pyproject.toml</p>
 </blockquote>
@@ -1173,6 +1125,67 @@
 <li><code>-h</code>, <code>--help</code>: show this help message and exit</li>
 <li><code>-v</code>, <code>--verbose</code>: -v for detailed output and -vv for more detailed</li>
 </ul>
+<h3 id="exec-0--self">self<a class="headerlink" href="#exec-0--self" title="Permanent link">#</a></h3>
+<blockquote>
+<p>Manage the PDM program itself (previously known as plugin)</p>
+</blockquote>
+<p>Sub Commands:</p>
+<h4 id="exec-0--list_2">list<a class="headerlink" href="#exec-0--list_2" title="Permanent link">#</a></h4>
+<blockquote>
+<p>List all packages installed with PDM</p>
+</blockquote>
+<p>Optional Arguments:</p>
+<ul>
+<li><code>-h</code>, <code>--help</code>: show this help message and exit</li>
+<li><code>-v</code>, <code>--verbose</code>: -v for detailed output and -vv for more detailed</li>
+<li><code>--plugins</code>: List plugins only</li>
+</ul>
+<h4 id="exec-0--add_1">add<a class="headerlink" href="#exec-0--add_1" title="Permanent link">#</a></h4>
+<blockquote>
+<p>Install packages to the PDM's environment</p>
+</blockquote>
+<p>Positional Arguments:</p>
+<ul>
+<li><code>packages</code>: Specify one or many package names, each package can have a version specifier</li>
+</ul>
+<p>Optional Arguments:</p>
+<ul>
+<li><code>-h</code>, <code>--help</code>: show this help message and exit</li>
+<li><code>-v</code>, <code>--verbose</code>: -v for detailed output and -vv for more detailed</li>
+<li><code>--pip-args</code>: Arguments that will be passed to pip install</li>
+</ul>
+<h4 id="exec-0--remove_2">remove<a class="headerlink" href="#exec-0--remove_2" title="Permanent link">#</a></h4>
+<blockquote>
+<p>Remove packages from PDM's environment</p>
+</blockquote>
+<p>Positional Arguments:</p>
+<ul>
+<li><code>packages</code>: Specify one or many package names</li>
+</ul>
+<p>Optional Arguments:</p>
+<ul>
+<li><code>-h</code>, <code>--help</code>: show this help message and exit</li>
+<li><code>-v</code>, <code>--verbose</code>: -v for detailed output and -vv for more detailed</li>
+<li><code>--pip-args</code>: Arguments that will be passed to pip uninstall</li>
+<li><code>-y</code>, <code>--yes</code>: Answer yes on the question</li>
+</ul>
+<h4 id="exec-0--update">update<a class="headerlink" href="#exec-0--update" title="Permanent link">#</a></h4>
+<blockquote>
+<p>Update PDM itself</p>
+</blockquote>
+<p>Optional Arguments:</p>
+<ul>
+<li><code>-h</code>, <code>--help</code>: show this help message and exit</li>
+<li><code>-v</code>, <code>--verbose</code>: -v for detailed output and -vv for more detailed</li>
+<li><code>--head</code>: Update to the latest commit on the main branch</li>
+<li><code>--pre</code>: Update to the latest prerelease version</li>
+<li><code>--pip-args</code>: Additional arguments that will be passed to pip install</li>
+</ul>
+<p>Optional Arguments:</p>
+<ul>
+<li><code>-h</code>, <code>--help</code>: show this help message and exit</li>
+<li><code>-v</code>, <code>--verbose</code>: -v for detailed output and -vv for more detailed</li>
+</ul>
 <h3 id="exec-0--show">show<a class="headerlink" href="#exec-0--show" title="Permanent link">#</a></h3>
 <blockquote>
 <p>Show the package information</p>
@@ -1224,7 +1237,7 @@
 <li><code>-d</code>, <code>--dev</code>: Select dev dependencies(default: <code>True</code>)</li>
 <li><code>--prod</code>, <code>--production</code>: Unselect dev dependencies(default: <code>True</code>)</li>
 </ul>
-<h3 id="exec-0--update">update<a class="headerlink" href="#exec-0--update" title="Permanent link">#</a></h3>
+<h3 id="exec-0--update_1">update<a class="headerlink" href="#exec-0--update_1" title="Permanent link">#</a></h3>
 <blockquote>
 <p>Update package(s) in pyproject.toml</p>
 </blockquote>

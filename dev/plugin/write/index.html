@@ -1111,14 +1111,14 @@ Create an <code>pdm</code> entry point and point to your plugin callable (yeah, 
 <p>As plugins are loaded via entry points, they can be activated with no more steps than just installing the plugin.
 For convenience, PDM provides a <code>plugin</code> command group to manage plugins.</p>
 <p>Assume your plugin is published as <code>pdm-hello</code>:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm plugin add pdm-hello
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm self add pdm-hello
 </code></pre></div></td></tr></table></div>
 <p>Now type <code>pdm --help</code> in the terminal, you will see the new added <code>hello</code> command and use it:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>$ pdm hello Jack
 Hello, Jack
 </code></pre></div></td></tr></table></div>
-<p>See more plugin management subcommands by typing <code>pdm plugin --help</code> in the terminal.</p>
+<p>See more plugin management subcommands by typing <code>pdm self --help</code> in the terminal.</p>
 
               
             </article>

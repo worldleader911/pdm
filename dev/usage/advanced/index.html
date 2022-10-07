@@ -1185,9 +1185,9 @@ and then copy this folder into the final stage, adding it to <code>PYTHONPATH</c
 <span class="k">COPY</span><span class="w"> </span>pyproject.toml pdm.lock README.md /project/
 <span class="k">COPY</span><span class="w"> </span>src/ /project/src
 
-<span class="c"># install dependencies and project</span>
+<span class="c"># install dependencies and project into the local packages directory</span>
 <span class="k">WORKDIR</span><span class="w"> </span><span class="s">/project</span>
-<span class="k">RUN</span><span class="w"> </span>pdm install --prod --no-lock --no-editable
+<span class="k">RUN</span><span class="w"> </span>mkdir __pypackages__ <span class="o">&amp;&amp;</span> pdm install --prod --no-lock --no-editable
 
 
 <span class="c"># run stage</span>

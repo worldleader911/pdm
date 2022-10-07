@@ -911,7 +911,7 @@ of a Python project lifecycle and PDM provides commands to perform the expected 
 this is why PDM lets you define your own tasks/phases using <a href="#user-scripts">user scripts</a>.</p>
 <p>To provides full flexibility, PDM allows to <a href="#skipping">skip some hooks and tasks</a> on demand.</p>
 <h2 id="initialization">Initialization<a class="headerlink" href="#initialization" title="Permanent link">#</a></h2>
-<p>The initialization phase should occur only once in a project lifetime by running the <a href="../cli_reference/#exec-0--init"><code>pdm init</code></a> 
+<p>The initialization phase should occur only once in a project lifetime by running the <a href="../cli_reference/#exec-0--init"><code>pdm init</code></a>
 command to initialize an existing project (prompt to fill the <code>pyproject.toml</code> file).</p>
 <p>They trigger the following hooks:</p>
 <ul>
@@ -922,7 +922,7 @@ command to initialize an existing project (prompt to fill the <code>pyproject.to
     direction LR
     post-init{{Emit post_init}}
     init --&gt; post-init
-  end </code></pre>
+  end</code></pre>
 <h2 id="dependencies-management">Dependencies management<a class="headerlink" href="#dependencies-management" title="Permanent link">#</a></h2>
 <p>The dependencies management is required for the developer to be able to work and perform the following:</p>
 <ul>
@@ -969,16 +969,16 @@ command to initialize an existing project (prompt to fill the <code>pyproject.to
   end</code></pre>
 <h3 id="switching-python-version">Switching Python version<a class="headerlink" href="#switching-python-version" title="Permanent link">#</a></h3>
 <p>This is a special case in dependency management:
-you can switch the current Python version using <a href="../cli_reference/#exec-0--use"><code>pdm use</code></a> 
+you can switch the current Python version using <a href="../cli_reference/#exec-0--use"><code>pdm use</code></a>
 and it will emit the <a class="autorefs autorefs-internal" href="../../plugin/reference/#pdm.signals.post_use"><code>post_use</code></a> signal with the new Python interpreter.</p>
 <pre class="mermaid"><code>flowchart LR
   subgraph pdm-use [pdm use]
     direction LR
     post-use{{Emit post_use}}
     use --&gt; post-use
-  end </code></pre>
+  end</code></pre>
 <h2 id="publication">Publication<a class="headerlink" href="#publication" title="Permanent link">#</a></h2>
-<p>As soon as you are ready to publish your package/app/library, you will require the publication tasks:</p>
+<p>As soon as you are ready to publish your package/library, you will require the publication tasks:</p>
 <ul>
 <li><code>build</code>: build/compile assets requiring it and package everything into a Python package (sdist, wheel)</li>
 <li><code>upload</code>: upload/publish the package to a remote PyPI index</li>

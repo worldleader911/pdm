@@ -1038,6 +1038,10 @@ interpreter. After initialized, you can also change the settings by <code>pdm us
 The argument can be either a version specifier of any length, or a relative or absolute path to the
 python interpreter, but remember the Python interpreter must conform with the <code>requires-python</code>
 constraint in the project file.</p>
+<div class="admonition note">
+<p class="admonition-title">Application or Library</p>
+<p>You may have noticed that PDM will ask you whether the project is a library to be uploaded to PyPI. <a href="https://pipenv.pypa.io/en/latest/advanced/#pipfile-vs-setup-py">Here is an good explanation</a> of the difference between them. PDM knows that by inspecting the <code>project.name</code> field in <code>pyproject.toml</code>. If it is not empty, it will be considered as a library. A library can be built by <code>pdm build</code> or other PEP 517 builders, and itself will be installed in <em>editable</em> mode every time you execute <code>pdm sync</code> or <code>pdm install</code>, unless opted out with <code>--no-self</code> option. On the contrary, an application isn't installable because it's missing the project <code>name</code>.</p>
+</div>
 <h3 id="how-requires-python-controls-the-project">How <code>requires-python</code> controls the project<a class="headerlink" href="#how-requires-python-controls-the-project" title="Permanent link">#</a></h3>
 <p>PDM respects the value of <code>requires-python</code> in the way that it tries to pick package candidates that can work
 on all python versions that <code>requires-python</code> contains. For example, if <code>requires-python</code> is <code>&gt;=2.7</code>, PDM will try

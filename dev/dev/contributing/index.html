@@ -977,23 +977,14 @@ git fetch origin <span class="o">&amp;&amp;</span> git reset --hard main
 <li>Create a Pull Request from that patch branch.</li>
 </ol>
 <h2 id="local-development">Local development<a class="headerlink" href="#local-development" title="Permanent link">#</a></h2>
-<p>To make sure the test suites can run correctly, you need to install <a href="https://git-lfs.github.com/">Git LFS</a>, then</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>git lfs install
-<span class="c1"># If you have already cloned the repository, execute the below command as well.</span>
-git lfs pull
-</code></pre></div></td></tr></table></div>
-<p>Then, you need to install base dependencies in a venv. Make sure your <code>pip</code> is newer than <code>21.3</code> to install PDM in
-develop/editable mode.</p>
+<p>You will need to install base dependencies in a venv. Make sure your <code>pip</code> is newer than <code>21.3</code> to install PDM in develop/editable mode.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>python -m pip install -U <span class="s2">&quot;pip&gt;=21.3&quot;</span>
 python -m pip install -e .
 </code></pre></div></td></tr></table></div>
 <p>You are free to create a virtualenv with either <code>venv</code> module or <code>virtualenv</code> tool for the development. If you are doing
 so, you may also need to set <code>pdm config use_venv true</code> after installation is done.</p>
-<p>Now, all dependencies are installed into the Python environment you choose, which will be used for development
-after this point.</p>
+<p>Now, all dependencies are installed into the Python environment you choose, which will be used for development after this point.</p>
 <h3 id="run-tests">Run tests<a class="headerlink" href="#run-tests" title="Permanent link">#</a></h3>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm run <span class="nb">test</span>
 </code></pre></div></td></tr></table></div>

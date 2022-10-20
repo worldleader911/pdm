@@ -13,7 +13,7 @@
     
     
       
-        <title>Configuration - PDM</title>
+        <title>Configurations - PDM</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#available-configurations" class="md-skip">
+        <a href="#configurations" class="md-skip">
           Skip to content
         </a>
       
@@ -129,7 +129,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Configuration
+              Configurations
             
           </span>
         </div>
@@ -497,14 +497,16 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Configuration
+          Configurations
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Configuration
+        Configurations
       </a>
       
         
@@ -513,12 +515,21 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#color-theme" class="md-nav__link">
+    Color Theme
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#available-configurations" class="md-nav__link">
@@ -773,12 +784,21 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#color-theme" class="md-nav__link">
+    Color Theme
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#available-configurations" class="md-nav__link">
@@ -805,8 +825,49 @@
 
 
 
-  <h1>Configuration</h1>
-
+<h1 id="configurations">Configurations<a class="headerlink" href="#configurations" title="Permanent link">#</a></h1>
+<h2 id="color-theme">Color Theme<a class="headerlink" href="#color-theme" title="Permanent link">#</a></h2>
+<p>The default theme used by PDM is as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Default Style</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>primary</code></td>
+<td><span style="color:cyan">cyan</span></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><span style="color:green">green</span></td>
+</tr>
+<tr>
+<td><code>warning</code></td>
+<td><span style="color:yellow">yellow</span></td>
+</tr>
+<tr>
+<td><code>error</code></td>
+<td><span style="color:red">red</span></td>
+</tr>
+<tr>
+<td><code>info</code></td>
+<td><span style="color:blue">blue</span></td>
+</tr>
+<tr>
+<td><code>req</code></td>
+<td><span style="color:green;font-weight:bold">bold green</span></td>
+</tr>
+</tbody>
+</table>
+<p>You can change the theme colors with <code>pdm config</code> command. For example, to change the <code>primary</code> color to <code>magenta</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm config theme.primary magenta
+</code></pre></div></td></tr></table></div>
+<p>Or use a hex color code:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm config theme.success <span class="s1">&#39;#51c7bd&#39;</span>
+</code></pre></div></td></tr></table></div>
 <h2 id="available-configurations">Available Configurations<a class="headerlink" href="#available-configurations" title="Permanent link">#</a></h2>
 <p>The following configuration items can be retrieved and modified by <a href="../cli_reference/#exec-0--config"><code>pdm config</code></a> command.</p>
 <table>

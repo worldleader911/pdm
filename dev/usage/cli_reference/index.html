@@ -1028,10 +1028,17 @@
 <li><code>-v</code>, <code>--verbose</code>: -v for detailed output and -vv for more detailed</li>
 <li><code>-g</code>, <code>--global</code>: Use the global project, supply the project root with <code>-p</code> option</li>
 <li><code>-p</code>, <code>--project</code>: Specify another path as the project root, which changes the base of pyproject.toml and <strong>pypackages</strong></li>
-<li><code>--graph</code>: Display a graph of dependencies</li>
 <li><code>--freeze</code>: Show the installed dependencies in pip's requirements.txt format</li>
-<li><code>--json</code>: Show the installed dependencies in JSON document format</li>
+<li><code>--graph</code>: Display a graph of dependencies</li>
 <li><code>-r</code>, <code>--reverse</code>: Reverse the dependency graph</li>
+<li><code>--resolve</code>: Resolve all requirements to output licenses (instead of just showing those currently installed)</li>
+<li><code>--fields</code>: Select information to output as a comma separated string. For example: name,version,homepage,licenses,groups.(default: <code>name,version,location</code>)</li>
+<li><code>--sort</code>: Sort the output using a given field name. If nothing is set, no sort is applied. Multiple fields can be combined with ','.</li>
+<li><code>--csv</code>: Output dependencies in CSV document format</li>
+<li><code>--json</code>: Output dependencies in JSON document format</li>
+<li><code>--markdown</code>: Output dependencies and legal notices in markdown document format - best effort basis</li>
+<li><code>--include</code>: Dependency groups to include in the output. By default all are included</li>
+<li><code>--exclude</code>: Exclude dependency groups from the output</li>
 </ul>
 <h3 id="exec-0--lock">lock<a class="headerlink" href="#exec-0--lock" title="Permanent link">#</a></h3>
 <blockquote>

@@ -1476,7 +1476,7 @@ PDM_NO_BINARY=:all: pdm install
 Unable to find a resolution <span class="k">for</span> asgiref because of the following conflicts:
   asgiref&lt;<span class="m">3</span> <span class="o">(</span>from project<span class="o">)</span>
   asgiref&lt;<span class="m">4</span>,&gt;<span class="o">=</span><span class="m">3</span>.2.10 <span class="o">(</span>from &lt;Candidate django <span class="m">3</span>.1.4 from https://pypi.org/simple/django/&gt;<span class="o">)</span>
-To fix this, you could loosen the dependency version constraints <span class="k">in</span> pyproject.toml. If that is not possible, you could also override the resolved version <span class="k">in</span> <span class="o">[</span>tool.pdm.overrides<span class="o">]</span> table.
+To fix this, you could loosen the dependency version constraints <span class="k">in</span> pyproject.toml. If that is not possible, you could also override the resolved version <span class="k">in</span> <span class="sb">`</span><span class="o">[</span>tool.pdm.resolution.overrides<span class="o">]</span><span class="sb">`</span> table.
 </code></pre></div></td></tr></table></div>
 <p>You can either change to a lower version of <code>django</code> or remove the upper bound of <code>asgiref</code>. But if it is not eligible for your project,
 you can tell PDM to forcedly resolve <code>asgiref</code> to a specific version by adding the following lines to <code>pyproject.toml</code>:</p>
@@ -1484,7 +1484,7 @@ you can tell PDM to forcedly resolve <code>asgiref</code> to a specific version 
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm.overrides]</span><span class="w"></span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm.resolution.overrides]</span><span class="w"></span>
 <span class="n">asgiref</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;3.2.10&quot;</span><span class="w">  </span><span class="c1"># exact version</span><span class="w"></span>
 <span class="n">urllib3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&gt;=1.26.2&quot;</span><span class="w">  </span><span class="c1"># version range</span><span class="w"></span>
 <span class="n">pytz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;file:///${PROJECT_ROOT}/pytz-2020.9-py3-none-any.whl&quot;</span><span class="w">  </span><span class="c1"># absolute URL</span><span class="w"></span>
@@ -1493,8 +1493,7 @@ you can tell PDM to forcedly resolve <code>asgiref</code> to a specific version 
 In this example, PDM will resolve the above packages into the given versions no matter whether there is any other resolution available.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>By using <code>[tool.pdm.overrides]</code> setting, you are at your own risk of any incompatibilities from that resolution. It can only be
-used if there is no valid resolution for your requirements and you know the specific version works.
+<p>By using <code>[tool.pdm.resolution.overrides]</code> setting, you are at your own risk of any incompatibilities from that resolution. It can only be used if there is no valid resolution for your requirements and you know the specific version works.
 Most of the time, you can just add any transient constraints to the <code>dependencies</code> array.</p>
 </div>
 <h2 id="environment-variables-expansion">Environment variables expansion<a class="headerlink" href="#environment-variables-expansion" title="Permanent link">#</a></h2>

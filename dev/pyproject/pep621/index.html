@@ -601,6 +601,33 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#context-variables-expansion" class="md-nav__link">
+    Context variables expansion
+  </a>
+  
+    <nav class="md-nav" aria-label="Context variables expansion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#environment-variables" class="md-nav__link">
+    Environment variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relative-paths" class="md-nav__link">
+    Relative paths
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#console-scripts" class="md-nav__link">
     Console scripts
   </a>
@@ -850,6 +877,33 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#context-variables-expansion" class="md-nav__link">
+    Context variables expansion
+  </a>
+  
+    <nav class="md-nav" aria-label="Context variables expansion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#environment-variables" class="md-nav__link">
+    Environment variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relative-paths" class="md-nav__link">
+    Relative paths
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#console-scripts" class="md-nav__link">
     Console scripts
   </a>
@@ -977,6 +1031,53 @@ and <a href="https://www.python.org/dev/peps/pep-0508/">PEP 508</a>.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm install -G socks
 </code></pre></div></td></tr></table></div>
 <p><code>-G</code> option can be given multiple times to include more than one group.</p>
+<h2 id="context-variables-expansion">Context variables expansion<a class="headerlink" href="#context-variables-expansion" title="Permanent link">#</a></h2>
+<p>Depending on which build backend you are using, PDM will expand some variables in the dependency strings.</p>
+<h3 id="environment-variables">Environment variables<a class="headerlink" href="#environment-variables" title="Permanent link">#</a></h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">pdm-pep517</label><label for="__tabbed_2_2">hatchling</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[project]</span><span class="w"></span>
+<span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;flask @ https://${USERNAME}:${PASSWORD}/artifacts.io/Flask-1.1.2.tar.gz&quot;</span><span class="p">]</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[project]</span><span class="w"></span>
+<span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;flask @ https://{env:USERNAME}:{env:PASSWORD}/artifacts.io/Flask-1.1.2.tar.gz&quot;</span><span class="p">]</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<p>Find more usages <a href="https://hatch.pypa.io/dev/config/context/#environment-variables">here</a></p>
+</div>
+</div>
+</div>
+<p>Don't worry about credential leakage, the environment variables will be expanded when needed and kept untouched in the lock file.</p>
+<h3 id="relative-paths">Relative paths<a class="headerlink" href="#relative-paths" title="Permanent link">#</a></h3>
+<p>When you add a package from a relative path, PDM will automatically save it as a relative path for <code>pdm-pep517</code> and <code>hatchling</code>.</p>
+<p>For example, if you run <code>pdm add ./my-package</code>, it will result in the following line in <code>pyproject.toml</code>.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">pdm-pep517</label><label for="__tabbed_3_2">hatchling</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[project]</span><span class="w"></span>
+<span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;my-package @ file:///${PROJECT_ROOT}/my-package&quot;</span><span class="p">]</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[project]</span><span class="w"></span>
+<span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;my-package @ {root:uri}/my-package&quot;</span><span class="p">]</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<p>By default, hatchling doesn't support <a href="https://hatch.pypa.io/dev/config/dependency/#direct-references">direct references</a>
+in the dependency string, you need to turn it on in <code>pyproject.toml</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.hatch.metadata]</span><span class="w"></span>
+<span class="n">allow-direct-references</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<p>The relative path will be expanded based on the project root when installing or locking.</p>
 <h2 id="console-scripts">Console scripts<a class="headerlink" href="#console-scripts" title="Permanent link">#</a></h2>
 <p>The following content:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>

@@ -612,13 +612,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#environment-variables-expansion" class="md-nav__link">
-    Environment variables expansion
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1102,13 +1095,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#environment-variables-expansion" class="md-nav__link">
-    Environment variables expansion
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1487,7 +1473,7 @@ you can tell PDM to forcedly resolve <code>asgiref</code> to a specific version 
 <span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm.resolution.overrides]</span><span class="w"></span>
 <span class="n">asgiref</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;3.2.10&quot;</span><span class="w">  </span><span class="c1"># exact version</span><span class="w"></span>
 <span class="n">urllib3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&gt;=1.26.2&quot;</span><span class="w">  </span><span class="c1"># version range</span><span class="w"></span>
-<span class="n">pytz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;file:///${PROJECT_ROOT}/pytz-2020.9-py3-none-any.whl&quot;</span><span class="w">  </span><span class="c1"># absolute URL</span><span class="w"></span>
+<span class="n">pytz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;https://mypypi.org/packages/pytz-2020.9-py3-none-any.whl&quot;</span><span class="w">  </span><span class="c1"># absolute URL</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
 <p>Each entry of that table is a package name with the wanted version.
 In this example, PDM will resolve the above packages into the given versions no matter whether there is any other resolution available.</p>
@@ -1496,16 +1482,6 @@ In this example, PDM will resolve the above packages into the given versions no 
 <p>By using <code>[tool.pdm.resolution.overrides]</code> setting, you are at your own risk of any incompatibilities from that resolution. It can only be used if there is no valid resolution for your requirements and you know the specific version works.
 Most of the time, you can just add any transient constraints to the <code>dependencies</code> array.</p>
 </div>
-<h2 id="environment-variables-expansion">Environment variables expansion<a class="headerlink" href="#environment-variables-expansion" title="Permanent link">#</a></h2>
-<p>For convenience, PDM supports environment variables expansion in the dependency specification under some circumstances:</p>
-<ul>
-<li>Environment variables in the URL auth part will be expanded: <code>https://${USERNAME}:${PASSWORD}/artifacts.io/Flask-1.1.2.tar.gz</code>.
-  It is also okay to not give the auth part in the URL directly, PDM will ask for them when <code>-v/--verbose</code> is on.</li>
-<li><code>${PROJECT_ROOT}</code> will be expanded with the absolute path of the project root, in POSIX style(i.e. forward slash <code>/</code>, even on Windows).
-  For consistency, URLs that refer to a local path under <code>${PROJECT_ROOT}</code> must start with <code>file:///</code>(three slashes), e.g.
-  <code>file:///${PROJECT_ROOT}/artifacts/Flask-1.1.2.tar.gz</code>.</li>
-</ul>
-<p>Don't worry about credential leakage, the environment variables will be expanded when needed and kept untouched in the lock file.</p>
 
               
             </article>

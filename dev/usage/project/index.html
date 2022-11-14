@@ -1277,7 +1277,7 @@ PDM provides <code>import</code> command so that you don't have to initialize th
 <li>Poetry's section in <code>pyproject.toml</code></li>
 <li>Flit's section in <code>pyproject.toml</code></li>
 <li><code>requirements.txt</code> format used by pip</li>
-<li>setuptools <code>setup.py</code></li>
+<li>setuptools <code>setup.py</code>(It requires <code>setuptools</code> to be installed in the project environment. You can do this by configuring <code>venv.with_pip</code> to <code>true</code> for venv and <code>pdm add setuptools</code> for <code>__pypackages__</code>)</li>
 </ol>
 <p>Also, when you are executing <a href="../cli_reference/#exec-0--init"><code>pdm init</code></a> or <a href="../cli_reference/#exec-0--install"><code>pdm install</code></a>, PDM can auto-detect possible files to import if your PDM project has not been initialized yet.</p>
 <div class="admonition attention">

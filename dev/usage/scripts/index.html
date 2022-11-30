@@ -552,6 +552,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#arguments-placeholder" class="md-nav__link">
+    Arguments placeholder
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -980,6 +987,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#arguments-placeholder" class="md-nav__link">
+    Arguments placeholder
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1183,6 +1197,74 @@ you can write them under a special key <code>_</code> in <code>[tool.pdm.scripts
 <span class="n">migrate_db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;flask db upgrade&quot;</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
 <p>Besides, inside the tasks, <code>PDM_PROJECT_ROOT</code> environment variable will be set to the project root.</p>
+<h3 id="arguments-placeholder">Arguments placeholder<a class="headerlink" href="#arguments-placeholder" title="Permanent link">#</a></h3>
+<p>By default, all user provided extra arguments are simply appended to the command (or to all the commands for <code>composite</code> tasks).</p>
+<p>If you want more control over the user provided extra arguments, you can use the <code>{args}</code> placeholder.
+It is available for all script types and will be interpolated properly for each:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm.scripts]</span><span class="w"></span>
+<span class="n">cmd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;echo &#39;--before {args} --after&#39;&quot;</span><span class="w"></span>
+<span class="n">shell</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">shell</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;echo &#39;--before {args} --after&#39;&quot;</span><span class="p">}</span><span class="w"></span>
+<span class="n">composite</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">composite</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;cmd --something&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;shell {args}&quot;</span><span class="p">]}</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<p>will produce the following interpolations (those are not real scripts, just here to illustrate the interpolation):</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code>$ pdm run cmd --user --provided
+--before --user --provided --after
+$ pdm run cmd
+--before --after
+$ pdm run shell --user --provided
+--before --user --provided --after
+$ pdm run shell
+--before --after
+$ pdm run composite --user --provided
+cmd --something
+shell --before --user --provided --after
+$ pdm run composite
+cmd --something
+shell --before --after
+</code></pre></div></td></tr></table></div>
+<p>You may optionally provide default values that will be used if no user arguments are provided:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm.scripts]</span><span class="w"></span>
+<span class="n">test</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;echo &#39;--before {args:--default --value} --after&#39;&quot;</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<p>will produce the following:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>$ pdm run <span class="nb">test</span> --user --provided
+--before --user --provided --after
+$ pdm run <span class="nb">test</span>
+--before --default --value --after
+</code></pre></div></td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>As soon a placeholder is detected, arguments are not appended anymore.
+This is important for <code>composite</code> scripts because if a placeholder
+is detected on one of the subtasks, none for the subtasks will have
+the arguments appended, you need to explicitly pass the placeholder
+to every nested command requiring it.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code>call</code> scripts don't support the <code>{args}</code> placeholder as they have
+access to <code>sys.argv</code> directly to handle such complexe cases and more.</p>
+</div>
 <h2 id="show-the-list-of-scripts">Show the List of Scripts<a class="headerlink" href="#show-the-list-of-scripts" title="Permanent link">#</a></h2>
 <p>Use <code>pdm run --list/-l</code> to show the list of available script shortcuts:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>

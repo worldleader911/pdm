@@ -8520,6 +8520,7 @@
 <li>Allow relative paths in <code>build-system.requires</code>, since <code>build</code> and <code>hatch</code> both support it. Be aware it is not allowed in the standard. <a href="https://github.com/pdm-project/pdm/issues/1560">#1560</a></li>
 <li>Strip the local part when building a specifier for comparison with the package version. This is not permitted by PEP 508 as implemented by <code>packaging 22.0</code>. <a href="https://github.com/pdm-project/pdm/issues/1562">#1562</a></li>
 <li>Update the version for check_update after self update <a href="https://github.com/pdm-project/pdm/issues/1563">#1563</a></li>
+<li>Replace the <code>__file__</code> usages with <code>importlib.resources</code>, to make PDM usable in a zipapp. <a href="https://github.com/pdm-project/pdm/issues/1567">#1567</a></li>
 <li>Fix the matching problem of packages in the lockfile. <a href="https://github.com/pdm-project/pdm/issues/1569">#1569</a></li>
 </ul>
 <h3 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">#</a></h3>

@@ -697,7 +697,14 @@
         
           <li class="md-nav__item">
   <a href="#tips-about-developing-a-pdm-plugin" class="md-nav__link">
-    Tips about developing a PDM plugin.
+    Tips about developing a PDM plugin
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing-your-plugin" class="md-nav__link">
+    Testing your plugin
   </a>
   
 </li>
@@ -738,6 +745,20 @@
     <li class="md-nav__item">
       <a href="../reference/" class="md-nav__link">
         API Reference
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fixtures/" class="md-nav__link">
+        Pytest fixtures
       </a>
     </li>
   
@@ -897,7 +918,14 @@
         
           <li class="md-nav__item">
   <a href="#tips-about-developing-a-pdm-plugin" class="md-nav__link">
-    Tips about developing a PDM plugin.
+    Tips about developing a PDM plugin
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing-your-plugin" class="md-nav__link">
+    Testing your plugin
   </a>
   
 </li>
@@ -1074,7 +1102,7 @@ You need to register the config item, too:</p>
 <p>Besides of commands and configurations, the <code>core</code> object exposes some other methods and attributes to override.
 PDM also provides some signals you can listen to.
 Please read the <a href="../reference/">API reference</a> for more details.</p>
-<h3 id="tips-about-developing-a-pdm-plugin">Tips about developing a PDM plugin.<a class="headerlink" href="#tips-about-developing-a-pdm-plugin" title="Permanent link">#</a></h3>
+<h3 id="tips-about-developing-a-pdm-plugin">Tips about developing a PDM plugin<a class="headerlink" href="#tips-about-developing-a-pdm-plugin" title="Permanent link">#</a></h3>
 <p>When developing a plugin, one hopes to activate and plugin in development and get updated when the code changes. This is usually done
 by <code>pip install -e .</code> or <code>python setup.py develop</code> in the <strong>traditional</strong> Python packaging world which leverages <code>setup.py</code> to do so. However,
 as there is no such <code>setup.py</code> in a PDM project, how can we do that?</p>
@@ -1086,6 +1114,30 @@ as there is no such <code>setup.py</code> in a PDM project, how can we do that?<
 to the codebase will take effect immediately without re-installation. The <code>pdm</code> executable also uses a Python interpreter under the hood,
 so if you run <code>pdm</code> from inside the plugin project, the plugin in development will be activated automatically, and you can do some testing to see how it works.
 That is how PEP 582 benefits our development workflow.</p>
+<h3 id="testing-your-plugin">Testing your plugin<a class="headerlink" href="#testing-your-plugin" title="Permanent link">#</a></h3>
+<p>PDM exposes some pytest fixtures as a plugin in the <a href="../fixtures/"><code>pdm.pytest</code></a> module.
+To benefit from them, you must add <code>pdm[pytest]</code> as a test dependency.</p>
+<p>To enable them in your test, add <code>pdm.pytest</code> as a plugin. You can do so by in your root <code>conftest.py</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">conftest.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># single plugin</span>
+<span class="n">pytest_plugins</span> <span class="o">=</span> <span class="s2">&quot;pytest.plugin&quot;</span>
+
+<span class="c1"># many plugins</span>
+<span class="n">pytest_plugins</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="o">...</span>
+    <span class="s2">&quot;pdm.pytest&quot;</span><span class="p">,</span>
+    <span class="o">...</span>
+<span class="p">]</span>
+</code></pre></div></td></tr></table></div>
+<p>You can see some usage examples into PDM own <a href="https://github.com/pdm-project/pdm/tree/main/tests">tests</a>, especially the <a href="https://github.com/pdm-project/pdm/blob/main/tests/conftest.py">conftest.py file</a> for configuration.</p>
+<p>See the <a href="../fixtures/">pytest fixtures documentation</a> for more details.</p>
 <h2 id="publish-your-plugin">Publish your plugin<a class="headerlink" href="#publish-your-plugin" title="Permanent link">#</a></h2>
 <p>Now you have defined your plugin already, let's distribute it to PyPI. PDM's plugins are discovered by entry point types.
 Create an <code>pdm</code> entry point and point to your plugin callable (yeah, it doesn't need to be a function, any callable object can work):</p>

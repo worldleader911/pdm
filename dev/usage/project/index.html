@@ -458,6 +458,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#configure-pypi-indexes" class="md-nav__link">
+    Configure PyPI indexes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#publish-the-project-to-pypi" class="md-nav__link">
     Publish the project to PyPI
   </a>
@@ -956,6 +963,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#configure-pypi-indexes" class="md-nav__link">
+    Configure PyPI indexes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#publish-the-project-to-pypi" class="md-nav__link">
     Publish the project to PyPI
   </a>
@@ -1154,6 +1168,46 @@ show configurations.</p>
 </ul>
 <p>If <code>-g/--global</code> option is used, the first item will be replaced by <code>&lt;CONFIG_ROOT&gt;/global-project/.pdm.toml</code>.</p>
 <p>You can find all available configuration items in <a href="../configuration/">Configuration Page</a>.</p>
+<h2 id="configure-pypi-indexes">Configure PyPI indexes<a class="headerlink" href="#configure-pypi-indexes" title="Permanent link">#</a></h2>
+<p>From 2.4.0, PDM supports multiple PyPI indexes in the configuration file. To add a new index, include the following in the configuration file:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[pypi.extra]</span><span class="w"></span>
+<span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;https://extra.pypi.org/simple&quot;</span><span class="w"></span>
+<span class="n">verify_ssl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<p>The available options are:</p>
+<ul>
+<li><code>url</code>: The URL of the index</li>
+<li><code>verify_ssl</code>: (Optional)Whether to verify SSL certificates, default to <code>true</code></li>
+<li><code>username</code>: (Optional)The username for the index</li>
+<li><code>password</code>: (Optional)The password for the index</li>
+<li><code>type</code>: (Optional) <code>index</code> or <code>find_links</code>, default to <code>index</code></li>
+</ul>
+<p>To configure the <strong>main</strong> index, omit the name of the index:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[pypi]</span><span class="w"></span>
+<span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;https://pypi.org/simple&quot;</span><span class="w"></span>
+<span class="n">verify_ssl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<p>The index config can be also retrieved or updated via <code>pdm config</code> command:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Get the url of the index named &quot;extra&quot;</span>
+pdm config pypi.extra.url
+<span class="c1"># Set the username and password of the index named &quot;extra&quot;</span>
+pdm config pypi.extra.username <span class="s2">&quot;foo&quot;</span>
+pdm config pypi.extra.password <span class="s2">&quot;password4foo&quot;</span>
+</code></pre></div></td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Configured indexes will be tried <strong>after</strong> the sources in <code>pyproject.toml</code>, if you want to completely ignore the
+locally configured indexes, including the main index, set the config value <code>pypi.ignore_stored_index</code>
+to <code>False</code> and only the sources in <code>pyproject.toml</code> will be honored.</p>
+</div>
 <h2 id="publish-the-project-to-pypi">Publish the project to PyPI<a class="headerlink" href="#publish-the-project-to-pypi" title="Permanent link">#</a></h2>
 <p>With PDM, you can build and then upload your project to PyPI in one step.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm publish
@@ -1189,11 +1243,13 @@ You can also give the URL directly with <code>-r/--repository</code> option:</p>
 <p>A PEM-encoded Certificate Authority bundle (<code>ca_certs</code>) can be used for local / custom PyPI repositories where the server certificate is not signed by the standard <a href="https://github.com/certifi/python-certifi/blob/master/certifi/cacert.pem">certifi</a> CA bundle.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>You don't need to configure the <code>url</code> for <code>pypi</code> and <code>testpypi</code> repositories, they are filled by default values.</p>
+<p>Repositories are different from indexes in the previous section. Repositories are for publishing while indexes are for locking
+and resolving. They don't share the configuration.</p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>The username, password, and certificate authority bundle can be passed in from the command line for <code>pdm publish</code> via <code>--username</code>, <code>--password</code>, and <code>--ca-certs</code>, respectively.</p>
+<p>You don't need to configure the <code>url</code> for <code>pypi</code> and <code>testpypi</code> repositories, they are filled by default values.
+The username, password, and certificate authority bundle can be passed in from the command line for <code>pdm publish</code> via <code>--username</code>, <code>--password</code>, and <code>--ca-certs</code>, respectively.</p>
 </div>
 <p>To change the repository config from the command line, use the <a href="../cli_reference/#exec-0--config"><code>pdm config</code></a> command:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>

@@ -8,8 +8,14 @@
       
       
       
+      
+        <link rel="prev" href="../hooks/">
+      
+      
+        <link rel="next" href="../cli_reference/">
+      
       <link rel="icon" href="../../assets/logo.svg">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.4">
     
     
       
@@ -17,11 +23,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.975780f9.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.9c788c91.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
-        
       
       
 
@@ -131,8 +136,6 @@
       <form class="md-header__option" data-md-component="palette">
         
           
-          
-          
           <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="teal"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
           
             <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
@@ -140,8 +143,6 @@
             </label>
           
         
-          
-          
           
           <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="teal"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
           
@@ -348,12 +349,13 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
       
       
       
-      
-        <label class="md-nav__link" for="__nav_1">
+        <label class="md-nav__link" for="__nav_1" tabindex="0" aria-expanded="true">
           Usage
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -651,12 +653,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_2">
+        <label class="md-nav__link" for="__nav_2" tabindex="0" aria-expanded="false">
           Writing pyproject.toml
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -727,12 +730,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_3">
+        <label class="md-nav__link" for="__nav_3" tabindex="0" aria-expanded="false">
           Plugins
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -803,12 +807,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_4">
+        <label class="md-nav__link" for="__nav_4" tabindex="0" aria-expanded="false">
           Development
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -1018,10 +1023,9 @@
                 
                   
 
-  <a href="https://github.com/pdm-project/pdm/edit/main/docs/docs/usage/advanced.md" title="Edit this page" class="md-content__button md-icon">
-    
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
-  </a>
+  
+  
+
 
 
 <h1 id="advanced-usage">Advanced Usage<a class="headerlink" href="#advanced-usage" title="Permanent link">#</a></h1>
@@ -1045,23 +1049,23 @@ You can configure a <code>tox.ini</code> like the following to integrate your te
 <span class="normal">14</span>
 <span class="normal">15</span>
 <span class="normal">16</span>
-<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tox]</span><span class="w"></span>
-<span class="na">env_list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">py{36,37,38},lint</span><span class="w"></span>
-<span class="na">isolated_build</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">true</span><span class="w"></span>
+<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tox]</span>
+<span class="na">env_list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">py{36,37,38},lint</span>
+<span class="na">isolated_build</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">true</span>
 
-<span class="k">[testenv]</span><span class="w"></span>
-<span class="na">setenv</span><span class="w"> </span><span class="o">=</span><span class="w"></span>
-<span class="w">    </span><span class="na">PDM_IGNORE_SAVED_PYTHON</span><span class="o">=</span><span class="s">&quot;1&quot;</span><span class="w"></span>
-<span class="na">deps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">pdm</span><span class="w"></span>
-<span class="na">commands</span><span class="w"> </span><span class="o">=</span><span class="w"></span>
-<span class="w">    </span><span class="na">pdm install --dev</span><span class="w"></span>
-<span class="w">    </span><span class="na">pytest tests</span><span class="w"></span>
+<span class="k">[testenv]</span>
+<span class="na">setenv</span><span class="w"> </span><span class="o">=</span>
+<span class="w">    </span><span class="na">PDM_IGNORE_SAVED_PYTHON</span><span class="o">=</span><span class="s">&quot;1&quot;</span>
+<span class="na">deps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">pdm</span>
+<span class="na">commands</span><span class="w"> </span><span class="o">=</span>
+<span class="w">    </span><span class="na">pdm install --dev</span>
+<span class="w">    </span><span class="na">pytest tests</span>
 
-<span class="k">[testenv:lint]</span><span class="w"></span>
-<span class="na">deps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">pdm</span><span class="w"></span>
-<span class="na">commands</span><span class="w"> </span><span class="o">=</span><span class="w"></span>
-<span class="w">    </span><span class="na">pdm install -G lint</span><span class="w"></span>
-<span class="w">    </span><span class="na">flake8 src/</span><span class="w"></span>
+<span class="k">[testenv:lint]</span>
+<span class="na">deps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">pdm</span>
+<span class="na">commands</span><span class="w"> </span><span class="o">=</span>
+<span class="w">    </span><span class="na">pdm install -G lint</span>
+<span class="w">    </span><span class="na">flake8 src/</span>
 </code></pre></div></td></tr></table></div>
 <p>To use the virtualenv created by Tox, you should make sure you have set <code>pdm config python.use_venv true</code>. PDM then will install
 dependencies from <a href="../cli_reference/#exec-0--lock"><code>pdm lock</code></a> into the virtualenv. In the dedicated venv you can directly run tools by <code>pytest tests/</code> instead
@@ -1070,10 +1074,10 @@ of <code>pdm run pytest tests/</code>.</p>
 file will be modified unexpectedly. Additional dependencies can be supplied with the <code>deps</code> config. Besides, <code>isolated_buid</code> and <code>passenv</code>
 config should be set as the above example to make PDM work properly.</p>
 <p>To get rid of these constraints, there is a Tox plugin <a href="https://github.com/pdm-project/tox-pdm">tox-pdm</a> which can ease the usage. You can install it by</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pip install tox-pdm
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>tox-pdm
 </code></pre></div></td></tr></table></div>
 <p>Or,</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm add --dev tox-pdm
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm<span class="w"> </span>add<span class="w"> </span>--dev<span class="w"> </span>tox-pdm
 </code></pre></div></td></tr></table></div>
 <p>And you can make the <code>tox.ini</code> much tidier as following, :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -1087,18 +1091,18 @@ config should be set as the above example to make PDM work properly.</p>
 <span class="normal"> 9</span>
 <span class="normal">10</span>
 <span class="normal">11</span>
-<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tox]</span><span class="w"></span>
-<span class="na">env_list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">py{36,37,38},lint</span><span class="w"></span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tox]</span>
+<span class="na">env_list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">py{36,37,38},lint</span>
 
-<span class="k">[testenv]</span><span class="w"></span>
-<span class="na">groups</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">dev</span><span class="w"></span>
-<span class="na">commands</span><span class="w"> </span><span class="o">=</span><span class="w"></span>
-<span class="w">    </span><span class="na">pytest tests</span><span class="w"></span>
+<span class="k">[testenv]</span>
+<span class="na">groups</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">dev</span>
+<span class="na">commands</span><span class="w"> </span><span class="o">=</span>
+<span class="w">    </span><span class="na">pytest tests</span>
 
-<span class="k">[testenv:lint]</span><span class="w"></span>
-<span class="na">groups</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">lint</span><span class="w"></span>
-<span class="na">commands</span><span class="w"> </span><span class="o">=</span><span class="w"></span>
-<span class="w">    </span><span class="na">flake8 src/</span><span class="w"></span>
+<span class="k">[testenv:lint]</span>
+<span class="na">groups</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">lint</span>
+<span class="na">commands</span><span class="w"> </span><span class="o">=</span>
+<span class="w">    </span><span class="na">flake8 src/</span>
 </code></pre></div></td></tr></table></div>
 <p>See the <a href="https://github.com/pdm-project/tox-pdm">project's README</a> for a detailed guidance.</p>
 <h3 id="use-nox-as-the-runner">Use Nox as the runner<a class="headerlink" href="#use-nox-as-the-runner" title="Permanent link">#</a></h3>
@@ -1164,26 +1168,26 @@ Here is an example workflow of GitHub Actions, while you can adapt it for other 
 <span class="normal">17</span>
 <span class="normal">18</span>
 <span class="normal">19</span>
-<span class="normal">20</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">Testing</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ matrix.os }}</span><span class="w"></span>
-<span class="w">  </span><span class="nt">strategy</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">matrix</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">python-version</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">3.7</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">3.8</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">3.9</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;3.10&#39;</span><span class="p p-Indicator">]</span><span class="w"></span>
-<span class="w">      </span><span class="nt">os</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">ubuntu-latest</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">macOS-latest</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">windows-latest</span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="normal">20</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">Testing</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ matrix.os }}</span>
+<span class="w">  </span><span class="nt">strategy</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">matrix</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">python-version</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">3.7</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">3.8</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">3.9</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;3.10&#39;</span><span class="p p-Indicator">]</span>
+<span class="w">      </span><span class="nt">os</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">ubuntu-latest</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">macOS-latest</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">windows-latest</span><span class="p p-Indicator">]</span>
 
-<span class="w">  </span><span class="nt">steps</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v3</span><span class="w"></span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Set up PDM</span><span class="w"></span>
-<span class="w">      </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pdm-project/setup-pdm@v2</span><span class="w"></span>
-<span class="w">      </span><span class="nt">with</span><span class="p">:</span><span class="w"></span>
-<span class="w">        </span><span class="nt">python-version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ matrix.python-version }}</span><span class="w"></span>
+<span class="w">  </span><span class="nt">steps</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v3</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Set up PDM</span>
+<span class="w">      </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pdm-project/setup-pdm@v2</span>
+<span class="w">      </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">python-version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ matrix.python-version }}</span>
 
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install dependencies</span><span class="w"></span>
-<span class="w">      </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span><span class="w"></span>
-<span class="w">        </span><span class="no">pdm sync -d -G testing</span><span class="w"></span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Run Tests</span><span class="w"></span>
-<span class="w">      </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span><span class="w"></span>
-<span class="w">        </span><span class="no">pdm run -v pytest tests</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install dependencies</span>
+<span class="w">      </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">        </span><span class="no">pdm sync -d -G testing</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Run Tests</span>
+<span class="w">      </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">        </span><span class="no">pdm run -v pytest tests</span>
 </code></pre></div></td></tr></table></div>
 <div class="admonition important">
 <p class="admonition-title">TIPS</p>
@@ -1195,7 +1199,7 @@ It is already handled by the <code>pdm-project/setup-pdm</code> action.</p>
 <p class="admonition-title">Note</p>
 <p>If your CI scripts run without a proper user set, you might get permission errors when PDM tries to create its cache directory.
 To work around this, you can set the HOME environment variable yourself, to a writable directory, for example:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">export</span> <span class="nv">HOME</span><span class="o">=</span>/tmp/home
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">HOME</span><span class="o">=</span>/tmp/home
 </code></pre></div></td></tr></table></div>
 </div>
 <h2 id="use-pdm-in-a-multi-stage-dockerfile">Use PDM in a multi-stage Dockerfile<a class="headerlink" href="#use-pdm-in-a-multi-stage-dockerfile" title="Permanent link">#</a></h2>
@@ -1229,16 +1233,16 @@ and then copy this folder into the final stage, adding it to <code>PYTHONPATH</c
 <span class="k">FROM</span><span class="w"> </span><span class="s">python:3.8</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s">builder</span>
 
 <span class="c"># install PDM</span>
-<span class="k">RUN</span><span class="w"> </span>pip install -U pip setuptools wheel
-<span class="k">RUN</span><span class="w"> </span>pip install pdm
+<span class="k">RUN</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>pip<span class="w"> </span>setuptools<span class="w"> </span>wheel
+<span class="k">RUN</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>pdm
 
 <span class="c"># copy files</span>
-<span class="k">COPY</span><span class="w"> </span>pyproject.toml pdm.lock README.md /project/
-<span class="k">COPY</span><span class="w"> </span>src/ /project/src
+<span class="k">COPY</span><span class="w"> </span>pyproject.toml<span class="w"> </span>pdm.lock<span class="w"> </span>README.md<span class="w"> </span>/project/
+<span class="k">COPY</span><span class="w"> </span>src/<span class="w"> </span>/project/src
 
 <span class="c"># install dependencies and project into the local packages directory</span>
 <span class="k">WORKDIR</span><span class="w"> </span><span class="s">/project</span>
-<span class="k">RUN</span><span class="w"> </span>mkdir __pypackages__ <span class="o">&amp;&amp;</span> pdm install --prod --no-lock --no-editable
+<span class="k">RUN</span><span class="w"> </span>mkdir<span class="w"> </span>__pypackages__<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>pdm<span class="w"> </span>install<span class="w"> </span>--prod<span class="w"> </span>--no-lock<span class="w"> </span>--no-editable
 
 
 <span class="c"># run stage</span>
@@ -1246,7 +1250,7 @@ and then copy this folder into the final stage, adding it to <code>PYTHONPATH</c
 
 <span class="c"># retrieve packages from build stage</span>
 <span class="k">ENV</span><span class="w"> </span><span class="nv">PYTHONPATH</span><span class="o">=</span>/project/pkgs
-<span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span>builder /project/__pypackages__/3.8/lib /project/pkgs
+<span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span>builder<span class="w"> </span>/project/__pypackages__/3.8/lib<span class="w"> </span>/project/pkgs
 
 <span class="c"># set command/entrypoint, adapt to fit your needs</span>
 <span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;python&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;-m&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;project&quot;</span><span class="p">]</span>
@@ -1286,39 +1290,39 @@ and then copy this folder into the final stage, adding it to <code>PYTHONPATH</c
 <span class="normal">30</span>
 <span class="normal">31</span>
 <span class="normal">32</span>
-<span class="normal">33</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">  </span><span class="c1">;; TODO: Cache result</span><span class="w"></span>
-<span class="w">  </span><span class="p">(</span><span class="nb">defun</span><span class="w"> </span><span class="nv">linw1995/pdm-get-python-executable</span><span class="w"> </span><span class="p">(</span><span class="kp">&amp;optional</span><span class="w"> </span><span class="nv">dir</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="p">(</span><span class="k">let</span><span class="w"> </span><span class="p">((</span><span class="nv">pdm-get-python-cmd</span><span class="w"> </span><span class="s">&quot;pdm info --python&quot;</span><span class="p">))</span><span class="w"></span>
-<span class="w">      </span><span class="p">(</span><span class="nv">string-trim</span><span class="w"></span>
-<span class="w">       </span><span class="p">(</span><span class="nv">shell-command-to-string</span><span class="w"></span>
-<span class="w">        </span><span class="p">(</span><span class="k">if</span><span class="w"> </span><span class="nv">dir</span><span class="w"></span>
-<span class="w">            </span><span class="p">(</span><span class="nf">concat</span><span class="w"> </span><span class="s">&quot;cd &quot;</span><span class="w"></span>
-<span class="w">                    </span><span class="nv">dir</span><span class="w"></span>
-<span class="w">                    </span><span class="s">&quot; &amp;&amp; &quot;</span><span class="w"></span>
-<span class="w">                    </span><span class="nv">pdm-get-python-cmd</span><span class="p">)</span><span class="w"></span>
-<span class="w">          </span><span class="nv">pdm-get-python-cmd</span><span class="p">)))))</span><span class="w"></span>
+<span class="normal">33</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">  </span><span class="c1">;; TODO: Cache result</span>
+<span class="w">  </span><span class="p">(</span><span class="nb">defun</span><span class="w"> </span><span class="nv">linw1995/pdm-get-python-executable</span><span class="w"> </span><span class="p">(</span><span class="kp">&amp;optional</span><span class="w"> </span><span class="nv">dir</span><span class="p">)</span>
+<span class="w">    </span><span class="p">(</span><span class="k">let</span><span class="w"> </span><span class="p">((</span><span class="nv">pdm-get-python-cmd</span><span class="w"> </span><span class="s">&quot;pdm info --python&quot;</span><span class="p">))</span>
+<span class="w">      </span><span class="p">(</span><span class="nv">string-trim</span>
+<span class="w">       </span><span class="p">(</span><span class="nv">shell-command-to-string</span>
+<span class="w">        </span><span class="p">(</span><span class="k">if</span><span class="w"> </span><span class="nv">dir</span>
+<span class="w">            </span><span class="p">(</span><span class="nf">concat</span><span class="w"> </span><span class="s">&quot;cd &quot;</span>
+<span class="w">                    </span><span class="nv">dir</span>
+<span class="w">                    </span><span class="s">&quot; &amp;&amp; &quot;</span>
+<span class="w">                    </span><span class="nv">pdm-get-python-cmd</span><span class="p">)</span>
+<span class="w">          </span><span class="nv">pdm-get-python-cmd</span><span class="p">)))))</span>
 
-<span class="w">  </span><span class="p">(</span><span class="nb">defun</span><span class="w"> </span><span class="nv">linw1995/pdm-get-packages-path</span><span class="w"> </span><span class="p">(</span><span class="kp">&amp;optional</span><span class="w"> </span><span class="nv">dir</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="p">(</span><span class="k">let</span><span class="w"> </span><span class="p">((</span><span class="nv">pdm-get-packages-cmd</span><span class="w"> </span><span class="s">&quot;pdm info --packages&quot;</span><span class="p">))</span><span class="w"></span>
-<span class="w">      </span><span class="p">(</span><span class="nf">concat</span><span class="w"> </span><span class="p">(</span><span class="nv">string-trim</span><span class="w"></span>
-<span class="w">               </span><span class="p">(</span><span class="nv">shell-command-to-string</span><span class="w"></span>
-<span class="w">                </span><span class="p">(</span><span class="k">if</span><span class="w"> </span><span class="nv">dir</span><span class="w"></span>
-<span class="w">                    </span><span class="p">(</span><span class="nf">concat</span><span class="w"> </span><span class="s">&quot;cd &quot;</span><span class="w"></span>
-<span class="w">                            </span><span class="nv">dir</span><span class="w"></span>
-<span class="w">                            </span><span class="s">&quot; &amp;&amp; &quot;</span><span class="w"></span>
-<span class="w">                            </span><span class="nv">pdm-get-packages-cmd</span><span class="p">)</span><span class="w"></span>
-<span class="w">                  </span><span class="nv">pdm-get-packages-cmd</span><span class="p">)))</span><span class="w"></span>
-<span class="w">              </span><span class="s">&quot;/lib&quot;</span><span class="p">)))</span><span class="w"></span>
+<span class="w">  </span><span class="p">(</span><span class="nb">defun</span><span class="w"> </span><span class="nv">linw1995/pdm-get-packages-path</span><span class="w"> </span><span class="p">(</span><span class="kp">&amp;optional</span><span class="w"> </span><span class="nv">dir</span><span class="p">)</span>
+<span class="w">    </span><span class="p">(</span><span class="k">let</span><span class="w"> </span><span class="p">((</span><span class="nv">pdm-get-packages-cmd</span><span class="w"> </span><span class="s">&quot;pdm info --packages&quot;</span><span class="p">))</span>
+<span class="w">      </span><span class="p">(</span><span class="nf">concat</span><span class="w"> </span><span class="p">(</span><span class="nv">string-trim</span>
+<span class="w">               </span><span class="p">(</span><span class="nv">shell-command-to-string</span>
+<span class="w">                </span><span class="p">(</span><span class="k">if</span><span class="w"> </span><span class="nv">dir</span>
+<span class="w">                    </span><span class="p">(</span><span class="nf">concat</span><span class="w"> </span><span class="s">&quot;cd &quot;</span>
+<span class="w">                            </span><span class="nv">dir</span>
+<span class="w">                            </span><span class="s">&quot; &amp;&amp; &quot;</span>
+<span class="w">                            </span><span class="nv">pdm-get-packages-cmd</span><span class="p">)</span>
+<span class="w">                  </span><span class="nv">pdm-get-packages-cmd</span><span class="p">)))</span>
+<span class="w">              </span><span class="s">&quot;/lib&quot;</span><span class="p">)))</span>
 
-<span class="w">  </span><span class="p">(</span><span class="nb">use-package</span><span class="w"> </span><span class="nv">lsp-python-ms</span><span class="w"></span>
-<span class="w">    </span><span class="nb">:ensure</span><span class="w"> </span><span class="no">t</span><span class="w"></span>
-<span class="w">    </span><span class="nb">:init</span><span class="w"> </span><span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">lsp-python-ms-auto-install-server</span><span class="w"> </span><span class="no">t</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="nb">:hook</span><span class="w"> </span><span class="p">(</span><span class="nv">python-mode</span><span class="w"></span>
-<span class="w">           </span><span class="o">.</span><span class="w"> </span><span class="p">(</span><span class="nb">lambda</span><span class="w"> </span><span class="p">()</span><span class="w"></span>
-<span class="w">               </span><span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">lsp-python-ms-python-executable</span><span class="w"> </span><span class="p">(</span><span class="nv">linw1995/pdm-get-python-executable</span><span class="p">))</span><span class="w"></span>
-<span class="w">               </span><span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">lsp-python-ms-extra-paths</span><span class="w"> </span><span class="p">(</span><span class="nf">vector</span><span class="w"> </span><span class="p">(</span><span class="nv">linw1995/pdm-get-packages-path</span><span class="p">)))</span><span class="w"></span>
-<span class="w">               </span><span class="p">(</span><span class="nb">require</span><span class="w"> </span><span class="ss">&#39;lsp-python-ms</span><span class="p">)</span><span class="w"></span>
-<span class="w">               </span><span class="p">(</span><span class="nv">lsp</span><span class="p">))))</span><span class="w">  </span><span class="c1">; or lsp-deferred</span><span class="w"></span>
+<span class="w">  </span><span class="p">(</span><span class="nb">use-package</span><span class="w"> </span><span class="nv">lsp-python-ms</span>
+<span class="w">    </span><span class="nb">:ensure</span><span class="w"> </span><span class="no">t</span>
+<span class="w">    </span><span class="nb">:init</span><span class="w"> </span><span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">lsp-python-ms-auto-install-server</span><span class="w"> </span><span class="no">t</span><span class="p">)</span>
+<span class="w">    </span><span class="nb">:hook</span><span class="w"> </span><span class="p">(</span><span class="nv">python-mode</span>
+<span class="w">           </span><span class="o">.</span><span class="w"> </span><span class="p">(</span><span class="nb">lambda</span><span class="w"> </span><span class="p">()</span>
+<span class="w">               </span><span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">lsp-python-ms-python-executable</span><span class="w"> </span><span class="p">(</span><span class="nv">linw1995/pdm-get-python-executable</span><span class="p">))</span>
+<span class="w">               </span><span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">lsp-python-ms-extra-paths</span><span class="w"> </span><span class="p">(</span><span class="nf">vector</span><span class="w"> </span><span class="p">(</span><span class="nv">linw1995/pdm-get-packages-path</span><span class="p">)))</span>
+<span class="w">               </span><span class="p">(</span><span class="nb">require</span><span class="w"> </span><span class="ss">&#39;lsp-python-ms</span><span class="p">)</span>
+<span class="w">               </span><span class="p">(</span><span class="nv">lsp</span><span class="p">))))</span><span class="w">  </span><span class="c1">; or lsp-deferred</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="hooks-for-pre-commit">Hooks for <code>pre-commit</code><a class="headerlink" href="#hooks-for-pre-commit" title="Permanent link">#</a></h2>
 <p><a href="https://pre-commit.com/"><code>pre-commit</code></a> is a powerful framework for managing git hooks in a centralized fashion. PDM already uses <code>pre-commit</code> <a href="https://github.com/pdm-project/pdm/blob/main/.pre-commit-config.yaml">hooks</a> for its internal QA checks. PDM exposes also several hooks that can be run locally or in CI pipelines.</p>
@@ -1331,24 +1335,24 @@ and then copy this folder into the final stage, adding it to <code>PYTHONPATH</c
 <span class="normal">5</span>
 <span class="normal">6</span>
 <span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># export python requirements</span><span class="w"></span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/pdm-project/pdm</span><span class="w"></span>
-<span class="w">  </span><span class="nt">rev</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.x.y</span><span class="w"> </span><span class="c1"># a PDM release exposing the hook</span><span class="w"></span>
-<span class="w">  </span><span class="nt">hooks</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pdm-export</span><span class="w"></span>
-<span class="w">      </span><span class="c1"># command arguments, e.g.:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">args</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;-o&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;requirements.txt&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;--without-hashes&#39;</span><span class="p p-Indicator">]</span><span class="w"></span>
-<span class="w">      </span><span class="nt">files</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^pdm.lock$</span><span class="w"></span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># export python requirements</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/pdm-project/pdm</span>
+<span class="w">  </span><span class="nt">rev</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.x.y</span><span class="w"> </span><span class="c1"># a PDM release exposing the hook</span>
+<span class="w">  </span><span class="nt">hooks</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pdm-export</span>
+<span class="w">      </span><span class="c1"># command arguments, e.g.:</span>
+<span class="w">      </span><span class="nt">args</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;-o&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;requirements.txt&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;--without-hashes&#39;</span><span class="p p-Indicator">]</span>
+<span class="w">      </span><span class="nt">files</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^pdm.lock$</span>
 </code></pre></div></td></tr></table></div>
 <h3 id="check-pdmlock-is-up-to-date-with-pyprojecttoml">Check <code>pdm.lock</code> is up to date with pyproject.toml<a class="headerlink" href="#check-pdmlock-is-up-to-date-with-pyprojecttoml" title="Permanent link">#</a></h3>
 <p>This hook wraps the command <code>pdm lock --check</code> along with any valid argument. It can be used as a hook (e.g., for CI) to ensure that whenever <code>pyproject.toml</code> has a dependency added/changed/removed, that <code>.pdm.lock</code> is also up to date.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/pdm-project/pdm</span><span class="w"></span>
-<span class="w">  </span><span class="nt">rev</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.x.y</span><span class="w"> </span><span class="c1"># a PDM release exposing the hook</span><span class="w"></span>
-<span class="w">  </span><span class="nt">hooks</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pdm-lock-check</span><span class="w"></span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/pdm-project/pdm</span>
+<span class="w">  </span><span class="nt">rev</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.x.y</span><span class="w"> </span><span class="c1"># a PDM release exposing the hook</span>
+<span class="w">  </span><span class="nt">hooks</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pdm-lock-check</span>
 </code></pre></div></td></tr></table></div>
 
 
@@ -1365,42 +1369,6 @@ and then copy this folder into the final stage, adding it to <code>PYTHONPATH</c
       </main>
       
         <footer class="md-footer">
-  
-    
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
-      
-        
-        <a href="../hooks/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Lifecycle and hooks" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              Lifecycle and hooks
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../cli_reference/" class="md-footer__link md-footer__link--next" aria-label="Next: CLI Reference" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              CLI Reference
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -1458,14 +1426,13 @@ and then copy this folder into the final stage, adding it to <code>PYTHONPATH</c
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky"], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky"], "search": "../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      <script src="../../assets/javascripts/bundle.ba449ae6.min.js"></script>
       
         <script src="../../assets/extra.js"></script>
       
-    
     
   </body>
 </html>

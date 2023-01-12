@@ -8,8 +8,14 @@
       
       
       
+      
+        <link rel="prev" href="../dependency/">
+      
+      
+        <link rel="next" href="../hooks/">
+      
       <link rel="icon" href="../../assets/logo.svg">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.4">
     
     
       
@@ -17,11 +23,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.975780f9.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.9c788c91.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
-        
       
       
 
@@ -131,8 +136,6 @@
       <form class="md-header__option" data-md-component="palette">
         
           
-          
-          
           <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="teal"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
           
             <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
@@ -140,8 +143,6 @@
             </label>
           
         
-          
-          
           
           <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="teal"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
           
@@ -348,12 +349,13 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
       
       
       
-      
-        <label class="md-nav__link" for="__nav_1">
+        <label class="md-nav__link" for="__nav_1" tabindex="0" aria-expanded="true">
           Usage
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -680,12 +682,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_2">
+        <label class="md-nav__link" for="__nav_2" tabindex="0" aria-expanded="false">
           Writing pyproject.toml
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -756,12 +759,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_3">
+        <label class="md-nav__link" for="__nav_3" tabindex="0" aria-expanded="false">
           Plugins
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -832,12 +836,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_4">
+        <label class="md-nav__link" for="__nav_4" tabindex="0" aria-expanded="false">
           Development
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -1076,34 +1081,33 @@
                 
                   
 
-  <a href="https://github.com/pdm-project/pdm/edit/main/docs/docs/usage/scripts.md" title="Edit this page" class="md-content__button md-icon">
-    
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
-  </a>
+  
+  
+
 
 
 <h1 id="pdm-scripts">PDM Scripts<a class="headerlink" href="#pdm-scripts" title="Permanent link">#</a></h1>
 <p>Like <code>npm run</code>, with PDM, you can run arbitrary scripts or commands with local packages loaded.</p>
 <h2 id="arbitrary-scripts">Arbitrary Scripts<a class="headerlink" href="#arbitrary-scripts" title="Permanent link">#</a></h2>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm run flask run -p <span class="m">54321</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm<span class="w"> </span>run<span class="w"> </span>flask<span class="w"> </span>run<span class="w"> </span>-p<span class="w"> </span><span class="m">54321</span>
 </code></pre></div></td></tr></table></div>
 <p>It will run <code>flask run -p 54321</code> in the environment that is aware of packages in <code>__pypackages__/</code> folder.</p>
 <h2 id="user-scripts">User Scripts<a class="headerlink" href="#user-scripts" title="Permanent link">#</a></h2>
 <p>PDM also supports custom script shortcuts in the optional <code>[tool.pdm.scripts]</code> section of <code>pyproject.toml</code>.</p>
 <p>You can then run <code>pdm run &lt;script_name&gt;</code> to invoke the script in the context of your PDM project. For example:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm.scripts]</span><span class="w"></span>
-<span class="n">start</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;flask run -p 54321&quot;</span><span class="w"></span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm.scripts]</span>
+<span class="n">start</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;flask run -p 54321&quot;</span>
 </code></pre></div></td></tr></table></div>
 <p>And then in your terminal:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>$ pdm run start
-Flask server started at http://127.0.0.1:54321
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>pdm<span class="w"> </span>run<span class="w"> </span>start
+Flask<span class="w"> </span>server<span class="w"> </span>started<span class="w"> </span>at<span class="w"> </span>http://127.0.0.1:54321
 </code></pre></div></td></tr></table></div>
 <p>Any following arguments will be appended to the command:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>$ pdm run start -h <span class="m">0</span>.0.0.0
-Flask server started at http://0.0.0.0:54321
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>pdm<span class="w"> </span>run<span class="w"> </span>start<span class="w"> </span>-h<span class="w"> </span><span class="m">0</span>.0.0.0
+Flask<span class="w"> </span>server<span class="w"> </span>started<span class="w"> </span>at<span class="w"> </span>http://0.0.0.0:54321
 </code></pre></div></td></tr></table></div>
 <div class="admonition note">
 <p class="admonition-title">Yarn-like script shortcuts</p>
@@ -1117,8 +1121,8 @@ But if you have an <code>install</code> script, only <code>pdm run install</code
 <h3 id="cmd"><code>cmd</code><a class="headerlink" href="#cmd" title="Permanent link">#</a></h3>
 <p>Plain text scripts are regarded as normal command, or you can explicitly specify it:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm.scripts]</span><span class="w"></span>
-<span class="n">start</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">cmd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;flask run -p 54321&quot;</span><span class="p">}</span><span class="w"></span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm.scripts]</span>
+<span class="n">start</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">cmd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;flask run -p 54321&quot;</span><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p>In some cases, such as when wanting to add comments between parameters, it might be more convenient
 to specify the command as an array instead of a string:</p>
@@ -1128,51 +1132,51 @@ to specify the command as an array instead of a string:</p>
 <span class="normal">4</span>
 <span class="normal">5</span>
 <span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm.scripts]</span><span class="w"></span>
-<span class="n">start</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">cmd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">    </span><span class="s">&quot;flask&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s">&quot;run&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># Important comment here about always using port 54321</span><span class="w"></span>
-<span class="w">    </span><span class="s">&quot;-p&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;54321&quot;</span><span class="w"></span>
-<span class="p">]}</span><span class="w"></span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm.scripts]</span>
+<span class="n">start</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">cmd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s">&quot;flask&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;run&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="c1"># Important comment here about always using port 54321</span>
+<span class="w">    </span><span class="s">&quot;-p&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;54321&quot;</span>
+<span class="p">]}</span>
 </code></pre></div></td></tr></table></div>
 <h3 id="shell"><code>shell</code><a class="headerlink" href="#shell" title="Permanent link">#</a></h3>
 <p>Shell scripts can be used to run more shell-specific tasks, such as pipeline and output redirecting.
 This is basically run via <code>subprocess.Popen()</code> with <code>shell=True</code>:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm.scripts]</span><span class="w"></span>
-<span class="n">filter_error</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">shell</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;cat error.log|grep CRITICAL &gt; critical.log&quot;</span><span class="p">}</span><span class="w"></span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm.scripts]</span>
+<span class="n">filter_error</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">shell</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;cat error.log|grep CRITICAL &gt; critical.log&quot;</span><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <h3 id="call"><code>call</code><a class="headerlink" href="#call" title="Permanent link">#</a></h3>
 <p>The script can be also defined as calling a python function in the form <code>&lt;module_name&gt;:&lt;func_name&gt;</code>:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm.scripts]</span><span class="w"></span>
-<span class="n">foobar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">call</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;foo_package.bar_module:main&quot;</span><span class="p">}</span><span class="w"></span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm.scripts]</span>
+<span class="n">foobar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">call</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;foo_package.bar_module:main&quot;</span><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p>The function can be supplied with literal arguments:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm.scripts]</span><span class="w"></span>
-<span class="n">foobar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">call</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;foo_package.bar_module:main(&#39;dev&#39;)&quot;</span><span class="p">}</span><span class="w"></span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm.scripts]</span>
+<span class="n">foobar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">call</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;foo_package.bar_module:main(&#39;dev&#39;)&quot;</span><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <h3 id="composite"><code>composite</code><a class="headerlink" href="#composite" title="Permanent link">#</a></h3>
 <p>This script kind execute other defined scripts:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm.scripts]</span><span class="w"></span>
-<span class="n">lint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;flake8&quot;</span><span class="w"></span>
-<span class="n">test</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;pytest&quot;</span><span class="w"></span>
-<span class="n">all</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">composite</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;lint&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;test&quot;</span><span class="p">]}</span><span class="w"></span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm.scripts]</span>
+<span class="n">lint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;flake8&quot;</span>
+<span class="n">test</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;pytest&quot;</span>
+<span class="n">all</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">composite</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;lint&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;test&quot;</span><span class="p">]}</span>
 </code></pre></div></td></tr></table></div>
 <p>Running <code>pdm run all</code> will run <code>lint</code> first and then <code>test</code> if <code>lint</code> succeeded.</p>
 <p>You can also provide arguments to the called scripts:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm.scripts]</span><span class="w"></span>
-<span class="n">lint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;flake8&quot;</span><span class="w"></span>
-<span class="n">test</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;pytest&quot;</span><span class="w"></span>
-<span class="n">all</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">composite</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;lint mypackage/&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;test -v tests/&quot;</span><span class="p">]}</span><span class="w"></span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm.scripts]</span>
+<span class="n">lint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;flake8&quot;</span>
+<span class="n">test</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;pytest&quot;</span>
+<span class="n">all</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">composite</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;lint mypackage/&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;test -v tests/&quot;</span><span class="p">]}</span>
 </code></pre></div></td></tr></table></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1184,9 +1188,9 @@ This is basically run via <code>subprocess.Popen()</code> with <code>shell=True<
 Besides, you can also define some fixed environment variables in your <code>pyproject.toml</code>:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm.scripts]</span><span class="w"></span>
-<span class="n">start</span><span class="p">.</span><span class="n">cmd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;flask run -p 54321&quot;</span><span class="w"></span>
-<span class="n">start</span><span class="p">.</span><span class="n">env</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">FOO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;bar&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">FLASK_ENV</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;development&quot;</span><span class="p">}</span><span class="w"></span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm.scripts]</span>
+<span class="n">start</span><span class="p">.</span><span class="n">cmd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;flask run -p 54321&quot;</span>
+<span class="n">start</span><span class="p">.</span><span class="n">env</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">FOO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;bar&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">FLASK_ENV</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;development&quot;</span><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p>Note how we use <a href="https://github.com/toml-lang/toml">TOML's syntax</a> to define a composite dictionary.</p>
 <div class="admonition note">
@@ -1197,17 +1201,17 @@ Besides, you can also define some fixed environment variables in your <code>pypr
 <p>You can also store all environment variables in a dotenv file and let PDM read it:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm.scripts]</span><span class="w"></span>
-<span class="n">start</span><span class="p">.</span><span class="n">cmd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;flask run -p 54321&quot;</span><span class="w"></span>
-<span class="n">start</span><span class="p">.</span><span class="n">env_file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;.env&quot;</span><span class="w"></span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm.scripts]</span>
+<span class="n">start</span><span class="p">.</span><span class="n">cmd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;flask run -p 54321&quot;</span>
+<span class="n">start</span><span class="p">.</span><span class="n">env_file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;.env&quot;</span>
 </code></pre></div></td></tr></table></div>
 <p>The variables within the dotenv file will <em>not</em> override any existing environment variables.
 If you want the dotenv file to override existing environment variables use the following:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm.scripts]</span><span class="w"></span>
-<span class="n">start</span><span class="p">.</span><span class="n">cmd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;flask run -p 54321&quot;</span><span class="w"></span>
-<span class="n">start</span><span class="p">.</span><span class="n">env_file</span><span class="p">.</span><span class="n">override</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;.env&quot;</span><span class="w"></span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm.scripts]</span>
+<span class="n">start</span><span class="p">.</span><span class="n">cmd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;flask run -p 54321&quot;</span>
+<span class="n">start</span><span class="p">.</span><span class="n">env_file</span><span class="p">.</span><span class="n">override</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;.env&quot;</span>
 </code></pre></div></td></tr></table></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1228,10 +1232,10 @@ you can write them under a special key <code>_</code> in <code>[tool.pdm.scripts
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm.scripts]</span><span class="w"></span>
-<span class="n">_</span><span class="p">.</span><span class="n">env_file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;.env&quot;</span><span class="w"></span>
-<span class="n">start</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;flask run -p 54321&quot;</span><span class="w"></span>
-<span class="n">migrate_db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;flask db upgrade&quot;</span><span class="w"></span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm.scripts]</span>
+<span class="n">_</span><span class="p">.</span><span class="n">env_file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;.env&quot;</span>
+<span class="n">start</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;flask run -p 54321&quot;</span>
+<span class="n">migrate_db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;flask db upgrade&quot;</span>
 </code></pre></div></td></tr></table></div>
 <p>Besides, inside the tasks, <code>PDM_PROJECT_ROOT</code> environment variable will be set to the project root.</p>
 <h3 id="arguments-placeholder">Arguments placeholder<a class="headerlink" href="#arguments-placeholder" title="Permanent link">#</a></h3>
@@ -1241,10 +1245,10 @@ It is available for all script types and will be interpolated properly for each:
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm.scripts]</span><span class="w"></span>
-<span class="n">cmd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;echo &#39;--before {args} --after&#39;&quot;</span><span class="w"></span>
-<span class="n">shell</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">shell</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;echo &#39;--before {args} --after&#39;&quot;</span><span class="p">}</span><span class="w"></span>
-<span class="n">composite</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">composite</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;cmd --something&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;shell {args}&quot;</span><span class="p">]}</span><span class="w"></span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm.scripts]</span>
+<span class="n">cmd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;echo &#39;--before {args} --after&#39;&quot;</span>
+<span class="n">shell</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">shell</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;echo &#39;--before {args} --after&#39;&quot;</span><span class="p">}</span>
+<span class="n">composite</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">composite</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;cmd --something&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;shell {args}&quot;</span><span class="p">]}</span>
 </code></pre></div></td></tr></table></div>
 <p>will produce the following interpolations (those are not real scripts, just here to illustrate the interpolation):</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -1260,34 +1264,34 @@ It is available for all script types and will be interpolated properly for each:
 <span class="normal">11</span>
 <span class="normal">12</span>
 <span class="normal">13</span>
-<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code>$ pdm run cmd --user --provided
---before --user --provided --after
-$ pdm run cmd
---before --after
-$ pdm run shell --user --provided
---before --user --provided --after
-$ pdm run shell
---before --after
-$ pdm run composite --user --provided
-cmd --something
-shell --before --user --provided --after
-$ pdm run composite
-cmd --something
-shell --before --after
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>pdm<span class="w"> </span>run<span class="w"> </span>cmd<span class="w"> </span>--user<span class="w"> </span>--provided
+--before<span class="w"> </span>--user<span class="w"> </span>--provided<span class="w"> </span>--after
+$<span class="w"> </span>pdm<span class="w"> </span>run<span class="w"> </span>cmd
+--before<span class="w"> </span>--after
+$<span class="w"> </span>pdm<span class="w"> </span>run<span class="w"> </span>shell<span class="w"> </span>--user<span class="w"> </span>--provided
+--before<span class="w"> </span>--user<span class="w"> </span>--provided<span class="w"> </span>--after
+$<span class="w"> </span>pdm<span class="w"> </span>run<span class="w"> </span>shell
+--before<span class="w"> </span>--after
+$<span class="w"> </span>pdm<span class="w"> </span>run<span class="w"> </span>composite<span class="w"> </span>--user<span class="w"> </span>--provided
+cmd<span class="w"> </span>--something
+shell<span class="w"> </span>--before<span class="w"> </span>--user<span class="w"> </span>--provided<span class="w"> </span>--after
+$<span class="w"> </span>pdm<span class="w"> </span>run<span class="w"> </span>composite
+cmd<span class="w"> </span>--something
+shell<span class="w"> </span>--before<span class="w"> </span>--after
 </code></pre></div></td></tr></table></div>
 <p>You may optionally provide default values that will be used if no user arguments are provided:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm.scripts]</span><span class="w"></span>
-<span class="n">test</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;echo &#39;--before {args:--default --value} --after&#39;&quot;</span><span class="w"></span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm.scripts]</span>
+<span class="n">test</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;echo &#39;--before {args:--default --value} --after&#39;&quot;</span>
 </code></pre></div></td></tr></table></div>
 <p>will produce the following:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>$ pdm run <span class="nb">test</span> --user --provided
---before --user --provided --after
-$ pdm run <span class="nb">test</span>
---before --default --value --after
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>pdm<span class="w"> </span>run<span class="w"> </span><span class="nb">test</span><span class="w"> </span>--user<span class="w"> </span>--provided
+--before<span class="w"> </span>--user<span class="w"> </span>--provided<span class="w"> </span>--after
+$<span class="w"> </span>pdm<span class="w"> </span>run<span class="w"> </span><span class="nb">test</span>
+--before<span class="w"> </span>--default<span class="w"> </span>--value<span class="w"> </span>--after
 </code></pre></div></td></tr></table></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1311,13 +1315,13 @@ access to <code>sys.argv</code> directly to handle such complexe cases and more.
 <span class="normal">5</span>
 <span class="normal">6</span>
 <span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>$ pdm run --list
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>pdm<span class="w"> </span>run<span class="w"> </span>--list
 ╭─────────────┬───────┬───────────────────────────╮
-│ Name        │ Type  │ Description               │
+│<span class="w"> </span>Name<span class="w">        </span>│<span class="w"> </span>Type<span class="w">  </span>│<span class="w"> </span>Description<span class="w">               </span>│
 ├─────────────┼───────┼───────────────────────────┤
-│ test_cmd    │ cmd   │ flask db upgrade          │
-│ test_script │ call  │ call a python <span class="k">function</span>    │
-│ test_shell  │ shell │ shell <span class="nb">command</span>             │
+│<span class="w"> </span>test_cmd<span class="w">    </span>│<span class="w"> </span>cmd<span class="w">   </span>│<span class="w"> </span>flask<span class="w"> </span>db<span class="w"> </span>upgrade<span class="w">          </span>│
+│<span class="w"> </span>test_script<span class="w"> </span>│<span class="w"> </span>call<span class="w">  </span>│<span class="w"> </span>call<span class="w"> </span>a<span class="w"> </span>python<span class="w"> </span><span class="k">function</span><span class="w">    </span>│
+│<span class="w"> </span>test_shell<span class="w">  </span>│<span class="w"> </span>shell<span class="w"> </span>│<span class="w"> </span>shell<span class="w"> </span><span class="nb">command</span><span class="w">             </span>│
 ╰─────────────┴───────┴───────────────────────────╯
 </code></pre></div></td></tr></table></div>
 <p>You can add an <code>help</code> option with the description of the script, and it will be displayed in the <code>Description</code> column in the above output.</p>
@@ -1326,10 +1330,10 @@ access to <code>sys.argv</code> directly to handle such complexe cases and more.
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm.scripts]</span><span class="w"></span>
-<span class="n">pre_compress</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;{{ Run BEFORE the `compress` script }}&quot;</span><span class="w"></span>
-<span class="n">compress</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;tar czvf compressed.tar.gz data/&quot;</span><span class="w"></span>
-<span class="n">post_compress</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;{{ Run AFTER the `compress` script }}&quot;</span><span class="w"></span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm.scripts]</span>
+<span class="n">pre_compress</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;{{ Run BEFORE the `compress` script }}&quot;</span>
+<span class="n">compress</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;tar czvf compressed.tar.gz data/&quot;</span>
+<span class="n">post_compress</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;{{ Run AFTER the `compress` script }}&quot;</span>
 </code></pre></div></td></tr></table></div>
 <p>In this example, <code>pdm run compress</code> will run all these 3 scripts sequentially.</p>
 <div class="admonition note">
@@ -1377,7 +1381,7 @@ skip all <code>pre_*</code> hooks and all <code>post_*</code> hooks.</p>
 or to need all tasks from a composite tasks except one.
 For those use cases, there is a finer grained <code>--skip</code> parameter
 accepting a list of tasks or hooks name to exclude.</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm run --skip pre_task1,task2 my-composite
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm<span class="w"> </span>run<span class="w"> </span>--skip<span class="w"> </span>pre_task1,task2<span class="w"> </span>my-composite
 </code></pre></div></td></tr></table></div>
 <p>This command will run the <code>my-composite</code> task and skip the <code>pre_task1</code> hook as well as the <code>task2</code> and its hooks.</p>
 <p>You can also provide you skip list in <code>PDM_SKIP_HOOKS</code> environment variable
@@ -1398,42 +1402,6 @@ but it will be overridden as soon as the <code>--skip</code> parameter is provid
       </main>
       
         <footer class="md-footer">
-  
-    
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
-      
-        
-        <a href="../dependency/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Manage Dependencies" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              Manage Dependencies
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../hooks/" class="md-footer__link md-footer__link--next" aria-label="Next: Lifecycle and hooks" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Lifecycle and hooks
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -1491,14 +1459,13 @@ but it will be overridden as soon as the <code>--skip</code> parameter is provid
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky"], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky"], "search": "../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      <script src="../../assets/javascripts/bundle.ba449ae6.min.js"></script>
       
         <script src="../../assets/extra.js"></script>
       
-    
     
   </body>
 </html>

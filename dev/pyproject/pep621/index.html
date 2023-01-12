@@ -8,8 +8,14 @@
       
       
       
+      
+        <link rel="prev" href="../../usage/configuration/">
+      
+      
+        <link rel="next" href="../tool-pdm/">
+      
       <link rel="icon" href="../../assets/logo.svg">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.4">
     
     
       
@@ -17,11 +23,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.975780f9.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.9c788c91.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
-        
       
       
 
@@ -131,8 +136,6 @@
       <form class="md-header__option" data-md-component="palette">
         
           
-          
-          
           <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="teal"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
           
             <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
@@ -140,8 +143,6 @@
             </label>
           
         
-          
-          
           
           <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="teal"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
           
@@ -346,12 +347,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_1">
+        <label class="md-nav__link" for="__nav_1" tabindex="0" aria-expanded="false">
           Usage
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -522,12 +524,13 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       
       
-      
-        <label class="md-nav__link" for="__nav_2">
+        <label class="md-nav__link" for="__nav_2" tabindex="0" aria-expanded="true">
           Writing pyproject.toml
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -701,12 +704,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_3">
+        <label class="md-nav__link" for="__nav_3" tabindex="0" aria-expanded="false">
           Plugins
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -777,12 +781,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_4">
+        <label class="md-nav__link" for="__nav_4" tabindex="0" aria-expanded="false">
           Development
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -966,10 +971,9 @@
                 
                   
 
-  <a href="https://github.com/pdm-project/pdm/edit/main/docs/docs/pyproject/pep621.md" title="Edit this page" class="md-content__button md-icon">
-    
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
-  </a>
+  
+  
+
 
 
 <h1 id="pep-621-metadata">PEP 621 Metadata<a class="headerlink" href="#pep-621-metadata" title="Permanent link">#</a></h1>
@@ -990,7 +994,7 @@ Indentation will be removed as well when escaping new lines:</p>
 <span class="s">    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. \</span>
 <span class="s">    Ut enim ad minim veniam, quis nostrud exercitation ullamco \</span>
 <span class="s">    laboris nisi ut aliquip ex ea commodo consequat.\</span>
-<span class="s">&quot;&quot;&quot;</span><span class="w"></span>
+<span class="s">&quot;&quot;&quot;</span>
 </code></pre></div></td></tr></table></div>
 <p>See <a href="https://toml.io/en/v1.0.0#string">TOML's specification on strings</a>.</p>
 <h2 id="package-version">Package version<a class="headerlink" href="#package-version" title="Permanent link">#</a></h2>
@@ -998,8 +1002,8 @@ Indentation will be removed as well when escaping new lines:</p>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[project]</span><span class="w"></span>
-<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;1.0.0&quot;</span><span class="w"></span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[project]</span>
+<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;1.0.0&quot;</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
@@ -1008,12 +1012,12 @@ Indentation will be removed as well when escaping new lines:</p>
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[project]</span><span class="w"></span>
-<span class="p">...</span><span class="w"></span>
-<span class="n">dynamic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;version&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[project]</span>
+<span class="p">...</span>
+<span class="n">dynamic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;version&quot;</span><span class="p">]</span>
 
-<span class="k">[tool.pdm]</span><span class="w"></span>
-<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">source</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;file&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;mypackage/__version__.py&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="k">[tool.pdm]</span>
+<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">source</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;file&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;mypackage/__version__.py&quot;</span><span class="w"> </span><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p>The version will be read from the <code>mypackage/__version__.py</code> file searching for the pattern: <code>__version__ = "{version}"</code>.</p>
 <p>Read more information about other configurations in <a href="../build/#dynamic-versioning">dynamic versioning</a>.</p>
@@ -1035,18 +1039,18 @@ and <a href="https://www.python.org/dev/peps/pep-0508/">PEP 508</a>.</p>
 <span class="normal"> 9</span>
 <span class="normal">10</span>
 <span class="normal">11</span>
-<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[project]</span><span class="w"></span>
-<span class="p">...</span><span class="w"></span>
-<span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># Named requirement</span><span class="w"></span>
-<span class="w">    </span><span class="s">&quot;requests&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># Named requirement with version specifier</span><span class="w"></span>
-<span class="w">    </span><span class="s">&quot;flask &gt;= 1.1.0&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># Requirement with environment marker</span><span class="w"></span>
-<span class="w">    </span><span class="s">&quot;pywin32; sys_platform == &#39;win32&#39;&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># URL requirement</span><span class="w"></span>
-<span class="w">    </span><span class="s">&quot;pip @ git+https://github.com/pypa/pip.git@20.3.1&quot;</span><span class="w"></span>
-<span class="p">]</span><span class="w"></span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[project]</span>
+<span class="p">...</span>
+<span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="c1"># Named requirement</span>
+<span class="w">    </span><span class="s">&quot;requests&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="c1"># Named requirement with version specifier</span>
+<span class="w">    </span><span class="s">&quot;flask &gt;= 1.1.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="c1"># Requirement with environment marker</span>
+<span class="w">    </span><span class="s">&quot;pywin32; sys_platform == &#39;win32&#39;&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="c1"># URL requirement</span>
+<span class="w">    </span><span class="s">&quot;pip @ git+https://github.com/pypa/pip.git@20.3.1&quot;</span>
+<span class="p">]</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="optional-dependencies">Optional dependencies<a class="headerlink" href="#optional-dependencies" title="Permanent link">#</a></h2>
 <p>You can have some requirements optional, which is similar to <code>setuptools</code>' <code>extras_require</code> parameter.</p>
@@ -1056,16 +1060,16 @@ and <a href="https://www.python.org/dev/peps/pep-0508/">PEP 508</a>.</p>
 <span class="normal">4</span>
 <span class="normal">5</span>
 <span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[project.optional-dependencies]</span><span class="w"></span>
-<span class="n">socks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s">&#39;PySocks &gt;= 1.5.6, != 1.5.7, &lt; 2&#39;</span><span class="w"> </span><span class="p">]</span><span class="w"></span>
-<span class="n">tests</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">  </span><span class="s">&#39;ddt &gt;= 1.2.2, &lt; 2&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="s">&#39;pytest &lt; 6&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="s">&#39;mock &gt;= 1.0.1, &lt; 4; python_version &lt; &quot;3.4&quot;&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="p">]</span><span class="w"></span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[project.optional-dependencies]</span>
+<span class="n">socks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s">&#39;PySocks &gt;= 1.5.6, != 1.5.7, &lt; 2&#39;</span><span class="w"> </span><span class="p">]</span>
+<span class="n">tests</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="s">&#39;ddt &gt;= 1.2.2, &lt; 2&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="s">&#39;pytest &lt; 6&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="s">&#39;mock &gt;= 1.0.1, &lt; 4; python_version &lt; &quot;3.4&quot;&#39;</span><span class="p">,</span>
+<span class="p">]</span>
 </code></pre></div></td></tr></table></div>
 <p>To install a group of optional dependencies:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm install -G socks
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm<span class="w"> </span>install<span class="w"> </span>-G<span class="w"> </span>socks
 </code></pre></div></td></tr></table></div>
 <p><code>-G</code> option can be given multiple times to include more than one group.</p>
 <h2 id="context-variables-expansion">Context variables expansion<a class="headerlink" href="#context-variables-expansion" title="Permanent link">#</a></h2>
@@ -1075,14 +1079,14 @@ and <a href="https://www.python.org/dev/peps/pep-0508/">PEP 508</a>.</p>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[project]</span><span class="w"></span>
-<span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;flask @ https://${USERNAME}:${PASSWORD}/artifacts.io/Flask-1.1.2.tar.gz&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[project]</span>
+<span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;flask @ https://${USERNAME}:${PASSWORD}/artifacts.io/Flask-1.1.2.tar.gz&quot;</span><span class="p">]</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[project]</span><span class="w"></span>
-<span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;flask @ https://{env:USERNAME}:{env:PASSWORD}/artifacts.io/Flask-1.1.2.tar.gz&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[project]</span>
+<span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;flask @ https://{env:USERNAME}:{env:PASSWORD}/artifacts.io/Flask-1.1.2.tar.gz&quot;</span><span class="p">]</span>
 </code></pre></div></td></tr></table></div>
 <p>Find more usages <a href="https://hatch.pypa.io/dev/config/context/#environment-variables">here</a></p>
 </div>
@@ -1096,20 +1100,20 @@ and <a href="https://www.python.org/dev/peps/pep-0508/">PEP 508</a>.</p>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[project]</span><span class="w"></span>
-<span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;my-package @ file:///${PROJECT_ROOT}/my-package&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[project]</span>
+<span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;my-package @ file:///${PROJECT_ROOT}/my-package&quot;</span><span class="p">]</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[project]</span><span class="w"></span>
-<span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;my-package @ {root:uri}/my-package&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[project]</span>
+<span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;my-package @ {root:uri}/my-package&quot;</span><span class="p">]</span>
 </code></pre></div></td></tr></table></div>
 <p>By default, hatchling doesn't support <a href="https://hatch.pypa.io/dev/config/dependency/#direct-references">direct references</a>
 in the dependency string, you need to turn it on in <code>pyproject.toml</code>:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.hatch.metadata]</span><span class="w"></span>
-<span class="n">allow-direct-references</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.hatch.metadata]</span>
+<span class="n">allow-direct-references</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
 </code></pre></div></td></tr></table></div>
 </div>
 </div>
@@ -1118,8 +1122,8 @@ in the dependency string, you need to turn it on in <code>pyproject.toml</code>:
 <h2 id="console-scripts">Console scripts<a class="headerlink" href="#console-scripts" title="Permanent link">#</a></h2>
 <p>The following content:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[project.scripts]</span><span class="w"></span>
-<span class="n">mycli</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;mycli.__main__:main&quot;</span><span class="w"></span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[project.scripts]</span>
+<span class="n">mycli</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;mycli.__main__:main&quot;</span>
 </code></pre></div></td></tr></table></div>
 <p>will be translated to <code>setuptools</code> style:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -1137,13 +1141,13 @@ in the dependency string, you need to turn it on in <code>pyproject.toml</code>:
 <p>Other types of entry points are given by <code>[project.entry-points.&lt;type&gt;]</code> section, with the same
 format of <code>[project.scripts]</code>:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[project.entry-points.pytest11]</span><span class="w"></span>
-<span class="n">myplugin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;mypackage.plugin:pytest_plugin&quot;</span><span class="w"></span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[project.entry-points.pytest11]</span>
+<span class="n">myplugin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;mypackage.plugin:pytest_plugin&quot;</span>
 </code></pre></div></td></tr></table></div>
 <p>If the entry point name contains dots or other special characters, wrap it in quotes:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[project.entry-points.&quot;flake8.extension&quot;]</span><span class="w"></span>
-<span class="n">myplugin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;mypackage.plugin:flake8_plugin&quot;</span><span class="w"></span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[project.entry-points.&quot;flake8.extension&quot;]</span>
+<span class="n">myplugin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;mypackage.plugin:flake8_plugin&quot;</span>
 </code></pre></div></td></tr></table></div>
 
 
@@ -1160,42 +1164,6 @@ format of <code>[project.scripts]</code>:</p>
       </main>
       
         <footer class="md-footer">
-  
-    
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
-      
-        
-        <a href="../../usage/configuration/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Configurations" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              Configurations
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../tool-pdm/" class="md-footer__link md-footer__link--next" aria-label="Next: PDM Tool Settings" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              PDM Tool Settings
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -1253,14 +1221,13 @@ format of <code>[project.scripts]</code>:</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky"], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky"], "search": "../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      <script src="../../assets/javascripts/bundle.ba449ae6.min.js"></script>
       
         <script src="../../assets/extra.js"></script>
       
-    
     
   </body>
 </html>

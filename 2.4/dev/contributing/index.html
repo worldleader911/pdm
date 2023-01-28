@@ -1024,7 +1024,7 @@ git<span class="w"> </span>fetch<span class="w"> </span>origin<span class="w"> <
 python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
 </code></pre></div></td></tr></table></div>
 <p>You are free to create a virtualenv with either <code>venv</code> module or <code>virtualenv</code> tool for the development. If you are doing
-so, you may also need to set <code>pdm config use_venv true</code> after installation is done.</p>
+so, you may also need to set <code>pdm config python.use_venv true</code> after installation is done.</p>
 <p>Now, all dependencies are installed into the Python environment you choose, which will be used for development after this point.</p>
 <h3 id="run-tests">Run tests<a class="headerlink" href="#run-tests" title="Permanent link">#</a></h3>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm<span class="w"> </span>run<span class="w"> </span><span class="nb">test</span>

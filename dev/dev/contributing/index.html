@@ -1025,14 +1025,29 @@ git<span class="w"> </span>fetch<span class="w"> </span>origin<span class="w"> <
 <li>Create a Pull Request from that patch branch.</li>
 </ol>
 <h2 id="local-development">Local development<a class="headerlink" href="#local-development" title="Permanent link">#</a></h2>
-<p>You will need to install base dependencies in a venv. Make sure your <code>pip</code> is newer than <code>21.3</code> to install PDM in develop/editable mode.</p>
+<p>We recommend working in a virtual environment.
+Feel free to create a virtual environment with either the <code>venv</code> module or the <code>virtualenv</code> tool.
+For example:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
+.<span class="w"> </span>.venv/bin/activate<span class="w">  </span><span class="c1"># linux</span>
+.venv/Scripts/activate<span class="w">  </span><span class="c1"># windows</span>
+</code></pre></div></td></tr></table></div>
+<p>Make sure your <code>pip</code> is newer than <code>21.3</code> to install PDM in develop/editable mode.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span><span class="s2">&quot;pip&gt;=21.3&quot;</span>
 python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
 </code></pre></div></td></tr></table></div>
-<p>You are free to create a virtualenv with either <code>venv</code> module or <code>virtualenv</code> tool for the development. If you are doing
-so, you may also need to set <code>pdm config python.use_venv true</code> after installation is done.</p>
-<p>Now, all dependencies are installed into the Python environment you choose, which will be used for development after this point.</p>
+<p>Make sure PDM uses the virtual environment you just created:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm<span class="w"> </span>config<span class="w"> </span>-l<span class="w"> </span>python.use_venv<span class="w"> </span><span class="nb">true</span>
+pdm<span class="w"> </span>config<span class="w"> </span>-l<span class="w"> </span>venv.in_project<span class="w"> </span><span class="nb">true</span>
+</code></pre></div></td></tr></table></div>
+<p>Install PDM development dependencies:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm<span class="w"> </span>install
+</code></pre></div></td></tr></table></div>
+<p>Now, all dependencies are installed into the Python environment you chose, which will be used for development after this point.</p>
 <h3 id="run-tests">Run tests<a class="headerlink" href="#run-tests" title="Permanent link">#</a></h3>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm<span class="w"> </span>run<span class="w"> </span><span class="nb">test</span>
 </code></pre></div></td></tr></table></div>
@@ -1048,10 +1063,16 @@ You can either run it by yourself with:</p>
 </code></pre></div></td></tr></table></div>
 </div>
 <h3 id="code-style">Code style<a class="headerlink" href="#code-style" title="Permanent link">#</a></h3>
-<p>PDM uses <code>pre-commit</code> for linting. Install <code>pre-commit</code> first, then:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>pre-commit<span class="w"> </span>install
-pdm<span class="w"> </span>run<span class="w"> </span>lint
+<p>PDM uses <code>pre-commit</code> for linting. Install <code>pre-commit</code> first, for example with pip or <a href="https://github.com/pypa/pipx">pipx</a>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>pre-commit
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pipx<span class="w"> </span>install<span class="w"> </span>pre-commit
+</code></pre></div></td></tr></table></div>
+<p>Then initialize <code>pre-commit</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pre-commit<span class="w"> </span>install
+</code></pre></div></td></tr></table></div>
+<p>You can now lint the code with:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm<span class="w"> </span>run<span class="w"> </span>lint
 </code></pre></div></td></tr></table></div>
 <p>PDM uses <code>black</code> for code style and <code>isort</code> for sorting import statements. If you are not following them,
 the CI will fail and your Pull Request will not be merged.</p>

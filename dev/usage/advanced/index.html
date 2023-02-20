@@ -560,26 +560,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#integrate-with-other-ide-or-editors" class="md-nav__link">
-    Integrate with other IDE or editors
-  </a>
-  
-    <nav class="md-nav" aria-label="Integrate with other IDE or editors">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#work-with-lsp-python-ms-in-emacs" class="md-nav__link">
-    Work with lsp-python-ms in Emacs
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#hooks-for-pre-commit" class="md-nav__link">
     Hooks for pre-commit
   </a>
@@ -970,26 +950,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#integrate-with-other-ide-or-editors" class="md-nav__link">
-    Integrate with other IDE or editors
-  </a>
-  
-    <nav class="md-nav" aria-label="Integrate with other IDE or editors">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#work-with-lsp-python-ms-in-emacs" class="md-nav__link">
-    Work with lsp-python-ms in Emacs
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#hooks-for-pre-commit" class="md-nav__link">
     Hooks for pre-commit
   </a>
@@ -1261,75 +1221,6 @@ and then copy this folder into the final stage, adding it to <code>PYTHONPATH</c
 
 <span class="c"># set command/entrypoint, adapt to fit your needs</span>
 <span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;python&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;-m&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;project&quot;</span><span class="p">]</span>
-</code></pre></div></td></tr></table></div>
-<h2 id="integrate-with-other-ide-or-editors">Integrate with other IDE or editors<a class="headerlink" href="#integrate-with-other-ide-or-editors" title="Permanent link">#</a></h2>
-<h3 id="work-with-lsp-python-ms-in-emacs">Work with lsp-python-ms in Emacs<a class="headerlink" href="#work-with-lsp-python-ms-in-emacs" title="Permanent link">#</a></h3>
-<p>Below is a sample code snippet showing how to make PDM work with <a href="https://github.com/emacs-lsp/lsp-python-ms">lsp-python-ms</a> in Emacs. Contributed by <a href="https://github.com/pdm-project/pdm/discussions/372#discussion-3303501">@linw1995</a>.</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">  </span><span class="c1">;; TODO: Cache result</span>
-<span class="w">  </span><span class="p">(</span><span class="nb">defun</span><span class="w"> </span><span class="nv">linw1995/pdm-get-python-executable</span><span class="w"> </span><span class="p">(</span><span class="kp">&amp;optional</span><span class="w"> </span><span class="nv">dir</span><span class="p">)</span>
-<span class="w">    </span><span class="p">(</span><span class="k">let</span><span class="w"> </span><span class="p">((</span><span class="nv">pdm-get-python-cmd</span><span class="w"> </span><span class="s">&quot;pdm info --python&quot;</span><span class="p">))</span>
-<span class="w">      </span><span class="p">(</span><span class="nv">string-trim</span>
-<span class="w">       </span><span class="p">(</span><span class="nv">shell-command-to-string</span>
-<span class="w">        </span><span class="p">(</span><span class="k">if</span><span class="w"> </span><span class="nv">dir</span>
-<span class="w">            </span><span class="p">(</span><span class="nf">concat</span><span class="w"> </span><span class="s">&quot;cd &quot;</span>
-<span class="w">                    </span><span class="nv">dir</span>
-<span class="w">                    </span><span class="s">&quot; &amp;&amp; &quot;</span>
-<span class="w">                    </span><span class="nv">pdm-get-python-cmd</span><span class="p">)</span>
-<span class="w">          </span><span class="nv">pdm-get-python-cmd</span><span class="p">)))))</span>
-
-<span class="w">  </span><span class="p">(</span><span class="nb">defun</span><span class="w"> </span><span class="nv">linw1995/pdm-get-packages-path</span><span class="w"> </span><span class="p">(</span><span class="kp">&amp;optional</span><span class="w"> </span><span class="nv">dir</span><span class="p">)</span>
-<span class="w">    </span><span class="p">(</span><span class="k">let</span><span class="w"> </span><span class="p">((</span><span class="nv">pdm-get-packages-cmd</span><span class="w"> </span><span class="s">&quot;pdm info --packages&quot;</span><span class="p">))</span>
-<span class="w">      </span><span class="p">(</span><span class="nf">concat</span><span class="w"> </span><span class="p">(</span><span class="nv">string-trim</span>
-<span class="w">               </span><span class="p">(</span><span class="nv">shell-command-to-string</span>
-<span class="w">                </span><span class="p">(</span><span class="k">if</span><span class="w"> </span><span class="nv">dir</span>
-<span class="w">                    </span><span class="p">(</span><span class="nf">concat</span><span class="w"> </span><span class="s">&quot;cd &quot;</span>
-<span class="w">                            </span><span class="nv">dir</span>
-<span class="w">                            </span><span class="s">&quot; &amp;&amp; &quot;</span>
-<span class="w">                            </span><span class="nv">pdm-get-packages-cmd</span><span class="p">)</span>
-<span class="w">                  </span><span class="nv">pdm-get-packages-cmd</span><span class="p">)))</span>
-<span class="w">              </span><span class="s">&quot;/lib&quot;</span><span class="p">)))</span>
-
-<span class="w">  </span><span class="p">(</span><span class="nb">use-package</span><span class="w"> </span><span class="nv">lsp-python-ms</span>
-<span class="w">    </span><span class="nb">:ensure</span><span class="w"> </span><span class="no">t</span>
-<span class="w">    </span><span class="nb">:init</span><span class="w"> </span><span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">lsp-python-ms-auto-install-server</span><span class="w"> </span><span class="no">t</span><span class="p">)</span>
-<span class="w">    </span><span class="nb">:hook</span><span class="w"> </span><span class="p">(</span><span class="nv">python-mode</span>
-<span class="w">           </span><span class="o">.</span><span class="w"> </span><span class="p">(</span><span class="nb">lambda</span><span class="w"> </span><span class="p">()</span>
-<span class="w">               </span><span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">lsp-python-ms-python-executable</span><span class="w"> </span><span class="p">(</span><span class="nv">linw1995/pdm-get-python-executable</span><span class="p">))</span>
-<span class="w">               </span><span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">lsp-python-ms-extra-paths</span><span class="w"> </span><span class="p">(</span><span class="nf">vector</span><span class="w"> </span><span class="p">(</span><span class="nv">linw1995/pdm-get-packages-path</span><span class="p">)))</span>
-<span class="w">               </span><span class="p">(</span><span class="nb">require</span><span class="w"> </span><span class="ss">&#39;lsp-python-ms</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="nv">lsp</span><span class="p">))))</span><span class="w">  </span><span class="c1">; or lsp-deferred</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="hooks-for-pre-commit">Hooks for <code>pre-commit</code><a class="headerlink" href="#hooks-for-pre-commit" title="Permanent link">#</a></h2>
 <p><a href="https://pre-commit.com/"><code>pre-commit</code></a> is a powerful framework for managing git hooks in a centralized fashion. PDM already uses <code>pre-commit</code> <a href="https://github.com/pdm-project/pdm/blob/main/.pre-commit-config.yaml">hooks</a> for its internal QA checks. PDM exposes also several hooks that can be run locally or in CI pipelines.</p>

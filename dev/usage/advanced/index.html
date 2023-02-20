@@ -1352,7 +1352,7 @@ and then copy this folder into the final stage, adding it to <code>PYTHONPATH</c
 <span class="w">      </span><span class="nt">files</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^pdm.lock$</span>
 </code></pre></div></td></tr></table></div>
 <h3 id="check-pdmlock-is-up-to-date-with-pyprojecttoml">Check <code>pdm.lock</code> is up to date with pyproject.toml<a class="headerlink" href="#check-pdmlock-is-up-to-date-with-pyprojecttoml" title="Permanent link">#</a></h3>
-<p>This hook wraps the command <code>pdm lock --check</code> along with any valid argument. It can be used as a hook (e.g., for CI) to ensure that whenever <code>pyproject.toml</code> has a dependency added/changed/removed, that <code>.pdm.lock</code> is also up to date.</p>
+<p>This hook wraps the command <code>pdm lock --check</code> along with any valid argument. It can be used as a hook (e.g., for CI) to ensure that whenever <code>pyproject.toml</code> has a dependency added/changed/removed, that <code>pdm.lock</code> is also up to date.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>

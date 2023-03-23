@@ -982,7 +982,7 @@ Other virtualenvs go to the location specified by the <code>venv.location</code>
 <p>When no interpreter is stored in the project config or <code>PDM_IGNORE_SAVED_PYTHON</code> env var is set, PDM will try to detect possible virtualenvs to use:</p>
 <ul>
 <li><code>venv</code>, <code>env</code>, <code>.venv</code> directories in the project root</li>
-<li>The currently activated virtualenv</li>
+<li>The currently activated virtualenv, unless <code>PDM_IGNORE_ACTIVE_VENV</code> is set</li>
 </ul>
 <h2 id="list-all-virtualenvs-created-with-this-project">List all virtualenvs created with this project<a class="headerlink" href="#list-all-virtualenvs-created-with-this-project" title="Permanent link">#</a></h2>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>

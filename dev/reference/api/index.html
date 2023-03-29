@@ -644,6 +644,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#pdm.core.Core.before_invoke" class="md-nav__link">
+    before_invoke()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#pdm.core.Core.create_project" class="md-nav__link">
     create_project()
   </a>
@@ -861,6 +868,13 @@
           <li class="md-nav__item">
   <a href="#pdm.signals.pre_install" class="md-nav__link">
     pre_install
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pdm.signals.pre_invoke" class="md-nav__link">
+    pre_invoke
   </a>
   
 </li>
@@ -1075,6 +1089,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#pdm.core.Core.before_invoke" class="md-nav__link">
+    before_invoke()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#pdm.core.Core.create_project" class="md-nav__link">
     create_project()
   </a>
@@ -1297,6 +1318,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#pdm.signals.pre_invoke" class="md-nav__link">
+    pre_invoke
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#pdm.signals.pre_lock" class="md-nav__link">
     pre_lock
   </a>
@@ -1432,6 +1460,24 @@
         </tr>
     </tbody>
   </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="pdm.core.Core.before_invoke" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">before_invoke</span><span class="p">(</span><span class="n">project</span><span class="p">,</span> <span class="n">command</span><span class="p">,</span> <span class="n">options</span><span class="p">)</span></code>
+
+<a href="#pdm.core.Core.before_invoke" class="headerlink" title="Permanent link">#</a></h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Called before command invocation</p>
 
   </div>
 
@@ -2611,6 +2657,71 @@ lower lockfile but not vice versa.</p>
                 <code>bool</code>
           </td>
           <td><p>If true, won't perform any actions</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="pdm.signals.pre_invoke" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">pre_invoke</span><span class="p">:</span> <span class="n">NamedSignal</span> <span class="o">=</span> <span class="n">pdm_signals</span><span class="o">.</span><span class="n">signal</span><span class="p">(</span><span class="s1">&#39;pre_invoke&#39;</span><span class="p">)</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
+  </span>
+
+<a href="#pdm.signals.pre_invoke" class="headerlink" title="Permanent link">#</a></h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Called before any command is invoked.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>project</code></td>
+          <td>
+                <code>Project</code>
+          </td>
+          <td><p>The project object</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>command</code></td>
+          <td>
+                <code>str | None</code>
+          </td>
+          <td><p>the command name</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>options</code></td>
+          <td>
+                <code><span title="blinker.Namespace">Namespace</span></code>
+          </td>
+          <td><p>the parsed arguments</p></td>
           <td>
               <em>required</em>
           </td>

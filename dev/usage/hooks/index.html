@@ -912,6 +912,7 @@ of a Python project lifecycle and PDM provides commands to perform the expected 
 <li>plugins to listen to the <a class="autorefs autorefs-internal" href="../../reference/api/#pdm.signals">signals</a> of the same name.</li>
 <li>developers to define custom scripts with the same name.</li>
 </ul>
+<p>Besides, <code>pre_invoke</code> signal is emitted before ANY command is invoked, allowing plugins to modify the project or options beforehand.</p>
 <p>The built-in commands are currently split into 3 groups:</p>
 <ul>
 <li>the <a href="#initialization">initialization phase</a></li>

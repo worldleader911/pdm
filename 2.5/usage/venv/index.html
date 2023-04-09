@@ -573,6 +573,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#run-a-command-in-a-virtual-environment-without-activating-it" class="md-nav__link">
+    Run a command in a virtual environment without activating it
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#switch-to-a-virtualenv-as-the-project-environment" class="md-nav__link">
+    Switch to a virtualenv as the project environment
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#disable-virtualenv-mode" class="md-nav__link">
     Disable virtualenv mode
   </a>
@@ -923,6 +937,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#run-a-command-in-a-virtual-environment-without-activating-it" class="md-nav__link">
+    Run a command in a virtual environment without activating it
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#switch-to-a-virtualenv-as-the-project-environment" class="md-nav__link">
+    Switch to a virtualenv as the project environment
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#disable-virtualenv-mode" class="md-nav__link">
     Disable virtualenv mode
   </a>
@@ -1065,6 +1093,30 @@ Available variables are:</p>
 <span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span><span class="nv">PDM_VENV_PROMPT</span><span class="o">=</span><span class="s1">&#39;{project_name}-py{python_version}&#39;</span><span class="w"> </span>pdm<span class="w"> </span>venv<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>test-prompt
 $<span class="w"> </span><span class="nb">eval</span><span class="w"> </span><span class="k">$(</span>pdm<span class="w"> </span>venv<span class="w"> </span>activate<span class="w"> </span>test-prompt<span class="k">)</span>
 <span class="o">(</span>test-project-py3.10<span class="o">)</span><span class="w"> </span>$
+</code></pre></div></td></tr></table></div>
+<h2 id="run-a-command-in-a-virtual-environment-without-activating-it">Run a command in a virtual environment without activating it<a class="headerlink" href="#run-a-command-in-a-virtual-environment-without-activating-it" title="Permanent link">#</a></h2>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Run a script</span>
+$<span class="w"> </span>pdm<span class="w"> </span>run<span class="w"> </span>--venv<span class="w"> </span><span class="nb">test</span><span class="w"> </span><span class="nb">test</span>
+<span class="c1"># Install packages</span>
+$<span class="w"> </span>pdm<span class="w"> </span>sync<span class="w"> </span>--venv<span class="w"> </span><span class="nb">test</span>
+<span class="c1"># List the packages installed</span>
+$<span class="w"> </span>pdm<span class="w"> </span>list<span class="w"> </span>--venv<span class="w"> </span><span class="nb">test</span>
+</code></pre></div></td></tr></table></div>
+<p>There are other commands supporting <code>--venv</code> flag or <code>PDM_USE_VENV</code> environment variable, see the <a href="../../reference/cli/">CLI reference</a>. You should create the virtualenv with <code>pdm venv create --name &lt;name&gt;</code> before using this feature.</p>
+<h2 id="switch-to-a-virtualenv-as-the-project-environment">Switch to a virtualenv as the project environment<a class="headerlink" href="#switch-to-a-virtualenv-as-the-project-environment" title="Permanent link">#</a></h2>
+<p>By default, if you use <code>pdm use</code> and select a non-venv Python, the project will be switched to <a href="../pep582.md">PEP 582 mode</a>. We also allow you to switch to a named virtual environment via the <code>--venv</code> flag:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Switch to a virtualenv named test</span>
+$<span class="w"> </span>pdm<span class="w"> </span>use<span class="w"> </span>--venv<span class="w"> </span><span class="nb">test</span>
+<span class="c1"># Switch to the in-project venv located at $PROJECT_ROOT/.venv</span>
+$<span class="w"> </span>pdm<span class="w"> </span>use<span class="w"> </span>--venv
 </code></pre></div></td></tr></table></div>
 <h2 id="disable-virtualenv-mode">Disable virtualenv mode<a class="headerlink" href="#disable-virtualenv-mode" title="Permanent link">#</a></h2>
 <p>You can disable the auto-creation and auto-detection for virtualenv by <code>pdm config python.use_venv false</code>.

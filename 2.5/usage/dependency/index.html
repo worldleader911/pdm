@@ -1503,12 +1503,16 @@ bump2version 1.0.0
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code># No binary for werkzeug will be locked nor used for installation
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code># No binary for werkzeug will be locked nor used for installation
 PDM_NO_BINARY=werkzeug pdm add flask
 # Only binaries will be locked in the lock file
 PDM_ONLY_BINARY=:all: pdm lock
 # No binaries will be used for installation
 PDM_NO_BINARY=:all: pdm install
+# Prefer binary distributions and even if sdist with higher version is available
+PDM_PREFER_BINARY=flask pdm install
 </code></pre></div></td></tr></table></div>
 <h2 id="solve-the-locking-failure">Solve the locking failure<a class="headerlink" href="#solve-the-locking-failure" title="Permanent link">#</a></h2>
 <p>If PDM is not able to find a resolution to satisfy the requirements, it will raise an error. For example,</p>

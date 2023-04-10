@@ -814,7 +814,7 @@
 <li><code>--pre</code>, <code>--prerelease</code>: Allow prereleases to be pinned</li>
 <li><code>-u</code>, <code>--unconstrained</code>: Ignore the version constraint of packages</li>
 <li><code>--dry-run</code>: Show the difference only and don't perform any action</li>
-<li><code>--venv</code> <code>NAME</code>: Run the command in the virtual environment with the given key. [env var: PDM_USE_VENV]</li>
+<li><code>--venv</code> <code>NAME</code>: Run the command in the virtual environment with the given key. [env var: PDM_IN_VENV]</li>
 <li><code>-k</code>, <code>--skip</code>: Skip some tasks and/or hooks by their comma-separated names. Can be supplied multiple times. Use ":all" to skip all hooks. Use ":pre" and ":post" to skip all pre or post hooks.</li>
 <li><code>-d</code>, <code>--dev</code>: Add packages into dev dependencies</li>
 <li><code>-G</code>, <code>--group</code>: Specify the target dependency group to add into</li>
@@ -999,7 +999,7 @@
 <li><code>-v</code>, <code>--verbose</code>: -v for detailed output and -vv for more detailed</li>
 <li><code>-g</code>, <code>--global</code>: Use the global project, supply the project root with <code>-p</code> option</li>
 <li><code>-p</code>, <code>--project</code>: Specify another path as the project root, which changes the base of pyproject.toml and <strong>pypackages</strong></li>
-<li><code>--venv</code> <code>NAME</code>: Run the command in the virtual environment with the given key. [env var: PDM_USE_VENV]</li>
+<li><code>--venv</code> <code>NAME</code>: Run the command in the virtual environment with the given key. [env var: PDM_IN_VENV]</li>
 <li><code>--python</code>: Show the interpreter path</li>
 <li><code>--where</code>: Show the project root path</li>
 <li><code>--packages</code>: Show the local packages root</li>
@@ -1034,7 +1034,7 @@
 <li><code>--dry-run</code>: Show the difference only and don't perform any action</li>
 <li><code>-L</code>, <code>--lockfile</code>: Specify another lockfile path. Default: pdm.lock. [env var: PDM_LOCKFILE]</li>
 <li><code>-k</code>, <code>--skip</code>: Skip some tasks and/or hooks by their comma-separated names. Can be supplied multiple times. Use ":all" to skip all hooks. Use ":pre" and ":post" to skip all pre or post hooks.</li>
-<li><code>--venv</code> <code>NAME</code>: Run the command in the virtual environment with the given key. [env var: PDM_USE_VENV]</li>
+<li><code>--venv</code> <code>NAME</code>: Run the command in the virtual environment with the given key. [env var: PDM_IN_VENV]</li>
 <li><code>--no-lock</code>: Don't do lock if the lock file is not found or outdated(default: <code>True</code>)</li>
 <li><code>--check</code>: Check if the lock file is up to date and fail otherwise</li>
 </ul>
@@ -1062,7 +1062,7 @@
 <li><code>-v</code>, <code>--verbose</code>: -v for detailed output and -vv for more detailed</li>
 <li><code>-g</code>, <code>--global</code>: Use the global project, supply the project root with <code>-p</code> option</li>
 <li><code>-p</code>, <code>--project</code>: Specify another path as the project root, which changes the base of pyproject.toml and <strong>pypackages</strong></li>
-<li><code>--venv</code> <code>NAME</code>: Run the command in the virtual environment with the given key. [env var: PDM_USE_VENV]</li>
+<li><code>--venv</code> <code>NAME</code>: Run the command in the virtual environment with the given key. [env var: PDM_IN_VENV]</li>
 <li><code>--freeze</code>: Show the installed dependencies in pip's requirements.txt format</li>
 <li><code>--graph</code>: Display a graph of dependencies</li>
 <li><code>-r</code>, <code>--reverse</code>: Reverse the dependency graph</li>
@@ -1134,7 +1134,7 @@
 <li><code>--dry-run</code>: Show the difference only and don't perform any action</li>
 <li><code>-L</code>, <code>--lockfile</code>: Specify another lockfile path. Default: pdm.lock. [env var: PDM_LOCKFILE]</li>
 <li><code>-k</code>, <code>--skip</code>: Skip some tasks and/or hooks by their comma-separated names. Can be supplied multiple times. Use ":all" to skip all hooks. Use ":pre" and ":post" to skip all pre or post hooks.</li>
-<li><code>--venv</code> <code>NAME</code>: Run the command in the virtual environment with the given key. [env var: PDM_USE_VENV]</li>
+<li><code>--venv</code> <code>NAME</code>: Run the command in the virtual environment with the given key. [env var: PDM_IN_VENV]</li>
 <li><code>-d</code>, <code>--dev</code>: Remove packages from dev dependencies</li>
 <li><code>-G</code>, <code>--group</code>: Specify the target dependency group to remove from</li>
 <li><code>--no-sync</code>: Only write pyproject.toml and do not uninstall packages(default: <code>True</code>)</li>
@@ -1162,7 +1162,7 @@
 <li><code>-g</code>, <code>--global</code>: Use the global project, supply the project root with <code>-p</code> option</li>
 <li><code>-p</code>, <code>--project</code>: Specify another path as the project root, which changes the base of pyproject.toml and <strong>pypackages</strong></li>
 <li><code>-k</code>, <code>--skip</code>: Skip some tasks and/or hooks by their comma-separated names. Can be supplied multiple times. Use ":all" to skip all hooks. Use ":pre" and ":post" to skip all pre or post hooks.</li>
-<li><code>--venv</code> <code>NAME</code>: Run the command in the virtual environment with the given key. [env var: PDM_USE_VENV]</li>
+<li><code>--venv</code> <code>NAME</code>: Run the command in the virtual environment with the given key. [env var: PDM_IN_VENV]</li>
 <li><code>-l</code>, <code>--list</code>: Show all available scripts defined in pyproject.toml</li>
 <li><code>-s</code>, <code>--site-packages</code>: Load site-packages from the selected interpreter</li>
 </ul>
@@ -1315,7 +1315,7 @@
 <li><code>-v</code>, <code>--verbose</code>: -v for detailed output and -vv for more detailed</li>
 <li><code>-g</code>, <code>--global</code>: Use the global project, supply the project root with <code>-p</code> option</li>
 <li><code>-p</code>, <code>--project</code>: Specify another path as the project root, which changes the base of pyproject.toml and <strong>pypackages</strong></li>
-<li><code>--venv</code> <code>NAME</code>: Run the command in the virtual environment with the given key. [env var: PDM_USE_VENV]</li>
+<li><code>--venv</code> <code>NAME</code>: Run the command in the virtual environment with the given key. [env var: PDM_IN_VENV]</li>
 <li><code>--name</code>: Show name</li>
 <li><code>--version</code>: Show version</li>
 <li><code>--summary</code>: Show summary</li>
@@ -1338,7 +1338,7 @@
 <li><code>-k</code>, <code>--skip</code>: Skip some tasks and/or hooks by their comma-separated names. Can be supplied multiple times. Use ":all" to skip all hooks. Use ":pre" and ":post" to skip all pre or post hooks.</li>
 <li><code>--clean</code>: clean packages not in the lockfile</li>
 <li><code>--only-keep</code>: only keep the selected packages</li>
-<li><code>--venv</code> <code>NAME</code>: Run the command in the virtual environment with the given key. [env var: PDM_USE_VENV]</li>
+<li><code>--venv</code> <code>NAME</code>: Run the command in the virtual environment with the given key. [env var: PDM_IN_VENV]</li>
 <li><code>-r</code>, <code>--reinstall</code>: Force reinstall existing dependencies</li>
 </ul>
 <p>Install Options:</p>
@@ -1380,7 +1380,7 @@
 <li><code>--pre</code>, <code>--prerelease</code>: Allow prereleases to be pinned</li>
 <li><code>-u</code>, <code>--unconstrained</code>: Ignore the version constraint of packages</li>
 <li><code>-k</code>, <code>--skip</code>: Skip some tasks and/or hooks by their comma-separated names. Can be supplied multiple times. Use ":all" to skip all hooks. Use ":pre" and ":post" to skip all pre or post hooks.</li>
-<li><code>--venv</code> <code>NAME</code>: Run the command in the virtual environment with the given key. [env var: PDM_USE_VENV]</li>
+<li><code>--venv</code> <code>NAME</code>: Run the command in the virtual environment with the given key. [env var: PDM_IN_VENV]</li>
 <li><code>-t</code>, <code>--top</code>: Only update those listed in pyproject.toml</li>
 <li><code>--dry-run</code>, <code>--outdated</code>: Show the difference only without modifying the lockfile content</li>
 <li><code>--no-sync</code>: Only update lock file but do not sync packages(default: <code>True</code>)</li>

@@ -595,6 +595,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#including-pip-in-your-virtual-environment" class="md-nav__link">
+    Including pip in your virtual environment
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -959,6 +966,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#including-pip-in-your-virtual-environment" class="md-nav__link">
+    Including pip in your virtual environment
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1123,6 +1137,25 @@ $<span class="w"> </span>pdm<span class="w"> </span>use<span class="w"> </span>-
 <h2 id="disable-virtualenv-mode">Disable virtualenv mode<a class="headerlink" href="#disable-virtualenv-mode" title="Permanent link">#</a></h2>
 <p>You can disable the auto-creation and auto-detection for virtualenv by <code>pdm config python.use_venv false</code>.
 <strong>If venv is disabled, PEP 582 mode will always be used even if the selected interpreter is from a virtualenv.</strong></p>
+<h2 id="including-pip-in-your-virtual-environment">Including pip in your virtual environment<a class="headerlink" href="#including-pip-in-your-virtual-environment" title="Permanent link">#</a></h2>
+<p>By default PDM will not include <code>pip</code> in virtual environments.
+This increases isolation by ensuring that <em>only your dependencies</em> are installed in the virtual environment.</p>
+<p>To install <code>pip</code> once (if for example you want to install arbitrary dependencies in CI) you can run:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Install pip in the virtual environment</span>
+$<span class="w"> </span>pdm<span class="w"> </span>run<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>ensurepip
+<span class="c1"># Install arbitrary dependencies</span>
+<span class="c1"># These dependencies are not checked for conflicts against lockfile dependencies!</span>
+$<span class="w"> </span>pdm<span class="w"> </span>run<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>coverage
+</code></pre></div></td></tr></table></div>
+<p>Or you can create the virtual environment with <code>--with-pip</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>pdm<span class="w"> </span>venv<span class="w"> </span>create<span class="w"> </span>--with-pip<span class="w"> </span><span class="m">3</span>.9
+</code></pre></div></td></tr></table></div>
+<p>See the <a href="https://docs.python.org/3/library/ensurepip.html">ensurepip docs</a> for more details on <code>ensurepip</code>.</p>
+<p>If you want to permanently configure PDM to include <code>pip</code> in virtual environments you can use the <a href="../../reference/configuration/"><code>venv.with_pip</code></a> configuration.</p>
 
 
   

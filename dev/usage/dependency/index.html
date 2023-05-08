@@ -545,6 +545,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#cross-platform-lockfile" class="md-nav__link">
+    Cross-platform lockfile
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#show-what-packages-are-installed" class="md-nav__link">
     Show what packages are installed
   </a>
@@ -1068,6 +1075,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#cross-platform-lockfile" class="md-nav__link">
+    Cross-platform lockfile
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#show-what-packages-are-installed" class="md-nav__link">
     Show what packages are installed
   </a>
@@ -1462,6 +1476,12 @@ pdm<span class="w"> </span>lock
 pdm<span class="w"> </span>lock<span class="w"> </span>--prod<span class="w"> </span>-L<span class="w"> </span>pdm.prod.lock
 </code></pre></div></td></tr></table></div>
 <p>Check the <code>metadata.groups</code> field in the lockfile to see which groups are included.</p>
+<h2 id="cross-platform-lockfile">Cross-platform lockfile<a class="headerlink" href="#cross-platform-lockfile" title="Permanent link">#</a></h2>
+<p>By default, the generated lockfile is <strong>cross-platform</strong>, which means the current platform isn't taken into account when resolving the dependencies. The result lockfile will contain wheels and dependencies for all possible platforms and Python versions.
+However, sometimes this will result in a wrong lockfile when a release doesn't contain all wheels. To avoid this, you can tell PDM
+to create a lockfile that works for <strong>this platform</strong> only, trimming the wheels not relevant to the current platform. This can be done by passing the <code>--no-cross-platform</code> option to <code>pdm lock</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm<span class="w"> </span>lock<span class="w"> </span>--no-cross-platform
+</code></pre></div></td></tr></table></div>
 <h2 id="show-what-packages-are-installed">Show what packages are installed<a class="headerlink" href="#show-what-packages-are-installed" title="Permanent link">#</a></h2>
 <p>Similar to <code>pip list</code>, you can list all packages installed in the packages directory:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm<span class="w"> </span>list

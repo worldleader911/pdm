@@ -19,7 +19,7 @@
     
     
       
-        <title>Write a plugin - PDM</title>
+        <title>PDM Plugins - PDM</title>
       
     
     
@@ -84,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#write-a-plugin" class="md-skip">
+        <a href="#pdm-plugins" class="md-skip">
           Skip to content
         </a>
       
@@ -135,7 +135,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Write a plugin
+              PDM Plugins
             
           </span>
         </div>
@@ -656,12 +656,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Write a plugin
+          PDM Plugins
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Write a plugin
+        PDM Plugins
       </a>
       
         
@@ -751,6 +751,13 @@
         <li class="md-nav__item">
   <a href="#activate-the-plugin" class="md-nav__link">
     Activate the plugin
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#specify-the-plugins-in-project" class="md-nav__link">
+    Specify the plugins in project
   </a>
   
 </li>
@@ -943,6 +950,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#specify-the-plugins-in-project" class="md-nav__link">
+    Specify the plugins in project
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -962,7 +976,7 @@
 
 
 
-<h1 id="write-a-plugin">Write a plugin<a class="headerlink" href="#write-a-plugin" title="Permanent link">#</a></h1>
+<h1 id="pdm-plugins">PDM Plugins<a class="headerlink" href="#pdm-plugins" title="Permanent link">#</a></h1>
 <p>PDM is aiming at being a community driven package manager.
 It is shipped with a full-featured plug-in system, with which you can:</p>
 <ul>
@@ -1170,6 +1184,33 @@ For convenience, PDM provides a <code>plugin</code> command group to manage plug
 Hello,<span class="w"> </span>Jack
 </code></pre></div></td></tr></table></div>
 <p>See more plugin management subcommands by typing <code>pdm self --help</code> in the terminal.</p>
+<h2 id="specify-the-plugins-in-project">Specify the plugins in project<a class="headerlink" href="#specify-the-plugins-in-project" title="Permanent link">#</a></h2>
+<p>To specify the required plugins for a project, you can use the <code>tool.pdm.plugins</code> config in the <code>pyproject.toml</code> file.
+These dependencies can be installed into a project plugin library by running <code>pdm install --plugins</code>.
+The project plugin library will be loaded in subsequent PDM commands.</p>
+<p>This is useful when you want to share the same plugin set with the contributors.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># pyproject.toml</span>
+<span class="k">[tool.pdm]</span>
+<span class="n">plugins</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s">&quot;pdm-packer&quot;</span>
+<span class="p">]</span>
+</code></pre></div></td></tr></table></div>
+<p>Run <code>pdm install --plugins</code> to install and activate the plugins.</p>
+<p>Alternatively, you can have project-local plugins that are not published to PyPI, by using editable local dependencies:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># pyproject.toml</span>
+<span class="k">[tool.pdm]</span>
+<span class="n">plugins</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s">&quot;-e file:///${PROJECT_ROOT}/plugins/my_plugin&quot;</span>
+<span class="p">]</span>
+</code></pre></div></td></tr></table></div>
 
 
   

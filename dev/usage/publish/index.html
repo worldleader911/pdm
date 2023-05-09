@@ -442,6 +442,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#publish-with-trusted-publishers" class="md-nav__link">
+    Publish with trusted publishers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#build-and-publish-separately" class="md-nav__link">
     Build and publish separately
   </a>
@@ -799,6 +806,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#publish-with-trusted-publishers" class="md-nav__link">
+    Publish with trusted publishers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#build-and-publish-separately" class="md-nav__link">
     Build and publish separately
   </a>
@@ -833,6 +847,37 @@
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm<span class="w"> </span>publish<span class="w"> </span>--repository<span class="w"> </span>testpypi
 pdm<span class="w"> </span>publish<span class="w"> </span>--repository<span class="w"> </span>https://test.pypi.org/legacy/
+</code></pre></div></td></tr></table></div>
+<h2 id="publish-with-trusted-publishers">Publish with trusted publishers<a class="headerlink" href="#publish-with-trusted-publishers" title="Permanent link">#</a></h2>
+<p>You can configure trusted publishers for PyPI so that you don't need to expose the PyPI tokens in the release workflow. To do this, follow
+<a href="https://docs.pypi.org/trusted-publishers/adding-a-publisher/">the guide</a> to add a publisher and write the GitHub Actions workflow as below:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">jobs</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">pypi-publish</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">upload release to PyPI</span>
+<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+<span class="w">    </span><span class="nt">permissions</span><span class="p">:</span>
+<span class="w">      </span><span class="c1"># IMPORTANT: this permission is mandatory for trusted publishing</span>
+<span class="w">      </span><span class="nt">id-token</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">write</span>
+<span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v3</span>
+
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pdm-project/setup-pdm@v3</span>
+
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Publish package distributions to PyPI</span>
+<span class="w">        </span><span class="nt">runs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pdm publish</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="build-and-publish-separately">Build and publish separately<a class="headerlink" href="#build-and-publish-separately" title="Permanent link">#</a></h2>
 <p>You can also build the package and upload it in two steps, to allow you to inspect the built artifacts before uploading.</p>

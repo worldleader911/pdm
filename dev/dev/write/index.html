@@ -1110,17 +1110,22 @@ You need to register the config item, too:</p>
 PDM also provides some signals you can listen to.
 Please read the <a href="../../reference/api/">API reference</a> for more details.</p>
 <h3 id="tips-about-developing-a-pdm-plugin">Tips about developing a PDM plugin<a class="headerlink" href="#tips-about-developing-a-pdm-plugin" title="Permanent link">#</a></h3>
-<p>When developing a plugin, one hopes to activate and plugin in development and get updated when the code changes. This is usually done
-by <code>pip install -e .</code> or <code>python setup.py develop</code> in the <strong>traditional</strong> Python packaging world which leverages <code>setup.py</code> to do so. However,
-as there is no such <code>setup.py</code> in a PDM project, how can we do that?</p>
-<p>Fortunately, it becomes even easier with PDM and PEP 582. First, you should enable PEP 582 globally following the
-<a href="../../usage/pep582/#enable-pep-582-globally">corresponding part of this doc</a>. Then you just need to install all dependencies into the <code>__pypackages__</code> directory by:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm<span class="w"> </span>install
+<p>When developing a plugin, one hopes to activate and plugin in development and get updated when the code changes.</p>
+<p>You can achieve this by installing the plugin in editable mode. To do this, specify the dependencies in <code>tool.pdm.plugins</code> array:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm]</span>
+<span class="n">plugins</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s">&quot;-e file:///{PROJECT_ROOT}&quot;</span>
+<span class="p">]</span>
 </code></pre></div></td></tr></table></div>
-<p>After that, all the dependencies are available with a compatible Python interpreter, including the plugin itself, in editable mode. That means any change
+<p>Then install it with:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm<span class="w"> </span>install<span class="w"> </span>--plugins
+</code></pre></div></td></tr></table></div>
+<p>After that, all the dependencies are available in a project plugin library, including the plugin itself, in editable mode. That means any change
 to the codebase will take effect immediately without re-installation. The <code>pdm</code> executable also uses a Python interpreter under the hood,
-so if you run <code>pdm</code> from inside the plugin project, the plugin in development will be activated automatically, and you can do some testing to see how it works.
-That is how PEP 582 benefits our development workflow.</p>
+so if you run <code>pdm</code> from inside the plugin project, the plugin in development will be activated automatically, and you can do some testing to see how it works.</p>
 <h3 id="testing-your-plugin">Testing your plugin<a class="headerlink" href="#testing-your-plugin" title="Permanent link">#</a></h3>
 <p>PDM exposes some pytest fixtures as a plugin in the <a href="../fixtures/"><code>pdm.pytest</code></a> module.
 To benefit from them, you must add <code>pdm[pytest]</code> as a test dependency.</p>

@@ -518,6 +518,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#password-management-with-keyring" class="md-nav__link">
+    Password management with keyring
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#override-the-resolved-package-versions" class="md-nav__link">
     Override the resolved package versions
   </a>
@@ -923,6 +930,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#password-management-with-keyring" class="md-nav__link">
+    Password management with keyring
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#override-the-resolved-package-versions" class="md-nav__link">
     Override the resolved package versions
   </a>
@@ -1107,6 +1121,15 @@ pdm<span class="w"> </span>config<span class="w"> </span>pypi.private.password<s
 <span class="n">password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&lt;secret&gt;&quot;</span>
 <span class="n">ca_certs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;/path/to/custom-cacerts.pem&quot;</span>
 </code></pre></div></td></tr></table></div>
+<p>Alternatively, these credentials can be provided with env vars:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">PDM_PUBLISH_REPO</span><span class="o">=</span>...
+<span class="nb">export</span><span class="w"> </span><span class="nv">PDM_PUBLISH_USERNAME</span><span class="o">=</span>...
+<span class="nb">export</span><span class="w"> </span><span class="nv">PDM_PUBLISH_PASSWORD</span><span class="o">=</span>...
+<span class="nb">export</span><span class="w"> </span><span class="nv">PDM_PUBLISH_CA_CERTS</span><span class="o">=</span>...
+</code></pre></div></td></tr></table></div>
 <p>A PEM-encoded Certificate Authority bundle (<code>ca_certs</code>) can be used for local / custom PyPI repositories where the server certificate is not signed by the standard <a href="https://github.com/certifi/python-certifi/blob/master/certifi/cacert.pem">certifi</a> CA bundle.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1128,6 +1151,14 @@ pdm<span class="w"> </span>config<span class="w"> </span>repository.pypi.passwor
 
 pdm<span class="w"> </span>config<span class="w"> </span>repository.company.url<span class="w"> </span><span class="s2">&quot;https://pypi.company.org/legacy/&quot;</span>
 pdm<span class="w"> </span>config<span class="w"> </span>repository.company.ca_certs<span class="w"> </span><span class="s2">&quot;/path/to/custom-cacerts.pem&quot;</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="password-management-with-keyring">Password management with keyring<a class="headerlink" href="#password-management-with-keyring" title="Permanent link">#</a></h2>
+<p>When keyring is available and supported, the passwords will be stored to and retrieved from the keyring instead of writing to the config file. This supports both indexes and upload repositories. The service name will be <code>pdm-pypi-&lt;name&gt;</code> for an index and <code>pdm-repository-&lt;name&gt;</code> for a repository.</p>
+<p>You can enable keyring by either installing <code>keyring</code> into the same environment as PDM or installing globally. To add keyring to the PDM environment:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm<span class="w"> </span>self<span class="w"> </span>add<span class="w"> </span>keyring
+</code></pre></div></td></tr></table></div>
+<p>Alternatively, if you have installed a copy of keyring globally, make sure the CLI is exposed in the <code>PATH</code> env var to make it discoverable by PDM:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:path/to/keyring/bin
 </code></pre></div></td></tr></table></div>
 <h2 id="override-the-resolved-package-versions">Override the resolved package versions<a class="headerlink" href="#override-the-resolved-package-versions" title="Permanent link">#</a></h2>
 <p><em>New in version 1.12.0</em></p>

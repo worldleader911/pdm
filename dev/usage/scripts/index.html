@@ -1063,7 +1063,7 @@
 <h2 id="arbitrary-scripts">Arbitrary Scripts<a class="headerlink" href="#arbitrary-scripts" title="Permanent link">#</a></h2>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm<span class="w"> </span>run<span class="w"> </span>flask<span class="w"> </span>run<span class="w"> </span>-p<span class="w"> </span><span class="m">54321</span>
 </code></pre></div></td></tr></table></div>
-<p>It will run <code>flask run -p 54321</code> in the environment that is aware of packages in <code>__pypackages__/</code> folder.</p>
+<p>It will run <code>flask run -p 54321</code> in the environment that is aware of packages in your project environment.</p>
 <h2 id="user-scripts">User Scripts<a class="headerlink" href="#user-scripts" title="Permanent link">#</a></h2>
 <p>PDM also supports custom script shortcuts in the optional <code>[tool.pdm.scripts]</code> section of <code>pyproject.toml</code>.</p>
 <p>You can then run <code>pdm run &lt;script_name&gt;</code> to invoke the script in the context of your PDM project. For example:</p>

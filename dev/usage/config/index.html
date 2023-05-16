@@ -988,13 +988,13 @@ show configurations.</p>
 <p>where <code>&lt;CONFIG_ROOT&gt;</code> is:</p>
 <ul>
 <li><code>$XDG_CONFIG_HOME/pdm</code> (<code>~/.config/pdm</code> in most cases) on Linux as defined by <a href="https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html">XDG Base Directory Specification</a></li>
-<li><code>~/Library/Preference/pdm</code> on MacOS as defined by <a href="https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html">Apple File System Basics</a></li>
+<li><code>~/Library/Preferences/pdm</code> on macOS as defined by <a href="https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html">Apple File System Basics</a></li>
 <li><code>%USERPROFILE%\AppData\Local\pdm</code> on Windows as defined in <a href="https://docs.microsoft.com/en-us/windows/win32/shell/known-folders">Known folders</a></li>
 </ul>
 <p>and <code>&lt;SITE_CONFIG_ROOT&gt;</code> is:</p>
 <ul>
 <li><code>$XDG_CONFIG_DIRS/pdm</code> (<code>/etc/xdg/pdm</code> in most cases) on Linux as defined by <a href="https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html">XDG Base Directory Specification</a></li>
-<li><code>/Library/Preference/pdm</code> on MacOS as defined by <a href="https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html">Apple File System Basics</a></li>
+<li><code>/Library/Preferences/pdm</code> on macOS as defined by <a href="https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html">Apple File System Basics</a></li>
 <li><code>C:\ProgramData\pdm\pdm</code> on Windows as defined in <a href="https://docs.microsoft.com/en-us/windows/win32/shell/known-folders">Known folders</a></li>
 </ul>
 <p>If <code>-g/--global</code> option is used, the first item will be replaced by <code>&lt;CONFIG_ROOT&gt;/global-project/pdm.toml</code>.</p>

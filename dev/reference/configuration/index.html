@@ -1049,6 +1049,48 @@
 <td><code>PDM_PYPI_JSON_API</code></td>
 </tr>
 <tr>
+<td><code>pypi.&lt;name&gt;.url</code></td>
+<td>The URL of custom package source</td>
+<td><code>https://pypi.org/simple</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pypi.&lt;name&gt;.username</code></td>
+<td>The username to access custom source</td>
+<td></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pypi.&lt;name&gt;.password</code></td>
+<td>The password to access custom source</td>
+<td></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pypi.&lt;name&gt;.type</code></td>
+<td><code>find_links</code></td>
+<td><code>index</code></td>
+<td><code>index</code></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>pypi.&lt;name&gt;.ca_certs</code></td>
+<td>Path to a PEM-encoded CA cert bundle (used for server cert verification)</td>
+<td>The CA certificates from <a href="https://pypi.org/project/certifi/">certifi</a></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pypi.&lt;name&gt;.verify_ssl</code></td>
+<td>Verify SSL certificate when query custom source</td>
+<td><code>True</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
 <td><code>strategy.save</code></td>
 <td>Specify how to save versions when a package is added</td>
 <td><code>minimum</code>(can be: <code>exact</code>, <code>wildcard</code>, <code>minimum</code>, <code>compatible</code>)</td>
@@ -1103,6 +1145,41 @@
 <td><code>False</code></td>
 <td>Yes</td>
 <td><code>PDM_VENV_WITH_PIP</code></td>
+</tr>
+<tr>
+<td><code>repository.&lt;name&gt;.url</code></td>
+<td>The URL of custom package source</td>
+<td><code>https://pypi.org/simple</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>repository.&lt;name&gt;.username</code></td>
+<td>The username to access custom repository</td>
+<td></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>repository.&lt;name&gt;.password</code></td>
+<td>The password to access custom repository</td>
+<td></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>repository.&lt;name&gt;.ca_certs</code></td>
+<td>Path to a PEM-encoded CA cert bundle (used for server cert verification)</td>
+<td>The CA certificates from <a href="https://pypi.org/project/certifi/">certifi</a></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>repository.&lt;name&gt;.verify_ssl</code></td>
+<td>Verify SSL certificate when uploading to repository</td>
+<td><code>True</code></td>
+<td>Yes</td>
+<td></td>
 </tr>
 </tbody>
 </table>

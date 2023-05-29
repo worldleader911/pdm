@@ -531,6 +531,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#passing-constant-arguments-to-every-pdm-invocation" class="md-nav__link">
+    Passing constant arguments to every pdm invocation
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -943,6 +950,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#passing-constant-arguments-to-every-pdm-invocation" class="md-nav__link">
+    Passing constant arguments to every pdm invocation
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1180,6 +1194,19 @@ In this example, PDM will resolve the above packages into the given versions no 
 <p>By using <code>[tool.pdm.resolution.overrides]</code> setting, you are at your own risk of any incompatibilities from that resolution. It can only be used if there is no valid resolution for your requirements and you know the specific version works.
 Most of the time, you can just add any transient constraints to the <code>dependencies</code> array.</p>
 </div>
+<h2 id="passing-constant-arguments-to-every-pdm-invocation">Passing constant arguments to every pdm invocation<a class="headerlink" href="#passing-constant-arguments-to-every-pdm-invocation" title="Permanent link">#</a></h2>
+<p><em>New in version 2.7.0</em></p>
+<p>You can add extra options passed to individual pdm commands by <code>tool.pdm.options</code> configuration:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm.options]</span>
+<span class="n">add</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;--no-isolation&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;--no-self&quot;</span><span class="p">]</span>
+<span class="n">install</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;--no-self&quot;</span><span class="p">]</span>
+<span class="n">lock</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;--no-cross-platform&quot;</span><span class="p">]</span>
+</code></pre></div></td></tr></table></div>
+<p>These options will be added right after the command name. For instance, based on the configuration above,
+<code>pdm add requests</code> is equivalent to <code>pdm add --no-isolation --no-self requests</code>.</p>
 
 
   

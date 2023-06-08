@@ -1536,7 +1536,12 @@
 <blockquote>
 <p>Control the caches of PDM</p>
 </blockquote>
-<p>Sub Commands:</p>
+<p>Optional Arguments:</p>
+<ul>
+<li><code>-h</code>, <code>--help</code>: Show this help message and exit.</li>
+<li><code>-v</code>, <code>--verbose</code>: Use <code>-v</code> for detailed output and <code>-vv</code> for more detailed</li>
+</ul>
+<p>Commands:</p>
 <h4 id="clear">clear<a class="headerlink" href="#clear" title="Permanent link">#</a></h4>
 <blockquote>
 <p>Clean all the files under cache directory</p>
@@ -1580,11 +1585,6 @@
 <blockquote>
 <p>Show the info and current size of caches</p>
 </blockquote>
-<p>Optional Arguments:</p>
-<ul>
-<li><code>-h</code>, <code>--help</code>: Show this help message and exit.</li>
-<li><code>-v</code>, <code>--verbose</code>: Use <code>-v</code> for detailed output and <code>-vv</code> for more detailed</li>
-</ul>
 <p>Optional Arguments:</p>
 <ul>
 <li><code>-h</code>, <code>--help</code>: Show this help message and exit.</li>
@@ -1870,7 +1870,12 @@
 <blockquote>
 <p>Manage the PDM program itself (previously known as plugin)</p>
 </blockquote>
-<p>Sub Commands:</p>
+<p>Optional Arguments:</p>
+<ul>
+<li><code>-h</code>, <code>--help</code>: Show this help message and exit.</li>
+<li><code>-v</code>, <code>--verbose</code>: Use <code>-v</code> for detailed output and <code>-vv</code> for more detailed</li>
+</ul>
+<p>Commands:</p>
 <h4 id="list_2">list<a class="headerlink" href="#list_2" title="Permanent link">#</a></h4>
 <blockquote>
 <p>List all packages installed with PDM</p>
@@ -1922,16 +1927,16 @@
 <li><code>--pre</code>: Update to the latest prerelease version</li>
 <li><code>--pip-args</code>: Additional arguments that will be passed to pip install</li>
 </ul>
+<h3 id="plugin">plugin<a class="headerlink" href="#plugin" title="Permanent link">#</a></h3>
+<blockquote>
+<p>Manage the PDM program itself (previously known as plugin)</p>
+</blockquote>
 <p>Optional Arguments:</p>
 <ul>
 <li><code>-h</code>, <code>--help</code>: Show this help message and exit.</li>
 <li><code>-v</code>, <code>--verbose</code>: Use <code>-v</code> for detailed output and <code>-vv</code> for more detailed</li>
 </ul>
-<h3 id="plugin">plugin<a class="headerlink" href="#plugin" title="Permanent link">#</a></h3>
-<blockquote>
-<p>Manage the PDM program itself (previously known as plugin)</p>
-</blockquote>
-<p>Sub Commands:</p>
+<p>Commands:</p>
 <h4 id="list_3">list<a class="headerlink" href="#list_3" title="Permanent link">#</a></h4>
 <blockquote>
 <p>List all packages installed with PDM</p>
@@ -1982,11 +1987,6 @@
 <li><code>--head</code>: Update to the latest commit on the main branch</li>
 <li><code>--pre</code>: Update to the latest prerelease version</li>
 <li><code>--pip-args</code>: Additional arguments that will be passed to pip install</li>
-</ul>
-<p>Optional Arguments:</p>
-<ul>
-<li><code>-h</code>, <code>--help</code>: Show this help message and exit.</li>
-<li><code>-v</code>, <code>--verbose</code>: Use <code>-v</code> for detailed output and <code>-vv</code> for more detailed</li>
 </ul>
 <h3 id="show">show<a class="headerlink" href="#show" title="Permanent link">#</a></h3>
 <blockquote>
@@ -2109,7 +2109,13 @@
 <blockquote>
 <p>Virtualenv management</p>
 </blockquote>
-<p>Positional Arguments:</p>
+<p>Optional Arguments:</p>
+<ul>
+<li><code>-h</code>, <code>--help</code>: Show this help message and exit.</li>
+<li><code>--path</code>: Show the path to the given virtualenv</li>
+<li><code>--python</code>: Show the python interpreter path for the given virtualenv</li>
+</ul>
+<p>Commands:</p>
 <h4 id="create">create<a class="headerlink" href="#create" title="Permanent link">#</a></h4>
 <blockquote>
 <p>Create a virtualenv</p>
@@ -2174,12 +2180,6 @@
 <li><code>-v</code>, <code>--verbose</code>: Use <code>-v</code> for detailed output and <code>-vv</code> for more detailed</li>
 <li><code>-f</code>, <code>--force</code>: Force purging without prompting for confirmation</li>
 <li><code>-i</code>, <code>--interactive</code>: Interactively purge selected Virtualenvs</li>
-</ul>
-<p>Optional Arguments:</p>
-<ul>
-<li><code>-h</code>, <code>--help</code>: Show this help message and exit.</li>
-<li><code>--path</code>: Show the path to the given virtualenv</li>
-<li><code>--python</code>: Show the python interpreter path for the given virtualenv</li>
 </ul>
 </p>
 

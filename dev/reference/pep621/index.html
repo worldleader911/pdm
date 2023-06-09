@@ -595,6 +595,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#python-version" class="md-nav__link">
+    Python version
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" class="md-nav__link">
+    License
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#dependency-specification" class="md-nav__link">
     Dependency specification
   </a>
@@ -881,6 +895,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#python-version" class="md-nav__link">
+    Python version
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" class="md-nav__link">
+    License
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#dependency-specification" class="md-nav__link">
     Dependency specification
   </a>
@@ -1001,6 +1029,47 @@ Indentation will be removed as well when escaping new lines:</p>
 </div>
 </div>
 </div>
+<h2 id="python-version">Python version<a class="headerlink" href="#python-version" title="Permanent link">#</a></h2>
+<p>The required version of Python is specified as the string <code>requires-python</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>requires-python = &quot;&gt;=3.9&quot;
+classifiers = [
+    &quot;Programming Language :: Python :: 3&quot;,
+    &quot;Programming Language :: Python :: 3.9&quot;,
+    &quot;Programming Language :: Python :: 3.10&quot;,
+    &quot;Programming Language :: Python :: 3.11&quot;,
+    ...
+]
+</code></pre></div></td></tr></table></div>
+<p>Note: As per <a href="https://peps.python.org/pep-0621/#allow-tools-to-add-extend-data">PEP 621</a>,
+PDM is not permitted to dynamically update the <code>classifiers</code> section like some other non-compliant tools.
+Thus, you should also include the appropriate <a href="https://pypi.org/classifiers/">trove classifiers</a>
+as shown above if you plan on publishing your package on <a href="https://pypi.org/">PyPI</a>.</p>
+<h2 id="license">License<a class="headerlink" href="#license" title="Permanent link">#</a></h2>
+<!-- TODO: update following paragraphs if PEP 639 is accepted,
+see https://peps.python.org/pep-0639/#deprecate-license-classifiers -->
+
+<p>The license is specified as the string <code>license</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>license = {text = &quot;BSD-2-Clause&quot;}
+classifiers = [
+    &quot;License :: OSI Approved :: BSD License&quot;,
+    ...
+]
+</code></pre></div></td></tr></table></div>
+<p>Note: As per <a href="https://peps.python.org/pep-0621/#allow-tools-to-add-extend-data">PEP 621</a>,
+PDM is not permitted to dynamically update the <code>classifiers</code> section like some other non-compliant tools.
+Thus, you should also include the appropriate <a href="https://pypi.org/classifiers/">trove classifiers</a>
+as shown above if you plan on publishing your package on <a href="https://pypi.org/">PyPI</a>.</p>
 <h2 id="dependency-specification">Dependency specification<a class="headerlink" href="#dependency-specification" title="Permanent link">#</a></h2>
 <p>The <code>project.dependencies</code> is an array of dependency specification strings following the <a href="https://www.python.org/dev/peps/pep-0440/">PEP 440</a>
 and <a href="https://www.python.org/dev/peps/pep-0508/">PEP 508</a>.</p>

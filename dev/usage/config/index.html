@@ -498,6 +498,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#configure-https-certificates" class="md-nav__link">
+    Configure HTTPS certificates
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#index-configuration-merging" class="md-nav__link">
     Index configuration merging
   </a>
@@ -917,6 +924,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#configure-https-certificates" class="md-nav__link">
+    Configure HTTPS certificates
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#index-configuration-merging" class="md-nav__link">
     Index configuration merging
   </a>
@@ -1091,6 +1105,16 @@ Otherwise, store them in the local config which won't be seen by others.</p>
 <span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[[tool.pdm.source]]</span>
 <span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;private&quot;</span>
 <span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;https://${PRIVATE_PYPI_USERNAME}:${PRIVATE_PYPI_PASSWORD}/private.pypi.org/simple&quot;</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="configure-https-certificates">Configure HTTPS certificates<a class="headerlink" href="#configure-https-certificates" title="Permanent link">#</a></h3>
+<p>You can use a custom CA bundle or client certificate for HTTPS requests. It can be configured for both indexes(for package download) and repositories(for upload):</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm<span class="w"> </span>config<span class="w"> </span>pypi.ca_certs<span class="w"> </span>/path/to/ca_bundle.pem
+pdm<span class="w"> </span>config<span class="w"> </span>repository.pypi.ca_certs<span class="w"> </span>/path/to/ca_bundle.pem
+</code></pre></div></td></tr></table></div>
+<p>Besides, it is possible to use the system trust store, instead of the bundled certifi certificates for verifying HTTPS certificates. This approach will typically support corporate proxy certificates without additional configuration.</p>
+<p>To use <code>truststore</code>, you need Python 3.10 or newer and install <code>truststore</code> into the same environment as PDM:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>pdm<span class="w"> </span>self<span class="w"> </span>add<span class="w"> </span>truststore
 </code></pre></div></td></tr></table></div>
 <h3 id="index-configuration-merging">Index configuration merging<a class="headerlink" href="#index-configuration-merging" title="Permanent link">#</a></h3>
 <p>Index configurations are merged with the <code>name</code> field of <code>[[tool.pdm.source]]</code> table or <code>pypi.&lt;name&gt;</code> key in the config file.

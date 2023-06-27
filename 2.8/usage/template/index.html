@@ -566,6 +566,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#use-other-project-generators" class="md-nav__link">
+    Use other project generators
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -853,6 +860,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#use-other-project-generators" class="md-nav__link">
+    Use other project generators
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -897,6 +911,16 @@ No other special config files are required.</p>
 <li><code>foo_project.py</code> -&gt; <code>bar_project.py</code> in the file name</li>
 </ul>
 <p>Therefore, we don't support name replacement if the import name isn't derived from the project name.</p>
+<h2 id="use-other-project-generators">Use other project generators<a class="headerlink" href="#use-other-project-generators" title="Permanent link">#</a></h2>
+<p>If you are seeking for a more powerful project generator, you can use <a href="https://github.com/cookiecutter/cookiecutter">cookiecutter</a> via <code>--cookiecutter</code> option and <a href="https://github.com/copier-org/copier">copier</a> via <code>--copier</code> option.</p>
+<p>You need to install <code>cookiecutter</code> and <code>copier</code> respectively to use them. You can do this by running <code>pdm self add &lt;package&gt;</code>.
+To use them:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm<span class="w"> </span>init<span class="w"> </span>--cookiecutter<span class="w"> </span>gh:cjolowicz/cookiecutter-hypermodern-python
+<span class="c1"># or</span>
+pdm<span class="w"> </span>init<span class="w"> </span>--copier<span class="w"> </span>gh:pawamoy/copier-pdm
+</code></pre></div></td></tr></table></div>
 
 
   

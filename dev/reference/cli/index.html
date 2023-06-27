@@ -1717,6 +1717,7 @@
 <p>Positional Arguments:</p>
 <ul>
 <li><code>template</code>: Specify the project template, which can be a local path or a Git URL</li>
+<li><code>generator_args</code>: Arguments passed to the generator</li>
 </ul>
 <p>Optional Arguments:</p>
 <ul>
@@ -1725,6 +1726,11 @@
 <li><code>-g</code>, <code>--global</code>: Use the global project, supply the project root with <code>-p</code> option</li>
 <li><code>-p</code>, <code>--project</code>: Specify another path as the project root, which changes the base of<code>pyproject.toml</code> and <code>__pypackages__</code></li>
 <li><code>-k</code>, <code>--skip</code>: Skip some tasks and/or hooks by their comma-separated names. Can be supplied multiple times. Use<code>:all</code> to skip all hooks. Use<code>:pre</code> and<code>:post</code> to skip all pre or post hooks.</li>
+<li><code>--copier</code>: Use Copier to generate project [not installed] (default: <code>builtin</code>)</li>
+<li><code>--cookiecutter</code>: Use Cookiecutter to generate project [not installed] (default: <code>builtin</code>)</li>
+</ul>
+<p>Builtin Generator Options:</p>
+<ul>
 <li><code>-n</code>, <code>--non-interactive</code>: Don't ask questions but use default values</li>
 <li><code>--python</code>: Specify the Python version/path to use</li>
 <li><code>--backend</code>: Specify the build backend</li>

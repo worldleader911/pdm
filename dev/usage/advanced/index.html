@@ -1194,7 +1194,10 @@ and then copy this folder into the final stage, adding it to <code>PYTHONPATH</c
 <span class="normal">22</span>
 <span class="normal">23</span>
 <span class="normal">24</span>
-<span class="normal">25</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c"># build stage</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c"># build stage</span>
 <span class="k">FROM</span><span class="w"> </span><span class="s">python:3.8</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s">builder</span>
 
 <span class="c"># install PDM</span>
@@ -1216,6 +1219,9 @@ and then copy this folder into the final stage, adding it to <code>PYTHONPATH</c
 <span class="c"># retrieve packages from build stage</span>
 <span class="k">ENV</span><span class="w"> </span><span class="nv">PYTHONPATH</span><span class="o">=</span>/project/pkgs
 <span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span>builder<span class="w"> </span>/project/__pypackages__/3.8/lib<span class="w"> </span>/project/pkgs
+
+<span class="c"># retrieve executables</span>
+<span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span>builder<span class="w"> </span>/project/__pypackages__/3.8/bin/*<span class="w"> </span>/bin/
 
 <span class="c"># set command/entrypoint, adapt to fit your needs</span>
 <span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;python&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;-m&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;project&quot;</span><span class="p">]</span>

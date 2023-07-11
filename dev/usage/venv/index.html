@@ -539,6 +539,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#reuse-the-virtualenv-you-created-elsewhere" class="md-nav__link">
+    Reuse the virtualenv you created elsewhere
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#virtualenv-auto-detection" class="md-nav__link">
     Virtualenv auto-detection
   </a>
@@ -924,6 +931,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#reuse-the-virtualenv-you-created-elsewhere" class="md-nav__link">
+    Reuse the virtualenv you created elsewhere
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#virtualenv-auto-detection" class="md-nav__link">
     Virtualenv auto-detection
   </a>
@@ -1041,6 +1055,10 @@ $<span class="w"> </span>pdm<span class="w"> </span>venv<span class="w"> </span>
 <h2 id="the-location-of-virtualenvs">The location of virtualenvs<a class="headerlink" href="#the-location-of-virtualenvs" title="Permanent link">#</a></h2>
 <p>For the first time, PDM will try to create a virtualenv <strong>in project</strong>, unless <code>.venv</code> already exists.
 Other virtualenvs go to the location specified by the <code>venv.location</code> configuration. They are named as <code>&lt;project_name&gt;-&lt;path_hash&gt;-&lt;name_or_python_version&gt;</code> to avoid name collision. A virtualenv created with <code>--name</code> option will always go to this location. You can disable the in-project virtualenv creation by <code>pdm config venv.in_project false</code>.</p>
+<h2 id="reuse-the-virtualenv-you-created-elsewhere">Reuse the virtualenv you created elsewhere<a class="headerlink" href="#reuse-the-virtualenv-you-created-elsewhere" title="Permanent link">#</a></h2>
+<p>You can tell PDM to use a virtualenv you created in preceding steps, with <a href="../../reference/cli/#use"><code>pdm use</code></a>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm<span class="w"> </span>use<span class="w"> </span>-f<span class="w"> </span>/path/to/venv
+</code></pre></div></td></tr></table></div>
 <h2 id="virtualenv-auto-detection">Virtualenv auto-detection<a class="headerlink" href="#virtualenv-auto-detection" title="Permanent link">#</a></h2>
 <p>When no interpreter is stored in the project config or <code>PDM_IGNORE_SAVED_PYTHON</code> env var is set, PDM will try to detect possible virtualenvs to use:</p>
 <ul>

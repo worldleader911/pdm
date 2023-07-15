@@ -469,6 +469,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#configure-the-python-finder" class="md-nav__link">
+    Configure the Python finder
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#allow-prereleases-in-resolution-result" class="md-nav__link">
     Allow prereleases in resolution result
   </a>
@@ -909,6 +916,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#configure-the-python-finder" class="md-nav__link">
+    Configure the Python finder
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#allow-prereleases-in-resolution-result" class="md-nav__link">
     Allow prereleases in resolution result
   </a>
@@ -1046,6 +1060,21 @@ show configurations.</p>
 </ul>
 <p>If <code>-g/--global</code> option is used, the first item will be replaced by <code>&lt;CONFIG_ROOT&gt;/global-project/pdm.toml</code>.</p>
 <p>You can find all available configuration items in <a href="../../reference/configuration/">Configuration Page</a>.</p>
+<h2 id="configure-the-python-finder">Configure the Python finder<a class="headerlink" href="#configure-the-python-finder" title="Permanent link">#</a></h2>
+<p>By default, PDM will try to find Python interpreters in the following sources:</p>
+<ul>
+<li><code>venv</code>: The PDM virtualenv location</li>
+<li><code>path</code>: The <code>PATH</code> environment variable</li>
+<li><code>pyenv</code>: The <a href="https://github.com/pyenv/pyenv">pyenv</a> install root</li>
+<li><code>rye</code>: The <a href="https://rye-up.com/">rye</a> toolchain install root</li>
+<li><code>asdf</code>: The <a href="https://asdf-vm.com/">asdf</a> python install root</li>
+<li><code>winreg</code>: The Windows registry</li>
+</ul>
+<p>You can unselect some of them or change the order by setting <code>python.providers</code> config key:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm<span class="w"> </span>config<span class="w"> </span>python.providers<span class="w"> </span>rye<span class="w">   </span><span class="c1"># Rye source only</span>
+pdm<span class="w"> </span>config<span class="w"> </span>python.providers<span class="w"> </span>pyenv,asdf<span class="w">  </span><span class="c1"># pyenv and asdf</span>
+</code></pre></div></td></tr></table></div>
 <h2 id="allow-prereleases-in-resolution-result">Allow prereleases in resolution result<a class="headerlink" href="#allow-prereleases-in-resolution-result" title="Permanent link">#</a></h2>
 <p>By default, <code>pdm</code>'s dependency resolver will ignore prereleases unless there are no stable versions for the given version range of a dependency. This behavior can be changed by setting <code>allow_prereleases</code> to <code>true</code> in <code>[tool.pdm]</code> table:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>

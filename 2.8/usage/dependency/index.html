@@ -565,6 +565,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#store-static-urls-or-filenames-in-lockfile" class="md-nav__link">
+    Store static URLs or filenames in lockfile
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#show-what-packages-are-installed" class="md-nav__link">
     Show what packages are installed
   </a>
@@ -1116,6 +1123,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#store-static-urls-or-filenames-in-lockfile" class="md-nav__link">
+    Store static URLs or filenames in lockfile
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#show-what-packages-are-installed" class="md-nav__link">
     Show what packages are installed
   </a>
@@ -1521,11 +1535,19 @@ pdm<span class="w"> </span>lock<span class="w"> </span>--prod<span class="w"> </
 </code></pre></div></td></tr></table></div>
 <p>Check the <code>metadata.groups</code> field in the lockfile to see which groups are included.</p>
 <h2 id="cross-platform-lockfile">Cross-platform lockfile<a class="headerlink" href="#cross-platform-lockfile" title="Permanent link">#</a></h2>
+<p><em>New in version 2.6.0</em></p>
 <p>By default, the generated lockfile is <strong>cross-platform</strong>, which means the current platform isn't taken into account when resolving the dependencies. The result lockfile will contain wheels and dependencies for all possible platforms and Python versions.
 However, sometimes this will result in a wrong lockfile when a release doesn't contain all wheels. To avoid this, you can tell PDM
 to create a lockfile that works for <strong>this platform</strong> only, trimming the wheels not relevant to the current platform. This can be done by passing the <code>--no-cross-platform</code> option to <code>pdm lock</code>:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm<span class="w"> </span>lock<span class="w"> </span>--no-cross-platform
 </code></pre></div></td></tr></table></div>
+<h2 id="store-static-urls-or-filenames-in-lockfile">Store static URLs or filenames in lockfile<a class="headerlink" href="#store-static-urls-or-filenames-in-lockfile" title="Permanent link">#</a></h2>
+<p><em>New in version 2.8.0</em></p>
+<p>By default, PDM only stores the filenames of the packages in the lockfile, which benefits the reusability across different package indexes.
+However, if you want to store the static URLs of the packages in the lockfile, you can pass the <code>--static-urls</code> option to <code>pdm lock</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm<span class="w"> </span>lock<span class="w"> </span>--static-urls
+</code></pre></div></td></tr></table></div>
+<p>The settings will be saved and remembered for the same lockfile. You can also pass <code>--no-static-urls</code> to disable it.</p>
 <h2 id="show-what-packages-are-installed">Show what packages are installed<a class="headerlink" href="#show-what-packages-are-installed" title="Permanent link">#</a></h2>
 <p>Similar to <code>pip list</code>, you can list all packages installed in the packages directory:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm<span class="w"> </span>list

@@ -1772,6 +1772,10 @@
 <blockquote>
 <p>List packages installed in the current working set</p>
 </blockquote>
+<p>Positional Arguments:</p>
+<ul>
+<li><code>patterns</code>: Filter packages by patterns. e.g. pdm list requests-<em> flask-</em>. In --tree mode, only show the subtree of the matched packages.</li>
+</ul>
 <p>Options:</p>
 <ul>
 <li><code>-h</code>, <code>--help</code>: Show this help message and exit.</li>
@@ -1780,10 +1784,10 @@
 <li><code>-p</code>, <code>--project</code>: Specify another path as the project root, which changes the base of<code>pyproject.toml</code> and <code>__pypackages__</code> [env var: <code>PDM_PROJECT</code>]</li>
 <li><code>--venv</code> <code>NAME</code>: Run the command in the virtual environment with the given key. [env var: <code>PDM_IN_VENV</code>]</li>
 <li><code>--freeze</code>: Show the installed dependencies in pip's requirements.txt format</li>
-<li><code>--graph</code>: Display a graph of dependencies</li>
-<li><code>-r</code>, <code>--reverse</code>: Reverse the dependency graph</li>
+<li><code>--tree</code>, <code>--graph</code>: Display a tree of dependencies</li>
+<li><code>-r</code>, <code>--reverse</code>: Reverse the dependency tree</li>
 <li><code>--resolve</code>: Resolve all requirements to output licenses (instead of just showing those currently installed)</li>
-<li><code>--fields</code>: Select information to output as a comma separated string. For example: name,version,homepage,licenses,groups. (default: <code>name,version,location</code>)</li>
+<li><code>--fields</code>: Select information to output as a comma separated string. All fields: groups,homepage,licenses,location,name,version. (default: <code>name,version,location</code>)</li>
 <li><code>--sort</code>: Sort the output using a given field name. If nothing is set, no sort is applied. Multiple fields can be combined with ','.</li>
 <li><code>--csv</code>: Output dependencies in CSV document format</li>
 <li><code>--json</code>: Output dependencies in JSON document format</li>

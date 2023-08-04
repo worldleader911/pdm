@@ -15,7 +15,7 @@
         <link rel="next" href="../dependency/">
       
       <link rel="icon" href="../../assets/logo.svg">
-      <meta name="generator" content="mkdocs-1.5.1, mkdocs-material-9.1.21">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
     
     
       
@@ -708,7 +708,7 @@
   
     <li class="md-nav__item">
       <a href="../../reference/api/" class="md-nav__link">
-        API Reference#
+        API Reference
       </a>
     </li>
   
@@ -771,7 +771,7 @@
   
     <li class="md-nav__item">
       <a href="../../dev/fixtures/" class="md-nav__link">
-        Pytest fixtures#
+        Pytest fixtures
       </a>
     </li>
   
@@ -1004,7 +1004,7 @@ To fix this, you need add a maximum version to <code>requires-python</code>, lik
 </tbody>
 </table>
 <h2 id="working-with-python-37">Working with Python &lt; 3.7<a class="headerlink" href="#working-with-python-37" title="Permanent link">#</a></h2>
-<p>Although PDM run on Python 3.7 and above, you can still have lower Python versions for your <strong>working project</strong>. But remember, if your project is a library, which needs to be built, published or installed, you make sure the PEP 517 build backend being used supports the lowest Python version you need. For instance, the default backend <code>pdm-pep517</code> only works on Python 3.7+, so if you run <a href="../../reference/cli/#build"><code>pdm build</code></a> on a project with Python 3.6, you will get an error. Most modern build backends have dropped the support for Python 3.6 and lower, so it is highly recommended to upgrade the Python version to 3.7+. Here are the supported Python range for some commonly used build backends, we only list those that support PEP 621 since otherwise PDM can't work with them.</p>
+<p>Although PDM run on Python 3.7 and above, you can still have lower Python versions for your <strong>working project</strong>. But remember, if your project is a library, which needs to be built, published or installed, you make sure the PEP 517 build backend being used supports the lowest Python version you need. For instance, the default backend <code>pdm-backend</code> only works on Python 3.7+, so if you run <a href="../../reference/cli/#build"><code>pdm build</code></a> on a project with Python 3.6, you will get an error. Most modern build backends have dropped the support for Python 3.6 and lower, so it is highly recommended to upgrade the Python version to 3.7+. Here are the supported Python range for some commonly used build backends, we only list those that support PEP 621 since otherwise PDM can't work with them.</p>
 <table>
 <thead>
 <tr>
@@ -1015,7 +1015,7 @@ To fix this, you need add a maximum version to <code>requires-python</code>, lik
 </thead>
 <tbody>
 <tr>
-<td><code>pdm-pep517</code></td>
+<td><code>pdm-backend</code></td>
 <td><code>&gt;=3.7</code></td>
 <td>Yes</td>
 </tr>

@@ -1041,7 +1041,8 @@ To fix this, you need add a maximum version to <code>requires-python</code>, lik
 </tr>
 </tbody>
 </table>
-<p>Note that if your project is an application(without <code>name</code> metadata), the above limitation of backends don't apply, since you don't need a build backend after all, and you can use a Python version up to <code>2.7</code>.</p>
+<p>Note that if your project is an application (i.e. without the <code>name</code> metadata),
+the above limitation of backends does not apply. Therefore, if you don't need a build backend you can use any Python version <code>&gt;=2.7</code>.</p>
 <h2 id="import-the-project-from-other-package-managers">Import the project from other package managers<a class="headerlink" href="#import-the-project-from-other-package-managers" title="Permanent link">#</a></h2>
 <p>If you are already using other package manager tools like Pipenv or Poetry, it is easy to migrate to PDM.
 PDM provides <code>import</code> command so that you don't have to initialize the project manually, it now supports:</p>

@@ -1034,7 +1034,7 @@ You can configure a <code>tox.ini</code> like the following to integrate your te
 dependencies from <a href="../../reference/cli/#lock"><code>pdm lock</code></a> into the virtualenv. In the dedicated venv you can directly run tools by <code>pytest tests/</code> instead
 of <code>pdm run pytest tests/</code>.</p>
 <p>You should also make sure you don't run <code>pdm add/pdm remove/pdm update/pdm lock</code> in the test commands, otherwise the <a href="../../reference/cli/#lock"><code>pdm lock</code></a>
-file will be modified unexpectedly. Additional dependencies can be supplied with the <code>deps</code> config. Besides, <code>isolated_buid</code> and <code>passenv</code>
+file will be modified unexpectedly. Additional dependencies can be supplied with the <code>deps</code> config. Besides, <code>isolated_build</code> and <code>passenv</code>
 config should be set as the above example to make PDM work properly.</p>
 <p>To get rid of these constraints, there is a Tox plugin <a href="https://github.com/pdm-project/tox-pdm">tox-pdm</a> which can ease the usage. You can install it by</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>tox-pdm

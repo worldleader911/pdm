@@ -1733,7 +1733,8 @@ Users should pass <code>-g/--global</code> explicitly to activate it, since it i
 But PDM also leave the decision to users, just set the config <code>global_project.fallback</code> to <code>true</code>.</p>
 <p>By default, when <code>pdm</code> uses global project implicitly the following message is printed: <code>Project is not found, fallback to the global project</code>. To disable this message set the config <code>global_project.fallback_verbose</code> to <code>false</code>.</p>
 <p>If you want global project to track another project file other than <code>&lt;CONFIG_ROOT&gt;/global-project</code>, you can provide the
-project path via <code>-p/--project &lt;path&gt;</code> option.</p>
+project path via <code>-p/--project &lt;path&gt;</code> option. Especially if you pass <code>--global --project .</code>, PDM will install the dependencies
+of the current project into the global Python.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Be careful with <code>remove</code> and <code>sync --clean/--pure</code> commands when global project is used, because it may remove packages installed in your system Python.</p>

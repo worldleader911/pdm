@@ -1528,7 +1528,7 @@
 <li><code>--no-editable</code>: Install non-editable versions for all packages</li>
 <li><code>--no-self</code>: Don't install the project itself. [env var: <code>PDM_NO_SELF</code>]</li>
 <li><code>--fail-fast</code>, <code>-x</code>: Abort on first installation error</li>
-<li><code>--no-isolation</code>: Do not isolate the build in a clean environment</li>
+<li><code>--no-isolation</code>: Disable isolation when building a source distribution that follows PEP 517, as in: build dependencies specified by PEP 518 must be already installed if this option is used.</li>
 </ul>
 <h3 id="build">build<a class="headerlink" href="#build" title="Permanent link">#</a></h3>
 <blockquote>
@@ -1539,7 +1539,7 @@
 <li><code>-h</code>, <code>--help</code>: Show this help message and exit.</li>
 <li><code>-v</code>, <code>--verbose</code>: Use <code>-v</code> for detailed output and <code>-vv</code> for more detailed</li>
 <li><code>-p</code>, <code>--project</code>: Specify another path as the project root, which changes the base of<code>pyproject.toml</code> and <code>__pypackages__</code> [env var: <code>PDM_PROJECT</code>]</li>
-<li><code>--no-isolation</code>: Do not isolate the build in a clean environment</li>
+<li><code>--no-isolation</code>: Disable isolation when building a source distribution that follows PEP 517, as in: build dependencies specified by PEP 518 must be already installed if this option is used.</li>
 <li><code>-k</code>, <code>--skip</code>: Skip some tasks and/or hooks by their comma-separated names. Can be supplied multiple times. Use<code>:all</code> to skip all hooks. Use<code>:pre</code> and<code>:post</code> to skip all pre or post hooks.</li>
 <li><code>--no-sdist</code>: Don't build source tarballs (default: <code>True</code>)</li>
 <li><code>--no-wheel</code>: Don't build wheels (default: <code>True</code>)</li>
@@ -1761,7 +1761,7 @@
 <li><code>--no-editable</code>: Install non-editable versions for all packages</li>
 <li><code>--no-self</code>: Don't install the project itself. [env var: <code>PDM_NO_SELF</code>]</li>
 <li><code>--fail-fast</code>, <code>-x</code>: Abort on first installation error</li>
-<li><code>--no-isolation</code>: Do not isolate the build in a clean environment</li>
+<li><code>--no-isolation</code>: Disable isolation when building a source distribution that follows PEP 517, as in: build dependencies specified by PEP 518 must be already installed if this option is used.</li>
 </ul>
 <p>Dependencies Selection:</p>
 <ul>
@@ -1808,7 +1808,7 @@
 <li><code>-g</code>, <code>--global</code>: Use the global project, supply the project root with <code>-p</code> option</li>
 <li><code>-p</code>, <code>--project</code>: Specify another path as the project root, which changes the base of<code>pyproject.toml</code> and <code>__pypackages__</code> [env var: <code>PDM_PROJECT</code>]</li>
 <li><code>-L</code>, <code>--lockfile</code>: Specify another lockfile path. Default:<code>pdm.lock</code>. [env var: <code>PDM_LOCKFILE</code>]</li>
-<li><code>--no-isolation</code>: Do not isolate the build in a clean environment</li>
+<li><code>--no-isolation</code>: Disable isolation when building a source distribution that follows PEP 517, as in: build dependencies specified by PEP 518 must be already installed if this option is used.</li>
 <li><code>-k</code>, <code>--skip</code>: Skip some tasks and/or hooks by their comma-separated names. Can be supplied multiple times. Use<code>:all</code> to skip all hooks. Use<code>:pre</code> and<code>:post</code> to skip all pre or post hooks.</li>
 <li><code>--refresh</code>: Don't update pinned versions, only refresh the lock file</li>
 <li><code>--check</code>: Check if the lock file is up to date and quit</li>
@@ -1871,7 +1871,7 @@
 <li><code>--no-editable</code>: Install non-editable versions for all packages</li>
 <li><code>--no-self</code>: Don't install the project itself. [env var: <code>PDM_NO_SELF</code>]</li>
 <li><code>--fail-fast</code>, <code>-x</code>: Abort on first installation error</li>
-<li><code>--no-isolation</code>: Do not isolate the build in a clean environment</li>
+<li><code>--no-isolation</code>: Disable isolation when building a source distribution that follows PEP 517, as in: build dependencies specified by PEP 518 must be already installed if this option is used.</li>
 </ul>
 <h3 id="run">run<a class="headerlink" href="#run" title="Permanent link">#</a></h3>
 <blockquote>
@@ -2074,7 +2074,7 @@
 <li><code>--no-editable</code>: Install non-editable versions for all packages</li>
 <li><code>--no-self</code>: Don't install the project itself. [env var: <code>PDM_NO_SELF</code>]</li>
 <li><code>--fail-fast</code>, <code>-x</code>: Abort on first installation error</li>
-<li><code>--no-isolation</code>: Do not isolate the build in a clean environment</li>
+<li><code>--no-isolation</code>: Disable isolation when building a source distribution that follows PEP 517, as in: build dependencies specified by PEP 518 must be already installed if this option is used.</li>
 </ul>
 <p>Dependencies Selection:</p>
 <ul>
@@ -2119,7 +2119,7 @@
 <li><code>--no-editable</code>: Install non-editable versions for all packages</li>
 <li><code>--no-self</code>: Don't install the project itself. [env var: <code>PDM_NO_SELF</code>]</li>
 <li><code>--fail-fast</code>, <code>-x</code>: Abort on first installation error</li>
-<li><code>--no-isolation</code>: Do not isolate the build in a clean environment</li>
+<li><code>--no-isolation</code>: Disable isolation when building a source distribution that follows PEP 517, as in: build dependencies specified by PEP 518 must be already installed if this option is used.</li>
 </ul>
 <p>Dependencies Selection:</p>
 <ul>

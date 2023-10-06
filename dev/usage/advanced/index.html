@@ -1241,12 +1241,12 @@ and then copy this folder into the final stage, adding it to <code>PYTHONPATH</c
 </code></pre></div></td></tr></table></div>
 <p><code>packages/foo-cli/pyproject.toml</code>:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[projects]</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[project]</span>
 <span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;foo-core&quot;</span><span class="p">]</span>
 </code></pre></div></td></tr></table></div>
 <p><code>packages/foo-app/pyproject.toml</code>:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[projects]</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[project]</span>
 <span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;foo-core&quot;</span><span class="p">]</span>
 </code></pre></div></td></tr></table></div>
 <p>Now, run <code>pdm install</code> in the project root, and you will get a <code>pdm.lock</code> with all dependencies locked. All sub-packages will be installed in editable mode.</p>

@@ -558,6 +558,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ignore-package-warnings" class="md-nav__link">
+    Ignore package warnings
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1005,6 +1012,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ignore-package-warnings" class="md-nav__link">
+    Ignore package warnings
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1279,6 +1293,26 @@ Most of the time, you can just add any transient constraints to the <code>depend
 </code></pre></div></td></tr></table></div>
 <p>These options will be added right after the command name. For instance, based on the configuration above,
 <code>pdm add requests</code> is equivalent to <code>pdm add --no-isolation --no-self requests</code>.</p>
+<h2 id="ignore-package-warnings">Ignore package warnings<a class="headerlink" href="#ignore-package-warnings" title="Permanent link">#</a></h2>
+<p><em>New in version 2.10.0</em></p>
+<p>You may see some warnings when resolving dependencies like this:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>PackageWarning: Skipping scipy@1.10.0 because it requires Python
+&lt;3.12,&gt;=3.8 but the project claims to work with Python&gt;=3.9.
+Narrow down the `requires-python` range to include this version. For example, &quot;&gt;=3.9,&lt;3.12&quot; should work.
+  warnings.warn(record.message, PackageWarning, stacklevel=1)
+Use `-q/--quiet` to suppress these warnings, or ignore them per-package with `ignore_package_warnings` config in [tool.pdm] table.
+</code></pre></div></td></tr></table></div>
+<p>This is because the supported range of Python versions of the package doesn't cover the <code>requires-python</code> value specified in the <code>pyproject.toml</code>.
+You can ignore these warnings in a per-package basis by adding the following config:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm]</span>
+<span class="n">ignore_package_warnings</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;scipy&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;tensorflow-*&quot;</span><span class="p">]</span>
+</code></pre></div></td></tr></table></div>
+<p>Where each item is a case-insensitive glob pattern to match the package name.</p>
 
 
   

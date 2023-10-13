@@ -1161,7 +1161,7 @@ Otherwise, store them in the local config which won't be seen by others.</p>
 <span class="normal">2</span>
 <span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[[tool.pdm.source]]</span>
 <span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;private&quot;</span>
-<span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;https://${PRIVATE_PYPI_USERNAME}:${PRIVATE_PYPI_PASSWORD}/private.pypi.org/simple&quot;</span>
+<span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;https://${PRIVATE_PYPI_USERNAME}:${PRIVATE_PYPI_PASSWORD}@private.pypi.org/simple&quot;</span>
 </code></pre></div></td></tr></table></div>
 <h3 id="configure-https-certificates">Configure HTTPS certificates<a class="headerlink" href="#configure-https-certificates" title="Permanent link">#</a></h3>
 <p>You can use a custom CA bundle or client certificate for HTTPS requests. It can be configured for both indexes(for package download) and repositories(for upload):</p>

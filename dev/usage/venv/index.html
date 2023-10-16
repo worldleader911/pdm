@@ -1189,7 +1189,7 @@ $<span class="w"> </span>pdm<span class="w"> </span>list<span class="w"> </span>
 <span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Switch to a virtualenv named test</span>
 $<span class="w"> </span>pdm<span class="w"> </span>use<span class="w"> </span>--venv<span class="w"> </span><span class="nb">test</span>
 <span class="c1"># Switch to the in-project venv located at $PROJECT_ROOT/.venv</span>
-$<span class="w"> </span>pdm<span class="w"> </span>use<span class="w"> </span>--venv
+$<span class="w"> </span>pdm<span class="w"> </span>use<span class="w"> </span>--venv<span class="w"> </span><span class="k">in</span>-project
 </code></pre></div></td></tr></table></div>
 <h2 id="disable-virtualenv-mode">Disable virtualenv mode<a class="headerlink" href="#disable-virtualenv-mode" title="Permanent link">#</a></h2>
 <p>You can disable the auto-creation and auto-detection for virtualenv by <code>pdm config python.use_venv false</code>.

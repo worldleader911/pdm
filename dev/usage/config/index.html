@@ -498,6 +498,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#specify-index-for-individual-packages" class="md-nav__link">
+    Specify index for individual packages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#store-credentials-with-the-index" class="md-nav__link">
     Store credentials with the index
   </a>
@@ -952,6 +959,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#specify-index-for-individual-packages" class="md-nav__link">
+    Specify index for individual packages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#store-credentials-with-the-index" class="md-nav__link">
     Store credentials with the index
   </a>
@@ -1155,6 +1169,20 @@ Otherwise, store them in the local config which won't be seen by others.</p>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm.resolution]</span>
 <span class="n">respect-source-order</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
 </code></pre></div></td></tr></table></div>
+<h3 id="specify-index-for-individual-packages">Specify index for individual packages<a class="headerlink" href="#specify-index-for-individual-packages" title="Permanent link">#</a></h3>
+<p>You can bind packages to specific sources with <code>include_packages</code> and <code>exclude_packages</code> config under <code>tool.pdm.source</code> table.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[[tool.pdm.source]]</span>
+<span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;private&quot;</span>
+<span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;https://private.pypi.org/simple&quot;</span>
+<span class="n">include_packages</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;foo&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;foo-*&quot;</span><span class="p">]</span>
+<span class="n">exclude_packages</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;bar-*&quot;</span><span class="p">]</span>
+</code></pre></div></td></tr></table></div>
+<p>With the above configuration, any package matching <code>foo</code> or <code>foo-*</code> will only be searched from the <code>private</code> index, and any package matching <code>bar-*</code> will be searched from all indexes except <code>private</code>.</p>
+<p>Both <code>include_packages</code> and <code>exclude_packages</code> are optional and accept a list of glob patterns, and <code>include_packages</code> takes effect exclusively when the pattern matches.</p>
 <h3 id="store-credentials-with-the-index">Store credentials with the index<a class="headerlink" href="#store-credentials-with-the-index" title="Permanent link">#</a></h3>
 <p>You can specify credentials in the URL with <code>${ENV_VAR}</code> variable expansion and these variables will be read from the environment variables:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>

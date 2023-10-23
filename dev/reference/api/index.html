@@ -1803,7 +1803,7 @@ is used</p></td>
 
 
 <h3 id="pdm.project.core.Project.get_provider" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">get_provider</span><span class="p">(</span><span class="n">strategy</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">tracked_names</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">for_install</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">ignore_compatibility</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">get_provider</span><span class="p">(</span><span class="n">strategy</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">tracked_names</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">for_install</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">ignore_compatibility</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">direct_minimal_versions</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
 
 <a href="#pdm.project.core.Project.get_provider" class="headerlink" title="Permanent link">#</a></h3>
 
@@ -1814,6 +1814,8 @@ is used</p></td>
 <p>:param strategy: the resolve strategy
 :param tracked_names: the names of packages that needs to update
 :param for_install: if the provider is for install
+:param ignore_compatibility: if the provider should ignore the compatibility when evaluating candidates
+:param direct_minimal_versions: if the provider should prefer minimal versions instead of latest
 :returns: The provider object</p>
 
   </div>

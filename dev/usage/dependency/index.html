@@ -1672,6 +1672,11 @@ However, if you want to store the static URLs of the packages in the lockfile, y
 <p><em>New in version 2.10.0</em></p>
 <p>When it is enabled by passing <code>--strategy direct_minimal_versions</code>, dependencies specified in the <code>pyproject.toml</code> will be resolved to the minimal versions available, rather than the latest versions. This is useful when you want to test the compatibility of your project within a range of dependency versions.</p>
 <p>For example, if you specified <code>flask&gt;=2.0</code> in the <code>pyproject.toml</code>, <code>flask</code> will be resolved to version <code>2.0.0</code> if there is no other compatibility issue.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Version constraints in package dependencies are not future-proof. If you resolve the dependencies to the minimal versions, there will likely be backwards-compatibility issues.
+For example, <code>flask==2.0.0</code> requires <code>werkzeug&gt;=2.0</code>, but in fact, it can not work with <code>Werkzeug 3.0.0</code>, which is released 2 years after it.</p>
+</div>
 <h2 id="show-what-packages-are-installed">Show what packages are installed<a class="headerlink" href="#show-what-packages-are-installed" title="Permanent link">#</a></h2>
 <p>Similar to <code>pip list</code>, you can list all packages installed in the packages directory:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm<span class="w"> </span>list

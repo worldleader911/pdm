@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const el = document.querySelector('a.pdm-expansions');
 
   function loadExpansions() {
-    fetch(expansionsApi, { mode: 'cors', redirect: 'follow' })
+    fetch(expansionsApi, { mode: 'no-cors', redirect: 'follow' })
       .then((response) => {
         console.log(response);
         return response.json();

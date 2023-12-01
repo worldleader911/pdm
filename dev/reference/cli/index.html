@@ -1662,6 +1662,8 @@
 <li><code>-o</code>, <code>--output</code>: Write output to the given file, or print to stdout if not given</li>
 <li><code>--pyproject</code>: Read the list of packages from<code>pyproject.toml</code></li>
 <li><code>--expandvars</code>: Expand environment variables in requirements</li>
+<li><code>--self</code>: Include the project itself</li>
+<li><code>--editable-self</code>: Include the project itself as an editable dependency</li>
 </ul>
 <p>Dependencies Selection:</p>
 <ul>
@@ -1829,10 +1831,11 @@
 <li><code>-k</code>, <code>--skip</code>: Skip some tasks and/or hooks by their comma-separated names. Can be supplied multiple times. Use<code>:all</code> to skip all hooks. Use<code>:pre</code> and<code>:post</code> to skip all pre or post hooks.</li>
 <li><code>--refresh</code>: Don't update pinned versions, only refresh the lock file</li>
 <li><code>--check</code>: Check if the lock file is up to date and quit</li>
+<li><code>--update-reuse</code>: Reuse pinned versions already present in lock file if possible (default: <code>all</code>)</li>
 </ul>
 <p>Lock Strategy:</p>
 <ul>
-<li><code>--strategy</code>, <code>-S</code> <code>STRATEGY</code>: Specify lock strategy (cross_platform, static_urls, direct_minimal_versions). Add 'no_' prefix to disable. Can be supplied multiple times or split by comma.</li>
+<li><code>--strategy</code>, <code>-S</code> <code>STRATEGY</code>: Specify lock strategy (cross_platform, static_urls, direct_minimal_versions, inherit_metadata). Add 'no_' prefix to disable. Can be supplied multiple times or split by comma.</li>
 <li><code>--no-cross-platform</code>: [DEPRECATED] Only lock packages for the current platform</li>
 <li><code>--static-urls</code>: [DEPRECATED] Store static file URLs in the lockfile</li>
 <li><code>--no-static-urls</code>: [DEPRECATED] Do not store static file URLs in the lockfile</li>
@@ -1862,6 +1865,7 @@
 <li><code>-i</code>, <code>--identity</code>: GPG identity used to sign files.</li>
 <li><code>-c</code>, <code>--comment</code>: The comment to include with the distribution file.</li>
 <li><code>--no-build</code>: Don't build the package before publishing (default: <code>True</code>)</li>
+<li><code>--skip-existing</code>: Skip uploading files that already exist. This may not work with some repository implementations.</li>
 <li><code>--no-very-ssl</code>: Disable SSL verification</li>
 <li><code>--ca-certs</code>: The path to a PEM-encoded Certificate Authority bundle to use for publish server validation [env var: <code>PDM_PUBLISH_CA_CERTS</code>]</li>
 </ul>

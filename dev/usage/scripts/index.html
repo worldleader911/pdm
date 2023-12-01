@@ -566,6 +566,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#pdm-placeholder" class="md-nav__link">
+    {pdm} placeholder
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1026,6 +1033,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#pdm-placeholder" class="md-nav__link">
+    {pdm} placeholder
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1296,6 +1310,30 @@ to every nested command requiring it.</p>
 <p class="admonition-title">Note</p>
 <p><code>call</code> scripts don't support the <code>{args}</code> placeholder as they have
 access to <code>sys.argv</code> directly to handle such complexe cases and more.</p>
+</div>
+<h3 id="pdm-placeholder"><code>{pdm}</code> placeholder<a class="headerlink" href="#pdm-placeholder" title="Permanent link">#</a></h3>
+<p>Sometimes you may have multiple PDM installations, or <code>pdm</code> installed with a different name. This
+could for example occur in a CI/CD situation, or when working with different PDM versions in
+different repos. To make your scripts more robust you can use <code>{pdm}</code> to use the PDM entrypoint
+executing the script. This will expand to <code>{sys.executable} -m pdm</code>.</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm.scripts]</span>
+<span class="n">whoami</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">shell</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;echo `{pdm} -V` was called as &#39;{pdm} -V&#39;&quot;</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+will produce the following output:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>pdm<span class="w"> </span>whoami
+PDM,<span class="w"> </span>version<span class="w"> </span><span class="m">0</span>.1.dev2501+g73651b7.d20231115<span class="w"> </span>was<span class="w"> </span>called<span class="w"> </span>as<span class="w"> </span>/usr/bin/python3<span class="w"> </span>-m<span class="w"> </span>pdm<span class="w"> </span>-V
+
+$<span class="w"> </span>pdm2.8<span class="w"> </span>whoami
+PDM,<span class="w"> </span>version<span class="w"> </span><span class="m">2</span>.8.0<span class="w"> </span>was<span class="w"> </span>called<span class="w"> </span>as<span class="w"> </span>&lt;snip&gt;/venvs/pdm2-8/bin/python<span class="w"> </span>-m<span class="w"> </span>pdm<span class="w"> </span>-V
+</code></pre></div></td></tr></table></div></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>While the above example uses PDM 2.8, this functionality was introduced in the 2.10 series and only backported for the showcase.</p>
 </div>
 <h2 id="show-the-list-of-scripts">Show the List of Scripts<a class="headerlink" href="#show-the-list-of-scripts" title="Permanent link">#</a></h2>
 <p>Use <code>pdm run --list/-l</code> to show the list of available script shortcuts:</p>

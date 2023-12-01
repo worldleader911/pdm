@@ -971,7 +971,7 @@
 </tr>
 <tr>
 <td><code>install.cache_method</code></td>
-<td>Specify how to create links to the caches(<code>symlink</code> or <code>pth</code>)</td>
+<td>Specify how to create links to the caches(<code>symlink/symlink_individual/hardlink/pth</code>)</td>
 <td><code>symlink</code></td>
 <td>Yes</td>
 <td></td>
@@ -1122,6 +1122,13 @@
 <td>10000</td>
 <td>Yes</td>
 <td><code>PDM_RESOLVE_MAX_ROUNDS</code></td>
+</tr>
+<tr>
+<td><code>strategy.inherit_metadata</code></td>
+<td>Inherit the groups and markers from parents for each package</td>
+<td>Yes</td>
+<td>Yes</td>
+<td></td>
 </tr>
 <tr>
 <td><code>venv.location</code></td>

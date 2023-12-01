@@ -586,6 +586,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#inherit-the-metadata-from-parents" class="md-nav__link">
+    Inherit the metadata from parents
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1198,6 +1205,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#inherit-the-metadata-from-parents" class="md-nav__link">
+    Inherit the metadata from parents
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1677,6 +1691,12 @@ However, if you want to store the static URLs of the packages in the lockfile, y
 <p>Version constraints in package dependencies are not future-proof. If you resolve the dependencies to the minimal versions, there will likely be backwards-compatibility issues.
 For example, <code>flask==2.0.0</code> requires <code>werkzeug&gt;=2.0</code>, but in fact, it can not work with <code>Werkzeug 3.0.0</code>, which is released 2 years after it.</p>
 </div>
+<h3 id="inherit-the-metadata-from-parents">Inherit the metadata from parents<a class="headerlink" href="#inherit-the-metadata-from-parents" title="Permanent link">#</a></h3>
+<p><em>New in version 2.11.0</em></p>
+<p>By default, <code>pdm lock</code> records package metadata as-is, and when installing, PDM will traverse from the top requirements till the leaf node of the dependency tree,
+evaluate any marker it encounters with the current environment, and discard the package if the marker is not satisfied. This requires an extra "resolution"
+step when installing.</p>
+<p>By specifying the strategy by <code>--strategy inherit_metadata</code>, PDM will however inherit and merge the environment markers from the ancestors of a given package and encode them in the lockfile. This will make the installation much faster. You can also turn it on in the config by <code>pdm config strategy.inherit_metadata true</code>.</p>
 <h2 id="show-what-packages-are-installed">Show what packages are installed<a class="headerlink" href="#show-what-packages-are-installed" title="Permanent link">#</a></h2>
 <p>Similar to <code>pip list</code>, you can list all packages installed in the packages directory:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm<span class="w"> </span>list
@@ -1730,7 +1750,7 @@ bump2version 1.0.0
 <details class="warning">
 <summary>Be careful with the shell expansion</summary>
 <p>In most shells, the wildcard <code>*</code> will be expanded if there are matching files under the current directory.
-To avoid getting unexpected results, you can quote the patterns: <code>pdm list 'flask-*' 'requests-*'</code>.</p>
+To avoid getting unexpected results, you can wrap the patterns with single quotes: <code>pdm list 'flask-*' 'requests-*'</code>.</p>
 </details>
 <p>In <code>--tree</code> mode, only the subtree of the matched packages will be displayed. This can be used to achieve the same purpose as <code>pnpm why</code>, which is to show why a specific package is required.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>

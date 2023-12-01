@@ -714,6 +714,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#pdm.project.core.Project.config" class="md-nav__link">
+    config
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#pdm.project.core.Project.default_source" class="md-nav__link">
     default_source
   </a>
@@ -721,8 +728,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#pdm.project.core.Project.config" class="md-nav__link">
-    config()
+  <a href="#pdm.project.core.Project.project_config" class="md-nav__link">
+    project_config
   </a>
   
 </li>
@@ -751,13 +758,6 @@
           <li class="md-nav__item">
   <a href="#pdm.project.core.Project.get_repository" class="md-nav__link">
     get_repository()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pdm.project.core.Project.project_config" class="md-nav__link">
-    project_config()
   </a>
   
 </li>
@@ -1138,6 +1138,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#pdm.project.core.Project.config" class="md-nav__link">
+    config
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#pdm.project.core.Project.default_source" class="md-nav__link">
     default_source
   </a>
@@ -1145,8 +1152,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#pdm.project.core.Project.config" class="md-nav__link">
-    config()
+  <a href="#pdm.project.core.Project.project_config" class="md-nav__link">
+    project_config
   </a>
   
 </li>
@@ -1175,13 +1182,6 @@
           <li class="md-nav__item">
   <a href="#pdm.project.core.Project.get_repository" class="md-nav__link">
     get_repository()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pdm.project.core.Project.project_config" class="md-nav__link">
-    project_config()
   </a>
   
 </li>
@@ -1734,6 +1734,28 @@ is used</p></td>
 
 
 
+<h3 id="pdm.project.core.Project.config" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">config</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+      <small class="doc doc-label doc-label-cached"><code>cached</code></small>
+  </span>
+
+<a href="#pdm.project.core.Project.config" class="headerlink" title="Permanent link">#</a></h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>A read-only dict configuration</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
 <h3 id="pdm.project.core.Project.default_source" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">default_source</span><span class="p">:</span> <span class="n">RepositoryConfig</span></code>
   
@@ -1751,25 +1773,29 @@ is used</p></td>
 
 </div>
 
-
-
-<div class="doc doc-object doc-function">
+<div class="doc doc-object doc-attribute">
 
 
 
-<h3 id="pdm.project.core.Project.config" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">config</span><span class="p">()</span></code>
+<h3 id="pdm.project.core.Project.project_config" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">project_config</span><span class="p">:</span> <span class="n">Config</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+      <small class="doc doc-label doc-label-cached"><code>cached</code></small>
+  </span>
 
-<a href="#pdm.project.core.Project.config" class="headerlink" title="Permanent link">#</a></h3>
+<a href="#pdm.project.core.Project.project_config" class="headerlink" title="Permanent link">#</a></h3>
 
 
   <div class="doc doc-contents ">
   
-      <p>A read-only dict configuration</p>
-
+      <p>Read-and-writable configuration dict for project settings</p>
   </div>
 
 </div>
+
+
 
 <div class="doc doc-object doc-function">
 
@@ -1857,24 +1883,6 @@ is used</p></td>
   <div class="doc doc-contents ">
   
       <p>Get the repository object</p>
-
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-
-<h3 id="pdm.project.core.Project.project_config" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">project_config</span><span class="p">()</span></code>
-
-<a href="#pdm.project.core.Project.project_config" class="headerlink" title="Permanent link">#</a></h3>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Read-and-writable configuration dict for project settings</p>
 
   </div>
 

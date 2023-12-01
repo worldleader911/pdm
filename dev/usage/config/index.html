@@ -1225,6 +1225,13 @@ pdm<span class="w"> </span>config<span class="w"> </span>pypi.private.password<s
 </code></pre></div></td></tr></table></div>
 <p>It can be enabled on a per-project basis by adding the <code>--local</code> option to the command.</p>
 <p>The caches are located in <code>$(pdm config cache_dir)/packages</code>. You can view the cache usage with <code>pdm cache info</code>. Note that the cached installs are managed automatically -- they will be deleted if they are not linked to any projects. Manually deleting the caches from disk may break some projects on the system.</p>
+<p>In addition, several different ways of linking to cache entries are supported:</p>
+<ul>
+<li><code>symlink</code>(default), create symlinks to the package directories or children if the parent is a namespace package.</li>
+<li><code>symlink_individual</code>, for each individual files in the package directory, create a symlink to it.</li>
+<li><code>hardlink</code>, create hard links to the package files of the cache entry.</li>
+</ul>
+<p>You can switch between them by running <code>pdm config [-l] install.cache_method &lt;method&gt;</code>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Only the installation of <em>named requirements</em> resolved from PyPI can be cached.</p>

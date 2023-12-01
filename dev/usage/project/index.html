@@ -978,7 +978,7 @@ into it. Otherwise, <code>__pypackages__</code> will be created in the project r
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>Unable to find a resolution because the following dependencies don&#39;t work
 on all Python versions defined by the project&#39;s `requires-python`
 </code></pre></div></td></tr></table></div>
-<p>Because the dependency's <code>requires-python</code> is <code>&gt;=3.7,&lt;3.11</code>, it <em>doesn't</em> cover the project's <code>requires-python</code> range of <code>&gt;=3.9</code>. In other words, the project promises to work on Python 3.11 and above, but the dependency doesn't support it. Since PDM creates a cross-platform lockfile that should work on all Python versions within the <code>requires-python</code> range, it can't find a valid resolution.
+<p>Because the dependency's <code>requires-python</code> is <code>&gt;=3.7,&lt;3.11</code>, it <em>doesn't</em> cover the project's <code>requires-python</code> range of <code>&gt;=3.9</code>. In other words, the project promises to work on Python 3.9, 3.10, 3.11 (and so on), but the dependency doesn't support Python 3.11 (or any higher). Since PDM creates a cross-platform lockfile that should work on all Python versions within the <code>requires-python</code> range, it can't find a valid resolution.
 To fix this, you need add a maximum version to <code>requires-python</code>, like <code>&gt;=3.9,&lt;3.11</code>.</p>
 <p>The value of <code>requires-python</code> is a <a href="https://peps.python.org/pep-0440/#version-specifiers">version specifier as defined in PEP 440</a>. Here are some examples:</p>
 <table>

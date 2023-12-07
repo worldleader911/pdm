@@ -1693,10 +1693,8 @@ For example, <code>flask==2.0.0</code> requires <code>werkzeug&gt;=2.0</code>, b
 </div>
 <h3 id="inherit-the-metadata-from-parents">Inherit the metadata from parents<a class="headerlink" href="#inherit-the-metadata-from-parents" title="Permanent link">#</a></h3>
 <p><em>New in version 2.11.0</em></p>
-<p>By default, <code>pdm lock</code> records package metadata as-is, and when installing, PDM will traverse from the top requirements till the leaf node of the dependency tree,
-evaluate any marker it encounters with the current environment, and discard the package if the marker is not satisfied. This requires an extra "resolution"
-step when installing.</p>
-<p>By specifying the strategy by <code>--strategy inherit_metadata</code>, PDM will however inherit and merge the environment markers from the ancestors of a given package and encode them in the lockfile. This will make the installation much faster. You can also turn it on in the config by <code>pdm config strategy.inherit_metadata true</code>.</p>
+<p>Previously, the <code>pdm lock</code> command would record package metadata as it is. When installing, PDM would start from the top requirements and traverse down to the leaf node of the dependency tree. It would then evaluate any marker it encounters against the current environment. If a marker is not satisfied, the package would be discarded. In other words, we need an additional "resolution" step in installation.</p>
+<p>When the <code>inherit_metadata</code> strategy is enabled, PDM will inherit and merge environment markers from a package's ancestors. These markers are then encoded in the lockfile during locking, resulting in faster installations. This has been enabled by default from version <code>2.11.0</code>, to disable this strategy in the config, use <code>pdm config strategy.inherit_metadata false</code>.</p>
 <h2 id="show-what-packages-are-installed">Show what packages are installed<a class="headerlink" href="#show-what-packages-are-installed" title="Permanent link">#</a></h2>
 <p>Similar to <code>pip list</code>, you can list all packages installed in the packages directory:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm<span class="w"> </span>list

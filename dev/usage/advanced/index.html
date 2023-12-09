@@ -567,8 +567,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#export-requirementstxt-or-setuppy" class="md-nav__link">
-    Export requirements.txt or setup.py
+  <a href="#export-requirementstxt" class="md-nav__link">
+    Export requirements.txt
   </a>
   
 </li>
@@ -964,8 +964,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#export-requirementstxt-or-setuppy" class="md-nav__link">
-    Export requirements.txt or setup.py
+  <a href="#export-requirementstxt" class="md-nav__link">
+    Export requirements.txt
   </a>
   
 </li>
@@ -1267,8 +1267,8 @@ and then copy this folder into the final stage, adding it to <code>PYTHONPATH</c
 <p>Look at the <a href="https://github.com/pdm-project/pdm-example-monorepo">🚀 Example repository</a> for more details.</p>
 <h2 id="hooks-for-pre-commit">Hooks for <code>pre-commit</code><a class="headerlink" href="#hooks-for-pre-commit" title="Permanent link">#</a></h2>
 <p><a href="https://pre-commit.com/"><code>pre-commit</code></a> is a powerful framework for managing git hooks in a centralized fashion. PDM already uses <code>pre-commit</code> <a href="https://github.com/pdm-project/pdm/blob/main/.pre-commit-config.yaml">hooks</a> for its internal QA checks. PDM exposes also several hooks that can be run locally or in CI pipelines.</p>
-<h3 id="export-requirementstxt-or-setuppy">Export <code>requirements.txt</code> or <code>setup.py</code><a class="headerlink" href="#export-requirementstxt-or-setuppy" title="Permanent link">#</a></h3>
-<p>This hook wraps the command <code>pdm export</code> along with any valid argument. It can be used as a hook (e.g., for CI) to ensure that you are going to check in the codebase a <code>requirements.txt</code> or a <code>setup.py</code> file, which reflects the actual content of <a href="../../reference/cli/#lock"><code>pdm lock</code></a>.</p>
+<h3 id="export-requirementstxt">Export <code>requirements.txt</code><a class="headerlink" href="#export-requirementstxt" title="Permanent link">#</a></h3>
+<p>This hook wraps the command <code>pdm export</code> along with any valid argument. It can be used as a hook (e.g., for CI) to ensure that you are going to check in the codebase a <code>requirements.txt</code>, which reflects the actual content of <a href="../../reference/cli/#lock"><code>pdm lock</code></a>.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>

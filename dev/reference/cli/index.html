@@ -1516,6 +1516,7 @@
 <li><code>--update-reuse</code>: Reuse pinned versions already present in lock file if possible</li>
 <li><code>--update-eager</code>: Try to update the packages and their dependencies recursively</li>
 <li><code>--update-all</code>: Update all dependencies and sub-dependencies</li>
+<li><code>--update-reuse-installed</code>: Reuse installed packages if possible</li>
 <li><code>--pre</code>, <code>--prerelease</code>: Allow prereleases to be pinned</li>
 <li><code>-u</code>, <code>--unconstrained</code>: Ignore the version constraint of packages</li>
 <li><code>--dry-run</code>: Show the difference only and don't perform any action</li>
@@ -1832,6 +1833,7 @@
 <li><code>--refresh</code>: Don't update pinned versions, only refresh the lock file</li>
 <li><code>--check</code>: Check if the lock file is up to date and quit</li>
 <li><code>--update-reuse</code>: Reuse pinned versions already present in lock file if possible (default: <code>all</code>)</li>
+<li><code>--update-reuse-installed</code>: Reuse installed packages if possible</li>
 </ul>
 <p>Lock Strategy:</p>
 <ul>
@@ -2148,6 +2150,7 @@
 <li><code>--update-reuse</code>: Reuse pinned versions already present in lock file if possible</li>
 <li><code>--update-eager</code>: Try to update the packages and their dependencies recursively</li>
 <li><code>--update-all</code>: Update all dependencies and sub-dependencies</li>
+<li><code>--update-reuse-installed</code>: Reuse installed packages if possible</li>
 <li><code>--pre</code>, <code>--prerelease</code>: Allow prereleases to be pinned</li>
 <li><code>-u</code>, <code>--unconstrained</code>: Ignore the version constraint of packages</li>
 <li><code>-k</code>, <code>--skip</code>: Skip some tasks and/or hooks by their comma-separated names. Can be supplied multiple times. Use<code>:all</code> to skip all hooks. Use<code>:pre</code> and<code>:post</code> to skip all pre or post hooks.</li>

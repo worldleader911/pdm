@@ -16,8 +16,8 @@ from pathlib import Path
 from tempfile import TemporaryDirectory
 from typing import Sequence
 
-if sys.version_info < (3, 7):
-    sys.exit("Python 3.7 or above is required to install PDM.")
+if sys.version_info < (3, 8):
+    sys.exit("Python 3.8 or above is required to install PDM.")
 
 _plat = platform.system()
 MACOS = _plat == "Darwin"
@@ -137,8 +137,9 @@ def _add_to_path(target: Path) -> None:
                 winreg.SetValueEx(env_key, "PATH", 0, type_, new_value)
 
         _echo(
-            "Post-install: {} is added to PATH env, please restart your terminal "
-            "to take effect".format(colored("green", value))
+            "Post-install: {} is added to PATH env, please restart your terminal to take effect".format(
+                colored("green", value)
+            )
         )
     else:
         paths = [os.path.normcase(p) for p in os.getenv("PATH", "").split(os.pathsep)]

@@ -1144,7 +1144,27 @@ Removed<span class="w"> </span>C:<span class="se">\U</span>sers<span class="se">
 <span class="w">  </span><span class="k">fi</span>
 <span class="o">}</span>
 </code></pre></div></td></tr></table></div>
-<p>Copy and paste this function to your <code>~/.bashrc</code> file and restart your shell. Now you can run <code>pdm shell</code> to activate the virtualenv.
+<p>Copy and paste this function to your <code>~/.bashrc</code> file and restart your shell. </p>
+<p>For <code>fish</code> shell you can put the following into your <code>~/fish/config.fish</code> or in <code>~/.config/fish/config.fish</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code>  <span class="k">function</span> pdm
+      <span class="k">set</span> cmd <span class="nv">$argv</span><span class="o">[</span>1<span class="o">]</span>
+
+      <span class="k">if</span> <span class="k">test</span> <span class="s2">&quot;</span><span class="nv">$cmd</span><span class="s2">&quot;</span> <span class="o">=</span> <span class="s2">&quot;shell&quot;</span>
+          <span class="nb">eval</span> <span class="o">(</span>pdm venv activate<span class="o">)</span>
+      <span class="k">else</span>
+          <span class="nb">command </span>pdm <span class="nv">$argv</span>
+      <span class="k">end</span>
+  <span class="k">end</span>
+</code></pre></div></td></tr></table></div>
+<p>Now you can run <code>pdm shell</code> to activate the virtualenv.
   <strong>The virtualenv can be deactivated with <code>deactivate</code> command as usual.</strong></p>
 </div>
 <h2 id="prompt-customization">Prompt customization<a class="headerlink" href="#prompt-customization" title="Permanent link">#</a></h2>

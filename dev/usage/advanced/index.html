@@ -1296,14 +1296,18 @@ and then copy this folder into the final stage, adding it to <code>PYTHONPATH</c
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pdm-lock-check</span>
 </code></pre></div></td></tr></table></div>
 <h3 id="sync-current-working-set-with-pdmlock">Sync current working set with <code>pdm.lock</code><a class="headerlink" href="#sync-current-working-set-with-pdmlock" title="Permanent link">#</a></h3>
-<p>This hook wraps the command <code>pdm sync</code> along with any valid argument. It can be used as a hook to ensure that your current working set is synced with <code>pdm.lock</code> whenever you checkout or merge a branch.</p>
+<p>This hook wraps the command <code>pdm sync</code> along with any valid argument. It can be used as a hook to ensure that your current working set is synced with <code>pdm.lock</code> whenever you checkout or merge a branch. Add <em>keyring</em> to <code>additional_dependencies</code> if you want to use your systems credential store.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/pdm-project/pdm</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/pdm-project/pdm</span>
 <span class="w">  </span><span class="nt">rev</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.x.y</span><span class="w"> </span><span class="c1"># a PDM release exposing the hook</span>
 <span class="w">  </span><span class="nt">hooks</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pdm-sync</span>
+<span class="w">      </span><span class="nt">additional_dependencies</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">keyring</span>
 </code></pre></div></td></tr></table></div>
 
 

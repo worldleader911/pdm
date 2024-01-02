@@ -801,7 +801,7 @@
 <p><code>pdm</code> uses the <a href="https://www.python.org/dev/peps/pep-0517/">PEP 517</a> to build the package. It acts as a build frontend that calls the build backend to build the package.</p>
 <p>A build backend is what drives the build system to build source distributions and wheels from arbitrary source trees.</p>
 <p>If you run <a href="../cli/#init"><code>pdm init</code></a>, PDM will let you choose the build backend to use. Unlike other package managers, PDM does not force you to use a specific build backend. You can choose the one you like. Here is a list of build backends and corresponding configurations initially supported by PDM:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">pdm-backend</label><label for="__tabbed_1_2">setuptools</label><label for="__tabbed_1_3">flit</label><label for="__tabbed_1_4">hatchling</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:5"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">pdm-backend</label><label for="__tabbed_1_2">setuptools</label><label for="__tabbed_1_3">flit</label><label for="__tabbed_1_4">hatchling</label><label for="__tabbed_1_5">maturin</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p><code>pyproject.toml</code> configuration:</p>
@@ -842,6 +842,16 @@
 <span class="n">build-backend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;hatchling.build&quot;</span>
 </code></pre></div></td></tr></table></div>
 <p><a href="https://hatch.pypa.io/"><img alt="📖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f4d6.svg" title=":book:" /> Read the docs</a></p>
+</div>
+<div class="tabbed-block">
+<p><code>pyproject.toml</code> configuration:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[build-system]</span>
+<span class="n">requires</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;maturin&gt;=1.4,&lt;2.0&quot;</span><span class="p">]</span>
+<span class="n">build-backend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;maturin&quot;</span>
+</code></pre></div></td></tr></table></div>
+<p><a href="https://www.maturin.rs/"><img alt="📖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f4d6.svg" title=":book:" /> Read the docs</a></p>
 </div>
 </div>
 </div>

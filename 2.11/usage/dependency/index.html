@@ -1711,7 +1711,7 @@ pdm<span class="w"> </span>list<span class="w"> </span>--exclude<span class="w">
 <p>You can also pass <code>--resolve</code> to <code>pdm list</code>, which will show the packages resolved in <code>pdm.lock</code>, rather than installed in the working set.</p>
 <h3 id="change-the-output-fields-and-format">Change the output fields and format<a class="headerlink" href="#change-the-output-fields-and-format" title="Permanent link">#</a></h3>
 <p>By default, name, version and location will be shown in the list output, you can view more fields or specify the order of fields by <code>--fields</code> option:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm<span class="w"> </span>list<span class="w"> </span>--fields<span class="w"> </span>name,license,version
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pdm<span class="w"> </span>list<span class="w"> </span>--fields<span class="w"> </span>name,licenses,version
 </code></pre></div></td></tr></table></div>
 <p>For all supported fields, please refer to the <a href="../../reference/cli/#list_1">CLI reference</a>.</p>
 <p>Also, you can specify the output format other than the default table output. The supported formats and options are <code>--csv</code>, <code>--json</code>, <code>--markdown</code> and <code>--freeze</code>.</p>

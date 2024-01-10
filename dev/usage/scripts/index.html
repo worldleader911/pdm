@@ -1199,6 +1199,12 @@ Besides, you can also define some fixed environment variables in your <code>pypr
 </code></pre></div></td></tr></table></div>
 <p>Note how we use <a href="https://github.com/toml-lang/toml">TOML's syntax</a> to define a composite dictionary.</p>
 <div class="admonition note">
+<p class="admonition-title">About environment variable substitution</p>
+<p>Variables in script specifications can be substituted in all script types. In <code>cmd</code> scripts, only <code>${VAR}</code>
+syntax is supported on all platforms, however in <code>shell</code> scripts, the syntax is platform-dependent. For example,
+Windows cmd uses <code>%VAR%</code> while bash uses <code>$VAR</code>.</p>
+</div>
+<div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Environment variables specified on a composite task level will override those defined by called tasks.</p>
 </div>

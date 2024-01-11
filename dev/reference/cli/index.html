@@ -1508,7 +1508,7 @@
 <li><code>-g</code>, <code>--global</code>: Use the global project, supply the project root with <code>-p</code> option</li>
 <li><code>-p</code>, <code>--project</code>: Specify another path as the project root, which changes the base of<code>pyproject.toml</code> and <code>__pypackages__</code> [env var: <code>PDM_PROJECT</code>]</li>
 <li><code>-L</code>, <code>--lockfile</code>: Specify another lockfile path. Default:<code>pdm.lock</code>. [env var: <code>PDM_LOCKFILE</code>]</li>
-<li><code>--no-lock</code>: Don't try to create or update the lockfile. [env var: <code>PDM_NO_LOCK</code>]</li>
+<li><code>--frozen-lockfile</code>, <code>--no-lock</code>: Don't try to create or update the lockfile. [env var: <code>PDM_FROZEN_LOCKFILE</code>]</li>
 <li><code>--save-compatible</code>: Save compatible version specifiers</li>
 <li><code>--save-wildcard</code>: Save wildcard version specifiers</li>
 <li><code>--save-exact</code>: Save exact version specifiers</li>
@@ -1659,7 +1659,8 @@
 <li><code>-p</code>, <code>--project</code>: Specify another path as the project root, which changes the base of<code>pyproject.toml</code> and <code>__pypackages__</code> [env var: <code>PDM_PROJECT</code>]</li>
 <li><code>-L</code>, <code>--lockfile</code>: Specify another lockfile path. Default:<code>pdm.lock</code>. [env var: <code>PDM_LOCKFILE</code>]</li>
 <li><code>-f</code>, <code>--format</code>: Specify the export file format (default: <code>requirements</code>)</li>
-<li><code>--without-hashes</code>: Don't include artifact hashes (default: <code>True</code>)</li>
+<li><code>--no-hashes</code>, <code>--without-hashes</code>: Don't include artifact hashes (default: <code>True</code>)</li>
+<li><code>--no-markers</code>: Don't include platform markers (default: <code>True</code>)</li>
 <li><code>-o</code>, <code>--output</code>: Write output to the given file, or print to stdout if not given</li>
 <li><code>--pyproject</code>: Read the list of packages from<code>pyproject.toml</code></li>
 <li><code>--expandvars</code>: Expand environment variables in requirements</li>
@@ -1768,7 +1769,7 @@
 <li><code>-p</code>, <code>--project</code>: Specify another path as the project root, which changes the base of<code>pyproject.toml</code> and <code>__pypackages__</code> [env var: <code>PDM_PROJECT</code>]</li>
 <li><code>--dry-run</code>: Show the difference only and don't perform any action</li>
 <li><code>-L</code>, <code>--lockfile</code>: Specify another lockfile path. Default:<code>pdm.lock</code>. [env var: <code>PDM_LOCKFILE</code>]</li>
-<li><code>--no-lock</code>: Don't try to create or update the lockfile. [env var: <code>PDM_NO_LOCK</code>]</li>
+<li><code>--frozen-lockfile</code>, <code>--no-lock</code>: Don't try to create or update the lockfile. [env var: <code>PDM_FROZEN_LOCKFILE</code>]</li>
 <li><code>-k</code>, <code>--skip</code>: Skip some tasks and/or hooks by their comma-separated names. Can be supplied multiple times. Use<code>:all</code> to skip all hooks. Use<code>:pre</code> and<code>:post</code> to skip all pre or post hooks.</li>
 <li><code>--venv</code> <code>NAME</code>: Run the command in the virtual environment with the given key. [env var: <code>PDM_IN_VENV</code>]</li>
 <li><code>--check</code>: Check if the lock file is up to date and fail otherwise</li>
@@ -1888,7 +1889,7 @@
 <li><code>-p</code>, <code>--project</code>: Specify another path as the project root, which changes the base of<code>pyproject.toml</code> and <code>__pypackages__</code> [env var: <code>PDM_PROJECT</code>]</li>
 <li><code>--dry-run</code>: Show the difference only and don't perform any action</li>
 <li><code>-L</code>, <code>--lockfile</code>: Specify another lockfile path. Default:<code>pdm.lock</code>. [env var: <code>PDM_LOCKFILE</code>]</li>
-<li><code>--no-lock</code>: Don't try to create or update the lockfile. [env var: <code>PDM_NO_LOCK</code>]</li>
+<li><code>--frozen-lockfile</code>, <code>--no-lock</code>: Don't try to create or update the lockfile. [env var: <code>PDM_FROZEN_LOCKFILE</code>]</li>
 <li><code>-k</code>, <code>--skip</code>: Skip some tasks and/or hooks by their comma-separated names. Can be supplied multiple times. Use<code>:all</code> to skip all hooks. Use<code>:pre</code> and<code>:post</code> to skip all pre or post hooks.</li>
 <li><code>--venv</code> <code>NAME</code>: Run the command in the virtual environment with the given key. [env var: <code>PDM_IN_VENV</code>]</li>
 <li><code>-d</code>, <code>--dev</code>: Remove packages from dev dependencies</li>
@@ -2142,7 +2143,7 @@
 <li><code>-g</code>, <code>--global</code>: Use the global project, supply the project root with <code>-p</code> option</li>
 <li><code>-p</code>, <code>--project</code>: Specify another path as the project root, which changes the base of<code>pyproject.toml</code> and <code>__pypackages__</code> [env var: <code>PDM_PROJECT</code>]</li>
 <li><code>-L</code>, <code>--lockfile</code>: Specify another lockfile path. Default:<code>pdm.lock</code>. [env var: <code>PDM_LOCKFILE</code>]</li>
-<li><code>--no-lock</code>: Don't try to create or update the lockfile. [env var: <code>PDM_NO_LOCK</code>]</li>
+<li><code>--frozen-lockfile</code>, <code>--no-lock</code>: Don't try to create or update the lockfile. [env var: <code>PDM_FROZEN_LOCKFILE</code>]</li>
 <li><code>--save-compatible</code>: Save compatible version specifiers</li>
 <li><code>--save-wildcard</code>: Save wildcard version specifiers</li>
 <li><code>--save-exact</code>: Save exact version specifiers</li>

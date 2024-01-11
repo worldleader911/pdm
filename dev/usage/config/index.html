@@ -559,6 +559,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#exclude-specific-packages-and-their-dependencies-from-the-lock-file" class="md-nav__link">
+    Exclude specific packages and their dependencies from the lock file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#passing-constant-arguments-to-every-pdm-invocation" class="md-nav__link">
     Passing constant arguments to every pdm invocation
   </a>
@@ -1020,6 +1027,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#exclude-specific-packages-and-their-dependencies-from-the-lock-file" class="md-nav__link">
+    Exclude specific packages and their dependencies from the lock file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#passing-constant-arguments-to-every-pdm-invocation" class="md-nav__link">
     Passing constant arguments to every pdm invocation
   </a>
@@ -1315,6 +1329,14 @@ In this example, PDM will resolve the above packages into the given versions no 
 <p>By using <code>[tool.pdm.resolution.overrides]</code> setting, you are at your own risk of any incompatibilities from that resolution. It can only be used if there is no valid resolution for your requirements and you know the specific version works.
 Most of the time, you can just add any transient constraints to the <code>dependencies</code> array.</p>
 </div>
+<h2 id="exclude-specific-packages-and-their-dependencies-from-the-lock-file">Exclude specific packages and their dependencies from the lock file<a class="headerlink" href="#exclude-specific-packages-and-their-dependencies-from-the-lock-file" title="Permanent link">#</a></h2>
+<p><em>New in version 2.12.0</em></p>
+<p>Sometimes you don't even want to include certain packages in the locked file because you are sure they won't be used by any code. In this case, you can completely skip them and their dependencies during dependency resolution:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm.resolution]</span>
+<span class="n">excludes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;requests&quot;</span><span class="p">]</span>
+</code></pre></div></td></tr></table></div>
+<p>With this config, <code>requests</code> will be locked in the lockfile, and its dependencies such as <code>urllib3</code> and <code>idna</code> will also not show up in the resolution result, if not depended on by other packages. The installer will not be able to pick them up either.</p>
 <h2 id="passing-constant-arguments-to-every-pdm-invocation">Passing constant arguments to every pdm invocation<a class="headerlink" href="#passing-constant-arguments-to-every-pdm-invocation" title="Permanent link">#</a></h2>
 <p><em>New in version 2.7.0</em></p>
 <p>You can add extra options passed to individual pdm commands by <code>tool.pdm.options</code> configuration:</p>

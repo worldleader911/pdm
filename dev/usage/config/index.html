@@ -1118,10 +1118,10 @@ show configurations.</p>
 pdm<span class="w"> </span>config<span class="w"> </span>python.providers<span class="w"> </span>pyenv,asdf<span class="w">  </span><span class="c1"># pyenv and asdf</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="allow-prereleases-in-resolution-result">Allow prereleases in resolution result<a class="headerlink" href="#allow-prereleases-in-resolution-result" title="Permanent link">#</a></h2>
-<p>By default, <code>pdm</code>'s dependency resolver will ignore prereleases unless there are no stable versions for the given version range of a dependency. This behavior can be changed by setting <code>allow_prereleases</code> to <code>true</code> in <code>[tool.pdm]</code> table:</p>
+<p>By default, <code>pdm</code>'s dependency resolver will ignore prereleases unless there are no stable versions for the given version range of a dependency. This behavior can be changed by setting <code>allow-prereleases</code> to <code>true</code> in <code>[tool.pdm.resolution]</code> table:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm]</span>
-<span class="n">allow_prereleases</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm.resolution]</span>
+<span class="n">allow-prereleases</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="configure-the-package-indexes">Configure the package indexes<a class="headerlink" href="#configure-the-package-indexes" title="Permanent link">#</a></h2>
 <p>You can tell PDM where to to find the packages by either specifying sources in the <code>pyproject.toml</code> or via <code>pypi.*</code> configurations.</p>

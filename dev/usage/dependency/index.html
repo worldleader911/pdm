@@ -1763,8 +1763,8 @@ certifi<span class="w"> </span><span class="m">2023</span>.7.22
 <h2 id="allow-prerelease-versions-to-be-installed">Allow prerelease versions to be installed<a class="headerlink" href="#allow-prerelease-versions-to-be-installed" title="Permanent link">#</a></h2>
 <p>Include the following setting in <code>pyproject.toml</code> to enable:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm]</span>
-<span class="n">allow_prereleases</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">[tool.pdm.resolution]</span>
+<span class="n">allow-prereleases</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="set-acceptable-format-for-locking-or-installing">Set acceptable format for locking or installing<a class="headerlink" href="#set-acceptable-format-for-locking-or-installing" title="Permanent link">#</a></h2>
 <p>If you want to control the format(binary/sdist) of the packages, you can set the env vars <code>PDM_NO_BINARY</code> and <code>PDM_ONLY_BINARY</code>.</p>

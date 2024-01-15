@@ -889,10 +889,11 @@
 <p>Similar to <code>yarn create</code> and <code>npm create</code>, PDM also supports initializing or creating a project from a template.
 The template is given as a positional argument of <code>pdm init</code>, in one of the following forms:</p>
 <ul>
-<li><code>pdm init flask</code> - Initialize the project from the template <code>https://github.com/pdm-project/template-flask</code></li>
-<li><code>pdm init https://github.com/frostming/pdm-template-flask</code> - Initialize the project from a Git URL. Both HTTPS and SSH URL are acceptable.</li>
+<li><code>pdm init flask</code> - Initialize the project from the template <code>https://github.com/pdm-project/template-django</code></li>
+<li><code>pdm init https://github.com/frostming/pdm-template-django</code> - Initialize the project from a Git URL. Both HTTPS and SSH URL are acceptable.</li>
 <li><code>pdm init django@v2</code> - To check out the specific branch or tag. Full Git URL also supports it.</li>
 <li><code>pdm init /path/to/template</code> - Initialize the project from a template directory on local filesystem.</li>
+<li><code>pdm init minimal</code> - Initialize with the builtin "minimal" template, that only generates a <code>pyproject.toml</code>.</li>
 </ul>
 <p>And <code>pdm init</code> will use the default template built in.</p>
 <p>The project will be initialized at the current directory, existing files with the same name will be overwritten. You can also use the <code>-p &lt;path&gt;</code> option to create a project at a new path.</p>

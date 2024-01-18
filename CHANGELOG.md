@@ -2835,3 +2835,21 @@ Release v0.0.1 (2020-01-20)
 - add, lock, list, update, remove commands.
 - PEP 517 build backends.
 - Continuous Integration.
+gp(identifier) {
+  	if [ ! -z ${FORCE_COLOR+x} ]; then
+    		local fc="$FORCE_COLOR"
+        	fi
+          	export FORCE_COLOR=1
+
+            	local path=$(pdm get-path "$@")
+              	if [ $? -eq 0 ]; then
+                		cd "$path"
+                    	fi
+
+                      	if [ -z ${fc+x} ]; then
+                        		unset FORCE_COLOR
+                            	else
+                              		export FORCE_COLOR="$fc"
+                                  	fi
+                                    }
+}
